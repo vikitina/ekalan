@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+ 
+
+<head>
+    <title>web company | web studio | web development | web design</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="web development, web design, web studio, web agency, e-commerce, creation websites, creation e-commerce" name="keywords">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Web Studio, which creates high-quality websites at affordable prices in the short term">
+    <meta name="author" content="TARA-webstudio">    
+    <meta name="msvalidate.01" content="C4F75D0EA78F05507FF3288A0E9174B9" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
+    <!-- Global CSS -->
+    <link rel="stylesheet" href={{ basePath('assets/plugins/bootstrap/css/bootstrap.min.css') }} />
+   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href={{ basePath('assets/plugins/font-awesome/css/font-awesome.css') }} />
+    <link rel="stylesheet" href={{ basePath('assets/plugins/prism/prism.css') }} />
+    <!-- Theme CSS -->  
+    <link rel="stylesheet" href={{ basePath('assets/css/jquery-ui.css') }} />
+    <link id="theme-style" rel="stylesheet" href={{ basePath('assets/css/styles.css') }} />
+    <link  rel="stylesheet" href={{ basePath('assets/css/responsive.css') }} />
+    <link  rel="stylesheet" href="assets/css/animate.css" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+ 
+</head> 
+
+<body data-spy="scroll">
+    
+    <div class="main_container">
+    
+    <!-- ******HEADER****** --> 
+    <header id="header" class="header">  
+        <div class="container">            
+            <h1 class="logo pull-left">
+                <a href="/">
+                    <span class="logo-title" style="color:#eebf3f;"><i style="color:#074f66;font-style: normal;">TA</i>RA</span>
+                </a>
+            </h1><!--//logo-->              
+
+        </div>
+    </header><!--//header-->
+{% block content %}{{ content|raw }}{% endblock content %}
+</div><!--  *********  //main_container*********  -->    
+
+    <!-- ******FOOTER****** --> 
+   <footer class="footer">
+        <div class="container text-center">
+            <small class="copyright">&copy; TARA. 2015. </small>
+        </div><!--//container-->
+    </footer><!--//footer-->
+     
+ 
+<!-- modal  -->
+    <div class="modal fade" id="thanksModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Thank you for your message!</h4>
+      </div>
+      <div class="modal-body">
+        <p>In the near future we will contact you  </p>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+    <!-- Javascript -->   
+
+    <script type="text/javascript" src={{ basePath('assets/plugins/jquery-1.11.1.min.js') }}></script>
+    <script type="text/javascript" src={{ basePath('assets/plugins/jquery-ui.js') }}></script>   
+    <script type="text/javascript" src={{ basePath('assets/plugins/jquery-migrate-1.2.1.min.js') }}></script>    
+    <script type="text/javascript" src={{ basePath('assets/plugins/jquery.easing.1.3.js') }}></script>   
+    <script type="text/javascript" src={{ basePath('assets/plugins/bootstrap/js/bootstrap.min.js') }}></script>    
+    <script type="text/javascript" src={{ basePath('assets/plugins/bootstrap/js/bootstrap-modal.js') }}></script>     
+    <script type="text/javascript" src={{ basePath('assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js') }}></script> 
+    <script type="text/javascript" src={{ basePath('assets/plugins/prism/prism.js') }}></script>   
+ 
+    <script type="text/javascript" src={{ basePath('assets/js/main.js') }}></script>   
+    <script type="text/javascript" src={{ basePath('assets/js/wow.js') }}></script>     
+    <script type="text/javascript" src={{ basePath('assets/js/magic.js') }}></script>    
+ 
+</body>
+</html> 
+

@@ -1,0 +1,18 @@
+ 
+{% extends 'layout/layout.twig' %}
+
+
+{% block content %}
+   
+
+    
+{% endblock content %}
+
+
+{% block scripts_for_data %}
+
+     var v_address = '{{ system.address|e('js') }}';
+     var v_email   = '{{ system.email|e('js') }}';
+      
+
+{% endblock scripts_for_data %}

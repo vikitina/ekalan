@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Bootstrap 3 Admin</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href={{ basePath('assets/admin/css/bootstrap.min.css') }} rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href={{ basePath('assets/admin/css/styles.css') }} rel="stylesheet">
+        <link rel="stylesheet" href={{ basePath('assets/plugins/font-awesome/css/font-awesome.css') }} />
+	</head>
+
+
+<body>
+    <div class="main_container">
+<!-- header -->
+<div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Dashboard</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
+                    <ul id="g-account-menu" class="dropdown-menu" role="menu">
+                        <li><a href="#">My Profile</a></li>
+                    </ul>
+                </li>
+                <li><a href="/user/logout"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- /container -->
+</div>
+<!-- /Header -->
+
+<!-- Main -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3">
+            <!-- Left column -->
+            <a href="/admin"><strong> Tools </strong></a>
+
+            <hr>
+
+            <ul class="nav nav-stacked">
+                
+                           
+                        <li><a href="/admin/page"><i class="glyphicon glyphicon-comment"></i> Pages</a></li>
+                        <li><a href="/admin/msgs"><i class="glyphicon glyphicon-envelope"></i> Messages <span class="badge badge-info" id="uread_msgs">{{ UnreadMessages() }}</span></a></li>
+                        <li><a href="/admin/users"><i class="glyphicon glyphicon-cog"></i> Users</a></li>
+                        
+                       
+                        <li><a href="/user/logout"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+                        
+                    
+                
+           </ul>
+  
+                
+ 
+           
+        </div>
+        <!-- /col-3 -->
+        <div class="col-sm-9">
+            
+                {% block content %}{{ content|raw }}{% endblock content %}
+       
+        <div class="col-md-4">    
+
+                     <div class="table-responsive">
+
+{# system_modal
+system_name
+system_new_value
+system_save_new_value
+#}
+
+
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>System Variables</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                        {% for vars in  System() %}
+                               <tr>
+                                    <td><a href="admin/system/{{ vars.id }}" class="system_list" data-content="{{ vars.data }}" data-id="{{ vars.id }}">{{ vars.name }}</a></td>
+                               </tr>
+                          {% endfor %}      
+                              
+                            </tbody>
+                        </table>
+                    </div>
+
+
+        </div>
+</div>
+</div><!--  row -->
+        <!--/col-span-9-->
+    </div>
+</div>
+<!-- /Main -->
+</div><!-- main_container -->
+<footer class="text-center footer">This Bootstrap 3 dashboard layout is compliments of <a href="http://www.bootply.com/85850"><strong>Bootply.com</strong></a></footer>
+
+<div class="modal" id="addWidgetModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Add Widget</h4>
+            </div>
+            <div class="modal-body">
+                <p>Add a widget stuff here..</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn">Close</a>
+                <a href="#" class="btn btn-primary">Save changes</a>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dalog -->
+</div>
+
+
+ <div class="modal fade" id="system_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">System variables</h4>
+      </div>
+      <div class="modal-body">
+             <label id="system_name"></label> 
+             <textarea id="system_new_value" name="system_new_value"></textarea> 
+      </div>
+        <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn">Close</a>
+                <a href="#" class="btn btn-primary" id="system_save_new_value">Save changes</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- /.modal -->
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src={{ basePath('assets/admin/js/bootstrap.min.js') }}></script>
+        <script src={{ basePath('assets/admin/js/bootbox.min.js') }}></script>
+		<script src={{ basePath('assets/admin/js/scripts.js') }}></script>
+	</body>
+</html>

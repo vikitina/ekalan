@@ -1,0 +1,32 @@
+{% extends 'layout/admin.twig' %}
+
+
+{% block content %}
+<a href="/admin/msgs">Messages</a>
+<hr>
+<div class="row">
+     <div class="col-md-8">
+              <section class="">
+                 <ul class="list-group">
+						{% for msg in  Messages() %}
+						    
+						          <li class="list-group-item unread_msgs"> 
+
+						               
+						               <a href="/admin/msg/{{ msg.id }}"> 
+                                              <small>{{ msg.date }}</small>
+						                      <span>
+						                               {{ msg.email }} {{  msg.content }}
+                                              </span>  
+                                       </a>
+						               
+                                       <span class="read check_msg"><input type="checkbox" data-id = '{{ msg.id }}' {{ (msg.already_read ==1)? 'checked' : '' }} /></span>
+                                       <span class="del_msg" title="Remove message">--</span>
+						           </li>
+						         
+						{% endfor %}
+				</ul>		
+			</section>
+     </div>       
+
+{% endblock content %}

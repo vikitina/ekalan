@@ -1,0 +1,71 @@
+{% extends 'layout/admin.twig' %}
+
+
+{% block content %}     
+<a href="/admin/page">Pages</a>/{{ page.title }}
+<hr>
+<div class="row">
+     <div class="col-md-8">
+             <section class="">             
+
+                       <form action="/admin/updatepage/" method="post" class="form form-vertical">
+                            <div class="control-group">
+                                    {% if page.id %}<input type="hidden" value="{{ (page.id) ? page.id : '' }}" name="id" />{% endif %}
+                                    <label>Заголовок в меню</label>
+                                    <div class="controls">                       
+                                           <input name="title" class="form-control" value="{{ (page.title) ? page.title : '' }}" type="text" />
+                                    </div>
+                            </div>                                           
+                               <div class="control-group">
+                                    <label>Содержание</label>
+                                    <div class="controls">                            
+                                                <textarea class="form-control" rows="25" name="content">{{ (page.content) ? page.content : ''}}</textarea>
+                                    </div>
+                            </div>                                                  
+                                <div class="control-group">
+                                    <label>Порядковый номер меню</label>
+                                    <div class="controls">
+                                        
+
+                                           {% if page.id %}
+                                                <select class="form-control" name="num">
+                                                     {% for i in  MainMenuHelper() %}
+                                                        <option {{ page.num==i.num ? 'selected' : '' }} value={{ i.num }}>{{ i.num }}</option>
+                                                     {% endfor %} 
+                                                </select>   
+                                           {% else %}
+                                                        <input name="num" class="form-control" value="" type="text" />
+                                           {% endif %}
+
+                                             
+   
+      
+                                        
+                                    </div>
+                                </div>
+
+{#
+  `main_page` tinyint(4) DEFAULT NULL,
+  `link` varchar(250) NOT NULL,
+  `in_menu` tinyint(1) NOT NULL,
+  `title` text NOT NULL,
+  `content` text CHARACTER SET utf8 NOT NULL,
+  `etc` text NOT NULL,
+  `sections_class` varchar(250) NOT NULL,
+  `num` int(11) NOT NULL,
+#}
+
+
+                                <div class="control-group">
+                                    <label></label>
+                                    <div class="controls">
+                                        <button type="submit" class="btn btn-primary">
+                                            Сохранить
+                                        </button>
+                                    </div>
+                                </div>                           
+                       </form>
+            </section>
+     </div>       
+                      
+{% endblock content %}                       

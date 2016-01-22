@@ -1,0 +1,17 @@
+ 
+{% extends 'layout/layout_error.twig' %}
+
+
+{% block content %}
+<section class="offset-header">
+          <div class="container">
+   
+                   <h1>{{ translate('A 404 error occurred!') }}</h1>
+                   <h2>{{ message }}</h2>
+                   <p>The requested URL could not be matched by routing.</p>
+                   <p>Please, visit our <a href="/">Homepage</a></p>
+
+         </div>
+</section>
+    
+{% endblock content %}

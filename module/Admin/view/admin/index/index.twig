@@ -1,0 +1,22 @@
+{% extends 'layout/admin.twig' %}
+
+
+{% block content %}
+<a href="#">Pages</a>
+<hr>
+<div class="row">
+     <div class="col-md-8">
+             <section class="pages_list">
+                        <div class="calculating" id="calculating"><div class="background"></div><div class="img"></div></div>
+						{% for menu in  MainMenuHelper() %}
+						<dl data-id="{{ menu.id }}" {{ menu.main_page ? 'class="main_page"' : '' }}>
+						          <dt><a href="/admin/page/{{ menu.id }}"> {{ menu.title }}</a></dt>
+						          <dd class="del"> </dd>
+						          <dd class="up"> </dd>
+						          <dd class="down"> </dd>
+						</dl>        
+						{% endfor %}
+            </section>
+     </div>       
+
+{% endblock content %}
