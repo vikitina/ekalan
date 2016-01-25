@@ -1,6 +1,6 @@
 <?php
 $dbParams = array(
-        'database' => 'db_app2',
+        'database' => 'ekalan_db',
         'username' => 'root',
         'password' => '1234',
         'hostname' => 'localhost',

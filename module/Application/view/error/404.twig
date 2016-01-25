@@ -3,15 +3,9 @@
 
 
 {% block content %}
-<section class="offset-header">
-          <div class="container">
-   
-                   <h1>{{ translate('A 404 error occurred!') }}</h1>
-                   <h2>{{ message }}</h2>
-                   <p>The requested URL could not be matched by routing.</p>
-                   <p>Please, visit our <a href="/">Homepage</a></p>
-
-         </div>
-</section>
+                  <h1 class="large mb-25">404 Ошибка</h1>
+                    <p class="lead content-wd650">Сожалеем, похоже, вы заблудились.<br />Страницы, которую вы ищите, пока не существует.</p>
+                    <br />
+                    <a href="home.html" class="btn btn-md btn-white"><i class="fa fa-angle-left left"></i>Вернуться на главную</a>
     
 {% endblock content %}

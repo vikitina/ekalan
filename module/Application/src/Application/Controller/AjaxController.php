@@ -31,36 +31,36 @@ class AjaxController extends AbstractActionController
                   $data = $_POST;
                   $messageSrv    = $this -> getServiceLocator()->get('message');
         
-                  $content = '';
-                  $fl = 0;
-                  if (is_array($data['services'])) {
-                       $content .= '<h3> The necessary work:</h3><ul>'	;
-                       $fl = 1;
-                  	   foreach ($data['services'] as $serv){
+               //   $content = '';
+               //   $fl = 0;
+               //   if (is_array($data['services'])) {
+               //        $content .= '<h3> The necessary work:</h3><ul>'	;
+               //        $fl = 1;
+               //   	   foreach ($data['services'] as $serv){
 
-                  		         $content .= '<li>' .$serv. '</li>';
-                  	    }
+              //    		         $content .= '<li>' .$serv. '</li>';
+              //    	    }
                         
-                  }
-                  if (is_array($data['solutions'])) {
-                        $content .= (($fl==0)?'<h3> The necessary work:</h3><ul>':'');
-                        $fl = 1;
-                        foreach ($data['solutions'] as $solu){
+             //    }
+            //      if (is_array($data['solutions'])) {
+             //           $content .= (($fl==0)?'<h3> The necessary work:</h3><ul>':'');
+            ///            $fl = 1;
+             //           foreach ($data['solutions'] as $solu){
 
-                  		         $content .= '<li>' .$solu. '</li>';
-                  	    }
-                  }
-                  $content .= (($fl>0)?'</ul>':'');
-                  $content .= (isset($data['amount']) && $data['amount'])?('<h3>Budget:</h3>'.'<p>'.$data['amount'].'</p>'):'';
+            //      		         $content .= '<li>' .$solu. '</li>';
+            //      	    }
+           //       }
+           //       $content .= (($fl>0)?'</ul>':'');
+           //       $content .= (isset($data['amount']) && $data['amount'])?('<h3>Budget:</h3>'.'<p>'.$data['amount'].'</p>'):'';
                   $db_data = array(
-                      'name'        => $data['firstName'],
-                      'company'     => $data['company'],
-                      'email'       => $data['email'],
-                      'phone'       => $data['phone'],
-                      'content'     => $content.'<p>'.$data['msg_text'].'</p>'
+                      'name'        => $data['sc_name'],
+                     // 'discount'     => $data['sc_discount'],
+                      'email'       => $data['sc_mail'],
+                      'phone'       => $data['sc_phone'],
+                      
                   	);
 
-                   $this->  sendMail($db_data);
+                   //$this->  sendMail($db_data);
 
                    $db_data['once_opened'] = 0;
                    $db_data['already_read'] = 0;                  
@@ -69,8 +69,7 @@ class AjaxController extends AbstractActionController
 
     	          $result = new JsonModel ( array (
                 //'text'                   => $ajaxSrv->getResponce($filter),
-    	          	'res' => $db_data['name'].' '.$db_data['company'].' '.$db_data['email'].' '.$db_data['phone'].' '.$db_data['content']
-                
+    	          	'res' => $db_data['name'].' '.$db_data['email'].' '.$db_data['phone']
         ) );
        
 
@@ -97,8 +96,6 @@ private function sendMail($data){
                   'ssl'       => 'tls',
                   'username' => 'tarawebstudio@gmail.com',
                   'password' => 'Bricks_7782'
-//                  'username' => 'vikitina@gmail.com',
-//                  'password' => 'vikabibika0987654321'
 
 
             ),

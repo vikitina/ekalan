@@ -17,7 +17,7 @@
     <link href={{ basePath('css/plugin/jPushMenu.css') }} rel="stylesheet" type="text/css" />
     <link href={{ basePath('css/plugin/animate.css') }} rel="stylesheet" type="text/css" />
     <link href={{ basePath('css/jquery-ui.css') }} rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href={{ basePath('css/jquery.countdown.css') }} /> 
+    <link href={{ basePath('css/jquery.countdown.css') }} rel="stylesheet" type="text/css" /> 
     <link href={{ basePath('css/main.css') }} rel="stylesheet" type="text/css" />
 
 </head>
@@ -35,7 +35,21 @@
 
  
 
+<!-- modal  -->
+    <div class="modal fade" id="thanksModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Thank you for your message!</h4>
+      </div>
+      <div class="modal-body">
+        <p>In the near future we will contact you  </p>
+      </div>
 
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
     <!-- JS -->
 
     <script src={{ basePath('js/jquery-1.11.2.min.js') }} type="text/javascript"></script>
@@ -68,6 +82,7 @@
     <script type="text/javascript" src={{ basePath('js/masonry.pkgd.min.js') }}></script> 
     <script type="text/javascript" src={{ basePath('js/imagesloaded.pkgd.js') }}></script> 
     <script type="text/javascript" src={{ basePath('js/main.js') }}></script>
+    <script type="text/javascript" src={{ basePath('js/magic.js') }}></script>
 
     <script type="text/javascript">
         //  Onepage Nav Elements

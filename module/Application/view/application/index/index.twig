@@ -82,10 +82,11 @@
 
                                  <div class="right"> 
                                     <div class="form">  
-                                        <form method="POST" action="index.html">
-                                             <div><input type="text" name="" required placeholder="Имя, сестра" x-autocompletetype="name" /></div>
-                                             <div><input type="email" name="" required placeholder="Адрес электронной почты" x-autocompletetype="email" /></div>
-                                             <div><input type="text" name="" required placeholder="Номер телефона" x-autocompletetype="ph" /></div>
+                                        <form method="POST" id="selling_campaign">
+                                             <div><input type="text" name="sc_name" required placeholder="Имя, сестра" x-autocompletetype="name" /></div>
+                                             <div><input type="email" name="sc_mail" required placeholder="Адрес электронной почты" x-autocompletetype="email" /></div>
+                                             <div><input type="text" name="sc_phone" required placeholder="Номер телефона" x-autocompletetype="ph" /></div>
+                                             <div><input type="hidden" name="sc_discount" value="27%" /></div>
                                              <div><input type="submit" value="Отправить"></div>
                                              
                                         </form> 
