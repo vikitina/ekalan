@@ -49,6 +49,7 @@ return array(
                                    array('route' => 'zfcuser/changeemail', 'roles' => array('user','admin')),  
                                    array('route' => 'application\ajax', 'roles' => array('guest','user')),
                                    array('route' => 'msg', 'roles' => array('guest')),
+                                   array('route' => 'portfolio', 'roles' => array('guest')),
                                    array('route' => 'zfcadmin/admin_pages', 'roles' => array('admin')),  
                                    array('route' => 'zfcadmin/admin_page', 'roles' => array('admin')),  
                                    array('route' => 'zfcadmin/admin_ajax_up', 'roles' => array('admin')),  

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ekalan</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="nileforest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- CSS -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css' />
+    <link href={{ basePath('css/style.css') }} rel="stylesheet" type="text/css" />
+    <link href={{ basePath('css/bootstrap.css') }} rel="stylesheet" type="text/css" />
+    <link href={{ basePath('css/font-awesome.css') }} rel="stylesheet" type="text/css" />
+    <link href={{ basePath('css/ionicons.css') }} rel="stylesheet" type="text/css" />
+    <link href={{ basePath('css/plugin/jPushMenu.css') }} rel="stylesheet" type="text/css" />
+    <link href={{ basePath('css/plugin/animate.css') }} rel="stylesheet" type="text/css" />
+    <link href={{ basePath('css/jquery-ui.css') }} rel="stylesheet" type="text/css" />
+    <link href={{ basePath('css/jquery.countdown.css') }} rel="stylesheet" type="text/css" /> 
+    <link href={{ basePath('css/main.css') }} rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="full-intro background--dark">
+
+    <!-- Preloader -->
+    <section id="preloader">
+        <div class="loader" id="loader">
+            <div class="loader-img"></div>
+        </div>
+    </section>
+    <!-- End Preloader -->
+
+
+    <!-- Search menu Top -->
+    <section class=" top-search-bar cbp-spmenu cbp-spmenu-horizontal cbp-spmenu-top">
+        <div class="container">
+            <div class="search-wraper">
+                <input type="text" class="input-sm form-full" placeholder="Search..." name="search" />
+                <a class="search-bar-icon"><i class="fa fa-search"></i></a>
+                <a class="bar-close toggle-menu menu-top push-body"><i class="ion ion-android-close"></i></a>
+            </div>
+        </div>
+    </section>
+    <!--End Search menu Top -->
+
+    <!-- Site Wraper -->
+    <div class="wrapper">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="container">
+
+                <!-- logo -->
+                <div class="logo">
+                    <a href="home.html">
+                        <img class="l-black" src="img/logo-black.png" />
+                        <img class="l-white" src="img/logo-white.png" />
+                        <img class="l-color" src="img/logo-color.png" />
+                    </a>
+                </div>
+                <!--End logo-->
+
+
+                <!-- Navigation Menu -->
+                <nav class='navigation'>
+                    <ul>
+                        <li>
+                            <a href="home.html">Home</a>
+                            <!-- Nav Dropdown -->
+
+                            <!-- End Nav Dropdown -->
+                        </li>
+
+  
+                    </ul>
+                </nav>
+                <!--End Navigation Menu -->
+
+            </div>
+        </header>
+        <!-- END HEADER -->
+
+        <!-- CONTENT --------------------------------------------------------------------------------->
+
+        <!-- Intro Section -->
+        <section class="inner-intro bg-img25 light-color overlay-dark parallax parallax-background2">
+            <div class="container">
+                <div class="row title">
+                    <h2 class="h2">Наши работы</h2>
+                    
+                </div>
+            </div>
+        </section>
+        <div class="clearfix"></div>
+        <!-- End Intro Section -->
+
+{% block content %}{{ content|raw }}{% endblock content %}
+
+ 
+
+       <!-- Social Section -->
+        <section id="social" class="gray-bg ptb ptb-sm-80">
+            <div class="container text-center">
+
+                <div class="spacer-60"></div>
+                <div class="row">
+
+                  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2542.9236866638394!2d30.62923701599817!3d50.40525979850073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c5a9263ac0f9%3A0x34dc59578fb237ac!2z0L_RgNC-0YHQvy4g0J_QtdGC0YDQsCDQk9GA0LjQs9C-0YDQtdC90LrQsCwgMjMsIDcxLCDQmtC40ZfQsiwg0KPQutGA0LDQuNC90LA!5e0!3m2!1sru!2s!4v1453455068322" width="100%" height="350px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                  </div>
+
+
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 addr">
+                   
+                    <p>
+                          <span><i class="ion ion-ios-location"></i></span>
+                          Киев,<br />
+                          ЖК "АБРИКОС",<br />
+                          проспект Петра Григоренко, 23/71
+                    </p>
+                    <p>  <span><i class="ion ion-ios-telephone"></i></span>
+                           (044) 501-92-18<br />
+                           (067) 230-26-20
+                      </p>
+                       <a href="mailto:alanbud@optima.com.ua"><span><i class="ion ion-ios-email"></i></span>alanbud@optima.com.ua</a><br />
+    
+                       <a href="#" class="order_call">Заказать звонок</a>
+                  </div>  
+
+
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <!-- Contact FORM -->
+                        <form class="contact-form" id="contact" role="form">
+
+                            <!-- IF MAIL SENT SUCCESSFULLY -->
+                            <h6 class="successContent">
+                                <i class="fa fa-check left" style="color: #5cb45d;"></i>Ваше сообщение успешно отправлено.
+                            </h6>
+                            <!-- END IF MAIL SENT SUCCESSFULLY -->
+
+                            <!-- MAIL SENDING UNSUCCESSFULL -->
+                            <h6 class="errorContent">
+                                <i class="fa fa-exclamation-circle left" style="color: #e1534f;"></i>Возникли проблемы при отправке формы!
+                            </h6>
+                            <!-- END MAIL SENDING UNSUCCESSFULL -->
+
+                            <div class="form-field-wrapper">
+                                <input class="input-sm form-full" id="form-name" type="text" name="form-name" placeholder="Ваше имя" required>
+                            </div>
+
+                            <div class="form-field-wrapper">
+                                <input class="input-sm form-full" id="form-email" type="email" name="form-email" placeholder="Электронная почта" required>
+                            </div>
+
+                            <div class="form-field-wrapper">
+                                <input class="input-sm form-full" id="form-subject" type="text" name="form-subject" placeholder="Тема">
+                            </div>
+
+                            <div class="form-field-wrapper">
+                                <textarea class="form-full" id="form-message" rows="7" name="form-message" placeholder="Сообщение" required></textarea>
+                            </div>
+
+                            <button class="btn btn-md btn-black form-full" type="submit" id="form-submit" name="submit">Отправить сообщение</button>
+                        </form>
+                        <!-- END Contact FORM -->
+                    </div>
+                </div><!--  **************************************  -->
+            </div>
+        </section>
+        <!-- End Social Section -->
+
+
+
+        <hr />
+
+
+
+
+        <!-- END CONTENT ---------------------------------------------------------------------------->
+
+        <!-- FOOTER -->
+        <footer class="footer pt-80">
+
+            <!-- Copyright Bar -->
+            <section class="copyright pb-60">
+                <div class="container">
+                    <p class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        &copy; 2016 <a><b>ekalan®</b></a>.
+                    </p>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 socials">
+                        <ul>
+                            <li>
+ 
+                                <a class="link" target="_blank" href="https://www.twitter.com/"><i class="ion ion-social-twitter"></i></a>
+                            </li>
+                            <li>
+ 
+                                <h6><a class="link" target="_blank" href="https://www.facebook.com/"><i class="ion ion-social-facebook"></i></a></h6>
+                            </li>
+                            <li>
+
+                                <h6><a class="link" target="_blank" href="https://plus.google.com/"><i class="ion ion-social-googleplus"></i></a></h6>
+                            </li>
+                            <li>
+
+                                <h6><a class="link" target="_blank" href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></h6>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+            <!-- End Copyright Bar -->
+
+        </footer>
+        <!-- END FOOTER -->
+
+        <!-- Scroll Top -->
+        <a class="scroll-top">
+            <i class="fa fa-angle-double-up"></i>
+        </a>
+        <!-- End Scroll Top -->
+
+    </div>
+    <!-- Site Wraper End -->
+
+
+    <!-- JS -->
+
+
+
+    <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script src="js/plugin/jquery.easing.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/plugin/jquery.flexslider.js" type="text/javascript"></script>
+    <script src="js/plugin/background-check.min.js" type="text/javascript"></script>
+    <script src="js/plugin/jquery.fitvids.js" type="text/javascript"></script>
+    <script src="js/plugin/jquery.viewportchecker.js" type="text/javascript"></script>
+    <script src="js/plugin/jquery.stellar.min.js" type="text/javascript"></script>
+    <script src="js/plugin/wow.min.js" type="text/javascript"></script>
+    <script src="js/plugin/jquery.colorbox-min.js" type="text/javascript"></script>
+    <script src="js/plugin/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="js/plugin/isotope.pkgd.min.js" type="text/javascript"></script>
+    <script src="js/plugin/masonry.pkgd.min.js" type="text/javascript"></script>
+    <script src="js/plugin/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+    <script src="js/plugin/jPushMenu.js" type="text/javascript"></script>
+    <script src="js/plugin/jquery.fs.tipper.min.js" type="text/javascript"></script>
+    <script src="js/plugin/mediaelement-and-player.min.js"></script>
+    <script src="js/plugin/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="js/theme.js" type="text/javascript"></script>
+    <script src="js/navigation.js" type="text/javascript"></script>
+    <script src="js/plugin/jquery.singlePageNav.js" type="text/javascript"></script>
+    <script src="js/contact-form.js" type="text/javascript"></script>
+   <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
+   <!--  <script type="text/javascript" src="js/map.js"></script> -->
+    <script type="text/javascript" src="js/jquery.plugin.min.js"></script>  
+    <script type="text/javascript" src="js/jquery.countdown.js"></script>  
+    <script type="text/javascript" src="js/jquery.countdown-ru.js"></script> 
+     <script type="text/javascript" src="js/masonry.pkgd.min.js"></script> 
+     <script type="text/javascript" src="js/imagesloaded.pkgd.js"></script> 
+    <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>

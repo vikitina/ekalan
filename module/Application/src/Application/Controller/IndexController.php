@@ -25,5 +25,15 @@ class IndexController extends AbstractActionController
         ));
     }
 
+    public function portfolioAction()
+    {
+       		
+
+        
+        return new ViewModel(array(
+        
+        ));
+    }    
+
 
 }
