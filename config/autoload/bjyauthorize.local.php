@@ -3,6 +3,8 @@ $dbParams = array(
         'database' => 'ekalan_db',
         'username' => 'root',
         'password' => '1234',
+       // 'password' => 'gLboAVVYxw',
+        
         'hostname' => 'localhost',
 // buffer_results - only for mysqli buffered queries, skip for others
 // 'options' => array('buffer_results' => true)
