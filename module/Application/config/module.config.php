@@ -62,7 +62,7 @@ return array(
                     ),
                 ),
             ),
-
+ 
 
            'msg' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
@@ -132,6 +132,12 @@ return array(
                     $sm->get('Zend\Db\Adapter\Adapter')
                 );
             }, 
+          'sales' => function ($sm) {
+                return new \Application\Model\Sales(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },             
+
          
                      
     ),
@@ -217,8 +223,20 @@ return array(
 
                     return $helper;
                 }, 
-                
+               'GetActiveSale'=> function($sm) {
+                    $helper = new \Application\View\Helper\GetActiveSale();
+                    $helper->getActiveSale($sm -> getServiceLocator()->get('sales'));
 
+                    return $helper;
+                },                 
+                
+               'GetAllSales'=> function($sm) {
+                    $helper = new \Application\View\Helper\GetAllSales();
+                    $helper->getAllSales($sm -> getServiceLocator()->get('sales'));
+
+                    return $helper;
+                },                 
+                
         )
 
 

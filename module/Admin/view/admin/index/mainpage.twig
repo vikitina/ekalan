@@ -1,0 +1,70 @@
+{% extends 'layout/admin.twig' %}
+
+
+{% block content %} 
+<a href="#">Pages</a>
+<hr>
+<div class="row">
+     <div class="col-md-8">
+             <section class="pages_list">
+<div class="tabs b-lrb-none ui-tabs ui-widget ui-widget-content ui-corner-all">
+                        <ul role="tablist" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                              <li aria-expanded="true" aria-selected="true" aria-labelledby="ui-id-1" aria-controls="tabs-1" tabindex="0" role="tab" class="ui-state-default ui-corner-top ui-tabs-active ui-state-active">
+                                   <a id="ui-id-1" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-1"><i class="ion ion-help-circled left"></i>Акции</a>
+                              </li>
+                        <li aria-expanded="false" aria-selected="false" aria-labelledby="ui-id-2" aria-controls="tabs-2" tabindex="-1" role="tab" class="ui-state-default ui-corner-top"> 
+                                    <a id="ui-id-2" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-2"><i class="ion ion-help-buoy left"></i>Отзывы</a>
+                        </li>
+                        <li aria-expanded="false" aria-selected="false" aria-labelledby="ui-id-3" aria-controls="tabs-3" tabindex="-1" role="tab" class="ui-state-default ui-corner-top ui-state-focus"><a id="ui-id-3" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-3"><i class="ion ion-ios-list left"></i>Что-нибудь еще</a></li>
+                    </ul>
+                    <div class="ui-tab-content">
+                        <div aria-hidden="false" role="tabpanel" aria-labelledby="ui-id-1" id="tabs-1" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
+                            <!-- Accordion -->
+                            <div class="accordion" id="sales">
+
+                        {% for sale in  GetAllSales() %}
+                                                                                 
+
+                                <div class="accordion-section">
+                                    <div class="big-checkbox"><input type="checkbox" {{ sale.sales_active=='1' ? 'checked=checked' : '' }}/></div>
+                                    <h6 class="accordion-title{{ sale.sales_active=='1' ? ' active' : '' }}">
+                                         {{ sale.name_sales }}
+                                         
+                                    </h6>
+                                    <div {{ sale.sales_active=='1' ? 'style="display: block;"' : 'style="display: none;"' }} class="accordion-content defualt-hidden">
+                                           <div class="preview_action">{{ sale.sales_markup | raw }}</div>
+                                           <div class="code_action">
+                                                 <span>Править код акции</span>
+                                                 <div>
+                                                       <form class="sales_update">
+                                                           <input type="hidden" value="{{ sale.id }}" name="id" />
+                                                           <input type="checkbox" name="sales_active"/>
+                                                            <div><input value="{{ sale.name_sales }}" name="name_sales" /></div>
+                                                           <textarea name="sales_markup">{{ sale.sales_markup }}</textarea>
+                                                           <input type="submit" value="Запомнить" />
+                                                       </form>
+                                                 </div>
+                                           </div>
+                                      
+
+                                           <div class="clear"></div>
+                                    </div>
+                                </div>
+   
+       {% endfor %}
+    
+ 
+                            </div>
+                            <!-- End Accordion -->
+                        </div>
+                        <div aria-hidden="true" style="display: none;" role="tabpanel" aria-labelledby="ui-id-2" id="tabs-2" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
+                        </div>  
+                        <div aria-hidden="true" style="display: none;" role="tabpanel" aria-labelledby="ui-id-2" id="tabs-3" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
+                        </div>    
+
+                     </div>                         
+                  </div> 
+
+                              </section>
+     </div>      
+                  {% endblock content %}      

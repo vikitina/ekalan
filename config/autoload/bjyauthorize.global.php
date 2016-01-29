@@ -48,18 +48,17 @@ return array(
                                    array('route' => 'zfcuser/changepassword', 'roles' => array('user','admin')),  
                                    array('route' => 'zfcuser/changeemail', 'roles' => array('user','admin')),  
                                    array('route' => 'application\ajax', 'roles' => array('guest','user')),
+
                                    array('route' => 'msg', 'roles' => array('guest')),
-                                   array('route' => 'portfolio', 'roles' => array('guest')),
-                                   array('route' => 'zfcadmin/admin_pages', 'roles' => array('admin')),  
-                                   array('route' => 'zfcadmin/admin_page', 'roles' => array('admin')),  
-                                   array('route' => 'zfcadmin/admin_ajax_up', 'roles' => array('admin')),  
-                                   array('route' => 'zfcadmin/admin_ajax_down', 'roles' => array('admin')), 
-                                   array('route' => 'zfcadmin/admin_update_page', 'roles' => array('admin')),
-                                   array('route' => 'zfcadmin/admin_ajax_del', 'roles' => array('admin')), 
+                                   array('route' => 'portfolio', 'roles' => array('guest','user','admin')),
+                                   array('route' => 'zfcadmin/admin_main_page', 'roles' => array('admin')),  
+                           
+                         
                                    array('route' => 'zfcadmin/admin_msgs', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_msg_open', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_ajax_msgread', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_updatesystem', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_ajax_salesupdate', 'roles' => array('admin')),
                                     array('route' => 'test\mail', 'roles' => array('guest','user')),
                                    
                                 

@@ -1,0 +1,53 @@
+/*  Accordion Tab    ||---------------------------- */
+/*-------------------------------------------------------------------------------------------*/
+.accordion-section {
+    border-top: 1px solid #f1f1f1;
+    border-left: 1px solid #f1f1f1;
+    border-right: 1px solid #f1f1f1;
+}
+
+    .accordion-section:last-child {
+        border-bottom: 1px solid #f1f1f1;
+    }
+
+.accordion-title {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    padding: 20px 20px;
+    margin: 0px;
+}
+
+    .accordion-title.active {
+        /*background: #fafafa;*/
+        color: #e6ae49;
+    }
+
+    .accordion-title:before {
+        content: "\f105";
+        display: block;
+        font-family: "FontAwesome",sans-serif;
+        position: absolute;
+        right: 18px;
+        font-weight: 400;
+    }
+
+    .accordion-title.active:before {
+        content: "\f107";
+    }
+
+.accordion-content.defualt-hidden {
+    display: none;
+    margin: 0;
+}
+
+.accordion-content {
+    padding: 0 20px 10px;
+}
+
+/*------------------*/
+.preview_action{float:left;width:100%;position:relative;}
+.preview_action .sales{margin:0;position:relative;top:0;left:0;}
+.code_action{float:left;width:100%;}
+.code_action textarea{width:100%;height:200px;}
+.clear{clear:both;}

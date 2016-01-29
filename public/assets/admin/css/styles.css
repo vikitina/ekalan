@@ -1,0 +1,77 @@
+html, body {
+    height: 100%;
+}
+.main_container {
+    min-height: 100%;
+    padding-bottom: 90px;
+}
+.footer {
+    margin-top: -53px;
+}
+.navbar-static-top {
+  margin-bottom:20px;
+}
+
+i {
+  font-size:16px;
+}
+
+.nav > li > a {
+  color:#787878;
+}
+  
+footer {
+  margin-top:20px;
+  padding-top:20px;
+  padding-bottom:20px;
+  background-color:#efefef;
+  margin-top:30px;
+}
+
+/* count indicator near icons */
+.nav>li .count {
+  position: absolute;
+  bottom: 12px;
+  right: 6px;
+  font-size: 9px;
+  background: rgba(51,200,51,0.55);
+  color: rgba(255,255,255,0.9);
+  line-height: 1em;
+  padding: 2px 4px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+}
+
+
+/*============================================*/
+.pages_list{width:100%;}
+.pages_list dl{padding:0;margin:0;padding:15px;background:#f7f7f7;width:96%;height:45px;margin-bottom:20px;border-radius: 10px;
+
+    
+    position:absolute;
+
+}
+.pages_list dt{padding:0;margin:0;padding-right:15px;float:left;font-weight:normal;margin-right:30px;line-height: 1.1em;width:200px;}
+.pages_list dt a{font-weight:normal; font-size:1.2em;color:#5d5d5d;}
+.pages_list dd{padding:0;margin:0;float:left;}
+.pages_list dd.del{padding-right:15px;width:35px;height:20px;margin-right:30px;font-size: 1.5em;line-height: 1em;color:#a1a0a0;cursor:pointer;background:red;}
+.pages_list dd.up{padding-right:15px;width:36px;height:20px;margin-right:30px;font-size: 1.5em;line-height: 1em;color:#a1a0a0;cursor:pointer;background:green;}
+.pages_list dd.down{width:35px;height:20px;font-size: 1.5em;line-height: 1em;color:#a1a0a0;cursor:pointer;background:yellow;}
+
+.calculating{position:absolute;top:0;left:0;z-index:1000;width:120%;height:100%;display:none;}
+.calculating .background{width:100%;height:100%;background:#fff;opacity:0.5;}
+.calculating .img{width:100%;height:100%;background:url('../../images/712.png') no-repeat center center;position:absolute;top:0;left:0;z-index:1000;}
+#calculating.process{display:block;}
+
+.unread_msgs{float:left;width:100%;}
+.unread_msgs a{display:block;float:left;height: 30px;line-height:2em;width:80%;}
+.unread_msgs a small{display:block;float:left;}
+.unread_msgs a span{width: 70%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;display:block;float:left;margin-left:1%;}
+.unread_msgs .read{float:right;width:30px;height:30px;}
+.unread_msgs .del_msg{float:right;margin-right: 10px;text-align: center;width: 19px;height:30px;cursor:pointer;}
+
+#system_name{width:90%;}
+#system_new_value{width:90%; height:100px;}

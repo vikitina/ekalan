@@ -10,50 +10,22 @@ return array(
         'routes' => array(
                'zfcadmin' => array(
                       'child_routes' => array(
-                                  'admin_pages' => array(
+      
+     
+
+                                'admin_main_page' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Segment',
                                           'options' => array(
                                               
-                                                    'route' => '/page[/]',
+                                                    'route' => '/page/main',
                                                     
 
                                                     'defaults' => array(
                                                           'controller' => 'Admin\Controller\Index',
-                                                          'action'     => 'index',
+                                                          'action'     => 'mainpage',
                                                       ),
                                             ),
                                     ),
-                                  'admin_page' => array(
-                                  'type' => 'Zend\Mvc\Router\Http\Segment',
-                                          'options' => array(
-                                              
-                                                    'route' => '/page/:id',
-                                                    
-
-                                                    'defaults' => array(
-                                                          'controller' => 'Admin\Controller\Index',
-                                                          'action'     => 'page',
-                                                      ),
-                                            ),
-                                    ),    
-
-
-                                    // /admin/updatepage/    
-
-
-                                'admin_update_page' => array(
-                                  'type' => 'Zend\Mvc\Router\Http\Segment',
-                                          'options' => array(
-                                              
-                                                    'route' => '/updatepage[/]',
-                                                    
-
-                                                    'defaults' => array(
-                                                          'controller' => 'Admin\Controller\Index',
-                                                          'action'     => 'updatepage',
-                                                      ),
-                                            ),
-                                    ), 
 
                                 'admin_msgs' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Segment',
@@ -80,39 +52,19 @@ return array(
                                                           'action'     => 'msgopen',
                                                       ),
                                             ),
-                                    ),                                                                             
+                                    ),       
+               'admin_ajax_salesupdate' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/ajax/sales',
+                    'defaults' => array(
+                        'controller' => 'Admin\Controller\Ajax',
+                        'action'     => 'salesupdate',
+                    ),
+                ),
+            ),
 
-                               'admin_ajax_up' => array(
-                                       'type' => 'Zend\Mvc\Router\Http\Literal',
-                                        'options' => array(
-                                         'route'    => '/ajax/up',
-                                        'defaults' => array(
-                                                  'controller' => 'Admin\Controller\Ajax',
-                                                  'action'     => 'index',
-                                           ),
-                                         ),
-                               ),
-                               'admin_ajax_down' => array(
-                                       'type' => 'Zend\Mvc\Router\Http\Literal',
-                                        'options' => array(
-                                         'route'    => '/ajax/down',
-                                        'defaults' => array(
-                                                  'controller' => 'Admin\Controller\Ajax',
-                                                  'action'     => 'movedown',
-                                           ),
-                                         ),
-                               ),    
-
-                               'admin_ajax_del' => array(
-                                       'type' => 'Zend\Mvc\Router\Http\Literal',
-                                        'options' => array(
-                                         'route'    => '/ajax/del',
-                                        'defaults' => array(
-                                                  'controller' => 'Admin\Controller\Ajax',
-                                                  'action'     => 'delpage',
-                                           ),
-                                         ),
-                               ),   
+ 
 
 
                                ///ajax/msgread                                                        

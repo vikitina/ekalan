@@ -27,6 +27,11 @@ class IndexController extends AbstractActionController
                 'pages'  => $pages
         ));
     }
+    public function mainpageAction(){
+
+
+      
+    }
    public function pageAction()
     {
         $page_id = $this->getEvent()->getRouteMatch()->getParam('id');

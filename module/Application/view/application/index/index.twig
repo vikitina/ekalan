@@ -15,9 +15,9 @@
                 <!-- logo -->
                 <div class="logo">
                     <a href="">
-                        <img class="l-black" src="img/logo-black.png" />
-                        <img class="l-white" src="img/logo-white.png" />
-                        <img class="l-color" src="img/logo-color.png" />
+                        <img class="l-black" src="assets/application/img/logo-black.png" />
+                        <img class="l-white" src="assets/application/img/logo-white.png" />
+                        <img class="l-color" src="assets/application/img/logo-color.png" />
                     </a>
                 </div>
                 <!--End logo-->
@@ -31,7 +31,7 @@
                         </li> -->
 
                         <li>
-                            <a href="#">Наши работы</a>
+                            <a href="#portfolio">Наши работы</a>
                         </li>
                         <li>
                             <a href="#">Материалы</a>
@@ -44,7 +44,7 @@
                         </li>
   
                         <li>
-                            <a href="#">Контакты</a>
+                            <a href="#contacts">Контакты</a>
                         </li>
                     </ul>
                 </nav>
@@ -69,32 +69,8 @@
                 <div class="content-caption light-color parallax parallax-opacity">
 
 
-                          <div class="sales wow fadeInRight animated" data-wow-delay="5000ms" data-wow-duration="1000ms">
-                                 <div class="left">
-                                          <h3>Внимание<br /> акция!</h3> 
-                                          <div class="old_price">Цена:<strike> 480 руб/м</strike></div>
-                                          <div class="new_price">350 руб/м</div>
-                                          <h6>До конца акции:</h6>
-                                          <div class="discount">-27%</div>
-                                          <div class="timer"></div><!--timer  -->
-                                          <div class="message">Оставь заявку прямо сейчас, чтобы зафиксировать скидку</div><!-- message  -->
-                                 </div><!-- left  -->
 
-                                 <div class="right"> 
-                                    <div class="form">  
-                                        <form method="POST" id="selling_campaign">
-                                             <div><input type="text" name="sc_name" required placeholder="Имя, сестра" x-autocompletetype="name" /></div>
-                                             <div><input type="email" name="sc_mail" required placeholder="Адрес электронной почты" x-autocompletetype="email" /></div>
-                                             <div><input type="text" name="sc_phone" required placeholder="Номер телефона" x-autocompletetype="ph" /></div>
-                                             <div><input type="hidden" name="sc_discount" value="27%" /></div>
-                                             <div><input type="submit" value="Отправить"></div>
-                                             
-                                        </form> 
-                                     </div><!-- form  -->
-<div class="garantee">Гарантируем полную конфиденциальность ваших персональных данных</div><!-- message  -->
-                                 </div><!-- right  -->
-                          </div><!--  sales -->
-
+{{ GetActiveSale() }}
 
 
                     <div class="container">
@@ -234,7 +210,7 @@
 
 
         <!-- Testimonials -->
-        <section id="testimonial" class="overlay-dark80 dark-bg ptb ptb-sm-80" style="background-image: url('img/full/22.jpg');" data-stellar-background-ratio="0.5">
+        <section id="testimonial" class="overlay-dark80 dark-bg ptb ptb-sm-80" style="background-image: url('assets/application/img/full/22.jpg');" data-stellar-background-ratio="0.5">
             <div class="container">
                 <div class="owl-carousel testimonial-carousel nf-carousel-theme white">
                     <div class="item">
@@ -268,7 +244,8 @@
         <hr />
 
         <!-- Contant Slider Section -->
-        <section id="contant" class="wow fadeIn ptb ptb-sm-80">
+        <section id="portfolio" class="wow fadeIn ptb ptb-sm-80">
+        <a href="/portfolio" style="padding:10px;border:1px solid #fff;display:block;text-align:center;margin:0 auto;margin-top:-30px;margin-bottom:20px;color:#fff;width:80%">Все наши работы</a>
             <div class="owl-carousel content-carousel content-slider">
                 <div class="item">
                     <div class="container">
@@ -279,8 +256,8 @@
   <div class="grid-sizer"></div>
   <div class="grid-item item-box">
                          
-                            <a class="cbox-gallary1" href="img/pic/k_1.jpg" title="Черное и белое">
-                                <img class="item-container" src="img/pic/k_1.jpg" alt="1" />
+                            <a class="cbox-gallary1" href="assets/application/img/pic/k_1.jpg" title="Черное и белое">
+                                <img class="item-container" src="assets/application/img/pic/k_1.jpg" alt="1" />
                                 <div class="item-mask">
                                     <div class="item-caption">
                                         <h5 class="white">Оптимальные решения</h5>
@@ -292,8 +269,8 @@
   </div>
   <div class="grid-item item-box">
                          
-                            <a class="cbox-gallary1" href="img/pic/k_1.jpg" title="Черное и белое">
-                                <img class="item-container" src="img/pic/k_1.jpg" alt="1" />
+                            <a class="cbox-gallary1" href="assets/application/img/pic/k_1.jpg" title="Черное и белое">
+                                <img class="item-container" src="assets/application/img/pic/k_1.jpg" alt="1" />
                                 <div class="item-mask">
                                     <div class="item-caption">
                                         <h5 class="white">Изысканные формы</h5>
@@ -310,8 +287,8 @@
   </div>
   <div class="grid-item item-box">
                          
-                            <a class="cbox-gallary1" href="img/pic/k_2.jpg" title="Черное и белое">
-                                <img class="item-container" src="img/pic/k_2.jpg" alt="1" />
+                            <a class="cbox-gallary1" href="assets/application/img/pic/k_2.jpg" title="Черное и белое">
+                                <img class="item-container" src="assets/application/img/pic/k_2.jpg" alt="1" />
                                 <div class="item-mask">
                                     <div class="item-caption">
                                         <h5 class="white">Изысканные формы</h5>
@@ -323,8 +300,8 @@
   </div>
   <div class="grid-item item-box">
                          
-                            <a class="cbox-gallary1" href="img/pic/k_3.jpg" title="Черное и белое">
-                                <img class="item-container" src="img/pic/k_3.jpg" alt="1" />
+                            <a class="cbox-gallary1" href="assets/application/img/pic/k_3.jpg" title="Черное и белое">
+                                <img class="item-container" src="assets/application/img/pic/k_3.jpg" alt="1" />
                                 <div class="item-mask">
                                     <div class="item-caption">
                                         <h5 class="white">Природные краски</h5>
@@ -336,8 +313,8 @@
   </div>
   <div class="grid-item item-box">
                          
-                            <a class="cbox-gallary1" href="img/pic/k_4.jpg" title="Черное и белое">
-                                <img class="item-container" src="img/pic/k_4.jpg" alt="1" />
+                            <a class="cbox-gallary1" href="assets/application/img/pic/k_4.jpg" title="Черное и белое">
+                                <img class="item-container" src="assets/application/img/pic/k_4.jpg" alt="1" />
                                 <div class="item-mask">
                                     <div class="item-caption">
                                         <h5 class="white">Изысканные формы</h5>
@@ -367,8 +344,8 @@
   </div>
   <div class="grid-item item-box">
                          
-                            <a class="cbox-gallary1" href="img/pic/k_5.jpg" title="Черное и белое">
-                                <img class="item-container" src="img/pic/k_5.jpg" alt="1" />
+                            <a class="cbox-gallary1" href="assets/application/img/pic/k_5.jpg" title="Черное и белое">
+                                <img class="item-container" src="assets/application/img/pic/k_5.jpg" alt="1" />
                                 <div class="item-mask">
                                     <div class="item-caption">
                                         <h5 class="white">Изысканные формы</h5>
@@ -380,8 +357,8 @@
   </div>
   <div class="grid-item item-box">
                          
-                            <a class="cbox-gallary1" href="img/pic/k_6.jpg" title="Черное и белое">
-                                <img class="item-container" src="img/pic/k_6.jpg" alt="1" />
+                            <a class="cbox-gallary1" href="assets/application/img/pic/k_6.jpg" title="Черное и белое">
+                                <img class="item-container" src="assets/application/img/pic/k_6.jpg" alt="1" />
                                 <div class="item-mask">
                                     <div class="item-caption">
                                         <h5 class="white">Изысканные формы</h5>
@@ -393,8 +370,8 @@
   </div>
   <div class="grid-item item-box">
                          
-                            <a class="cbox-gallary1" href="img/pic/k_7.jpg" title="Черное и белое">
-                                <img class="item-container" src="img/pic/k_7.jpg" alt="1" />
+                            <a class="cbox-gallary1" href="assets/application/img/pic/k_7.jpg" title="Черное и белое">
+                                <img class="item-container" src="assets/application/img/pic/k_7.jpg" alt="1" />
                                 <div class="item-mask">
                                     <div class="item-caption">
                                         <h5 class="white">Изысканные формы</h5>
@@ -406,8 +383,8 @@
   </div>
   <div class="grid-item item-box">
                          
-                            <a class="cbox-gallary1" href="img/pic/k_8.jpg" title="Черное и белое">
-                                <img class="item-container" src="img/pic/k_8.jpg" alt="1" />
+                            <a class="cbox-gallary1" href="assets/application/img/pic/k_8.jpg" title="Черное и белое">
+                                <img class="item-container" src="assets/application/img/pic/k_8.jpg" alt="1" />
                                 <div class="item-mask">
                                     <div class="item-caption">
                                         <h5 class="white">Изысканные формы</h5>
@@ -419,8 +396,8 @@
   </div>
   <div class="grid-item item-box">
                          
-                            <a class="cbox-gallary1" href="img/pic/k_9.jpg" title="Черное и белое">
-                                <img class="item-container" src="img/pic/k_9.jpg" alt="1" />
+                            <a class="cbox-gallary1" href="assets/application/img/pic/k_9.jpg" title="Черное и белое">
+                                <img class="item-container" src="assets/application/img/pic/k_9.jpg" alt="1" />
                                 <div class="item-mask">
                                     <div class="item-caption">
                                         <h5 class="white">Изысканные формы</h5>
@@ -447,8 +424,8 @@
 
   <div class="grid-item item-box">
                          
-                            <a class="cbox-gallary1" href="img/pic/k_10.jpg" title="Черное и белое">
-                                <img class="item-container" src="img/pic/k_5.jpg" alt="1" />
+                            <a class="cbox-gallary1" href="assets/application/img/pic/k_10.jpg" title="Черное и белое">
+                                <img class="item-container" src="assets/application/img/pic/k_5.jpg" alt="1" />
                                 <div class="item-mask">
                                     <div class="item-caption">
                                         <h5 class="white">Изысканные формы</h5>
@@ -460,8 +437,8 @@
   </div>
   <div class="grid-item item-box">
                          
-                            <a class="cbox-gallary1" href="img/pic/k_11.jpg" title="Черное и белое">
-                                <img class="item-container" src="img/pic/k_6.jpg" alt="1" />
+                            <a class="cbox-gallary1" href="assets/application/img/pic/k_11.jpg" title="Черное и белое">
+                                <img class="item-container" src="assets/application/img/pic/k_6.jpg" alt="1" />
                                 <div class="item-mask">
                                     <div class="item-caption">
                                         <h5 class="white">Изысканные формы</h5>
@@ -477,8 +454,8 @@
   </div>
   <div class="grid-item item-box">
                          
-                            <a class="cbox-gallary1" href="img/pic/k_12.jpg" title="Черное и белое">
-                                <img class="item-container" src="img/pic/k_7.jpg" alt="1" />
+                            <a class="cbox-gallary1" href="assets/application/img/pic/k_12.jpg" title="Черное и белое">
+                                <img class="item-container" src="assets/application/img/pic/k_7.jpg" alt="1" />
                                 <div class="item-mask">
                                     <div class="item-caption">
                                         <h5 class="white">Изысканные формы</h5>
@@ -490,8 +467,8 @@
   </div>
   <div class="grid-item item-box">
                          
-                            <a class="cbox-gallary1" href="img/pic/k_13.jpg" title="Черное и белое">
-                                <img class="item-container" src="img/pic/k_8.jpg" alt="1" />
+                            <a class="cbox-gallary1" href="assets/application/img/pic/k_13.jpg" title="Черное и белое">
+                                <img class="item-container" src="assets/application/img/pic/k_8.jpg" alt="1" />
                                 <div class="item-mask">
                                     <div class="item-caption">
                                         <h5 class="white">Изысканные формы</h5>
@@ -503,8 +480,8 @@
   </div>
   <div class="grid-item item-box">
                          
-                            <a class="cbox-gallary1" href="img/pic/k_14.jpg" title="Черное и белое">
-                                <img class="item-container" src="img/pic/k_9.jpg" alt="1" />
+                            <a class="cbox-gallary1" href="assets/application/img/pic/k_14.jpg" title="Черное и белое">
+                                <img class="item-container" src="assets/application/img/pic/k_9.jpg" alt="1" />
                                 <div class="item-mask">
                                     <div class="item-caption">
                                         <h5 class="white">Изысканные формы</h5>
@@ -519,15 +496,15 @@
                     </div>
                 </div>
             </div>
-
+ 
         </section>
 
-               <a href="/portfolio" style="padding:10px;border:1px solid #fff;display:block;margin-top:-60px;color:#fff;float:left;margin-left:20px;">Все наши работы</a>
+              
         <!-- End Contain Slider Section -->
 
 
         <!-- Social Section -->
-        <section id="social" class="gray-bg ptb ptb-sm-80">
+        <section id="contacts" class="gray-bg ptb ptb-sm-80">
             <div class="container text-center">
 
                 <div class="spacer-60"></div>

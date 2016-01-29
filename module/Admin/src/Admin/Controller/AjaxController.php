@@ -35,6 +35,27 @@ class AjaxController extends AbstractActionController
    return $result;
     }
 
+
+        public function salesupdateAction()
+    {
+
+                  $data = $_POST;
+                  $salesSrv    = $this -> getServiceLocator()->get('sales');
+                 
+                  $salesSrv->updateSales($data);
+                  $result = new JsonModel ( array (
+              
+             
+                
+        ) );
+       
+
+         
+   return $result;
+
+
+}   
+
     public function movedownAction()
     {
                   $data = $_POST;

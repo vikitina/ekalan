@@ -77,7 +77,7 @@ class AjaxController extends AbstractActionController
    return $result;
     }
 
-
+               
 
 private function sendMail($data){
 

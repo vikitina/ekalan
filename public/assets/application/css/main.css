@@ -7,26 +7,6 @@ html,body{font-family: 'Roboto', sans-serif;font-weight: 500;background:#dad1c8;
 .header .logo a{margin-top:19px;}
 .header.sticky .logo a{margin-top:12px;}
 
-
-.sales{position:absolute;top:50%;left:85%;margin-left:-200px;box-shadow: 0 0 10px rgba(0,0,0,0.5);background:url(../img/bg_sales.png) repeat top left;width:400px;height:200px;border-radius: 10px;}
-.sales .left{float:left;width:50%;}
-.sales .left h3{color:#003045;font-weight:800;font-size: 2em;text-align: center;padding:0;margin:0;text-transform: uppercase;line-height:0.8em;margin-top:10px;color:#000;margin-bottom:-1px;float:left;width:100%;}
-.sales .left .old_price{float:left;width:100%;color:#003045;}
-.sales .left .new_price{font-size: 1.8em;font-weight:700;float:left;width:100%;color:#003045;margin-bottom:5px;margin-top:-7px;}
-.sales .left .discount{position:absolute;top:40px;left:-48px;padding: 15px;height:74px;border-radius:60px;box-shadow: 0 0 10px rgba(0,0,0,0.5);background:red;text-align:center;font-weight:700;font-size: 1.6em;padding-top:26px;}
-.sales .left h6{font-size:0.7em;float:left;width:100%;color:#fff;}
-.sales .left .timer{width:100%;height:50px;color:#fff;background:none;border:none;float:left;width:100%;margin-top:-15px;}
-.sales .left .timer .countdown-amount{font-size:3em;}
-.sales .left .timer .countdown-period{font-size:1em;margin-top:-14px;}
-.sales .left .message{line-height: 1em;font-size:1.1em;margin-top:-10px;padding-left:4px;padding-right:4px;float:left;width:100%;color:#003045;font-weight:700;}
-.sales .right{float:right;width:49%;padding: 0;padding-top:10px;}                         
-
-
-.sales .right .form{float:left;width: 100%;padding-left: 7px;padding-right:9px;}  
-.sales .right .form div{width:100%;margin-bottom:10px;}
-.sales .right .form div input{border:none;width:100%;border-radius:5px;padding-top:3px;padding-bottom:3px;margin-bottom:0;} 
-.sales .right .form div input[type=submit]{background:#febc53;border-radius:5px; border:none;width:100%;margin-top:4px;font-size: 1.2em;font-weight:700;}
-.sales .right .garantee{float:left;width:100%;line-height: 1em;font-size:0.6em;}
 .content-caption .container{margin-top:-10%;}
 
 .grid {
