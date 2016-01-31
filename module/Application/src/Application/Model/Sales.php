@@ -69,8 +69,46 @@ class Sales extends TableGateway
       $data['sales_active'] = ($data['sales_active']  == 'on')?'1':'0';
     
         parent::update($data, array('id' => $id));
-    } 
+    }
 
+
+public function updatemarkupSales($data){
+
+
+        $query = "UPDATE t_sales SET sales_markup = '".$data['markup']."' where id='".$data['id']."'";
+
+         $adapter = $this->getAdapter();
+                                    
+         $statement = $adapter->createStatement($query);
+         $results = $statement->execute();
+return $query;
+
+}
+public function updateactiveSales($data){
+
+
+        $query = "UPDATE t_sales SET sales_active = '".$data['active']."' where id='".$data['id']."'";
+
+         $adapter = $this->getAdapter();
+                                    
+         $statement = $adapter->createStatement($query);
+         $results = $statement->execute();
+return $query;
+
+}
+
+public function updateoffallactiveSales(){
+
+
+        $query = "UPDATE t_sales SET sales_active = '0'";
+
+         $adapter = $this->getAdapter();
+                                    
+         $statement = $adapter->createStatement($query);
+         $results = $statement->execute();
+return $query;
+
+}
   
   public function insertSales($data)
     {

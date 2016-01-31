@@ -64,6 +64,31 @@ return array(
                 ),
             ),
 
+
+              'admin_ajax_salesmarkupupdate' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/ajax/updatemarkupsales',
+                    'defaults' => array(
+                        'controller' => 'Admin\Controller\Ajax',
+                        'action'     => 'salesmarkupupdate',
+                    ),
+                ),
+            ),
+
+              'admin_ajax_salesactiveupdate' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/ajax/updateactivesales',
+                    'defaults' => array(
+                        'controller' => 'Admin\Controller\Ajax',
+                        'action'     => 'salesactiveupdate',
+                    ),
+                ),
+            ),              
+
+         
+
  
 
 

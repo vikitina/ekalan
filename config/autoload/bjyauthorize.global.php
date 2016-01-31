@@ -59,6 +59,8 @@ return array(
                                    array('route' => 'zfcadmin/admin_ajax_msgread', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_updatesystem', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_salesupdate', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_ajax_salesmarkupupdate', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_ajax_salesactiveupdate', 'roles' => array('admin')),
                                     array('route' => 'test\mail', 'roles' => array('guest','user')),
                                    
                                 

@@ -2,7 +2,7 @@
 
 
 {% block content %} 
-<a href="#">Pages</a>
+<a href="#">Редактирование главной страницы</a>
 <hr>
 <div class="row">
      <div class="col-md-8">
@@ -26,11 +26,14 @@
                                                                                  
 
                                 <div class="accordion-section">
-                                    <div class="big-checkbox"><input type="checkbox" {{ sale.sales_active=='1' ? 'checked=checked' : '' }}/></div>
+                                    <input type="hidden" value="{{ sale.id }}" name="id" />
+                                   
                                     <h6 class="accordion-title{{ sale.sales_active=='1' ? ' active' : '' }}">
-                                         {{ sale.name_sales }}
+                                     <div class="radio-check"><input type="checkbox" {{ sale.sales_active=='1' ? 'checked=checked' : '' }}/></div>
+                                         <span>{{ sale.name_sales }}</span>
                                          
                                     </h6>
+                                 
                                     <div {{ sale.sales_active=='1' ? 'style="display: block;"' : 'style="display: none;"' }} class="accordion-content defualt-hidden">
                                            <div class="preview_action">{{ sale.sales_markup | raw }}</div>
                                            <div class="code_action">
@@ -49,11 +52,13 @@
 
                                            <div class="clear"></div>
                                     </div>
+ <div class="clear"></div>
+
                                 </div>
    
        {% endfor %}
     
- 
+
                             </div>
                             <!-- End Accordion -->
                         </div>

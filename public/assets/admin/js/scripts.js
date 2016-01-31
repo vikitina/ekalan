@@ -122,4 +122,115 @@ $('#system_save_new_value').on('click',function(event){
 
 
 
+
+/*scripts for sales*/
+$('.edit').mouseover(function(){
+  if(!($(this).parents('.preview_action').hasClass('locked') )){
+  $(this).addClass('hover');
+}
+
+});
+$('.edit').mouseout(function(){
+  $(this).removeClass('hover');
+
+});
+$('.edit').click(function(){
+ if(!($(this).parents('.preview_action').hasClass('locked') )){
+  $(this).removeClass('hover').addClass('active');
+  if(!($(this).hasClass('locked'))){
+        var input = '<div class="textedit"><textarea>'+$(this).text()+'</textarea></div>';
+        var html=$(this).html();
+        $(this).html(html + input);
+         $(this).addClass('locked');
+         $(this).parents('.preview_action').addClass('locked');
+      }
+    }
+  //console.log($(this).text());
+});
+
+
+$('.edit').on('keydown', 'div.textedit>textarea', function (e) {
+    var key = e.which;
+    if(key == 13) {
+      var el_edit = $(this).parents('.edit');
+        el_edit.text($(this).val());
+        el_edit.removeClass('locked');
+        el_edit.parents('.preview_action').removeClass('locked');
+
+
+//собираем значения
+
+       var markup = el_edit.parents('.preview_action').html();
+       var id     = el_edit.parents('.accordion-section').find('input[name="id"]').val();
+       //var data = new object();
+       var data = {
+        'markup' : markup,
+        'id'     : id
+      }
+console.log('markup : '+markup+', id:'+id);
+
+
+    $.ajax({
+                    type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                    url         : 'http://' + location.hostname + '/admin/ajax/updatemarkupsales', // the url where we want to POST
+                    data        :  data, // our data object
+                    dataType    : 'json', // what type of data do we expect back from the server
+                    encode      : true
+                                 
+            })
+     .done(function(data) {
+                
+               //console.log(data.res);
+
+       
+            });
+
+
+
+        return false;
+    }
+});
+/*------------------------------------------------------------------*/
+$('.radio-check').click(function(){
+
+   if(!($(this).hasClass('radio-check-checked'))){
+        $('#sales').find('.radio-check-checked').removeClass('radio-check-checked');
+        $(this).addClass('radio-check-checked');
+        $(this).find('input').attr('checked','checked');
+        var id = $(this).parents('.accordion-section').find('input[name="id"]').val();
+        var data={
+            'active' : 1,
+            'id'     :  id
+
+        }
+  $.ajax({
+                    type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                    url         : 'http://' + location.hostname + '/admin/ajax/updateactivesales', // the url where we want to POST
+                    data        :  data, // our data object
+                    dataType    : 'json', // what type of data do we expect back from the server
+                    encode      : true
+                                 
+            })
+     .done(function(data) {
+                
+               //console.log(data.res);
+
+       
+            });
+
+
+   }
+
+});
+
+
+$('.radio-check').mouseover(function(){
+          $(this).addClass('radio-check-hover');
+
+});
+$('.radio-check').mouseout(function(){
+
+             $(this).removeClass('radio-check-hover');
+});
+
 });

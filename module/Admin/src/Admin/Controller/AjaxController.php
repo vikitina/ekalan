@@ -41,10 +41,10 @@ class AjaxController extends AbstractActionController
 
                   $data = $_POST;
                   $salesSrv    = $this -> getServiceLocator()->get('sales');
-                 
+
                   $salesSrv->updateSales($data);
                   $result = new JsonModel ( array (
-              
+                       
              
                 
         ) );
@@ -55,6 +55,48 @@ class AjaxController extends AbstractActionController
 
 
 }   
+        public function salesmarkupupdateAction()
+    {
+
+                  $data = $_POST;
+                  $salesSrv    = $this -> getServiceLocator()->get('sales');
+
+                  $q = $salesSrv->updatemarkupSales($data);
+                  $result = new JsonModel ( array (
+                       
+             'res' => $q
+                
+        ) );
+       
+
+         
+   return $result;
+
+
+}  
+
+        public function salesactiveupdateAction()
+    {
+
+                  $data = $_POST;
+                  //$data['sales_active'] = ($data['sales_active']  == 'on')?'1':'0';
+
+                  $salesSrv    = $this -> getServiceLocator()->get('sales');
+                  $salesSrv -> updateoffallactiveSales();
+                  
+                  $q = $salesSrv->updateactiveSales($data);
+                  $result = new JsonModel ( array (
+                       
+             'res' => $q
+                
+        ) );
+       
+
+         
+   return $result;
+
+
+}  
 
     public function movedownAction()
     {

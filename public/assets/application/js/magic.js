@@ -44,7 +44,7 @@ $('.sales_update').submit(function(event) {
    
         var formData = $( this ).serialize() ;
         
-        console.log( $( this ).serialize() );
+       // console.log( $( this ).serialize() );
 
         $.ajax({
             type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
@@ -61,7 +61,7 @@ $('.sales_update').submit(function(event) {
                 $(this).parents('.accordion-content').find('.preview_action').html(data.sales_markup);//data.sales_markup
                 
                 // log data to the console so we can see
-                console.log('asdasdasdasdasd     '+data.sales_markup); 
+                //console.log('asdasdasdasdasd     '+data.res); 
 
                 // here we will handle errors and validation messages
             });
