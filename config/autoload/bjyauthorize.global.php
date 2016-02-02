@@ -50,6 +50,10 @@ return array(
                                    array('route' => 'application\ajax', 'roles' => array('guest','user')),
 
                                    array('route' => 'msg', 'roles' => array('guest')),
+
+                                   array('route' => 'inners_service', 'roles' => array('guest','user','admin')),
+                                   array('route' => 'inners_service_getmaterial', 'roles' => array('guest','user','admin')),
+
                                    array('route' => 'portfolio', 'roles' => array('guest','user','admin')),
                                    array('route' => 'zfcadmin/admin_main_page', 'roles' => array('admin')),  
                            
@@ -61,7 +65,7 @@ return array(
                                    array('route' => 'zfcadmin/admin_ajax_salesupdate', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_salesmarkupupdate', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_salesactiveupdate', 'roles' => array('admin')),
-                                    array('route' => 'test\mail', 'roles' => array('guest','user')),
+                                  array('route' => 'test\mail', 'roles' => array('guest','user')),
                                    
                                 
 

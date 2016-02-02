@@ -84,7 +84,31 @@ return array(
                     ),
                 ),
             ), 
-          
+
+
+
+           'inners_service' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/inners',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Tester',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),   
+
+                  
+           'inners_service_getmaterial' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/inners/getmaterial',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Tester',
+                        'action'     => 'getmaterial',
+                    ),
+                ),
+            ),           
         ),
     ),
     'service_manager' => array(
@@ -137,8 +161,17 @@ return array(
                     $sm->get('Zend\Db\Adapter\Adapter')
                 );
             },             
-
-         
+          'material' => function ($sm) {
+                return new \Application\Model\Materials(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },    
+          'sample' => function ($sm) {
+                return new \Application\Model\Sample(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },    
+                  
                      
     ),
     ),

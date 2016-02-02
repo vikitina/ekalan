@@ -19,85 +19,96 @@ use Zend\Mime\Part as MimePart;
 use Zend\Mail\Transport\SmtpOptions;
 class TesterController extends AbstractActionController
 {
-    public function mailAction()
+    public function indexAction()
     {
-
-        //amount=%241000+-+%243299   firstName=name    company=company   email=asd%40gmail.com    phone=asda%40asdas.xcv  msg_text=
-        //amount=%241000+-+%243299   firstName=asdasdasd  company=asdasdasd  email=asd%40gmail.com  phone=123123123123  msg_text=asdasdasdasdasd#
-
-        //может быть забираем сообщение аяксом, говорим спасибо, ждем 5 сек, убираем "спасибо", очищаем форму
+ 
 
 
-                
-                  $content = 'qweqweqweqwe';
-                
-                  $content .= '<h3> The necessary work:</h3><ul>'	;
-                  $content .= '<li>asdasdasdasd</li>';
-                  $content .= '</ul>';
-                  $this->  sendMail($content);
+  /*    $materialSrv    = $this -> getServiceLocator()->get('material');
+         $f = fopen("/var/www/ekalan/public/data/materials.csv", "r");
+         while(!feof($f)) { 
+              echo fgets($f) . "<br />";
+              $data = array(
+
+                'name_material' => fgets($f),
+                'price_material' => '100',
+                'id_manufacturer' => '1',
+                'id_sample' => '1'
+              );
+        $materialSrv->insertMaterial($data);
+  }
+  fclose($f);
+
+*/
+ 
+
+/*
+     $sampleSrv    = $this -> getServiceLocator()->get('sample');
+         $f = fopen("/var/www/ekalan/public/assets/application/samples/list_file.txt", "r");
+         while(!feof($f)) { 
+              echo fgets($f) . "<br />";
+              $data = array(
+
+                'url' => fgets($f),
+  
+              );
+        $sampleSrv->insertSample($data);
+  }
+  fclose($f);
+
+*/
+ 
+/* $materialSrv    = $this -> getServiceLocator()->get('material');
+  $sampleSrv    = $this -> getServiceLocator()->get('sample');
+  
+  $materials = $materialSrv -> getAllMaterials();
+  foreach ($materials as $item) {
+    //$word = str_replace(" ", "%", $item['name_material']);
+    $word = trim(preg_replace('/ +/', '%', $item['name_material']));
+    //echo $word.'<br>';
+    $res = $sampleSrv -> getSampleByUrl($word );
+    //echo $res['id'].'<br>';
+    $data = array(
+       'id' => $item['id'],
+       'id_sample' => $res['id']
+      );
+    $materialSrv -> updateSampleMaterial($data);
+  }
+
+return new ViewModel();
+*/
+
+  //выбрать все материалы
+
+  // вернуть аяксом
+ $materialSrv    = $this -> getServiceLocator()->get('material');
+  
+          header('Access-Control-Allow-Origin: *');
+     //   header('Access-Control-Allow-Methods: GET, POST, PUT');
+     //   header("Access-Control-Allow-Headers: X-Requested-With, Content-Type");
+  $materials = $materialSrv -> getAllMaterials();
+
+              return  $result = new JsonModel ( array (
+      
+                  'res' => $materials
+               // 'res'=> '123'
+        ) );
 
  }
 
-
-
-private function sendMail($data){
-
-/*
-	      $message = new Message();
-          $message->addTo('vikitina@gmail.com')
-                  ->addFrom('vikitina@gmail.ru')
-                  ->setSubject('Сообщение с сайта TARA');
-     
-// Setup SMTP transport using LOGIN authentication
-          $transport = new SmtpTransport();
-          $options   = new SmtpOptions(array(
-                  'host'              => 'smtp.gmail.com',
-                  'connection_class'  => 'login',
-                  'connection_config' => array(
-                 'ssl'       => 'tls',
-                //  'username' => 'tarawebstudio@gmail.com',
-                //  'password' => 'qwerty7782'
-                  'username' => 'vikitina@gmail.com',
-                  'password' => 'vikabibika0987654321'
-
-            ),
-          'port' => 587,
-          ));
-          $p = $data;
-        
+public function getmaterialAction(){
+         $data = $_POST;
+         header('Access-Control-Allow-Origin: *');
+         $materialSrv    = $this -> getServiceLocator()->get('material');
+         $material = $materialSrv -> getMaterial($data['id']);
+return   new JsonModel ( array (
+      
+                  'res' => $material
                
-          $html = new MimePart($p);
-          $html->type = "text/html";
-
-          $body = new MimeMessage();
-          $body->addPart($html);
-
-          $message->setBody($body);
-
-          $transport->setOptions($options);
-          $transport->send($message);
-*/
-
-  $message = new Message();
-  $message->setBody($data);
-$message->setFrom('kinjalshah96@gmail.com');
-$message->addTo('vikitina@gmail.com');
-$message->setSubject('Test subject');
-$smtpOptions = new SmtpOptions();
-$smtpOptions->setHost('smtp.gmail.com')                                             
-            ->setName('smtp.gmail.com')
-            ->setPort(587)
-            ->setConnectionClass('login')
-            ->setConnectionConfig(array(
-                               'username' => 'tarawebstudio@gmail.com',
-                               'password' => 'Bricks_7782',
-                               'ssl' => 'tls',
-                              // 'host'=>'localhost:8080',                                                                 
-                             )
-                  );
-$transport = new SmtpTransport($smtpOptions);
-$transport->send($message);
+        ) );
 
 }
+
+
 
 }
