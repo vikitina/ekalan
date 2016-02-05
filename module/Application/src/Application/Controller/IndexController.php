@@ -18,9 +18,12 @@ class IndexController extends AbstractActionController
     public function indexAction()
     {
        		
+        $manufacturerSrv = $this -> getServiceLocator()->get('manufacturer');
+        $manufacturers = $manufacturerSrv->getAllManufacturers();
 
         
         return new ViewModel(array(
+            'manufacturers' => $manufacturers
         
         ));
     }

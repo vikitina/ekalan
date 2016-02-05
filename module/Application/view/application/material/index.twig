@@ -1,0 +1,58 @@
+ 
+{% extends 'layout/material.twig' %}
+
+
+{% block content %}
+<form id="filter">
+     <input type="hidden" id="id_manufacturer" name="id_manufacturer" value="{{data.id_manufacturer}}" />
+     <input type="hidden" id="id_color" name="id_color" value="" />
+     <input type="hidden" id="id_texture" name="id_texture" value="" />
+</form>
+
+
+        <!-- Work Detail Section -->
+        <section class="ptb ptb-sm-80">
+            <div class="container">
+
+                 <ul id="manufacturers_line">
+                         {% for manufacturer in blocks.manufacturers %}
+                 	             <li class="filter{{ (manufacturer.id == data.id_manufacturer)? ' selected': '' }}" data-name="id_manufacturer" data-value="{{ manufacturer.id }}">{{ manufacturer.name_manufacturer }}</li>
+                 	      {% endfor %}
+
+                 </ul><!-- manufacturers_line -->
+
+                <ul id="colors_line">
+                         {% for color in blocks.colors %}
+                 	             <li class="filter" data-name="id_color" data-value="{{ color.id }}" style="background:{{color.color_color}}" title="{{ color.name_color }}"></li>
+                 	      {% endfor %}
+
+                 </ul><!-- colors_line -->
+
+                <ul id="textures_line">
+                         {% for texture in blocks.textures %}
+                 	             <li class="filter" data-name="id_texture" data-value="{{ texture.id }}">{{ texture.name_texture }}</li>
+                 	      {% endfor %}
+
+                 </ul><!-- textures_line -->    
+
+
+                 <ul class="set_material">
+                      {% for material in set_material %}
+                               <li style="background:url(/assets/application/samples/{{ material.url }}) no-repeat top left;"> 
+                                    <dt>
+                                          {{ material.name_material }} 
+                                     </dt>
+                                     <dd>{{ material.articul }} </dd>
+                                      <dd>{{ material.collection }} </dd>
+                               </li>
+                      {% endfor %}
+                  </ul>
+            </div><!-- container  -->
+
+        </section>
+        <!-- End Work Detail Section -->
+
+
+        <!-- End CONTENT ------------------------------------------------------------------------------>
+    
+{% endblock content %}

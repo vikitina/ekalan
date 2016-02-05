@@ -22,7 +22,28 @@ class Materials extends TableGateway
 
  
     }
+    public function getSpecOrder($data){
+     $query = "SELECT t_material.*,"
+              ." t_sample.url as url,"
+              ." t_collection.name_collection as collection"
+              ." FROM `t_material` "
+              ." JOIN t_collection on t_material.id_collection = t_collection.id"
+              ." JOIN t_sample on t_material.id_sample = t_sample.id"
 
+               ." WHERE 1"
+               .((isset($data['id_manufacturer']) && $data['id_manufacturer'] != '')?" AND t_material.id_manufacturer = '".$data['id_manufacturer']."'":"")
+               .((isset($data['id_color']) && $data['id_color'] != '')?" AND t_material.id_color = '".$data['id_color']."'":"")
+               .((isset($data['id_texture']) && $data['id_texture'] != '')?" AND t_material.id_texture = '".$data['id_texture']."'":"")
+               ;
+
+
+
+     $adapter = $this->getAdapter();
+     $results = $this->FetchAll($adapter, $query); 
+         //var_dump($results)                           ;
+     return $results;
+
+    }
     public function getAllMaterials()
     { 
 $query = "SELECT t_material.*,t_sample.url as url FROM `t_material` join t_sample on t_material.id_sample=t_sample.id";
@@ -35,7 +56,18 @@ $query = "SELECT t_material.*,t_sample.url as url FROM `t_material` join t_sampl
          //var_dump($results)                           ;
         return $results;
     } 
+    public function getAllMaterials1()
+    { 
 
+        $query = "SELECT * from t_material";
+
+    
+                            
+         $adapter = $this->getAdapter();
+             $results = $this->FetchAll($adapter, $query); 
+         //var_dump($results)                           ;
+        return $results;
+    } 
    public function getMaterial($id)
     { 
 

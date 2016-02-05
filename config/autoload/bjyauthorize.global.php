@@ -53,8 +53,11 @@ return array(
 
                                    array('route' => 'inners_service', 'roles' => array('guest','user','admin')),
                                    array('route' => 'inners_service_getmaterial', 'roles' => array('guest','user','admin')),
+                                   array('route' => 'tester', 'roles' => array('guest','user','admin')),
 
                                    array('route' => 'portfolio', 'roles' => array('guest','user','admin')),
+                                   array('route' => 'material', 'roles' => array('guest', 'user')),
+                                   array('route' => 'material_ajax', 'roles' => array('guest', 'user')),
                                    array('route' => 'zfcadmin/admin_main_page', 'roles' => array('admin')),  
                            
                          

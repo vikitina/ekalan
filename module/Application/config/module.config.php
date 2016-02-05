@@ -73,7 +73,28 @@ return array(
                         'action'     => 'msg',
                     ),
                 ),
-            ),           
+            ),    
+
+           'material' => array(
+                'type' => 'Zend\Mvc\Router\Http\Segment',
+                'options' => array(
+                    'route'    => '/material/:name_material',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Material',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),         
+          'material_ajax' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/materialajax',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Material',
+                        'action'     => 'ajax',
+                    ),
+                ),
+            ),    
            'portfolio' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
@@ -108,7 +129,20 @@ return array(
                         'action'     => 'getmaterial',
                     ),
                 ),
-            ),           
+            ),   
+           'tester' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/tester',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Tester',
+                        'action'     => 'tester',
+                    ),
+                ),
+            ),   
+
+
+
         ),
     ),
     'service_manager' => array(
@@ -171,7 +205,27 @@ return array(
                     $sm->get('Zend\Db\Adapter\Adapter')
                 );
             },    
-                  
+         'color' => function ($sm) {
+                return new \Application\Model\Color(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },      
+         'texture' => function ($sm) {
+                return new \Application\Model\Texture(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },    
+          'manufacturer' => function ($sm) {
+                return new \Application\Model\Manufacturer(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },  
+          'collection' => function ($sm) {
+                return new \Application\Model\Collection(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },              
+           
                      
     ),
     ),
@@ -190,6 +244,7 @@ return array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
             'Application\Controller\Ajax' => 'Application\Controller\AjaxController',
             'Application\Controller\Tester' => 'Application\Controller\TesterController',
+            'Application\Controller\Material' => 'Application\Controller\MaterialController',
         ),
     ),
     'view_manager' => array(
@@ -200,12 +255,15 @@ return array(
         'exception_template'       => 'error/index',
         'template_map' => array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.twig',
-            'layout/portfolio'           => __DIR__ . '/../view/layout/portfolio.twig',
+            'layout/portfolio'        => __DIR__ . '/../view/layout/portfolio.twig',
+            'layout/material'        => __DIR__ . '/../view/layout/material.twig',
             'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.twig',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
             'errors/403'              => __DIR__ . '/../view/error/403.twig',
             'user/login'              => __DIR__ . '/../view/application/user/login.twig',
+            'tester/some'             => __DIR__ . '/../view/application/tester/some.twig',
+            'material/materialset'             => __DIR__ . '/../view/application/material/materialset.twig',
 
         ), 
         'template_path_stack' => array(

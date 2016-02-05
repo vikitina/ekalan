@@ -1,0 +1,24 @@
+<?php if ($this->key !=null){?>
+<?php foreach ($this->key as $item){ ?>
+
+<li style="background:url(/assets/application/samples/<?php echo $item['url'] ?>) no-repeat top left;"> 
+<dl>
+                                    <dt>
+                                          
+                                          <?php echo $item['name_material'] ?>
+                                     </dt>
+                                     <dd>
+                                        
+                                        <?php echo $item['articul'] ?>
+                                        </dd>
+                                      <dd>
+                                      
+                                       <?php echo $item['collection'] ?>
+                                      </dd>
+                               </li>
+</dl>
+
+<?php }}else {?> 
+          <h3>Ничего не найдено</h3> 
+          <?php }?>
+

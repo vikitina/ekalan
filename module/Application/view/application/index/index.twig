@@ -15,9 +15,9 @@
                 <!-- logo -->
                 <div class="logo">
                     <a href="">
-                        <img class="l-black" src="assets/application/img/logo-black.png" />
-                        <img class="l-white" src="assets/application/img/logo-white.png" />
-                        <img class="l-color" src="assets/application/img/logo-color.png" />
+                        <img class="l-black" src="/assets/application/img/logo-black.png" />
+                        <img class="l-white" src="/assets/application/img/logo-white.png" />
+                        <img class="l-color" src="/assets/application/img/logo-color.png" />
                     </a>
                 </div>
                 <!--End logo-->
@@ -117,12 +117,10 @@
                 <div class="row mt-80">
                     <div class="col-md-4 mb-30">
                         <h4>Столешницы европейского уровня</h4>
-                        <ul>
-                            <li><b>Montelli</b> - от $122 м.пог.</li>   
-                            <li><b>Tristone</b> - от $139 м.пог.</li> 
-                            <li><b>Hanex</b> - от $162 м.пог.</li> 
-                            <li><b>Staron</b> - от $184 м.пог.</li> 
-                            <li><b>Blastone</b> - от $199 м.пог.</li> 
+                        <ul class="list_manufacturer">
+                            {% for m in manufacturers %}
+                                 <li><a href="/material/{{ m.name_manufacturer }}">{{ m.name_manufacturer }}</a></li>   
+                             {% endfor %}
                         </ul>
                     </div>
                     <div class="col-md-4 mb-30">
