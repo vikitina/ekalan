@@ -229,7 +229,7 @@ CREATE TABLE IF NOT EXISTS `t_sample` (
   }
 */
 //return new ViewModel();
- 
+ /*
 $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
 $value = array('1','2','3','4');
 $html = $partial('tester/some', array("key" => $value));
@@ -237,7 +237,8 @@ return new ViewModel(array(
      'some' => $html
   )
 
-  );
+  );*/
+//$this->sendMail();
 
 }
 function f_insert($name,$id_manufacturer,$id_collection,$materialSrv){
@@ -279,6 +280,51 @@ function f_insert($name,$id_manufacturer,$id_collection,$materialSrv){
   }
   fclose($f);
 return $i;
+}
+
+private function sendMail(){
+
+
+        $message = new Message();
+          $message->addTo('sergey.slivkin@gmail.com') //vikitina@gmail.com sergey.mudrik@gmail.com slivkin@gera-it.com sergey.slivkin@gmail.com sergey.mudrik@gmail.com
+                  ->addFrom('vikitina@gmail.ru')
+                  ->setSubject('тестируем письмо');
+     
+// Setup SMTP transport using LOGIN authentication
+          $transport = new SmtpTransport();
+          $options   = new SmtpOptions(array(
+                  'host'              => 'smtp.gmail.com',
+                  'connection_class'  => 'login',
+                  'connection_config' => array(
+                  'ssl'       => 'tls',
+     //             'username' => 'tarawebstudio@gmail.com',
+    //              'password' => 'Bricks_7782'
+                 'username' => 'vikitina@gmail.com',
+                  'password' => 'vikabibika0987654321'
+
+
+            ),
+
+          'port' => 587,
+//'port' => 465,
+          ));
+          $p = "";
+          $f = fopen('/var/www/ekalan/public/data/letter.html', "r");
+          while(!feof($f)) {
+           $p .= fgets($f);
+           }
+           fclose($f);
+               
+          $html = new MimePart($p);
+          $html->type = "text/html";
+
+          $body = new MimeMessage();
+          $body->addPart($html);
+
+          $message->setBody($body);
+
+          $transport->setOptions($options);
+          $transport->send($message);
 }
 
 }

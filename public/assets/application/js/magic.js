@@ -1,4 +1,4 @@
-// magic.js
+
 $(document).ready(function() {
 
     // process the form
@@ -72,15 +72,48 @@ $('.sales_update').submit(function(event) {
 
 
 $('.filter').click(function(){
+       var data = new Object();
+
        $(this).parent().find('.selected').removeClass('selected');
        $(this).addClass('selected');
        var name = '#'+$(this).attr('data-name');
        var value = $(this).attr('data-value');
        $(name).val(value);
+       
+
+       data['manufacturer'] = $('#id_manufacturer').attr('data-name');//?????????????????????/
+       data['id_color'] = $('#id_color').val();
+       console.log('color .... '+data['id_color']);
+       data['id_texture'] = $('#id_texture').val();
+       Hash.set(data);
+
        var data = $('#filter').serialize();
  $.ajax({
             type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
             url         : 'http://' + location.hostname + '/materialajax', // the url where we want to POST
+            data        : data, // our data object
+            dataType    : 'json', // what type of data do we expect back from the server
+            encode          : true
+                                 
+        })
+        .done(function(data) {
+               
+               
+                $('.set_material').html(data.res);
+                console.log('query     '+data.query); 
+                 console.log('id_color =      '+data.id_color); 
+                 //console.log('html =      '+data.res); 
+                
+            });       
+});
+
+
+$('.set_material').on('click','li',function(){
+
+       var id = $(this).attr('data-sample');
+ $.ajax({
+            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url         : 'http://' + location.hostname + '/sampleajax', // the url where we want to POST
             data        : data, // our data object
             dataType    : 'json', // what type of data do we expect back from the server
             encode          : true
@@ -93,7 +126,8 @@ $('.filter').click(function(){
                 console.log('asdasdasdasdasd     '+data.res); 
                 $('.set_material').html(data.res);
                 // here we will handle errors and validation messages
-            });       
+            });         
+
 });
 
 

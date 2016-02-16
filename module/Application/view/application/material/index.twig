@@ -4,9 +4,9 @@
 
 {% block content %}
 <form id="filter">
-     <input type="hidden" id="id_manufacturer" name="id_manufacturer" value="{{data.id_manufacturer}}" />
-     <input type="hidden" id="id_color" name="id_color" value="" />
-     <input type="hidden" id="id_texture" name="id_texture" value="" />
+     <input type="hidden" id="id_manufacturer" name="id_manufacturer" data-name="{{ data.manufacturer }}" value="{{ data.id_manufacturer }}" />
+     <input type="hidden" id="id_color" name="id_color" value="{{ data.id_color }}" />
+     <input type="hidden" id="id_texture" name="id_texture" value="{{ data.id_texture }}" />
 </form>
 
 
@@ -15,6 +15,7 @@
             <div class="container">
 
                  <ul id="manufacturers_line">
+                               <li class="filter" data-name="id_manufacturer" data-value="0">Все</li>
                          {% for manufacturer in blocks.manufacturers %}
                  	             <li class="filter{{ (manufacturer.id == data.id_manufacturer)? ' selected': '' }}" data-name="id_manufacturer" data-value="{{ manufacturer.id }}">{{ manufacturer.name_manufacturer }}</li>
                  	      {% endfor %}
@@ -22,30 +23,24 @@
                  </ul><!-- manufacturers_line -->
 
                 <ul id="colors_line">
+                                 <li class="filter" data-name="id_color" title="Все цвета" data-value="0">X</li>
                          {% for color in blocks.colors %}
-                 	             <li class="filter" data-name="id_color" data-value="{{ color.id }}" style="background:{{color.color_color}}" title="{{ color.name_color }}"></li>
+                 	             <li class="filter{{ (color.id == data.id_color)? ' selected': '' }}" data-name="id_color" data-value="{{ color.id }}" style="background:{{color.color_color}}" title="{{ color.name_color }}"></li>
                  	      {% endfor %}
 
                  </ul><!-- colors_line -->
 
                 <ul id="textures_line">
+                                 <li class="filter" data-name="id_texture" data-value="0">Все</li>
                          {% for texture in blocks.textures %}
-                 	             <li class="filter" data-name="id_texture" data-value="{{ texture.id }}">{{ texture.name_texture }}</li>
+                 	             <li class="filter{{ (texture.id == data.id_texture)? ' selected': '' }}" data-name="id_texture" data-value="{{ texture.id }}">{{ texture.name_texture }}</li>
                  	      {% endfor %}
 
                  </ul><!-- textures_line -->    
 
 
                  <ul class="set_material">
-                      {% for material in set_material %}
-                               <li style="background:url(/assets/application/samples/{{ material.url }}) no-repeat top left;"> 
-                                    <dt>
-                                          {{ material.name_material }} 
-                                     </dt>
-                                     <dd>{{ material.articul }} </dd>
-                                      <dd>{{ material.collection }} </dd>
-                               </li>
-                      {% endfor %}
+{{ set_material_html|raw }}
                   </ul>
             </div><!-- container  -->
 

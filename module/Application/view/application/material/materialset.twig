@@ -1,7 +1,7 @@
 <?php if ($this->key !=null){?>
 <?php foreach ($this->key as $item){ ?>
-
-<li style="background:url(/assets/application/samples/<?php echo $item['url'] ?>) no-repeat top left;"> 
+<?php $url_sample = ((isset($item['url']) && $item['url'] != '' && $item['url'] !=null)?"/assets/application/samples/".$item['url']:"/assets/application/img/no_photo.png");?>
+<li style="background:url(<?php echo $url_sample; ?>) no-repeat center center;"> 
 <dl>
                                     <dt>
                                           
