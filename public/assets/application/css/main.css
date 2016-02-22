@@ -1,5 +1,5 @@
 html,body{font-family: 'Roboto', sans-serif;font-weight: 500;background:#dad1c8;color:#626d71;}/*#f0ece8;*/
-
+.modal-open{overflow:hidden !important;}
 
 .full-intro .header.sticky {background-color:#dad1c8;color: #323232;}
 .almost_full_width{width:60%;}
@@ -121,5 +121,18 @@ html,body{font-family: 'Roboto', sans-serif;font-weight: 500;background:#dad1c8;
 .for_selected_sample{position:relative;}
 #for_selected_sample{position:absolute; float:left;height:120px; background:#fff;box-shadow: 0 0 10px rgba(0,0,0,0.5);border-radius: 26px;}
 #for_selected_sample li{float:left;width:150px;height:150px;border:1px solid #ccc;border-radius: 5px;margin-right:50px;margin-bottom:50px;list-style: none;}
+
+#materialModal{}
+#materialModal .modal-dialog{height: 90%;width:80%;margin-top:100px;}
+#materialModal .modal-content{height: 100%;}
+#materialModal .modal-content .modal-body{height: 80%;}
+#materialModal .modal-body dl{width:100%;height:100%;} 
+#materialModal .modal-body dl dt{height:90%;border:1px solid #ddd;}
+
+#materialModal .modal-body dl dd ul{list-style: none;float: left;width:100%;}
+#materialModal .modal-body dl dd li{margin-bottom: 10px;float: left;width:100%;}
+#materialModal .modal-body dl dd li strong{float:left;width:50%;}
+#materialModal .modal-body dl dd li span{float:left;}
+
 
 footer{background:none;}

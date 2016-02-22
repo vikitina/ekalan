@@ -84,11 +84,24 @@ return array(
                         'action'     => 'index',
                     ),
                 ),
-            ),         
-          'material_ajax' => array(
+            ),  
+
+//materialset  
+
+          'materialset_ajax' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
                     'route'    => '/materialajax',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Material',
+                        'action'     => 'materialset',
+                    ),
+                ),
+            ),                   
+          'material_ajax' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/sampleajax',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Material',
                         'action'     => 'ajax',

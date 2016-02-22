@@ -58,6 +58,7 @@ return array(
                                    array('route' => 'portfolio', 'roles' => array('guest','user','admin')),
                                    array('route' => 'material', 'roles' => array('guest', 'user')),
                                    array('route' => 'material_ajax', 'roles' => array('guest', 'user')),
+                                   array('route' => 'materialset_ajax', 'roles' => array('guest', 'user')),                                   
                                    array('route' => 'zfcadmin/admin_main_page', 'roles' => array('admin')),  
                            
                          

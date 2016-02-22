@@ -15,15 +15,15 @@
             <div class="container">
 
                  <ul id="manufacturers_line">
-                               <li class="filter" data-name="id_manufacturer" data-value="0">Все</li>
+                               <li class="filter{{ (data.id_manufacturer == 0)? ' selected': '' }}" data-name="id_manufacturer" data-value="0" data-title="0">Все</li>
                          {% for manufacturer in blocks.manufacturers %}
-                 	             <li class="filter{{ (manufacturer.id == data.id_manufacturer)? ' selected': '' }}" data-name="id_manufacturer" data-value="{{ manufacturer.id }}">{{ manufacturer.name_manufacturer }}</li>
+                 	             <li class="filter{{ (manufacturer.id == data.id_manufacturer)? ' selected': '' }}" data-name="id_manufacturer" data-value="{{ manufacturer.id }}" data-title="{{ manufacturer.name_manufacturer }}">{{ manufacturer.name_manufacturer }}</li>
                  	      {% endfor %}
 
                  </ul><!-- manufacturers_line -->
 
                 <ul id="colors_line">
-                                 <li class="filter" data-name="id_color" title="Все цвета" data-value="0">X</li>
+                                 <li class="filter{{ (data.id_color == 0)? ' selected': '' }}" data-name="id_color" title="Все цвета" data-value="0">X</li>
                          {% for color in blocks.colors %}
                  	             <li class="filter{{ (color.id == data.id_color)? ' selected': '' }}" data-name="id_color" data-value="{{ color.id }}" style="background:{{color.color_color}}" title="{{ color.name_color }}"></li>
                  	      {% endfor %}
@@ -31,7 +31,7 @@
                  </ul><!-- colors_line -->
 
                 <ul id="textures_line">
-                                 <li class="filter" data-name="id_texture" data-value="0">Все</li>
+                                 <li class="filter{{ (data.id_texture==0)? ' selected': '' }}" data-name="id_texture" data-value="0">Все</li>
                          {% for texture in blocks.textures %}
                  	             <li class="filter{{ (texture.id == data.id_texture)? ' selected': '' }}" data-name="id_texture" data-value="{{ texture.id }}">{{ texture.name_texture }}</li>
                  	      {% endfor %}

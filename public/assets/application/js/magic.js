@@ -79,11 +79,12 @@ $('.filter').click(function(){
        var name = '#'+$(this).attr('data-name');
        var value = $(this).attr('data-value');
        $(name).val(value);
+       $(name).attr('data-title',$(this).attr('data-title'))
        
 
-       data['manufacturer'] = $('#id_manufacturer').attr('data-name');//?????????????????????/
+       data['manufacturer'] = $('#id_manufacturer').attr('data-title');
        data['id_color'] = $('#id_color').val();
-       console.log('color .... '+data['id_color']);
+       
        data['id_texture'] = $('#id_texture').val();
        Hash.set(data);
 
@@ -111,6 +112,8 @@ $('.filter').click(function(){
 $('.set_material').on('click','li',function(){
 
        var id = $(this).attr('data-sample');
+       var data = new Object();
+       data['id'] = id;
  $.ajax({
             type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
             url         : 'http://' + location.hostname + '/sampleajax', // the url where we want to POST
@@ -121,11 +124,27 @@ $('.set_material').on('click','li',function(){
         })
         .done(function(data) {
                
-                
+                var material = data.res;
                 // log data to the console so we can see
-                console.log('asdasdasdasdasd     '+data.res); 
-                $('.set_material').html(data.res);
-                // here we will handle errors and validation messages
+                console.log('asdasdasdasdasd     '+material.url); 
+                console.log('asdasdasdasdasd     '+data.query); 
+               
+                $('#materialModal').modal('show');
+                url = ((material.url != '') && material.url != null) ? "/assets/application/samples/"+material.url : "/assets/application/img/no_photo.png";
+                console.log('url     '+url); 
+                $('#materialModal').find('.modal-body dl dt').css('background', 'url('+url+') no-repeat top left');
+
+                var list = '<ul>';
+                list += '<li><strong>Наименование</strong><span>'+material.name_material+'</span></li>';
+                list += '<li><strong>Артикул</strong><span>'+material.articul+'</span></li>';
+                list += '<li><strong>Производитель</strong><span>'+material.manufacturer+'</span></li>';
+                list += '<li><strong>Коллекция</strong><span>'+material.collection+'</span></li>';
+                list += '<li><strong>Цвет</strong><span>'+material.color+'</span></li>';
+                list += '<li><strong>Текстура</strong><span>'+material.texture+'</span></li>';
+                list += '<li><strong>Цена</strong><span>'+material.price_material+'</span></li>';
+                list += '<li><strong>sample(for trace)</strong><span>'+material.sample+'</span></li>';
+                list += '</ul>';
+                $('#materialModal').find('.modal-body dl dd').html(list);
             });         
 
 });

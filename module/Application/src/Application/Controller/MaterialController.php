@@ -73,6 +73,36 @@ class MaterialController extends AbstractActionController
        		
            $data = $_POST;
            //var_dump($data);
+        /*   foreach ($data as $key => $value) {
+               if(isset($data[$key])) {
+                       $data[$key] .='';
+
+               }
+           }*/
+           $materialSrv    = $this -> getServiceLocator()->get('material');
+           $set_material = $materialSrv->getMaterial($data['id']);
+
+
+         //  $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
+           
+        //   $html = $partial('material/materialset', array("key" => $set_material['result']));           
+           return   new JsonModel ( array (
+      
+                  'res' => $set_material['set'],
+                  'query' => $set_material['query']
+                 // 'query' => $set_material['query'],
+                 // 'id_color' => $data['id_color']
+               
+        ) );
+
+
+    }    
+
+    public function materialsetAction()
+    {/**/
+
+           $data = $_POST;
+           //var_dump($data);
            foreach ($data as $key => $value) {
                if(isset($data[$key])) {
                        $data[$key] .='';
@@ -84,19 +114,24 @@ class MaterialController extends AbstractActionController
 
 
            $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
-           
+
            $html = $partial('material/materialset', array("key" => $set_material['result']));           
            return   new JsonModel ( array (
-      
+
                   'res' => $html,
                   'query' => $set_material['query'],
                   'id_color' => $data['id_color']
-               
+
+
+
+
+
+
         ) );
 
-return new ViewModel(array());
 
-    }    
+
+    }      
 
 
 }

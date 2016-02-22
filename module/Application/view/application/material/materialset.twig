@@ -1,22 +1,19 @@
 <?php if ($this->key !=null){?>
 <?php foreach ($this->key as $item){ ?>
 <?php $url_sample = ((isset($item['url']) && $item['url'] != '' && $item['url'] !=null)?"/assets/application/samples/".$item['url']:"/assets/application/img/no_photo.png");?>
-<li style="background:url(<?php echo $url_sample; ?>) no-repeat center center;"> 
-<dl>
-                                    <dt>
-                                          
-                                          <?php echo $item['name_material'] ?>
-                                     </dt>
-                                     <dd>
-                                        
-                                        <?php echo $item['articul'] ?>
-                                        </dd>
-                                      <dd>
-                                      
-                                       <?php echo $item['collection'] ?>
-                                      </dd>
-                               </li>
-</dl>
+<li style="background:url(<?php echo $url_sample; ?>) no-repeat center center;" data-sample="<?php echo $item['id'] ?>"> 
+   <!--   <dl>
+         <dt>
+            <?php echo $item['name_material'] ?>
+        </dt>
+        <dd>
+            <?php echo $item['articul'] ?>
+       </dd>
+       <dd>
+           <?php echo $item['collection'] ?>
+       </dd>
+   </dl> -->
+ </li>
 
 <?php }}else {?> 
           <h3>Ничего не найдено</h3> 

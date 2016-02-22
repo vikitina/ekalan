@@ -71,16 +71,28 @@ $query = "SELECT t_material.*,t_sample.url as url FROM `t_material` join t_sampl
         return $results;
     } 
    public function getMaterial($id)
-    { 
-
-        //$query = "SELECT * from `t_material` where id ='".$id."'";
-        $query = "SELECT t_material.*,t_sample.url as url, t_manufacturer.name_manufacturer as manufacturer FROM `t_material` join t_sample on t_material.id_sample=t_sample.id join t_manufacturer on t_material.id_manufacturer = t_manufacturer.id where t_material.id = '".$id."'";
+    {        
+        $query =  "SELECT t_material.*, "
+                 ."t_sample.url as url, "
+                 ."t_manufacturer.name_manufacturer as manufacturer, "
+                 ."t_texture.name_texture as texture, "
+                 ."t_color.name_color as color, "
+                 ."t_collection.name_collection as collection "
+                 ."FROM `t_material` "
+                 ."left join t_sample on t_material.id_sample=t_sample.id "
+                 ."left join t_manufacturer on t_material.id_manufacturer = t_manufacturer.id "
+                 ."left join t_texture on t_material.id_texture = t_texture.id "
+                 ."left join t_color on t_material.id_color = t_color.id "
+                 ."left join t_collection on t_material.id_collection = t_collection.id "
+                 ."where t_material.id = '".$id."'";
     
                             
          $adapter = $this->getAdapter();
          $results = $this->FetchAll($adapter, $query);                            
-        return $results[0];
-    }     
+        return array ('set' =>$results[0],'query'=>$query);
+    }   
+
+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     //==========================================================================================================
