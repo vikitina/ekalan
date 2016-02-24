@@ -115,9 +115,9 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .material_list li span{float: left;line-height: 2.5em;}
 
 .stickit {
-    margin-left: 660px;
+
     position: fixed;
-    top: 0;
+    top: 70px;
 }
 
 .stickit-end {

@@ -145,20 +145,22 @@ html,body{font-family: 'Roboto', sans-serif;font-weight: 500;background:#dad1c8;
 
 .clear{clear:both;}
 
-.stickem-container{width:100%;height:100%;}
+.stickem-container{width:100%;height:100%;position:relative;}
+
 
 
 .stickit {
-	margin-left: 660px;
-	position: fixed;
-	top: 0;
+
+    position: fixed;
+    top: 70px;
 }
 
 .stickit-end {
-	bottom: 40px;
-	position: absolute;
-	right: 0;
+    bottom: 40px;
+    position: absolute;
+    right: 0;
 }
+
 
 
 footer{background:none;}
