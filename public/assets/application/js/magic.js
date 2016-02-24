@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-
+  $('.stickem-container').stickem();
     // process the form
     $('form#selling_campaign').submit(function(event) {
 
@@ -69,7 +69,19 @@ $('.sales_update').submit(function(event) {
    event.preventDefault();
 
 });
+     $(window).scroll(function(){
+                 if ($(window).scrollTop() >= $(document).height() - $(window).height() - 800){
+                           var start_count = (parseInt($("#start").val()) - 1)*parseInt($("#limit").val());
+                           if(start_count <= parseInt($("#rowcount").val())) {
+                                       var start = parseInt($("#start").val()) +1;
+                                       $("#start").val(start);
+                                       getmaterial();
+                                  }
 
+
+                                  console.log('scroll');
+                           }
+                        });
 
 $('.filter').click(function(){
        var data = new Object();
@@ -87,27 +99,36 @@ $('.filter').click(function(){
        
        data['id_texture'] = $('#id_texture').val();
        Hash.set(data);
+       $("#start").val(1);
+       $('.set_material').html('');
+       getmaterial();
+});
 
+function getmaterial(){
        var data = $('#filter').serialize();
  $.ajax({
-            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-            url         : 'http://' + location.hostname + '/materialajax', // the url where we want to POST
-            data        : data, // our data object
-            dataType    : 'json', // what type of data do we expect back from the server
+            type        : 'POST', 
+            url         : 'http://' + location.hostname + '/materialajax', 
+            data        : data, 
+            dataType    : 'json', 
             encode          : true
                                  
         })
         .done(function(data) {
                
                
-                $('.set_material').html(data.res);
+                $('.set_material').append(data.res);
+                $('#rowcount').val(data.rowcount);
+                var stickyContainer = $('.stickem-container');
+   stickyContainer.stickem().destroy();
+   stickyContainer.stickem();
                 console.log('query     '+data.query); 
                  console.log('id_color =      '+data.id_color); 
                  //console.log('html =      '+data.res); 
                 
             });       
-});
 
+}
 
 $('.set_material').on('click','li',function(){
 

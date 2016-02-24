@@ -1,0 +1,60 @@
+{% extends 'layout/admin.twig' %}
+
+
+{% block content %}
+<form id="filter">
+     <input type="hidden" id="id_manufacturer" name="id_manufacturer" data-name="{{ data.manufacturer }}" value="0" />
+     <input type="hidden" id="id_color" name="id_color" value="0" />
+     <input type="hidden" id="id_texture" name="id_texture" value="0" />
+     <input type="hidden" id="limit" name="limit" value="{{ limit }}" />
+     <input type="hidden" id="start" name="start" value="1" />
+     <input type="hidden" id="rowcount" name="rowcount" value="{{ rowcount  }}" />
+</form>
+
+
+<a href="/admin/materials">Материалы</a>
+<hr>
+<div class="row">
+     <div class="col-md-8">
+              <section class="">
+
+              <div class="filter_line">
+              	     <div class="filter_articul">
+              	          <label>Артикул</label>
+              	          <input type="text" name="f_articul" />
+              	     </div>
+
+              	     <div class="filter_manufacturer mfilter" data-name="id_manufacturer">
+              	     <label>Производитель</label>
+              	     <select>
+              	             <option value="0">Все</option>
+              	     	{% for manufacturer in filters.manufacturers %}
+                             <option value="{{ manufacturer.id }}">{{ manufacturer.name_manufacturer }}</option>
+                        {% endfor %}
+              	     </select></div>
+
+              	     <div class="filter_color mfilter" data-name="id_color">
+              	     <label>Цвет</label>
+              	     <select>
+              	            <option value="0">Все</option>
+              	     	{% for color in filters.colors %}
+                             <option value="{{ color.id }}">{{ color.name_color }}</option>
+                        {% endfor %}
+              	     </select></div>
+
+              	     <div class="filter_texture mfilter" data-name="id_texture">
+                     <label>Текстура</label>
+              	     <select>
+              	             <option value="0">Все</option>
+              	     	{% for texture in filters.textures %}
+                             <option value="{{ texture.id }}">{{ texture.name_texture }}</option>
+                        {% endfor %}
+              	     </select></div>              	     
+
+              </div>
+              <div class="clear"></div>
+                 <ul class="list-group material_list">{{ materials|raw }}</ul>		
+			</section>
+     </div>       
+
+{% endblock content %}

@@ -53,16 +53,54 @@ return array(
                                                       ),
                                             ),
                                     ),       
-               'admin_ajax_salesupdate' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
-                'options' => array(
-                    'route'    => '/ajax/sales',
-                    'defaults' => array(
-                        'controller' => 'Admin\Controller\Ajax',
-                        'action'     => 'salesupdate',
-                    ),
-                ),
-            ),
+
+                             'admin_materials' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Segment',
+                                          'options' => array(
+                                              
+                                                    'route' => '/materials',
+                                                    
+
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Index',
+                                                          'action'     => 'materials',
+                                                      ),
+                                            ),
+                                    ),  
+                             'admin_material_open' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Segment',
+                                          'options' => array(
+                                              
+                                                    'route' => '/material/:id',
+                                                    
+
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Index',
+                                                          'action'     => 'materialopen',
+                                                      ),
+                                            ),
+                                    ),                                                                               
+                              'admin_ajax_salesupdate' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                  'options' => array(
+                                  'route'    => '/ajax/sales',
+                                  'defaults' => array(
+                                        'controller' => 'Admin\Controller\Ajax',
+                                        'action'     => 'salesupdate',
+                                        ),
+                                   ),
+                               ),
+//materialfilter            
+                             'admin_ajax_materialfilter' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                  'options' => array(
+                                  'route'    => '/ajax/materialfilter',
+                                  'defaults' => array(
+                                        'controller' => 'Admin\Controller\Ajax',
+                                        'action'     => 'materialfilter',
+                                        ),
+                                   ),
+                               ),                  
 
 
               'admin_ajax_salesmarkupupdate' => array(
@@ -125,6 +163,12 @@ return array(
         'template_path_stack' => array(
             __DIR__ . '/../view',
         ),
+
+        'template_map' => array(
+
+            'material/adminmaterialset'    => __DIR__ . '/../view/admin/index/adminmaterialset.twig',
+
+        ),         
 
         'strategies' => array (            
                                            

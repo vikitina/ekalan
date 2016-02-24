@@ -7,21 +7,26 @@
      <input type="hidden" id="id_manufacturer" name="id_manufacturer" data-name="{{ data.manufacturer }}" value="{{ data.id_manufacturer }}" />
      <input type="hidden" id="id_color" name="id_color" value="{{ data.id_color }}" />
      <input type="hidden" id="id_texture" name="id_texture" value="{{ data.id_texture }}" />
+     <input type="hidden" id="limit" name="limit" value="{{ limit }}" />
+     <input type="hidden" id="start" name="start" value="1" />
+     <input type="hidden" id="rowcount" name="rowcount" value="{{ rowcount  }}" />
 </form>
 
 
         <!-- Work Detail Section -->
-        <section class="ptb ptb-sm-80">
-            <div class="container">
-
+        <section class="ptb ptb-sm-80" >
+        <div class="stickem-container">
+               <div id="filter_sidebar" class="stickem">
+                 <h5>Производители</h5>
                  <ul id="manufacturers_line">
-                               <li class="filter{{ (data.id_manufacturer == 0)? ' selected': '' }}" data-name="id_manufacturer" data-value="0" data-title="0">Все</li>
+                               <li class="filter{{ (data.id_manufacturer == 0)? ' selected': '' }} all" data-name="id_manufacturer" data-value="0" data-title="0"><span>Все</span></li>
                          {% for manufacturer in blocks.manufacturers %}
-                 	             <li class="filter{{ (manufacturer.id == data.id_manufacturer)? ' selected': '' }}" data-name="id_manufacturer" data-value="{{ manufacturer.id }}" data-title="{{ manufacturer.name_manufacturer }}">{{ manufacturer.name_manufacturer }}</li>
+                 	             <li class="filter{{ (manufacturer.id == data.id_manufacturer)? ' selected': '' }}" data-name="id_manufacturer" data-value="{{ manufacturer.id }}" data-title="{{ manufacturer.name_manufacturer }}"><span>{{ manufacturer.name_manufacturer }}</span></li>
                  	      {% endfor %}
 
                  </ul><!-- manufacturers_line -->
-
+                 <div class="clear"></div>
+                <h5>Цвет</h5>
                 <ul id="colors_line">
                                  <li class="filter{{ (data.id_color == 0)? ' selected': '' }}" data-name="id_color" title="Все цвета" data-value="0">X</li>
                          {% for color in blocks.colors %}
@@ -29,7 +34,8 @@
                  	      {% endfor %}
 
                  </ul><!-- colors_line -->
-
+                 <div class="clear"></div>
+                <h5>Текстура</h5>
                 <ul id="textures_line">
                                  <li class="filter{{ (data.id_texture==0)? ' selected': '' }}" data-name="id_texture" data-value="0">Все</li>
                          {% for texture in blocks.textures %}
@@ -37,13 +43,14 @@
                  	      {% endfor %}
 
                  </ul><!-- textures_line -->    
-
+           </div><!-- filter_sidebar  -->
 
                  <ul class="set_material">
-{{ set_material_html|raw }}
+                         {{ set_material_html|raw }}
                   </ul>
-            </div><!-- container  -->
-
+           
+              <div class="clear"></div>
+              </div>
         </section>
         <!-- End Work Detail Section -->
 

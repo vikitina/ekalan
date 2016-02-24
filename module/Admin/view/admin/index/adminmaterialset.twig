@@ -1,0 +1,18 @@
+<?php if ($this->key !=null){?>
+<?php foreach ($this->key as $item){ ?>
+<?php //$url_sample = ((isset($item['url']) && $item['url'] != '' && $item['url'] !=null)?"/assets/application/samples/".$item['url']:"/assets/application/img/no_photo.png");?>
+                      <li class="list-group-item"> 
+                           <a href="/admin/material/<?php echo $item['id'] ?>"> 
+                                  <small><?php echo $item['articul'] ?></small>
+                                  <span>
+                                          <?php echo $item['name_material']  ?>
+                                  </span>  
+                           </a>
+                           
+
+                       </li>
+
+<?php }}else {?> 
+          <h3>Ничего не найдено</h3> 
+          <?php }?>
+

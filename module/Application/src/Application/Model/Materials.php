@@ -33,16 +33,22 @@ class Materials extends TableGateway
                ." WHERE 1"
                .((isset($data['id_manufacturer']) && $data['id_manufacturer'] != '' && $data['id_manufacturer'] != null && $data['id_manufacturer'] != '0')?" AND t_material.id_manufacturer = '".$data['id_manufacturer']."'":"")
                .((isset($data['id_color']) && $data['id_color'] != '' && $data['id_color'] != null && $data['id_color'] != '0')?" AND t_material.id_color = '".$data['id_color']."'":"")
-               .((isset($data['id_texture']) && $data['id_texture'] != '' && $data['id_texture'] != null && $data['id_texture'] != '0')?" AND t_material.id_texture = '".$data['id_texture']."'":"")
-               ;
+               .((isset($data['id_texture']) && $data['id_texture'] != '' && $data['id_texture'] != null && $data['id_texture'] != '0')?" AND t_material.id_texture = '".$data['id_texture']."'":"");
+
+      $adapter = $this->getAdapter();
+      $result = $this->FetchAll($adapter, $query); 
+      $rowcount = count($result);
 
 
-     $adapter = $this->getAdapter();
-     $result = $this->FetchAll($adapter, $query); 
+      $query .= (($data['limit'] != 0) ? " limit ".(($data['start'] != 0)? ($data['start']-1)*$data['limit'].", " : "1, ").$data['limit']:"");
+
+      $adapter = $this->getAdapter();
+      $result = $this->FetchAll($adapter, $query); 
          //var_dump($results)                           ;
      return $results = array(
                  'result' => $result,
-                 'query' => $query
+                 'query' => $query,
+                 'rowcount' => $rowcount
          );
 
     }
@@ -70,7 +76,7 @@ $query = "SELECT t_material.*,t_sample.url as url FROM `t_material` join t_sampl
          //var_dump($results)                           ;
         return $results;
     } 
-   public function getMaterial($id)
+   public function getMaterial($id = null, $start = null, $limit = null)
     {        
         $query =  "SELECT t_material.*, "
                  ."t_sample.url as url, "
@@ -84,12 +90,13 @@ $query = "SELECT t_material.*,t_sample.url as url FROM `t_material` join t_sampl
                  ."left join t_texture on t_material.id_texture = t_texture.id "
                  ."left join t_color on t_material.id_color = t_color.id "
                  ."left join t_collection on t_material.id_collection = t_collection.id "
-                 ."where t_material.id = '".$id."'";
+                 ."where 1"
+                 .(($id != null)?" and t_material.id = '".$id."'":"");
     
                             
          $adapter = $this->getAdapter();
          $results = $this->FetchAll($adapter, $query);                            
-        return array ('set' =>$results[0],'query'=>$query);
+        return array ('set' =>$results[0],'query'=>$query,'all'=>$results);
     }   
 
 

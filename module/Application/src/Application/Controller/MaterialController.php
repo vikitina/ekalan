@@ -35,6 +35,7 @@ class MaterialController extends AbstractActionController
         $manufacturerSrv = $this -> getServiceLocator()->get('manufacturer');
         $colorSrv = $this -> getServiceLocator()->get('color');
         $textureSrv = $this -> getServiceLocator()->get('texture');
+        $materialSrv    = $this -> getServiceLocator()->get('material');
 
         $id_manufacturer = $manufacturerSrv->getManufacturerByName($in_data['manufacturer']);
         //echo 'id_manuf  ==  '.$id_manufacturer;
@@ -49,21 +50,25 @@ class MaterialController extends AbstractActionController
         $data_array['id_color'] = isset($in_data['id_color'])?$in_data['id_color']:0;
         $data_array['id_texture'] = isset($in_data['id_texture'])?$in_data['id_texture']:0;
 
-
-        $materialSrv    = $this -> getServiceLocator()->get('material');
+        $limit = 12;
+        $data['limit'] = $limit;
+        
         $set_material = $materialSrv->getSpecOrder($data);
 
         $blocks['manufacturers'] = $manufacturerSrv->getAllManufacturers();
         $blocks['colors'] = $colorSrv->getAllColors();
         $blocks['textures'] = $textureSrv->getAllTextures();
 
-           $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
+        $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
            
-           $set_material_html = $partial('material/materialset', array("key" => $set_material['result']));  
+        $set_material_html = $partial('material/materialset', array("key" => $set_material['result']));  
+        $rowcount = $set_material['rowcount'];
         return new ViewModel(array(
                      'set_material_html' => $set_material_html,
-                     'data'         => $data_array,
-                     'blocks'       => $blocks
+                     'data'              => $data_array,
+                     'blocks'            => $blocks,
+                     'rowcount'          => $rowcount,
+                     'limit'             => $limit       
         ));
         
     }
@@ -89,7 +94,8 @@ class MaterialController extends AbstractActionController
            return   new JsonModel ( array (
       
                   'res' => $set_material['set'],
-                  'query' => $set_material['query']
+                  'query' => $set_material['query'],
+                  
                  // 'query' => $set_material['query'],
                  // 'id_color' => $data['id_color']
                
@@ -118,9 +124,10 @@ class MaterialController extends AbstractActionController
            $html = $partial('material/materialset', array("key" => $set_material['result']));           
            return   new JsonModel ( array (
 
-                  'res' => $html,
-                  'query' => $set_material['query'],
-                  'id_color' => $data['id_color']
+                  'res'       => $html,
+                  'query'     => $set_material['query'],
+                  'id_color'  => $data['id_color'],
+                  'rowcount'  => $set_material['rowcount']
 
 
 

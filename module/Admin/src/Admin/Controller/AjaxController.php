@@ -176,4 +176,28 @@ return $result;
 
         }  
 
+   public function materialfilterAction(){
+
+               
+               $data = $_POST;
+               $materialSrv = $this -> getServiceLocator()->get('material');
+               $set_material = $materialSrv->getSpecOrder($data);
+
+               $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
+               $set_material_html = $partial('material/adminmaterialset', array("key" => $set_material['result']));   
+               $rowcount = $set_material['rowcount'];
+
+               $limit = 10;
+            return  $result = new JsonModel ( array (
+              
+                       'html'      => $set_material_html,
+                       'rowcount'  => $rowcount,
+                       'limit'     => $limit,
+                       'query'     => $set_material['query']
+                
+               ) );
+
+
+        }         
+
 }

@@ -1,0 +1,32 @@
+{% extends 'layout/admin.twig' %}
+
+
+{% block content %}
+<a href="/admin/materials">Материалы</a> / {{ material.name_material }}
+<hr>
+<div class="row">
+     <div class="col-md-8">
+                     <section class="">
+                            <div class="panel panel-default">
+                                      <div class="panel-heading">
+        
+                                              <h4>{{ material.name_material }}</h4>
+                                       </div>
+                                          <div class="panel-body">
+       
+                                                     <p>{{ material.name_material }}</p>
+                                                     <p>{{ material.articul }}</p>
+                                                     <p>{{ material.manufacturer }}</p> 
+                                                     <p>{{ material.color }}</p> 
+                                                     <p>{{ material.texture }}</p> 
+                                                   
+                                                  
+                                         </div>
+                                 </div>   	
+
+
+
+			        </section>
+     </div>       
+
+{% endblock content %}

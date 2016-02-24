@@ -97,6 +97,50 @@ public function msgopenAction()
              
                 'msg'  => $msg
         ));
-    }            
+    }    
+
+public function materialsAction()
+    {
+        $materialSrv    = $this -> getServiceLocator()->get('material');
+        $manufacturerSrv    = $this -> getServiceLocator()->get('manufacturer');
+        $colorSrv    = $this -> getServiceLocator()->get('color');
+        $textureSrv    = $this -> getServiceLocator()->get('texture');
+
+        $filters['manufacturers'] = $manufacturerSrv->getAllManufacturers();
+        $filters['colors'] = $colorSrv->getAllColors();
+        $filters['textures'] = $textureSrv->getAllTextures();        
+        
+        $limit = 10;
+        $data['limit'] = $limit;
+        $set_material = $materialSrv->getSpecOrder($data);
+        $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
+        $set_material_html = $partial('material/adminmaterialset', array("key" => $set_material['result']));  
+     
+        $rowcount = $set_material['rowcount'];
+
+       
+             
+        return new ViewModel(array(
+            'materials' => $set_material_html,
+            'filters'   => $filters,
+            'rowcount'  => $rowcount,
+            'limit'     => $limit            
+        ));
+    }
+
+public function materialopenAction()
+    {
+        $material_id = $this->getEvent()->getRouteMatch()->getParam('id');
+        
+        $materialSrv    = $this -> getServiceLocator()->get('material');
+        
+        $material = $materialSrv ->  getMaterial((int)$material_id); 
+ 
+
+        return new ViewModel(array(
+             
+                'material'  => $material['set']
+        ));
+    }      
 
 }

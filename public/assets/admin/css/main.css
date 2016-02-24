@@ -102,3 +102,29 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .accordion-title span{font-size: 1.2em;margin-left:20px;padding-left:20px;display:block;width:80%;padding-top:5px;line-height: 1.2em;}
 
 .code_action{display:none;}
+
+/*-----------------------------------------*/
+.filter_line{width:100%;float: left;margin-bottom: 20px;}
+.filter_line div{float: left;margin-right: 10px;width:23%;}
+.filter_line div label{float: left;width:100%;}
+.filter_line div input,
+.filter_line div select{float: left;width:100%;}
+
+.material_list li{width:100%;height:50px;}
+.material_list li small{float:left;width:10%;margin-right:20px;text-align: right;line-height: 2.9em;}
+.material_list li span{float: left;line-height: 2.5em;}
+
+.stickit {
+    margin-left: 660px;
+    position: fixed;
+    top: 0;
+}
+
+.stickit-end {
+    bottom: 40px;
+    position: absolute;
+    right: 0;
+}
+
+.clear{clear:both;}
+
