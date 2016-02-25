@@ -131,7 +131,7 @@ html,body{font-family: 'Roboto', sans-serif;font-weight: 500;background:#dad1c8;
 #materialModal .modal-content{height: 100%;}
 #materialModal .modal-content .modal-body{height: 80%;}
 #materialModal .modal-body dl{width:100%;height:300px;} 
-#materialModal .modal-body dl dt{height:90%;border:1px solid #ddd;}
+#materialModal .modal-body dl dt{height:90%;border:1px solid #ddd;background-size: cover;}
 
 #materialModal .modal-body dl dd ul{list-style: none;float: left;width:100%;}
 #materialModal .modal-body dl dd li{margin-bottom: 10px;float: left;width:100%;}
