@@ -77,27 +77,27 @@ class MaterialController extends AbstractActionController
     {/**/
        		
            $data = $_POST;
-           //var_dump($data);
-        /*   foreach ($data as $key => $value) {
-               if(isset($data[$key])) {
-                       $data[$key] .='';
 
-               }
-           }*/
            $materialSrv    = $this -> getServiceLocator()->get('material');
            $set_material = $materialSrv->getMaterial($data['id']);
-
-
-         //  $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
-           
-        //   $html = $partial('material/materialset', array("key" => $set_material['result']));           
+           if($data['analog_color']!='0' || $data['analog_texture']!='0'){
+                          $data['id_color'] = $set_material['set']['id_color'];
+                          $data['id_texture'] = $set_material['set']['id_texture'];
+                          $data['limit'] = 0;
+                          $set_analogs = $materialSrv->getSpecOrder($data);;
+             }
+           $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
+           $html = $partial('material/materialmodal', array(
+                                "material" => $set_material['set'],
+                                "analogs" => (isset($set_analogs))?$set_analogs['result']:null
+                                ));           
            return   new JsonModel ( array (
       
-                  'res' => $set_material['set'],
-                  'query' => $set_material['query'],
+                  'html'  =>$html,
+                  'query' =>   $set_material['query'],
                   
-                 // 'query' => $set_material['query'],
-                 // 'id_color' => $data['id_color']
+                  
+               
                
         ) );
 

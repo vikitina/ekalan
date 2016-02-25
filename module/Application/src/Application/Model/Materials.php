@@ -25,10 +25,17 @@ class Materials extends TableGateway
     public function getSpecOrder($data){
      $query = "SELECT t_material.*,"
               ." t_sample.url as url,"
-              ." t_collection.name_collection as collection"
+              ." t_collection.name_collection as collection,"
+              ." t_color.name_color as color,"
+              ." t_texture.name_texture as texture,"
+              ." t_manufacturer.name_manufacturer as manufacturer"
               ." FROM `t_material` "
               ." LEFT JOIN t_collection on t_material.id_collection = t_collection.id"
               ." LEFT JOIN t_sample on t_material.id_sample = t_sample.id"
+              ." LEFT JOIN t_color on t_material.id_color = t_color.id"
+              ." LEFT JOIN t_texture on t_material.id_texture = t_texture.id"
+              ." LEFT JOIN t_manufacturer on t_material.id_manufacturer = t_manufacturer.id"
+
 
                ." WHERE 1"
                .((isset($data['id_manufacturer']) && $data['id_manufacturer'] != '' && $data['id_manufacturer'] != null && $data['id_manufacturer'] != '0')?" AND t_material.id_manufacturer = '".$data['id_manufacturer']."'":"")

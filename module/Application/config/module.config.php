@@ -277,6 +277,7 @@ return array(
             'user/login'              => __DIR__ . '/../view/application/user/login.twig',
             'tester/some'             => __DIR__ . '/../view/application/tester/some.twig',
             'material/materialset'    => __DIR__ . '/../view/application/material/materialset.twig',
+            'material/materialmodal'    => __DIR__ . '/../view/application/material/materialmodal.twig',
 
         ), 
         'template_path_stack' => array(

@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-  $('.stickem-container').stickem();
+  //$('.stickem-container').stickem();
     // process the form
     $('form#selling_campaign').submit(function(event) {
 
@@ -106,6 +106,7 @@ $('.filter').click(function(){
 
 function getmaterial(){
        var data = $('#filter').serialize();
+       $('.ajax_loader').addClass('.ajax_loader_show');
  $.ajax({
             type        : 'POST', 
             url         : 'http://' + location.hostname + '/materialajax', 
@@ -116,12 +117,12 @@ function getmaterial(){
         })
         .done(function(data) {
                
-               
+                $('.ajax_loader').removeClass('.ajax_loader_show');
                 $('.set_material').append(data.res);
                 $('#rowcount').val(data.rowcount);
-                var stickyContainer = $('.stickem-container');
-   stickyContainer.stickem().destroy();
-   stickyContainer.stickem();
+               // var stickyContainer = $('.stickem-container');
+                //stickyContainer.stickem().destroy();
+                //stickyContainer.stickem();
                 console.log('query     '+data.query); 
                  console.log('id_color =      '+data.id_color); 
                  //console.log('html =      '+data.res); 
@@ -135,6 +136,9 @@ $('.set_material').on('click','li',function(){
        var id = $(this).attr('data-sample');
        var data = new Object();
        data['id'] = id;
+       data['analog_color'] = $('#id_color').val();
+       data['analog_texture'] = $('#id_texture').val();
+       
  $.ajax({
             type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
             url         : 'http://' + location.hostname + '/sampleajax', // the url where we want to POST
@@ -145,27 +149,11 @@ $('.set_material').on('click','li',function(){
         })
         .done(function(data) {
                
-                var material = data.res;
-                // log data to the console so we can see
-                console.log('asdasdasdasdasd     '+material.url); 
-                console.log('asdasdasdasdasd     '+data.query); 
+ 
                
                 $('#materialModal').modal('show');
-                url = ((material.url != '') && material.url != null) ? "/assets/application/samples/"+material.url : "/assets/application/img/no_photo.png";
-                console.log('url     '+url); 
-                $('#materialModal').find('.modal-body dl dt').css('background', 'url('+url+') no-repeat top left');
-
-                var list = '<ul>';
-                list += '<li><strong>Наименование</strong><span>'+material.name_material+'</span></li>';
-                list += '<li><strong>Артикул</strong><span>'+material.articul+'</span></li>';
-                list += '<li><strong>Производитель</strong><span>'+material.manufacturer+'</span></li>';
-                list += '<li><strong>Коллекция</strong><span>'+material.collection+'</span></li>';
-                list += '<li><strong>Цвет</strong><span>'+material.color+'</span></li>';
-                list += '<li><strong>Текстура</strong><span>'+material.texture+'</span></li>';
-                list += '<li><strong>Цена</strong><span>'+material.price_material+'</span></li>';
-                list += '<li><strong>sample(for trace)</strong><span>'+material.sample+'</span></li>';
-                list += '</ul>';
-                $('#materialModal').find('.modal-body dl dd').html(list);
+                $('#materialModal').find('.modal-body').html(data.html);
+ 
             });         
 
 });
