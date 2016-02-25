@@ -22,27 +22,21 @@
   </dl>
        <?php if ($this->analogs !=null){?>
              <h5>Аналоги</h5>
+            <div class="analogs">
                       <?php foreach ($this->analogs as $item){ 
 $url = (($item['url'] != '') && $item['url'] != null) ? "/assets/application/samples/".$material['url'] : "/assets/application/img/no_photo.png";
                         ?>
 
                              <dl>
-                                  <dt class="col-lg-6 col-md-6 col-sm-10 col-xs-11" style="background:url(<?php echo $url;?>) no-repeat top left;"></dt>
-                                  <dd class="col-lg-6 col-md-6 col-sm-10 col-xs-11">
-                                        <ul> 
-                                             <li><strong>Наименование</strong><span><?php echo $item['name_material'] ?></span></li>
-                                             <li><strong>Артикул</strong><span><?php echo $item['articul'] ?></span></li>
-                                             <li><strong>Производитель</strong><span><?php echo $item['manufacturer'] ?></span></li>
-                                             <li><strong>Коллекция</strong><span><?php echo $item['collection'] ?></span></li>
-                                             <li><strong>Цвет</strong><span><?php echo $item['color'] ?></span></li>
-                                             <li><strong>Текстура</strong><span><?php echo $item['texture'] ?></span></li>
-                                             <li><strong>Цена</strong><span><?php echo $item['price_material'] ?></span></li>
-                                             <li><strong>sample(for trace)</strong><span><?php echo $item['sample'] ?></span></li>
-                                       </ul>            
+                                  <dt class="col-lg-6 col-md-6 col-sm-10 col-xs-11" ><?php echo $item['name_material'] ?></dt>
+                                  <dd class="col-lg-6 col-md-6 col-sm-10 col-xs-11" style="background:url(<?php echo $url;?>) no-repeat top left;">
+           
                                 </dd>
-  </dl>
+                           </dl>
 
-       <?php }} ?> 
+       <?php } ?> 
+         </div>
+       <?php } ?> 
 
 <?php }?>
 
