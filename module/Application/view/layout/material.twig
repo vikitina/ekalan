@@ -72,7 +72,9 @@
 
                             <!-- End Nav Dropdown -->
                         </li>
-
+                       {% if ( isAllowed('admin_button', 'see_button'))  %}
+                         <li> <a href="/admin" style="color:yellow;">Админ</a></li>
+                        {% endif %}
   
                     </ul>
                 </nav>

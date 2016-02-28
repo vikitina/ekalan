@@ -159,4 +159,34 @@ $('.set_material').on('click','li',function(){
 });
 
 
+
+$('#materialModal .modal-body').on('click','.analogs dl',function(){
+
+       var id = $(this).attr('data-sample');
+       var data = new Object();
+       data['id'] = id;
+       data['analog_color'] = $('#id_color').val();
+       data['analog_texture'] = $('#id_texture').val();
+       
+ $.ajax({
+            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url         : 'http://' + location.hostname + '/sampleajax', // the url where we want to POST
+            data        : data, // our data object
+            dataType    : 'json', // what type of data do we expect back from the server
+            encode          : true
+                                 
+        })
+        .done(function(data) {
+               
+ 
+               
+                //$('#materialModal').modal('show');
+                $('#materialModal').find('.modal-body').html('');
+                $('#materialModal').find('.modal-body').html(data.html);
+ 
+            });         
+
+});
+
+
 });

@@ -68,8 +68,8 @@
     background:none;
     border:2px solid yellow ;
     border-radius: 2px;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-    cursor:pointer;
+    /*box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);*/
+    cursor:text;
 }
 .textedit{position:absolute;
     top:-5%;
@@ -113,18 +113,6 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .material_list li{width:100%;height:50px;}
 .material_list li small{float:left;width:10%;margin-right:20px;text-align: right;line-height: 2.9em;}
 .material_list li span{float: left;line-height: 2.5em;}
-
-.stickit {
-
-    position: fixed;
-    top: 70px;
-}
-
-.stickit-end {
-    bottom: 40px;
-    position: absolute;
-    right: 0;
-}
 
 .clear{clear:both;}
 

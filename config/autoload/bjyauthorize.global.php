@@ -12,6 +12,25 @@ return array(
                              ),           
            ),
            'template' => 'errors/403',
+
+'resource_providers' => array(
+    'BjyAuthorize\Provider\Resource\Config' => array(
+        'admin_button' => array(),
+    ),
+),
+'rule_providers' => array(
+    'BjyAuthorize\Provider\Rule\Config' => array(
+        'allow' => array(
+            /*
+            [0] -> role
+            [1] -> resource
+            [2] -> rule
+            */
+            array( array( 'admin' ), 'admin_button', 'see_button' ),
+
+        ),
+    ),
+),           
            'guards' => array(
         /*    'BjyAuthorize\Guard\Controller' => array(
                        array(

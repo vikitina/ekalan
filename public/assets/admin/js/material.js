@@ -24,8 +24,9 @@ $(document).ready(function(){
              var id = '#' + $(this).parent().attr('data-name');
              $(id).val($(this).val());
              $("#start").val(1);
-             getmaterial();
+             
              $('.material_list').html('');
+             getmaterial();
              
       });
 
@@ -46,10 +47,23 @@ $(document).ready(function(){
                
                       $('.material_list').append(data.html);
                       $('#rowcount').val(data.rowcount);
-                      console.log('query     '+data.query); 
+                      //console.log('query     '+data.query); 
                       //console.log('id_color =      '+data.id_color); 
                  
                 
                  });          
       }
+
+$('#filter_articul').on('keyup',function(){
+
+   console.log($(this).val());
+   var word = $(this).val();
+   $("#start").val(1);
+   $("#articul").val(word);
+   $('.material_list').html('');
+   getmaterial();
+
+
+});
+
 });

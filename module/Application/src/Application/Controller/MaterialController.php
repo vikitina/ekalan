@@ -80,12 +80,12 @@ class MaterialController extends AbstractActionController
 
            $materialSrv    = $this -> getServiceLocator()->get('material');
            $set_material = $materialSrv->getMaterial($data['id']);
-           if($data['analog_color']!='0' || $data['analog_texture']!='0'){
+           
                           $data['id_color'] = $set_material['set']['id_color'];
                           $data['id_texture'] = $set_material['set']['id_texture'];
                           $data['limit'] = 0;
                           $set_analogs = $materialSrv->getSpecOrder($data);;
-             }
+            
            $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
            $html = $partial('material/materialmodal', array(
                                 "material" => $set_material['set'],
