@@ -116,3 +116,43 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 
 .clear{clear:both;}
 
+/*-----------------------------------------*/
+.material_open{position:relative;}
+.material_open .text_data{float:left;width:100%;padding-right:120px;list-style: none;}
+.material_open .text_data li{list-style: none;padding: 0;margin: 0;margin-bottom: 10px;float: left;width:100%;height: 26px;}
+.material_open .text_data li.separator{border-top:1px solid #ddd;height:10px;}
+.material_open .text_data li span{float:left;width:150px;font-weight:bold;}
+.material_open .text_data li .editable{float:left;}
+.material_open .sample_data{position:absolute;right:0;top:63px;}
+.material_open .sample_data em{display: block;width:100px;height:100px;}
+
+.editable{padding:4px;border:1px solid transparent;margin-top:-5px;position:relative;}
+.editable .editblock{display:none;color:#337ab7;position:absolute;top:0;left:0;width:100%;height:100%;}
+.editable  i{font-size: 1.4em;position: absolute;right: -26px;top: 7px;display:none;color:#337ab7;}
+.editable .editblock .editarea{position:absolute;top:0;left:0;width:100%;height:100%;border:none;padding:1px;}
+.editable .editblock .editarea input{position:absolute;top:0;left:0;width:100%;height:100%;border:none;padding:3px;padding-left: 4px;}
+.editablehover{border-color:#337ab7;}
+.editablehover i{display:block;}
+.editopen{color:navy;border:1px solid navy;}
+.editopen .editblock{display:block;}
+.editopen i{display:block;color:navy;}
+
+.material_open .text_data li .editable span{font-weight: normal;    border-bottom: 1px dashed #337ab7;width: auto;}
+.material_open .text_data li .editablehover span{border-color: transparent;}
+.material_open .text_data li .editopen span{border-bottom: transparent;}
+
+
+.selectable{padding:4px;border:1px solid transparent;margin-top:-5px;position:relative;}
+.selectable .editblock{display:none;color:#337ab7;position:absolute;top:0;left:0;width:100%;height:100%;}
+.selectable  i{font-size: 1.4em;position: absolute;right: -26px;top: 7px;display:none;color:#337ab7;}
+.selectable .editblock .editarea{position:absolute;top:0;left:0;width:100%;height:100%;border:none;padding:1px;}
+.selectable .editblock .editarea input{position:absolute;top:0;left:0;width:100%;height:100%;border:none;padding:3px;padding-left: 4px;}
+.selectablehover{border-color:#337ab7;}
+.selectablehover i{display:block;}
+.selectopen{color:navy;border:1px solid navy;}
+.selectopen .editblock{display:block;}
+.selectopen i{display:block;color:navy;}
+
+.material_open .text_data li .selectable span{font-weight: normal;    border-bottom: 1px dashed #337ab7;width: auto;}
+.material_open .text_data li .selectablehover span{border-color: transparent;}
+.material_open .text_data li .selectopen span{border-bottom: transparent;}

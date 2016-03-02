@@ -66,4 +66,66 @@ $('#filter_articul').on('keyup',function(){
 
 });
 
+
+$('.editable').mouseover(function(){
+   if(!$(this).hasClass('editopen')){
+         $(this).addClass('editablehover');
+   }
+
+});
+
+$('.editable').mouseout(function(){
+      $(this).removeClass('editablehover');
+  
+});
+$('.editable').click(function(){
+      $(this).addClass('editopen');
+      $(this).find('.editarea input').focus();
+      $(this).select();
+
+
+});
+
+$('.editarea>input').blur(function(){
+
+     $(this).parents('.editable').removeClass('editopen');
+     var id='#'+$(this).attr('data-name');
+     var set_value = $(this).val();
+     $(id).val(set_value);
+     $(this).parents('.editable').find('span').text(set_value);
+
+     console.log($(id).val());
+});
+
+
+$('.selectable').mouseover(function(){
+   if(!$(this).hasClass('selectopen')){
+         $(this).addClass('selectablehover');
+   }
+
+});
+
+$('.selectable').mouseout(function(){
+      $(this).removeClass('selectablehover');
+  
+});
+$('.selectable').click(function(){
+      $(this).addClass('selectopen');
+      $(this).find('.editarea input').focus();
+      $(this).select();
+
+
+});
+
+$('.custom_select .choice li').click(function(){
+
+     $(this).parents('.selectable').removeClass('selectopen');
+    // var id='#'+$(this).attr('data-name');
+     //var set_value = $(this).val();
+    // $(id).val(set_value);
+    // $(this).parents('.editable').find('span').text(set_value);
+
+    // console.log($(id).val());
+});
+
 });

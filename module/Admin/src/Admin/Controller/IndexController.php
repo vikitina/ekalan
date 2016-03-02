@@ -132,14 +132,17 @@ public function materialopenAction()
     {
         $material_id = $this->getEvent()->getRouteMatch()->getParam('id');
         
-        $materialSrv    = $this -> getServiceLocator()->get('material');
-        
+        $materialSrv      = $this -> getServiceLocator()->get('material');
+        $manufacturerSrv  = $this -> getServiceLocator()->get('manufacturer');
         $material = $materialSrv ->  getMaterial((int)$material_id); 
+
+        $lists['manufacturers'] = $manufacturerSrv->getAllManufacturers();
  
 
         return new ViewModel(array(
              
-                'material'  => $material['set']
+                'material'  => $material['set'],
+                'lists'     => $lists,
         ));
     }      
 

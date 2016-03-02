@@ -84,7 +84,7 @@ $query = "SELECT t_material.*,t_sample.url as url FROM `t_material` join t_sampl
          //var_dump($results)                           ;
         return $results;
     } 
-   public function getMaterial($id = null, $start = null, $limit = null)
+   public function getMaterial($id = null, $start = null)
     {        
         $query =  "SELECT t_material.*, "
                  ."t_sample.url as url, "
