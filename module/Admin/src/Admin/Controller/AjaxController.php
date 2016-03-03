@@ -198,6 +198,27 @@ return $result;
                ) );
 
 
-        }         
+        }   
+
+
+   public function windowanalogsAction(){
+
+         $data = $_POST;
+         $materialSrv = $this -> getServiceLocator()->get('material');
+         $set_material = $materialSrv->getSpecOrder($data);     
+
+
+         $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
+         $modal_material_list_html = $partial('material/modalmateriallist', array("key" => $set_material['result']));   
+
+
+         return  $result = new JsonModel ( array (
+              
+                       'modal_material_list_html'      => $modal_material_list_html,
+                       
+                
+               ) );   
+
+   }           
 
 }

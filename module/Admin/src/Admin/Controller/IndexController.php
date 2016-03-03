@@ -144,6 +144,34 @@ public function materialopenAction()
                 'material'  => $material['set'],
                 'lists'     => $lists,
         ));
-    }      
+    } 
+
+  public function addmaterialAction(){
+            
+            $materialSrv      = $this -> getServiceLocator()->get('material');
+            $manufacturerSrv  = $this -> getServiceLocator()->get('manufacturer');
+            $textureSrv       = $this -> getServiceLocator()->get('texture');
+            $colorSrv         = $this -> getServiceLocator()->get('color');
+            $sampleSrv        = $this -> getServiceLocator()->get('sample');
+
+
+            $lists['manufacturers'] = $manufacturerSrv->getAllManufacturers();
+            $set_material           = $materialSrv->getSpecOrder();
+            $lists['textures']      = $textureSrv->getAllTextures();
+            $lists['colors']        = $colorSrv->getAllColors();
+            $lists['samples']       = $sampleSrv->getAllSamples();
+      
+
+            
+     
+         //   $modal_material_list_html
+
+         return new ViewModel(array(
+
+                  'lists'     => $lists,
+                  
+            ));
+
+  }       
 
 }

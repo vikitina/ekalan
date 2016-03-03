@@ -1,0 +1,99 @@
+{% extends 'layout/admin.twig' %}
+
+
+{% block content %}
+<a href="/admin/materials">Материалы</a> / Новый материал
+<hr>
+<div class="row">
+     <div class="col-md-8">
+                     <section class="material_open">
+                            <div class="panel panel-default">
+                                      <div class="panel-heading">
+        
+                                              <h4>Добавить новый материал</h4>
+                                       </div>
+                                          <div class="panel-body">
+                                                <form action="/admin/addmaterial" method="post" enctype="multipart/form-data">
+                                                  <ul class="text_data">
+                                                     <li><span>Наименование</span>
+                                                              <div>
+                                                                   <input type="text" name="name_material"  />
+
+                                                             </div>
+                                                      </li>
+                                                      <li><span>Артикул</span>
+                                                          <div>
+                                                              <input type="text" name="articul" />
+                                                         </div>
+                                                     </li>
+
+                                                     <li class="separator"></li>
+
+                                                     <li><span>Производитель</span>
+                                                         <div>
+                                                               <select name="id_manufacturer">
+                                                                     {% for manuf in lists.manufacturers %}
+                                                                             <option value="{{ manuf.id }}">{{ manuf.name_manufacturer }}</option>
+                                                                      {% endfor %}
+
+                                                               </select>
+                                                          </div>
+                                                      </li>
+
+                                                     <li class="separator"></li>
+
+
+                                                     <li><span>Цвет</span>
+                                                          <div>
+                                                                <select name="id_color">
+                                                                     {% for color in lists.colors %}
+                                                                             <option value="{{ color.id }}">{{ color.name_color }}</option>
+                                                                      {% endfor %}
+
+                                                               </select>
+                                                         </div>
+
+                                                      </li>
+                                                     <li><span>Текстура</span>
+
+                                                        <div>
+                                                                <select name="id_texture">
+                                                                     {% for texture in lists.textures %}
+                                                                             <option value="{{ texture.id }}">{{ texture.name_texture }}</option>
+                                                                      {% endfor %}
+
+                                                               </select>
+
+                                                          </div>
+
+                                                      </li>
+                                                     <li class="separator"></li>
+                                                     <li><span>Цена</span>
+                                                         <div>
+                                                              <input type="text" name="articul" />
+                                                         </div>
+                                                          
+                                                     </li>
+                                                     <li class="separator"></li>
+                                                     <li><span>Подобные</span>
+                                                                <div id="material_list_open_window">Выбрать из списка</div>
+                                                     </li>
+                                                  </ul>
+                                                  <div class="sample_data"> 
+                                                      <em style="background:red;"> </em>
+                                                      <div><label>Добавить новое фото</label><input type="file" name="sample" /></div>
+                                                      <span>или</span>
+                                                      <div id="sample_list_open_window">Выбрать из списка</div>
+                                                  </div>
+
+                                                  <div><input type="submit" /></div>
+                                                 </form> 
+                                         </div>
+                                 </div>   	
+
+
+
+			        </section>
+     </div>       
+
+{% endblock content %}

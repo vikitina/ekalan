@@ -18,8 +18,9 @@
 <div class="row">
      <div class="col-md-8">
               <section class="">
-
+              <a href="/admin/addmaterial">Добавить новый материал</a>
               <div class="filter_line">
+                     <h4>Поиск</h4>
               	     <div class="filter_articul">
               	          <label>Артикул</label>
               	          <input type="text" name="f_articul" id="filter_articul" />
@@ -52,7 +53,7 @@
                         {% endfor %}
               	     </select></div>              	     
 
-              </div>
+              </div><!-- filter_line  -->
               <div class="clear"></div>
                  <ul class="list-group material_list">{{ materials|raw }}</ul>		
 			</section>

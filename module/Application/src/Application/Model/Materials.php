@@ -41,7 +41,8 @@ class Materials extends TableGateway
                .((isset($data['id_manufacturer']) && $data['id_manufacturer'] != '' && $data['id_manufacturer'] != null && $data['id_manufacturer'] != '0')?" AND t_material.id_manufacturer = '".$data['id_manufacturer']."'":"")
                .((isset($data['id_color']) && $data['id_color'] != '' && $data['id_color'] != null && $data['id_color'] != '0')?" AND t_material.id_color = '".$data['id_color']."'":"")
                .((isset($data['id_texture']) && $data['id_texture'] != '' && $data['id_texture'] != null && $data['id_texture'] != '0')?" AND t_material.id_texture = '".$data['id_texture']."'":"")
-               .((isset($data['articul']) && $data['articul'] != '0')?" AND t_material.articul like '".$data['articul']."%'":"");
+               .((isset($data['articul']) && $data['articul'] != '0')?" AND t_material.articul like '".$data['articul']."%'":"")
+               .((isset($data['exclude']) && $data['exclude'] !='0')?" AND t_material.id <>'".$data['exclude']."'":"");
 
       $adapter = $this->getAdapter();
       $result = $this->FetchAll($adapter, $query); 

@@ -118,12 +118,12 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 
 /*-----------------------------------------*/
 .material_open{position:relative;}
-.material_open .text_data{float:left;width:100%;padding-right:120px;list-style: none;}
+.material_open .text_data{float:left;width:100%;padding-right:120px;list-style: none;padding-left: 0;}
 .material_open .text_data li{list-style: none;padding: 0;margin: 0;margin-bottom: 10px;float: left;width:100%;height: 26px;}
 .material_open .text_data li.separator{border-top:1px solid #ddd;height:10px;}
 .material_open .text_data li span{float:left;width:150px;font-weight:bold;}
 .material_open .text_data li .editable{float:left;}
-.material_open .sample_data{position:absolute;right:0;top:63px;}
+.material_open .sample_data{background: #fff none repeat scroll 0 0;margin-right: 10px;margin-top: 10px;padding: 15px;position: absolute;right: 0;top: 63px;width: 200px;}
 .material_open .sample_data em{display: block;width:100px;height:100px;}
 
 .editable{padding:4px;border:1px solid transparent;margin-top:-5px;position:relative;}
@@ -142,7 +142,7 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .material_open .text_data li .editopen span{border-bottom: transparent;}
 
 
-.selectable{padding:4px;border:1px solid transparent;margin-top:-5px;position:relative;}
+.selectable{padding:4px;border:1px solid transparent;margin-top:-5px;position:relative;float:left;}
 .selectable .editblock{display:none;color:#337ab7;position:absolute;top:0;left:0;width:100%;height:100%;}
 .selectable  i{font-size: 1.4em;position: absolute;right: -26px;top: 7px;display:none;color:#337ab7;}
 .selectable .editblock .editarea{position:absolute;top:0;left:0;width:100%;height:100%;border:none;padding:1px;}
@@ -156,3 +156,12 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .material_open .text_data li .selectable span{font-weight: normal;    border-bottom: 1px dashed #337ab7;width: auto;}
 .material_open .text_data li .selectablehover span{border-color: transparent;}
 .material_open .text_data li .selectopen span{border-bottom: transparent;}
+
+#material_list_open_window{}
+.analog_list_window {height:600px;overflow:auto;}
+.analog_list_window li{list-style:none;width:130px;height:125px;position:relative;float:left;margin-bottom:20px; margin-right:20px;border:1px solid #ddd;padding:10px;}
+.analog_list_window li div{ width:100px;height:100px; }
+.analog_list_window li div small,
+.analog_list_window li div span{background:green;color:#fff;}
+
+.analog_list_window li input{position:absolute;right:0; bottom:0;}

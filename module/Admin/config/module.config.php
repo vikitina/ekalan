@@ -79,7 +79,20 @@ return array(
                                                           'action'     => 'materialopen',
                                                       ),
                                             ),
-                                    ),                                                                               
+                                    ),        
+                             'admin_addmaterial' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Segment',
+                                          'options' => array(
+                                              
+                                                    'route' => '/addmaterial',
+                                                    
+
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Index',
+                                                          'action'     => 'addmaterial',
+                                                      ),
+                                            ),
+                                    ),                                                                                                            
                               'admin_ajax_salesupdate' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',
                                   'options' => array(
@@ -153,8 +166,19 @@ return array(
                                                   'action'     => 'updatesystem',
                                            ),
                                          ),
-                               ),                               
+                               ), 
 
+                               //window_analogs                              
+                            'admin_ajax_window_analogs' => array(
+                                       'type' => 'Zend\Mvc\Router\Http\Literal',
+                                        'options' => array(
+                                         'route'    => '/ajax/windowanalogs',
+                                        'defaults' => array(
+                                                  'controller' => 'Admin\Controller\Ajax',
+                                                  'action'     => 'windowanalogs',
+                                           ),
+                                         ),
+                               ), 
                         ),
                  ),
             ),
@@ -166,7 +190,8 @@ return array(
 
         'template_map' => array(
 
-            'material/adminmaterialset'    => __DIR__ . '/../view/admin/index/adminmaterialset.twig',
+            'material/adminmaterialset'     => __DIR__ . '/../view/admin/index/adminmaterialset.twig',
+            'material/modalmateriallist'    => __DIR__ . '/../view/admin/index/modalmateriallist.twig'
 
         ),         
 

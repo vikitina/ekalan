@@ -117,7 +117,7 @@ $('.selectable').click(function(){
 
 });
 
-$('.custom_select .choice li').click(function(){
+$('.custom_select li').click(function(){
 
      $(this).parents('.selectable').removeClass('selectopen');
     // var id='#'+$(this).attr('data-name');
@@ -126,6 +126,35 @@ $('.custom_select .choice li').click(function(){
     // $(this).parents('.editable').find('span').text(set_value);
 
     // console.log($(id).val());
+});
+
+$('#material_list_open_window').click(function(){
+//сверять со списком выбранных
+  data = new Object();
+  data['exclude'] = $('#exclude').val();//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+               $.ajax({
+                       type        : 'POST', 
+                       url         : 'http://' + location.hostname + '/admin/ajax/windowanalogs', 
+                       data        :  data, 
+                       dataType    : 'json', 
+                       encode          : true
+                                 
+                    })
+               .done(function(data) {
+               
+               
+                      $('#material_list_modal').find('.modal-body').html(data.modal_material_list_html);
+                      $('#material_list_modal').modal();
+                     
+                
+                 });      
+       
+
+});
+
+$('#sample_list_open_window').click(function(){
+       $('#sample_list_modal').modal();
+
 });
 
 });
