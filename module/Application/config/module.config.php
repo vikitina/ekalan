@@ -237,7 +237,12 @@ return array(
                 return new \Application\Model\Collection(
                     $sm->get('Zend\Db\Adapter\Adapter')
                 );
-            },              
+            },    
+          'analogs' => function ($sm) {
+                return new \Application\Model\Analogs(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },  
            
                      
     ),

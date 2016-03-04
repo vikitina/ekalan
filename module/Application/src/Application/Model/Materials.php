@@ -141,6 +141,8 @@ return $query;
 
 
       parent::insert($data);
+      $id = $this->tableGateway->lastInsertValue;
+ return $id;
  
     }   
       

@@ -75,7 +75,11 @@ public function getSampleByUrl($url){
 
 
       parent::insert($data);
- 
+
+        //$data = array()// Your data to be saved;
+        //$this->tableGateway->insert($data);
+        $id = $this->tableGateway->lastInsertValue;
+ return $id;
     }   
       
   public function delSample($id)

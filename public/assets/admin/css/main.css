@@ -118,13 +118,19 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 
 /*-----------------------------------------*/
 .material_open{position:relative;}
-.material_open .text_data{float:left;width:100%;padding-right:120px;list-style: none;padding-left: 0;}
-.material_open .text_data li{list-style: none;padding: 0;margin: 0;margin-bottom: 10px;float: left;width:100%;height: 26px;}
+.material_open .text_data{float:left;width:100%;padding-right:0;list-style: none;padding-left: 0;}
+.material_open .text_data li{list-style: none;padding: 0;margin: 0;margin-bottom: 10px;float: left;width:100%;}
 .material_open .text_data li.separator{border-top:1px solid #ddd;height:10px;}
 .material_open .text_data li span{float:left;width:150px;font-weight:bold;}
 .material_open .text_data li .editable{float:left;}
-.material_open .sample_data{background: #fff none repeat scroll 0 0;margin-right: 10px;margin-top: 10px;padding: 15px;position: absolute;right: 0;top: 63px;width: 200px;}
+.material_open .sample_data{/*background: #fff none repeat scroll 0 0;margin-right: 10px;margin-top: 10px;padding: 15px;position: absolute;right: 0;top: 63px;width: 200px;*/}
 .material_open .sample_data em{display: block;width:100px;height:100px;}
+.material_open .sample_data *{float:left;}
+.material_open .text_data li.sample_data span{width:auto; margin-top: 79px;}
+.material_open .text_data li.sample_data div{width:221px;margin-left:10px; margin-top: 82px;}
+.material_open .text_data li.sample_data div label{width:100%;display: block;float: left;}
+.material_open .text_data li.sample_data div input{width:100%;display: block;float: left;}
+.material_open .text_data li.sample_data div.local_link {width: auto;margin-top: 79px;}
 
 .editable{padding:4px;border:1px solid transparent;margin-top:-5px;position:relative;}
 .editable .editblock{display:none;color:#337ab7;position:absolute;top:0;left:0;width:100%;height:100%;}
@@ -165,3 +171,26 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .analog_list_window li div span{background:green;color:#fff;}
 
 .analog_list_window li input{position:absolute;right:0; bottom:0;}
+
+.local_link{border-bottom: 1px dashed #337ab7;cursor:pointer;display: inline;}
+
+#analogs_list {     border: 1px solid #ddd;
+    float: left;
+    margin-right: 10px;
+    margin-top: -10px;
+    padding: 10px 0 10px 10px;
+    width: 253px;}
+    #analogs_list.empty{display: none;}
+#analogs_list li{  border: medium none;
+    float: left;
+    height: 50px;
+    list-style: outside none none;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    padding: 0;
+    position: relative;
+    width: 50px;}
+#analogs_list li div{ width:50px;height:50px; }
+#analogs_list li div small{position:absolute;top:-28px;display:none;}
+#analogs_list li div span{background:none;top:-18px;position:absolute;top:-18px;display:none;}
+#analogs_list li input{display:none;}

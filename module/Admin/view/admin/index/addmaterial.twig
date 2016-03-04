@@ -17,10 +17,20 @@
                                                   <ul class="text_data">
                                                      <li><span>Наименование</span>
                                                               <div>
-                                                                   <input type="text" name="name_material"  />
+                                                                   <input type="text" name="name_material" required="" />
 
                                                              </div>
                                                       </li>
+                                                      <li class="separator"></li>
+                                                    <li class="sample_data"> 
+                                                      <em style="background:red;"> </em>
+                                                      <div><label>Установить новое фото</label><input type="file" name="sample" /></div>
+                                                     <span>или</span>
+                                                      <div id="sample_list_open_window" class="local_link">Выбрать из списка</div>
+                                                  </li>
+                                                  <li class="separator"></li>
+
+
                                                       <li><span>Артикул</span>
                                                           <div>
                                                               <input type="text" name="articul" />
@@ -76,17 +86,13 @@
                                                      </li>
                                                      <li class="separator"></li>
                                                      <li><span>Подобные</span>
-                                                                <div id="material_list_open_window">Выбрать из списка</div>
+                                                                <ul id="analogs_list" class="empty"></ul>
+                                                                <div id="material_list_open_window" class="local_link">Выбрать из списка</div>
+                                                          <input type="hidden" name="analogs" id="form_analogs_list" />
                                                      </li>
                                                   </ul>
-                                                  <div class="sample_data"> 
-                                                      <em style="background:red;"> </em>
-                                                      <div><label>Добавить новое фото</label><input type="file" name="sample" /></div>
-                                                      <span>или</span>
-                                                      <div id="sample_list_open_window">Выбрать из списка</div>
-                                                  </div>
 
-                                                  <div><input type="submit" /></div>
+                                                  <div><input type="submit" value="Добавить материал" /></div>
                                                  </form> 
                                          </div>
                                  </div>   	
