@@ -88,7 +88,16 @@ class Analogs extends TableGateway
        return $results;
         
     } 
+//getAnalogForId
+  public function getAnalogForId($id_1)
+    {
+         $query = "SELECT * FROM t_analogs WHERE id_1='".$id_1."'";
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query); 
 
+       return $results;
+        
+    }     
     
    function FetchAll($adapter, $sql, $params=null)
     {

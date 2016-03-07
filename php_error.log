@@ -271,3 +271,38 @@
 [07-Mar-2016 09:19:07 Europe/Helsinki] PHP Notice:  Undefined variable: id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 177
 [07-Mar-2016 09:19:07 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
 [07-Mar-2016 09:20:01 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 09:47:07 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 237 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[07-Mar-2016 09:47:07 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 09:47:30 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 237 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[07-Mar-2016 09:47:30 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 09:53:36 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 237 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[07-Mar-2016 09:53:36 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 09:54:04 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 237 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[07-Mar-2016 09:54:04 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 11:11:34 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 11:11:49 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 11:25:48 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 11:25:48 Europe/Helsinki] PHP Notice:  Undefined variable: analogs in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 169
+[07-Mar-2016 11:26:20 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 11:26:36 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 11:26:36 Europe/Helsinki] PHP Notice:  Undefined variable: analogs in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 169
+[07-Mar-2016 11:26:56 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 11:27:03 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 254 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[07-Mar-2016 11:27:03 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 11:30:18 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 254 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[07-Mar-2016 11:30:18 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 11:30:33 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 11:30:48 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 11:33:38 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 11:36:18 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 11:37:26 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 15:53:26 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 15:54:08 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 16:02:13 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 16:06:27 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 16:09:03 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 16:12:15 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 16:14:29 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 16:16:07 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 16:17:36 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 16:23:27 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52

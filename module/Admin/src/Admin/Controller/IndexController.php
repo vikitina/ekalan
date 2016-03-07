@@ -149,9 +149,34 @@ public function materialopenAction()
             $lists['colors']        = $colorSrv->getAllColors();
             $lists['samples']       = $sampleSrv->getAllSamples();
             $lists['collections']   = $collectionSrv->getCollectionByManuf($material['set']['id_manufacturer']);
+            $set_material           = $materialSrv->getSpecOrder(array('exclude' => $material_id));
 
+            $list_materials_for_analogs = $set_material['result'];
+            $i = 0; 
+            foreach($list_materials_for_analogs as $item){
+                    $list_materials_for_analogs[$i]['url'] = ((isset($item['url']) && $item['url'] != '' && $item['url'] !=null)?"/assets/application/samples/".trim($item['url']):"/assets/application/img/no_photo.png");
+                    $i += 1;
+            }
+            $lists['materials']      = $list_materials_for_analogs;
+
+            $set_analogs_id = $analogSrv->getAnalogForId($material_id);
+            
+            $i = 0;
+
+            $str_analogs = '';
+            foreach ($set_analogs_id as $analog_id) {
+                $set = $materialSrv ->  getMaterial((int)$analog_id['id_2']);
+                $key = $analog_id['id_2'].'';
+                $list_analog_for_check[$key] = 1;
+                $str_analogs .= (($i > 0)?',':''). $analog_id['id_2'];
+                $analogs[$i] = $set['set'];
+                $analogs[$i]['url'] = ((isset($analogs[$i]['url']) && $analogs[$i]['url'] != '' && $analogs[$i]['url'] !=null)?"/assets/application/samples/".trim($analogs[$i]['url']):"/assets/application/img/no_photo.png");
+                $i += 1;
+            }
+            $lists['analogs'] = $analogs;
             $hash_collections = $this->createHashCollections($lists['manufacturers'],$collectionSrv);
-
+            $lists['list_analog_for_check'] = $list_analog_for_check;
+            $lists['str_analogs'] = $str_analogs;
         return new ViewModel(array(
              
                 'material'           => $material['set'],
@@ -239,7 +264,14 @@ public function delmaterialAction()
             $lists['colors']        = $colorSrv->getAllColors();
             $lists['samples']       = $sampleSrv->getAllSamples();
             $lists['collections']   = $collectionSrv->getCollectionByManuf('1');
-
+           
+            $list_materials_for_analogs = $set_material['result'];
+            $i = 0; 
+            foreach($list_materials_for_analogs as $item){
+                    $list_materials_for_analogs[$i]['url'] = ((isset($item['url']) && $item['url'] != '' && $item['url'] !=null)?"/assets/application/samples/".trim($item['url']):"/assets/application/img/no_photo.png");
+                    $i += 1;
+            }
+            $lists['materials']      = $list_materials_for_analogs;
             $hash_collections = $this->createHashCollections($lists['manufacturers'],$collectionSrv);
 
 

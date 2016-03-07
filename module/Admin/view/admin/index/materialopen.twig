@@ -113,8 +113,27 @@
                                                           </div> 
                                                      </li>
                                                      <li class="separator"></li>
-                                                     <li><span>Подобные</span><p>{{ material.texture }}</p> </li>
-                                                  </ul>
+                                                     <li><span>Подобные</span>
+
+                                                         <ul id="analogs_list"{% if not lists.analogs %} class="empty"{% endif %}>
+                                                        
+                                                                {% for item in lists.analogs %}
+                                                                          <li data-id= "{{ item.id }}"> 
+                                                                                 <div style="background-image:url('{{ item.url }}');">
+                                                                                       <small>{{ item.articul }}</small><br />
+                                                                                       <span>{{ item.name_material }} </span>  
+                                                                                 </div>
+                                                                                 
+                                                                          
+                                                                          
+                                                                                 <input type="checkbox" value="{{ item.id }}" />   
+
+                                                                          </li>
+                                                                {% endfor %}
+                                                         </ul>
+                                                                <div id="material_list_open_window" class="local_link">Открыть список всех материалов</div>
+                                                                <input type="hidden" name="analogs" id="form_analogs_list" value="{{ lists.str_analogs }}" />
+                                                        </ul>
                                                   <div class="sample_data"> 
                                                   <span>Изображение</span>
                                                       <a href=# class="edit_sample"><em style="background-image:url('/assets/application/samples/{{material.url}}');"> </em></a>
@@ -146,7 +165,45 @@
         </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->          
+</div><!-- /.modal -->    
+
+
+
+ <div class="modal fade" id="material_list_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Укажите материалы, подобные данному:</h4>
+      </div>
+      <div class="modal-body">
+            <ul class="analog_list_window"><form id="form_analogs">
+              
+
+                  {% for material in lists.materials  %}
+                      
+                      <li data-id={{ material.id }}> 
+                         <div style="background:url('{{ material.url }}') no-repeat top left;">
+                                  <small>{{ material.articul }}</small><br />
+                                  <span>
+                                          {{ material.name_material }}
+                                  </span>  
+                        </div>
+                        <input type="checkbox" value="{{ material.id }}" {% if lists.list_analog_for_check[material.id] %} checked="checked" {% endif %}/>   
+
+                       </li>
+                  {%endfor%}
+            </form></ul>
+
+      </div>
+        <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn">Отменить</a>
+                <a href="#" class="btn btn-primary" id="btn_pick_analogs">Добавить</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- /.modal -->    
     <script>
        var hash_collections = new Object();
       hash_collections = {{ hash_collections | raw }};

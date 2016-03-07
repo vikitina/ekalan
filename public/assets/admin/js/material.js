@@ -130,7 +130,7 @@ $('.custom_select li').click(function(){
 
 $('#material_list_open_window').click(function(){
 //сверять со списком выбранных
-  data = new Object();
+/*  data = new Object();
   data['exclude'] = $('#exclude').val();//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
                $.ajax({
                        type        : 'POST', 
@@ -147,8 +147,8 @@ $('#material_list_open_window').click(function(){
                       $('#material_list_modal').modal();
                      
                 
-                 });      
-       
+                 });    */  
+      $('#material_list_modal').modal(); 
 
 });
 

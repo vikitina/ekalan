@@ -202,7 +202,7 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
     padding: 0;
     position: relative;
     width: 50px;}
-#analogs_list li div{ width:50px;height:50px; }
+#analogs_list li div{ width:50px;height:50px;background-repeat:no-repeat;background-position: 0 0;background-size: cover; }
 #analogs_list li div small{position:absolute;top:-28px;display:none;}
 #analogs_list li div span{background:none;top:-18px;position:absolute;top:-18px;display:none;}
 #analogs_list li input{display:none;}
