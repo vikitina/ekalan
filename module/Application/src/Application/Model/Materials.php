@@ -139,11 +139,10 @@ return $query;
   public function insertMaterial($data)
     {
 
-
-      parent::insert($data);
-      $id = $this->tableGateway->lastInsertValue;
- return $id;
- 
+         parent::insert($data);
+         $adapter = $this->getAdapter();
+         $id = $adapter->getDriver()->getLastGeneratedValue();
+      return $id;
     }   
       
   public function delMaterial($id)

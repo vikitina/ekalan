@@ -93,8 +93,8 @@ return array(
                                    array('route' => 'zfcadmin/admin_ajax_salesmarkupupdate', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_salesactiveupdate', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_window_analogs', 'roles' => array('admin')),
-                                   
-                                   
+                                   array('route' => 'zfcadmin/admin_ajax_deletematerial', 'roles' => array('admin')),
+                               
                                   array('route' => 'test\mail', 'roles' => array('guest','user')),
                                    
                                 

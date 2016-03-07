@@ -219,6 +219,37 @@ return $result;
                 
                ) );   
 
-   }           
+   } 
+
+ 
+
+    public function deletematerialAction(){
+
+         $data = $_POST;
+         $id = $data['id'];
+         $materialSrv      = $this -> getServiceLocator()->get('material');
+         $sampleSrv        = $this -> getServiceLocator()->get('sample');
+         $analogSrv        = $this -> getServiceLocator()->get('analogs');
+            
+
+         $material = $materialSrv->getMaterial($id);
+         $materialSrv->delMaterial($id);
+         $id_sample = $material['set']['id_sample'];
+         $sampleSrv -> delSample($id_sample);
+
+         $analogSrv->delAllAboutId($id);
+  
+
+
+         return  $result = new JsonModel ( array (
+              
+                      'id_sample' => $id_sample,
+                      'query' => $material['query']
+
+                       
+                
+               ) );   
+
+   }        
 
 }

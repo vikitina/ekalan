@@ -52,30 +52,50 @@
                                                      <li class="separator"></li>
 
                                                      <li><span>Производитель</span>
-                                                         <div class="selectable">
-                                                              <span>{{ material.manufacturer }}</span>
-                                                              <div class="editblock">
-                                                                  <div class="editarea">
-                                                                       <div class="custom_select">
-                                                                           <div class="choice">{{ material.manufacturer }}</div>
-                                                                            <ul>
+                                                         <div>
+
+                                                                            <select id="id_manufacturer_select">
                                                                                 {% for manuf in lists.manufacturers %}
-                                                                                        <li data-value="{{ manuf.id }}" data-name="id_manufacturer">{{ manuf.name_manufacturer }}</li>
+                                                                                        <option value="{{ manuf.id }}" data-name="id_manufacturer"{% if material.id_manufacturer==manuf.id %} selected=""{%endif%}>{{ manuf.name_manufacturer }}</option>
                                                                                  {% endfor %}
 
-                                                                            </ul>
-                                                                       </div>
-                                                                  </div>
-                                                                  
-
-                                                            </div><!-- editblock  -->
-                                                            <i class="fa fa-pencil fa-fw"></i>
-
+                                                                            </select>
+                                                              
                                                           </div>
                                                       </li>
+                                                    <li><span>Коллекция</span>
+                                                         <div>
+
+                                                                            <select id="id_collection_select">
+                                                                                {% for collect in lists.collections %}
+                                                                                        <option value="{{ collect.id }}" data-name="id_collection"{% if material.id_collection==collect.id %} selected=""{% endif %}>{{ collect.name_collection }}</option>
+                                                                                 {% endfor %}
+
+                                                                            </select>
+                                                              
+                                                          </div>
+                                                      </li>                                                      
                                                      <li class="separator"></li>
-                                                     <li><span>Цвет</span><p>{{ material.color }}</p> </li>
-                                                     <li><span>Текстура</span><p>{{ material.texture }}</p> </li>
+                                                     <li><span>Цвет</span>
+                                                          <div>
+                                                                           <select>
+                                                                                {% for color in lists.colors %}
+                                                                                        <option data-value="{{ color.id }}" data-name="id_color"{% if material.id_color==color.id %} selected=""{%endif%}>{{ color.name_color }}</option>
+                                                                                 {% endfor %}
+
+                                                                            </select>                                                            
+                                                          </div>
+                                                       </li>
+                                                     <li><span>Текстура</span>
+                                                          <div>
+                                                                           <select>
+                                                                                {% for texture in lists.textures %}
+                                                                                        <option data-value="{{ texture.id }}" data-name="id_texture"{% if material.id_texture==texture.id %} selected=""{%endif%}>{{ texture.name_texture }}</option>
+                                                                                 {% endfor %}
+
+                                                                            </select>                                                            
+                                                          </div>                                                     
+                                                     </li>
                                                      <li class="separator"></li>
                                                      <li><span>Цена</span>
 
@@ -105,5 +125,10 @@
 
 			        </section>
      </div>       
+    <script>
+       
+       var hash_collections = new Object();
+      hash_collections = {{ hash_collections | raw }};
 
+     </script>
 {% endblock content %}

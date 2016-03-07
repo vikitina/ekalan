@@ -41,7 +41,7 @@
 
                                                      <li><span>Производитель</span>
                                                          <div>
-                                                               <select name="id_manufacturer">
+                                                               <select name="id_manufacturer" id="id_manufacturer_select">
                                                                      {% for manuf in lists.manufacturers %}
                                                                              <option value="{{ manuf.id }}">{{ manuf.name_manufacturer }}</option>
                                                                       {% endfor %}
@@ -49,7 +49,16 @@
                                                                </select>
                                                           </div>
                                                       </li>
+                                                     <li><span>Коллекция</span>
+                                                         <div>
+                                                               <select name="id_collection" id="id_collection_select">
+                                                                     {% for collection in lists.collections %}
+                                                                             <option value="{{ collection.id }}">{{ collection.name_collection }}</option>
+                                                                      {% endfor %}
 
+                                                               </select>
+                                                          </div>
+                                                      </li>
                                                      <li class="separator"></li>
 
 
@@ -80,7 +89,7 @@
                                                      <li class="separator"></li>
                                                      <li><span>Цена</span>
                                                          <div>
-                                                              <input type="text" name="articul" />
+                                                              <input type="text" name="price_material" />
                                                          </div>
                                                           
                                                      </li>
@@ -100,6 +109,13 @@
 
 
 			        </section>
-     </div>       
+     </div> 
+
+     <script>
+       
+       var hash_collections = new Object();
+      hash_collections = {{ hash_collections | raw }};
+
+     </script>
 
 {% endblock content %}

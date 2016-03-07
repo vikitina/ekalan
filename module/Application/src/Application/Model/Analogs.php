@@ -65,7 +65,30 @@ class Analogs extends TableGateway
          $results = $statement->execute();
          
         return $results;
-    }     
+    }    
+
+   
+      public function delAllAboutId($id)
+    {
+         $query = sprintf("DELETE FROM t_analogs WHERE id_1='%s' or id_2='%s'",$id,$id);                   
+         $adapter = $this->getAdapter();                           
+         $statement = $adapter->createStatement($query);
+         $results = $statement->execute();
+
+         
+        
+    } 
+    //getAnalog($id_material,$item)
+      public function getAnalog($id_1,$id_2)
+    {
+         $query = "SELECT * FROM t_analogs WHERE id_1='".$id_1."' AND id_2='".$id_2."'";                   
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query); 
+
+       return $results;
+        
+    } 
+
     
    function FetchAll($adapter, $sql, $params=null)
     {

@@ -111,9 +111,12 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .filter_line div select{float: left;width:100%;}
 
 .material_list li{width:100%;height:50px;}
+.material_list li.confirm_deleting_state{background:#ddd;}
 .material_list li small{float:left;width:10%;margin-right:20px;text-align: right;line-height: 2.9em;}
 .material_list li span{float: left;line-height: 2.5em;}
 
+.material_list li span.del_material_ajax{float:right;display:block;height: 31px;padding: 4px;width: 29px;border:1px dashed #dadada;cursor: pointer;}
+.material_list li span.del_material_ajax i{font-size: 1.7em;float: left;}
 .clear{clear:both;}
 
 /*-----------------------------------------*/

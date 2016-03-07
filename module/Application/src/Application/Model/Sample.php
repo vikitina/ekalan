@@ -64,7 +64,7 @@ public function getSampleByUrl($url){
 
     $query="SELECT id from `t_sample` WHERE url like '%".$url."%'";
     //echo $query;
-            $adapter = $this->getAdapter();
+         $adapter = $this->getAdapter();
          $results = $this->FetchAll($adapter, $query);     
         // var_dump($results)                       ;
         return $results[0];
@@ -72,13 +72,10 @@ public function getSampleByUrl($url){
 
   public function insertSample($data)
     {
+         parent::insert($data);
+         $adapter = $this->getAdapter();
+         $id = $adapter->getDriver()->getLastGeneratedValue();
 
-
-      parent::insert($data);
-
-        //$data = array()// Your data to be saved;
-        //$this->tableGateway->insert($data);
-        $id = $this->tableGateway->lastInsertValue;
  return $id;
     }   
       

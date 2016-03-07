@@ -179,6 +179,20 @@ return array(
                                            ),
                                          ),
                                ), 
+
+
+///admin/ajax/deletematerial       
+
+                            'admin_ajax_deletematerial' => array(
+                                       'type' => 'Zend\Mvc\Router\Http\Literal',
+                                        'options' => array(
+                                         'route'    => '/ajax/deletematerial',
+                                        'defaults' => array(
+                                                  'controller' => 'Admin\Controller\Ajax',
+                                                  'action'     => 'deletematerial',
+                                           ),
+                                         ),
+                               ),                      
                         ),
                  ),
             ),

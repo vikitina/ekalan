@@ -130,19 +130,33 @@ public function materialsAction()
 
 public function materialopenAction()
     {
-        $material_id = $this->getEvent()->getRouteMatch()->getParam('id');
+            $material_id = $this->getEvent()->getRouteMatch()->getParam('id');
         
-        $materialSrv      = $this -> getServiceLocator()->get('material');
-        $manufacturerSrv  = $this -> getServiceLocator()->get('manufacturer');
-        $material = $materialSrv ->  getMaterial((int)$material_id); 
+            $materialSrv      = $this -> getServiceLocator()->get('material');
+            $manufacturerSrv  = $this -> getServiceLocator()->get('manufacturer');
+            $textureSrv       = $this -> getServiceLocator()->get('texture');
+            $colorSrv         = $this -> getServiceLocator()->get('color');
+            $sampleSrv        = $this -> getServiceLocator()->get('sample');
+            $analogSrv        = $this -> getServiceLocator()->get('analogs');
+            $collectionSrv    = $this -> getServiceLocator()->get('collection');
 
-        $lists['manufacturers'] = $manufacturerSrv->getAllManufacturers();
- 
+
+
+            $material = $materialSrv ->  getMaterial((int)$material_id); 
+
+            $lists['manufacturers'] = $manufacturerSrv->getAllManufacturers();
+            $lists['textures']      = $textureSrv->getAllTextures();
+            $lists['colors']        = $colorSrv->getAllColors();
+            $lists['samples']       = $sampleSrv->getAllSamples();
+            $lists['collections']   = $collectionSrv->getCollectionByManuf($material['set']['id_manufacturer']);
+
+            $hash_collections = $this->createHashCollections($lists['manufacturers'],$collectionSrv);
 
         return new ViewModel(array(
              
-                'material'  => $material['set'],
-                'lists'     => $lists,
+                'material'           => $material['set'],
+                'lists'              => $lists,
+                'hash_collections'   => $hash_collections,
         ));
     } 
 
@@ -154,13 +168,15 @@ public function materialopenAction()
             $colorSrv         = $this -> getServiceLocator()->get('color');
             $sampleSrv        = $this -> getServiceLocator()->get('sample');
             $analogSrv        = $this -> getServiceLocator()->get('analogs');
+            $collectionSrv    = $this -> getServiceLocator()->get('collection');
 
           if($_POST)  {
               $data = $_POST;
               $sample = $this->uploadfile($_FILES);
               //add sample
-
-              $id_sample = $sampleSrv->insertSample($sample);
+              $sample_data['url'] = $sample;
+              $id_sample = $sampleSrv->insertSample($sample_data);
+              var_dump($id_sample);
               $new_material = array(
                      'articul'             => $data['articul'],
                      'name_material'       => $data['name_material'],
@@ -173,15 +189,26 @@ public function materialopenAction()
               );
               $id_material = $materialSrv->insertMaterial($new_material);
 
-              //if isset !!!
+              
               $list_analogs = $data['analogs'];
               $arr_analogs = explode(',', $list_analogs);
 
               foreach ($arr_analogs as $item) {
-                  $analogSrv->insertAnalog(array(
+                
+                if (!$analogSrv->getAnalog($id_material,$item)){
+                     $analogSrv->insertAnalog(array(
                         'id_1' => $id_material,
                         'id_2' => $item
                     ));
+                 }
+                 
+                if (!$analogSrv->getAnalog($item,$id_material)){
+                     $analogSrv->insertAnalog(array(
+                        'id_2' => $id_material,
+                        'id_1' => $item
+                    ));
+                 }                 
+
               }
 
             }
@@ -190,6 +217,10 @@ public function materialopenAction()
             $lists['textures']      = $textureSrv->getAllTextures();
             $lists['colors']        = $colorSrv->getAllColors();
             $lists['samples']       = $sampleSrv->getAllSamples();
+            $lists['collections']   = $collectionSrv->getCollectionByManuf('1');
+
+            $hash_collections = $this->createHashCollections($lists['manufacturers'],$collectionSrv);
+
 
 //name_material=name&sample=bul.png&articul=art&id_manufacturer=1&id_color=1&id_texture=1&articul=123&analogs=%2C4%2C5%2C7%2C8%2C9
 
@@ -199,21 +230,49 @@ public function materialopenAction()
 
          return new ViewModel(array(
 
-                  'lists'     => $lists,
-                  
+                  'lists'                => $lists,
+                  'hash_collections'     => $hash_collections,
             ));
 
   } 
+function createHashCollections($list,$collectionSrv){
 
+
+            $hash_collections = '{';
+            $f1 = 0;
+            foreach ($list as $manuf){
+
+                 if($f1 > 0){$hash_collections .= ',';}
+
+                 $hash_collections .=  "'".$manuf['id']."':{'name':'".$manuf['name_manufacturer']."','collections':{";
+                 $f2 = 0;
+                 $collections = $collectionSrv->getCollectionByManuf($manuf['id']);
+                 foreach ($collections as $collect) {
+                     if ($f2 > 0){
+                          $hash_collections .= ',';
+                     }
+                      $hash_collections .= "'".$collect['id']."':'".$collect['name_collection']."'";
+                     $f2 = 1;
+                  } 
+
+                 $hash_collections .= "}}";
+                 $f1 = 1;
+            }
+            $hash_collections .= "}";
+            return   $hash_collections;  
+}
 
 function uploadfile($data){
 
 
+      $constantsSrv       = $this -> getServiceLocator()->get('constants');
+      $upload_dir         = trim($constantsSrv->getConstantByName('upload_dir'));
+      $path_to_upload_dir = trim($constantsSrv->getConstantByName('path_to_upload_dir'));
 
 
 
 
-      $target_dir = "/var/www/ekalan/public/data/uploads/";
+      $target_dir = $path_to_upload_dir.$upload_dir;
 
       $target_file = $target_dir . basename($data["sample"]["name"]);
       echo '<br>'.$target_file;
@@ -252,15 +311,16 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
-    $new_file = $target_dir.'asdasdasd'.".".$imageFileType;
+    $new_file_name = time().".".$imageFileType;
+    $new_file = $target_dir.$new_file_name;
     if (move_uploaded_file($data["sample"]["tmp_name"], $new_file)) {
         echo "The file ". basename( $data["sample"]["name"]). " has been uploaded.";
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
 }
-
-return $new_file;
+$new_file_url = $upload_dir.$new_file_name;
+return $new_file_url;
   }      
 
 }

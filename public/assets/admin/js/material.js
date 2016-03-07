@@ -179,4 +179,57 @@ return false;
 
 });
 
+
+
+
+//смена производителя - смена списка коллекций
+$('#id_manufacturer_select').change(function(){
+
+   console.log($('#id_manufacturer_select').val());
+   var collection_by_manuf = '';
+   var id_manuf = $('#id_manufacturer_select').val();
+   $.each(hash_collections[id_manuf]['collections'], function(i, item){
+
+         console.log(i+'   '+item);
+         collection_by_manuf += '<option value="'+i+'">'+item+'</option>'
+
+   });
+   $('#id_collection_select').html(collection_by_manuf);
+
+
+});
+
+//удаление материала
+$('.material_list').on('click','li span.del_material_ajax', function(){
+
+              var id = $(this).attr('data-id');
+              $('#delete_confirm_window').modal('show');
+              $(this).parent('li').addClass('confirm_deleting_state');
+              $('#deleting_id').val(id);
+});
+$('#delete_confirm_window #btn_confirm_deleting').click(function(){
+         $('.material_list li.confirm_deleting_state').remove();
+         var data = new Object();
+         data['id'] = $('#deleting_id').val();
+               $.ajax({
+                       type        : 'POST', 
+                       url         : 'http://' + location.hostname + '/admin/ajax/deletematerial', 
+                       data        :  data, 
+                       dataType    : 'json', 
+                       encode          : true
+                                 
+                    })
+               .done(function(data) {
+                     $('#deleting_id').val('');
+                     $('#delete_confirm_window').modal('hide');
+                 });   
+
+});
+$('#btn_cancel_deleting').click(function(){
+
+        $('#deleting_id').val('');
+        $('.material_list li.confirm_deleting_state').removeClass('confirm_deleting_state');
+        $('#delete_confirm_window').modal('hide');
+});
+
 });

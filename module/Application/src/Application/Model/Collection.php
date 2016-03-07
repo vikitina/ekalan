@@ -45,7 +45,21 @@ class Collection extends TableGateway
          $adapter = $this->getAdapter();
          $results = $this->FetchAll($adapter, $query);                            
         return $results[0];
-    }     
+    }   
+
+ public function getCollectionByManuf($id)
+    { 
+
+        $query = "SELECT * from `t_collection` where `id_manufacturer` ='".$id."'";
+        
+    
+                            
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query);                            
+        return $results;
+    } 
+
+    
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     //==========================================================================================================

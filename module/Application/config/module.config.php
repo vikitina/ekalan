@@ -242,6 +242,11 @@ return array(
                 return new \Application\Model\Analogs(
                     $sm->get('Zend\Db\Adapter\Adapter')
                 );
+            }, 
+           'constants' => function ($sm) {
+                return new \Application\Model\Constants(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
             },  
            
                      
