@@ -230,6 +230,14 @@ $('#btn_cancel_deleting').click(function(){
         $('#deleting_id').val('');
         $('.material_list li.confirm_deleting_state').removeClass('confirm_deleting_state');
         $('#delete_confirm_window').modal('hide');
+        return false;
+});
+$('.material_open a.del_material').click(function(){
+
+              var id = $(this).attr('data-id');
+              $('#delete_confirm_window').modal('show');
+
+              return false;
 });
 
 });

@@ -135,6 +135,15 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .material_open .text_data li.sample_data div input{width:100%;display: block;float: left;}
 .material_open .text_data li.sample_data div.local_link {width: auto;margin-top: 79px;}
 
+ 
+.material_open a.del_material{margin-top:-34px;float:right;display:block;height: 31px;padding: 4px;width: 29px;border:1px dashed #dadada;cursor: pointer;}
+.material_open a.del_material i{font-size: 1.7em;float: left;}
+
+.material_open .panel-body{position:relative;}
+.material_open .panel-body .sample_data{position:absolute;right:11px;top:17px;background:#fff;width:150px;height:150px;padding:25px;}
+.material_open .panel-body .sample_data .edit_sample{display:block;width:120px;height:120px;border:1px dashed #ddd;padding:10px;background:url('/assets/application/img/no_photo.png') no-repeat center center;}
+.material_open .panel-body .sample_data span{font-weight:bold;display:block;margin-top:-25px;}
+
 .editable{padding:4px;border:1px solid transparent;margin-top:-5px;position:relative;}
 .editable .editblock{display:none;color:#337ab7;position:absolute;top:0;left:0;width:100%;height:100%;}
 .editable  i{font-size: 1.4em;position: absolute;right: -26px;top: 7px;display:none;color:#337ab7;}

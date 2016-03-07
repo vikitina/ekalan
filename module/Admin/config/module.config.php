@@ -192,7 +192,17 @@ return array(
                                                   'action'     => 'deletematerial',
                                            ),
                                          ),
-                               ),                      
+                               ),
+                             'admin_delmaterial' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Segment',
+                                          'options' => array(                                              
+                                                    'route' => '/delmaterial/:id',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Index',
+                                                          'action'     => 'delmaterial',
+                                                      ),
+                                            ),
+                            ),                                                      
                         ),
                  ),
             ),

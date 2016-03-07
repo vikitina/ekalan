@@ -160,6 +160,27 @@ public function materialopenAction()
         ));
     } 
 
+public function delmaterialAction()
+    {
+            $id = $this->getEvent()->getRouteMatch()->getParam('id');
+        
+            $materialSrv      = $this -> getServiceLocator()->get('material');
+            $sampleSrv        = $this -> getServiceLocator()->get('sample');
+            $analogSrv        = $this -> getServiceLocator()->get('analogs');
+            
+
+            $material = $materialSrv->getMaterial($id);
+            $materialSrv->delMaterial($id);
+            $id_sample = $material['set']['id_sample'];
+            $sampleSrv -> delSample($id_sample);
+
+            $analogSrv->delAllAboutId($id);
+
+
+            $this->redirect()->toRoute('zfcadmin/admin_materials');
+           //  return new ViewModel(array());
+    }     
+
   public function addmaterialAction(){
 
             $materialSrv      = $this -> getServiceLocator()->get('material');

@@ -11,6 +11,7 @@
                                       <div class="panel-heading">
         
                                               <h4>Редактирование {{ material.name_material }}</h4>
+                                              <a class="del_material" data-id="{{ material.id }}"><i class="fa fa-trash-o"></i></a>
                                        </div>
                                           <div class="panel-body">
                                           <form id="editmaterial">
@@ -115,7 +116,8 @@
                                                      <li><span>Подобные</span><p>{{ material.texture }}</p> </li>
                                                   </ul>
                                                   <div class="sample_data"> 
-                                                      <em style="background:red;"> </em>
+                                                  <span>Изображение</span>
+                                                      <a href=# class="edit_sample"><em style="background-image:url('/assets/application/samples/{{material.url}}');"> </em></a>
                                                   </div>
                                                   
                                          </div>
@@ -124,9 +126,28 @@
 
 
 			        </section>
-     </div>       
+     </div>  
+
+ <div class="modal fade" id="delete_confirm_window">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Подтверждение удаления материала</h4>
+      </div>
+      <div class="modal-body">
+        Материал такой-то будет удален. Вы уверены?
+
+        <input type="hidden" id="deleting_id" />
+      </div>
+        <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn" id="btn_cancel_deleting">Отменить</a>
+                <a href="/admin/delmaterial/{{ material.id }}" class="btn btn-primary" id="btn_confirm_deleting">Удалить</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->          
     <script>
-       
        var hash_collections = new Object();
       hash_collections = {{ hash_collections | raw }};
 

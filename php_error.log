@@ -258,3 +258,16 @@
 [07-Mar-2016 04:22:53 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 216 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
 [07-Mar-2016 04:22:53 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
 [07-Mar-2016 04:23:20 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 08:00:40 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 08:01:12 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 09:16:00 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 09:16:31 Europe/Helsinki] PHP Notice:  Undefined variable: id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 172
+[07-Mar-2016 09:16:31 Europe/Helsinki] PHP Notice:  Undefined variable: id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 173
+[07-Mar-2016 09:16:31 Europe/Helsinki] PHP Notice:  Undefined variable: id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 177
+[07-Mar-2016 09:16:31 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 09:17:59 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 09:19:07 Europe/Helsinki] PHP Notice:  Undefined variable: id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 172
+[07-Mar-2016 09:19:07 Europe/Helsinki] PHP Notice:  Undefined variable: id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 173
+[07-Mar-2016 09:19:07 Europe/Helsinki] PHP Notice:  Undefined variable: id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 177
+[07-Mar-2016 09:19:07 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[07-Mar-2016 09:20:01 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
