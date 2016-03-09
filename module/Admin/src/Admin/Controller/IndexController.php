@@ -322,7 +322,7 @@ public function delmaterialAction()
 
             $data_post = $_POST;
 
-            if($data_post['new_sample'] !=0){
+            if($data_post['new_sample'] != '0'){
 
                 $id_sample = $sampleSrv->insertSample($data_post['new_sample']);
             }else{
@@ -342,7 +342,8 @@ public function delmaterialAction()
                      'id_texture'        =>   $data_post['id_texture'],                     
 
 
-                );    
+                );  
+                var_dump(data);
             $materialSrv->updateMaterial($data);
             if($data_post['analogs'] != 0){
 
@@ -362,7 +363,7 @@ public function delmaterialAction()
                 }
             }
 
-            $this->redirect()->toRoute('zfcadmin/admin_materials');
+            //$this->redirect()->toRoute('zfcadmin/admin_materials');
 
   }
 function createHashCollections($list,$collectionSrv){
