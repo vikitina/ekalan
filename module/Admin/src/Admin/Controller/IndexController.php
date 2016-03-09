@@ -324,7 +324,7 @@ public function delmaterialAction()
 
             if($data_post['new_sample'] != '0'){
 
-                $id_sample = $sampleSrv->insertSample($data_post['new_sample']);
+                $id_sample = $sampleSrv->insertSample(array('url' => $data_post['new_sample']));
             }else{
                 $id_sample = $data_post['id_sample'];
 
