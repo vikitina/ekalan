@@ -262,7 +262,8 @@ return $result;
              $url = $this->uploadFile($_FILES);
     }
 
-    return new JsonModel(array('url' => '/assets/application/samples/'.$url));
+    return new JsonModel(array('url' => $url['new_file_url'],
+                              'name' => $url['new_file_name']));
 }      
 
 
@@ -325,7 +326,8 @@ if ($uploadOk == 0) {
     }
 }
 $new_file_url = $upload_dir.$new_file_name;
-return $new_file_url;
+return array('new_file_name' =>$new_file_url,
+              'new_file_url' => '/assets/application/samples/'.$upload_dir.$new_file_name);
   }     
 
 

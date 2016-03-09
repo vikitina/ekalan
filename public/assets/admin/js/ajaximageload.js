@@ -49,7 +49,7 @@
 
                 request.done(function (result, request, headers) {
                    $('#tmp_id_sample').val(0);
-                   $('#tmp_new_sample').val(result.url);
+                   $('#tmp_new_sample').val(result.name);
                    $('#sample_modal .loaded_img .img_container div').css('background-image','url("'+result.url+'")');
                    $('#sample_modal .loaded_img').removeClass('loading');
                    //console.log(result);

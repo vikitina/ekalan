@@ -127,7 +127,7 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .material_open .text_data li span{float:left;width:150px;font-weight:bold;}
 .material_open .text_data li .editable{float:left;}
 .material_open .sample_data{/*background: #fff none repeat scroll 0 0;margin-right: 10px;margin-top: 10px;padding: 15px;position: absolute;right: 0;top: 63px;width: 200px;*/}
-.material_open .sample_data em{display: block;width:100px;height:100px;}
+.material_open .sample_data em{display: block;width:100px;height:100px;background-position:center center;background-size: cover;background-repeat: no-repeat;}
 .material_open .sample_data *{float:left;}
 .material_open .text_data li.sample_data span{width:auto; margin-top: 79px;}
 .material_open .text_data li.sample_data div{width:221px;margin-left:10px; margin-top: 82px;}

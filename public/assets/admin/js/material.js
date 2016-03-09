@@ -300,6 +300,7 @@ $('#sample_modal #list_sample li span input').click(function(){
 $('#btn_pick_sample').click(function(){
                $('#new_sample').val($('#tmp_new_sample').val());
                $('#id_sample').val($('#tmp_id_sample').val());
+               $('.material_open .sample_data em').css('background-image',$("#sample_modal .loaded_img .img_container div").css('background-image'));
                $(this).parents('.modal').modal('hide');
 
 });
