@@ -296,6 +296,75 @@ public function delmaterialAction()
             ));
 
   } 
+
+
+  public function updatematerialAction(){
+
+/*
+<input type="hidden" value="477" name="id">
+<input id="name_material" type="hidden" value="aaaaa" name="name_material">
+<input id="articul" type="hidden" value="aaaa" name="articul">
+<input id="price_material" type="hidden" value="12333" name="price_material">
+<input id="id_manufacturer" type="hidden" value="1" name="id_manufacturer">
+<input id="id_manufacturer" type="hidden" value="1" name="id_manufacturer">
+<input id="id_collection" type="hidden" value="1" name="id_collection">
+<input id="id_color" type="hidden" value="1" name="id_color">
+<input id="id_sample" type="hidden" value="1" name="id_sample">
+<input id="new_sample" type="hidden" value="0" name="new_sample">
+<input id="id_texture" type="hidden" value="1" name="id_texture">
+<input id="form_analogs_list" type="hidden" value="5,6,8,9,10,12,13" name="analogs">
+
+
+*/
+            $materialSrv      = $this -> getServiceLocator()->get('material');
+            $sampleSrv        = $this -> getServiceLocator()->get('sample');
+            $analogSrv        = $this -> getServiceLocator()->get('analogs');
+
+            $data_post = $_POST;
+
+            if($data_post['new_sample'] !=0){
+
+                $id_sample = $sampleSrv->insertSample($data_post['new_sample']);
+            }else{
+                $id_sample = $data_post['id_sample'];
+
+            }
+            
+            $data = array(
+                     'id'                =>   $data_post['id'],
+                     'name_material'     =>   $data_post['name_material'],
+                     'articul'           =>   $data_post['articul'],
+                     'price_material'    =>   $data_post['price_material'],
+                     'id_manufacturer'   =>   $data_post['id_manufacturer'],
+                     'id_collection'     =>   $data_post['id_collection'],       
+                     'id_color'          =>   $data_post['id_color'], 
+                     'id_sample'         =>   $id_sample,
+                     'id_texture'        =>   $data_post['id_texture'],                     
+
+
+                );    
+            $materialSrv->updateMaterial($data);
+            if($data_post['analogs'] != 0){
+
+                $analogSrv->delAllAboutId((int)$data_post['id']);
+
+                $analogs = explode(',',$data_post['analogs']);
+                foreach ($analogs as $analog) {
+                    $analogSrv->insertAnalog(array(
+                        'id_1' => $data_post['id'],
+                        'id_2' => $analog
+                    )); 
+                    $analogSrv->insertAnalog(array(
+                        'id_2' => $data_post['id'],
+                        'id_1' => $analog
+                    )); 
+
+                }
+            }
+
+            $this->redirect()->toRoute('zfcadmin/admin_materials');
+
+  }
 function createHashCollections($list,$collectionSrv){
 
 

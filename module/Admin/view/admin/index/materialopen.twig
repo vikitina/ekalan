@@ -14,18 +14,18 @@
                                               <a class="del_material" data-id="{{ material.id }}"><i class="fa fa-trash-o"></i></a>
                                        </div>
                                           <div class="panel-body">
-                                          <form id="editmaterial">
+                                          <form id="editmaterial" action="/admin/updatematerial" method="POST">
                                                <input type="hidden" name="id" value="{{ material.id }}" />
                                                <input type="hidden" name="name_material" id="name_material" value="{{ material.name_material }}" />
                                                <input type="hidden" name="articul" id="articul" value="{{ material.articul }}" />
                                                <input type="hidden" name="price_material" id="price_material" value="{{ material.price_material }}" />
                                                <input type="hidden" name="id_manufacturer" id="id_manufacturer" value="{{ material.id_manufacturer }}" />
-                                               <input type="hidden" name="id_manufacturer" id="id_manufacturer" value="{{ material.id_manufacturer }}" />
                                                <input type="hidden" name="id_collection" id="id_collection" value="{{ material.id_collection }}" />
                                                <input type="hidden" name="id_color" id="id_color" value="{{ material.id_color }}" />
                                                <input type="hidden" name="id_sample" id="id_sample" value="{{ material.id_sample }}" />
+                                               <input type="hidden" name="new_sample" id="new_sample" value="0" />
                                                <input type="hidden" name="id_texture" id="id_texture" value="{{ material.id_texture }}" />
-                                               <input type="hidden" name="analogs" id="form_analogs_list" value="{{ lists.str_analogs }}" />
+                                               <input type="hidden" name="analogs" id="form_analogs_list" value="{{ lists.str_analogs ?  lists.str_analogs : 0}}" />
                                                <input type="hidden" name="exclude" id="exclude" value="0" />
                                           </form>
                                                   <ul class="text_data">
@@ -144,6 +144,8 @@
                                                   <span>Изображение</span>
                                                       <a href=# class="edit_sample"><em style="background-image:url('{{ material.url }}');"> </em></a>
                                                   </div>
+
+                                                  <button class="btn" id="save_open_material">Сохранить изменения</button>
                                                   
                                          </div>
                                  </div>   	
@@ -233,7 +235,7 @@
                     </ul>   
                     <div class="ui-tab-content">
                         <div aria-hidden="false" role="tabpanel" aria-labelledby="ui-id-1" id="tabs-1" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
-                               <div><label>Установить новое фото</label><input type="file" name="sample" /></div>
+                               <div><form action="/admin/ajaxuploadimg" method="post" id="sample_form"><label>Установить новое фото</label><input type="file" name="sample" id="sample" /></div>
                         </div>
                         <div aria-hidden="true" style="display: none;" role="tabpanel" aria-labelledby="ui-id-2" id="tabs-2" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
                         <div><input type="checkbox" /><label>Показать имена файлов</label></div>
@@ -254,8 +256,11 @@
                   <div class="loaded_img">
                     
                          <div class="img_container"><div style="background-image:url('{{  material.url }}')"><div class="img_loader"></div></div></div>
+                         <input type="hidden" id="tmp_new_sample" />
+                         <input type="hidden" id="tmp_id_sample" />
+          
+                       <!--  <div id="img_msg">Не выбрано изображений</div> -->
 
-                         <div id="img_msg">Не выбрано изображений</div>
                   </div>
                   <div class="clear"></div>
              </div><!--  modal-body  -->

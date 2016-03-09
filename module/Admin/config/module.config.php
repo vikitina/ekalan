@@ -92,7 +92,22 @@ return array(
                                                           'action'     => 'addmaterial',
                                                       ),
                                             ),
-                                    ),                                                                                                            
+                                    ),     
+                             'admin_updatematerial' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(
+                                              
+                                                    'route' => '/updatematerial',
+                                                    
+
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Index',
+                                                          'action'     => 'updatematerial',
+                                                      ),
+                                            ),
+                                    ),     
+
+
                               'admin_ajax_salesupdate' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',
                                   'options' => array(
@@ -202,7 +217,18 @@ return array(
                                                           'action'     => 'delmaterial',
                                                       ),
                                             ),
-                            ),                                                      
+                            ), 
+
+                            'admin_ajax_upload'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/ajaxuploadimg',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Ajax',
+                                                          'action'     => 'upload',
+                                                      ),
+                                            ),
+                            ),                                                    
                         ),
                  ),
             ),

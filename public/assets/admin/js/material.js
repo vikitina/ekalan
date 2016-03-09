@@ -288,6 +288,25 @@ $('.material_open a.del_material').click(function(){
 $('.edit_sample').click(function(){
 
       $('#sample_modal').modal('show');
-})
+});
 
+$('#sample_modal #list_sample li span input').click(function(){
+
+              $("#sample_modal .loaded_img .img_container div").css('background-image',$(this).parents('li').find('div').css('background-image'));
+              $('#tmp_new_sample').val(0);
+              $('#tmp_id_sample').val($(this).val());
+});
+
+$('#btn_pick_sample').click(function(){
+               $('#new_sample').val($('#tmp_new_sample').val());
+               $('#id_sample').val($('#tmp_id_sample').val());
+               $(this).parents('.modal').modal('hide');
+
+});
+
+$('#save_open_material').click(function(){
+         $('#editmaterial').submit();
+
+
+});
 });

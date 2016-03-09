@@ -250,6 +250,128 @@ return $result;
                 
                ) );   
 
-   }        
+   }  
+
+
+   public function uploadAction(){
+
+            $request = $this->getRequest();
+            // $data = [];
+
+             if ($request->isXmlHttpRequest()) {
+             $url = $this->uploadFile($_FILES);
+    }
+
+    return new JsonModel(array('url' => '/assets/application/samples/'.$url));
+}      
+
+
+
+function uploadfile($data){
+
+
+      $constantsSrv       = $this -> getServiceLocator()->get('constants');
+      $upload_dir         = trim($constantsSrv->getConstantByName('upload_dir'));
+      $path_to_upload_dir = trim($constantsSrv->getConstantByName('path_to_upload_dir'));
+
+
+
+
+      $target_dir = $path_to_upload_dir.$upload_dir;
+
+      $target_file = $target_dir . basename($data["sample"]["name"]);
+      //echo '<br>'.$target_file;
+      $uploadOk = 1;
+      $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+      //echo '<br>'.$imageFileType;
+// Check if image file is a actual image or fake image
+
+      $check = getimagesize($data["sample"]["tmp_name"]);
+      if($check !== false) {
+        //echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        //echo "File is not an image.";
+        $uploadOk = 0;
+    }
+
+// Check if file already exists
+if (file_exists($target_file)) {
+   // echo "Sorry, file already exists.";
+    $uploadOk = 0;
+}
+// Check file size
+if ($data["sample"]["size"] > 500000) {
+   // echo "Sorry, your file is too large.";
+    $uploadOk = 0;
+}
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+  //  echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    $uploadOk = 0;
+}
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} else {
+    $new_file_name = time().".".$imageFileType;
+    $new_file = $target_dir.$new_file_name;
+    if (move_uploaded_file($data["sample"]["tmp_name"], $new_file)) {
+      //  echo "The file ". basename( $data["sample"]["name"]). " has been uploaded.";
+    } else {
+       // echo "Sorry, there was an error uploading your file.";
+    }
+}
+$new_file_url = $upload_dir.$new_file_name;
+return $new_file_url;
+  }     
+
+
 
 }
+
+/*
+
+private function prepareImages()
+{
+    $adapter = new Http();
+
+    $size = new Size(array('min' => '10kB', 'max' => '5MB','useByteString' => true));
+    $extension = new Extension(array('jpg','gif','png','jpeg','bmp','webp','svg'), true);
+
+    if (extension_loaded('fileinfo')) {
+        $adapter->setValidators([new IsImage()]);
+    }
+
+    $adapter->setValidators([$size, $extension]);
+
+    $adapter->setDestination('public/userfiles/images/');
+
+    return $this->uploadFiles($adapter);
+}
+
+
+private function uploadFiles(Http $adapter)
+{
+    $uploadStatus = [];
+
+    foreach ($adapter->getFileInfo() as $key => $file) {
+        if (!$adapter->isValid($file["name"])) {
+            foreach ($adapter->getMessages() as $key => $msg) {
+                $uploadStatus["errorFiles"][] = $file["name"]." ".strtolower($msg);
+            }
+        }
+
+        if (!$adapter->receive($file["name"])) {
+            $uploadStatus["errorFiles"][] = $file["name"]." was not uploaded";
+        } else {
+            $uploadStatus["successFiles"][] = $file["name"]." was successfully uploaded";
+        }
+    }
+    return $uploadStatus;
+}
+
+
+*/
