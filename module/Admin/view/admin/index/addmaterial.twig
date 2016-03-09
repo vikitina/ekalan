@@ -21,13 +21,7 @@
 
                                                              </div>
                                                       </li>
-                                                      <li class="separator"></li>
-                                                    <li class="sample_data"> 
-                                                      <em style="background:red;"> </em>
-                                                      <div><label>Установить новое фото</label><input type="file" name="sample" /></div>
-                                                     <span>или</span>
-                                                      <div id="sample_list_open_window" class="local_link">Выбрать из списка</div>
-                                                  </li>
+
                                                   <li class="separator"></li>
 
 
@@ -100,9 +94,16 @@
                                                                 <input type="hidden" name="analogs" id="form_analogs_list" />
                                                      </li>
                                                   </ul>
-
+                                                  <input type="hidden" name="id_sample" id="id_sample" value="{{ material.id_sample }}" />
+                                                  <input type="hidden" name="new_sample" id="new_sample" value="0" />
                                                   <div><input type="submit" value="Добавить материал" /></div>
+
+
                                                  </form> 
+                                        <div class="sample_data"> 
+                                                
+                                                      <a href=# class="edit_sample"><em style="background-image:url('{{ material.url }}');"> </em></a>
+                                                  </div>
                                          </div>
                                  </div>   	
 
@@ -145,6 +146,65 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- /.modal -->
+
+ <div class="modal fade" id="sample_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Изменение фотографии образца</h4>
+      </div>
+      <div class="modal-body">
+  
+                  <div class="tabs b-lrb-none ui-tabs ui-widget ui-widget-content ui-corner-all tabs_area">
+                        <ul role="tablist" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                              <li aria-expanded="true" aria-selected="true" aria-labelledby="ui-id-1" aria-controls="tabs-1" tabindex="0" role="tab" class="ui-state-default ui-corner-top ui-tabs-active ui-state-active">
+                                   <a id="ui-id-1" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-1">Загрузить фото</a>
+                              </li>
+                        <li aria-expanded="false" aria-selected="false" aria-labelledby="ui-id-2" aria-controls="tabs-2" tabindex="-1" role="tab" class="ui-state-default ui-corner-top"> 
+                                    <a id="ui-id-2" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-2">Выбрать фото</a>
+                        </li>
+                       
+                    </ul>   
+                    <div class="ui-tab-content">
+                        <div aria-hidden="false" role="tabpanel" aria-labelledby="ui-id-1" id="tabs-1" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
+                               <div><form action="/admin/ajaxuploadimg" method="post" id="sample_form"><label>Установить новое фото</label><input type="file" name="sample" id="sample" /></div>
+                        </div>
+                        <div aria-hidden="true" style="display: none;" role="tabpanel" aria-labelledby="ui-id-2" id="tabs-2" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
+                        <div><input type="checkbox" /><label>Показать имена файлов</label></div>
+                            <ul id="list_sample">
+                                {% for sample in lists.samples  %}
+                                    <li>
+                                        <div style="background-image:url('{{ sample.url }}')"></div>
+                                        <span><input name="r_sample" value="{{ sample.id }}" type="radio" /></span>
+                                        <span class="url">{{ sample.url }}</span>
+                                    </li>    
+                                {% endfor %}
+                             </ul> 
+                             <div class="clear"></div>
+                        </div>  
+
+                     </div>                         
+                  </div>  
+                  <div class="loaded_img">
+                    
+                         <div class="img_container"><div style="background-image:url('{{  material.url }}')"><div class="img_loader"></div></div></div>
+                         <input type="hidden" id="tmp_new_sample" />
+                         <input type="hidden" id="tmp_id_sample" />
+          
+                       <!--  <div id="img_msg">Не выбрано изображений</div> -->
+
+                  </div>
+                  <div class="clear"></div>
+             </div><!--  modal-body  -->
+        <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn">Отменить</a>
+                <a href="#" class="btn btn-primary" id="btn_pick_sample">Добавить</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- /.modal --> 
      <script>
        
        var hash_collections = new Object();

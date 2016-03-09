@@ -310,4 +310,23 @@ $('#save_open_material').click(function(){
 
 
 });
+$('#id_manufacturer_select').change(function(){
+ var collection_by_manuf = '';
+   var id_manuf = $('#id_manufacturer_select').val();
+   $('#id_manufacturer').val(id_manuf);
+   var f = 0;
+   $.each(hash_collections[id_manuf]['collections'], function(i, item){
+
+         console.log(i+'   '+item);
+         collection_by_manuf += '<option value="'+i+'">'+item+'</option>'
+         if (f == 0){
+
+            $('#id_collection').val(i);
+         }
+         f = 1;
+
+   });
+   $('#id_collection_select').html(collection_by_manuf);
+
+});
 });

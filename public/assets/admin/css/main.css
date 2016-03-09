@@ -193,7 +193,7 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 #analogs_list li div small{position:absolute;top:-28px;display:none;}
 #analogs_list li div span{background:none;top:-18px;position:absolute;top:-18px;display:none;}
 #analogs_list li input{display:none;}
-#analogs_list li .remove_analog{display:none;position:absolute;top:0px;right:0px;width:10px;height:10px;cursor:pointer;}
+#analogs_list li .remove_analog{display:none;position:absolute;right: -7px;top: -12px;width:10px;height:10px;cursor:pointer;}
 #analogs_list li .remove_analog i{display:block;}
 #analogs_list li.hover .remove_analog{display: block;}
 

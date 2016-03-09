@@ -226,11 +226,19 @@ public function delmaterialAction()
 
           if($_POST)  {
               $data = $_POST;
-              $sample = $this->uploadfile($_FILES);
+              //$sample = $this->uploadfile($_FILES);
               //add sample
-              $sample_data['url'] = $sample;
-              $id_sample = $sampleSrv->insertSample($sample_data);
-              var_dump($id_sample);
+              //$sample_data['url'] = $sample;
+              //$id_sample = $sampleSrv->insertSample($sample_data);
+              //var_dump($id_sample);
+//var_dump($data);
+            if($data['new_sample'] != '0'){
+
+                $id_sample = $sampleSrv->insertSample(array('url' => $data['new_sample']));
+            }else{
+                $id_sample = $data['id_sample'];
+
+            }
               $new_material = array(
                      'articul'             => $data['articul'],
                      'name_material'       => $data['name_material'],
@@ -264,13 +272,20 @@ public function delmaterialAction()
                  }                 
 
               }
-
+                   $this->redirect()->toRoute('zfcadmin/admin_materials');
             }
+
             $lists['manufacturers'] = $manufacturerSrv->getAllManufacturers();
             $set_material           = $materialSrv->getSpecOrder();
             $lists['textures']      = $textureSrv->getAllTextures();
             $lists['colors']        = $colorSrv->getAllColors();
             $lists['samples']       = $sampleSrv->getAllSamples();
+
+            foreach ($lists['samples'] as $key => $item) {
+                $lists['samples'][$key]['url'] = ((isset($item['url']) && $item['url'] != '' && $item['url'] !=null)?"/assets/application/samples/".trim($item['url']):"/assets/application/img/no_photo.png");
+            }
+
+
             $lists['collections']   = $collectionSrv->getCollectionByManuf('1');
            
             $list_materials_for_analogs = $set_material['result'];
