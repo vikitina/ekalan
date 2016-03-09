@@ -343,7 +343,7 @@ public function delmaterialAction()
 
 
                 );  
-                var_dump(data);
+                var_dump($data);
             $materialSrv->updateMaterial($data);
             if($data_post['analogs'] != 0){
 
