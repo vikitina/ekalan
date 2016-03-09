@@ -176,7 +176,7 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .material_open .text_data li .selectopen span{border-bottom: transparent;}
 
 #material_list_open_window{}
-.analog_list_window {height:600px;overflow:auto;}
+.analog_list_window {height:400px;overflow:auto;}
 .analog_list_window li{list-style:none;width:130px;height:125px;position:relative;float:left;margin-bottom:20px; margin-right:20px;border:1px solid #ddd;padding:10px;}
 .analog_list_window li div{ width:100px;height:100px; }
 .analog_list_window li div small,
@@ -186,23 +186,37 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 
 .local_link{border-bottom: 1px dashed #337ab7;cursor:pointer;display: inline;}
 
-#analogs_list {     border: 1px solid #ddd;
-    float: left;
-    margin-right: 10px;
-    margin-top: -10px;
-    padding: 10px 0 10px 10px;
-    width: 253px;}
-    #analogs_list.empty{display: none;}
-#analogs_list li{  border: medium none;
-    float: left;
-    height: 50px;
-    list-style: outside none none;
-    margin-bottom: 20px;
-    margin-right: 10px;
-    padding: 0;
-    position: relative;
-    width: 50px;}
-#analogs_list li div{ width:50px;height:50px;background-repeat:no-repeat;background-position: 0 0;background-size: cover; }
+#analogs_list {border: 1px solid #ddd;float: left;margin-right: 10px;margin-top: -10px;padding: 10px 0 0 10px;width: 283px;}
+#analogs_list.empty{display: none;}
+#analogs_list li{border: medium none;float: left;height: 70px;list-style: outside none none;margin-bottom: 20px;margin-right: 20px;padding: 0;position: relative;width: 70px;border:1px dashed #ddd;}
+#analogs_list li div{width:50px;height:50px;background-repeat:no-repeat;background-position: 0 0;background-size: cover;position:absolute;top:10px;left:10px;}
 #analogs_list li div small{position:absolute;top:-28px;display:none;}
 #analogs_list li div span{background:none;top:-18px;position:absolute;top:-18px;display:none;}
 #analogs_list li input{display:none;}
+#analogs_list li .remove_analog{display:none;position:absolute;top:0px;right:0px;width:10px;height:10px;cursor:pointer;}
+#analogs_list li .remove_analog i{display:block;}
+#analogs_list li.hover .remove_analog{display: block;}
+
+#left_panel{list-style: none;}
+#left_panel .separator{border-bottom:1px solid #ddd;margin-bottom: 20px;margin-top:20px;}
+
+#sample_modal .tabs_area{width:70%;float:left;}
+#sample_modal .loaded_img{width:29%;float:right;border-left:1px solid #ddd;height:100%;}
+
+
+#sample_modal .modal-body{height: 400px;}
+#sample_modal .modal-body .ui-tab-content{height: 328px;}
+#sample_modal #list_sample{list-style: none;float:left;width:100%;height:248px;overflow: auto;}
+#sample_modal #list_sample li{list-style: none;float:left;width:70px;height: 70px;position:relative;margin-right: 20px;border:1px dashed #ddd;margin-bottom: 20px;}
+#sample_modal #list_sample li div{width:50px;height:50px;position: absolute;top:10px;left:10px;background-position:center center;background-repeat: no-repeat;background-size: cover;}
+#sample_modal #list_sample li span{display: block;position:absolute;width: 10px;height:10px;bottom: 0;right:0;}
+#sample_modal #list_sample li span.url{display:none;}
+
+#sample_modal #list_sample.with_name li{width:100%;}
+#sample_modal #list_sample.with_name li span.url{display:block;}
+
+#sample_modal .loaded_img .img_container{width:120px;height: 120px;margin:20px auto;border:1px dashed #ddd;position:relative;}
+#sample_modal .loaded_img .img_container div{width:100px;height:100px;position: absolute;top:10px;left:10px;background-position:center center;background-repeat: no-repeat;background-size: cover;}
+#sample_modal .loaded_img .img_container div .img_loader{position:absolute;top:0;left: 0;background:#fff url('/assets/application/img/loading.GIF') no-repeat center center;display:none;}
+#sample_modal .loaded_img.loading .img_container div .img_loader{display: block;}
+#sample_modal .loaded_img #img_msg {width: 73%;margin:20px auto;font-size: 0.9em;line-height: 1.2em;text-align:left;}

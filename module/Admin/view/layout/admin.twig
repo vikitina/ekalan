@@ -57,20 +57,26 @@
 
             <hr>
 
-            <ul class="nav nav-stacked">
+            <ul class="nav nav-stacked" id="left_panel">
                 
-                           
-                        <li><a href="#"><i class="glyphicon glyphicon-comment"></i>Страницы</a>
-                                 <ul>
-                                     <li><a href="/admin/page/main">Главная</a></li>
-                                     <li><a href="">Портфолио</a></li>
-                                     <li><a href="/admin/materials">Материалы</a></li>
+                
+                        <li><a href="/admin/page/main">Главная</a></li>
+                        <li><a href="">Портфолио</a></li>
+                        <li class="separator"></li>
+                        <li><a href="/admin/materials">Материалы</a>
+                                 <ul><a href="/admin/addmaterial">Добавить новый</a>
+                                  </ul>
+                         </li>
+                         <li><a href="/admin/manufacturers">Производители / коллекции</a></li>
+                         <li><a href="/admin/texturers">Текстуры</a></li>
+                         <li><a href="/admin/colors">Цвета</a></li>
 
 
-                                 </ul>
-                        </li>
+                              
+                        <li class="separator"></li>
                         <li><a href="/admin/msgs"><i class="glyphicon glyphicon-envelope"></i> Сообщения <span class="badge badge-info" id="uread_msgs">{{ UnreadMessages() }}</span></a></li>
-                        <li><a href="/admin/users"><i class="glyphicon glyphicon-cog"></i> Users</a></li>
+                         <li class="separator"></li>
+                        <li><a href="/admin/users"><i class="glyphicon glyphicon-cog"></i>Клиенты</a></li>
                         
                        
                         <li><a href="/user/logout"><i class="glyphicon glyphicon-off"></i> Выход</a></li>

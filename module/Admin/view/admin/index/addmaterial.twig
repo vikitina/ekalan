@@ -97,7 +97,7 @@
                                                      <li><span>Подобные</span>
                                                                 <ul id="analogs_list" class="empty"></ul>
                                                                 <div id="material_list_open_window" class="local_link">Выбрать из списка</div>
-                                                          <input type="hidden" name="analogs" id="form_analogs_list" />
+                                                                <input type="hidden" name="analogs" id="form_analogs_list" />
                                                      </li>
                                                   </ul>
 
@@ -130,7 +130,7 @@
                                           {{ material.name_material }}
                                   </span>  
                         </div>
-                        <input type="checkbox" value="{{ material.id }}" />   
+                        <input type="checkbox" value="{{ material.id }}" id="a_{{ material.id }}" />   
 
                        </li>
                   {%endfor%}

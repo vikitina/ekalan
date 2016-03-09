@@ -151,6 +151,9 @@ public function materialopenAction()
             $lists['collections']   = $collectionSrv->getCollectionByManuf($material['set']['id_manufacturer']);
             $set_material           = $materialSrv->getSpecOrder(array('exclude' => $material_id));
 
+
+            $material['set']['url'] = ((isset($material['set']['url']) && $material['set']['url'] != '' && $material['set']['url'] !=null)?"/assets/application/samples/".trim($material['set']['url']):"/assets/application/img/no_photo.png");
+
             $list_materials_for_analogs = $set_material['result'];
             $i = 0; 
             foreach($list_materials_for_analogs as $item){
@@ -158,6 +161,11 @@ public function materialopenAction()
                     $i += 1;
             }
             $lists['materials']      = $list_materials_for_analogs;
+            
+
+            foreach ($lists['samples'] as $key => $item) {
+                $lists['samples'][$key]['url'] = ((isset($item['url']) && $item['url'] != '' && $item['url'] !=null)?"/assets/application/samples/".trim($item['url']):"/assets/application/img/no_photo.png");
+            }
 
             $set_analogs_id = $analogSrv->getAnalogForId($material_id);
             

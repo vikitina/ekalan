@@ -164,7 +164,7 @@ $('#btn_pick_analogs').click(function(){
          var f=0;
          $('#form_analogs li input:checked').map(function (i, el) {
                     console.log(i+'    '+$(el).val());
-                    analogs_html += '<li>'+$(el).parent().html()+'</li>';
+                    analogs_html += '<li>'+$(el).parent().html()+'<span class="remove_analog" data-id="a_'+$(el).val()+'"><i class="fa fa-times"></i></span></li>';
                     
                     form_analogs_list += (f==1) ?','+$(el).val() :$(el).val();
                     f = 1;
@@ -179,23 +179,67 @@ return false;
 
 });
 
+$('#analogs_list').on('mouseover', 'li', function(){
+
+  $(this).addClass('hover');
+});
+
+$('#analogs_list').on('mouseout', 'li', function(){
+
+  $(this).removeClass('hover');
+});
+
+$('#analogs_list').on('click', 'li > .remove_analog', function(){
+
+     var id = '#material_list_modal input#' + $(this).attr('data-id');
+     $(id).attr('checked', false);
+     var form_analogs_list = '';
+     var f=0;
+     $(this).parent().remove();
+     $('#analogs_list li input').map(function (i, el){
+            form_analogs_list += (f==1) ?','+$(el).val() :$(el).val();
+            f = 1;
+     });
+     form_analogs_list = ((form_analogs_list != '')?form_analogs_list:0);
+     $('#form_analogs_list').val(form_analogs_list);
+     if(form_analogs_list == 0){
+          $('#analogs_list').addClass('empty');
+     }
+     console.log($('#form_analogs_list').val());
+});
+
 
 
 
 //смена производителя - смена списка коллекций
-$('#id_manufacturer_select').change(function(){
+ 
+$('.editable_select').change(function(){
 
+if ($(this).attr('id') == 'id_manufacturer_select'){
    console.log($('#id_manufacturer_select').val());
    var collection_by_manuf = '';
    var id_manuf = $('#id_manufacturer_select').val();
+   $('#id_manufacturer').val(id_manuf);
+   var f = 0;
    $.each(hash_collections[id_manuf]['collections'], function(i, item){
 
          console.log(i+'   '+item);
          collection_by_manuf += '<option value="'+i+'">'+item+'</option>'
+         if (f == 0){
+
+            $('#id_collection').val(i);
+         }
+         f = 1;
 
    });
    $('#id_collection_select').html(collection_by_manuf);
+   console.log('производитель');
+}else{
+    var id = $(this).attr('data-name');
+    var value = $(this).val();
+    $(id).val(value);
 
+}
 
 });
 
@@ -239,5 +283,11 @@ $('.material_open a.del_material').click(function(){
 
               return false;
 });
+
+
+$('.edit_sample').click(function(){
+
+      $('#sample_modal').modal('show');
+})
 
 });

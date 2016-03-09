@@ -19,6 +19,13 @@
                                                <input type="hidden" name="name_material" id="name_material" value="{{ material.name_material }}" />
                                                <input type="hidden" name="articul" id="articul" value="{{ material.articul }}" />
                                                <input type="hidden" name="price_material" id="price_material" value="{{ material.price_material }}" />
+                                               <input type="hidden" name="id_manufacturer" id="id_manufacturer" value="{{ material.id_manufacturer }}" />
+                                               <input type="hidden" name="id_manufacturer" id="id_manufacturer" value="{{ material.id_manufacturer }}" />
+                                               <input type="hidden" name="id_collection" id="id_collection" value="{{ material.id_collection }}" />
+                                               <input type="hidden" name="id_color" id="id_color" value="{{ material.id_color }}" />
+                                               <input type="hidden" name="id_sample" id="id_sample" value="{{ material.id_sample }}" />
+                                               <input type="hidden" name="id_texture" id="id_texture" value="{{ material.id_texture }}" />
+                                               <input type="hidden" name="analogs" id="form_analogs_list" value="{{ lists.str_analogs }}" />
                                                <input type="hidden" name="exclude" id="exclude" value="0" />
                                           </form>
                                                   <ul class="text_data">
@@ -55,9 +62,9 @@
                                                      <li><span>Производитель</span>
                                                          <div>
 
-                                                                            <select id="id_manufacturer_select">
+                                                                            <select id="id_manufacturer_select" class="editable_select" data-name="#id_manufacturer">
                                                                                 {% for manuf in lists.manufacturers %}
-                                                                                        <option value="{{ manuf.id }}" data-name="id_manufacturer"{% if material.id_manufacturer==manuf.id %} selected=""{%endif%}>{{ manuf.name_manufacturer }}</option>
+                                                                                        <option value="{{ manuf.id }}" {% if material.id_manufacturer==manuf.id %} selected=""{%endif%}>{{ manuf.name_manufacturer }}</option>
                                                                                  {% endfor %}
 
                                                                             </select>
@@ -67,9 +74,9 @@
                                                     <li><span>Коллекция</span>
                                                          <div>
 
-                                                                            <select id="id_collection_select">
+                                                                            <select id="id_collection_select" class="editable_select" data-name="#id_collection">
                                                                                 {% for collect in lists.collections %}
-                                                                                        <option value="{{ collect.id }}" data-name="id_collection"{% if material.id_collection==collect.id %} selected=""{% endif %}>{{ collect.name_collection }}</option>
+                                                                                        <option value="{{ collect.id }}"{% if material.id_collection==collect.id %} selected=""{% endif %}>{{ collect.name_collection }}</option>
                                                                                  {% endfor %}
 
                                                                             </select>
@@ -79,9 +86,9 @@
                                                      <li class="separator"></li>
                                                      <li><span>Цвет</span>
                                                           <div>
-                                                                           <select>
+                                                                           <select class="editable_select" data-name="#id_color">
                                                                                 {% for color in lists.colors %}
-                                                                                        <option data-value="{{ color.id }}" data-name="id_color"{% if material.id_color==color.id %} selected=""{%endif%}>{{ color.name_color }}</option>
+                                                                                        <option value="{{ color.id }}"{% if material.id_color==color.id %} selected=""{%endif%}>{{ color.name_color }}</option>
                                                                                  {% endfor %}
 
                                                                             </select>                                                            
@@ -89,9 +96,9 @@
                                                        </li>
                                                      <li><span>Текстура</span>
                                                           <div>
-                                                                           <select>
+                                                                           <select class="editable_select" data-name="#id_texture">
                                                                                 {% for texture in lists.textures %}
-                                                                                        <option data-value="{{ texture.id }}" data-name="id_texture"{% if material.id_texture==texture.id %} selected=""{%endif%}>{{ texture.name_texture }}</option>
+                                                                                        <option value="{{ texture.id }}"{% if material.id_texture==texture.id %} selected=""{%endif%}>{{ texture.name_texture }}</option>
                                                                                  {% endfor %}
 
                                                                             </select>                                                            
@@ -122,21 +129,20 @@
                                                                                  <div style="background-image:url('{{ item.url }}');">
                                                                                        <small>{{ item.articul }}</small><br />
                                                                                        <span>{{ item.name_material }} </span>  
+                                                                                       <span class="remove_analog" data-id="a_{{ item.id }}"><i class="fa fa-times"></i></span>
                                                                                  </div>
-                                                                                 
-                                                                          
-                                                                          
+                                                                         
                                                                                  <input type="checkbox" value="{{ item.id }}" />   
 
                                                                           </li>
                                                                 {% endfor %}
                                                          </ul>
                                                                 <div id="material_list_open_window" class="local_link">Открыть список всех материалов</div>
-                                                                <input type="hidden" name="analogs" id="form_analogs_list" value="{{ lists.str_analogs }}" />
+                                                                
                                                         </ul>
                                                   <div class="sample_data"> 
                                                   <span>Изображение</span>
-                                                      <a href=# class="edit_sample"><em style="background-image:url('/assets/application/samples/{{material.url}}');"> </em></a>
+                                                      <a href=# class="edit_sample"><em style="background-image:url('{{ material.url }}');"> </em></a>
                                                   </div>
                                                   
                                          </div>
@@ -189,7 +195,7 @@
                                           {{ material.name_material }}
                                   </span>  
                         </div>
-                        <input type="checkbox" value="{{ material.id }}" {% if lists.list_analog_for_check[material.id] %} checked="checked" {% endif %}/>   
+                        <input type="checkbox" value="{{ material.id }}" {% if lists.list_analog_for_check[material.id] %} checked="checked" {% endif %} id="a_{{ material.id }}" />   
 
                        </li>
                   {%endfor%}
@@ -204,6 +210,63 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- /.modal -->    
+
+
+ <div class="modal fade" id="sample_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Изменение фотографии образца</h4>
+      </div>
+      <div class="modal-body">
+  
+                  <div class="tabs b-lrb-none ui-tabs ui-widget ui-widget-content ui-corner-all tabs_area">
+                        <ul role="tablist" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                              <li aria-expanded="true" aria-selected="true" aria-labelledby="ui-id-1" aria-controls="tabs-1" tabindex="0" role="tab" class="ui-state-default ui-corner-top ui-tabs-active ui-state-active">
+                                   <a id="ui-id-1" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-1">Загрузить фото</a>
+                              </li>
+                        <li aria-expanded="false" aria-selected="false" aria-labelledby="ui-id-2" aria-controls="tabs-2" tabindex="-1" role="tab" class="ui-state-default ui-corner-top"> 
+                                    <a id="ui-id-2" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-2">Выбрать фото</a>
+                        </li>
+                       
+                    </ul>   
+                    <div class="ui-tab-content">
+                        <div aria-hidden="false" role="tabpanel" aria-labelledby="ui-id-1" id="tabs-1" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
+                               <div><label>Установить новое фото</label><input type="file" name="sample" /></div>
+                        </div>
+                        <div aria-hidden="true" style="display: none;" role="tabpanel" aria-labelledby="ui-id-2" id="tabs-2" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
+                        <div><input type="checkbox" /><label>Показать имена файлов</label></div>
+                            <ul id="list_sample">
+                                {% for sample in lists.samples  %}
+                                    <li>
+                                        <div style="background-image:url('{{ sample.url }}')"></div>
+                                        <span><input name="r_sample" value="{{ sample.id }}" type="radio" /></span>
+                                        <span class="url">{{ sample.url }}</span>
+                                    </li>    
+                                {% endfor %}
+                             </ul> 
+                             <div class="clear"></div>
+                        </div>  
+
+                     </div>                         
+                  </div>  
+                  <div class="loaded_img">
+                    
+                         <div class="img_container"><div style="background-image:url('{{  material.url }}')"><div class="img_loader"></div></div></div>
+
+                         <div id="img_msg">Не выбрано изображений</div>
+                  </div>
+                  <div class="clear"></div>
+             </div><!--  modal-body  -->
+        <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn">Отменить</a>
+                <a href="#" class="btn btn-primary" id="btn_pick_sample">Добавить</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- /.modal -->  
     <script>
        var hash_collections = new Object();
       hash_collections = {{ hash_collections | raw }};
