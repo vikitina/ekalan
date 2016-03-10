@@ -27,6 +27,8 @@
                                                <input type="hidden" name="id_texture" id="id_texture" value="{{ material.id_texture }}" />
                                                <input type="hidden" name="analogs" id="form_analogs_list" value="{{ lists.str_analogs ?  lists.str_analogs : 0}}" />
                                                <input type="hidden" name="exclude" id="exclude" value="0" />
+                                               <input type="hidden" name="describe_material" id="describe_material" value="{{ material.describe_material }}" />
+                                               
                                           </form>
                                                   <ul class="text_data">
                                                      <li>
@@ -138,8 +140,25 @@
                                                                 {% endfor %}
                                                          </ul>
                                                                 <div id="material_list_open_window" class="local_link">Открыть список всех материалов</div>
-                                                                
-                                                        </ul>
+                                                  </li>
+                                                  <li class="separator"></li>
+                                                   <li class="textarea"><span>Описание</span>
+
+                                                          <div class="editable">
+                                                              {% if material.describe_material %}<span>{{ material.describe_material }}</span>{% else %}<span>Не указано</span>{% endif %}
+                                                              <div class="editblock">
+                                                                  <div class="editarea">
+                                                                       <textarea data-name="describe_material">{{ material.describe_material }} </textarea>
+                                                                  </div>
+                                                                  
+
+                                                            </div><!-- editblock  -->
+                                                            <i class="fa fa-pencil fa-fw"></i>
+                                                          </div> 
+                                                     </li>
+                                                     <li class="separator"></li>                                                       
+
+                                                 </ul>
                                                   <div class="sample_data"> 
                                                   <span>Изображение</span>
                                                       <a href=# class="edit_sample"><em style="background-image:url('{{ material.url }}');"> </em></a>

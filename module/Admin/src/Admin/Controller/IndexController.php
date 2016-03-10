@@ -113,6 +113,10 @@ public function materialsAction()
         $limit = 10;
         $data['limit'] = $limit;
         $set_material = $materialSrv->getSpecOrder($data);
+            foreach ($set_material['result'] as $key => $item) {
+                $set_material['result'][$key]['url'] = ((isset($item['url']) && $item['url'] != '' && $item['url'] !=null)?"/assets/application/samples/".trim($item['url']):"/assets/application/img/no_photo.png");
+            }
+
         $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
         $set_material_html = $partial('material/adminmaterialset', array("key" => $set_material['result']));  
      
@@ -354,7 +358,8 @@ public function delmaterialAction()
                      'id_collection'     =>   $data_post['id_collection'],       
                      'id_color'          =>   $data_post['id_color'], 
                      'id_sample'         =>   $id_sample,
-                     'id_texture'        =>   $data_post['id_texture'],                     
+                     'id_texture'        =>   $data_post['id_texture'],  
+                     'describe_material' =>   $data_post['describe_material']                   
 
 
                 );  

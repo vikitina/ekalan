@@ -182,7 +182,9 @@ return $result;
                $data = $_POST;
                $materialSrv = $this -> getServiceLocator()->get('material');
                $set_material = $materialSrv->getSpecOrder($data);
-
+               foreach ($set_material['result'] as $key => $item) {
+                $set_material['result'][$key]['url'] = ((isset($item['url']) && $item['url'] != '' && $item['url'] !=null)?"/assets/application/samples/".trim($item['url']):"/assets/application/img/no_photo.png");
+               }
                $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
                $set_material_html = $partial('material/adminmaterialset', array("key" => $set_material['result']));   
                $rowcount = $set_material['rowcount'];
@@ -302,19 +304,18 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 // Check file size
-if ($data["sample"]["size"] > 500000) {
+if ($data["sample"]["size"] > 5000000) {
    // echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }
 // Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
   //  echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
     $uploadOk = 0;
 }
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
+    //echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
     $new_file_name = time().".".$imageFileType;

@@ -104,19 +104,33 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .code_action{display:none;}
 
 /*-----------------------------------------*/
+.filter_line h4{    float: left;
+    margin-bottom: 0;
+    margin-right: 20px;
+    margin-top: 24px;}
 .filter_line{width:100%;float: left;margin-bottom: 20px;}
-.filter_line div{float: left;margin-right: 10px;width:23%;}
-.filter_line div label{float: left;width:100%;}
+.filter_line div{float: left;margin-right: 10px;width:18%;}
+.filter_line div label{    color: #999;
+    float: left;
+    font-size: 0.8em;
+    font-weight: normal;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    width: 100%;}
 .filter_line div input,
 .filter_line div select{float: left;width:100%;}
 
-.material_list li{width:100%;height:50px;}
+.material_list li{width:100%;height:76px;}
+.material_list li a{float:left;width:80%;}
 .material_list li.confirm_deleting_state{background:#ddd;}
 .material_list li small{float:left;width:10%;margin-right:20px;text-align: right;line-height: 2.9em;}
 .material_list li span{float: left;line-height: 2.5em;}
+.material_list li span.sample{float:left;display:block;width:50px;height:50px;margin-right: 20px;background-repeat:no-repeat;background-position: center center;background-size: cover;}
 
 .material_list li span.del_material_ajax{float:right;display:block;height: 31px;padding: 4px;width: 29px;border:1px dashed #dadada;cursor: pointer;}
 .material_list li span.del_material_ajax i{font-size: 1.7em;float: left;}
+
+
 .clear{clear:both;}
 
 /*-----------------------------------------*/
@@ -144,27 +158,38 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .material_open .panel-body .sample_data .edit_sample{display:block;width:120px;height:120px;border:1px dashed #ddd;padding:10px;background:url('/assets/application/img/no_photo.png') no-repeat center center;}
 .material_open .panel-body .sample_data span{font-weight:bold;display:block;margin-top:-25px;}
 
-.editable{padding:4px;border:1px solid transparent;margin-top:-5px;position:relative;}
+.editable{padding:4px;border:1px solid transparent;margin-top:-5px;position:relative;max-width: 500px;max-height: 170px;}
 .editable .editblock{display:none;color:#337ab7;position:absolute;top:0;left:0;width:100%;height:100%;}
 .editable  i{font-size: 1.4em;position: absolute;right: -26px;top: 7px;display:none;color:#337ab7;}
 .editable .editblock .editarea{position:absolute;top:0;left:0;width:100%;height:100%;border:none;padding:1px;}
-.editable .editblock .editarea input{position:absolute;top:0;left:0;width:100%;height:100%;border:none;padding:3px;padding-left: 4px;}
+.editable .editblock .editarea input,
+.editable .editblock .editarea textarea{position:absolute;top:0;left:0;width:100%;height:100%;border:none;padding:3px;padding-left: 4px;}
+.editable .editblock .editarea textarea{position:relative;height:164px;width:497px;padding:10px;background:#fff;padding-top:4px;padding-left:4px;}
+
+.textarea .editopen{width:504px;height:174px;} 
+
+
 .editablehover{border-color:#337ab7;}
 .editablehover i{display:block;}
 .editopen{color:navy;border:1px solid navy;}
 .editopen .editblock{display:block;}
 .editopen i{display:block;color:navy;}
 
-.material_open .text_data li .editable span{font-weight: normal;    border-bottom: 1px dashed #337ab7;width: auto;}
+.material_open .text_data li .editable span{font-weight: normal;border-bottom: 1px dashed #337ab7;width: auto;}
 .material_open .text_data li .editablehover span{border-color: transparent;}
-.material_open .text_data li .editopen span{border-bottom: transparent;}
 
+
+.material_open .text_data li.textarea .editable span{border: 1px dashed #337ab7;max-height: 163px;overflow: hidden;}
+
+.material_open .text_data li.textarea .editablehover span{border-color: transparent !important;}
 
 .selectable{padding:4px;border:1px solid transparent;margin-top:-5px;position:relative;float:left;}
 .selectable .editblock{display:none;color:#337ab7;position:absolute;top:0;left:0;width:100%;height:100%;}
 .selectable  i{font-size: 1.4em;position: absolute;right: -26px;top: 7px;display:none;color:#337ab7;}
 .selectable .editblock .editarea{position:absolute;top:0;left:0;width:100%;height:100%;border:none;padding:1px;}
 .selectable .editblock .editarea input{position:absolute;top:0;left:0;width:100%;height:100%;border:none;padding:3px;padding-left: 4px;}
+
+
 .selectablehover{border-color:#337ab7;}
 .selectablehover i{display:block;}
 .selectopen{color:navy;border:1px solid navy;}
@@ -220,3 +245,12 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 #sample_modal .loaded_img .img_container div .img_loader{position:absolute;top:0;left: 0;background:#fff url('/assets/application/img/loading.GIF') no-repeat center center;display:none;}
 #sample_modal .loaded_img.loading .img_container div .img_loader{display: block;}
 #sample_modal .loaded_img #img_msg {width: 73%;margin:20px auto;font-size: 0.9em;line-height: 1.2em;text-align:left;}
+
+.title_page{float:left;margin-top:0;}
+.right_link .plus{font-size: 2em;line-height:2em; }
+
+.right_link{    float: left;
+    font-size: 1.5em;
+    line-height: 2em;
+    text-align: right;
+    width: 753px;}
