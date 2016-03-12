@@ -58,7 +58,7 @@ return array(
                                   'type' => 'Zend\Mvc\Router\Http\Segment',
                                           'options' => array(
                                               
-                                                    'route' => '/materials',
+                                                    'route' => '/materials[/:filter]',
                                                     
 
                                                     'defaults' => array(

@@ -1,6 +1,96 @@
+Hash = {
+  // Получаем данные из адреса
+  get:      function() {
+       var indexes = ['manufacturer','id_color','id_texture','id_material'];
+    // [0] - производитель
+    // [1] - цвет
+    // [2] - текстура
+    // [3] - материал
+
+                 var data = {};
+                     if(location.search) {
+                              var param_str = decodeURIComponent(location.search.substr(1)).split('&');
+                              for(var i = 0; i < param_str.length; i ++) {
+                                        //var param = pair[i].split('=');
+                                        //var key = param[0].match(/^.*\[(.*)\].*?/);
+                                        //data[key[1]] = param[1];
+                                        data[indexes[i]] = param_str;
+
+                                }
+                      }
+                      
+                      
+              return data;
+    
+  }
+  
+  
+  
+  
+  // Заменяем данные в адресе на полученный массив ======================================================
+  
+  ,set:          function(vars) {
+                     var hash = '';
+
+                    for (var i in vars) {
+                            hash += '&' + vars[i];
+
+                    }
+
+
+                     if (!this.oldbrowser()) {
+                              if (hash.length != 0) {
+                                    hash = '/' + hash.substr(1);
+                               }
+                              // console.log("location: " + location.hostname);
+                            window.history.pushState(hash, '', '/admin/materials'+hash);
+
+                     
+                      }
+                    else {
+                        window.location.hash = hash.substr(1);
+                     }
+                 }
+                 
+                 
+                 
+  // Добавляем одно значение в адрес
+  ,add: function(key, val) {
+    var hash = this.get();
+    hash[key] = val;
+    this.set(hash);
+  }
+  // Удаляем одно значение из адреса
+  ,remove: function(key) {
+    var hash = this.get();
+    delete hash[key];
+    this.set(hash);
+  }
+  
+  
+  
+  // Очищаем все значения в адресе====================================================================
+  ,clear:           function() {
+                         this.set({});
+  }
+  
+  
+  // Проверка на поддержку history api браузером======================================================
+  ,oldbrowser:      function() {
+                          return !(window.history && history.pushState);
+  }
+};
+
 $(document).ready(function(){
 
-
+       var data = new Object();
+       //data = Hash.get();
+       //indexes = ['manufacturer','id_color','id_texture','id_material'];
+       data['manufacturer'] = $('#id_manufacturer').attr('data-name');
+       data['id_color'] = $('#id_color').val();
+       data['id_texture'] = $('#id_texture').val();
+       //Hash.set();
+       Hash.set(data);
 
       $(window).scroll(function(){
                  if ($(window).scrollTop() == $(document).height() - $(window).height()){
@@ -23,8 +113,13 @@ $(document).ready(function(){
 
              var id = '#' + $(this).parent().attr('data-name');
              $(id).val($(this).val());
+            
              $("#start").val(1);
-             
+             data['manufacturer'] = $('#id_manufacturer').val();
+             data['id_color'] = $('#id_color').val();
+       
+             data['id_texture'] = $('#id_texture').val();
+             Hash.set(data);             
              $('.material_list').html('');
              getmaterial();
              
@@ -47,12 +142,46 @@ $(document).ready(function(){
                
                       $('.material_list').append(data.html);
                       $('#rowcount').val(data.rowcount);
+                      $('.count_text').html('Найдено <span class="count">'+data.rowcount+'</span> '+getMaterialsCount(data.rowcount));
                       //console.log('query     '+data.query); 
                       //console.log('id_color =      '+data.id_color); 
                  
                 
                  });          
       }
+
+
+function getMaterialsCount(count){
+  
+  var dictionary_Materials = new Object();
+  dictionary_Materials = {
+    '0' : 'материалов',
+    '1' : 'материал',
+    '2' : 'материала',
+    '3' : 'материала',
+    '4' : 'материала',
+    '5' : 'материалов',
+    '6' : 'материалов',
+    '7' : 'материалов',
+    '8' : 'материалов',
+    '9' : 'материалов'
+    }
+    var material = '';
+        var reg_last_symb = new RegExp(".*(.)$"); 
+        var reg_teen = new RegExp("(.)*.$");  
+        var tens_digit = reg_teen.exec(count);
+        if(tens_digit[1] == '1'){
+               material = 'материалов';
+      }else{
+          var key = reg_last_symb.exec(count);
+          material = dictionary_Materials[key[1]];
+      
+      }
+  
+           return material;
+           
+  
+  }      
 
 $('#filter_articul').on('keyup',function(){
 

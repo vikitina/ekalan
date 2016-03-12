@@ -3,7 +3,7 @@
 
 {% block content %}
 <form id="filter">
-     <input type="hidden" id="id_manufacturer" name="id_manufacturer" data-name="{{ data.manufacturer }}" value="0" />
+     <input type="hidden" id="id_manufacturer" name="id_manufacturer" data-name="{{ data.manufacturer ? data.manufacturer : 0 }}" value="0" />
      <input type="hidden" id="id_color" name="id_color" value="0" />
      <input type="hidden" id="id_texture" name="id_texture" value="0" />
      <input type="hidden" id="limit" name="limit" value="{{ limit }}" />
@@ -31,7 +31,7 @@
               	     <select>
               	             <option value="0">Все</option>
               	     	{% for manufacturer in filters.manufacturers %}
-                             <option value="{{ manufacturer.id }}">{{ manufacturer.name_manufacturer }}</option>
+                             <option value="{{ manufacturer.id }}" data-title="{{ manufacturer.name_manufacturer }}">{{ manufacturer.name_manufacturer }}</option>
                         {% endfor %}
               	     </select></div>
 
@@ -55,6 +55,7 @@
 
               </div><!-- filter_line  -->
               <div class="clear"></div>
+                 <div class="count_text">Найдено <span class="count">{{ rowcount  }}</span> материала</div>
                  <ul class="list-group material_list">{{ materials|raw }}</ul>		
 			</section>
      </div>       

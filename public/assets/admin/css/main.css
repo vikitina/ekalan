@@ -108,7 +108,13 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
     margin-bottom: 0;
     margin-right: 20px;
     margin-top: 24px;}
-.filter_line{width:100%;float: left;margin-bottom: 20px;}
+.filter_line{background: #eee none repeat scroll 0 0;
+    float: left;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    width: 100%;}
 .filter_line div{float: left;margin-right: 10px;width:18%;}
 .filter_line div label{    color: #999;
     float: left;
@@ -249,8 +255,7 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .title_page{float:left;margin-top:0;}
 .right_link .plus{font-size: 2em;line-height:2em; }
 
-.right_link{    float: left;
-    font-size: 1.5em;
-    line-height: 2em;
-    text-align: right;
-    width: 753px;}
+.right_link{float: left;font-size: 1.5em;line-height: 2em;text-align: right;width: 753px;}
+
+.count_text{margin-top:15px;margin-bottom:15px;}
+.count_text .count{text-transform:italic;font-weight:bold;}
