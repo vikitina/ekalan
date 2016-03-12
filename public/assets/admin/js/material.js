@@ -113,7 +113,7 @@ $(document).ready(function(){
 
              var id = '#' + $(this).parent().attr('data-name');
              $(id).val($(this).val());
-            
+
              $("#start").val(1);
              data['manufacturer'] = $('#id_manufacturer').val();
              data['id_color'] = $('#id_color').val();
@@ -122,6 +122,8 @@ $(document).ready(function(){
              Hash.set(data);             
              $('.material_list').html('');
              getmaterial();
+
+             $('#crumbs').html('<div>'+hash_crumbs['manufacturer'][$('#id_manufacturer').val()]+'</div><em>/</em><div>'+hash_crumbs['texture'][$('#id_texture').val()]+'</div><em>/</em><div>'+hash_crumbs['color'][$('#id_color').val()])+'</div>'
              
       });
 

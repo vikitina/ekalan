@@ -122,13 +122,14 @@ public function materialsAction()
      
         $rowcount = $set_material['rowcount'];
 
-       
+        $hash = $this -> createHashForCrumbs();
              
         return new ViewModel(array(
             'materials' => $set_material_html,
             'filters'   => $filters,
             'rowcount'  => $rowcount,
-            'limit'     => $limit            
+            'limit'     => $limit,
+            'hash'      => $hash
         ));
     }
 
@@ -189,6 +190,9 @@ public function materialopenAction()
             $hash_collections = $this->createHashCollections($lists['manufacturers'],$collectionSrv);
             $lists['list_analog_for_check'] = $list_analog_for_check;
             $lists['str_analogs'] = $str_analogs;
+
+            
+
         return new ViewModel(array(
              
                 'material'           => $material['set'],
@@ -411,6 +415,48 @@ function createHashCollections($list,$collectionSrv){
             }
             $hash_collections .= "}";
             return   $hash_collections;  
+}
+
+
+function createHashForCrumbs(){
+            $manufacturerSrv  = $this -> getServiceLocator()->get('manufacturer');
+            $textureSrv       = $this -> getServiceLocator()->get('texture');
+            $colorSrv         = $this -> getServiceLocator()->get('color');     
+
+
+            $manufacturers = $manufacturerSrv->getAllManufacturers();
+            $textures      = $textureSrv->getAllTextures();
+            $colors        = $colorSrv->getAllColors();
+
+            $hash  = "{'manufacturer' : {'0' : 'Все производители'";
+            $f1 = 1;
+            foreach ($manufacturers as $key => $value) {
+                $hash .= (($f1 == 0)? "" : ",") . "'".$value['id']."':'Производитель <span>".$value['name_manufacturer']."</span>'";
+                $f1 = 1;
+            }
+            $hash .= "},'texture' : {'0' : 'Все текстуры'";
+            $f1 = 1;
+            foreach ($textures as $key => $value) {
+                $hash .= (($f1 == 0)? "" : ",") . "'".$value['id']."':'Текстура <span>".$value['name_texture']."</span>'";
+                $f1 = 1;
+            }
+            $hash .= "},'color' : {'0' : 'Все цвета'";
+            $f1 = 1;
+            foreach ($colors as $key => $value) {
+                $hash .= (($f1 == 0)? "" : ",") . "'".$value['id']."':'Цвет <span>".$value['name_color']."</span>'";
+                $f1 = 1;
+            }            
+
+
+            
+
+            
+
+
+            $hash .= "}}";
+            return $hash;
+
+
 }
 
 function uploadfile($data){

@@ -880,3 +880,55 @@
 [11-Mar-2016 13:53:20 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
 [11-Mar-2016 13:54:14 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
 [11-Mar-2016 13:57:48 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 06:37:41 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:10:45 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 434
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 434
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 434
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 434
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 434
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 434
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 440
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 440
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 440
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 440
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 440
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 440
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 440
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 440
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 446
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 446
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 446
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 446
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 446
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 446
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 446
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 446
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 446
+[12-Mar-2016 07:10:46 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 446
+[12-Mar-2016 07:13:27 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:14:21 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:17:33 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:17:38 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:19:40 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:19:44 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:24:15 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:24:19 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:26:22 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:26:27 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:35:19 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:35:27 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:35:55 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:36:00 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:38:10 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:38:15 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:48:23 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:48:27 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:50:19 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:50:24 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:52:36 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:52:41 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:54:33 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 07:54:38 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 08:05:22 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Mar-2016 08:05:28 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
