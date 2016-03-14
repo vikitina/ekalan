@@ -101,6 +101,15 @@ public function msgopenAction()
 
 public function materialsAction()
     {
+        $user_filter = $this->getEvent()->getRouteMatch()->getParam('filter');
+        $user_filter_ar = explode('&',$user_filter);
+/*      
+      [0] - manufacturer
+      [1] - texture
+      [2] - color
+
+*/
+
         $materialSrv    = $this -> getServiceLocator()->get('material');
         $manufacturerSrv    = $this -> getServiceLocator()->get('manufacturer');
         $colorSrv    = $this -> getServiceLocator()->get('color');
@@ -110,33 +119,53 @@ public function materialsAction()
         $filters['colors'] = $colorSrv->getAllColors();
         $filters['textures'] = $textureSrv->getAllTextures();        
         
+        $crumbs_data = $this -> createCrumbs($user_filter_ar,$manufacturerSrv,$colorSrv,$textureSrv);           
+        $data = $crumbs_data['data'];
+//var_dump($crumbs_data);
+
         $limit = 10;
         $data['limit'] = $limit;
+//var_dump($data);
         $set_material = $materialSrv->getSpecOrder($data);
+
+//var_dump($set_material);
             foreach ($set_material['result'] as $key => $item) {
                 $set_material['result'][$key]['url'] = ((isset($item['url']) && $item['url'] != '' && $item['url'] !=null)?"/assets/application/samples/".trim($item['url']):"/assets/application/img/no_photo.png");
             }
 
         $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
-        $set_material_html = $partial('material/adminmaterialset', array("key" => $set_material['result']));  
+        $set_material_html = $partial('material/adminmaterialset', array("key" => $set_material['result'],'hash_filter'=>$user_filter));  
      
         $rowcount = $set_material['rowcount'];
 
         $hash = $this -> createHashForCrumbs();
              
         return new ViewModel(array(
-            'materials' => $set_material_html,
-            'filters'   => $filters,
-            'rowcount'  => $rowcount,
-            'limit'     => $limit,
-            'hash'      => $hash
-        ));
+            'materials'   => $set_material_html,
+            'filters'     => $filters,
+            'rowcount'    => $rowcount,
+            'limit'       => $limit,
+            'hash'        => $hash,
+            'crumbs'      => $crumbs_data['crumbs'],
+
+            ));
     }
 
 public function materialopenAction()
     {
             $material_id = $this->getEvent()->getRouteMatch()->getParam('id');
-        
+
+
+            $user_filter = $this->getEvent()->getRouteMatch()->getParam('filter');
+            $user_filter_ar = explode('&',$user_filter);
+
+/*      
+      [0] - manufacturer
+      [1] - texture
+      [2] - color
+
+*/
+
             $materialSrv      = $this -> getServiceLocator()->get('material');
             $manufacturerSrv  = $this -> getServiceLocator()->get('manufacturer');
             $textureSrv       = $this -> getServiceLocator()->get('texture');
@@ -145,7 +174,7 @@ public function materialopenAction()
             $analogSrv        = $this -> getServiceLocator()->get('analogs');
             $collectionSrv    = $this -> getServiceLocator()->get('collection');
 
-
+            $crumbs_data = $this -> createCrumbs($user_filter_ar,$manufacturerSrv,$colorSrv,$textureSrv);
 
             $material = $materialSrv ->  getMaterial((int)$material_id); 
 
@@ -198,13 +227,17 @@ public function materialopenAction()
                 'material'           => $material['set'],
                 'lists'              => $lists,
                 'hash_collections'   => $hash_collections,
+                'crumbs'             => $crumbs_data['crumbs'],
+                'user_filter'        => $user_filter,
+
         ));
     } 
 
 public function delmaterialAction()
     {
             $id = $this->getEvent()->getRouteMatch()->getParam('id');
-        
+            $user_filter = $this->getEvent()->getRouteMatch()->getParam('filter');
+
             $materialSrv      = $this -> getServiceLocator()->get('material');
             $sampleSrv        = $this -> getServiceLocator()->get('sample');
             $analogSrv        = $this -> getServiceLocator()->get('analogs');
@@ -218,8 +251,8 @@ public function delmaterialAction()
             $analogSrv->delAllAboutId($id);
 
 
-            $this->redirect()->toRoute('zfcadmin/admin_materials');
-           //  return new ViewModel(array());
+            $this->redirect()->toRoute('zfcadmin/admin_materials', array('filter'=>$user_filter));
+           
     }     
 
   public function addmaterialAction(){
@@ -387,8 +420,47 @@ public function delmaterialAction()
                 }
             }
 
-            $this->redirect()->toRoute('zfcadmin/admin_materials');
+            $this->redirect()->toRoute('zfcadmin/admin_materials', array('filter'=>$data_post['user_filter']));
 
+  }
+  function createCrumbs($user_filter_ar,$manufacturerSrv,$colorSrv,$textureSrv){
+
+        if($user_filter_ar[0] == 0){
+               $crumbs_data['manufacturer']['name_manufacturer'] = 'Все производители';
+               $crumbs_data['manufacturer']['id'] = 0;
+        }else{
+
+               $manuf = $manufacturerSrv->getManufacturer((int)$user_filter_ar[0]);
+               $crumbs_data['manufacturer']['name_manufacturer'] = 'Производитель <span>'.$manuf['name_manufacturer'].'</span>';
+               $crumbs_data['manufacturer']['id'] = $manuf['id'];
+               $data['id_manufacturer'] = (int)$manuf['id'];
+        }
+        if($user_filter_ar[1] == 0){
+               $crumbs_data['color']['name_color'] = 'Все цвета';
+               $crumbs_data['color']['id'] = 0;
+        }else{
+
+               $color = $colorSrv -> getColor((int)$user_filter_ar[1]);
+               $crumbs_data['color']['name_color'] = 'Цвет <span>'.$color['name_color'].'</span>';
+               $crumbs_data['color']['id'] = $color['id'];
+               $data['id_color'] = (int)$color['id'];
+
+        }        
+         if($user_filter_ar[2] == 0){
+               $crumbs_data['texture']['name_texture'] = 'Все текстуры';
+               $crumbs_data['texture']['id'] = 0;
+        }else{
+
+               $texture = $textureSrv -> getTexture((int)$user_filter_ar[2]);
+               $crumbs_data['texture']['name_texture'] = 'Текстура <span>'.$texture['name_texture'].'</span>';
+               $crumbs_data['texture']['id'] = $texture['id'];
+               $data['id_texture'] = (int)$texture['id'];
+        } 
+        return $result = array(
+
+              'crumbs' => $crumbs_data,
+              'data'   => $data
+            );
   }
 function createHashCollections($list,$collectionSrv){
 

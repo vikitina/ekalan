@@ -49,7 +49,7 @@ class Materials extends TableGateway
       $rowcount = count($result);
 
 
-      $query .= (($data['limit'] != 0) ? " limit ".(($data['start'] != 0)? ($data['start']-1)*$data['limit'].", " : "1, ").$data['limit']:"");
+      $query .= (($data['limit'] != 0) ? " limit ".(($data['start'] != 0)? ($data['start']-1)*$data['limit'].", " : "0, ").$data['limit']:"");
 
       $adapter = $this->getAdapter();
       $result = $this->FetchAll($adapter, $query); 

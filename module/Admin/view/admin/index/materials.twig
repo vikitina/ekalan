@@ -3,9 +3,9 @@
 
 {% block content %}
 <form id="filter">
-     <input type="hidden" id="id_manufacturer" name="id_manufacturer" data-name="{{ data.manufacturer ? data.manufacturer : 0 }}" value="0" />
-     <input type="hidden" id="id_color" name="id_color" value="0" />
-     <input type="hidden" id="id_texture" name="id_texture" value="0" />
+     <input type="hidden" id="id_manufacturer" name="id_manufacturer" value="{{  crumbs.manufacturer.id }}" />
+     <input type="hidden" id="id_color" name="id_color" value="{{ crumbs.color.id }}" />
+     <input type="hidden" id="id_texture" name="id_texture" value="{{ crumbs.texture.id }}" />
      <input type="hidden" id="limit" name="limit" value="{{ limit }}" />
      <input type="hidden" id="start" name="start" value="1" />
      <input type="hidden" id="rowcount" name="rowcount" value="{{ rowcount  }}" />
@@ -16,11 +16,15 @@
 <h2 class="title_page"><a href="/admin/materials">Материалы</a></h2> <a href="/admin/addmaterial" class="right_link">Добавить новый материал</a>
 <hr class="clear" />
 <div class="row">
-     <div class="col-md-8">
+     <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
               <section class="">
-              <div id="crumbs"></div>
+              <div id="crumbs"><div>{{ crumbs.manufacturer.name_manufacturer|raw  }}</div><em>/</em>
+                               <div>{{ crumbs.color.name_color|raw  }}</div><em>/</em>
+                               <div>{{ crumbs.texture.name_texture|raw  }}</div>
+              </div>
               <div class="filter_line">
                      <h4>Поиск</h4>
+                     <form id="filter_line">
               	     <div class="filter_articul">
               	          <label>Артикул</label>
               	          <input type="text" name="f_articul" id="filter_articul" />
@@ -29,34 +33,44 @@
               	     <div class="filter_manufacturer mfilter" data-name="id_manufacturer">
               	     <label>Производитель</label>
               	     <select>
-              	             <option value="0">Все</option>
+              	             <option value="0" {% if crumbs.manufacturer.id==0 %}selected{% endif %}>Все</option>
               	     	{% for manufacturer in filters.manufacturers %}
-                             <option value="{{ manufacturer.id }}" data-title="{{ manufacturer.name_manufacturer }}">{{ manufacturer.name_manufacturer }}</option>
+                             <option value="{{ manufacturer.id }}" {% if (crumbs.manufacturer.id==manufacturer.id) %} selected {% endif %}data-title="{{ manufacturer.name_manufacturer }}">{{ manufacturer.name_manufacturer }}</option>
                         {% endfor %}
               	     </select></div>
 
               	     <div class="filter_color mfilter" data-name="id_color">
               	     <label>Цвет</label>
               	     <select>
-              	            <option value="0">Все</option>
+              	            <option value="0" {% if crumbs.color.id==0 %}selected{% endif %}>Все</option>
               	     	{% for color in filters.colors %}
-                             <option value="{{ color.id }}">{{ color.name_color }}</option>
+                             <option value="{{ color.id }}" {%if crumbs.color.id==color.id%}selected{%endif%}>{{ color.name_color }}</option>
                         {% endfor %}
               	     </select></div>
 
               	     <div class="filter_texture mfilter" data-name="id_texture">
                      <label>Текстура</label>
               	     <select>
-              	             <option value="0">Все</option>
+              	             <option value="0" {%if crumbs.texture.id==0%}selected{%endif%}>Все</option>
               	     	{% for texture in filters.textures %}
-                             <option value="{{ texture.id }}">{{ texture.name_texture }}</option>
+                             <option value="{{ texture.id }}" {%if crumbs.texture.id==texture.id%}selected{%endif%}>{{ texture.name_texture }}</option>
                         {% endfor %}
-              	     </select></div>              	     
-
+              	     </select></div>    
+                     </form>          	     
+                     <div id="clear_filter"><i class="fa fa-times"></i>Очистить фильтр</div>
               </div><!-- filter_line  -->
               <div class="clear"></div>
                  <div class="count_text">Найдено <span class="count">{{ rowcount  }}</span> материала</div>
-                 <ul class="list-group material_list">{{ materials|raw }}</ul>		
+                 <div class="material_list_container">
+                       <ul class="list-group material_list">{{ materials|raw }}</ul>		
+                      
+                 </div>   
+                  <div id="more"{% if rowcount > 5 %} class="visible"{%endif%}><i class="fa fa-circle"></i><i class="fa fa-circle"></i><i class="fa fa-circle"></i></div> 
+
+                 <div class="group_action">
+                      <div> <i class="fa fa-share fa-rotate-270"></i><input type="checkbox" id="check_all" /><label>Выбрать все</label></div>
+                      <div><span>Выполнить с выбранными:</span><span>Установить цену</span><span>Удалить</span></div>
+                 </div>
 			</section>
      </div>       
  <div class="modal fade" id="delete_confirm_window">
@@ -79,9 +93,21 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-    <script>
+       <script type="text/javascript">
        var hash_crumbs = new Object();
            hash_crumbs = {{ hash | raw }};
+
+
+           var data = new Object();
+           data['manufacturer'] = $('#id_manufacturer').val();
+           data['id_color'] = $('#id_color').val();
+           data['id_texture'] = $('#id_texture').val();
+   
+           Hash.set(data);  
+           $(document).ready(function(){
+                     $('.count_text').html('Найдено <span class="count">'+{{ rowcount  }}+'</span> '+getMaterialsCount({{ rowcount  }}));      
+
+           });             
 
      </script>
 {% endblock content %}

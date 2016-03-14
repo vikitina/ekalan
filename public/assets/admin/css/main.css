@@ -115,7 +115,7 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
     padding-left: 20px;
     padding-top: 10px;
     width: 100%;}
-.filter_line div{float: left;margin-right: 10px;width:18%;}
+.filter_line div{float: left;margin-right: 10px;width:17%;}
 .filter_line div label{    color: #999;
     float: left;
     font-size: 0.8em;
@@ -126,11 +126,20 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .filter_line div input,
 .filter_line div select{float: left;width:100%;}
 
-.material_list li{width:100%;height:76px;}
+
+.material_list_container{height: 377px;overflow:auto;border:1px solid #ddd;position:relative;}
+#more{height:20px;width:100%;background:transparent;text-align: center;color:#337ab7;}
+#more i{display:none;margin-right: 10px;font-size:0.9em;line-height:1.6em;}
+#more.visible{display:block;background:#ddd;}
+#more.visible i{display:inline;}
+.material_list{}
+.material_list li{width:100%;height:76px; border:none;border-top: 1px solid #ddd;}
+.material_list li:first-child{border-top:none;}
 .material_list li a{float:left;width:80%;}
 .material_list li.confirm_deleting_state{background:#ddd;}
 .material_list li small{float:left;width:10%;margin-right:20px;text-align: right;line-height: 2.9em;}
 .material_list li span{float: left;line-height: 2.5em;}
+.material_list li span.check{margin-right:20px;margin-top:10px;}
 .material_list li span.sample{float:left;display:block;width:50px;height:50px;margin-right: 20px;background-repeat:no-repeat;background-position: center center;background-size: cover;}
 
 .material_list li span.del_material_ajax{float:right;display:block;height: 31px;padding: 4px;width: 29px;border:1px dashed #dadada;cursor: pointer;}
@@ -138,6 +147,8 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 
 
 .clear{clear:both;}
+.group_action{width:100%;height:40px;border-bottom:1px solid #aaa;margin-top:20px;}
+.group_action div{float: left;margin-right: 20px;}
 
 /*-----------------------------------------*/
 .material_open{position:relative;}
@@ -260,12 +271,24 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .count_text{margin-top:15px;margin-bottom:15px;}
 .count_text .count{text-transform:italic;font-weight:bold;}
 
-#crumbs{background: #337ab7 none repeat scroll 0 0;
-    color: #fff;
-    font-size: 1.2em;
-    height: 55px;
-    line-height: 57px;
-    padding-left: 20px;float:left;width:100%;}
-    #crumbs div{float: left;}
-    #crumbs span{font-weight: bold;font-size:1.3em;}
+#crumbs{background: #337ab7 none repeat scroll 0 0;color: #fff;font-size: 1.2em;height: 55px;line-height: 57px;padding-left: 20px;float:left;width:100%;}
+#crumbs div{float: left;}
+#crumbs span{font-weight: bold;font-size:1.3em;}
 #crumbs em{font-size:2em;float:left;margin-left:10px;margin-right:10px;}
+
+
+#crumbs.a{background: #337ab7 none repeat scroll 0 0;color: #fff;font-size: 1.2em;height: 55px;line-height: 57px;padding-left: 20px;float:left;width:100%;}
+#crumbs.a a div{float: left;height:100%;}
+#crumbs.a span{font-weight: bold;font-size:1.3em;}
+#crumbs.a em{font-size:2em;float:left;margin-left:10px;margin-right:10px;}
+#crumbs.a a{color:#fff;display:block;float:left;height:43px;border-bottom: 1px dashed #fff;}
+#crumbs.a i{float:left;margin-right: 20px;margin-top: 20px;}
+
+#clear_filter{    background: red none repeat scroll 0 0;
+    color: #fff;
+    float: right;
+    font-size: 0.9em;
+    margin-top: 18px;
+    padding: 4px;
+    width: auto;cursor:pointer;}
+#clear_filter i{margin-right:4px;}

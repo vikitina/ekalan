@@ -7,11 +7,18 @@
 <div class="row">
      <div class="col-md-8">
                      <section class="material_open">
+                     <div id="crumbs" class="a">
+                     <i class="fa fa-share fa-flip-horizontal"></i>
+                         <a href="/admin/materials/{{ user_filter }}" class="local_link" ><div>{{ crumbs.manufacturer.name_manufacturer|raw  }}</div><em>/</em>
+                               <div>{{ crumbs.color.name_color|raw  }}</div><em>/</em>
+                               <div>{{ crumbs.texture.name_texture|raw  }}</div>
+                        </a>
+                        </div><div class="clear"></div>
                             <div class="panel panel-default">
                                       <div class="panel-heading">
         
                                               <h4>Редактирование {{ material.name_material }}</h4>
-                                              <a class="del_material" data-id="{{ material.id }}"><i class="fa fa-trash-o"></i></a>
+                                              <a class="del_material" data-id="{{ material.id }}" data-user-filter="{{ user_filter }}"><i class="fa fa-trash-o"></i></a>
                                        </div>
                                           <div class="panel-body">
                                           <form id="editmaterial" action="/admin/updatematerial" method="POST">
@@ -28,6 +35,7 @@
                                                <input type="hidden" name="analogs" id="form_analogs_list" value="{{ lists.str_analogs ?  lists.str_analogs : 0}}" />
                                                <input type="hidden" name="exclude" id="exclude" value="0" />
                                                <input type="hidden" name="describe_material" id="describe_material" value="{{ material.describe_material }}" />
+                                               <input type="hidden" name="user_filter" id="user_filter" value="{{ user_filter }}" />
                                                
                                           </form>
                                                   <ul class="text_data">
@@ -188,7 +196,7 @@
       </div>
         <div class="modal-footer">
                 <a href="#" data-dismiss="modal" class="btn" id="btn_cancel_deleting">Отменить</a>
-                <a href="/admin/delmaterial/{{ material.id }}" class="btn btn-primary" id="btn_confirm_deleting">Удалить</a>
+                <a href="/admin/delmaterial/{{ material.id }}/{{ user_filter }}" class="btn btn-primary" id="btn_confirm_deleting">Удалить</a>
         </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -291,7 +299,7 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- /.modal -->  
-    <script>
+    <script type="text/javascript">
        var hash_collections = new Object();
       hash_collections = {{ hash_collections | raw }};
 

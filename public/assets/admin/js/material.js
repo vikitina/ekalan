@@ -43,6 +43,7 @@ Hash = {
                                     hash = '/' + hash.substr(1);
                                }
                               // console.log("location: " + location.hostname);
+                              console.log(location.search);
                             window.history.pushState(hash, '', '/admin/materials'+hash);
 
                      
@@ -81,28 +82,66 @@ Hash = {
   }
 };
 
+function getMaterialsCount(count){
+  
+  var dictionary_Materials = new Object();
+  dictionary_Materials = {
+    '0' : 'материалов',
+    '1' : 'материал',
+    '2' : 'материала',
+    '3' : 'материала',
+    '4' : 'материала',
+    '5' : 'материалов',
+    '6' : 'материалов',
+    '7' : 'материалов',
+    '8' : 'материалов',
+    '9' : 'материалов'
+    }
+    var material = '';
+        var reg_last_symb = new RegExp(".*(.)$"); 
+        var reg_teen = new RegExp("(.)*.$");  
+        var tens_digit = reg_teen.exec(count);
+        if(tens_digit[1] == '1'){
+               material = 'материалов';
+      }else{
+          var key = reg_last_symb.exec(count);
+          material = dictionary_Materials[key[1]];
+      
+      }
+  
+           return material;
+           
+  
+  } 
 $(document).ready(function(){
 
-       var data = new Object();
-       //data = Hash.get();
-       //indexes = ['manufacturer','id_color','id_texture','id_material'];
-       data['manufacturer'] = $('#id_manufacturer').attr('data-name');
-       data['id_color'] = $('#id_color').val();
-       data['id_texture'] = $('#id_texture').val();
-       //Hash.set();
-       Hash.set(data);
 
-      $(window).scroll(function(){
-                 if ($(window).scrollTop() == $(document).height() - $(window).height()){
+
+      $('.material_list_container').scroll(function(){
+        //console.log('top:  '+$('.material_list_container').scrollTop());
+
+
+                 if ($('.material_list_container').scrollTop() >= $('.material_list').height() - $('.material_list_container').height()){
                            var start_count = (parseInt($("#start").val()) - 1)*parseInt($("#limit").val());
                            if(start_count <= parseInt($("#rowcount").val())) {
                                        var start = parseInt($("#start").val()) +1;
                                        $("#start").val(start);
+                                       delta = parseInt($("#rowcount").val()) - start_count;
+                                      
+
+                                       if (delta<=parseInt($("#limit").val())){
+
+                                            $('#more').removeClass('visible');
+
+                                       }else{
+
+                                            $('#more').addClass('visible');
+                                       }
                                        getmaterial();
                                   }
 
 
-                                  console.log('scroll');
+                                 // console.log('scroll');
                            }
                         });
 
@@ -140,8 +179,8 @@ $(document).ready(function(){
                                  
                     })
                .done(function(data) {
-               
-               
+                     
+                      
                       $('.material_list').append(data.html);
                       $('#rowcount').val(data.rowcount);
                       $('.count_text').html('Найдено <span class="count">'+data.rowcount+'</span> '+getMaterialsCount(data.rowcount));
@@ -152,38 +191,7 @@ $(document).ready(function(){
                  });          
       }
 
-
-function getMaterialsCount(count){
-  
-  var dictionary_Materials = new Object();
-  dictionary_Materials = {
-    '0' : 'материалов',
-    '1' : 'материал',
-    '2' : 'материала',
-    '3' : 'материала',
-    '4' : 'материала',
-    '5' : 'материалов',
-    '6' : 'материалов',
-    '7' : 'материалов',
-    '8' : 'материалов',
-    '9' : 'материалов'
-    }
-    var material = '';
-        var reg_last_symb = new RegExp(".*(.)$"); 
-        var reg_teen = new RegExp("(.)*.$");  
-        var tens_digit = reg_teen.exec(count);
-        if(tens_digit[1] == '1'){
-               material = 'материалов';
-      }else{
-          var key = reg_last_symb.exec(count);
-          material = dictionary_Materials[key[1]];
-      
-      }
-  
-           return material;
-           
-  
-  }      
+     
 
 $('#filter_articul').on('keyup',function(){
 
@@ -450,6 +458,28 @@ $('#id_manufacturer_select').change(function(){
 
    });
    $('#id_collection_select').html(collection_by_manuf);
+
+});
+
+$('#clear_filter').click(function(){
+
+           $('#id_manufacturer').val(0);
+           $('#id_color').val(0);
+           $('#id_texture').val(0);
+           $('#articul').val('');
+
+           var data = new Object();
+           data['manufacturer'] = $('#id_manufacturer').val();
+           data['id_color'] = $('#id_color').val();
+           data['id_texture'] = $('#id_texture').val();
+           $('.material_list').html('');
+           getmaterial();
+
+           $('#crumbs').html('<div>'+hash_crumbs['manufacturer'][$('#id_manufacturer').val()]+'</div><em>/</em><div>'+hash_crumbs['texture'][$('#id_texture').val()]+'</div><em>/</em><div>'+hash_crumbs['color'][$('#id_color').val()])+'</div>'
+
+           Hash.set(data); 
+           $('#filter_line')[0].reset();
+
 
 });
 });

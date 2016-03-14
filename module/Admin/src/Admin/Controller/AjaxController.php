@@ -178,15 +178,21 @@ return $result;
 
    public function materialfilterAction(){
 
-               
+/*      
+      [0] - manufacturer
+      [1] - texture
+      [2] - color
+
+*/               
                $data = $_POST;
+               $user_filter = $data['id_manufacturer'].'&'.$data['id_color'].'&'.$data['id_texture'];
                $materialSrv = $this -> getServiceLocator()->get('material');
                $set_material = $materialSrv->getSpecOrder($data);
                foreach ($set_material['result'] as $key => $item) {
                 $set_material['result'][$key]['url'] = ((isset($item['url']) && $item['url'] != '' && $item['url'] !=null)?"/assets/application/samples/".trim($item['url']):"/assets/application/img/no_photo.png");
                }
                $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
-               $set_material_html = $partial('material/adminmaterialset', array("key" => $set_material['result']));   
+               $set_material_html = $partial('material/adminmaterialset', array("key" => $set_material['result'],'hash_filter'=>$user_filter));   
                $rowcount = $set_material['rowcount'];
 
                $limit = 10;

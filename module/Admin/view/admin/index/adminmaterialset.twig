@@ -2,7 +2,8 @@
 <?php foreach ($this->key as $item){ ?>
 <?php //$url_sample = ((isset($item['url']) && $item['url'] != '' && $item['url'] !=null)?"/assets/application/samples/".$item['url']:"/assets/application/img/no_photo.png");?>
                       <li class="list-group-item"> 
-                           <a href="/admin/material/<?php echo $item['id'] ?>"> 
+                          <span class="check"><input type="checkbox" value="<?php echo $item['id'] ?>" /></span>
+                           <a href="/admin/material/<?php echo $item['id'] ?>/<?php echo $this->hash_filter; ?>"> 
                                   <span class="sample" style="background-image:url('<?php echo $item["url"]?>');"></span>
                                   <small><?php echo $item['articul'] ?></small>
                                   <span>

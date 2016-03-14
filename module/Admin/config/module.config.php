@@ -71,7 +71,7 @@ return array(
                                   'type' => 'Zend\Mvc\Router\Http\Segment',
                                           'options' => array(
                                               
-                                                    'route' => '/material/:id',
+                                                    'route' => '/material/:id[/:filter]',
                                                     
 
                                                     'defaults' => array(
@@ -211,7 +211,7 @@ return array(
                              'admin_delmaterial' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Segment',
                                           'options' => array(                                              
-                                                    'route' => '/delmaterial/:id',
+                                                    'route' => '/delmaterial/:id[/:filter]',
                                                     'defaults' => array(
                                                           'controller' => 'Admin\Controller\Index',
                                                           'action'     => 'delmaterial',
@@ -241,7 +241,9 @@ return array(
         'template_map' => array(
 
             'material/adminmaterialset'     => __DIR__ . '/../view/admin/index/adminmaterialset.twig',
-            'material/modalmateriallist'    => __DIR__ . '/../view/admin/index/modalmateriallist.twig'
+            'material/modalmateriallist'    => __DIR__ . '/../view/admin/index/modalmateriallist.twig',
+            
+
 
         ),         
 
