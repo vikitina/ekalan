@@ -479,7 +479,33 @@ $('#clear_filter').click(function(){
 
            Hash.set(data); 
            $('#filter_line')[0].reset();
+           $('#filter_line select').each(function(){
+                   $(this).find('option[value=0]').attr('selected','selected');
+              });
 
 
+ 
+       });
+
+
+$('#check_all').click(function(){
+
+       if($(this).is(":checked")) {
+              console.log('all');
+
+              $('.material_list li .check input').map(function (i, el){
+                      $(el).prop('checked',true);
+            
+              });
+              
+        }else{
+
+              $('.material_list li .check input').map(function (i, el){
+                      $(el).prop('checked',false);
+            
+              });   
+              console.log('noth');
+       }
 });
+
 });

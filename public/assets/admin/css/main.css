@@ -150,6 +150,12 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .group_action{width:100%;height:40px;border-bottom:1px solid #aaa;margin-top:20px;}
 .group_action div{float: left;margin-right: 20px;}
 
+.group_action .check_all{}
+.group_action .check_all i{font-size:2em;margin-left:17px;float:left;margin-top:-10px;}
+.group_action .check_all label{float: left;margin-left:10px;}
+.group_action .check_all label input{margin-right:10px;float: left;}
+.group_action .check_all label span{float: left;margin-top: 3px;}
+
 /*-----------------------------------------*/
 .material_open{position:relative;}
 .material_open .text_data{float:left;width:100%;padding-right:0;list-style: none;padding-left: 0;}

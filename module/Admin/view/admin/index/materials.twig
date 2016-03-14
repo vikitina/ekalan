@@ -68,7 +68,7 @@
                   <div id="more"{% if rowcount > 5 %} class="visible"{%endif%}><i class="fa fa-circle"></i><i class="fa fa-circle"></i><i class="fa fa-circle"></i></div> 
 
                  <div class="group_action">
-                      <div> <i class="fa fa-share fa-rotate-270"></i><input type="checkbox" id="check_all" /><label>Выбрать все</label></div>
+                      <div class="check_all"> <i class="fa fa-share fa-rotate-270"></i><label><input type="checkbox" id="check_all" /><span>Выбрать все</span></label></div>
                       <div><span>Выполнить с выбранными:</span><span>Установить цену</span><span>Удалить</span></div>
                  </div>
 			</section>
@@ -106,8 +106,8 @@
            Hash.set(data);  
            $(document).ready(function(){
                      $('.count_text').html('Найдено <span class="count">'+{{ rowcount  }}+'</span> '+getMaterialsCount({{ rowcount  }}));      
-
+                      $('.material_list_container').scrollTop(0);
            });             
-
+          
      </script>
 {% endblock content %}
