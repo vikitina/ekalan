@@ -128,7 +128,7 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 
 
 .material_list_container{height: 377px;overflow:auto;border:1px solid #ddd;position:relative;}
-#more{height:20px;width:100%;background:transparent;text-align: center;color:#337ab7;}
+#more{height:20px;width:100%;background:transparent;text-align: center;color:#337ab7;cursor: pointer;}
 #more i{display:none;margin-right: 10px;font-size:0.9em;line-height:1.6em;}
 #more.visible{display:block;background:#ddd;}
 #more.visible i{display:inline;}

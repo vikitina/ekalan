@@ -506,6 +506,26 @@ $('#check_all').click(function(){
               });   
               console.log('noth');
        }
+
+
 });
+
+$('#del_group').click(function(){
+
+        $('#delete_group_confirm_modal').modal('show');
+});
+
+ $('#more').click(function(){
+
+           var limit    = $('#limit').val();
+           var rowcount = $('#rowcount').val();
+           $('#limit').val($('#rowcount').val());
+           $('#start').val(0);
+           $('.material_list').html('');
+           getmaterial();
+
+           $('#limit').val(limit);
+
+ });
 
 });
