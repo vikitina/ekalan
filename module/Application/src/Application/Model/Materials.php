@@ -134,6 +134,18 @@ public function updateSampleMaterial($data){
 return $query;
 
 }
+public function updatePriceMaterial($data){
+
+
+        $query = "UPDATE t_material SET price_material = '".$data['price']."' where id='".$data['id']."'";
+
+         $adapter = $this->getAdapter();
+                                    
+         $statement = $adapter->createStatement($query);
+         $results = $statement->execute();
+return $query;
+
+}
 
 
   public function insertMaterial($data)

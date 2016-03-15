@@ -145,10 +145,31 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .material_list li span.del_material_ajax{float:right;display:block;height: 31px;padding: 4px;width: 29px;border:1px dashed #dadada;cursor: pointer;}
 .material_list li span.del_material_ajax i{font-size: 1.7em;float: left;}
 
+#list_for_deleting{width:100%;float:left;list-style:none;padding-left:40px;padding-right:40px;height:280px;overflow:auto;}
+#list_for_deleting li{width:100%;float:left;list-style:none;padding-bottom:10px;border-bottom:1px solid #ddd;margin-bottom:10px;}
+#list_for_deleting li a{float:left;width:80%;}
+#list_for_deleting li small{float:left;width:10%;margin-right:20px;text-align: right;line-height: 2.9em;}
+#list_for_deleting li span{float: left;line-height: 2.5em;}
+#list_for_deleting li span.sample{float:left;display:block;width:50px;height:50px;margin-right: 20px;background-repeat:no-repeat;background-position: center center;background-size: cover;}
+
+#list_for_pricing{width:100%;float:left;list-style:none;padding-left:40px;padding-right:40px;height:280px;overflow:auto;}
+#list_for_pricing li{width:100%;float:left;list-style:none;padding-bottom:10px;border-bottom:1px solid #ddd;margin-bottom:10px;}
+#list_for_pricing li a{float:left;width:80%;}
+#list_for_pricing li small{float:left;width:10%;margin-right:20px;text-align: right;line-height: 2.9em;}
+#list_for_pricing li span{float: left;line-height: 2.5em;}
+#list_for_pricing li span.sample{float:left;display:block;width:50px;height:50px;margin-right: 20px;background-repeat:no-repeat;background-position: center center;background-size: cover;}
+
+.loaded_counter_line{float:left;width:100%;}
+.loaded_counter_line div{float:left;margin-right: 20px;    margin-bottom: 15px;margin-top: 15px;}
+.loaded_counter_line em{float:left;margin-right: 20px;    margin-bottom: 15px;margin-top: 15px;}
+.loaded_counter_line div .loaded_count{font-weight:bold;}
+
 
 .clear{clear:both;}
 .group_action{width:100%;height:40px;border-bottom:1px solid #aaa;margin-top:20px;}
 .group_action div{float: left;margin-right: 20px;}
+.group_action .action{margin-left:40px;border-left:1px solid #aaa;padding-left:40px;}
+.group_action .action span{float:left;margin-left:30px;}
 
 .group_action .check_all{}
 .group_action .check_all i{font-size:2em;margin-left:17px;float:left;margin-top:-10px;}

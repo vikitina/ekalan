@@ -60,16 +60,23 @@
                      <div id="clear_filter"><i class="fa fa-times"></i>Очистить фильтр</div>
               </div><!-- filter_line  -->
               <div class="clear"></div>
-                 <div class="count_text">Найдено <span class="count">{{ rowcount  }}</span> материала</div>
+              <div class="loaded_counter_line">
+                      <div class="count_text">Найдено <span class="count">{{ rowcount  }}</span> материала</div>
+                      <em>/</em>
+                      <div>Загружено <span class="loaded_count">(0)</span></div>
+                      <em>/</em>
+                      <div class="local_link" id="load_all">Загрузить все</div>
+              </div><!-- loaded_counter_line  -->
+
                  <div class="material_list_container">
                        <ul class="list-group material_list">{{ materials|raw }}</ul>		
                       
                  </div>   
-                  <div id="more"{% if rowcount > 5 %} class="visible" title="Загрузить все"{%endif%}><i class="fa fa-circle"></i><i class="fa fa-circle"></i><i class="fa fa-circle"></i></div> 
+                  <div id="more"{% if rowcount > limit %} class="visible" title="Загрузить все"{%endif%}><i class="fa fa-circle"></i><i class="fa fa-circle"></i><i class="fa fa-circle"></i></div> 
 
                  <div class="group_action">
                       <div class="check_all"> <i class="fa fa-share fa-rotate-270"></i><label><input type="checkbox" id="check_all" /><span>Выбрать все</span></label></div>
-                      <div><span>Выполнить с выбранными:</span><span>Установить цену</span><span id="del_group">Удалить</span></div>
+                      <div class="action"><span>Выполнить с выбранными <strong id="selected_list_length">(0)</strong>: </span><span id="price_group" class="local_link">Установить цену</span><span id="del_group" class="local_link">Удалить</span></div>
                  </div>
 			</section>
      </div>       
@@ -102,13 +109,40 @@
         <h4 class="modal-title">Подтверждение удаления материалов</h4>
       </div>
       <div class="modal-body">
-        Группа материалов будет удалена. Вы уверены?
-
-        <input type="hidden" id="deleting_id" />
+        <p>Группа материалов будет удалена.</p>
+        <ul id="list_for_deleting"></ul>
+         <p>Вы уверены?</p>
+        <form method=post action="/admin/ajax_deleting_group" id="form_deleting_group">  
+            <input type="hidden" id="deleting_list" name="deleting_list" />
+        </form>
       </div>
         <div class="modal-footer">
                 <a href="#" data-dismiss="modal" class="btn" id="btn_cancel_deleting">Отменить</a>
                 <a href="#" class="btn btn-primary" id="btn_confirm_group_deleting">Удалить</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+ <div class="modal fade" id="pricing_group_confirm_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Изменение цены материалов</h4>
+      </div>
+      <div class="modal-body">
+        <p>Назначить цену для группы материалов:</p>
+        <ul id="list_for_pricing"></ul>
+         
+        <form method=post action="/admin/ajax_pricing_group" id="form_pricing_group_update"> 
+           <label>Новая цена<input type="text" name="price" /></label>
+           <input type="hidden" id="pricing_list" name="pricing_list" />
+        </form>
+      </div>
+        <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn" id="btn_cancel_pricing">Отменить</a>
+                <a href="#" class="btn btn-primary" id="btn_confirm_group_pricing">Сохранить</a>
         </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

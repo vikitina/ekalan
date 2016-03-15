@@ -99,7 +99,10 @@ return array(
                                    array('route' => 'zfcadmin/admin_ajax_deletematerial', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_delmaterial', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_upload', 'roles' => array('admin')),
-                       
+                                   array('route' => 'zfcadmin/admin_ajax_pricinggroup', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_ajax_deletinggroup', 'roles' => array('admin')),
+
+       
                                   array('route' => 'test\mail', 'roles' => array('guest','user')),
                                    
                                 

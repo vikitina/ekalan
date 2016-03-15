@@ -228,7 +228,33 @@ return $result;
                ) );   
 
    } 
+   public function pricinggroupAction(){
 
+         $data = $_POST;
+         $materialSrv = $this -> getServiceLocator()->get('material');
+         $ids_arr = explode(',',$data['pricing_list']);
+
+         foreach ($ids_arr as $id) {
+               $materialSrv->updatePriceMaterial(array(
+                       'id'    => (int)$id,
+                       'price' => $data['price']
+                   ));
+        
+         } }
+
+   //deletinggroup
+   public function deletinggroupAction(){
+
+         $data = $_POST;
+         $materialSrv      = $this -> getServiceLocator()->get('material');
+         $analogSrv        = $this -> getServiceLocator()->get('analogs');
+         $ids_arr = explode(',',$data['deleting_list']);
+
+         foreach ($ids_arr as $id) {  
+          
+               $analogSrv->delAllAboutId((int)$id);         
+               $materialSrv->delMaterial((int)$id);
+       } }
  
 
     public function deletematerialAction(){

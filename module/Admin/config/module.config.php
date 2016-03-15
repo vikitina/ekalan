@@ -117,8 +117,7 @@ return array(
                                         'action'     => 'salesupdate',
                                         ),
                                    ),
-                               ),
-//materialfilter            
+                               ),    
                              'admin_ajax_materialfilter' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',
                                   'options' => array(
@@ -128,9 +127,27 @@ return array(
                                         'action'     => 'materialfilter',
                                         ),
                                    ),
-                               ),                  
-
-
+                               ),   
+                             'admin_ajax_pricinggroup' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                  'options' => array(
+                                  'route'    => '/ajax/pricinggroup',
+                                  'defaults' => array(
+                                        'controller' => 'Admin\Controller\Ajax',
+                                        'action'     => 'pricinggroup',
+                                        ),
+                                   ),
+                               ), 
+                             'admin_ajax_deletinggroup' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                  'options' => array(
+                                  'route'    => '/ajax/deletinggroup',
+                                  'defaults' => array(
+                                        'controller' => 'Admin\Controller\Ajax',
+                                        'action'     => 'deletinggroup',
+                                        ),
+                                   ),
+                               ),                              
               'admin_ajax_salesmarkupupdate' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
