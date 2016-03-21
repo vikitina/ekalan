@@ -300,7 +300,18 @@ return $result;
                               'name' => $url['new_file_name']));
 }      
 
+public function ajaxcropingAction(){
+       $data = $_POST;
 
+       $params = json_decode(stripslashes($data['data']));
+       $src = $data['src'];
+       $r = $this->crop($src, $src, $params);
+   return new JsonModel(array( 
+         'r' => $r,
+         'p' => $params,
+         'r1' => $src
+    ));  
+}
 
 function uploadfile($data){
 
@@ -321,7 +332,7 @@ function uploadfile($data){
       //echo '<br>'.$imageFileType;
 // Check if image file is a actual image or fake image
 
-      $check = getimagesize($data["sample"]["tmp_name"]);
+   //   $check = getimagesize($data["sample"]["tmp_name"]);
       if($check !== false) {
         //echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
@@ -335,10 +346,11 @@ if (file_exists($target_file)) {
    // echo "Sorry, file already exists.";
     $uploadOk = 0;
 }
+
 // Check file size
-if ($data["sample"]["size"] > 5000000) {
+if ($data["sample"]["size"] > 5000000000) {
    // echo "Sorry, your file is too large.";
-    $uploadOk = 0;
+    //$uploadOk = 0;
 }
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
@@ -346,17 +358,17 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
     $uploadOk = 0;
 }
 // Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
+//if ($uploadOk == 0) {
     //echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
-} else {
+//} else {
     $new_file_name = time().".".$imageFileType;
     $new_file = $target_dir.$new_file_name;
     if (move_uploaded_file($data["sample"]["tmp_name"], $new_file)) {
       //  echo "The file ". basename( $data["sample"]["name"]). " has been uploaded.";
     } else {
        // echo "Sorry, there was an error uploading your file.";
-    }
+//    }
 }
 $new_file_url = $upload_dir.$new_file_name;
 return array('new_file_name' =>$new_file_url,
@@ -364,8 +376,126 @@ return array('new_file_name' =>$new_file_url,
   }     
 
 
+function crop($src, $dst, $data) {
+$src1 = $src;
+     $constantsSrv       = $this -> getServiceLocator()->get('constants');
+      $upload_dir         = trim($constantsSrv->getConstantByName('upload_dir'));
+      $src = $upload_dir.$src;
+
+
+    if (!empty($src) && !empty($dst) && !empty($data)) {
+      $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+      switch ($imageFileType) {
+        case "gif":
+          $src_img = imagecreatefromgif($src);
+          break;
+
+        case "jpeg":
+          $src_img = imagecreatefromjpeg($src);
+          break;
+
+        case "png":
+          $src_img = imagecreatefrompng($src);
+          break;
+      }
+
+      if (!$src_img) {
+        $msg = "Failed to read the image file";
+        return;
+      }
+/*
+      $size = getimagesize($src);
+      $size_w = $size[0]; // natural width
+      $size_h = $size[1]; // natural height
+
+      $src_img_w = $size_w;
+      $src_img_h = $size_h;
+
+      $degrees = $data -> rotate;
+
+      // Rotate the source image
+      if (is_numeric($degrees) && $degrees != 0) {
+        // PHP's degrees is opposite to CSS's degrees
+        $new_img = imagerotate( $src_img, -$degrees, imagecolorallocatealpha($src_img, 0, 0, 0, 127) );
+
+        imagedestroy($src_img);
+        $src_img = $new_img;
+
+        $deg = abs($degrees) % 180;
+        $arc = ($deg > 90 ? (180 - $deg) : $deg) * M_PI / 180;
+
+        $src_img_w = $size_w * cos($arc) + $size_h * sin($arc);
+        $src_img_h = $size_w * sin($arc) + $size_h * cos($arc);
+
+        // Fix rotated image miss 1px issue when degrees < 0
+        $src_img_w -= 1;
+        $src_img_h -= 1;
+      }
+
+      $tmp_img_w = $data -> width;
+      $tmp_img_h = $data -> height;
+      $dst_img_w = 220;
+      $dst_img_h = 220;
+
+      $src_x = $data -> x;
+      $src_y = $data -> y;
+
+      if ($src_x <= -$tmp_img_w || $src_x > $src_img_w) {
+        $src_x = $src_w = $dst_x = $dst_w = 0;
+      } else if ($src_x <= 0) {
+        $dst_x = -$src_x;
+        $src_x = 0;
+        $src_w = $dst_w = min($src_img_w, $tmp_img_w + $src_x);
+      } else if ($src_x <= $src_img_w) {
+        $dst_x = 0;
+        $src_w = $dst_w = min($tmp_img_w, $src_img_w - $src_x);
+      }
+
+      if ($src_w <= 0 || $src_y <= -$tmp_img_h || $src_y > $src_img_h) {
+        $src_y = $src_h = $dst_y = $dst_h = 0;
+      } else if ($src_y <= 0) {
+        $dst_y = -$src_y;
+        $src_y = 0;
+        $src_h = $dst_h = min($src_img_h, $tmp_img_h + $src_y);
+      } else if ($src_y <= $src_img_h) {
+        $dst_y = 0;
+        $src_h = $dst_h = min($tmp_img_h, $src_img_h - $src_y);
+      }
+
+      // Scale to destination position and size
+      $ratio = $tmp_img_w / $dst_img_w;
+      $dst_x /= $ratio;
+      $dst_y /= $ratio;
+      $dst_w /= $ratio;
+      $dst_h /= $ratio;
+
+      $dst_img = imagecreatetruecolor($dst_img_w, $dst_img_h);
+
+      // Add transparent background to destination image
+      imagefill($dst_img, 0, 0, imagecolorallocatealpha($dst_img, 0, 0, 0, 127));
+      imagesavealpha($dst_img, true);
+
+      $result = imagecopyresampled($dst_img, $src_img, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h);
+
+      if ($result) {
+        if (!imagepng($dst_img, $dst)) {
+          $msg = "Failed to save the cropped image file";
+        }
+      } else {
+        $msg = "Failed to crop the image file";
+      }
+
+      imagedestroy($src_img);
+      imagedestroy($dst_img);
+   */ }
+
+    return $src;
+  }
+
 
 }
+
+
 
 /*
 

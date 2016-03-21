@@ -1,4 +1,5 @@
 <?php
+ini_set("memory_limit", "35M");
 return array(
     'controllers' => array(
         'invokables' => array(
@@ -71,7 +72,7 @@ return array(
                                   'type' => 'Zend\Mvc\Router\Http\Segment',
                                           'options' => array(
                                               
-                                                    'route' => '/material/:id[/:filter]',
+                                                    'route' => '/material/:id[/[:filter]]',
                                                     
 
                                                     'defaults' => array(
@@ -106,7 +107,45 @@ return array(
                                                       ),
                                             ),
                                     ),     
+                             'admin_manufacturers' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(
+                                              
+                                                    'route' => '/manufacturers',
+                                                    
 
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Index',
+                                                          'action'     => 'manufacturers',
+                                                      ),
+                                            ),
+                                    ),     
+                             'admin_texturers' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(
+                                              
+                                                    'route' => '/texturers',
+                                                    
+
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Index',
+                                                          'action'     => 'texturers',
+                                                      ),
+                                            ),
+                                    ), 
+                             'admin_colors' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(
+                                              
+                                                    'route' => '/colors',
+                                                    
+
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Index',
+                                                          'action'     => 'colors',
+                                                      ),
+                                            ),
+                                    ),                             
 
                               'admin_ajax_salesupdate' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',
@@ -245,7 +284,20 @@ return array(
                                                           'action'     => 'upload',
                                                       ),
                                             ),
-                            ),                                                    
+                            ), 
+
+
+                            'admin_ajax_cropimg'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/ajaxcroping',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Ajax',
+                                                          'action'     => 'ajaxcroping',
+                                                      ),
+                                            ),
+                            ),
+
                         ),
                  ),
             ),

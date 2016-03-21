@@ -142,7 +142,7 @@ $(document).ready(function(){
                                   }
 
 
-                                 // console.log('scroll');
+                                 // console.log('scroll');  
                            }
                         });
 
@@ -249,6 +249,13 @@ $('.editarea>input').blur(function(){
      var set_value = $(this).val();
      $(id).val(set_value);
      $(this).parents('.editable').find('span').text(set_value);
+     if( $(this).parents('li').hasClass('ajax_edit_obj')){
+        var form = $(this).parents('li').find('form');
+        var action = $(form).prop('action');
+        var data = $(form).serialize();
+        console.log(action);
+        console.log(data);
+     }
 
     // console.log($(id).val());
 });
@@ -463,7 +470,7 @@ $('.edit_sample').click(function(){
 // ------------------------------------------------
 
 $('#sample_modal #list_sample li span input').click(function(){
-
+               $('.new_upload_img_container img').cropper('destroy');
               $("#sample_modal .loaded_img .img_container div").css('background-image',$(this).parents('li').find('div').css('background-image'));
               $('#tmp_new_sample').val(0);
               $('#tmp_id_sample').val($(this).val());
@@ -614,13 +621,7 @@ $('#price_group').click(function(){
             
       }
 });
-// ------------------------------------------------
 
-$('#btn_confirm_group_pricing').click(function(){
-
-             
-
-});
 // ------------------------------------------------
 
 
@@ -634,6 +635,7 @@ $('#btn_confirm_group_pricing').click(function(){
            getmaterial();
 
            $('#limit').val(limit);
+           $("#start").val($("#rowcount").val());
            $('.loaded_count').text('('+$('.material_list li').length+')');
 
  });
@@ -648,6 +650,8 @@ $('#load_all').click(function(){
            getmaterial();
 
            $('#limit').val(limit);
+           $("#start").val($("#rowcount").val());
+           $('#more').removeClass('visible');
            $('.loaded_count').text('('+$('.material_list li').length+')');
 
  });
@@ -665,7 +669,12 @@ $('#btn_confirm_group_pricing').click(function(){
                        url         : 'http://' + location.hostname + '/admin/ajax/pricinggroup', 
                        data        :  data, 
                        dataType    : 'json', 
-                       encode          : true
+                       encode          : true,
+                       error       : function(xhr, textStatus, errorThrown) {
+                                       if(xhr.status == 403) {
+                                              //alert(' error [403]');
+                                              window.location.replace('http://' + location.hostname+'/admin');
+                                          }}                       
                                  
                     })
                .done(function(data) {
@@ -675,6 +684,7 @@ $('#btn_confirm_group_pricing').click(function(){
                      //console.log(data.id);
 
                  }); 
+               $('#pricing_group_confirm_modal').modal('hide');
   return false;
 });
  // ------------------------------------------------
@@ -697,7 +707,12 @@ $('#btn_confirm_group_deleting').click(function(){
                        url         : 'http://' + location.hostname + '/admin/ajax/deletinggroup', 
                        data        :  data, 
                        dataType    : 'json', 
-                       encode          : true
+                       encode      : true,    
+                       error       : function(xhr, textStatus, errorThrown) {
+                                       if(xhr.status == 403) {
+                                              //alert(' error [403]');
+                                              window.location.replace('http://' + location.hostname+'/admin');
+                                          }}
                                  
                     })
                .done(function(data) {
@@ -722,5 +737,39 @@ $('#btn_cancel_deleting').click(function(){
          $('#delete_group_confirm_modal').modal('hide');
 
 });
+
+//---------------------------------------------------
+
+$('#cropimg').click(function(){
+        var data = new Object;
+        data.data = new Object;
+        data.data = $('#crop_img_data').val();
+        data.src = $('#tmp_new_sample').val();
+        console.log(data.data);
+        console.log(data.src);
+                $.ajax({
+                       type        : 'POST', 
+                       url         : 'http://' + location.hostname + '/admin/ajaxcroping', 
+                       data        :  data, 
+                       dataType    : 'json', 
+                       encode          : true,
+                       error       : function(xhr, textStatus, errorThrown) {
+                                       if(xhr.status == 403) {
+                                              //alert(' error [403]');
+                                              window.location.replace('http://' + location.hostname+'/admin');
+                                          }}                       
+                                 
+                    })
+               .done(function(data) {
+                     
+                     $(this).addClass('hidden');
+                     console.log(data.r);
+                     console.log(data.p);
+                     console.log(data.r1);
+                     //console.log(data.id);
+
+                 });        
+         return false;
+})
 
 });

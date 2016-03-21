@@ -262,8 +262,16 @@
                     </ul>   
                     <div class="ui-tab-content">
                         <div aria-hidden="false" role="tabpanel" aria-labelledby="ui-id-1" id="tabs-1" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
-                               <div><form action="/admin/ajaxuploadimg" method="post" id="sample_form"><label>Установить новое фото</label><input type="file" name="sample" id="sample" /></div>
-                        </div>
+                               <div>
+                                   <form action="/admin/ajaxuploadimg" method="post" id="sample_form">
+                                            <label>Установить новое фото</label>
+                                            <input type="file" name="sample" id="sample" />
+                                    </form>
+
+                                    <div class="new_upload_img_container"></div>
+                                    <button class="btn" id="cropimg">Кадрировать</button>
+                               </div>
+                         </div>      
                         <div aria-hidden="true" style="display: none;" role="tabpanel" aria-labelledby="ui-id-2" id="tabs-2" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
                         <div><input type="checkbox" /><label>Показать имена файлов</label></div>
                             <ul id="list_sample">
@@ -285,6 +293,7 @@
                          <div class="img_container"><div style="background-image:url('{{  material.url }}')"><div class="img_loader"></div></div></div>
                          <input type="hidden" id="tmp_new_sample" />
                          <input type="hidden" id="tmp_id_sample" />
+                         <input type="hidden" id="crop_img_data" />
           
                        <!--  <div id="img_msg">Не выбрано изображений</div> -->
 

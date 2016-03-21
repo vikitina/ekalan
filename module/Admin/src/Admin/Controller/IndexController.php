@@ -102,6 +102,7 @@ public function msgopenAction()
 public function materialsAction()
     {
         $user_filter = $this->getEvent()->getRouteMatch()->getParam('filter');
+        $user_filter = ($user_filter) ? $user_filter : '0&0&0';
         $user_filter_ar = explode('&',$user_filter);
 /*      
       [0] - manufacturer
@@ -157,6 +158,8 @@ public function materialopenAction()
 
 
             $user_filter = $this->getEvent()->getRouteMatch()->getParam('filter');
+            $user_filter = ($user_filter) ? $user_filter : '0&0&0';
+
             $user_filter_ar = explode('&',$user_filter);
 
 /*      
@@ -352,6 +355,30 @@ public function delmaterialAction()
             ));
 
   } 
+
+  public function manufacturersAction(){
+
+         return new ViewModel(array(
+
+            ));
+  }
+
+    public function texturersAction(){
+
+            $textureSrv       = $this -> getServiceLocator()->get('texture');
+            $textures         = $textureSrv->getAllTextures();
+         return new ViewModel(array(
+
+                 'texturers'    => $textures
+            ));    
+  }
+    public function colorsAction(){
+         return new ViewModel(array(
+
+                  
+            ));
+    
+  }
 
 
   public function updatematerialAction(){

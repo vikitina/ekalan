@@ -1,0 +1,65 @@
+{% extends 'layout/admin.twig' %}
+
+
+{% block content %}
+<form id="filter">
+     <input type="hidden" id="id_manufacturer" name="id_manufacturer" value="{{  crumbs.manufacturer.id }}" />
+
+</form>
+
+
+<h2 class="title_page"><a href="/admin/materials">Текстуры</a></h2>
+<hr class="clear" />
+<div class="row">
+     <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+              <section class="">
+                   <form>
+                     
+
+                   </form>
+                                     <ul class="text_data">
+                                     <li>
+                                          <span>Добавить текстуру</span>
+                                          <div class="form_to_add">
+                                                  <form action="ajax_add_texture" method="post">
+                                                       <div><input type="text" name="name_texture" /></div>
+                                                       <div><input type="submit" value="Добавить" /> </div>
+                                                  </form>
+
+                                          </div>
+
+                                     </li>
+                                     {% for texture in texturers %}
+                                                     <li class="ajax_edit_obj">
+                                                       <form action="/admin/ajaxtextureupdate" method="post">
+                                                            <input type="hidden" name="id" value="{{ texture.id }}"  />
+                                                            <input type="hidden" name="name_texture" id="name_texture_{{ texture.id }}" value="{{ texture.name_texture }}"  />
+                                                         <div class="editable">
+                                                             <span>{{ texture.name_texture }}</span>
+                                                             <div class="editblock">
+                                                                  <div class="editarea">
+                                                                       <input type="text" data-name="name_texture_{{ texture.id }}" value="{{ texture.name_texture }}" />
+                                                                  </div>
+                                                                  
+
+                                                            </div><!-- editblock  -->
+                                                            <i class="fa fa-pencil fa-fw"></i>
+                                                          </div>
+                                                          
+                                                          </form>
+                                                      </li>
+
+                                      {%  endfor %}                
+                                    </ul>    
+              </section>
+     </div>       
+ 
+
+
+
+
+
+       <script type="text/javascript">
+
+     </script>
+{% endblock content %}

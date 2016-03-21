@@ -1,0 +1,31 @@
+{% extends 'layout/admin.twig' %}
+
+
+{% block content %}
+<form id="filter">
+     <input type="hidden" id="id_manufacturer" name="id_manufacturer" value="{{  crumbs.manufacturer.id }}" />
+     <input type="hidden" id="id_color" name="id_color" value="{{ crumbs.color.id }}" />
+     <input type="hidden" id="id_texture" name="id_texture" value="{{ crumbs.texture.id }}" />
+     <input type="hidden" id="limit" name="limit" value="{{ limit }}" />
+     <input type="hidden" id="start" name="start" value="1" />
+     <input type="hidden" id="rowcount" name="rowcount" value="{{ rowcount  }}" />
+     <input type="hidden" id="articul" name="articul" value="0" />
+</form>
+
+
+<h2 class="title_page"><a href="/admin/materials">Материалы</a></h2> <a href="/admin/addmaterial" class="right_link">Добавить новый материал</a>
+<hr class="clear" />
+<div class="row">
+     <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+              <section class=""></section>
+     </div>       
+ 
+
+
+
+
+
+       <script type="text/javascript">
+
+     </script>
+{% endblock content %}
