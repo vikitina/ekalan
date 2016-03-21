@@ -307,6 +307,27 @@ return array(
                                                           'action'     => 'ajaxtextureupdate',
                                                       ),
                                             ),
+                            ), 
+                            //ajaxmanufupdate 
+                           'admin_ajax_manufupdate'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/ajaxmanufupdate',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Ajax',
+                                                          'action'     => 'ajaxmanufupdate',
+                                                      ),
+                                            ),
+                            ), 
+                           'admin_ajax_colorupdate'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/ajaxcolorupdate',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Ajax',
+                                                          'action'     => 'ajaxcolorupdate',
+                                                      ),
+                                            ),
                             ),                            
 
                         ),

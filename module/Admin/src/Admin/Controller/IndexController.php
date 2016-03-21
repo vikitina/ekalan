@@ -357,9 +357,10 @@ public function delmaterialAction()
   } 
 
   public function manufacturersAction(){
-
+                $manufacturerSrv    =  $this -> getServiceLocator()->get('manufacturer');  
+                $manufacturers      = $manufacturerSrv->getAllManufacturers();
          return new ViewModel(array(
-
+                'manufacturers'   => $manufacturers,
             ));
   }
 
@@ -373,10 +374,12 @@ public function delmaterialAction()
             ));    
   }
     public function colorsAction(){
+            $colorSrv       = $this -> getServiceLocator()->get('color');
+            $colors         = $colorSrv->getAllColors();
          return new ViewModel(array(
 
-                  
-            ));
+                 'colors'    => $colors
+            ));    
     
   }
 

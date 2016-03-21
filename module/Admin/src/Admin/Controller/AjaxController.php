@@ -292,10 +292,27 @@ public function ajaxtextureupdateAction(){
       $data = $_POST;
       $textureSrv    = $this -> getServiceLocator()->get('texture');
       $res = $textureSrv->updateTexture($data);
-      return $res;
+      return new JsonModel(array());
 
 }
+public function ajaxmanufupdateAction(){
 
+      $data = $_POST;
+      $manufSrv    = $this -> getServiceLocator()->get('manufacturer');
+      $res = $manufSrv->updateManufacturer($data);
+      return new JsonModel(array());
+
+
+}
+public function ajaxcolorupdateAction(){
+
+      $data = $_POST;
+      $colorSrv    = $this -> getServiceLocator()->get('color');
+      $res = $colorSrv->updateColor($data);
+      return new JsonModel(array());
+
+
+}
    public function uploadAction(){
 
             $request = $this->getRequest();

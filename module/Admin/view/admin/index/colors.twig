@@ -2,23 +2,54 @@
 
 
 {% block content %}
-<form id="filter">
-     <input type="hidden" id="id_manufacturer" name="id_manufacturer" value="{{  crumbs.manufacturer.id }}" />
-     <input type="hidden" id="id_color" name="id_color" value="{{ crumbs.color.id }}" />
-     <input type="hidden" id="id_texture" name="id_texture" value="{{ crumbs.texture.id }}" />
-     <input type="hidden" id="limit" name="limit" value="{{ limit }}" />
-     <input type="hidden" id="start" name="start" value="1" />
-     <input type="hidden" id="rowcount" name="rowcount" value="{{ rowcount  }}" />
-     <input type="hidden" id="articul" name="articul" value="0" />
-</form>
 
 
-<h2 class="title_page"><a href="/admin/materials">Материалы</a></h2> <a href="/admin/addmaterial" class="right_link">Добавить новый материал</a>
+
+<h2 class="title_page"><a href="/admin/materials">Цвета</a></h2>
 <hr class="clear" />
 <div class="row">
-     <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-              <section class=""></section>
-     </div>       
+     <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12"> 
+             <section class="textures">
+ 
+                                     <ul class="text_data">
+                                     <li class="add">
+                                          <span>Добавить Цвет</span>
+                                          <div class="form_to_add">
+                                                  <form action="ajax_add_texture" method="post">
+                                                       <div><input type="text" name="name_color" /></div>
+                                                       <div><input type="submit" value="Добавить" /> </div>
+                                                  </form>
+
+                                          </div>
+
+                                     </li>
+                                     {% for color in colors %}
+                                                     <li class="ajax_edit_obj">
+                                                       <form action="/admin/ajaxcolorupdate" method="post">
+                                                            <input type="hidden" name="id" value="{{ color.id }}"  />
+                                                            <input type="hidden" name="name_color" id="name_color_{{ color.id }}" value="{{ color.name_color }}"  />
+                                                          </form>    
+                                                         <div class="editable">
+                                                             <span>{{ color.name_color }}</span>
+                                                             <div class="editblock">
+                                                                  <div class="editarea">
+                                                                       <input type="text" data-name="name_color_{{ color.id }}" value="{{ color.name_color }}" />
+                                                                  </div>
+                                                                  
+
+                                                            </div><!-- editblock  -->
+                                                            <i class="fa fa-pencil fa-fw"></i>
+                                                          </div>
+                                                          
+                                                        
+                                                      </li>
+
+                                      {%  endfor %}                
+                                    </ul>    
+              </section>
+
+
+              </div>       
  
 
 

@@ -1,0 +1,6 @@
+[21-Mar-2016 12:59:56 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 490
+[21-Mar-2016 12:59:56 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[21-Mar-2016 13:00:05 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 490
+[21-Mar-2016 13:00:05 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[21-Mar-2016 13:05:33 Europe/Helsinki] PHP Notice:  Undefined variable: url in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 296
+[21-Mar-2016 13:05:35 Europe/Helsinki] PHP Notice:  Undefined variable: url in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 296
