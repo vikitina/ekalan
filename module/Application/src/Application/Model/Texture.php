@@ -52,12 +52,13 @@ class Texture extends TableGateway
 
 
   
-  public function updateTexture($data=null)
+  public function updateTexture($data)
     { 
-      $id = $data['id'];
+      $id = (int)$data['id'];
 
     
         parent::update($data, array('id' => $id));
+        return array('id' => $id, 'name' => $data['name_texture']);
     }
 
 

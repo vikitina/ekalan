@@ -297,6 +297,17 @@ return array(
                                                       ),
                                             ),
                             ),
+                            ///admin/ajaxtextureupdate
+                           'admin_ajax_textureupdate'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/ajaxtextureupdate',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Ajax',
+                                                          'action'     => 'ajaxtextureupdate',
+                                                      ),
+                                            ),
+                            ),                            
 
                         ),
                  ),

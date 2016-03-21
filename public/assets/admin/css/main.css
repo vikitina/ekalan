@@ -323,3 +323,13 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
     padding: 4px;
     width: auto;cursor:pointer;}
 #clear_filter i{margin-right:4px;}
+
+.textures{}
+.textures ul{list-style:none;}
+.textures li{width:100%;margin-bottom:15px;padding-bottom:15px;float:left;list-style: none;border-bottom:1px solid #ddd;}
+.textures li.add{}
+.textures li.add .form_to_add{display:none;}
+.textures li.add span{color:#337ab7;font-weight:bold;cursor: pointer;}
+.textures li .editable{float:left;}
+.textures li .editable span {border-bottom: 1px dashed #337ab7;font-weight: normal;width: auto;}
+.textures li .editablehover span {border-color:transparent;}

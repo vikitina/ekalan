@@ -255,10 +255,30 @@ $('.editarea>input').blur(function(){
         var data = $(form).serialize();
         console.log(action);
         console.log(data);
+        play_ajax(action,data);
      }
 
     // console.log($(id).val());
 });
+// ------------------------------------------------
+function play_ajax(action,data){
+           $.ajax({
+                       type        : 'POST', 
+                       url         :  action, 
+                       data        :  data, 
+                       dataType    : 'json', 
+                       encode          : true
+                                 
+                    })
+               .done(function(res) {
+                     
+                      console.log(res.id);
+                      console.log(res.name);
+                 
+                
+                 });   
+
+}
 // ------------------------------------------------
 $('.editarea>textarea').blur(function(){
 

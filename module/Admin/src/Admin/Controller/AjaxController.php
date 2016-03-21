@@ -287,6 +287,15 @@ return $result;
    }  
 
 
+public function ajaxtextureupdateAction(){
+
+      $data = $_POST;
+      $textureSrv    = $this -> getServiceLocator()->get('texture');
+      $res = $textureSrv->updateTexture($data);
+      return $res;
+
+}
+
    public function uploadAction(){
 
             $request = $this->getRequest();

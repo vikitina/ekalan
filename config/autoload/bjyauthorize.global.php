@@ -105,8 +105,8 @@ return array(
                                    array('route' => 'zfcadmin/admin_ajax_pricinggroup', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_deletinggroup', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_cropimg', 'roles' => array('admin')),
-
-       
+                                   array('route' => 'zfcadmin/admin_ajax_textureupdate', 'roles' => array('admin')),
+    //'admin_ajax_textureupdate'   
                                   array('route' => 'test\mail', 'roles' => array('guest','user')),
                                    
                                 
