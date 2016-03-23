@@ -11,30 +11,32 @@
                 <!-- work Filter -->
                 <div class="row">
                     <ul class="container-filter categories-filter">
-                        <li><a class="categories active" data-filter="*">Все</a></li>
-                        <li><a class="categories" data-filter=".kitchen">Кухня</a></li>
-                        <li><a class="categories" data-filter=".bath">Ванная комната</a></li>
-                        <li><a class="categories" data-filter=".livingroom">Гостинная</a></li>
-                        <li><a class="categories" data-filter=".office">Офис</a></li>
+                           <li><a class="categories active" data-filter="*">Все</a></li>
+                           {% for group in lists.groups %}
+                                  <li><a class="categories" data-filter=".cl{{ group.id }}">{{ group.name_group }}</a></li>
+                           {% endfor %}
+
                     </ul>
                 </div>
                 <!-- End work Filter -->
                 <div class="row container-grid nf-col-2">
-
-                    <div class="nf-item kitchen spacing">
+                   {% for folio in lists.folios %}
+                    <div class="nf-item cl{{ folio.id_group }} spacing">
                         <div class="item-box">
                             <a href="#">
-                                <img alt="1" src="assets/application/img/pic/k_1.jpg" class="item-container">
+                                <img alt="1" src="{{ folio.main_photo }}" class="item-container">
                                 <div class="item-mask">
                                     <div class="item-caption">
-                                        <h5 class="white">Consequat massa quis</h5>
+                                        <h5 class="white">{{ folio.name_folio }}</h5>
                                         <p class="white">Branding, Design</p>
                                     </div>
                                 </div>
                             </a>
                         </div>
                     </div>
+                   {% endfor %}
 
+                 
                     <div class="nf-item bath spacing">
                         <div class="item-box">
                             <a href="#">

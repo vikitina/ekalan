@@ -542,6 +542,7 @@ public function addfolioAction(){
                                           $photosSrv ->  insertPhoto(array(
                                              "url_photo"    => $value,
                                              "id_folio"     => $id_folio,
+                                             "main_photo"   => ($data["main_photo"] == $value)? 1 : 0 ,
                                       ));
                            }
                   }    
@@ -577,7 +578,7 @@ array(13) {
 ["text_testimonials"]=> string(20) "qwe qwe qwe qwe qwe " } 
 
 */
-
+                 $this->redirect()->toRoute('zfcadmin/admin_folios');
 
                 }
                 $lists['materials']      = $list_materials_for_analogs;

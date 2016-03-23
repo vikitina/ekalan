@@ -30,12 +30,24 @@ class IndexController extends AbstractActionController
 
     public function portfolioAction()
     {
-       		
+       		     $groupSrv                   = $this -> getServiceLocator()->get('groups');
+                 $lists['groups']            = $groupSrv->getAllGroups();
 
+                 $folioSrv                   = $this -> getServiceLocator()->get('folio');
+                 $folios = $folioSrv -> getAllFolios();
+
+                 $photosSrv                  = $this -> getServiceLocator()->get('photos');
+
+                 foreach ($folios as $key => $folio) {
+                     $res = $photosSrv->getMainPhoto(array('id_folio' => $folio['id']));
+                     $folios[$key]['main_photo'] = ((isset($res["url_photo"]) && $res["url_photo"] != '' && $res["url_photo"] !=null)?"/assets/application/samples/".trim($res["url_photo"]):"/assets/application/img/no_photo.png");
+                 }
+
+                $lists['folios'] = $folios;
+       return new ViewModel(array(
+                          'lists'    => $lists,
+       ));
         
-        return new ViewModel(array(
-        
-        ));
     }    
 
 

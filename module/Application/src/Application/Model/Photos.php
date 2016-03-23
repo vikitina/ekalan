@@ -40,6 +40,18 @@ class Photos extends TableGateway
         return $results;
     } 
 
+    public function getMainPhoto($data)
+    { 
+         $query = "SELECT url_photo from t_photos where id_folio = '".$data['id_folio']."' and main_photo = 1";
+
+    
+                            
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query); 
+         //var_dump($results)                           ;
+        return $results[0];
+    }     
+
    public function getPhoto($id)
     { 
 

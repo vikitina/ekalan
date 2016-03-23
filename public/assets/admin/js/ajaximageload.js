@@ -130,12 +130,17 @@
                 });
 
                 request.done(function (result, request, headers) {
-                        console.log(result.name);
-                        console.log(result.url);
-//нужен флажок!!! какой именнофотосписок заполнять
-                 
+                    var radio = '';
+               
+                    if($('#'+id).parent().parent().hasClass('with_main_photo_radio')){
+                            var check = ($('#'+id).parent().find('li').length > 1) ? "" :"checked" ;
+                            radio = '<label class="main_radio"><input type="radio" name="main_photo" value="'+result.name+'" '+check+'>Главная</label>';
+
+                    }
+                        
                         $('#'+id).find('div').css('background-image', "url('"+result.url+"')");
-                        $('#'+id).find('div').append('<input type="hidden" name="'+list_class+'[]" value="'+result.name+'">');
+                        $('#'+id).find('div').append('<input type="hidden" name="'+list_class+'[]" value="'+result.name+'">' + radio);
+
                         if($('.'+list_class).find('.add_photo_btn').hasClass('only_one')){
 
                             $('.'+list_class).find('.add_photo_btn').addClass('add_photo_btn_hidden');

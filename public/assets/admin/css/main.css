@@ -353,4 +353,14 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 
 .autoheight{height:auto !important;}
 
+.small_help {float: right;font-size: 81%;margin-top: -28px;}
+
+label.main_radio{font-size: 0.9em;font-weight:normal;margin-bottom:0;margin-top: -27px;display:block;}
+label.main_radio input{margin-right: 5px;}
+
+.material_open .text_data  li.with_main_photo_radio{padding-top:20px;}
+.material_open .text_data  li.with_main_photo_radio .photos_list{padding-top:20px;}
+.material_open .text_data  li.with_main_photo_radio .photos_list li{margin-bottom: 43px !important;}
+
+
                                                                
