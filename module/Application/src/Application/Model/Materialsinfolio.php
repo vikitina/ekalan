@@ -6,9 +6,14 @@ namespace Application\Model;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\TableGateway\Feature\RowGatewayFeature;
 
-class Texture extends TableGateway
+class Materialsinfolio extends TableGateway
 {
-    protected $tableName  = 't_texture';
+/*`t_materials_in_folio` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_material` int(11) NOT NULL,
+  `id_folio` int(11) NOT NULL,*/
+
+    protected $tableName  = 't_materials_in_folio';
     protected $idCol = 'id';
  
 
@@ -23,9 +28,9 @@ class Texture extends TableGateway
  
     }
 
-    public function getAllTextures()
+    public function getAll()
     { 
-         $query = "SELECT * from t_texture";
+         $query = "SELECT * from t_materials_in_folio";
 
     
                             
@@ -35,10 +40,10 @@ class Texture extends TableGateway
         return $results;
     } 
 
-   public function getTexture($id)
+   public function getRec($id)
     { 
 
-        $query = "SELECT * from `t_texture` where id ='".$id."'";
+        $query = "SELECT * from `t_materials_in_folio` where id ='".$id."'";
         
     
                             
@@ -52,18 +57,18 @@ class Texture extends TableGateway
 
 
   
-  public function updateTexture($data)
+  public function updateRec($data)
     { 
       $id = (int)$data['id'];
 
     
         parent::update($data, array('id' => $id));
-        return array('id' => $id, 'name' => $data['name_texture']);
+        
     }
 
 
 
-  public function insertTexture($data)
+  public function insertRec($data)
     {
 
 
@@ -71,13 +76,13 @@ class Texture extends TableGateway
       $adapter = $this->getAdapter();
       $id = $adapter->getDriver()->getLastGeneratedValue();
 
- return $id;      
+ return $id;
  
     }   
       
-  public function delTexture($id)
+  public function delRec($id)
     {
-         $query = sprintf("DELETE FROM t_texture WHERE id='%s'",$id);
+         $query = sprintf("DELETE FROM t_materials_in_folio WHERE id='%s'",$id);
 
                             
          $adapter = $this->getAdapter();

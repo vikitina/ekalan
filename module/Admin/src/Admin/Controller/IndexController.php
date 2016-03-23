@@ -382,7 +382,15 @@ public function delmaterialAction()
             ));    
     
   }
+    public function groupsAction(){
+            $groupSrv       = $this -> getServiceLocator()->get('groups');
+            $groups         = $groupSrv->getAllGroups();
+         return new ViewModel(array(
 
+                 'groups'    => $groups
+            ));    
+    
+  }
 
   public function updatematerialAction(){
 
@@ -453,6 +461,143 @@ public function delmaterialAction()
             $this->redirect()->toRoute('zfcadmin/admin_materials', array('filter'=>$data_post['user_filter']));
 
   }
+
+
+public function addfolioAction(){
+
+                 $groupSrv                   = $this -> getServiceLocator()->get('groups');
+                 $lists['groups']            = $groupSrv->getAllGroups();
+
+                 $folioSrv                   = $this -> getServiceLocator()->get('folio');
+                 $picturesSrv                = $this -> getServiceLocator()->get('pictures');
+                 $photosSrv                  = $this -> getServiceLocator()->get('photos');
+                 $blueprintsSrv              = $this -> getServiceLocator()->get('blueprints');                                  
+                 $materialSrv                = $this -> getServiceLocator()->get('material');   
+                 $testimonialsSrv            = $this -> getServiceLocator()->get('testimonials'); 
+                 $materialsinfolioSrv        = $this -> getServiceLocator()->get('materialsinfolio');               
+
+                 $set_material               = $materialSrv->getSpecOrder(array('exclude' => $material_id));
+                 $list_materials_for_analogs = $set_material['result'];
+                 $i = 0; 
+                 foreach($list_materials_for_analogs as $item){
+                    $list_materials_for_analogs[$i]['url'] = ((isset($item['url']) && $item['url'] != '' && $item['url'] !=null)?"/assets/application/samples/".trim($item['url']):"/assets/application/img/no_photo.png");
+                    $i += 1;
+                }
+
+
+                if($_POST){
+                  $data = $_POST;
+                  var_dump($data);
+                  
+                  $url_picture = ($data["url_picture"][0])?$data["url_picture"][0]:0;
+                  if($data["url_picture"] && isset($data["url_picture"])) {
+                           $picture_data = array(
+                                    "url_picture" => $url_picture,
+                            );
+
+                             $id_picture = $picturesSrv -> insertPicture($picture_data);
+                  }
+
+                  $id_picture = ($id_picture) ? $id_picture : 0;
+
+                  $testimonials_data = array(
+                         "name_testimonials"           => (isset($data["name_testimonials"]) && $data["name_testimonials"])? $data["name_testimonials"] : 0,
+                         "organization"                => (isset($data["organization"]) && $data["organization"])? $data["organization"] : 0,
+                         "id_picture"                  => $id_picture,
+                         "text_testimonials"           => (isset($data["text_testimonials"]) && $data["text_testimonials"])? $data["text_testimonials"] : 0,
+                         "short_text_testimonials"     => (isset($data["short_text_testimonials"]) && $data["short_text_testimonials"])? $data["short_text_testimonials"] : 0,
+                         "public_on_home_testimonials" => (isset($data["public_on_home_testimonials"]) && $data["public_on_home_testimonials"])? 1 : 0,
+
+
+                    );
+
+                  $id_testimonial = $testimonialsSrv -> insertTestimonial($testimonials_data);
+
+                  $folio_data = array(
+                        "name_folio"                  => (isset($data["name_folio"]) && $data["name_folio"])? $data["name_folio"] : 0,
+                        "number_folio"                => (isset($data["number_folio"]) && $data["number_folio"])? $data["number_folio"] : 0, 
+                        "id_group"                    => (isset($data["id_group"]) && $data["id_group"])? $data["id_group"] : 0,
+                        "describe_folio"              => (isset($data["describe_folio"]) && $data["describe_folio"])? $data["describe_folio"] : 0,
+                        "price_folio"                 => (isset($data["price_folio"]) && $data["price_folio"])? $data["price_folio"] : 0,
+                        "id_testimonials"             => $id_testimonial,
+                    );
+
+                  $id_folio = $folioSrv -> insertFolio($folio_data);
+
+
+
+                  if(isset($data["material_id"]) && $data["material_id"]){
+
+                           foreach ($data["material_id"] as $value) {
+                                      $materialsinfolioSrv ->  insertRec(array(
+                                             "id_material"  => $value,
+                                             "id_folio"     => $id_folio,
+                                      ));
+                           }
+                  }
+
+                  if(isset($data["url_photo"]) && $data["url_photo"]){
+
+                           foreach ($data["url_photo"] as $value) {
+                                          $photosSrv ->  insertPhoto(array(
+                                             "url_photo"    => $value,
+                                             "id_folio"     => $id_folio,
+                                      ));
+                           }
+                  }    
+
+                  if(isset($data["url_blueprint"]) && $data["url_blueprint"]){
+
+                           foreach ($data["url_blueprint"] as $value) {
+                                          $blueprintsSrv ->  insertBlueprint(array(
+                                             "url_blueprint"    => $value,
+                                             "id_folio"         => $id_folio,
+                                      ));
+                           }
+                  }                                
+
+/*
+array(13) { 
+["name_folio"]=> string(46) "ÐšÑƒÑ…Ð½Ñ ÐºÑ€Ð°ÑÐ½Ð°Ñ Ð¿Ñ€ÐµÐºÑ€Ð°ÑÐ½Ð°Ñ" 
+["number_folio"]=> string(6) "qweqwe" 
+["id_group"]=> string(1) "1" 
+["describe_folio"]=> string(10) "qweqweqwe " 
+["price_folio"]=> string(6) "123123" 
+
+
+
+["url_photo"]=> array(2) { [0]=> string(27) "data/uploads/1458720728.JPG" [1]=> string(27) "data/uploads/1458720734.jpg" } 
+["url_blueprint"]=> array(2) { [0]=> string(27) "data/uploads/1458720737.JPG" [1]=> string(27) "data/uploads/1458720742.JPG" } 
+["material_id"]=> array(8) { [0]=> string(1) "1" [1]=> string(1) "2" [2]=> string(1) "3" [3]=> string(1) "5" [4]=> string(1) "6" [5]=> string(1) "8" [6]=> string(1) "9" [7]=> string(2) "10" } 
+
+
+["name_testimonials"]=> string(6) "asdasd" 
+["organization"]=> string(6) "asdasd" 
+["url_picture"]=> array(1) { [0]=> string(27) "data/uploads/1458720751.jpg" } 
+["text_testimonials"]=> string(20) "qwe qwe qwe qwe qwe " } 
+
+*/
+
+
+                }
+                $lists['materials']      = $list_materials_for_analogs;
+                 return new ViewModel(array(
+                          'lists'    => $lists,
+                  ));
+
+}
+
+public function foliosAction(){
+                 $folioSrv    = $this -> getServiceLocator()->get('folio');
+                 $folios      =  $folioSrv -> getAllFolios(); 
+
+                 return new ViewModel(array(
+                          'folios'    => $folios,
+                  ));
+
+}
+
+  /*---------------------------------------------------------------------------------------------*/
   function createCrumbs($user_filter_ar,$manufacturerSrv,$colorSrv,$textureSrv){
 
         if($user_filter_ar[0] == 0){

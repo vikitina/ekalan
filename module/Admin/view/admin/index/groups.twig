@@ -5,7 +5,7 @@
 
 
 
-<h2 class="title_page"><a href="/admin/materials">Текстуры</a></h2>
+<h2 class="title_page"><a href="/admin/materials">Группы готовых решений</a></h2>
 <hr class="clear" />
 <div class="row">
      <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
@@ -13,27 +13,27 @@
  
                                      <ul class="text_data">
                                      <li class="add">
-                                          <span>Добавить текстуру</span>
+                                          <span>Добавить группу</span>
                                           <div class="form_to_add">
-                                                  <form action="/admin/ajaxaddtexture" method="post">
-                                                       <div><input type="text" name="name_texture" /></div>
-                                                       <div><input type="button" id="adding" value="Добавить" /> </div>
+                                                  <form action="/admin/ajaxaddgroup" method="post">
+                                                       <div><input type="text" name="name_group" required="" /></div>
+                                                       <div><input type="button" value="Добавить" id="adding" /> </div>
                                                   </form>
 
                                           </div>
 
                                      </li>
-                                     {% for texture in texturers %}
+                                     {% for group in groups %}
                                                      <li class="ajax_edit_obj">
-                                                       <form action="/admin/ajaxtextureupdate" method="post">
-                                                            <input type="hidden" name="id" value="{{ texture.id }}"  />
-                                                            <input type="hidden" name="name_texture" id="name_texture_{{ texture.id }}" value="{{ texture.name_texture }}"  />
+                                                       <form action="/admin/ajaxgroupupdate" method="post">
+                                                            <input type="hidden" name="id" value="{{ group.id }}"  />
+                                                            <input type="hidden" name="name_group" id="name_group_{{ group.id }}" value="{{ group.name_group }}"  />
                                                           </form>    
                                                          <div class="editable">
-                                                             <span>{{ texture.name_texture }}</span>
+                                                             <span>{{ group.name_group }}</span>
                                                              <div class="editblock">
                                                                   <div class="editarea">
-                                                                       <input type="text" data-name="name_texture_{{ texture.id }}" value="{{ texture.name_texture }}" />
+                                                                       <input type="text" data-name="name_group_{{ group.id }}" value="{{ group.name_group }}" />
                                                                   </div>
                                                                   
 

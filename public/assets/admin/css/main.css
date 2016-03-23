@@ -145,6 +145,9 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .material_list li span.del_material_ajax{float:right;display:block;height: 31px;padding: 4px;width: 29px;border:1px dashed #dadada;cursor: pointer;}
 .material_list li span.del_material_ajax i{font-size: 1.7em;float: left;}
 
+.material_list li span.del_link{float:right;display:block;height: 31px;padding: 4px;width: 29px;border:1px dashed #dadada;cursor: pointer;}
+.material_list li span.del_link i{font-size: 1.7em;float: left;}
+
 #list_for_deleting{width:100%;float:left;list-style:none;padding-left:40px;padding-right:40px;height:280px;overflow:auto;}
 #list_for_deleting li{width:100%;float:left;list-style:none;padding-bottom:10px;border-bottom:1px solid #ddd;margin-bottom:10px;}
 #list_for_deleting li a{float:left;width:80%;}
@@ -182,7 +185,7 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .material_open .text_data{float:left;width:100%;padding-right:0;list-style: none;padding-left: 0;}
 .material_open .text_data li{list-style: none;padding: 0;margin: 0;margin-bottom: 10px;float: left;width:100%;}
 .material_open .text_data li.separator{border-top:1px solid #ddd;height:10px;}
-.material_open .text_data li span{float:left;width:150px;font-weight:bold;}
+.material_open .text_data li span{float:left;width:200px;font-weight:bold;}
 .material_open .text_data li .editable{float:left;}
 .material_open .sample_data{/*background: #fff none repeat scroll 0 0;margin-right: 10px;margin-top: 10px;padding: 15px;position: absolute;right: 0;top: 63px;width: 200px;*/}
 .material_open .sample_data em{display: block;width:100px;height:100px;background-position:center center;background-size: cover;background-repeat: no-repeat;}
@@ -262,7 +265,7 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 #analogs_list li div small{position:absolute;top:-28px;display:none;}
 #analogs_list li div span{background:none;top:-18px;position:absolute;top:-18px;display:none;}
 #analogs_list li input{display:none;}
-#analogs_list li .remove_analog{display:none;position:absolute;right: -7px;top: -12px;width:10px;height:10px;cursor:pointer;}
+#analogs_list li .remove_analog{display:none;position:absolute;right: 0;top: -2px;width:10px;height:10px;cursor:pointer;}
 #analogs_list li .remove_analog i{display:block;}
 #analogs_list li.hover .remove_analog{display: block;}
 
@@ -315,13 +318,7 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 #crumbs.a a{color:#fff;display:block;float:left;height:43px;border-bottom: 1px dashed #fff;}
 #crumbs.a i{float:left;margin-right: 20px;margin-top: 20px;}
 
-#clear_filter{    background: red none repeat scroll 0 0;
-    color: #fff;
-    float: right;
-    font-size: 0.9em;
-    margin-top: 18px;
-    padding: 4px;
-    width: auto;cursor:pointer;}
+#clear_filter{background: red none repeat scroll 0 0;color: #fff;float: right;font-size: 0.9em;margin-top: 18px;padding: 4px;width: auto;cursor:pointer;}
 #clear_filter i{margin-right:4px;}
 
 .textures{}
@@ -333,3 +330,27 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .textures li .editable{float:left;}
 .textures li .editable span {border-bottom: 1px dashed #337ab7;font-weight: normal;width: auto;}
 .textures li .editablehover span {border-color:transparent;}
+.textures li.adding .form_to_add{display:block;}
+.textures li.add .form_to_add form{float:left;width:100%;}
+.textures li.add .form_to_add form div{float:left;margin-right:40px;}
+
+
+.photos_list{display:block;float:left;border:1px dashed #ddd;padding:0;margin:0;margin-right:30px;max-width:540px;}
+.photos_list li{position:relative;float:left;padding: 5px 17px !important;width: 134px !important;height:100px !important;margin-bottom:0px !important;background:url('/assets/application/img/loading.GIF') no-repeat center center;}
+.photos_list li span{position:absolute;top:0;right:0;display:none;width:5px !important;float:none !important;height: 22px;right: -1px;top: -6px;width: 19px !important;cursor:pointer;}
+.photos_list li span i{font-size:22px;}
+.photos_list li.hover span{display:block;}
+.photos_list li div{width:100%;height:100%;background-repeat:no-repeat;background-position:center center;background-size:cover;border:1px solid #eee;}
+.photos_list.empty{display:none;}
+.add_photo_btn{float:left;width:100px;height:100px;border:1px dashed #ddd;cursor:pointer;position: relative;padding:5px;}
+.add_photo_btn_hidden{display:none;}
+.add_photo_btn i{position:absolute;top:50%;left:50%;margin-left: -16px;margin-top: -21px;font-size:3em;color:#ccc;}
+.add_photo_btn span{display:block;background:#ddd;top:0;left:0;width:100% !important;height:100% !important;}
+.input_file_hidden{visibility: hidden;}
+
+.material_open div.textarea{width:70%;height:200px;float:left;}
+.material_open div.textarea textarea{width:100%;height:100%;padding:10px;}
+
+.autoheight{height:auto !important;}
+
+                                                               

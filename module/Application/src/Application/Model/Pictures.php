@@ -6,9 +6,9 @@ namespace Application\Model;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\TableGateway\Feature\RowGatewayFeature;
 
-class Texture extends TableGateway
+class Pictures extends TableGateway
 {
-    protected $tableName  = 't_texture';
+    protected $tableName  = 't_pictures';
     protected $idCol = 'id';
  
 
@@ -19,13 +19,17 @@ class Texture extends TableGateway
             $adapter,
             new RowGatewayFeature($this->idCol)
         );
-
+/*  CREATE TABLE IF NOT EXISTS `t_pictures` (
+`id` int( 11 ) NOT NULL AUTO_INCREMENT ,
+`url_picture` varchar( 255 ) NOT NULL ,
+PRIMARY KEY ( `id` )
+)*/
  
     }
 
-    public function getAllTextures()
+    public function getAllPictures()
     { 
-         $query = "SELECT * from t_texture";
+         $query = "SELECT * from t_pictures";
 
     
                             
@@ -35,10 +39,10 @@ class Texture extends TableGateway
         return $results;
     } 
 
-   public function getTexture($id)
+   public function getPicture($id)
     { 
 
-        $query = "SELECT * from `t_texture` where id ='".$id."'";
+        $query = "SELECT * from `t_pictures` where id ='".$id."'";
         
     
                             
@@ -52,18 +56,18 @@ class Texture extends TableGateway
 
 
   
-  public function updateTexture($data)
+  public function updatePicture($data)
     { 
       $id = (int)$data['id'];
 
     
         parent::update($data, array('id' => $id));
-        return array('id' => $id, 'name' => $data['name_texture']);
+        
     }
 
 
 
-  public function insertTexture($data)
+  public function insertPicture($data)
     {
 
 
@@ -71,13 +75,13 @@ class Texture extends TableGateway
       $adapter = $this->getAdapter();
       $id = $adapter->getDriver()->getLastGeneratedValue();
 
- return $id;      
+ return $id;
  
     }   
       
-  public function delTexture($id)
+  public function delPicture($id)
     {
-         $query = sprintf("DELETE FROM t_texture WHERE id='%s'",$id);
+         $query = sprintf("DELETE FROM t_pictures WHERE id='%s'",$id);
 
                             
          $adapter = $this->getAdapter();

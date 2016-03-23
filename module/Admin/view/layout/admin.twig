@@ -27,6 +27,7 @@
         <script src={{ basePath('assets/admin/js/cropper.min.js') }} type="text/javascript"></script>
         <script src={{ basePath('assets/admin/js/material.js') }} type="text/javascript"></script>
         <script src={{ basePath('assets/admin/js/ajaximageload.js') }} type="text/javascript"></script>
+        <script src={{ basePath('assets/admin/js/folio.js') }} type="text/javascript"></script>
 	</head>
 
 
@@ -42,15 +43,11 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/admin">Приборная панель</a>
+            <a href="/">< Вернуться на Главную</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
-                    <ul id="g-account-menu" class="dropdown-menu" role="menu">
-                        <li><a href="#">My Profile</a></li>
-                    </ul>
-                </li>
+
                 <li><a href="/user/logout"><i class="glyphicon glyphicon-lock"></i> Выход</a></li>
             </ul>
         </div>
@@ -72,10 +69,16 @@
                 
                 
                         <li><a href="/admin/page/main">Главная</a></li>
-                        <li><a href="">Портфолио</a></li>
+                        <li><a href="/admin/folios">Портфолио</a>
+                                 <ul>
+                                      <li><a href="/admin/addfolio">Добавить новую работу</a></li>
+                                      <li><a href="/admin/groups">Группы работ</li>
+                                  </ul>
+                        </li>
+
                         <li class="separator"></li>
                         <li><a href="/admin/materials">Материалы</a>
-                                 <ul><a href="/admin/addmaterial">Добавить новый</a>
+                                 <ul><li><a href="/admin/addmaterial">Добавить новый</a></li>
                                   </ul>
                          </li>
                          <li><a href="/admin/manufacturers">Производители / коллекции</a></li>

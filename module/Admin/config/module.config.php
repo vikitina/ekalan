@@ -68,6 +68,19 @@ return array(
                                                       ),
                                             ),
                                     ),  
+                             'admin_folios' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(
+                                              
+                                                    'route' => '/folios',
+                                                    
+
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Index',
+                                                          'action'     => 'folios',
+                                                      ),
+                                            ),
+                                    ),                              
                              'admin_material_open' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Segment',
                                           'options' => array(
@@ -145,7 +158,20 @@ return array(
                                                           'action'     => 'colors',
                                                       ),
                                             ),
-                                    ),                             
+                                    ),   
+                             'admin_addfolio' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(
+                                              
+                                                    'route' => '/addfolio',
+                                                    
+
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Index',
+                                                          'action'     => 'addfolio',
+                                                      ),
+                                            ),
+                                    ),                                                               
 
                               'admin_ajax_salesupdate' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',
@@ -274,6 +300,26 @@ return array(
                                                       ),
                                             ),
                             ), 
+                             'admin_groups' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Segment',
+                                          'options' => array(                                              
+                                                    'route' => '/groups',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Index',
+                                                          'action'     => 'groups',
+                                                      ),
+                                            ),
+                            ), 
+                            'admin_ajax_addphoto'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/ajaxaddphoto',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Ajax',
+                                                          'action'     => 'addphoto',
+                                                      ),
+                                            ),
+                            ), 
 
                             'admin_ajax_upload'  => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',
@@ -328,7 +374,40 @@ return array(
                                                           'action'     => 'ajaxcolorupdate',
                                                       ),
                                             ),
-                            ),                            
+                            ),  
+
+                           'admin_ajax_addgroup'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/ajaxaddgroup',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Ajax',
+                                                          'action'     => 'ajaxaddgroup',
+                                                      ),
+                                            ),
+                            ), 
+                            //admin/ajaxaddtexture  
+                           'admin_ajax_addtexture'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/ajaxaddtexture',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Ajax',
+                                                          'action'     => 'ajaxaddtexture',
+                                                      ),
+                                            ),
+                            ),         
+                          'admin_ajax_groupupdate'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/ajaxgroupupdate',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Ajax',
+                                                          'action'     => 'ajaxgroupupdate',
+                                                      ),
+                                            ),
+                            ), 
+
 
                         ),
                  ),
@@ -343,6 +422,10 @@ return array(
 
             'material/adminmaterialset'     => __DIR__ . '/../view/admin/index/adminmaterialset.twig',
             'material/modalmateriallist'    => __DIR__ . '/../view/admin/index/modalmateriallist.twig',
+
+            'newgroupelement'               => __DIR__ . '/../view/admin/index/newgroupelement.twig',
+            'newtextureelement'             => __DIR__ . '/../view/admin/index/newtextureelement.twig',
+
             
 
 

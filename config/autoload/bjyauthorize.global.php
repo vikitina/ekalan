@@ -86,12 +86,14 @@ return array(
                                    array('route' => 'zfcadmin/admin_msgs', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_msg_open', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_materials', 'roles' => array('admin')), 
+                                   array('route' => 'zfcadmin/admin_folios', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_material_open', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_addmaterial', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_updatematerial', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_manufacturers', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_texturers', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_colors', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_addfolio', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_materialfilter', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_msgread', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_updatesystem', 'roles' => array('admin')),
@@ -108,7 +110,15 @@ return array(
                                    array('route' => 'zfcadmin/admin_ajax_textureupdate', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_manufupdate', 'roles' => array('admin')),  
                                    array('route' => 'zfcadmin/admin_ajax_colorupdate', 'roles' => array('admin')),  
-                                  array('route' => 'test\mail', 'roles' => array('guest','user')),
+                                   array('route' => 'zfcadmin/admin_groups', 'roles' => array('admin')), 
+                                   array('route' => 'zfcadmin/admin_ajax_addgroup', 'roles' => array('admin')), 
+                                   array('route' => 'zfcadmin/admin_ajax_groupupdate', 'roles' => array('admin')), 
+                                   array('route' => 'zfcadmin/admin_ajax_addphoto', 'roles' => array('admin')), 
+                                   array('route' => 'zfcadmin/admin_ajax_addtexture', 'roles' => array('admin')),
+
+
+                                   //admin_ajax_groupupdate
+                                   array('route' => 'test\mail', 'roles' => array('guest','user')),
                                    
                                 
 

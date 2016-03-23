@@ -255,13 +255,18 @@ $('.editarea>input').blur(function(){
         var data = $(form).serialize();
         console.log(action);
         console.log(data);
-        play_ajax(action,data);
+        play_ajax(action,data,null);
      }
 
     // console.log($(id).val());
 });
 // ------------------------------------------------
-function play_ajax(action,data){
+
+
+
+
+function play_ajax(action,data,father){
+       
            $.ajax({
                        type        : 'POST', 
                        url         :  action, 
@@ -271,12 +276,13 @@ function play_ajax(action,data){
                                  
                     })
                .done(function(res) {
-                     
-                      console.log(res.id);
-                      console.log(res.name);
-                 
+                     if(father){
+                          var new_element = res.li;
+                          append_to_stack(new_element, father);
+                       }   
                 
-                 });   
+                 });           
+               
 
 }
 // ------------------------------------------------
@@ -790,6 +796,36 @@ $('#cropimg').click(function(){
 
                  });        
          return false;
-})
+});
+
+
+//---------------------------------------------------
+$('.textures li.add span').click(function(){
+           if(!$(this).parent().hasClass('adding')){
+                      $(this).parent().addClass('adding');
+           }
+
+});
+
+$('.textures li.add .form_to_add form div #adding').click(function(){
+              var action = $(this).parents('form').prop('action');
+              var data = $(this).parents('form').serialize();
+              var list = $(this).parents('ul');
+              play_ajax(action,data,list);
+              
+              
+              $($(this).parents('form').find('div input')).map(function(i,el){ if($(el).prop('type')!='button'){$(el).val('');}});
+              $(this).parents('li').removeClass('adding');
+  return false;
+});
+
+function append_to_stack(new_element, list){
+       var elems = $(list).find('.ajax_edit_obj');
+       $(list).find('.ajax_edit_obj').remove();
+       $(list).append(new_element);
+       $(list).append(elems);
+
+
+}
 
 });

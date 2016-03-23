@@ -248,7 +248,42 @@ return array(
                     $sm->get('Zend\Db\Adapter\Adapter')
                 );
             },  
-           
+           'groups' => function ($sm) {
+                return new \Application\Model\Group(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },   
+           'folio' => function ($sm) {
+                return new \Application\Model\Folio(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },  
+            'pictures' => function ($sm) {
+                return new \Application\Model\Pictures(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },  
+            'photos' => function ($sm) {
+                return new \Application\Model\Photos(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            }, 
+           'blueprints' => function ($sm) {
+                return new \Application\Model\Blueprints(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },  
+           'testimonials' => function ($sm) {
+                return new \Application\Model\Testimonials(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },       
+           'materialsinfolio' => function ($sm) {
+                return new \Application\Model\Materialsinfolio(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },                   
+
                      
     ),
     ),

@@ -6,9 +6,9 @@ namespace Application\Model;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\TableGateway\Feature\RowGatewayFeature;
 
-class Texture extends TableGateway
+class Testimonials extends TableGateway
 {
-    protected $tableName  = 't_texture';
+    protected $tableName  = 't_testimonials';
     protected $idCol = 'id';
  
 
@@ -19,13 +19,20 @@ class Texture extends TableGateway
             $adapter,
             new RowGatewayFeature($this->idCol)
         );
-
+/*`t_testimonials` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name_testimonials` varchar(255) NOT NULL,
+  `organization` varchar(255) NOT NULL,
+  `id_picture` int(11) NOT NULL,
+  `text_testimonials` text NOT NULL,
+  `short_text_testimonials` text NOT NULL,
+  `public_on_home_testimonials` tinyint(4) NOT NULL,*/
  
     }
 
-    public function getAllTextures()
+    public function getAllTestimonials()
     { 
-         $query = "SELECT * from t_texture";
+         $query = "SELECT * from t_testimonials";
 
     
                             
@@ -35,10 +42,10 @@ class Texture extends TableGateway
         return $results;
     } 
 
-   public function getTexture($id)
+   public function getTestimonial($id)
     { 
 
-        $query = "SELECT * from `t_texture` where id ='".$id."'";
+        $query = "SELECT * from `t_testimonials` where id ='".$id."'";
         
     
                             
@@ -52,18 +59,18 @@ class Texture extends TableGateway
 
 
   
-  public function updateTexture($data)
+  public function updateTestimonial($data)
     { 
       $id = (int)$data['id'];
 
     
         parent::update($data, array('id' => $id));
-        return array('id' => $id, 'name' => $data['name_texture']);
+        
     }
 
 
 
-  public function insertTexture($data)
+  public function insertTestimonial($data)
     {
 
 
@@ -71,13 +78,13 @@ class Texture extends TableGateway
       $adapter = $this->getAdapter();
       $id = $adapter->getDriver()->getLastGeneratedValue();
 
- return $id;      
+ return $id;
  
     }   
       
-  public function delTexture($id)
+  public function delTestimonial($id)
     {
-         $query = sprintf("DELETE FROM t_texture WHERE id='%s'",$id);
+         $query = sprintf("DELETE FROM t_testimonials WHERE id='%s'",$id);
 
                             
          $adapter = $this->getAdapter();

@@ -1,0 +1,197 @@
+{% extends 'layout/admin.twig' %}
+
+
+{% block content %}
+<a href="/admin/folios">Портфолио</a> / Добавить новую работу
+<hr>
+<div class="row">
+     <div class="col-md-8">
+                     <section class="material_open">
+                            <div class="panel panel-default">
+                                      <div class="panel-heading">
+        
+                                      <h4>Добавить новую работу</h4>
+                                       </div>
+
+{#  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_group` int(11) NOT NULL,
+  `name_folio` varchar(255) NOT NULL,
+  `number_folio` varchar(255) NOT NULL,
+  `describe_folio` text NOT NULL,
+  `id_testimonials` int(11) NOT NULL,
+  `price_folio` int(11) NOT NULL,#}                                       
+                                          <div class="panel-body">
+                                                <form action="/admin/addfolio" method="post" enctype="multipart/form-data">
+                                                  <ul class="text_data">
+                                                     <li><span>Наименование</span>
+                                                              <div>
+                                                                   <input type="text" name="name_folio" required="" />
+
+                                                             </div>
+                                                      </li>
+
+                                                  <li class="separator"></li>
+
+
+                                                      <li><span>Номер заказа</span>
+                                                          <div>
+                                                              <input type="text" name="number_folio" />
+                                                         </div>
+                                                     </li>
+
+                                                     <li class="separator"></li>
+
+                                                     <li><span>Группа</span>
+                                                         <div>
+                                                               <select name="id_group" id="id_group_select">
+                                                                     {% for group in lists.groups %}
+                                                                             <option value="{{ group.id }}">{{ group.name_group }}</option>
+                                                                      {% endfor %}
+
+                                                               </select>
+                                                          </div>
+                                                      </li>
+
+                                                     <li class="separator"></li>
+
+                                                     <li><span>Описание</span>
+                                                         <div class="textarea">
+                                                              <textarea name="describe_folio"></textarea>
+                                                         </div>
+                                                          
+                                                     </li>
+                                                     <li class="separator"></li>                                                     
+ 
+                                                     <li><span>Общая стоимость</span>
+                                                         <div>
+                                                              <input type="text" name="price_folio" />
+                                                         </div>
+                                                          
+                                                     </li>
+                                                     <li class="separator"></li>
+                                                     <li class="url_photo"><span>Фотографии</span>
+                                                                <ul  class="empty photos_list"></ul>
+                                                                <div class="add_photo_btn" data-form-id="url_photo"><i class="fa fa-plus"></i><span></span></div>
+
+                                                     </li>
+                                                     <li class="separator"></li>
+                                                     <li class="url_blueprint"><span>Чертежи</span>
+                                                                <ul  class="empty photos_list"></ul>
+                                                                <div class="add_photo_btn" data-form-id="url_blueprint"><i class="fa fa-plus"></i><span></span></div>
+                                                     </li>          
+                                                     <li class="separator"></li>
+                                                     <li><span>Материалы в проекте</span>
+                                                                <ul id="analogs_list" class="empty"></ul>
+                                                                <div id="materials_folio_open_window" class="local_link">Выбрать из списка</div>
+                                                               
+                                                     </li>  
+                                                     <li class="separator"></li>
+                                                     <li><span>Отзыв заказчика</span>
+                                                            <div><input type="checkbox" name="public_on_home_testimonials" /><label>Публиковать на главной</label></div>
+                                                     </li> 
+
+                                                     <li><span>Имя</span>
+                                                         <div>
+                                                              <input type="text" name="name_testimonials" />
+                                                         </div>
+                                                          
+                                                     </li>
+                                                     <li class="separator"></li>                                                     
+ 
+                                                     <li><span>Организация</span>
+                                                         <div>
+                                                              <input type="text" name="organization" />
+                                                         </div>
+                                                          
+                                                     </li>  
+                                                    <li class="separator"></li>
+                                                     <li class="url_picture"><span>Фотография/логотип</span>
+                                                                <ul  class="empty photos_list"></ul>
+                                                                <div class="add_photo_btn only_one" data-form-id="url_picture"><i class="fa fa-plus"></i><span></span></div>
+
+                                                     </li>
+                                                     <li class="separator"></li>
+
+                                                     <li><span>Текст отзыва</span>
+                                                         <div class="textarea">
+                                                              <textarea name="text_testimonials"></textarea>
+                                                         </div>
+                                                          
+                                                     </li>  
+                                                     <li class="separator"></li>
+
+                                                     <li><span>Короткий текст отзыва</span>
+                                                         <div class="textarea">
+                                                              <textarea name="text_testimonials"></textarea>
+                                                         </div>
+                                                         
+                                                          
+                                                     </li>                                                       
+
+
+                                                  </ul>
+                                                  <div><input type="submit" value="Добавить работу" /></div>
+
+
+                                                 </form> 
+                                                <form action="/admin/ajaxaddphoto" method="post" id="url_photo" class="form_photos">
+                                                           <input type="file" class="input_file_hidden" name="sample" />
+                                                          
+                                               </form>
+                                                <form action="/admin/ajaxaddphoto" method="post" id="url_blueprint" class="form_photos">
+                                                           <input type="file" class="input_file_hidden" name="sample" />
+                                                          
+                                               </form> 
+                                               
+                                                <form action="/admin/ajaxaddphoto" method="post" id="url_picture" class="form_photos">
+                                                           <input type="file" class="input_file_hidden" name="sample" />
+                                                          
+                                               </form>                                                                                            
+
+                                         </div>
+                                 </div>   	
+
+
+
+			        </section>
+     </div> 
+ <div class="modal fade" id="material_list_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Укажите материалы, которые использовались в проекте:</h4>
+      </div>
+      <div class="modal-body">
+            <ul class="analog_list_window"><form id="form_analogs">
+              
+
+                  {% for material in lists.materials  %}
+                      
+                       <li data-id={{ material.id }}> 
+                             <div style="background:url('{{ material.url }}') no-repeat top left;">
+                                      <small>{{ material.articul }}</small><br />
+                                      <span>
+                                          {{ material.name_material }}
+                                      </span>  
+                             </div>
+                             <input type="checkbox" value="{{ material.id }}" id="a_{{ material.id }}" />   
+                             <input type="hidden" name="material_id[]" value="{{ material.id }}" />
+
+                       </li>
+                  {%endfor%}
+            </form></ul>
+
+      </div>
+        <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn">Отменить</a>
+                <a href="#" class="btn btn-primary" id="btn_pick_analogs">Добавить</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- /.modal -->
+
+
+
+{% endblock content %}

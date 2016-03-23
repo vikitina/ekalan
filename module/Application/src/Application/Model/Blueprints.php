@@ -6,9 +6,9 @@ namespace Application\Model;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\TableGateway\Feature\RowGatewayFeature;
 
-class Texture extends TableGateway
+class Blueprints extends TableGateway
 {
-    protected $tableName  = 't_texture';
+    protected $tableName  = 't_blueprint';
     protected $idCol = 'id';
  
 
@@ -19,13 +19,18 @@ class Texture extends TableGateway
             $adapter,
             new RowGatewayFeature($this->idCol)
         );
-
+/*CREATE TABLE IF NOT EXISTS `t_blueprint` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `url_blueprint` varchar(255) NOT NULL,
+  `id_folio` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+)*/
  
     }
 
-    public function getAllTextures()
+    public function getAllBlueprints()
     { 
-         $query = "SELECT * from t_texture";
+         $query = "SELECT * from t_blueprint";
 
     
                             
@@ -35,10 +40,10 @@ class Texture extends TableGateway
         return $results;
     } 
 
-   public function getTexture($id)
+   public function getBlueprint($id)
     { 
 
-        $query = "SELECT * from `t_texture` where id ='".$id."'";
+        $query = "SELECT * from `t_blueprint` where id ='".$id."'";
         
     
                             
@@ -52,18 +57,18 @@ class Texture extends TableGateway
 
 
   
-  public function updateTexture($data)
+  public function updateBlueprint($data)
     { 
       $id = (int)$data['id'];
 
     
         parent::update($data, array('id' => $id));
-        return array('id' => $id, 'name' => $data['name_texture']);
+        
     }
 
 
 
-  public function insertTexture($data)
+  public function insertBlueprint($data)
     {
 
 
@@ -71,13 +76,13 @@ class Texture extends TableGateway
       $adapter = $this->getAdapter();
       $id = $adapter->getDriver()->getLastGeneratedValue();
 
- return $id;      
+ return $id;
  
     }   
       
-  public function delTexture($id)
+  public function delBlueprint($id)
     {
-         $query = sprintf("DELETE FROM t_texture WHERE id='%s'",$id);
+         $query = sprintf("DELETE FROM t_blueprint WHERE id='%s'",$id);
 
                             
          $adapter = $this->getAdapter();

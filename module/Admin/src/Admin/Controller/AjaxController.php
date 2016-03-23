@@ -313,6 +313,41 @@ public function ajaxcolorupdateAction(){
 
 
 }
+
+public function ajaxgroupupdateAction(){
+
+      $data = $_POST;
+      $groupSrv    = $this -> getServiceLocator()->get('groups');
+      $res = $groupSrv->updateGroup($data);
+      return new JsonModel(array('res' => 1));
+
+
+}
+
+public function ajaxaddgroupAction(){
+      $data = $_POST;
+      $groupSrv    = $this -> getServiceLocator()->get('groups');
+      $id = $groupSrv->insertGroup($data);
+      $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
+      $group_data = array("id" => $id,'name_group'=>$data['name_group']);
+      $li = $partial('newgroupelement', array('key' => $group_data));       
+      return new JsonModel(array(
+             'li' => $li
+        ));  
+}
+public function ajaxaddtextureAction(){
+       $data = $_POST;
+       $textureSrv    = $this -> getServiceLocator()->get('texture');
+       $id = $textureSrv -> insertTexture($data);
+       $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
+       $texture_data = array("id" => $id,'name_texture'=>$data['name_texture']);
+       $li = $partial('newtextureelement', array('key' => $texture_data)); 
+             return new JsonModel(array(
+             'li' => $li
+        )); 
+}
+
+
    public function uploadAction(){
 
             $request = $this->getRequest();
@@ -324,7 +359,21 @@ public function ajaxcolorupdateAction(){
 
     return new JsonModel(array('url' => $url['new_file_url'],
                               'name' => $url['new_file_name']));
-}      
+}  
+
+   public function addphotoAction(){
+
+             $request = $this->getRequest();
+            // $data = [];
+
+             if ($request->isXmlHttpRequest()) {
+             $url = $this->uploadFile($_FILES);
+    }
+
+    return new JsonModel(array('url' => $url['new_file_url'],
+                              'name' => $url['new_file_name']));
+}    
+   
 
 public function ajaxcropingAction(){
        $data = $_POST;

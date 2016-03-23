@@ -1,0 +1,120 @@
+{% extends 'layout/admin.twig' %}
+
+
+{% block content %}
+
+<h2 class="title_page"><a href="/admin/materials">Готовые работы</a></h2> <a href="/admin/addfolio" class="right_link">Добавить новую работу</a>
+<hr class="clear" />
+<div class="row">
+     <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+              <section class="">
+
+
+                 <div class="material_list_container autoheight">
+                       <ul class="list-group material_list">
+                         
+
+                         {% for folio in folios %}
+                                <li class="list-group-item">
+                                  
+                                     <a href="/admin/folio/{{ folio.id  }}">
+{#<span class="sample" style="background-image:url('/assets/application/samples/data/uploads/1458648591.png');"></span>#}
+                                                     <small>{{ folio.number_folio }}</small>
+                                                     <span> {{ folio.name_folio }} </span>
+                                     </a>
+                                     <span class="del_folio_ajax del_link" data-id="{{ folio.id  }}"><i class="fa fa-trash-o"></i></span>
+
+                                </li>
+                         {% endfor %}
+                       </ul>		
+                      
+                 </div>   
+             
+			</section>
+     </div>       
+ <div class="modal fade" id="delete_confirm_window">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Подтверждение удаления материала</h4>
+      </div>
+      <div class="modal-body">
+        Материал такой-то будет удален. Вы уверены?
+
+        <input type="hidden" id="deleting_id" />
+      </div>
+        <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn" id="btn_cancel_deleting">Отменить</a>
+                <a href="#" class="btn btn-primary" id="btn_confirm_deleting">Удалить</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+ <div class="modal fade" id="delete_group_confirm_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Подтверждение удаления материалов</h4>
+      </div>
+      <div class="modal-body">
+        <p>Группа материалов будет удалена.</p>
+        <ul id="list_for_deleting"></ul>
+         <p>Вы уверены?</p>
+        <form method=post action="/admin/ajax_deleting_group" id="form_deleting_group">  
+            <input type="hidden" id="deleting_list" name="deleting_list" />
+        </form>
+      </div>
+        <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn" id="btn_cancel_deleting">Отменить</a>
+                <a href="#" class="btn btn-primary" id="btn_confirm_group_deleting">Удалить</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+ <div class="modal fade" id="pricing_group_confirm_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Изменение цены материалов</h4>
+      </div>
+      <div class="modal-body">
+        <p>Назначить цену для группы материалов:</p>
+        <ul id="list_for_pricing"></ul>
+         
+        <form method=post action="/admin/ajax_pricing_group" id="form_pricing_group_update"> 
+           <label>Новая цена<input type="text" name="price" /></label>
+           <input type="hidden" id="pricing_list" name="pricing_list" />
+        </form>
+      </div>
+        <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn" id="btn_cancel_pricing">Отменить</a>
+                <a href="#" class="btn btn-primary" id="btn_confirm_group_pricing">Сохранить</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+       <script type="text/javascript">
+       var hash_crumbs = new Object();
+           hash_crumbs = {{ hash | raw }};
+
+
+           var data = new Object();
+           data['manufacturer'] = $('#id_manufacturer').val();
+           data['id_color'] = $('#id_color').val();
+           data['id_texture'] = $('#id_texture').val();
+   
+           Hash.set(data);  
+           $(document).ready(function(){
+                     $('.count_text').html('Найдено <span class="count">'+{{ rowcount  }}+'</span> '+getMaterialsCount({{ rowcount  }}));      
+                      $('.material_list_container').scrollTop(0);
+           });             
+          
+     </script>
+{% endblock content %}

@@ -1,0 +1,22 @@
+
+         
+<?php $item = $this->key; ?>
+                                                     <li class="ajax_edit_obj">
+                                                       <form action="/admin/ajaxgroupupdate" method="post">
+                                                            <input type="hidden" name="id" value="<?php echo $item['id']; ?>"  />
+                                                            <input type="hidden" name="name_group" id="name_group_<?php echo $item['id']; ?>" value="<?php echo $item['name_group']; ?>"  />
+                                                          </form>    
+                                                         <div class="editable">
+                                                             <span><?php echo $item['name_group']; ?></span>
+                                                             <div class="editblock">
+                                                                  <div class="editarea">
+                                                                       <input type="text" data-name="name_group_<?php echo $item['id']; ?>" value="<?php echo $item['name_group']; ?>" />
+                                                                  </div>
+                                                                  
+
+                                                            </div><!-- editblock  -->
+                                                            <i class="fa fa-pencil fa-fw"></i>
+                                                          </div>
+                                                          
+                                                        
+                                                      </li>
