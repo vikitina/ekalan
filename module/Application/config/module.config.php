@@ -118,6 +118,16 @@ return array(
                     ),
                 ),
             ), 
+           'open_project' => array(
+                'type' => 'Zend\Mvc\Router\Http\Segment',
+                'options' => array(
+                    'route'    => '/project[/:id]',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Index',
+                        'action'     => 'project',
+                    ),
+                ),
+            ),           
 
 
 

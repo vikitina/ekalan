@@ -75,6 +75,8 @@ return array(
                                    array('route' => 'tester', 'roles' => array('guest','user','admin')),
 
                                    array('route' => 'portfolio', 'roles' => array('guest','user','admin')),
+                                   array('route' => 'open_project', 'roles' => array('guest','user','admin')),
+                                  
                                    array('route' => 'material', 'roles' => array('guest', 'user')),
                                    array('route' => 'material_ajax', 'roles' => array('guest', 'user')),
                                    array('route' => 'materialset_ajax', 'roles' => array('guest', 'user')), 

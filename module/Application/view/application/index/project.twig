@@ -1,0 +1,91 @@
+ 
+{% extends 'layout/portfolio.twig' %}
+
+
+{% block content %}
+
+{#  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_group` int(11) NOT NULL,
+  `number_folio` varchar(255) NOT NULL,
+  `name_folio` varchar(255) NOT NULL,
+  `describe_folio` text NOT NULL,
+  `id_testimonials` int(11) NOT NULL,
+  `price_folio` int(11) NOT NULL,#}
+        <!-- Work Detail Section -->
+        <section class="ptb ptb-sm-80">
+            <div class="container project">
+                
+                <div class="row"><a href="/portfolio">Все проекты</a> / {{ project.name_folio }}</div>
+                <dl>
+                      <dt>Задача и технические условия проекта</dt>
+                      <dd>Кухонная столешня для просторного помещения (20 кв.м), многофункциональная, повышенной эксплуатации
+                    Цветовые предпочтения - светлые теплые тона.</dd>
+                </dl>
+                <dl>
+                      <dt>Материалы проекта</dt>
+                      <dd>
+                          <ul class="set_material set_material_infolio">
+                           {% for material in materials %}
+                                   <li data-sample="{{ material.id }}" style="background-image:url('{{ material.url }}');"><span>${{ material.price_material }}</span></li>
+                               
+                           {% endfor %}
+
+
+                           </ul>
+                      </dd>
+                </dl>
+                <dl>
+                      <dt>Чертежи проекта</dt>
+                      <dd>
+                          <ul class="blueprints">
+                           {% for blueprint in blueprints %}
+                                   <li><img alt="" src="{{ blueprint.url_blueprint }}" /></li>
+                               
+                           {% endfor %}
+                           </ul>
+                      </dd>
+                </dl>    
+                <dl>
+                      <dt>Описание проекта</dt>
+                      <dd>
+                          {{ project.describe_folio }}
+                      </dd>
+                </dl>                             
+               <dl>
+                      <dt>Общая цена</dt>
+                      <dd>
+                          $ 2000
+                      </dd>
+                </dl>      
+                <dl>
+                      <dt>Фотографии</dt>
+                      <dd>
+                          <ul class="photos">
+                           {% for photo in photos %}
+                                   <li><img alt="" src="{{ photo.url_photo }}" /></li>
+                               
+                           {% endfor %}
+                           </ul>
+                      </dd>
+                </dl> 
+               <dl>
+                      <dt>Отзыв заказчика</dt>
+                      <dd>
+                         <p>{{ project.name_testimonials }}</p>
+                          <p>{{ project.organization }}</p>
+                           <p>{{ project.text_testimonials }}</p>
+                            <p>{{ project.short_text_testimonials }}</p>
+                            
+
+                         
+                      </dd>
+                </dl>                 
+
+            </div>
+
+        </section>
+       
+    
+{% endblock content %}
+
+

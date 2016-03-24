@@ -62,7 +62,15 @@ class Photos extends TableGateway
          $adapter = $this->getAdapter();
          $results = $this->FetchAll($adapter, $query);                            
         return $results[0];
-    }     
+    } 
+       public function getByFolio($id){
+
+         $query = "SELECT * from `t_photos` where id_folio ='".$id."'";
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query);                            
+        return $results;
+
+   }    
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     //==========================================================================================================

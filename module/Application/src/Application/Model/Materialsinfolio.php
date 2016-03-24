@@ -50,7 +50,15 @@ class Materialsinfolio extends TableGateway
          $adapter = $this->getAdapter();
          $results = $this->FetchAll($adapter, $query);                            
         return $results[0];
-    }     
+    }    
+   public function getByFolio($id){
+
+         $query = "SELECT * from `t_materials_in_folio` where id_folio ='".$id."'";
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query);                            
+        return $results;
+
+   }
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     //==========================================================================================================

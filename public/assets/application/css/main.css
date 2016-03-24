@@ -185,3 +185,28 @@ html,body{font-family: 'Roboto', sans-serif;font-weight: 500;background:#dad1c8;
 
 
 footer{background:none;}
+
+
+.project{}
+.project dl{padding:0;margin:0;float:left;padding-bottom:30px;border-bottom: 1px solid #ddd;margin-bottom: 30px;width:100%;}
+.project dt{padding:0;margin:0;float:left;width:20%;}
+.project dd{padding:0;margin:0;float:right;width:79%;}
+
+.set_material_infolio{float: right;height: unset;overflow: visible;width: 100%;}
+.set_material_infolio li{background-repeat: no-repeat;background-size: cover;background-position: center center;}
+
+.blueprints{padding:0;margin:0;float:left;width:100%;}
+.blueprints li{   float: left;
+    height: 300px;
+    margin-right: 1%;
+    overflow: hidden;
+    width: 47%;}
+.blueprints li img{width:100%;max-width:100%;}
+
+.photos{padding:0;margin:0;float:left;width:100%;}
+.photos li{   float: left;
+    height: 300px;
+    margin-right: 1%;
+    overflow: hidden;
+    width: 47%;}
+.photos li img{width:100%;max-width:100%;}

@@ -515,3 +515,87 @@
 [23-Mar-2016 15:33:11 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
 [23-Mar-2016 15:38:52 Europe/Helsinki] PHP Notice:  Undefined variable: material_id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 479
 [23-Mar-2016 15:38:52 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[24-Mar-2016 08:08:34 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[24-Mar-2016 08:53:17 Europe/Helsinki] PHP Parse error:  syntax error, unexpected '$i' (T_VARIABLE) in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 74
+[24-Mar-2016 08:53:43 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Folio.php on line 69
+[24-Mar-2016 08:53:43 Europe/Helsinki] PHP Notice:  Undefined variable: set_material in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 84
+[24-Mar-2016 08:55:22 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Folio.php on line 69
+[24-Mar-2016 08:55:22 Europe/Helsinki] PHP Notice:  Undefined variable: set_material in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 87
+[24-Mar-2016 08:58:01 Europe/Helsinki] PHP Notice:  Undefined offset: 1 in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[24-Mar-2016 08:58:01 Europe/Helsinki] PHP Notice:  Undefined offset: 2 in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[24-Mar-2016 08:58:01 Europe/Helsinki] PHP Notice:  Undefined offset: 3 in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[24-Mar-2016 08:58:01 Europe/Helsinki] PHP Notice:  Undefined offset: 4 in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[24-Mar-2016 08:58:01 Europe/Helsinki] PHP Notice:  Undefined offset: 5 in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[24-Mar-2016 08:58:01 Europe/Helsinki] PHP Notice:  Undefined offset: 6 in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[24-Mar-2016 08:58:01 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Folio.php on line 69
+[24-Mar-2016 08:58:01 Europe/Helsinki] PHP Notice:  Undefined variable: set_material in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 90
+[24-Mar-2016 09:00:23 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:00:23 Europe/Helsinki] PHP Notice:  Undefined offset: 1 in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[24-Mar-2016 09:00:23 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:00:23 Europe/Helsinki] PHP Notice:  Undefined offset: 2 in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[24-Mar-2016 09:00:23 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:00:23 Europe/Helsinki] PHP Notice:  Undefined offset: 3 in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[24-Mar-2016 09:00:23 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:00:23 Europe/Helsinki] PHP Notice:  Undefined offset: 4 in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[24-Mar-2016 09:00:23 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:00:23 Europe/Helsinki] PHP Notice:  Undefined offset: 5 in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[24-Mar-2016 09:00:23 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:00:23 Europe/Helsinki] PHP Notice:  Undefined offset: 6 in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[24-Mar-2016 09:00:24 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Folio.php on line 69
+[24-Mar-2016 09:00:24 Europe/Helsinki] PHP Notice:  Undefined variable: set_material in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 90
+[24-Mar-2016 09:01:13 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:01:13 Europe/Helsinki] PHP Notice:  Undefined offset: 1 in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[24-Mar-2016 09:01:13 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:01:13 Europe/Helsinki] PHP Notice:  Undefined offset: 2 in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[24-Mar-2016 09:01:13 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:01:13 Europe/Helsinki] PHP Notice:  Undefined offset: 3 in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[24-Mar-2016 09:01:13 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:01:13 Europe/Helsinki] PHP Notice:  Undefined offset: 4 in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[24-Mar-2016 09:01:13 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:01:13 Europe/Helsinki] PHP Notice:  Undefined offset: 5 in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[24-Mar-2016 09:01:13 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:01:13 Europe/Helsinki] PHP Notice:  Undefined offset: 6 in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[24-Mar-2016 09:01:14 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Folio.php on line 69
+[24-Mar-2016 09:01:14 Europe/Helsinki] PHP Notice:  Undefined variable: set_material in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 90
+[24-Mar-2016 09:04:17 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:04:17 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:04:17 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:04:17 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:04:17 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:04:17 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:04:17 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Folio.php on line 69
+[24-Mar-2016 09:04:17 Europe/Helsinki] PHP Notice:  Undefined variable: set_material in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 91
+[24-Mar-2016 09:05:44 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:05:44 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:05:44 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:05:44 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:05:44 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:05:44 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:06:48 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:06:48 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:06:48 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:06:48 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:06:48 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:06:48 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:06:49 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:06:49 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:06:49 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:06:49 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:06:49 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:06:49 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:08:14 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:08:14 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:08:14 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:08:14 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:08:14 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:08:14 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:08:15 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:08:15 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:08:15 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:08:15 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:08:15 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 09:08:15 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 72
+[24-Mar-2016 11:04:40 Europe/Helsinki] PHP Notice:  Undefined index: url_blueprint in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 97
+[24-Mar-2016 11:04:40 Europe/Helsinki] PHP Notice:  Undefined index: url_blueprint in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 97
+[24-Mar-2016 11:12:10 Europe/Helsinki] PHP Notice:  Undefined index: url_blueprint in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 97
+[24-Mar-2016 11:12:10 Europe/Helsinki] PHP Notice:  Undefined index: url_blueprint in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 97

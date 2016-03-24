@@ -54,7 +54,14 @@ class Blueprints extends TableGateway
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     //==========================================================================================================
+   public function getByFolio($id){
 
+         $query = "SELECT * from `t_blueprint` where id_folio ='".$id."'";
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query);                            
+        return $results;
+
+   }
 
   
   public function updateBlueprint($data)

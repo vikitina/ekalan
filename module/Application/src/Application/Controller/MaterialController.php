@@ -84,7 +84,7 @@ class MaterialController extends AbstractActionController
                           $data['id_color'] = $set_material['set']['id_color'];
                           $data['id_texture'] = $set_material['set']['id_texture'];
                           $data['limit'] = 0;
-                          $set_analogs = $materialSrv->getSpecOrder($data);;
+                          $set_analogs = $materialSrv->getSpecOrder($data);
             
            $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
            $html = $partial('material/materialmodal', array(

@@ -44,11 +44,71 @@ class IndexController extends AbstractActionController
                  }
 
                 $lists['folios'] = $folios;
+
+
        return new ViewModel(array(
                           'lists'    => $lists,
        ));
         
-    }    
+    } 
+
+
+
+    public function projectAction(){
+
+
+        $id = $this->getEvent()->getRouteMatch()->getParam('id');
+        $folioSrv = $this -> getServiceLocator()->get('folio');
+        $project = $folioSrv->getSpecFolioById($id);
+
+        $materials = array();
+        $materialsinfolioSrv        = $this -> getServiceLocator()->get('materialsinfolio');
+        $materials_list = $materialsinfolioSrv->getByFolio($id);
+        $materialSrv    = $this -> getServiceLocator()->get('material');
+        $i = 0;
+        if($materials_list){
+                  foreach ($materials_list as $material) {
+                           $m = $materialSrv->getMaterial($material['id_material']);
+                           //echo $material['id_material']."   -- id<br>-----$m----------<br>";
+                           //var_dump($m);
+                           
+                           $set_material[$i] = $m['set']; 
+                           
+                           
+                           $set_material[$i]['url'] = ((isset($set_material[$i]['url']) && $set_material[$i]['url'] != '' && $set_material[$i]['url'] !=null)?"/assets/application/samples/".trim($set_material[$i]['url']):"/assets/application/img/no_photo.png");
+                           
+                           
+                           $i +=1;
+                  }
+         } 
+
+         $photosSrv                  = $this -> getServiceLocator()->get('photos');
+         $blueprintsSrv              = $this -> getServiceLocator()->get('blueprints');    
+         $i = 0;
+         $photos     = $photosSrv->getByFolio($id);
+              foreach($photos as $photo){
+                   $photos[$i]['url_photo'] = ((isset($photo['url_photo']) && $photo['url_photo'] != '' && $photo['url_photo'] !=null)?"/assets/application/samples/".trim($photo['url_photo']):"/assets/application/img/no_photo.png");
+                   $i += 1;
+
+              }
+         $i = 0;
+         $blueprints = $blueprintsSrv->getByFolio($id); 
+              foreach($blueprints as $blueprint){
+                   $blueprints[$i]['url_blueprint'] = ((isset($blueprint['url_blueprint']) && $blueprint['url_blueprint'] != '' && $blueprint['url_blueprint'] !=null)?"/assets/application/samples/".trim($blueprint['url_blueprint']):"/assets/application/img/no_photo.png");
+                   $i += 1;
+
+              }              
+
+  
+
+          return new ViewModel(array(
+                          'project'    => $project,
+                          'materials'  => $set_material,
+                          'photos'     => $photos,
+                          'blueprints' => $blueprints
+       ));     
+
+    }   
 
 
 }

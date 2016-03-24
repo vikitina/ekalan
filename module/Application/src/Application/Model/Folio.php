@@ -44,17 +44,33 @@ class Folio extends TableGateway
    public function getFolio($id)
     { 
 
-        $query = "SELECT * from `t_group` where id ='".$id."'";
+        $query = "SELECT * from `t_folio` where id ='".$id."'";
         
     
                             
          $adapter = $this->getAdapter();
          $results = $this->FetchAll($adapter, $query);                            
         return $results[0];
-    }     
+    }  
+
+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-    //==========================================================================================================
+public function getSpecFolioById($id){
+
+        $query = "SELECT *, t_testimonials.* "
+                ."FROM t_folio "
+                ."LEFT JOIN t_testimonials ON t_folio.id_testimonials=t_testimonials.id "
+                ."WHERE t_folio.id='".(int)$id."'";
+
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query);
+                                     
+        return $results[0];                
+
+
+}
+//==========================================================================================================
 
 
   
