@@ -100,21 +100,5 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-       <script type="text/javascript">
-       var hash_crumbs = new Object();
-           hash_crumbs = {{ hash | raw }};
-
-
-           var data = new Object();
-           data['manufacturer'] = $('#id_manufacturer').val();
-           data['id_color'] = $('#id_color').val();
-           data['id_texture'] = $('#id_texture').val();
-   
-           Hash.set(data);  
-           $(document).ready(function(){
-                     $('.count_text').html('Найдено <span class="count">'+{{ rowcount  }}+'</span> '+getMaterialsCount({{ rowcount  }}));      
-                      $('.material_list_container').scrollTop(0);
-           });             
-          
-     </script>
+  
 {% endblock content %}

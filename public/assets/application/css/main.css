@@ -210,3 +210,14 @@ footer{background:none;}
     overflow: hidden;
     width: 47%;}
 .photos li img{width:100%;max-width:100%;}
+
+.project dl .testimonial_in_folio{border-bottom: none;}
+.project dl .testimonial_in_folio dt{display:block;width:200px;height:250px;background-repeat: no-repeat;background-size: cover;background-position: center center;float:left;margin-right:40px;}
+.project dl .testimonial_in_folio dd{float:left;width:50%;max-width:500px;}
+.project dl .testimonial_in_folio dd ul{float:left;list-style: none;width: 100%;}
+.project dl .testimonial_in_folio dd li{float:left;width: 100%;}
+.project dl .testimonial_in_folio dd li.font-weight:bold;}
+/*>{{ project.name_testimonials }}</li>
+                                       <li>{{ project.organization }}</li>
+                                       <li>{{ project.text_testimonials }}</li>
+                                       <li>{{ project.short_text_testimonials }}</li>*/

@@ -21,12 +21,13 @@
   `id_testimonials` int(11) NOT NULL,
   `price_folio` int(11) NOT NULL,#}                                       
                                           <div class="panel-body">
-                                                <form action="/admin/addfolio" method="post" enctype="multipart/form-data" id="addfolio">
+                                                <form action="/admin/updatefolio" method="post" enctype="multipart/form-data" id="addfolio">
                                                   <ul class="text_data">
+                                                    <div><input name="id" value="{{ folio.id }}" /></div>
                                                      <li><span>Наименование *</span>
                                                               <div>
                                                                    <span class="error_msg">Укажите название проекта</span>
-                                                                   <input type="text" name="name_folio" class="required" />
+                                                                   <input type="text" name="name_folio" class="required" value="{{ folio.name_folio }}" />
 
                                                              </div>
                                                       </li>
@@ -35,14 +36,14 @@
 
                                                       <li><span>Задача и технические условия</span>
                                                           <div>
-                                                              <input type="text" name="conditions_folio" />
+                                                              <input type="text" name="conditions_folio"  value="{{ folio.conditions_folio }}" />
                                                          </div>
                                                      </li>
 
                                                      <li class="separator"></li>
                                                       <li><span>Номер заказа</span>
                                                           <div>
-                                                              <input type="text" name="number_folio" />
+                                                              <input type="text" name="number_folio"  value="{{ folio.number_folio }}" />
                                                          </div>
                                                      </li>
 
@@ -52,7 +53,7 @@
                                                          <div>
                                                                <select name="id_group" id="id_group_select">
                                                                      {% for group in lists.groups %}
-                                                                             <option value="{{ group.id }}">{{ group.name_group }}</option>
+                                                                             <option value="{{ group.id }}" {% group.id == folio.id_group ? "checked" : "" %}>{{ group.name_group }}</option>
                                                                       {% endfor %}
 
                                                                </select>
@@ -63,7 +64,7 @@
 
                                                      <li><span>Описание</span>
                                                          <div class="textarea">
-                                                              <textarea name="describe_folio"></textarea>
+                                                              <textarea name="describe_folio">{{ folio.describe_folio }}</textarea>
                                                          </div>
                                                           
                                                      </li>
@@ -71,7 +72,7 @@
  
                                                      <li><span>Общая стоимость</span>
                                                          <div>
-                                                              <input type="text" name="price_folio" />
+                                                              <input type="text" name="price_folio" value="{{ folio.price_folio }}" />
                                                          </div>
                                                           
                                                      </li>
@@ -105,7 +106,7 @@
                                                      <li><span>Имя <em class="hidden_star">*</em></span>
                                                          <div>
                                                               <span class="error_msg">Укажите имя заказчика</span>
-                                                              <input type="text" name="name_testimonials" id="name_testimonials" />
+                                                              <input type="text" name="name_testimonials" id="name_testimonials"   value="{{ folio.name_testimonials }}" />
                                                          </div>
                                                           
                                                      </li>
@@ -113,7 +114,7 @@
  
                                                      <li><span>Организация</span>
                                                          <div>
-                                                              <input type="text" name="organization" />
+                                                              <input type="text" name="organization"   value="{{ folio.organization }}" />
                                                          </div>
                                                           
                                                      </li>  
@@ -127,7 +128,7 @@
 
                                                      <li><span>Текст отзыва</span>
                                                          <div class="textarea">
-                                                              <textarea name="text_testimonials"></textarea>
+                                                              <textarea name="text_testimonials">{{ folio.text_testimonials }}</textarea>
                                                          </div>
                                                           
                                                      </li>  
@@ -135,7 +136,7 @@
 
                                                      <li><span>Короткий текст отзыва <br />для главной <em class="hidden_star">*</em></span>
                                                          <div class="textarea">
-                                                              <textarea name="text_testimonials" id="text_testimonials"></textarea>
+                                                              <textarea name="text_testimonials" id="text_testimonials">{{ folio.short_text_testimonials }}</textarea>
                                                          </div>
                                                          
                                                           
@@ -143,7 +144,7 @@
 
 
                                                   </ul>
-                                                  <div><input type="button" value="Добавить работу" data-form="addfolio" class="checker" /> <a href="/admin/folios">Отмена</a></div>
+                                                  <div><input type="button" value="Обновить работу" data-form="updatefolio" class="checker" /> <a href="/admin/folios">Отмена</a></div>
 
 
                                                  </form> 

@@ -61,6 +61,10 @@ class IndexController extends AbstractActionController
         $folioSrv = $this -> getServiceLocator()->get('folio');
         $project = $folioSrv->getSpecFolioById($id);
 
+ 
+        $project['url_picture'] = ((isset($project['url_picture']) && $project['url_picture'] != '' && $project['url_picture'] !=null)?"/assets/application/samples/".trim($project['url_picture']):"/assets/application/img/no_photo.png");
+                 
+
         $materials = array();
         $materialsinfolioSrv        = $this -> getServiceLocator()->get('materialsinfolio');
         $materials_list = $materialsinfolioSrv->getByFolio($id);

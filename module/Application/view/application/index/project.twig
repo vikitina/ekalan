@@ -15,12 +15,23 @@
         <section class="ptb ptb-sm-80">
             <div class="container project">
                 
-                <div class="row"><a href="/portfolio">Все проекты</a> / {{ project.name_folio }}</div>
+                <div class="row"><h2><a href="/portfolio">Все проекты</a> / {{ project.name_folio }}</h2></div>
                 <dl>
                       <dt>Задача и технические условия проекта</dt>
                       <dd>Кухонная столешня для просторного помещения (20 кв.м), многофункциональная, повышенной эксплуатации
                     Цветовые предпочтения - светлые теплые тона.</dd>
                 </dl>
+                <dl>
+                      <dt>Фотографии</dt>
+                      <dd>
+                          <ul class="photos">
+                           {% for photo in photos %}
+                                   <li><img alt="" src="{{ photo.url_photo }}" /></li>
+                               
+                           {% endfor %}
+                           </ul>
+                      </dd>
+                </dl>                 
                 <dl>
                       <dt>Материалы проекта</dt>
                       <dd>
@@ -57,28 +68,21 @@
                           $ 2000
                       </dd>
                 </dl>      
-                <dl>
-                      <dt>Фотографии</dt>
-                      <dd>
-                          <ul class="photos">
-                           {% for photo in photos %}
-                                   <li><img alt="" src="{{ photo.url_photo }}" /></li>
-                               
-                           {% endfor %}
-                           </ul>
-                      </dd>
-                </dl> 
+
                <dl>
                       <dt>Отзыв заказчика</dt>
                       <dd>
-                         <p>{{ project.name_testimonials }}</p>
-                          <p>{{ project.organization }}</p>
-                           <p>{{ project.text_testimonials }}</p>
-                            <p>{{ project.short_text_testimonials }}</p>
-                            
-
-                         
-                      </dd>
+                         <dl class="testimonial_in_folio">
+                               <dt style="background-image: url('{{ project.url_picture }}');"></dt>
+                               <dd><ul>
+                                       <li class="name">{{ project.name_testimonials }}</li>
+                                       <li>{{ project.organization }}</li>
+                                       <li>{{ project.text_testimonials }}</li>
+                                       <li>{{ project.short_text_testimonials }}</li>
+                                    </ul>   
+                                </dd>
+                         </dl>
+                    </dd>
                 </dl>                 
 
             </div>

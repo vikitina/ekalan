@@ -85,10 +85,12 @@ return array(
                                    array('route' => 'zfcadmin/admin_main_page', 'roles' => array('admin')),  
                            
                          
+                         
                                    array('route' => 'zfcadmin/admin_msgs', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_msg_open', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_materials', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_folios', 'roles' => array('admin')), 
+                                   array('route' => 'zfcadmin/admin_updatefolio', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_material_open', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_addmaterial', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_updatematerial', 'roles' => array('admin')),

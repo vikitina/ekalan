@@ -145,6 +145,9 @@
 
                             $('.'+list_class).find('.add_photo_btn').addClass('add_photo_btn_hidden');
                         }
+
+                        $('.'+list_class).find('.required_container .checker_input').val('1');
+                        $('.'+list_class).find('.required_container').removeClass('error');
                 });
 
 

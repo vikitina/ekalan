@@ -171,7 +171,20 @@ return array(
                                                           'action'     => 'addfolio',
                                                       ),
                                             ),
-                                    ),                                                               
+                                    ),    
+                             'admin_updatefolio' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Segment',
+                                          'options' => array(
+                                              
+                                                    'route' => '/updatefolio[/:id]',
+                                                    
+
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Index',
+                                                          'action'     => 'updatefolio',
+                                                      ),
+                                            ),
+                                    ),                                                                                                           
 
                               'admin_ajax_salesupdate' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',
