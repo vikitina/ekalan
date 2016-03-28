@@ -52,7 +52,22 @@ class Testimonials extends TableGateway
          $adapter = $this->getAdapter();
          $results = $this->FetchAll($adapter, $query);                            
         return $results[0];
-    }     
+    }  
+   public function getHomeTestimonials()
+    { 
+
+        $query = "SELECT *, t_pictures.* "
+                ."FROM `t_testimonials` "
+                ."LEFT JOIN t_pictures ON t_testimonials.id_picture = t_pictures.id "
+                ."WHERE  public_on_home_testimonials = 1";
+        
+    
+                            
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query);                            
+        return $results;
+    } 
+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     //==========================================================================================================

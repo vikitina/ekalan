@@ -221,3 +221,14 @@ footer{background:none;}
                                        <li>{{ project.organization }}</li>
                                        <li>{{ project.text_testimonials }}</li>
                                        <li>{{ project.short_text_testimonials }}</li>*/
+
+.testimonial-carousel{}
+.testimonial-carousel .item{} 
+.testimonial-carousel .item .testimonial{}
+.testimonial-carousel .item .testimonial .img{float:left;width:100%;height:250px;overflow: hidden;margin-bottom:20px;}
+.testimonial-carousel .item .testimonial .img img{margin:0 auto;height:100%;}
+.testimonial-carousel .item .testimonial .text{width:100%;float:left;}
+.testimonial-carousel .item .testimonial .text .container-ico{}
+.testimonial-carousel .item .testimonial .text .lead{}
+.testimonial-carousel .item .testimonial .text h6.quote-author{}
+.testimonial-carousel .item .testimonial .text h6.quote-author span{}

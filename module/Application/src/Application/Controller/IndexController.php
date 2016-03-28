@@ -20,10 +20,21 @@ class IndexController extends AbstractActionController
        		
         $manufacturerSrv = $this -> getServiceLocator()->get('manufacturer');
         $manufacturers = $manufacturerSrv->getAllManufacturers();
-
-        
+        $testimonialsSrv  = $this -> getServiceLocator()->get('testimonials'); 
+        $testimonials = $testimonialsSrv -> getHomeTestimonials();
+        $folioSrv                   = $this -> getServiceLocator()->get('folio');        
+        $i = 0;
+        foreach ($testimonials as $testimonial){
+             $testimonials[$i]['url_picture'] = ((isset($testimonial['url_picture']) && $testimonial['url_picture'] != '' && $testimonial['url_picture'] !=null)?"/assets/application/samples/".trim($testimonial['url_picture']):"");  
+             $folio_id = $folioSrv -> getFolioIdByTestimonialId($testimonial['id']);
+             $testimonials[$i]['url_folio'] = ($folio_id) ? '/project/'.$folio_id : 0;
+             $i += 1;
+        }
+         
         return new ViewModel(array(
-            'manufacturers' => $manufacturers
+            'manufacturers' => $manufacturers,
+            'testimonials'  => $testimonials,
+
         
         ));
     }

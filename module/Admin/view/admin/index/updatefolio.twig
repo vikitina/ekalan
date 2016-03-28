@@ -10,7 +10,7 @@
                             <div class="panel panel-default">
                                       <div class="panel-heading">
         
-                                      <h4>Добавить новую работу</h4>
+                                      <h4>Редактировать проект <i>{{ folio.name_folio }}</i></h4>
                                        </div>
 
 {#  `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -21,12 +21,12 @@
   `id_testimonials` int(11) NOT NULL,
   `price_folio` int(11) NOT NULL,#}                                       
                                           <div class="panel-body">
-                                                <form action="/admin/updatefolio" method="post" enctype="multipart/form-data" id="addfolio">
+                                                <form action="/admin/folio" method="post" enctype="multipart/form-data" id="updatefolio">
                                                   <ul class="text_data">
-                                                    <div><input name="id" value="{{ folio.id }}" /></div>
+                                                    <div><input name="id" value="{{ folio.id }}" type="hidden" /></div>
                                                      <li><span>Наименование *</span>
                                                               <div>
-                                                                   <span class="error_msg">Укажите название проекта</span>
+                                                                   <span class="error_msg">Название проекта</span>
                                                                    <input type="text" name="name_folio" class="required" value="{{ folio.name_folio }}" />
 
                                                              </div>
@@ -53,7 +53,7 @@
                                                          <div>
                                                                <select name="id_group" id="id_group_select">
                                                                      {% for group in lists.groups %}
-                                                                             <option value="{{ group.id }}" {% group.id == folio.id_group ? "checked" : "" %}>{{ group.name_group }}</option>
+                                                                             <option value="{{ group.id }}" {{ group.id == folio.id_group ? "checked" : "" }}>{{ group.name_group }}</option>
                                                                       {% endfor %}
 
                                                                </select>
@@ -80,33 +80,76 @@
                                                      <li class="url_photo with_main_photo_radio"><span>Фотографии *</span>
                                                                 <small class="small_help">Главная фотография будет выведена на страницу <a href="/portfolio">Порфолио</a></small>
           
-                                                                <ul  class="empty photos_list"></ul>
+                                                                <ul  class="{{ photos ? '' : 'empty '}}photos_list">
+                                                                       {% for photo in photos %}
+                                                                                <li>
+                                                                                      <span>
+                                                                                             <i class="fa fa-times"></i>
+                                                                                      </span>
+                                                                                      <div style="background-image: url('{{ photo.url }}');">
+                                                                                             <input type="hidden" value="{{ photo.url_photo }}" name="url_photo[]">
+                                                                                             <label class="main_radio">
+                                                                                                       <input type="radio" {{ photo.main_photo == 1 ? 'checked="checked" ' : ''}}value="{{ photo.url_photo }}" name="main_photo">
+                                                                                                        Главная
+                                                                                             </label>
+                                                                                      </div>
+                                                                                </li>
+                                                                         {% endfor %}
+                                                                </ul>
                                                                 <div class="add_photo_btn" data-form-id="url_photo">
                                                                               <span class="error_msg">Добавьте&nbsp;минимум&nbsp;одну&nbsp;фотографию</span>
-                                                                              <input  class="required checker_input" type="hidden" /><i class="fa fa-plus"></i>
+                                                                              <input  class="required checker_input" type="hidden" value="{{ photos ? 1 : 0}}" /><i class="fa fa-plus"></i>
                                                                               <span class="span_add_photo_btn"></span></div>
                                                                  
                                                      </li>
                                                      <li class="separator"></li>
                                                      <li class="url_blueprint"><span>Чертежи</span>
-                                                                <ul  class="empty photos_list"></ul>
+                                                                <ul  class="{{ blueprints ? '' : 'empty '}}photos_list">
+                                                                      {% for blueprint in blueprints %}
+                                                                                <li>
+                                                                                      <span>
+                                                                                             <i class="fa fa-times"></i>
+                                                                                      </span>
+                                                                                      <div style="background-image: url('{{ blueprint.url }}');">
+                                                                                             <input type="hidden" value="{{ blueprint.url_photo }}" name="url_blueprint[]">
+                                                                                       
+                                                                                      </div>
+                                                                                </li>
+                                                                         {% endfor %}                                                                
+
+                                                                </ul>
                                                                 <div class="add_photo_btn" data-form-id="url_blueprint"><i class="fa fa-plus"></i><span class="span_add_photo_btn"></span></div>
                                                      </li>          
                                                      <li class="separator"></li>
                                                      <li><span>Материалы в проекте</span>
-                                                                <ul id="analogs_list" class="empty"></ul>
+                                                                <ul id="analogs_list" {{ materials ? '' : 'class="empty"'}}>
+                                                                             {% for material in materials %}
+                                                                                    <li>
+                                                                                        <div style="background:url('{{ material.url_prepared }}') no-repeat top left;">
+                                                                                              <small>{{ material.articul }}</small>
+                                                                                              <br>
+                                                                                              <span>{{ material.name_material }}</span>
+                                                                                        </div>
+                                                                                        <input id="a_{{ material.id }}" type="checkbox" value="1">
+                                                                                        <input type="hidden" value="{{ material.id }}" name="material_id[]">
+                                                                                        <span class="remove_analog" data-id="a_{{ material.id }}"><i class="fa fa-times"></i></span>
+                                                                                    </li>
+                                                                                {% endfor %}    
+
+
+                                                                </ul>
                                                                 <div id="materials_folio_open_window" class="local_link">Выбрать из списка</div>
                                                                
                                                      </li>  
                                                      <li class="separator"></li>
                                                      <li><span>Отзыв заказчика</span>
-                                                            <div><label class="public_on_home_testimonials"><input type="checkbox" name="public_on_home_testimonials" id="public_on_home_testimonials" />Публиковать на главной</label></div>
+                                                            <div><label class="public_on_home_testimonials"><input type="checkbox" {{ folio.public_on_home_testimonials == 1? 'checked="checked" ' : '' }}name="public_on_home_testimonials" id="public_on_home_testimonials" />Публиковать на главной</label></div>
                                                      </li> 
-
-                                                     <li><span>Имя <em class="hidden_star">*</em></span>
-                                                         <div>
+                                                     <div><input name="id_testimonials" value="{{ folio.id_testimonials }}" /></div>
+                                                     <li{{ folio.public_on_home_testimonials == 1? ' class="show_hidden_star"' : '' }}><span>Имя <em class="hidden_star">*</em></span>
+                                                         <div{{ folio.public_on_home_testimonials == 1? ' class="required_container"' : '' }}>
                                                               <span class="error_msg">Укажите имя заказчика</span>
-                                                              <input type="text" name="name_testimonials" id="name_testimonials"   value="{{ folio.name_testimonials }}" />
+                                                              <input type="text" name="name_testimonials" id="name_testimonials"{{ folio.public_on_home_testimonials == 1? '  class="required"' : '' }} value="{{ folio.name_testimonials }}" />
                                                          </div>
                                                           
                                                      </li>
@@ -120,8 +163,19 @@
                                                      </li>  
                                                     <li class="separator"></li>
                                                      <li class="url_picture"><span>Фотография/логотип</span>
-                                                                <ul  class="empty photos_list"></ul>
-                                                                <div class="add_photo_btn only_one" data-form-id="url_picture"><i class="fa fa-plus"></i><span class="span_add_photo_btn"></span></div>
+                                                                <ul  class="{{ folio.url_picture ? '' : 'empty '}} photos_list">
+                                                                               <li>
+                                                                                       <span>
+                                                                                             <i class="fa fa-times"></i>
+                                                                                      </span>
+                                                                                      <div style="background-image: url('{{ folio.url_picture_prepared }}');">
+                                                                                             <input type="hidden" value="{{ folio.url_picture }}" name="url_picture[]" />
+                                                                                             <input type="hidden" value="{{ folio.id_picture }}" name="id_picture" />
+                                                                                       
+                                                                                      </div>
+                                                                                </li>
+                                                                </ul>
+                                                                <div class="add_photo_btn only_one{{ folio.url_picture ? ' add_photo_btn_hidden' : ''}}" data-form-id="url_picture"><i class="fa fa-plus"></i><span class="span_add_photo_btn"></span></div>
 
                                                      </li>
                                                      <li class="separator"></li>
@@ -134,9 +188,9 @@
                                                      </li>  
                                                      <li class="separator"></li>
 
-                                                     <li><span>Короткий текст отзыва <br />для главной <em class="hidden_star">*</em></span>
-                                                         <div class="textarea">
-                                                              <textarea name="text_testimonials" id="text_testimonials">{{ folio.short_text_testimonials }}</textarea>
+                                                     <li{{ folio.public_on_home_testimonials == 1? ' class="show_hidden_star"' : '' }}><span>Короткий текст отзыва <br />для главной <em class="hidden_star">*</em></span>
+                                                         <div class="textarea{{ folio.public_on_home_testimonials == 1? ' required_container' : '' }}"><span class="error_msg">Для публикации на главной нужен короткий отзыв</span>
+                                                              <textarea name="text_testimonials" id="text_testimonials"{{ folio.public_on_home_testimonials == 1? '  class="required"' : '' }}>{{ folio.short_text_testimonials==0 ? '' : folio.short_text_testimonials }}</textarea>
                                                          </div>
                                                          
                                                           

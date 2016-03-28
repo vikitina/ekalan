@@ -487,7 +487,7 @@ public function addfolioAction(){
 
                 if($_POST){
                   $data = $_POST;
-                  var_dump($data);
+                  //var_dump($data);
                   
                   $url_picture = ($data["url_picture"][0])?$data["url_picture"][0]:0;
                   if($data["url_picture"] && isset($data["url_picture"])) {
@@ -519,6 +519,7 @@ public function addfolioAction(){
                         "id_group"                    => (isset($data["id_group"]) && $data["id_group"])? $data["id_group"] : 0,
                         "describe_folio"              => (isset($data["describe_folio"]) && $data["describe_folio"])? $data["describe_folio"] : 0,
                         "price_folio"                 => (isset($data["price_folio"]) && $data["price_folio"])? $data["price_folio"] : 0,
+                        "conditions_folio"            => (isset($data["conditions_folio"]) && $data["conditions_folio"])? $data["conditions_folio"] : 0,
                         "id_testimonials"             => $id_testimonial,
                     );
 
@@ -595,6 +596,167 @@ public function foliosAction(){
                  return new ViewModel(array(
                           'folios'    => $folios,
                   ));
+
+}
+
+public function updatefolioAction(){
+        $id = $this->getEvent()->getRouteMatch()->getParam('id');
+
+
+        $folioSrv = $this -> getServiceLocator()->get('folio');
+        $project = $folioSrv->getSpecFolioById($id);
+
+        $groupSrv                   = $this -> getServiceLocator()->get('groups');
+        $lists['groups']            = $groupSrv->getAllGroups();
+
+ 
+        $project['url_picture_prepared'] = ((isset($project['url_picture']) && $project['url_picture'] != '' && $project['url_picture'] !=null)?"/assets/application/samples/".trim($project['url_picture']):"/assets/application/img/no_photo.png");
+                 
+
+        $materials = array();
+        $materialsinfolioSrv        = $this -> getServiceLocator()->get('materialsinfolio');
+        $materials_list = $materialsinfolioSrv->getByFolio($id);
+        $materialSrv    = $this -> getServiceLocator()->get('material');
+        $i = 0;
+        if($materials_list){
+                  foreach ($materials_list as $material) {
+                           $m = $materialSrv->getMaterial($material['id_material']);
+                           //echo $material['id_material']."   -- id<br>-----$m----------<br>";
+                           //var_dump($m);
+                           
+                           $set_material[$i] = $m['set']; 
+                           
+                           
+                           $set_material[$i]['url_prepared'] = ((isset($set_material[$i]['url']) && $set_material[$i]['url'] != '' && $set_material[$i]['url'] !=null)?"/assets/application/samples/".trim($set_material[$i]['url']):"/assets/application/img/no_photo.png");
+                           
+                           
+                           $i +=1;
+                  }
+         } 
+
+         $photosSrv                  = $this -> getServiceLocator()->get('photos');
+         $blueprintsSrv              = $this -> getServiceLocator()->get('blueprints');    
+         $i = 0;
+         $photos     = $photosSrv->getByFolio($id);
+              foreach($photos as $photo){
+                   $photos[$i]['url'] = ((isset($photo['url_photo']) && $photo['url_photo'] != '' && $photo['url_photo'] !=null)?"/assets/application/samples/".trim($photo['url_photo']):"/assets/application/img/no_photo.png");
+                   $i += 1;
+
+              }
+         $i = 0;
+         $blueprints = $blueprintsSrv->getByFolio($id); 
+              foreach($blueprints as $blueprint){
+                   $blueprints[$i]['url'] = ((isset($blueprint['url_blueprint']) && $blueprint['url_blueprint'] != '' && $blueprint['url_blueprint'] !=null)?"/assets/application/samples/".trim($blueprint['url_blueprint']):"/assets/application/img/no_photo.png");
+                   $i += 1;
+
+              }              
+
+
+
+           
+
+      if ($_POST){
+                  $data = $_POST;
+                  
+
+
+                  if (isset($data['id_picture']) && $data['id_picture']){
+
+                          $picturesSrv ->updatePicture(array(
+                                    "id"          => (int)$data['id_picture'],
+                                    "url_picture" => ($data["url_picture"][0])?$data["url_picture"][0]:0
+                            ));
+                        $id_picture = $data['id_picture'];
+
+                  }else{
+
+                  $url_picture = ($data["url_picture"][0])?$data["url_picture"][0]:0;
+                  if($data["url_picture"] && isset($data["url_picture"])) {
+                           $picture_data = array(
+                                    "url_picture" => $url_picture,
+                            );
+
+                             $id_picture = $picturesSrv -> insertPicture($picture_data);
+                  }
+
+                  $id_picture = ($id_picture) ? $id_picture : 0;
+
+                  }
+
+
+                  $testimonials_data = array(
+                         "id"                          => (int)$data['id_testimonials'],
+                         "name_testimonials"           => (isset($data["name_testimonials"]) && $data["name_testimonials"])? $data["name_testimonials"] : 0,
+                         "organization"                => (isset($data["organization"]) && $data["organization"])? $data["organization"] : 0,
+                         "id_picture"                  => $id_picture,
+                         "text_testimonials"           => (isset($data["text_testimonials"]) && $data["text_testimonials"])? $data["text_testimonials"] : 0,
+                         "short_text_testimonials"     => (isset($data["short_text_testimonials"]) && $data["short_text_testimonials"])? $data["short_text_testimonials"] : 0,
+                         "public_on_home_testimonials" => (isset($data["public_on_home_testimonials"]) && $data["public_on_home_testimonials"])? 1 : 0,
+
+
+                    );
+
+                  $testimonialsSrv -> updateTestimonial($testimonials_data);
+
+                  $folio_data = array(
+                        "id"                          => $data["id"],
+                        "name_folio"                  => (isset($data["name_folio"]) && $data["name_folio"])? $data["name_folio"] : 0,
+                        "number_folio"                => (isset($data["number_folio"]) && $data["number_folio"])? $data["number_folio"] : 0, 
+                        "id_group"                    => (isset($data["id_group"]) && $data["id_group"])? $data["id_group"] : 0,
+                        "describe_folio"              => (isset($data["describe_folio"]) && $data["describe_folio"])? $data["describe_folio"] : 0,
+                        "price_folio"                 => (isset($data["price_folio"]) && $data["price_folio"])? $data["price_folio"] : 0,
+                        "conditions_folio"            => (isset($data["conditions_folio"]) && $data["conditions_folio"])? $data["conditions_folio"] : 0,
+                        "id_testimonials"             => $testimonials_data['id'],
+                    );
+
+                  $folioSrv -> updateFolio($folio_data);
+
+
+
+                  if(isset($data["material_id"]) && $data["material_id"]){
+
+                           foreach ($data["material_id"] as $value) {
+                                      $materialsinfolioSrv ->  insertRec(array(
+                                             "id_material"  => $value,
+                                             "id_folio"     => $id_folio,
+                                      ));
+                           }
+                  }
+
+                  if(isset($data["url_photo"]) && $data["url_photo"]){
+
+                           foreach ($data["url_photo"] as $value) {
+                                          $photosSrv ->  insertPhoto(array(
+                                             "url_photo"    => $value,
+                                             "id_folio"     => $id_folio,
+                                             "main_photo"   => ($data["main_photo"] == $value)? 1 : 0 ,
+                                      ));
+                           }
+                  }    
+
+                  if(isset($data["url_blueprint"]) && $data["url_blueprint"]){
+
+                           foreach ($data["url_blueprint"] as $value) {
+                                          $blueprintsSrv ->  insertBlueprint(array(
+                                             "url_blueprint"    => $value,
+                                             "id_folio"         => $id_folio,
+                                      ));
+                           }
+                  }                                
+
+
+                 $this->redirect()->toRoute('zfcadmin/admin_folios');
+
+
+      }
+
+          return new ViewModel(array(
+                          'folio'      => $project,
+                          'materials'  => $set_material,
+                          'photos'     => $photos,
+                          'blueprints' => $blueprints,
+                          'lists'      => $lists
+       ));     
 
 }
 

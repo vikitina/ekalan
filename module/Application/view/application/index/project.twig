@@ -16,11 +16,13 @@
             <div class="container project">
                 
                 <div class="row"><h2><a href="/portfolio">Все проекты</a> / {{ project.name_folio }}</h2></div>
+                {% if project.conditions_folio %}
                 <dl>
                       <dt>Задача и технические условия проекта</dt>
-                      <dd>Кухонная столешня для просторного помещения (20 кв.м), многофункциональная, повышенной эксплуатации
-                    Цветовые предпочтения - светлые теплые тона.</dd>
+                      <dd>{{project.conditions_folio}}</dd>
                 </dl>
+                {% endif %}
+                {% if photos %}
                 <dl>
                       <dt>Фотографии</dt>
                       <dd>
@@ -31,7 +33,9 @@
                            {% endfor %}
                            </ul>
                       </dd>
-                </dl>                 
+                </dl>   
+                {% endif %}    
+                {% if materials %}          
                 <dl>
                       <dt>Материалы проекта</dt>
                       <dd>
@@ -45,6 +49,8 @@
                            </ul>
                       </dd>
                 </dl>
+                {% endif %}
+                {% if blueprints %}  
                 <dl>
                       <dt>Чертежи проекта</dt>
                       <dd>
@@ -55,30 +61,34 @@
                            {% endfor %}
                            </ul>
                       </dd>
-                </dl>    
+                </dl> 
+                {% endif %}
+                {% if project.describe_folio %}                     
                 <dl>
                       <dt>Описание проекта</dt>
                       <dd>
                           {{ project.describe_folio }}
                       </dd>
-                </dl>                             
+                </dl> 
+                {% endif %}
+                {% if project.price_folio %}                                            
                <dl>
                       <dt>Общая цена</dt>
                       <dd>
-                          $ 2000
+                          $ {{ project.price_folio }}
                       </dd>
                 </dl>      
-
+               {% endif %}
                <dl>
                       <dt>Отзыв заказчика</dt>
                       <dd>
                          <dl class="testimonial_in_folio">
                                <dt style="background-image: url('{{ project.url_picture }}');"></dt>
                                <dd><ul>
-                                       <li class="name">{{ project.name_testimonials }}</li>
-                                       <li>{{ project.organization }}</li>
-                                       <li>{{ project.text_testimonials }}</li>
-                                       <li>{{ project.short_text_testimonials }}</li>
+                                       {% if project.name_testimonials %}<li class="name">{{ project.name_testimonials }}</li>{% endif %}
+                                       {% if project.organization %}<li>{{ project.organization }}</li>{% endif %}
+                                       {% if project.text_testimonials %}<li>{{ project.text_testimonials }}</li>{% endif %}
+                                       {% if project.short_text_testimonials %} <li>{{ project.short_text_testimonials }}</li>{% endif %}
                                     </ul>   
                                 </dd>
                          </dl>

@@ -698,3 +698,31 @@
 [25-Mar-2016 14:02:49 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
 [25-Mar-2016 14:03:45 Europe/Helsinki] PHP Notice:  Undefined variable: material_id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 479
 [25-Mar-2016 14:03:45 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[27-Mar-2016 20:03:22 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 703
+[27-Mar-2016 20:03:22 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[27-Mar-2016 20:03:47 Europe/Helsinki] PHP Notice:  Undefined variable: material_id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 479
+[27-Mar-2016 20:03:47 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[27-Mar-2016 20:04:09 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 411
+[28-Mar-2016 08:39:02 Europe/Helsinki] PHP Notice:  Undefined variable: material_id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 479
+[28-Mar-2016 08:39:02 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[28-Mar-2016 08:40:14 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 411
+[28-Mar-2016 08:40:24 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 411
+[28-Mar-2016 08:40:28 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 411
+[28-Mar-2016 08:40:57 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 411
+[28-Mar-2016 08:41:47 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 411
+[28-Mar-2016 08:42:13 Europe/Helsinki] PHP Notice:  Undefined variable: material_id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 479
+[28-Mar-2016 08:42:13 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[28-Mar-2016 09:29:35 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Folio.php on line 70
+[28-Mar-2016 09:29:35 Europe/Helsinki] PHP Notice:  Undefined variable: set_material in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 734
+[28-Mar-2016 09:36:18 Europe/Helsinki] PHP Parse error:  syntax error, unexpected ',' in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 682
+[28-Mar-2016 09:36:21 Europe/Helsinki] PHP Parse error:  syntax error, unexpected ',' in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 682
+[28-Mar-2016 09:43:21 Europe/Helsinki] PHP Parse error:  syntax error, unexpected ',' in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 682
+[28-Mar-2016 10:05:21 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 411
+[28-Mar-2016 10:07:54 Europe/Helsinki] PHP Notice:  Undefined variable: material_id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 479
+[28-Mar-2016 10:07:54 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[28-Mar-2016 10:19:02 Europe/Helsinki] PHP Notice:  Undefined variable: material_id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 479
+[28-Mar-2016 10:19:02 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[28-Mar-2016 12:44:05 Europe/Helsinki] PHP Parse error:  syntax error, unexpected '$i' (T_VARIABLE) in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 31
+[28-Mar-2016 12:44:15 Europe/Helsinki] PHP Parse error:  syntax error, unexpected '$i' (T_VARIABLE) in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 31
+[28-Mar-2016 12:48:00 Europe/Helsinki] PHP Notice:  Undefined variable: set_material in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 121
+[28-Mar-2016 13:04:38 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52

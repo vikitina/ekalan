@@ -107,10 +107,12 @@ console.log('click');
 	}else{
 		$('#name_testimonials').removeClass('required');
 		$('#name_testimonials').parent().removeClass('required_container');
+		$('#name_testimonials').parent().removeClass('error');
 		$('#name_testimonials').parent().parent().removeClass('show_hidden_star');
 
         $('#text_testimonials').removeClass('required');
 		$('#text_testimonials').parent().removeClass('required_container');
+		$('#text_testimonials').parent().removeClass('error');
 		$('#text_testimonials').parent().parent().removeClass('show_hidden_star');
 
 

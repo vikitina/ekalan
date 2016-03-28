@@ -176,7 +176,7 @@ return array(
                                   'type' => 'Zend\Mvc\Router\Http\Segment',
                                           'options' => array(
                                               
-                                                    'route' => '/updatefolio[/:id]',
+                                                    'route' => '/folio[/:id]',
                                                     
 
                                                     'defaults' => array(

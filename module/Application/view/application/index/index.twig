@@ -220,27 +220,23 @@
         <section id="testimonial" class="overlay-dark80 dark-bg ptb ptb-sm-80" style="background-image: url('assets/application/img/full/22.jpg');" data-stellar-background-ratio="0.5">
             <div class="container">
                 <div class="owl-carousel testimonial-carousel nf-carousel-theme white">
+
+                   {% for testimonial in testimonials %}
                     <div class="item">
                         <div class="testimonial text-center dark-color">
-                            <div class="container-icon"><i class="fa fa-quote-right"></i></div>
-                            <p class="lead">" Без внимания не осталась ни одна деталь. Наша кухня стала безупречной."</p>
-                            <h6 class="quote-author">Иван Дунхам <span style="font-weight: 400;">( Appel Studio )</span></h6>
+                            {% if testimonial.url_picture %}<div class="img"><img src="{{ testimonial.url_picture }}" alt="" /></div>{% endif %}
+                            <div class="text">
+                                 <div class="container-icon"><i class="fa fa-quote-right"></i></div>
+                                 <p class="lead">"{{ testimonial.short_text_testimonials }}"</p>
+                                 <h6 class="quote-author">{{ testimonial.name_testimonials }} 
+                                        {% if testimonial.organization %}   <span style="font-weight: 400;">( {{ testimonial.organization }} )</span> {% endif %}
+                                 </h6>
+                                 {% if testimonial.url_folio %}<a href="{{ testimonial.url_folio }}">Описание проекта</a>{% endif %}
+                            </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="testimonial text-center dark-color">
-                            <div class="container-icon"><i class="fa fa-quote-right"></i></div>
-                            <p class="lead">"Расчет оказался точным, все пожелания учтены, внимательное и быстрое обслуживание. "</p>
-                            <h6 class="quote-author">Александр Иванов <span style="font-weight: 400;">( USA )</span></h6>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial text-center dark-color">
-                            <div class="container-icon"><i class="fa fa-quote-right"></i></div>
-                            <p class="lead">"После кухни, ванной и гостинной планирую обшить офис, гараж и магазин "</p>
-                            <h6 class="quote-author">Адам Савадж <span style="font-weight: 400;">( Artist )</span></h6>
-                        </div>
-                    </div>
+                    {% endfor %}
+
                 </div>
             </div>
         </section>
