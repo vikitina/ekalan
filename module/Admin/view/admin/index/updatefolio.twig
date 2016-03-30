@@ -145,7 +145,7 @@
                                                      <li><span>Отзыв заказчика</span>
                                                             <div><label class="public_on_home_testimonials"><input type="checkbox" {{ folio.public_on_home_testimonials == 1? 'checked="checked" ' : '' }}name="public_on_home_testimonials" id="public_on_home_testimonials" />Публиковать на главной</label></div>
                                                      </li> 
-                                                     <div><input name="id_testimonials" value="{{ folio.id_testimonials }}" /></div>
+                                                     <div><input name="id_testimonials" value="{{ folio.id_testimonials }}" type="hidden" /></div>
                                                      <li{{ folio.public_on_home_testimonials == 1? ' class="show_hidden_star"' : '' }}><span>Имя <em class="hidden_star">*</em></span>
                                                          <div{{ folio.public_on_home_testimonials == 1? ' class="required_container"' : '' }}>
                                                               <span class="error_msg">Укажите имя заказчика</span>
@@ -190,7 +190,7 @@
 
                                                      <li{{ folio.public_on_home_testimonials == 1? ' class="show_hidden_star"' : '' }}><span>Короткий текст отзыва <br />для главной <em class="hidden_star">*</em></span>
                                                          <div class="textarea{{ folio.public_on_home_testimonials == 1? ' required_container' : '' }}"><span class="error_msg">Для публикации на главной нужен короткий отзыв</span>
-                                                              <textarea name="text_testimonials" id="text_testimonials"{{ folio.public_on_home_testimonials == 1? '  class="required"' : '' }}>{{ folio.short_text_testimonials==0 ? '' : folio.short_text_testimonials }}</textarea>
+                                                              <textarea name="short_text_testimonials" id="text_testimonials"{{ folio.public_on_home_testimonials == 1? '  class="required"' : '' }}>{{ folio.short_text_testimonials == '0' ? '' : folio.short_text_testimonials }}</textarea>
                                                          </div>
                                                          
                                                           

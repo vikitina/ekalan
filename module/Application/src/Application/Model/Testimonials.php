@@ -19,6 +19,7 @@ class Testimonials extends TableGateway
             $adapter,
             new RowGatewayFeature($this->idCol)
         );
+        //$testimonialsSrv  = $this -> getServiceLocator()->get('testimonials'); 
 /*`t_testimonials` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name_testimonials` varchar(255) NOT NULL,
@@ -53,6 +54,20 @@ class Testimonials extends TableGateway
          $results = $this->FetchAll($adapter, $query);                            
         return $results[0];
     }  
+   public function getTestimonialFull($id)
+    { 
+
+        $query = "SELECT t_testimonials.*,t_testimonials.id as id_testimonials, t_pictures.* "
+                 ."from `t_testimonials` "
+                 ."LEFT JOIN t_pictures ON t_testimonials.id_picture = t_pictures.id "
+                 ."where t_testimonials.id ='".$id."'";
+        
+    
+                            
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query);                            
+        return $results[0];
+    }     
    public function getHomeTestimonials()
     { 
 

@@ -598,6 +598,110 @@ public function foliosAction(){
                   ));
 
 }
+public function testimonialsAction(){
+               $testimonialsSrv  = $this -> getServiceLocator()->get('testimonials'); 
+               $testimonials = $testimonialsSrv -> getAllTestimonials();
+               return new ViewModel(array(
+                     "testimonials" => $testimonials,
+                ));
+
+}
+public function testimonialAction(){
+               $id = $this->getEvent()->getRouteMatch()->getParam('id');
+               $testimonialsSrv  = $this -> getServiceLocator()->get('testimonials'); 
+               $picturesSrv  = $this -> getServiceLocator()->get('pictures'); 
+               $testimonial = $testimonialsSrv -> getTestimonialFull((int)$id);
+              var_dump($testimonial);
+               $testimonial['url_picture_prepared'] = ((isset($testimonial['url_picture']) && $testimonial['url_picture'] != '' && $testimonial['url_picture'] !=null)?"/assets/application/samples/".trim($testimonial['url_picture']):"");
+
+               if ($_POST){
+
+                   $data = $_POST;
+               var_dump($data);
+
+                  if (isset($data['id_picture']) && $data['id_picture']){
+
+                          $picturesSrv ->updatePicture(array(
+                                    "id"          => (int)$data['id_picture'],
+                                    "url_picture" => ($data["url_picture"][0])?$data["url_picture"][0]:0
+                            ));
+                        $id_picture = $data['id_picture'];
+
+                  }else{
+
+                  $url_picture = ($data["url_picture"][0])?$data["url_picture"][0]:0;
+                  if($data["url_picture"] && isset($data["url_picture"])) {
+                           $picture_data = array(
+                                    "url_picture" => $url_picture,
+                            );
+
+                             $id_picture = $picturesSrv -> insertPicture($picture_data);
+                  }
+                  }
+
+                  $data["public_on_home_testimonials"] = ($data["public_on_home_testimonials"] == 'on')? 1 : 0;
+                   $testimonialsSrv->updateTestimonial(array(
+                              
+                          "id"                           => $data["id"],
+                          "public_on_home_testimonials"  => $data["public_on_home_testimonials"], 
+                          
+                          "name_testimonials"            => $data["name_testimonials"],  
+                          "organization"                 => $data["organization"], 
+                           
+                          "id_picture"                   => $id_picture, 
+                          "text_testimonials"            => $data["text_testimonials"],  
+                          "short_text_testimonials"      => $data["short_text_testimonials"], 
+                    ));
+
+/*
+["id"]=> "1" 
+["public_on_home_testimonials"]=> string(2) "on" 
+["id_testimonials"]=> string(0) ""
+ ["name_testimonials"]=> string(38) "Иванов Иван Иванович" 
+ ["organization"]=> string(27) "Домашняя кухня" 
+ ["url_picture"]=> array(1) { [0]=> string(27) "data/uploads/1458724676.jpg" } 
+ ["id_picture"]=> string(1) "1" 
+ ["text_testimonials"]=> string(6) "asdasd" } 
+short_text_testimonials
+*/                   
+               }
+
+               return new ViewModel(array(
+                     "testimonial" => $testimonial,
+                ));
+
+}
+
+public function addtestimonialAction(){
+
+       if($_POST){
+
+        $data = $_POST;
+        $testimonialsSrv  = $this -> getServiceLocator()->get('testimonials'); 
+        $picturesSrv  = $this -> getServiceLocator()->get('pictures');  
+
+        $url_picture = ($data["url_picture"][0])?$data["url_picture"][0]:0;
+        if($data["url_picture"] && isset($data["url_picture"])) {
+               $picture_data = array(
+                                    "url_picture" => $url_picture,
+                            );
+
+               $id_picture = $picturesSrv -> insertPicture($picture_data);
+         }
+         $data["public_on_home_testimonials"] = ($data["public_on_home_testimonials"] == 'on')? 1 : 0;
+
+         $testimonialsSrv->insertTestimonial(array(                          
+                          "public_on_home_testimonials"  => $data["public_on_home_testimonials"],                          
+                          "name_testimonials"            => $data["name_testimonials"],  
+                          "organization"                 => $data["organization"],                            
+                          "id_picture"                   => $id_picture, 
+                          "text_testimonials"            => $data["text_testimonials"],  
+                          "short_text_testimonials"      => $data["short_text_testimonials"], 
+        ));  
+         $this->redirect()->toRoute('zfcadmin/admin_testimonials');       
+
+       }
+}
 
 public function updatefolioAction(){
         $id = $this->getEvent()->getRouteMatch()->getParam('id');
@@ -695,7 +799,7 @@ public function updatefolioAction(){
 
 
                     );
-
+                  $testimonialsSrv  = $this -> getServiceLocator()->get('testimonials'); 
                   $testimonialsSrv -> updateTestimonial($testimonials_data);
 
                   $folio_data = array(

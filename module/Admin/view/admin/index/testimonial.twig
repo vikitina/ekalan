@@ -1,0 +1,109 @@
+{% extends 'layout/admin.twig' %}
+
+
+{% block content %}
+<a href="/admin/testimonials">Портфолио</a> / Добавить новую работу
+<hr>
+<div class="row">
+     <div class="col-md-8">
+                     <section class="material_open">
+                            <div class="panel panel-default">
+                                      <div class="panel-heading">
+        
+                                      <h4>Редактировать отзыв <i>{{ testimonial.name_testimonial }}</i></h4>
+                                       </div>
+
+{#  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_group` int(11) NOT NULL,
+  `name_testimonial` varchar(255) NOT NULL,
+  `number_testimonial` varchar(255) NOT NULL,
+  `describe_testimonial` text NOT NULL,
+  `id_testimonials` int(11) NOT NULL,
+  `price_testimonial` int(11) NOT NULL,#}                                       
+                                          <div class="panel-body">
+                                                <form action="/admin/testimonial" method="post" enctype="multipart/form-data" id="updatetestimonial">
+                                                  <ul class="text_data">
+                                                    <div><input name="id" value="{{ testimonial.id_testimonials }}" type="hidden" /></div>
+
+                                                    
+                                                     <li><span>Отзыв заказчика</span>
+                                                            <div><label class="public_on_home_testimonials"><input type="checkbox" {{ testimonial.public_on_home_testimonials == 1? 'checked="checked" ' : '' }}name="public_on_home_testimonials" id="public_on_home_testimonials" />Публиковать на главной</label></div>
+                                                     </li> 
+                                                     
+                                                     <li{{ testimonial.public_on_home_testimonials == 1? ' class="show_hidden_star"' : '' }}><span>Имя <em class="hidden_star">*</em></span>
+                                                         <div{{ testimonial.public_on_home_testimonials == 1? ' class="required_container"' : '' }}>
+                                                              <span class="error_msg">Укажите имя заказчика</span>
+                                                              <input type="text" name="name_testimonials" id="name_testimonials"{{ testimonial.public_on_home_testimonials == 1? '  class="required"' : '' }} value="{{ testimonial.name_testimonials }}" />
+                                                         </div>
+                                                          
+                                                     </li>
+                                                     <li class="separator"></li>                                                     
+ 
+                                                     <li><span>Организация</span>
+                                                         <div>
+                                                              <input type="text" name="organization"   value="{{ testimonial.organization }}" />
+                                                         </div>
+                                                          
+                                                     </li>  
+                                                    <li class="separator"></li>
+                                                     <li class="url_picture"><span>Фотография/логотип</span>
+                                                                <ul  class="{{ testimonial.url_picture ? '' : 'empty '}} photos_list">
+                                                                        {% if testimonial.url_picture %}
+                                                                               <li>
+                                                                                       <span>
+                                                                                             <i class="fa fa-times"></i>
+                                                                                      </span>
+                                                                                      <div style="background-image: url('{{ testimonial.url_picture_prepared }}');">
+                                                                                             <input type="hidden" value="{{ testimonial.url_picture }}" name="url_picture[]" />
+                                                                                             <input type="hidden" value="{{ testimonial.id_picture }}" name="id_picture" />
+                                                                                       
+                                                                                      </div>
+                                                                                </li>
+                                                                          {% endif %}      
+                                                                </ul>
+                                                                <div class="add_photo_btn only_one{{ testimonial.url_picture ? ' add_photo_btn_hidden' : ''}}" data-form-id="url_picture"><i class="fa fa-plus"></i><span class="span_add_photo_btn"></span></div>
+
+                                                     </li>
+                                                     <li class="separator"></li>
+
+                                                     <li><span>Текст отзыва</span>
+                                                         <div class="textarea">
+                                                              <textarea name="text_testimonials">{{ testimonial.text_testimonials }}</textarea>
+                                                         </div>
+                                                          
+                                                     </li>  
+                                                     <li class="separator"></li>
+
+                                                     <li{{ testimonial.public_on_home_testimonials == 1? ' class="show_hidden_star"' : '' }}><span>Короткий текст отзыва <br />для главной <em class="hidden_star">*</em></span>
+                                                         <div class="textarea{{ testimonial.public_on_home_testimonials == 1? ' required_container' : '' }}"><span class="error_msg">Для публикации на главной нужен короткий отзыв</span>
+                                                              <textarea name="short_text_testimonials" id="text_testimonials"{{ testimonial.public_on_home_testimonials == 1? '  class="required"' : '' }}>{{ testimonial.short_text_testimonials == '0' ? '' : testimonial.short_text_testimonials }}</textarea>
+                                                         </div>
+                                                         
+                                                          
+                                                     </li>                                                       
+
+
+                                                  </ul>
+                                                  <div><input type="button" value="Обновить отзыв" data-form="updatetestimonial" class="checker" /> <a href="/admin/testimonials">Отмена</a></div>
+
+
+                                                 </form> 
+ 
+                                               
+                                                <form action="/admin/ajaxaddphoto" method="post" id="url_picture" class="form_photos">
+                                                           <input type="file" class="input_file_hidden" name="sample" />
+                                                          
+                                               </form>                                                                                            
+
+                                         </div>
+                                 </div>   	
+
+
+
+			        </section>
+     </div> 
+
+
+
+
+{% endblock content %}

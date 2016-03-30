@@ -184,7 +184,48 @@ return array(
                                                           'action'     => 'updatefolio',
                                                       ),
                                             ),
-                                    ),                                                                                                           
+                                    ),
+                             'admin_testimonials' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(
+                                              
+                                                    'route' => '/testimonials',
+                                                    
+
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Index',
+                                                          'action'     => 'testimonials',
+                                                      ),
+                                            ),
+                                    ),   
+                             'admin_testimonial' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Segment',
+                                          'options' => array(
+                                              
+                                                    'route' => '/testimonial[/:id]',
+                                                    
+
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Index',
+                                                          'action'     => 'testimonial',
+                                                      ),
+                                            ),
+                                    ),   
+                                    
+                             'admin_addtestimonial' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(
+                                              
+                                                    'route' => '/addtestimonial',
+                                                    
+
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Index',
+                                                          'action'     => 'addtestimonial',
+                                                      ),
+                                            ),
+                                    ),  
+
 
                               'admin_ajax_salesupdate' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',
