@@ -227,7 +227,7 @@
                             {% if testimonial.url_picture %}<div class="img"><img src="{{ testimonial.url_picture }}" alt="" /></div>{% endif %}
                             <div class="text">
                                  <div class="container-icon"><i class="fa fa-quote-right"></i></div>
-                                 <p class="lead">"{{ testimonial.short_text_testimonials }}"</p>
+                                 <p class="lead">"{{testimonial.id}}--{{ testimonial.short_text_testimonials }}"</p>
                                  <h6 class="quote-author">{{ testimonial.name_testimonials }} 
                                         {% if testimonial.organization %}   <span style="font-weight: 400;">( {{ testimonial.organization }} )</span> {% endif %}
                                  </h6>
