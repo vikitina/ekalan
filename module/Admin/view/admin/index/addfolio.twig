@@ -24,9 +24,9 @@
                                                 <form action="/admin/addfolio" method="post" enctype="multipart/form-data" id="addfolio">
                                                   <ul class="text_data">
                                                      <li><span>Наименование *</span>
-                                                              <div>
+                                                              <div class="text">
                                                                    <span class="error_msg">Укажите название проекта</span>
-                                                                   <input type="text" name="name_folio" class="required w80pc" />
+                                                                   <input type="text" name="name_folio" class="required" />
 
                                                              </div>
                                                       </li>
@@ -34,7 +34,7 @@
                                                   <li class="separator"></li>
 
                                                       <li><span>Задача и технические условия</span>
-                                                          <div>
+                                                          <div class="textarea">
                                                              
                                                               <textarea name="conditions_folio"></textarea>
                                                          </div>
@@ -104,17 +104,17 @@
                                                      </li> 
 
                                                      <li><span>Имя <em class="hidden_star">*</em></span>
-                                                         <div>
+                                                         <div class="text">
                                                               <span class="error_msg">Укажите имя заказчика</span>
-                                                              <input type="text" name="name_testimonials" id="name_testimonials" class="w80pc" />
+                                                              <input type="text" name="name_testimonials" id="name_testimonials" />
                                                          </div>
                                                           
                                                      </li>
                                                      <li class="separator"></li>                                                     
  
                                                      <li><span>Организация</span>
-                                                         <div>
-                                                              <input type="text" name="organization" class="w80pc" />
+                                                         <div class="text">
+                                                              <input type="text" name="organization" />
                                                          </div>
                                                           
                                                      </li>  

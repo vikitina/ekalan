@@ -25,9 +25,9 @@
                                                   <ul class="text_data">
                                                     <div><input name="id" value="{{ folio.id }}" type="hidden" /></div>
                                                      <li><span>Наименование *</span>
-                                                              <div>
+                                                              <div class="text">
                                                                    <span class="error_msg">Название проекта</span>
-                                                                   <input type="text" name="name_folio" class="required w80pc" value="{{ folio.name_folio }}" />
+                                                                   <input type="text" name="name_folio" class="required" value="{{ folio.name_folio }}" />
 
                                                              </div>
                                                       </li>
@@ -35,7 +35,7 @@
                                                   <li class="separator"></li>
 
                                                       <li><span>Задача и технические условия</span>
-                                                          <div>
+                                                          <div class="textarea">
                                                               
                                                               <textarea  name="conditions_folio">{{ folio.conditions_folio }}</textarea>
                                                          </div>
@@ -148,16 +148,16 @@
                                                      </li> 
                                                      <div><input name="id_testimonials" value="{{ folio.id_testimonials }}" type="hidden" /></div>
                                                      <li{{ folio.public_on_home_testimonials == 1? ' class="show_hidden_star"' : '' }}><span>Имя <em class="hidden_star">*</em></span>
-                                                         <div{{ folio.public_on_home_testimonials == 1? ' class="required_container"' : '' }}>
+                                                         <div class="text{{ folio.public_on_home_testimonials == 1? ' required_container' : '' }}">
                                                               <span class="error_msg">Укажите имя заказчика</span>
-                                                              <input type="text" name="name_testimonials" id="name_testimonials" class="w80pc{{ folio.public_on_home_testimonials == 1? ' required' : '' }}" value="{{ folio.name_testimonials }}" />
+                                                              <input type="text" name="name_testimonials" id="name_testimonials" {{ folio.public_on_home_testimonials == 1? ' class="required"' : '' }} value="{{ folio.name_testimonials }}" />
                                                          </div>
                                                           
                                                      </li>
                                                      <li class="separator"></li>                                                     
  
                                                      <li><span>Организация</span>
-                                                         <div>
+                                                         <div class="text">
                                                               <input type="text" name="organization"   value="{{ folio.organization }}" />
                                                          </div>
                                                           

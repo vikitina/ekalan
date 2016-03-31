@@ -350,6 +350,8 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 
 .material_open div.textarea{width:70%;height:200px;float:left;}
 .material_open div.textarea textarea{width:100%;height:100%;padding:10px;}
+.material_open div.text {float: left;height: 70px;width: 70%;}
+.material_open div.text input{width:100%;}
 
 .autoheight{height:auto !important;}
 

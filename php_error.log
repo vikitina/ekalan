@@ -793,3 +793,7 @@
 [31-Mar-2016 04:54:20 Europe/Helsinki] PHP Notice:  Undefined index: id in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 251
 [31-Mar-2016 04:54:20 Europe/Helsinki] PHP Notice:  Undefined variable: result in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 259
 [31-Mar-2016 04:54:20 Europe/Helsinki] PHP Notice:  Undefined variable: result in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 267
+[31-Mar-2016 10:13:48 Europe/Helsinki] PHP Notice:  Undefined variable: material_id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 481
+[31-Mar-2016 10:13:48 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[31-Mar-2016 10:20:04 Europe/Helsinki] PHP Notice:  Undefined variable: material_id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 481
+[31-Mar-2016 10:20:04 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
