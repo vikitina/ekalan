@@ -166,4 +166,10 @@ $('.can_deleting_category .btn_confirm_deleting').click(function(){
                  });      
 
 });
+
+$('.can_deleting_category .btn_cancel_deleting').click(function(){
+	      $('.can_deleting_category').modal('hide');
+	      $('.deleting_category').removeClass('deleting_category');
+	  });
+
 });
