@@ -71,7 +71,7 @@ class Testimonials extends TableGateway
    public function getHomeTestimonials()
     { 
 
-        $query = "SELECT *, t_pictures.* "
+        $query = "SELECT t_testimonials.*, t_pictures.url_picture "
                 ."FROM `t_testimonials` "
                 ."LEFT JOIN t_pictures ON t_testimonials.id_picture = t_pictures.id "
                 ."WHERE  public_on_home_testimonials = 1";
