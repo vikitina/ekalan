@@ -132,7 +132,34 @@ return array(
                                                           'action'     => 'manufacturers',
                                                       ),
                                             ),
-                                    ),     
+                                    ),   
+                             'admin_ajax_delcategory' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(
+                                              
+                                                    'route' => '/delcategory',
+                                                    
+
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Ajax',
+                                                          'action'     => 'delcategory',
+                                                      ),
+                                            ),
+                                    ), 
+                             'admin_ajax_deletingcategory' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(
+                                              
+                                                    'route' => '/deletingcategory',
+                                                    
+
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Ajax',
+                                                          'action'     => 'deletingcategory',
+                                                      ),
+                                            ),
+                                    ),                              
+                                                                       
                              'admin_texturers' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',
                                           'options' => array(

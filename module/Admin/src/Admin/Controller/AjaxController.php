@@ -174,7 +174,105 @@ return $result;
         ) );
 return $result;
 
-        }  
+        } 
+
+public function delcategoryAction(){
+
+         $data = $_POST;
+         $status_dict = array('candel','cannotdel');
+         switch ($data['name_cat']) {
+           case 'manufacturer':
+                  $materialSrv    = $this -> getServiceLocator()->get('material');
+                  $result = $materialSrv -> getMaterialByManufacturer((int)$data['id_cat']);
+                  
+                break;
+           case 'collection':
+                  $materialSrv    = $this -> getServiceLocator()->get('material');
+                  $result = $materialSrv -> getMaterialByCollection((int)$data['id_cat']);
+             break;
+           case 'color':
+                  $materialSrv    = $this -> getServiceLocator()->get('material');
+                  $result = $materialSrv -> getMaterialByColor((int)$data['id_cat']);             
+             break;
+            case 'texture':
+                  $materialSrv    = $this -> getServiceLocator()->get('material');
+                  $result = $materialSrv -> getMaterialByTexture((int)$data['id_cat']);              
+             break;
+           case 'group':
+                 $folioSrv    = $this -> getServiceLocator()->get('folio');
+                 $result = $folioSrv -> getFolioByGroup((int)$data['id_cat']);
+             break;
+          
+           default:
+             # code...
+             break;
+         }
+
+             $status = ($result) ? $status_dict[1] : $status_dict[0];
+
+             return  $status = new JsonModel ( array (
+              
+                       'status'      => $status,
+                       'res'         => $result
+                      
+                
+               ) );
+
+      /*  $manufacturerSrv    = $this -> getServiceLocator()->get('manufacturer');
+          $colorSrv    = $this -> getServiceLocator()->get('color');
+          $textureSrv    = $this -> getServiceLocator()->get('texture');    
+          $groupSrv                   = $this -> getServiceLocator()->get('groups');
+          $collectionSrv    = $this -> getServiceLocator()->get('collection');
+            */
+}  
+public function deletingcategoryAction(){
+
+         $data = $_POST;
+         $status_dict = array('candel','cannotdel');
+         switch ($data['name_cat']) {
+           case 'manufacturer':
+                  $manufacturerSrv    = $this -> getServiceLocator()->get('manufacturer');
+                  $manufacturerSrv -> delManufacturer($data['id']);
+                break;
+           case 'collection':
+                 $collectionSrv  = $this -> getServiceLocator()->get('collection');
+                 $collectionSrv -> delCollection($data['id']);
+             break;
+           case 'color':
+                  $colorSrv      = $this -> getServiceLocator()->get('color'); 
+                  $delColor -> delColor($data['id']);         
+             break;
+            case 'texture':
+                  $textureSrv    = $this -> getServiceLocator()->get('texture');     
+                  $textureSrv -> delTexture($data['id']);          
+             break;
+           case 'group':
+                 $groupSrv       = $this -> getServiceLocator()->get('groups');
+                 $groupSrv -> delGroup($data['id']);
+             break;
+          
+           default:
+             # code...
+             break;
+         }
+
+             $status = ($result) ? $status_dict[1] : $status_dict[0];
+
+             return  $status = new JsonModel ( array (
+              
+                       'status'      => $status,
+                       'res'         => $result
+                      
+                
+               ) );
+
+      /*  $manufacturerSrv    = $this -> getServiceLocator()->get('manufacturer');
+          $colorSrv    = $this -> getServiceLocator()->get('color');
+          $textureSrv    = $this -> getServiceLocator()->get('texture');    
+          $groupSrv                   = $this -> getServiceLocator()->get('groups');
+          $collectionSrv    = $this -> getServiceLocator()->get('collection');
+            */
+}        
 
    public function materialfilterAction(){
 
@@ -317,8 +415,10 @@ public function ajaxcolorupdateAction(){
 public function ajaxgroupupdateAction(){
 
       $data = $_POST;
+      $d['id'] = $data['id'];
+      $d['name_group'] = $data['name_group'];
       $groupSrv    = $this -> getServiceLocator()->get('groups');
-      $res = $groupSrv->updateGroup($data);
+      $res = $groupSrv->updateGroup($d);
       return new JsonModel(array('res' => 1));
 
 

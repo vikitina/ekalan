@@ -18,5 +18,11 @@
                                                             <i class="fa fa-pencil fa-fw"></i>
                                                           </div>
                                                           
-                                                        
+                                                         <span class="del_category_ajax"><i class="fa fa-trash-o"></i>
+                                                                  <form action="/admin/delcategory">
+                                                                       <input type="hidden" name="name_cat" value="group" />
+                                                                       <input type="hidden" name="id_cat" value="<?php echo $item['id']; ?>" />
+                                                                  </form>
+
+                                                        </span>                                                       
                                                       </li>

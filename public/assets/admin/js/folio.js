@@ -119,6 +119,51 @@ console.log('click');
 	}
 });
 
+$('.text_data').on('click','li .del_category_ajax',function(){
+      $(this).parents('li').addClass('deleting_category');
+      var action = $(this).find('form').attr('action');
+      var data   = $(this).find('form').serialize();
+      console.log(data);
+           $.ajax({
+                       type        : 'POST', 
+                       url         :  action, 
+                       data        :  data, 
+                       dataType    : 'json', 
+                       encode      : true
+                                 
+                    })
+               .done(function(res) {
+                    $('#'+res.status).modal('show');
+                console.log(res.res);
+                 });        
+
+});
 
 
+$('.cannot_deleting_category .btn_ok').click(function(){
+
+       $('.cannot_deleting_category').modal('hide');
+       $('.deleting_category').removeClass('deleting_category');
+
+});
+$('.can_deleting_category .btn_confirm_deleting').click(function(){
+
+	   var data   = $('.deleting_category').find('.del_category_ajax').find('form').serialize();
+
+
+            $.ajax({
+                       type        : 'POST', 
+                       url         : 'http://' + location.hostname + '/admin/deletingcategory', 
+                       data        :  data, 
+                       dataType    : 'json', 
+                       encode      : true
+                                 
+                    })
+               .done(function(data) {
+                     
+                             $('.can_deleting_category').modal('hide');
+	                         $('.deleting_category').remove();
+                 });      
+
+});
 });

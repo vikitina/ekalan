@@ -374,6 +374,11 @@ label.main_radio input{margin-right: 5px;}
 #public_on_home_testimonials{position:absolute;top:-3px;left:0;}
 .public_on_home_testimonials{float:left;display:block;position:relative;padding-left:30px;}
 
+.del_category_ajax{background:none;border: 1px dashed #dadada;cursor: pointer;display: block;float: right;height: 31px;padding: 4px;width: 29px;}
+.del_category_ajax i{float: left;font-size: 1.7em;}
+.deleting_category .del_category_ajax{background: #eee url('/assets/application/img/loading.GIF') no-repeat center center;background-size: cover;}
+.deleting_category .del_category_ajax i{display:none;}
+
 
 
 

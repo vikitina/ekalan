@@ -83,7 +83,16 @@ public function getFolioIdByTestimonialId($id){
         return ($results) ? $results[0]['id'] : 0;
 
 }
-  
+ public function getFolioByGroup($id){
+       $query = "SELECT * from `t_folio` where id_group ='".$id."'";
+        
+    
+                            
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query);                            
+        return $results;
+
+} 
   public function updateFolio($data)
     { 
       $id = (int)$data['id'];

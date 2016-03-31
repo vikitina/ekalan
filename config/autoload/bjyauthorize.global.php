@@ -88,8 +88,10 @@ return array(
 //admin_testimonials                         
                                    array('route' => 'zfcadmin/admin_msgs', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_msg_open', 'roles' => array('admin')), 
-                                   array('route' => 'zfcadmin/admin_materials', 'roles' => array('admin')), 
+                                   array('route' => 'zfcadmin/admin_materials', 'roles' => array('admin')),                                   
                                    array('route' => 'zfcadmin/admin_folios', 'roles' => array('admin')), 
+                                   array('route' => 'zfcadmin/admin_ajax_delcategory', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_ajax_deletingcategory', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_updatefolio', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_testimonials', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_testimonial', 'roles' => array('admin')),  

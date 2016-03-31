@@ -41,7 +41,13 @@
                                                             <i class="fa fa-pencil fa-fw"></i>
                                                           </div>
                                                           
-                                                        
+                                                        <span class="del_category_ajax"><i class="fa fa-trash-o"></i>
+                                                                  <form action="/admin/delcategory">
+                                                                       <input type="hidden" name="name_cat" value="group" />
+                                                                       <input type="hidden" name="id_cat" value="{{ group.id }}" />
+                                                                  </form>
+
+                                                        </span>
                                                       </li>
 
                                       {%  endfor %}                
@@ -54,7 +60,48 @@
 
 
 
-       <script type="text/javascript">
 
-     </script>
+ <div class="modal fade can_deleting_category" id="candel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Подтверждение удаления группы</h4>
+      </div>
+      <div class="modal-body">
+        <p>Группа будет удалена.</p>
+        <ul id="list_for_deleting"></ul>
+         <p>Вы уверены?</p>
+        <form method=post action="/admin/ajax_deleting_group" id="form_deleting_group">  
+            <input type="hidden" id="deleting_list" name="deleting_list" />
+        </form>
+      </div>
+        <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn btn_cancel_deleting">Отменить</a>
+                <a href="#" class="btn btn-primary btn_confirm_deleting">Удалить</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+ <div class="modal fade cannot_deleting_category" id="cannotdel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Группа не будет удалена.</h4>
+      </div>
+      <div class="modal-body">
+        <p>Группа не может быть удалена, так как не является пустой.</p>
+       
+      </div>
+        <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn btn_ok">Понятно</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
 {% endblock content %}

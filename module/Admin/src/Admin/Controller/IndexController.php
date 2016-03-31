@@ -97,7 +97,9 @@ public function msgopenAction()
              
                 'msg'  => $msg
         ));
-    }    
+
+    }            
+
 
 public function materialsAction()
     {

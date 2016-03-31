@@ -112,8 +112,52 @@ $query = "SELECT t_material.*,t_sample.url as url FROM `t_material` join t_sampl
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     //==========================================================================================================
+   public function getMaterialByManufacturer($id)
+    {        
+        $query =  "SELECT t_material.* "
+                 ."FROM `t_material` "
+                 ."where id_manufacturer = '".$id."'";
+    
+                            
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query);                            
+        return $results;
+    } 
+   public function getMaterialByCollection($id)
+    {        
+        $query =  "SELECT t_material.*, t_collection.id as id_collection "
+                 ."FROM `t_material` "
+                 ."LEFT JOIN t_collection ON t_material.id_manufacturer = t_collection.id_manufacturer "
+                 ."where id_collection = '".$id."'";
+    
+                            
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query);                            
+        return $results;
+    } 
+   public function getMaterialByColor($id)
+    {        
+        $query =  "SELECT t_material.* "
+                 ."FROM `t_material` "
+                 ."where id_color = '".$id."'";
+    
+                            
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query);                            
+        return $results;
+    } 
 
-
+   public function getMaterialByTexture($id)
+    {        
+        $query =  "SELECT t_material.* "
+                 ."FROM `t_material` "
+                 ."where id_texture = '".$id."'";
+    
+                            
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query);                            
+        return $results;
+    }          
   
   public function updateMaterial($data=null)
     { 
