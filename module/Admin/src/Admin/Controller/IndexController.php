@@ -619,7 +619,7 @@ public function testimonialAction(){
                if ($_POST){
 
                    $data = $_POST;
-               var_dump($data);
+               
 
                   if (isset($data['id_picture']) && $data['id_picture']){
 
@@ -665,7 +665,7 @@ public function testimonialAction(){
  ["id_picture"]=> string(1) "1" 
  ["text_testimonials"]=> string(6) "asdasd" } 
 short_text_testimonials
-*/                   
+*/                   $this->redirect()->toRoute('zfcadmin/admin_testimonials');
                }
 
                return new ViewModel(array(
