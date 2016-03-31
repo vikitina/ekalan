@@ -232,23 +232,23 @@ public function deletingcategoryAction(){
          switch ($data['name_cat']) {
            case 'manufacturer':
                   $manufacturerSrv    = $this -> getServiceLocator()->get('manufacturer');
-                  $manufacturerSrv -> delManufacturer($data['id']);
+                  $manufacturerSrv -> delManufacturer($data['id_cat']);
                 break;
            case 'collection':
                  $collectionSrv  = $this -> getServiceLocator()->get('collection');
-                 $collectionSrv -> delCollection($data['id']);
+                 $collectionSrv -> delCollection($data['id_cat']);
              break;
            case 'color':
                   $colorSrv      = $this -> getServiceLocator()->get('color'); 
-                  $delColor -> delColor($data['id']);         
+                  $delColor -> delColor($data['id_cat']);         
              break;
             case 'texture':
                   $textureSrv    = $this -> getServiceLocator()->get('texture');     
-                  $textureSrv -> delTexture($data['id']);          
+                  $textureSrv -> delTexture($data['id_cat']);          
              break;
            case 'group':
                  $groupSrv       = $this -> getServiceLocator()->get('groups');
-                 $groupSrv -> delGroup($data['id']);
+                 $groupSrv -> delGroup($data['id_cat']);
              break;
           
            default:
