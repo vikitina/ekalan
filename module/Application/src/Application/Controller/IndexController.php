@@ -22,13 +22,7 @@ class IndexController extends AbstractActionController
         $manufacturers = $manufacturerSrv->getAllManufacturers();
         $testimonialsSrv  = $this -> getServiceLocator()->get('testimonials'); 
         $testimonials = $testimonialsSrv -> getHomeTestimonials();
-        foreach ($testimonials as $key => $value) {
-          echo"<br>=======================<br>";
-          echo $key;
-          echo"<br>=======================<br>";
-          var_dump($value);
-        }
-        echo"<br>=======================================================================<br>";
+
         $folioSrv                   = $this -> getServiceLocator()->get('folio');        
         $i = 0;
         foreach ($testimonials as $testimonial){
@@ -37,13 +31,7 @@ class IndexController extends AbstractActionController
              $testimonials[$i]['url_folio'] = ($folio_id) ? '/project/'.$folio_id : 0;
              $i += 1;
         }
-        foreach ($testimonials as $key => $value) {
-          echo"<br>=======================<br>";
-          echo $key;
-          echo"<br>=======================<br>";
-          var_dump($value);
-        }
-        echo"<br>=======================================================================<br>";
+
          
         return new ViewModel(array(
             'manufacturers' => $manufacturers,
@@ -55,13 +43,13 @@ class IndexController extends AbstractActionController
 
     public function portfolioAction()
     {
-       		     $groupSrv                   = $this -> getServiceLocator()->get('groups');
-                 $lists['groups']            = $groupSrv->getAllGroups();
+       		       $groupSrv          = $this -> getServiceLocator()->get('groups');
+                 $lists['groups']   = $groupSrv->getAllActiveGroups();
 
-                 $folioSrv                   = $this -> getServiceLocator()->get('folio');
-                 $folios = $folioSrv -> getAllFolios();
+                 $folioSrv          = $this -> getServiceLocator()->get('folio');
+                 $folios            = $folioSrv -> getAllFolios();
 
-                 $photosSrv                  = $this -> getServiceLocator()->get('photos');
+                 $photosSrv         = $this -> getServiceLocator()->get('photos');
 
                  foreach ($folios as $key => $folio) {
                      $res = $photosSrv->getMainPhoto(array('id_folio' => $folio['id']));
