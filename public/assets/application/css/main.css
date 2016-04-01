@@ -233,3 +233,11 @@ footer{background:none;}
 .testimonial-carousel .item .testimonial .text h6.quote-author{}
 .testimonial-carousel .item .testimonial .text h6.quote-author span{}
 .testimonial-carousel .item .testimonial .text a{color:#e6ae49;}
+
+.item-box {
+    display: block;
+    float: left;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
