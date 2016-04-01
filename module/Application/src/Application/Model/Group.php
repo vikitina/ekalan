@@ -31,9 +31,9 @@ class Group extends TableGateway
                             
          $adapter = $this->getAdapter();
 		     $results = $this->FetchAll($adapter, $query); 
-         //var_dump($results)                           ;
         return $results;
     } 
+
 
    public function getGroup($id)
     { 

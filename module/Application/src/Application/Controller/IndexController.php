@@ -43,8 +43,20 @@ class IndexController extends AbstractActionController
 
     public function portfolioAction()
     {
-       		       $groupSrv          = $this -> getServiceLocator()->get('groups');
-                 $lists['groups']   = $groupSrv->getAllActiveGroups();
+       		       $groupSrv        = $this -> getServiceLocator()->get('groups');
+                 $list_groups     = $groupSrv->getAllGroups();
+                 $folioSrv        = $this -> getServiceLocator()->get('folio'); 
+
+                  foreach ($list_groups as $key => $group) {
+                    $foliosByGroup = null;
+                    $foliosByGroup = $folioSrv -> getFolioByGroup($group['id']);
+                           if($foliosByGroup){
+                               $list_active_group[$key] = $group;
+
+                           }
+                  }
+
+                  $lists['groups'] = $list_active_group;
 
                  $folioSrv          = $this -> getServiceLocator()->get('folio');
                  $folios            = $folioSrv -> getAllFolios();

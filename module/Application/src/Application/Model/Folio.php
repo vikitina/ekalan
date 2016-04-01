@@ -74,30 +74,22 @@ public function getSpecFolioById($id){
 //==========================================================================================================
 
 public function getFolioIdByTestimonialId($id){
-       $query = "SELECT id from `t_folio` where id_testimonials ='".$id."'";
-        
-    
-                            
+         $query = "SELECT id from `t_folio` where id_testimonials ='".$id."'";
          $adapter = $this->getAdapter();
          $results = $this->FetchAll($adapter, $query);                            
         return ($results) ? $results[0]['id'] : 0;
 
 }
  public function getFolioByGroup($id){
-       $query = "SELECT * from `t_folio` where id_group ='".$id."'";
-        
-    
-                            
+         $query = "SELECT * from `t_folio` where id_group ='".$id."'";                         
          $adapter = $this->getAdapter();
          $results = $this->FetchAll($adapter, $query);                            
-        return $results;
+    return $results;
 
 } 
   public function updateFolio($data)
     { 
-      $id = (int)$data['id'];
-
-    
+        $id = (int)$data['id']; 
         parent::update($data, array('id' => $id));
         
     }

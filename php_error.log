@@ -797,3 +797,9 @@
 [31-Mar-2016 10:13:48 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
 [31-Mar-2016 10:20:04 Europe/Helsinki] PHP Notice:  Undefined variable: material_id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 481
 [31-Mar-2016 10:20:04 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[01-Apr-2016 04:29:14 Europe/Helsinki] PHP Parse error:  syntax error, unexpected '$folioSrv' (T_VARIABLE) in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 59
+[01-Apr-2016 04:32:25 Europe/Helsinki] PHP Parse error:  syntax error, unexpected ')' in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 53
+[01-Apr-2016 04:32:59 Europe/Helsinki] PHP Parse error:  syntax error, unexpected '$folioSrv' (T_VARIABLE) in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 61
+[01-Apr-2016 04:33:55 Europe/Helsinki] PHP Notice:  Undefined variable: folios in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 64
+[01-Apr-2016 04:33:55 Europe/Helsinki] PHP Warning:  Invalid argument supplied for foreach() in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 64
+[01-Apr-2016 04:33:55 Europe/Helsinki] PHP Notice:  Undefined variable: folios in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 69
