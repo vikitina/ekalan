@@ -492,6 +492,7 @@ $('.material_open a.del_material').click(function(){
 $('.edit_sample').click(function(){
 
       $('#sample_modal').modal('show');
+      $(this).parents('.photo_type').addClass('adding_photo');
 });
 // ------------------------------------------------
 

@@ -29,6 +29,44 @@ class IndexController extends AbstractActionController
     }
     public function mainpageAction(){
 
+        $karuselSrv      = $this -> getServiceLocator()->get('karusel'); 
+        $karusel_windows = $karuselSrv -> getAllKaruselWindows();
+        $folioSrv        = $this -> getServiceLocator()->get('folio');
+        $folios          = $folioSrv->getAllFolios();
+        $photoSrv        = $this -> getServiceLocator()->get('photos');
+        $photos          = $photoSrv -> getAllPhotos();
+
+        $i=0;
+        foreach ($photos as $key => $item) {
+               $photos[$i]['url'] = ((isset($item['url_photo']) && $item['url_photo'] != '' && $item['url_photo'] !=null)?"/assets/application/samples/".trim($item['url_photo']):"");
+               $i += 1;
+        }
+
+        foreach ($karusel_windows as $key => $wind) {
+
+                   $karusel_data = $karuselSrv -> getKaruselByWind($wind["window_karusel"]);
+                    foreach ($karusel_data as $id => $item) {
+                         $karusel_data[$id]['url_photo_prepared'] = ((isset($item['url_photo']) && $item['url_photo'] != '' && $item['url_photo'] !=null)?"/assets/application/samples/".trim($item['url_photo']):"/assets/application/img/no_photo.png");
+                         $karusel_data[$id]['id_window'] = $wind["window_karusel"];
+ 
+                   }                   
+                   
+       
+
+                  $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
+           
+                  $karusel[$key]['html'] = $partial('karusel/newwindow', array("key" => $karusel_data,"folios"=>$folios)); 
+                  $karusel[$key]['title_windowkarusel'] = $wind['title_windowkarusel'];
+                  $karusel[$key]['id_window'] = $wind["window_karusel"];
+
+          
+        }
+
+        return new ViewModel(array(
+                'karusel'  => $karusel,
+                'photos'   => $photos
+
+        ));
 
       
     }

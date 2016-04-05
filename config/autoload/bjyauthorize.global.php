@@ -85,7 +85,6 @@ return array(
                                    array('route' => 'zfcadmin/admin_main_page', 'roles' => array('admin')),  
                            
                          
-//admin_testimonials                         
                                    array('route' => 'zfcadmin/admin_msgs', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_msg_open', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_materials', 'roles' => array('admin')),                                   
@@ -103,6 +102,7 @@ return array(
                                    array('route' => 'zfcadmin/admin_texturers', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_colors', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_addfolio', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_updatekarusel', 'roles' => array('admin')),                              
                                    array('route' => 'zfcadmin/admin_ajax_materialfilter', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_msgread', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_updatesystem', 'roles' => array('admin')),

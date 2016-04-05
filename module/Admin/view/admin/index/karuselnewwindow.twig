@@ -1,0 +1,68 @@
+<?php if($this->key){ $i = 0; foreach ($this->key as $frame){ ?>
+<!-- { ["id"]=> string(2) "11" 
+     ["type_karusel"]=> string(1) "1" 
+     ["text_karusel"]=> string(0) "" 
+     ["window_karusel"]=> string(1) "1" 
+     ["numframe_karusel"]=> string(1) "1" 
+     ["id_photo"]=> string(2) "11" 
+     ["id_folio"]=> string(1) "5" 
+     ["title_karusel"]=> string(19) "??????????? ???????" 
+     ["subtitle_karusel"]=> string(17) "???????? ????????" 
+     ["url_photo"]=> string(55) "/assets/application/samples/data/uploads/1459143614.jpg" 
+     ["main_photo"]=> string(1) "0" } -->
+
+
+         <div class="frame" data-num-frame="<?php echo $i; ?>">
+                     <div class="type_frame">
+                            <input type="hidden" name="data[<?php echo $i;?>][id]" value="<?php echo $frame["id_karusel"]; ?>" />
+                            <input type="hidden" name="data[<?php echo $i;?>][numframe_karusel]" value="<?php echo $frame["numframe_karusel"]; ?>" />
+                            <label class="input_left change_type" data-type-frame="photo_type"><input type="radio" name="data[<?php echo $i;?>][type_karusel]" value="1"<?php echo ($frame["type_karusel"] == "1")? ' checked=checked ': ''; ?>/>Фото</label>
+                            <label class="input_right change_type" data-type-frame="text_type"><input type="radio" name="data[<?php echo $i;?>][type_karusel]" value="2"<?php echo ($frame["type_karusel"] == "2")? ' checked=checked ': ''; ?>/>Текст</label>
+
+                            
+                     </div><!-- type_frame  -->
+                    <div class="content_block">
+                             <div class="tab photo_type<?php echo ($frame["type_karusel"] == "1")? ' active': ''; ?>">
+                                               <ul  class="<?php echo ($frame["url_photo"])?'':'empty '; ?>photos_list">
+                                                         <li>
+                                                             <span><i class="fa fa-times"></i></span>
+                                                             <div style="background-image: url('<?php echo $frame["url_photo_prepared"]; ?>');">
+                                                                  <input type="hidden" value="" name="data[<?php echo $i;?>][url_photo]" />
+                                                                  <input type="hidden" value="<?php echo $frame["id_photo"]; ?>" name="data[<?php echo $i;?>][id_photo]" />
+                                                                                       
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                                                <div class="add_photo_btn edit_sample only_one<?php echo ($frame["url_photo"])?' add_photo_btn_hidden' : ''; ?>">
+                                                                          <i class="fa fa-plus"></i>
+                                                                          <span class="span_add_photo_btn"></span>
+                                                                </div>
+                                               <div>
+                                               <span>Ссылка на проект</span>
+                                                <select name="data[<?php echo $i;?>][id_folio]">
+                                                          <option value="0">Нет</option>
+                                                    <?php foreach ($this->folios as $folio){ ?>
+                                                          <option value="<?php echo $folio["id"]?>"><?php echo $folio["name_folio"]?></option>
+                                                    <?php } ?>
+                                                 </select>
+                                             </div> 
+                                             <div><span>Заголовок</span><input type="text" name="data[<?php echo $i;?>][title_karusel]" /></div>
+                                             <div><span>Подзаголовок</span><input type="text" name="data[<?php echo $i;?>][subtitle_karusel]" /></div>
+                             </div><!-- photo_type  -->
+
+                             <div class="tab text_type<?php echo ($frame["type_karusel"] == "2")? ' active': ''; ?>">
+                                      <textarea name="data[<?php echo $i;?>][text_karusel]"><?php echo $frame["text_karusel"]; ?></textarea>
+                             </div><!-- text_type  -->
+
+                    </div>
+
+         </div><!-- frame  -->
+
+<?php $i += 1; }}else{?>
+
+
+<?php } ?>
+
+
+
+

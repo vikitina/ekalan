@@ -3,8 +3,9 @@ ini_set("memory_limit", "35M");
 return array(
     'controllers' => array(
         'invokables' => array(
-            'Admin\Controller\Index' => 'Admin\Controller\IndexController',
-            'Admin\Controller\Ajax' => 'Admin\Controller\AjaxController'
+            'Admin\Controller\Index'   => 'Admin\Controller\IndexController',
+            'Admin\Controller\Ajax'    => 'Admin\Controller\AjaxController',
+            'Admin\Controller\Karusel' => 'Admin\Controller\KaruselController'
         ),
     ),
     'router' => array(
@@ -120,6 +121,20 @@ return array(
                                                       ),
                                             ),
                                     ),     
+                             'admin_updatekarusel' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(
+                                              
+                                                    'route' => '/updatekarusel',
+                                                    
+
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Karusel',
+                                                          'action'     => 'updatekarusel',
+                                                      ),
+                                            ),
+                                    ),  
+                             
                              'admin_manufacturers' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',
                                           'options' => array(
@@ -506,6 +521,9 @@ return array(
 
             'newgroupelement'               => __DIR__ . '/../view/admin/index/newgroupelement.twig',
             'newtextureelement'             => __DIR__ . '/../view/admin/index/newtextureelement.twig',
+
+
+           'karusel/newwindow'    => __DIR__ . '/../view/admin/index/karuselnewwindow.twig',            
 
             
 

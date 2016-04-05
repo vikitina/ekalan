@@ -10,15 +10,49 @@
                   <div class="tabs b-lrb-none ui-tabs ui-widget ui-widget-content ui-corner-all">
                         <ul role="tablist" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
                               <li aria-expanded="true" aria-selected="true" aria-labelledby="ui-id-1" aria-controls="tabs-1" tabindex="0" role="tab" class="ui-state-default ui-corner-top ui-tabs-active ui-state-active">
-                                   <a id="ui-id-1" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-1"><i class="ion ion-help-circled left"></i>Акции</a>
+                                   <a id="ui-id-1" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-1"><i class="ion ion-help-circled left"></i>Карусель работ</a>
                               </li>
                         <li aria-expanded="false" aria-selected="false" aria-labelledby="ui-id-2" aria-controls="tabs-2" tabindex="-1" role="tab" class="ui-state-default ui-corner-top"> 
-                                    <a id="ui-id-2" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-2"><i class="ion ion-help-buoy left"></i>Отзывы</a>
+                                    <a id="ui-id-2" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-2"><i class="ion ion-help-buoy left"></i>Акции</a>
                         </li>
-                        <li aria-expanded="false" aria-selected="false" aria-labelledby="ui-id-3" aria-controls="tabs-3" tabindex="-1" role="tab" class="ui-state-default ui-corner-top ui-state-focus"><a id="ui-id-3" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-3"><i class="ion ion-ios-list left"></i>Что-нибудь еще</a></li>
+                      
                     </ul>
                     <div class="ui-tab-content">
                         <div aria-hidden="false" role="tabpanel" aria-labelledby="ui-id-1" id="tabs-1" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
+                                        <div class="accordion" id="karusel">
+                                                         {% for window in  karusel %}
+
+                                                                    <div class="accordion-section">
+                                                                       
+                                                                            <h6 class="accordion-title">{{ window.title_windowkarusel }}</h6>
+
+
+                                                                            <div class="accordion-content defualt-hidden window_block">
+                                                                                <form action="/admin/updatekarusel" method="post" id="updatekarusel_{{ window.id_window }}">
+                                                                                   <h3>Редактирование экрана карусели</h3>
+                                                                                              <div class="title_karusel">
+                                                                              
+                                                                                                         <span>Заголовок экрана</span>
+                                                                                                         <input type="text" name="title_windowkarusel" value="{{ window.title_windowkarusel }}" />
+                                                                                                         <input name="id_window" value="{{ window.id_window }}" type="hidden" />
+                                                                                              </div>                                                                            
+                                                                                             {{ window.html|raw }}
+                                                                                            <div class="clear"></div>
+
+
+                                                                                      <div><input type="button" value="Обновить экран" data-form="updatekarusel_{{ window.id_window }}" class="checker byAjax" /> <a href="/admin/folios">Отмена</a></div>
+                                                                                  </form> 
+
+
+
+                                                                            </div>
+                                                                            <div class="clear"></div>
+
+                                                                    </div>  {#  accordion-section #}                                                                  
+                                                         {% endfor %}
+                                        </div><!-- End Accordion -->
+                        </div>
+                        <div aria-hidden="true" style="display: none;" role="tabpanel" aria-labelledby="ui-id-2" id="tabs-2" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
                             <!-- Accordion -->
                             <div class="accordion" id="sales">
 
@@ -29,7 +63,7 @@
                                     <input type="hidden" value="{{ sale.id }}" name="id" />
                                    
                                     <h6 class="accordion-title{{ sale.sales_active=='1' ? ' active' : '' }}">
-                                     <div class="radio-check"><input type="checkbox" {{ sale.sales_active=='1' ? 'checked=checked' : '' }}/></div>
+                                     <div class="radio-check{{ sale.sales_active == '1' ? ' radio-check-checked' : '' }}"><input type="checkbox" {{ sale.sales_active=='1' ? 'checked=checked' : '' }}/></div>
                                          <span>{{ sale.name_sales }}</span>
                                          
                                     </h6>
@@ -56,20 +90,80 @@
 
                                 </div>
    
-       {% endfor %}
+                      {% endfor %}
     
 
                             </div>
                             <!-- End Accordion -->
-                        </div>
-                        <div aria-hidden="true" style="display: none;" role="tabpanel" aria-labelledby="ui-id-2" id="tabs-2" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
+
                         </div>  
-                        <div aria-hidden="true" style="display: none;" role="tabpanel" aria-labelledby="ui-id-2" id="tabs-3" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
-                        </div>    
+                         
 
                      </div>                         
                   </div> 
 
-                              </section>
-     </div>      
+          </section>
+     </div>  
+
+
+ <div class="modal fade" id="sample_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Изменение фотографии блока карусели</h4>
+      </div>
+      <div class="modal-body">
+  
+                  <div class="tabs b-lrb-none ui-tabs ui-widget ui-widget-content ui-corner-all tabs_area">
+                        <ul role="tablist" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                              <li aria-expanded="true" aria-selected="true" aria-labelledby="ui-id-1" aria-controls="tabs-1" tabindex="0" role="tab" class="ui-state-default ui-corner-top ui-tabs-active ui-state-active">
+                                   <a id="ui-id-1" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-1">Загрузить фото</a>
+                              </li>
+                        <li aria-expanded="false" aria-selected="false" aria-labelledby="ui-id-2" aria-controls="tabs-2" tabindex="-1" role="tab" class="ui-state-default ui-corner-top"> 
+                                    <a id="ui-id-2" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-2">Выбрать фото</a>
+                        </li>
+                       
+                    </ul>   
+                    <div class="ui-tab-content">
+                        <div aria-hidden="false" role="tabpanel" aria-labelledby="ui-id-1" id="tabs-1" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
+                               <div><form action="/admin/ajaxuploadimg" method="post" id="sample_form"><label>Установить новое фото</label><input type="file" name="sample" id="sample" /></div>
+                        </div>
+                        <div aria-hidden="true" style="display: none;" role="tabpanel" aria-labelledby="ui-id-2" id="tabs-2" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
+                        
+                            <ul id="list_sample">
+                                {% for sample in photos  %}
+                                    <li>
+                                        <div style="background-image:url('{{ sample.url }}')"></div>
+                                        <span><input name="r_sample" value="{{ sample.id }}" type="radio" /></span>
+                                        <span class="url">{{ sample.url }}</span>
+                                    </li>    
+                                {% endfor %}
+                             </ul> 
+                             <div class="clear"></div>
+                        </div>  
+
+                     </div>                         
+                  </div>  
+                  <div class="loaded_img">
+                    
+                         <div class="img_container"><div style="background-image:url('{{  material.url }}')"><div class="img_loader"></div></div></div>
+                         <input type="hidden" id="tmp_new_sample" />
+                         <input type="hidden" id="tmp_id_sample" />
+          
+                       <!--  <div id="img_msg">Не выбрано изображений</div> -->
+
+                  </div>
+                  <div class="clear"></div>
+             </div><!--  modal-body  -->
+         <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn">Отменить</a>
+                <a href="#" class="btn btn-primary" id="btn_pick_karusel_photo">Добавить</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- /.modal --> 
+
+
                   {% endblock content %}      

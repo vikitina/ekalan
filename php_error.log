@@ -803,3 +803,381 @@
 [01-Apr-2016 04:33:55 Europe/Helsinki] PHP Notice:  Undefined variable: folios in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 64
 [01-Apr-2016 04:33:55 Europe/Helsinki] PHP Warning:  Invalid argument supplied for foreach() in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 64
 [01-Apr-2016 04:33:55 Europe/Helsinki] PHP Notice:  Undefined variable: folios in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 69
+[01-Apr-2016 06:21:16 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 58
+[01-Apr-2016 06:21:16 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 58
+[01-Apr-2016 06:35:22 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 58
+[01-Apr-2016 06:35:22 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 58
+[01-Apr-2016 06:36:54 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 58
+[01-Apr-2016 06:36:54 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 31
+[01-Apr-2016 06:36:54 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 58
+[01-Apr-2016 06:36:54 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 31
+[01-Apr-2016 06:37:53 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 58
+[01-Apr-2016 06:37:53 Europe/Helsinki] PHP Notice:  Array to string conversion in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 58
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined variable: karusel in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 38
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Warning:  Invalid argument supplied for foreach() in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 38
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined offset: 1 in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 38
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Warning:  Invalid argument supplied for foreach() in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 38
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:51:45 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined variable: karusel in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 38
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Warning:  Invalid argument supplied for foreach() in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 38
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined offset: 1 in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 38
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Warning:  Invalid argument supplied for foreach() in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 38
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: articul in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 7
+[04-Apr-2016 04:52:43 Europe/Helsinki] PHP Notice:  Undefined index: name_material in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 9
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: url_photo_prepared in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 30
+[04-Apr-2016 16:19:06 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:36 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:36 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:36 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:36 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:36 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:36 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:36 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:36 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:36 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:36 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:36 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:19:36 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:40:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:40:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:40:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:40:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:40:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:40:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:40:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:40:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:40:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:40:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:40:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:40:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:42:31 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:42:31 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:42:31 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:42:31 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:42:31 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:42:31 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:42:31 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:42:31 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:42:31 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:42:31 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:42:31 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:42:31 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:43:23 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:43:23 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:43:23 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:43:23 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:43:23 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:43:23 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:43:23 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:43:23 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:43:23 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:43:23 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:43:23 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:43:23 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:46:22 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:46:22 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:46:22 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:46:22 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:46:22 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:46:22 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:46:22 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:46:22 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:46:22 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:46:22 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:46:22 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:46:22 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:47:20 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:47:20 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:47:20 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:47:20 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:47:20 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:47:20 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:47:20 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:47:20 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:47:20 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:47:20 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:47:20 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:47:20 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:49:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:49:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:49:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:49:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:49:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:49:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:49:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:49:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:49:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:49:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:49:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:49:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:51:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:51:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:51:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:51:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:51:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:51:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:51:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:51:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:51:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:51:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:51:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:51:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:53:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:53:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:53:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:53:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:53:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:53:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:53:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:53:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:53:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:53:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:53:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:53:07 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:54:53 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:54:53 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:54:53 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:54:53 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:54:53 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:54:53 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:54:53 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:54:53 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:54:53 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:54:53 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:54:53 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 16:54:53 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:05:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:05:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:05:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:05:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:05:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:05:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:05:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:05:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:05:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:05:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:05:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:05:34 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:14:43 Europe/Helsinki] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 54
+[04-Apr-2016 17:16:44 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:16:44 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:16:44 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:16:44 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:16:44 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:16:44 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:16:44 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:16:44 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:16:44 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:16:44 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:16:44 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:16:44 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:17:55 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:17:55 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:17:55 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:17:55 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:17:55 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:17:55 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:17:55 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:17:55 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:17:55 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:17:55 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:17:55 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 17:17:55 Europe/Helsinki] PHP Notice:  Undefined index: id_picture in /var/www/ekalan/module/Admin/view/admin/index/karuselnewwindow.twig on line 32
+[04-Apr-2016 18:00:31 Europe/Helsinki] PHP Parse error:  syntax error, unexpected '}', expecting ')' in /var/www/ekalan/module/Admin/src/Admin/Controller/KaruselController.php on line 26
+[05-Apr-2016 10:07:36 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 934
+[05-Apr-2016 10:07:36 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 10:07:43 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 934
+[05-Apr-2016 10:07:43 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 10:07:55 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 511
+[05-Apr-2016 10:08:35 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 934
+[05-Apr-2016 10:08:35 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 10:09:02 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 934
+[05-Apr-2016 10:09:02 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 10:12:32 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 934
+[05-Apr-2016 10:12:32 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 10:12:37 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 352 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[05-Apr-2016 10:12:37 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 10:12:40 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 352 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[05-Apr-2016 10:12:40 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 10:12:42 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 352 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[05-Apr-2016 10:12:42 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 10:13:49 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 352 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[05-Apr-2016 10:13:49 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 10:17:18 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 352 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[05-Apr-2016 10:17:18 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 10:17:23 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 352 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[05-Apr-2016 10:17:23 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 10:17:26 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 352 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[05-Apr-2016 10:17:26 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 10:18:32 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 352 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[05-Apr-2016 10:18:32 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 10:18:35 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 352 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[05-Apr-2016 10:18:35 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 10:18:37 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 352 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[05-Apr-2016 10:18:37 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 10:18:41 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 511
+[05-Apr-2016 10:19:44 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 934
+[05-Apr-2016 10:19:44 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 10:19:50 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 934
+[05-Apr-2016 10:19:50 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 10:20:00 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 511
+[05-Apr-2016 10:57:47 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 934
+[05-Apr-2016 10:57:47 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 10:58:49 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 352 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[05-Apr-2016 10:58:49 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 10:58:52 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 352 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[05-Apr-2016 10:58:52 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 11:02:29 Europe/Helsinki] PHP Notice:  Undefined variable: material_id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 508
+[05-Apr-2016 11:02:29 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 11:03:01 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 934
+[05-Apr-2016 11:03:01 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 11:03:06 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 352 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[05-Apr-2016 11:03:06 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 11:03:10 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 352 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[05-Apr-2016 11:03:10 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 11:03:13 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 352 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[05-Apr-2016 11:03:13 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 11:05:22 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 511
+[05-Apr-2016 12:16:42 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 511
+[05-Apr-2016 12:39:45 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 352 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[05-Apr-2016 12:39:45 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 12:39:53 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Materials::getSpecOrder(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 352 and defined in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 25
+[05-Apr-2016 12:39:53 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 12:57:23 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 511
+[05-Apr-2016 13:00:52 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 511
+[05-Apr-2016 13:03:31 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 511
+[05-Apr-2016 13:05:02 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 511
+[05-Apr-2016 13:06:40 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 511
+[05-Apr-2016 13:08:29 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 511
+[05-Apr-2016 13:10:31 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 511
+[05-Apr-2016 13:13:16 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 511
+[05-Apr-2016 14:17:14 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 511
+[05-Apr-2016 14:17:55 Europe/Helsinki] PHP Notice:  Undefined variable: material_id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 517
+[05-Apr-2016 14:17:55 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[05-Apr-2016 14:18:14 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 511
+[05-Apr-2016 14:22:28 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 511
+[05-Apr-2016 14:23:52 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 511
+[05-Apr-2016 14:27:05 Europe/Helsinki] PHP Fatal error:  Class 'Admin\Controller\JsonModel' not found in /var/www/ekalan/module/Admin/src/Admin/Controller/KaruselController.php on line 52
+[06-Apr-2016 00:35:31 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 511
+[06-Apr-2016 00:36:09 Europe/Helsinki] PHP Parse error:  syntax error, unexpected ',', expecting ')' in /var/www/ekalan/module/Admin/src/Admin/Controller/KaruselController.php on line 74
+[06-Apr-2016 00:36:37 Europe/Helsinki] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /var/www/ekalan/module/Admin/src/Admin/Controller/KaruselController.php on line 97
+[06-Apr-2016 00:37:44 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Windowkarusel.php on line 53
+[06-Apr-2016 00:37:44 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:37:44 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:37:44 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:37:44 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:37:44 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:37:44 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:43:38 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Windowkarusel.php on line 53
+[06-Apr-2016 00:43:38 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:43:38 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:43:38 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:43:38 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:43:38 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:43:38 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:44:47 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 511
+[06-Apr-2016 00:44:57 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Windowkarusel.php on line 53
+[06-Apr-2016 00:44:57 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:44:57 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:44:57 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:44:57 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:44:57 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:44:57 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:49:11 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Windowkarusel.php on line 53
+[06-Apr-2016 00:49:11 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:49:11 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:49:11 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:49:11 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:49:11 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96
+[06-Apr-2016 00:49:11 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Karusel.php on line 96

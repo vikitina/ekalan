@@ -23,6 +23,21 @@ class IndexController extends AbstractActionController
         $testimonialsSrv  = $this -> getServiceLocator()->get('testimonials'); 
         $testimonials = $testimonialsSrv -> getHomeTestimonials();
 
+        $karuselSrv  = $this -> getServiceLocator()->get('karusel'); 
+        $karusel_windows = $karuselSrv -> getAllKaruselWindows();
+        foreach ($karusel_windows as $key => $wind) {
+
+                   $karusel[$key] = $karuselSrv -> getKaruselByWind($wind["window_karusel"]);
+                 
+                   foreach ($karusel[$key] as $id => $item) {
+                            $karusel[$key][$id]['url_photo'] = ((isset($item['url_photo']) && $item['url_photo'] != '' && $item['url_photo'] !=null)?"/assets/application/samples/".trim($item['url_photo']):"");
+ 
+                   }                   
+                   $karusel[$key]['title_windowkarusel'] = $wind['title_windowkarusel'];
+
+        }
+       
+
         $folioSrv                   = $this -> getServiceLocator()->get('folio');        
         $i = 0;
         foreach ($testimonials as $testimonial){
@@ -31,11 +46,12 @@ class IndexController extends AbstractActionController
              $testimonials[$i]['url_folio'] = ($folio_id) ? '/project/'.$folio_id : 0;
              $i += 1;
         }
-
          
         return new ViewModel(array(
-            'manufacturers' => $manufacturers,
-            'testimonials'  => $testimonials,
+
+            'manufacturers'         => $manufacturers,
+            'testimonials'          => $testimonials,
+            'karusel_windows'       => $karusel
 
         
         ));

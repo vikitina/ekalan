@@ -250,257 +250,54 @@
         <section id="portfolio" class="wow fadeIn ptb ptb-sm-80">
         <a href="/portfolio" style="padding:10px;border:1px solid #fff;display:block;text-align:center;margin:0 auto;margin-top:-30px;margin-bottom:20px;color:#fff;width:80%">Все наши работы</a>
             <div class="owl-carousel content-carousel content-slider">
+              {% for window in karusel_windows %}
+
                 <div class="item">
                     <div class="container">
                         <div class="row">
-   <h5>Ванная комната</h5>
+                                <h5>{{ window.title_windowkarusel }}</h5>
 
-<div class="grid">
-  <div class="grid-sizer"></div>
-  <div class="grid-item item-box">
+                                <div class="grid">
+                                             <div class="grid-sizer"></div>
+                                                           {% for frame in window %}
+
+  
+                                                                      {% if frame.type_karusel == '1' %}
+                                                                                      <div class="grid-item item-box">
                          
-                            <a class="cbox-gallary1" href="assets/application/img/pic/k_1.jpg" title="Черное и белое">
-                                <img class="item-container" src="assets/application/img/pic/k_1.jpg" alt="1" />
-                                <div class="item-mask">
-                                    <div class="item-caption">
-                                        <h5 class="white">Оптимальные решения</h5>
-                                        <p class="white">Максимум комфорта</p>
-                                    </div>
-                                </div>
-                            </a>
-                     
-  </div>
-  <div class="grid-item item-box">
-                         
-                            <a class="cbox-gallary1" href="assets/application/img/pic/k_1.jpg" title="Черное и белое">
-                                <img class="item-container" src="assets/application/img/pic/k_1.jpg" alt="1" />
-                                <div class="item-mask">
-                                    <div class="item-caption">
-                                        <h5 class="white">Изысканные формы</h5>
-                                        <p class="white">Оптимальные сочетания</p>
-                                    </div>
-                                </div>
-                            </a>
-                     
-  </div>
+                                                                                               <a class="cbox-gallary1" href="{{ frame.url_photo }}" title="Черное и белое">
+                                                                                                  {#  <img class="item-container" src="{{ frame.url_photo }}" alt="1" /> #}
 
-
-   <div class="grid-item">
-    <p style="padding:30px;">Вы будете удивлены, насколько увеличится простор для воплощения дизайнерских решений с применением искусственного камня ekalan. Самые обыденные вещи, такие как подоконники, арочные проемы, колонны, полки, обшивка стен, плинтусы, выполненные из ekalan, сделают Вашу квартиру абсолютно неповторимой.</p>
-  </div>
-  <div class="grid-item item-box">
-                         
-                            <a class="cbox-gallary1" href="assets/application/img/pic/k_2.jpg" title="Черное и белое">
-                                <img class="item-container" src="assets/application/img/pic/k_2.jpg" alt="1" />
-                                <div class="item-mask">
-                                    <div class="item-caption">
-                                        <h5 class="white">Изысканные формы</h5>
-                                        <p class="white">Оптимальные сочетания</p>
-                                    </div>
-                                </div>
-                            </a>
+                                                                                                  <div style="background-image:url('{{ frame.url_photo }}');background-size: cover;width:100%;height:400px;" class="item-container"></div>
+                                                                                                    <div class="item-mask">
+                                                                                                                 <div class="item-caption">
+                                                                                                                          <h5 class="white">{{ frame.title_karusel }}</h5>
+                                                                                                                          <p class="white">{{ frame.subtitle_karusel }}</p>
+                                                                                                                          {% if frame.id_folio %}<a href="/project/{{ frame.id_folio }}" class="project_link">Описание проекта</a>{% endif %}
+                                                                                                                 </div>
+                                                                                                    </div>
+                                                                                                </a>
                      
-  </div>
-  <div class="grid-item item-box">
-                         
-                            <a class="cbox-gallary1" href="assets/application/img/pic/k_3.jpg" title="Черное и белое">
-                                <img class="item-container" src="assets/application/img/pic/k_3.jpg" alt="1" />
-                                <div class="item-mask">
-                                    <div class="item-caption">
-                                        <h5 class="white">Природные краски</h5>
-                                        <p class="white">Космические технологии</p>
-                                    </div>
-                                </div>
-                            </a>
-                     
-  </div>
-  <div class="grid-item item-box">
-                         
-                            <a class="cbox-gallary1" href="assets/application/img/pic/k_4.jpg" title="Черное и белое">
-                                <img class="item-container" src="assets/application/img/pic/k_4.jpg" alt="1" />
-                                <div class="item-mask">
-                                    <div class="item-caption">
-                                        <h5 class="white">Изысканные формы</h5>
-                                        <p class="white">Оптимальные сочетания</p>
-                                    </div>
-                                </div>
-                            </a>
-                     
-  </div>
+                                                                                      </div>
+                                                                      {% else %}
+                                                                                      <div class="grid-item">
+                                                                                                    <p style="padding:30px;">{{ frame.text_karusel }}</p>
+                                                                                      </div>
+                                                                      {%  endif %}
 
+                                                           {%  endfor %}
 
-</div>
+                                   </div>
 
+                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="container">
-                        <div class="row">
-   <h5>Непревзойденный комфорт</h5>
-
-<div class="grid">
-  <div class="grid-sizer"></div>
-     <div class="grid-item" style="padding:30px;">
-    <p >Вы будете удивлены, насколько увеличится простор для воплощения дизайнерских решений с применением искусственного камня ekalan. Самые обыденные вещи, такие как подоконники, арочные проемы, колонны, полки, обшивка стен, плинтусы, выполненные из ekalan, сделают Вашу квартиру абсолютно неповторимой.</p>
-      <p>Подоконники, арочные проемы, колонны, полки, обшивка стен, плинтусы, выполненные из ekalan, сделают Вашу квартиру абсолютно неповторимой.</p>
-  </div>
-  <div class="grid-item item-box">
-                         
-                            <a class="cbox-gallary1" href="assets/application/img/pic/k_5.jpg" title="Черное и белое">
-                                <img class="item-container" src="assets/application/img/pic/k_5.jpg" alt="1" />
-                                <div class="item-mask">
-                                    <div class="item-caption">
-                                        <h5 class="white">Изысканные формы</h5>
-                                        <p class="white">Оптимальные сочетания</p>
-                                    </div>
-                                </div>
-                            </a>
-                     
-  </div>
-  <div class="grid-item item-box">
-                         
-                            <a class="cbox-gallary1" href="assets/application/img/pic/k_6.jpg" title="Черное и белое">
-                                <img class="item-container" src="assets/application/img/pic/k_6.jpg" alt="1" />
-                                <div class="item-mask">
-                                    <div class="item-caption">
-                                        <h5 class="white">Изысканные формы</h5>
-                                        <p class="white">Оптимальные сочетания</p>
-                                    </div>
-                                </div>
-                            </a>
-                     
-  </div>
-  <div class="grid-item item-box">
-                         
-                            <a class="cbox-gallary1" href="assets/application/img/pic/k_7.jpg" title="Черное и белое">
-                                <img class="item-container" src="assets/application/img/pic/k_7.jpg" alt="1" />
-                                <div class="item-mask">
-                                    <div class="item-caption">
-                                        <h5 class="white">Изысканные формы</h5>
-                                        <p class="white">Оптимальные сочетания</p>
-                                    </div>
-                                </div>
-                            </a>
-                     
-  </div>
-  <div class="grid-item item-box">
-                         
-                            <a class="cbox-gallary1" href="assets/application/img/pic/k_8.jpg" title="Черное и белое">
-                                <img class="item-container" src="assets/application/img/pic/k_8.jpg" alt="1" />
-                                <div class="item-mask">
-                                    <div class="item-caption">
-                                        <h5 class="white">Изысканные формы</h5>
-                                        <p class="white">Оптимальные сочетания</p>
-                                    </div>
-                                </div>
-                            </a>
-                     
-  </div>
-  <div class="grid-item item-box">
-                         
-                            <a class="cbox-gallary1" href="assets/application/img/pic/k_9.jpg" title="Черное и белое">
-                                <img class="item-container" src="assets/application/img/pic/k_9.jpg" alt="1" />
-                                <div class="item-mask">
-                                    <div class="item-caption">
-                                        <h5 class="white">Изысканные формы</h5>
-                                        <p class="white">Оптимальные сочетания</p>
-                                    </div>
-                                </div>
-                            </a>
-                     
-  </div>
-
-</div>
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="container">
-                        <div class="row">
-    <h5>Гостинная</h5>
-
-<div class="grid">
-  <div class="grid-sizer"></div>
-
-  <div class="grid-item item-box">
-                         
-                            <a class="cbox-gallary1" href="assets/application/img/pic/k_10.jpg" title="Черное и белое">
-                                <img class="item-container" src="assets/application/img/pic/k_5.jpg" alt="1" />
-                                <div class="item-mask">
-                                    <div class="item-caption">
-                                        <h5 class="white">Изысканные формы</h5>
-                                        <p class="white">Оптимальные сочетания</p>
-                                    </div>
-                                </div>
-                            </a>
-                     
-  </div>
-  <div class="grid-item item-box">
-                         
-                            <a class="cbox-gallary1" href="assets/application/img/pic/k_11.jpg" title="Черное и белое">
-                                <img class="item-container" src="assets/application/img/pic/k_6.jpg" alt="1" />
-                                <div class="item-mask">
-                                    <div class="item-caption">
-                                        <h5 class="white">Изысканные формы</h5>
-                                        <p class="white">Оптимальные сочетания</p>
-                                    </div>
-                                </div>
-                            </a>
-                     
-  </div>
-        <div class="grid-item" style="padding:30px;">
-    <p >Самые обыденные вещи, такие как подоконники, арочные проемы, колонны, полки, обшивка стен, плинтусы, выполненные из ekalan, сделают Вашу квартиру абсолютно неповторимой.Вы будете удивлены, насколько увеличится простор для воплощения дизайнерских решений с применением искусственного камня ekalan.</p>
-      <p>Подоконники, арочные проемы, колонны, полки, обшивка стен, плинтусы, выполненные из ekalan, сделают Вашу квартиру абсолютно неповторимой.</p>
-  </div>
-  <div class="grid-item item-box">
-                         
-                            <a class="cbox-gallary1" href="assets/application/img/pic/k_12.jpg" title="Черное и белое">
-                                <img class="item-container" src="assets/application/img/pic/k_7.jpg" alt="1" />
-                                <div class="item-mask">
-                                    <div class="item-caption">
-                                        <h5 class="white">Изысканные формы</h5>
-                                        <p class="white">Оптимальные сочетания</p>
-                                    </div>
-                                </div>
-                            </a>
-                     
-  </div>
-  <div class="grid-item item-box">
-                         
-                            <a class="cbox-gallary1" href="assets/application/img/pic/k_13.jpg" title="Черное и белое">
-                                <img class="item-container" src="assets/application/img/pic/k_8.jpg" alt="1" />
-                                <div class="item-mask">
-                                    <div class="item-caption">
-                                        <h5 class="white">Изысканные формы</h5>
-                                        <p class="white">Оптимальные сочетания</p>
-                                    </div>
-                                </div>
-                            </a>
-                     
-  </div>
-  <div class="grid-item item-box">
-                         
-                            <a class="cbox-gallary1" href="assets/application/img/pic/k_14.jpg" title="Черное и белое">
-                                <img class="item-container" src="assets/application/img/pic/k_9.jpg" alt="1" />
-                                <div class="item-mask">
-                                    <div class="item-caption">
-                                        <h5 class="white">Изысканные формы</h5>
-                                        <p class="white">Оптимальные сочетания</p>
-                                    </div>
-                                </div>
-                            </a>
-                     
-  </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </div>  {#  item #}
+                {% endfor %}     
+             </div>
  
-        </section>
+        </section>     
+
+
 
               
         <!-- End Contain Slider Section -->

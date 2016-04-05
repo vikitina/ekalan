@@ -241,3 +241,5 @@ footer{background:none;}
     overflow: hidden;
     position: relative;
 }
+.item-box a{display:block !important;}
+.project_link{display:block;padding:4px;background:yellow;color:#000;text-decoration: :none;}

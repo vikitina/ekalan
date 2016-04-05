@@ -292,7 +292,17 @@ return array(
                 return new \Application\Model\Materialsinfolio(
                     $sm->get('Zend\Db\Adapter\Adapter')
                 );
-            },                   
+            }, 
+            'karusel' => function ($sm) {
+                return new \Application\Model\Karusel(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },
+            'windowkarusel' => function ($sm) {
+                return new \Application\Model\Windowkarusel(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },
 
                      
     ),

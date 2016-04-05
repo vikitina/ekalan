@@ -51,8 +51,8 @@
                    $('#tmp_id_sample').val(0);
                    $('#tmp_new_sample').val(result.name);
                    $('#sample_modal .loaded_img .img_container div').css('background-image','url("'+result.url+'")');
-                   $('#sample_modal').find('.new_upload_img_container').html('<img src="'+result.url+'" />');
-                   $('.new_upload_img_container img').cropper({
+                  // $('#sample_modal').find('.new_upload_img_container').html('<img src="'+result.url+'" />');
+                  /*$('.new_upload_img_container img').cropper({
                                 aspectRatio: 1,
                                 preview: $('.loaded_img .img_container'),
                                        crop: function(e) {
@@ -68,15 +68,9 @@
 
                                                $('#crop_img_data').val(json);
 
-                                              /*   console.log(e.x);
-                                                 console.log(e.y);
-                                                 console.log(e.width);
-                                                 console.log(e.height);
-                                                 console.log(e.rotate);
-                                                 console.log(e.scaleX);
-                                                 console.log(e.scaleY);*/
+                                             
                                         }
-                    });
+                    });*/
 
                    $('#sample_modal .loaded_img').removeClass('loading');
                    //console.log(result);
