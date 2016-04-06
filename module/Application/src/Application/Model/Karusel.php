@@ -59,7 +59,7 @@ class Karusel extends TableGateway
     } 
   public function getKaruselByWind($wind){ 
          
-         $query = "SELECT t_karusel.*,t_karusel.id as id_karusel, t_photos.* "
+         $query = "SELECT t_karusel.*,t_karusel.id as id_karusel,t_karusel.id_folio as picked_id_folio, t_photos.* "
                   ."FROM `t_karusel` "
                   ."LEFT JOIN t_photos ON t_karusel.id_photo=t_photos.id "
                   ."WHERE window_karusel='".$wind."' order by numframe_karusel"; 
@@ -93,7 +93,7 @@ class Karusel extends TableGateway
 
     
         parent::update($data, array('id' => $id));
-        return array('id' => $id, 'name' => $data['name_texture']);
+        return array();
     }
 
 

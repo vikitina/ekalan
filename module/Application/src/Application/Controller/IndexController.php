@@ -46,7 +46,7 @@ class IndexController extends AbstractActionController
              $testimonials[$i]['url_folio'] = ($folio_id) ? '/project/'.$folio_id : 0;
              $i += 1;
         }
-         
+        
         return new ViewModel(array(
 
             'manufacturers'         => $manufacturers,
