@@ -124,6 +124,10 @@ return array(
                                    array('route' => 'zfcadmin/admin_ajax_groupupdate', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_ajax_addphoto', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_ajax_addtexture', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_ajax_delfolio', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_ajax_delkarusel', 'roles' => array('admin')),
+                              
+                                   
 
 
                                    //admin_ajax_groupupdate

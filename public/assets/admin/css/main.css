@@ -389,7 +389,7 @@ label.main_radio input{margin-right: 5px;}
 #karusel .accordion-content h3{font-size:1em;float:left;width:100%;}
 #karusel .accordion-content .title_karusel{float:left;width:100%;height:76px;}
 
-#karusel .window_block{width:100%;padding:10px;float:left;}
+#karusel .window_block{width:100%;padding:10px;float:left;position:relative;}
 
 #karusel .window_block .frame{width:30%;height:300px; border:1px solid #ddd;position:relative;float:left;margin-right:2%;margin-bottom: 45px;}
 #karusel .window_block .frame .type_frame{position:absolute;top:-24px;left:0;float:left;width:100%;}
@@ -414,7 +414,13 @@ label.main_radio input{margin-right: 5px;}
 #karusel .window_block .frame .content_block .text_type{padding: 20px;}
 #karusel .window_block .frame .content_block .text_type textarea{width:100%;height:100%;}
 
+#karusel .accordion-content .alert{position:absolute;top: -36px;width: 75%;padding-top: 6px;padding-bottom: 6px}
+input.focus_alert{visibility: hidden;}
 
+#karusel .del_link {border: 1px dashed #dadada;cursor: pointer;display: block;float: right;height: 31px;padding: 4px;width: 29px;margin-right: 36px;margin-top:20px;}
+#karusel .del_link i {float: left;font-size: 1.7em;}
+#karusel .accordion-title span.title{font-size:1.3em;font-weight:bold;padding-left: 0;margin-left: 0;}
+#karusel h6{width:90%;}
 
 
 

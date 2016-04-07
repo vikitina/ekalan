@@ -7,7 +7,7 @@
 <hr class="clear" />
 <div class="row">
      <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-              <section class="">
+              <section id="folios">
 
 
                  <div class="material_list_container autoheight">
@@ -37,10 +37,10 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Подтверждение удаления материала</h4>
+        <h4 class="modal-title">Подтверждение удаления проекта</h4>
       </div>
       <div class="modal-body">
-        Материал такой-то будет удален. Вы уверены?
+        Проект будет удален. Вы уверены?
 
         <input type="hidden" id="deleting_id" />
       </div>
@@ -53,52 +53,6 @@
 </div><!-- /.modal -->
 
 
- <div class="modal fade" id="delete_group_confirm_modal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Подтверждение удаления материалов</h4>
-      </div>
-      <div class="modal-body">
-        <p>Группа материалов будет удалена.</p>
-        <ul id="list_for_deleting"></ul>
-         <p>Вы уверены?</p>
-        <form method=post action="/admin/ajax_deleting_group" id="form_deleting_group">  
-            <input type="hidden" id="deleting_list" name="deleting_list" />
-        </form>
-      </div>
-        <div class="modal-footer">
-                <a href="#" data-dismiss="modal" class="btn" id="btn_cancel_deleting">Отменить</a>
-                <a href="#" class="btn btn-primary" id="btn_confirm_group_deleting">Удалить</a>
-        </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
- <div class="modal fade" id="pricing_group_confirm_modal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Изменение цены материалов</h4>
-      </div>
-      <div class="modal-body">
-        <p>Назначить цену для группы материалов:</p>
-        <ul id="list_for_pricing"></ul>
-         
-        <form method=post action="/admin/ajax_pricing_group" id="form_pricing_group_update"> 
-           <label>Новая цена<input type="text" name="price" /></label>
-           <input type="hidden" id="pricing_list" name="pricing_list" />
-        </form>
-      </div>
-        <div class="modal-footer">
-                <a href="#" data-dismiss="modal" class="btn" id="btn_cancel_pricing">Отменить</a>
-                <a href="#" class="btn btn-primary" id="btn_confirm_group_pricing">Сохранить</a>
-        </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 
   
 {% endblock content %}

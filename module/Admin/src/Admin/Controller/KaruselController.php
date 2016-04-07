@@ -92,6 +92,24 @@ class KaruselController extends AbstractActionController
              
                 
     }
+
+    public function ajaxdelkaruselAction(){
+
+           $data = $_POST;
+           $karuselSrv  = $this -> getServiceLocator()->get('karusel');
+           $karusels = $karuselSrv -> getKaruselByWind($data["id"]);
+           foreach ($karusels as $key => $value) {
+                   $karuselSrv->delKarusel($value['id']);
+           }
+           $windowkaruselSrv = $this -> getServiceLocator()->get('windowkarusel');
+           $windowkaruselSrv->delWindowkarusel($data["id"]);
+            return new JsonModel ( array (
+              
+                  'id' => $data['id'],
+                  
+                
+        ) );
+    }
  
          
  

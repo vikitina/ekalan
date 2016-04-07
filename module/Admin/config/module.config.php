@@ -5,7 +5,9 @@ return array(
         'invokables' => array(
             'Admin\Controller\Index'   => 'Admin\Controller\IndexController',
             'Admin\Controller\Ajax'    => 'Admin\Controller\AjaxController',
-            'Admin\Controller\Karusel' => 'Admin\Controller\KaruselController'
+            'Admin\Controller\Karusel' => 'Admin\Controller\KaruselController',
+            'Admin\Controller\Folio'   => 'Admin\Controller\FolioController'
+            
         ),
     ),
     'router' => array(
@@ -502,9 +504,29 @@ return array(
                                                           'action'     => 'ajaxgroupupdate',
                                                       ),
                                             ),
-                            ), 
+                            ),
 
-
+                       
+                         'admin_ajax_delfolio'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/ajaxdelfolio',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Folio',
+                                                          'action'     => 'ajaxdelfolio',
+                                                      ),
+                                            ),
+                            ),
+                         'admin_ajax_delkarusel'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/ajaxdelkarusel',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Karusel',
+                                                          'action'     => 'ajaxdelkarusel',
+                                                      ),
+                                            ),
+                            ),
                         ),
                  ),
             ),

@@ -81,18 +81,47 @@ $('.checker').click(function(){
                        encode      : true
                                  
                     })
-               .done(function(res) {
+           .done(function(res) {
                     
                     console.log(res.data);
+ 
+                  
                  }); 
+                   if ($(this).hasClass('withAddingAction')){
 
-
+                    	addingAction($(this).attr('data-params'), new Object({'elem' : $(this)}));
+                    	
+  }
            }else{
            $(form_id).submit();
        }
 
        }
 
+});
+
+function addingAction(params, data){
+
+	switch (params) {
+
+		case 'updatekarusel':
+
+		               //заголовок окна
+		               
+		       var text = $(data.elem).parents('.accordion-content').find('.title_windowkarusel').val();
+               $(data.elem).parents('.accordion-section').find('.accordion-title span.title').text(text);
+		               //сообщение об успехе
+		       $(data.elem).parents('.accordion-content').find('.alert').css('display','block');
+               $(data.elem).parents('.accordion-content').find('.alert').find('input.focus_alert').focus();
+
+		break;
+		default:
+		break;
+	}
+}
+$('input.focus_alert').blur(function(){
+
+	$(this).parents('.alert').css('display','none');
 });
 /*----------------------------------------------------*/
 $('li').on('keyup', '.required',function(){
@@ -224,4 +253,75 @@ console.log(prepared_photo);
 
 });
 
+/*--------------------------------------------------------*/
+
+
+//удаление проекта
+$('#folios .material_list').on('click','li span.del_folio_ajax', function(){
+
+              var id = $(this).attr('data-id');
+              $('#delete_confirm_window').modal('show');
+              $(this).parent('li').addClass('confirm_deleting_state');
+              $('#deleting_id').val(id);
+});
+// ------------------------------------------------
+$('#delete_confirm_window #btn_confirm_deleting').click(function(){
+         $('.material_list li.confirm_deleting_state').remove();
+         var data = new Object();
+         data['id'] = $('#deleting_id').val();
+               $.ajax({
+                       type        : 'POST', 
+                       url         : 'http://' + location.hostname + '/admin/ajaxdelfolio', 
+                       data        :  data, 
+                       dataType    : 'json', 
+                       encode          : true
+                                 
+                    })
+               .done(function(data) {
+                     $('#deleting_id').val('');
+                     $('#delete_confirm_window').modal('hide');
+                 }); 
+
+                    $('#selected_list_length').text('('+$('.material_list li .check input:checked').length+')');  
+
+});
+
+/*--------------------------------------------------------*/
+
+
+//удаление окна карусели
+$('#karusel').on('click','span.del_window_ajax', function(){
+
+              var id = $(this).attr('data-id');
+              $('#delete_confirm_window').modal('show');
+              $(this).parents('.accordion-section').addClass('confirm_deleting_state');
+              $('#deleting_id').val(id);
+              return false;
+});
+// ------------------------------------------------
+$('#delete_confirm_window #btn_confirm_deleting').click(function(){
+         $('.confirm_deleting_state').remove();
+         var data = new Object();
+         data['id'] = $('#deleting_id').val();
+               $.ajax({
+                       type        : 'POST', 
+                       url         : 'http://' + location.hostname + '/admin/ajaxdelkarusel', 
+                       data        :  data, 
+                       dataType    : 'json', 
+                       encode          : true
+                                 
+                    })
+               .done(function(data) {
+                     $('#deleting_id').val('');
+                     $('#delete_confirm_window').modal('hide');
+console.log(data.id);
+                 }); 
+
+                   
+
+});
+$('#delete_confirm_window').on('hidden.bs.modal',function(){
+
+	$('.confirm_deleting_state').removeClass('.confirm_deleting_state');
+})
 });

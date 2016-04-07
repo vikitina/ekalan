@@ -23,26 +23,34 @@
                                                          {% for window in  karusel %}
 
                                                                     <div class="accordion-section">
-                                                                       
-                                                                            <h6 class="accordion-title">{{ window.title_windowkarusel }}</h6>
+                                                                       <span class="del_window_ajax del_link" data-id="{{ window.id_window  }}"><i class="fa fa-trash-o"></i></span>
+                                                                            <h6 class="accordion-title"><span class="title">{{ window.title_windowkarusel }}</span>
 
+                                                                                       
+                                                                            </h6>
+                                                                            
 
                                                                             <div class="accordion-content defualt-hidden window_block">
+                                                                                <div class="alert alert-success alert-dismissible" role="alert">
+                                                                                           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                                           Содержимое экрана успешно обновлено.
+                                                                                           <input type="text" class="focus_alert" />
+                                                                               </div>                                                                            
                                                                                 <form action="/admin/updatekarusel" method="post" id="updatekarusel_{{ window.id_window }}">
+
                                                                                    <h3>Редактирование экрана карусели</h3>
                                                                                               <div class="title_karusel">
                                                                               
                                                                                                          <span>Заголовок экрана</span>
-                                                                                                         <input type="text" name="title_windowkarusel" value="{{ window.title_windowkarusel }}" />
+                                                                                                         <input type="text" name="title_windowkarusel" value="{{ window.title_windowkarusel }}" class="title_windowkarusel" />
                                                                                                          <input name="id_window" value="{{ window.id_window }}" type="hidden" />
                                                                                               </div>                                                                            
                                                                                              {{ window.html|raw }}
                                                                                             <div class="clear"></div>
 
 
-                                                                                      <div><input type="button" value="Обновить экран" data-form="updatekarusel_{{ window.id_window }}" class="checker byAjax" /> <a href="/admin/folios">Отмена</a></div>
+                                                                                      <div><input type="button" value="Обновить экран" data-params="updatekarusel" data-form="updatekarusel_{{ window.id_window }}" class="checker byAjax withAddingAction" /> <a href="/admin/folios">Отмена</a></div>
                                                                                   </form> 
-
 
 
                                                                             </div>
@@ -104,7 +112,25 @@
 
           </section>
      </div>  
+ <div class="modal fade" id="delete_confirm_window">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Подтверждение удаления экрана</h4>
+      </div>
+      <div class="modal-body">
+        Экран карусели работ будет удален. Вы уверены?
 
+        <input type="hidden" id="deleting_id" />
+      </div>
+        <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn" id="btn_cancel_deleting">Отменить</a>
+                <a href="#" class="btn btn-primary" id="btn_confirm_deleting">Удалить</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
  <div class="modal fade" id="sample_modal">
   <div class="modal-dialog">
