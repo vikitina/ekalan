@@ -243,3 +243,49 @@ footer{background:none;}
 }
 .item-box a{display:block !important;}
 .project_link{display:block;padding:4px;background:yellow;color:#000;text-decoration: :none;}
+    ._red {stroke:'red';fill:'red';stroke-width:50;stroke-opacity:1}
+    .str2 {stroke:#2B2A29;stroke-width:0.959811;stroke-opacity:0.501961}
+    .str1 {stroke:'red';stroke-width:5;stroke-opacity:0.501961}
+    .str3 {stroke:#2B2A29;stroke-width:0.566929}
+    .str5 {stroke:#E31E24;stroke-width:0.566929}
+    .str0 {stroke:#7690C9;stroke-width:1}
+    .str4 {stroke:#7690C9;stroke-width:0.566929}
+    .str6 {stroke:#2E72A9;stroke-width:0.216}
+    .fil2 {fill:none}
+    .fil5 {fill:none;fill-rule:nonzero}
+    .fil1 {fill:none}
+    .fil3 {fill:#2B2A29}
+    .fil0 {fill:'red'}
+    .fil4 {fill:#7690C9}
+    .fil6 {fill:#2E72A9}
+    .fnt2 {font-weight:normal;font-size:12px;font-family: 'Roboto', sans-serif;}
+    .fnt1 {font-weight:bold;font-size:48px;font-family: 'Roboto', sans-serif;}
+    .fnt0 {font-style:italic;font-weight:bold;font-size:32px;font-family: 'Roboto', sans-serif;}
+
+    .str0a {stroke:#FEFEFE;stroke-width:2.97071}
+    .fil2a {fill:none}
+    .fil4a {fill:#FEFEFE}
+    .fil0a {fill:#0078BF}
+    .fil3a {fill:#0078BF}
+    .fil5a {fill:#00A0E3}
+    .fil1a {fill:#FEFEFE;fill-rule:nonzero}
+   
+
+
+
+    .str1b {stroke:#434242;stroke-width:11.811;stroke-opacity:0.250980}
+    .str0b {stroke:#E31E24;stroke-width:12.4995;stroke-linecap:square;stroke-linejoin:round;stroke-opacity:0.250980}
+    .str3b {stroke:#2B2A29;stroke-width:5.90548}
+    .str2b {stroke:#FFED00;stroke-width:2.36219}
+    .fil9b {fill:none}
+    .fil4b {fill:#2B2A29}
+    .fil6b {fill:#2B2A29}
+    .fil3b {fill:#FFED00}
+    .fil1b {fill:#F5B2B6}
+    .fil7b {fill:black}
+    .fil8b {fill:#1C1C1A;fill-rule:nonzero}
+    .fil2b {fill:#FFED00;fill-opacity:0.250980}
+    .fil0b {fill:#F5B2B6;fill-opacity:0.250980}
+    .fil5b {fill:#FFED00}
+    .fnt0b {font-weight:normal;font-size:50px;font-family: 'Roboto', sans-serif}
+    .fnt1b {font-weight:bold;font-size:100px;font-family: 'Roboto', sans-serif}
