@@ -590,12 +590,13 @@
                      
                                                                                       </div>
                                                                       {% else %}
+                                                                             {% if frame.text_karusel %}
                                                                                       <div class="grid-item">
                                                                                            
-                                                                                                    <p style="padding:30px;height:400px;">{{ frame.text_karusel }}</p>
+                                                                                                    <p style="padding:30px;height:398px;margin-bottom:0;overflow:hidden;">{{ frame.text_karusel }}</p>
 
                                                                                                   
-                                                                                      </div>
+                                                                                      </div>{%  endif %}
                                                                       {%  endif %}
 
                                                            {%  endfor %}
