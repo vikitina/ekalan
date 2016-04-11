@@ -287,8 +287,8 @@ footer{background:none;}
     .fil2b {fill:#febc53;fill-opacity:0.250980}
     .fil0b {fill:#F5B2B6;fill-opacity:0.250980}
     .fil5b {fill:#febc53}
-    .fnt0b {font-weight:normal;font-size:3.4em;font-family: 'Roboto', sans-serif}
-    .fnt1b {font-weight:bold;font-size:7em;font-family: 'Roboto', sans-serif}
+    .fnt0b {font-weight:normal;font-size:3.4em;letter-spacing: initial;font-family: 'Roboto', sans-serif;}
+    .fnt1b {font-weight:bold;font-size:7em;letter-spacing: initial;font-family: 'Roboto', sans-serif;}
 
     header .logo{visibility: hidden;}
 .navigation{visibility: hidden;}
