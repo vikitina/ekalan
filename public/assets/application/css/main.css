@@ -289,3 +289,9 @@ footer{background:none;}
     .fil5b {fill:#febc53}
     .fnt0b {font-weight:normal;font-size:3.4em;font-family: 'Roboto', sans-serif}
     .fnt1b {font-weight:bold;font-size:7em;font-family: 'Roboto', sans-serif}
+
+    header .logo{visibility: hidden;}
+.navigation{visibility: hidden;}
+.content-caption h2{visibility: hidden;}
+.content-caption a.btn-white{visibility: hidden;}
+.sales{visibility: hidden;}
