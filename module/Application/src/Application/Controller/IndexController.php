@@ -46,12 +46,20 @@ class IndexController extends AbstractActionController
              $testimonials[$i]['url_folio'] = ($folio_id) ? '/project/'.$folio_id : 0;
              $i += 1;
         }
+
+        $systemSrv = $this -> getServiceLocator()->get('system');
+        $systems = $systemSrv->getSystem();        
+        foreach ($systems as $key => $value) {
+          $system[$value['name']] = $value['data'];
+        }
+
         
         return new ViewModel(array(
 
             'manufacturers'         => $manufacturers,
             'testimonials'          => $testimonials,
-            'karusel_windows'       => $karusel
+            'karusel_windows'       => $karusel,
+            'systems'               => $system
 
         
         ));

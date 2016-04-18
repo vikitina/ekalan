@@ -115,24 +115,16 @@
         <div class="col-md-2 col-md-2 col-sm-12 col-xs-12">    
 
                      <div class="table-responsive">
-
-{# system_modal
-system_name
-system_new_value
-system_save_new_value
-#}
-
-
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>System Variables</th>
+                                    <th>Настройки</th>
                                 </tr>
                             </thead>
                             <tbody>
                         {% for vars in  System() %}
                                <tr>
-                                    <td><a href="admin/system/{{ vars.id }}" class="system_list" data-content="{{ vars.data }}" data-id="{{ vars.id }}">{{ vars.name }}</a></td>
+                                    <td><a href="admin/system/{{ vars.id }}" class="system_list" data-content="{{ vars.data }}" data-id="{{ vars.id }}" data-comment="{{ vars.comment }}">{{ vars.title }}</a></td>
                                </tr>
                           {% endfor %}      
                               
@@ -177,15 +169,16 @@ system_save_new_value
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">System variables</h4>
+        <h4 class="modal-title">Настройки</h4>
       </div>
       <div class="modal-body">
              <label id="system_name"></label> 
+             <div id="system_comments"></div>
              <textarea id="system_new_value" name="system_new_value"></textarea> 
       </div>
         <div class="modal-footer">
-                <a href="#" data-dismiss="modal" class="btn">Close</a>
-                <a href="#" class="btn btn-primary" id="system_save_new_value">Save changes</a>
+                <a href="#" data-dismiss="modal" class="btn">Закрыть</a>
+                <a href="#" class="btn btn-primary" id="system_save_new_value">Сохранить изменения</a>
         </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

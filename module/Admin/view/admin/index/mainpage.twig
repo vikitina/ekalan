@@ -20,6 +20,8 @@
                     <div class="ui-tab-content">
                         <div aria-hidden="false" role="tabpanel" aria-labelledby="ui-id-1" id="tabs-1" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
                                         <div class="accordion" id="karusel">
+                                        <span id="add_new_window_karusel"> + Добавить новый экран карусели</span>
+                                        <div class="clear"></div>
                                                          {% for window in  karusel %}
 
                                                                     <div class="accordion-section">
@@ -191,5 +193,72 @@
 </div><!-- /.modal -->
 <!-- /.modal --> 
 
+
+<div id="template_new_window">
+<div class="accordion-section">
+<h6 class="accordion-title"><span class="title">Добавление нового окна карусели</span></h6>
+<div class="accordion-content defualt-hidden window_block" style="display: block;">
+<div class="alert alert-success alert-dismissible in" role="alert" style="display: none;">
+<button class="close" aria-label="Close" data-dismiss="alert" type="button">
+Содержимое экрана успешно добавлено.
+<input class="focus_alert" type="text">
+</div>
+<form action="/admin/addkarusel" method="post" id="addkarusel_1">
+
+      <h3>Новый экран карусели</h3>
+             <div class="title_karusel">
+                        <span>Заголовок экрана</span>
+                        <input name="title_windowkarusel" class="title_windowkarusel" type="text">
+            </div>                                                                            
+                    {% for i in range(0, 5) %}
+    
+                 
+
+
+         <div class="frame" data-num-frame="{{ i }}">
+                     <div class="type_frame">
+                            
+                            <input name="data[{{ i }}][numframe_karusel]" value="1" type="hidden">
+                            <label class="input_left change_type" data-type-frame="photo_type"><input name="data[{{ i }}][type_karusel]" value="1" checked="checked" type="radio">Фото</label>
+                            <label class="input_right change_type" data-type-frame="text_type"><input name="data[{{ i }}][type_karusel]" value="2" type="radio">Текст</label>
+
+                            
+                     </div><!-- type_frame  -->
+                    <div class="content_block">
+                             <div class="tab photo_type active">
+                                               <ul class="photos_list empty"></ul>
+                                                                <div class="add_photo_btn edit_sample only_one">
+                                                                          <i class="fa fa-plus"></i>
+                                                                          <span class="span_add_photo_btn"></span>
+                                                                </div>
+                                               <div>
+                                               <span>Ссылка на проект</span>
+                                                <select name="data[{{ i }}][id_folio]">
+                                                          <option value="0">Нет</option>
+                                                          <option value="1">Кухня красная прекрасная</option>
+                                                          <option value="2">Дома вторая кухня</option>
+                                                          <option value="3">Дома вторая кухня</option>
+                                                          <option value="4">asdasd</option>
+                                                          <option value="5">Новая работа очень интересная</option>
+                                                </select>
+                                             </div> 
+                                             <div><span>Заголовок</span><input name="data[{{ i }}][title_karusel]" type="text"></div>
+                                             <div><span>Подзаголовок</span><input name="data[{{ i }}][subtitle_karusel]" type="text"></div>
+                             </div><!-- photo_type  -->
+
+                             <div class="tab text_type">
+                                      <textarea name="data[{{ i }}][text_karusel]"></textarea>
+                             </div><!-- text_type  -->
+
+                    </div>
+
+         </div><!-- frame  -->
+
+{% endfor %}  
+
+<div class="clear"></div>
+<div><input value="Добавить экран" data-params="addkarusel" data-form="addkarusel_1" class="checker byAjax withAddingAction" type="button"> 
+<a href=# class="cancel_adding_window">Отмена</a></div>
+</form></div><div class="clear"></div></div></div>
 
                   {% endblock content %}      

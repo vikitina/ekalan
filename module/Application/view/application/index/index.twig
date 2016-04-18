@@ -625,8 +625,8 @@
                 <div class="row">
 
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2542.9236866638394!2d30.62923701599817!3d50.40525979850073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c5a9263ac0f9%3A0x34dc59578fb237ac!2z0L_RgNC-0YHQvy4g0J_QtdGC0YDQsCDQk9GA0LjQs9C-0YDQtdC90LrQsCwgMjMsIDcxLCDQmtC40ZfQsiwg0KPQutGA0LDQuNC90LA!5e0!3m2!1sru!2s!4v1453455068322" width="100%" height="350px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    {{ systems.map|raw }}
+                 
                   </div>
 
 
@@ -634,15 +634,13 @@
                    
                     <p>
                           <span><i class="ion ion-ios-location"></i></span>
-                          Киев,<br />
-                          ЖК "АБРИКОС",<br />
-                          проспект Петра Григоренко, 23/71
+                          {{ systems.address|raw }}
                     </p>
                     <p>  <span><i class="ion ion-ios-telephone"></i></span>
                            (044) 501-92-18<br />
                            (067) 230-26-20
                       </p>
-                       <a href="mailto:alanbud@optima.com.ua"><span><i class="ion ion-ios-email"></i></span>alanbud@optima.com.ua</a><br />
+                       <a href="mailto:alanbud@optima.com.ua"><span><i class="ion ion-ios-email"></i></span>{{ systems.email }}</a><br />
     
                        <a href="#" class="order_call">Заказать звонок</a>
                   </div>  
@@ -650,11 +648,11 @@
 
                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <!-- Contact FORM -->
-                        <form class="contact-form" id="contact" role="form">
+                        <form class="contact-form" id="footer_contact" role="form">
 
                             <!-- IF MAIL SENT SUCCESSFULLY -->
                             <h6 class="successContent">
-                                <i class="fa fa-check left" style="color: #5cb45d;"></i>Your message has been sent successfully.
+                                <i class="fa fa-check left" style="color: #5cb45d;"></i>Ваше сообщение успешно отправлено.
                             </h6>
                             <!-- END IF MAIL SENT SUCCESSFULLY -->
 
@@ -665,19 +663,19 @@
                             <!-- END MAIL SENDING UNSUCCESSFULL -->
 
                             <div class="form-field-wrapper">
-                                <input class="input-sm form-full" id="form-name" type="text" name="form-name" placeholder="Ваше имя" required>
+                                <input class="input-sm form-full" id="form-name" type="text" name="sc_name" placeholder="Ваше имя" required>
                             </div>
 
                             <div class="form-field-wrapper">
-                                <input class="input-sm form-full" id="form-email" type="email" name="form-email" placeholder="Электронная почта" required>
+                                <input class="input-sm form-full" id="form-email" type="email" name="sc_mail" placeholder="Электронная почта" required>
                             </div>
 
                             <div class="form-field-wrapper">
-                                <input class="input-sm form-full" id="form-subject" type="text" name="form-subject" placeholder="Тема">
+                                <input class="input-sm form-full" id="form-subject" type="text" name="sc_phone" placeholder="Телефон">
                             </div>
 
                             <div class="form-field-wrapper">
-                                <textarea class="form-full" id="form-message" rows="7" name="form-message" placeholder="Сообщение" required></textarea>
+                                <textarea class="form-full" id="form-message" rows="7" name="sc_text" placeholder="Сообщение" required></textarea>
                             </div>
 
                             <button class="btn btn-md btn-black form-full" type="submit" id="form-submit" name="submit">Отправить сообщение</button>

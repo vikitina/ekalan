@@ -1,13 +1,8 @@
 
 $(document).ready(function() {
-  //$('.stickem-container').stickem();
-    // process the form
-    $('form#selling_campaign').submit(function(event) {
 
+    $('form#selling_campaign').submit(function(event) {
         var formData = $( this ).serialize() ;
-        
-console.log( $( this ).serialize() );
-        // process the form
         $.ajax({
             type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
             url         : 'http://' + location.hostname + '/application/ajax', // the url where we want to POST
@@ -16,29 +11,31 @@ console.log( $( this ).serialize() );
             encode          : true
                                  
         })
-            // using the done promise callback
            .done(function(data) {
-                //$('#selling_campaign')[0].reset();
-                //$('.timer').countdown('stop');
                 $('.sales').hide().find('right').html('');
-                
                 $('#thanksModal').modal('show');
-                // log data to the console so we can see
-                console.log(data.res); 
-
-                // here we will handle errors and validation messages
             });
+        event.preventDefault();
+    });
 
-        // stop the form from submitting the normal way and refreshing the page
+    $('form#footer_contact').submit(function(event) {
+        var formData = $( this ).serialize() ;
+        $.ajax({
+            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url         : 'http://' + location.hostname + '/application/ajax', // the url where we want to POST
+            data        : formData, // our data object
+            dataType    : 'json', // what type of data do we expect back from the server
+            encode          : true
+                                 
+        })
+           .done(function(data) {
+                $('form#footer_contact')[0].reset();
+                $('#thanksModal').modal('show');
+            });
         event.preventDefault();
     });
 
 
-/* <form>
-                                                           <input type="hidden" value="{{ sale.id }}" />
-                                                           <textarea name="code_{{ sale.id }}">{{ sale.sales_markup }}</textarea>
-                                                           <input type="submit" value="Запомнить" />
-                                                       </form>*/
 
 $('.sales_update').submit(function(event) {
    
@@ -55,16 +52,7 @@ $('.sales_update').submit(function(event) {
                                  
         })
         .done(function(data) {
-                //$('#selling_campaign')[0].reset();
-                //$('.timer').countdown('stop');
-                //$('.sales').hide().find('right').html('');
-                $(this).parents('.accordion-content').find('.preview_action').html(data.sales_markup);//data.sales_markup
-                
-                // log data to the console so we can see
-                //console.log('asdasdasdasdasd     '+data.res); 
-
-                // here we will handle errors and validation messages
-            });
+                $(this).parents('.accordion-content').find('.preview_action').html(data.sales_markup);
 
    event.preventDefault();
 
@@ -77,9 +65,6 @@ $('.sales_update').submit(function(event) {
                                        $("#start").val(start);
                                        getmaterial();
                                   }
-
-
-                                  console.log('scroll');
                            }
                         });
 
@@ -120,12 +105,8 @@ function getmaterial(){
                 $('.ajax_loader').removeClass('.ajax_loader_show');
                 $('.set_material').append(data.res);
                 $('#rowcount').val(data.rowcount);
-               // var stickyContainer = $('.stickem-container');
-                //stickyContainer.stickem().destroy();
-                //stickyContainer.stickem();
                 console.log('query     '+data.query); 
                  console.log('id_color =      '+data.id_color); 
-                 //console.log('html =      '+data.res); 
                 
             });       
 

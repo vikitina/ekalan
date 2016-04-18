@@ -422,6 +422,9 @@ input.focus_alert{visibility: hidden;}
 #karusel .accordion-title span.title{font-size:1.3em;font-weight:bold;padding-left: 0;margin-left: 0;}
 #karusel h6{width:90%;}
 
+#add_new_window_karusel{cursor:pointer;color:#337ab7;float:right;display:block;margin-bottom:20px;}
+#template_new_window{display:none;}
+
 
 
 

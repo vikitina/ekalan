@@ -50,13 +50,13 @@ public function deletePages($data)
     { 
 
         $query = "
-            SELECT * from t_system ".(($id)? "where id='".$id."'": "");
+            SELECT * from t_system".(($id)? " where id='".$id."'": "");
 
     
                             
          $adapter = $this->getAdapter();
-		 $results = $this->FetchAll($adapter, $query);                            
-        return $results;
+		     $results = $this->FetchAll($adapter, $query);                            
+         return $results;
     } 
   public function getSystemByName($name)
     { 

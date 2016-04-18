@@ -55,6 +55,7 @@ $('.system_list').on('click',function(event){
        $('#system_new_value').val($(this).attr('data-content'));
        $(this).addClass('blockig_for_processing');
        $('#system_new_value').attr('data-id', $(this).attr('data-id'));
+       $('#system_comments').text($(this).attr('data-comment'));
 
 
  event.preventDefault();

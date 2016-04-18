@@ -15,7 +15,19 @@ return array(
                'zfcadmin' => array(
                       'child_routes' => array(
       
-     
+                      'admin_mp' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Segment',
+                                          'options' => array(
+                                              
+                                                    'route' => '/',
+                                                    
+
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Index',
+                                                          'action'     => 'mainpage',
+                                                      ),
+                                            ),
+                                    ),    
 
                                 'admin_main_page' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Segment',

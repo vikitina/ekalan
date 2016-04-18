@@ -1202,3 +1202,4 @@
 [07-Apr-2016 11:40:47 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 108
 [07-Apr-2016 11:50:43 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Windowkarusel.php on line 53
 [07-Apr-2016 11:50:52 Europe/Helsinki] PHP Notice:  Undefined index: name_texture in /var/www/ekalan/module/Application/src/Application/Model/Windowkarusel.php on line 53
+[17-Apr-2016 12:45:52 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 108

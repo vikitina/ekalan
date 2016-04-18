@@ -13,7 +13,7 @@ $(document).ready(
                                        var pagenum = parseInt($(".pagenum:last").val()) + 1;
                                        getresult('getresult.php?page='+pagenum);
                                   }*/
-                                  console.log('scroll');
+                                  //console.log('scroll');
                            }
                         });
 );

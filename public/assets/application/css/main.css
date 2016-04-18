@@ -293,5 +293,5 @@ footer{background:none;}
     header .logo{visibility: hidden;}
 .navigation{visibility: hidden;}
 .content-caption h2{visibility: hidden;}
-.content-caption a.btn-white{visibility: hidden;}
+#welcome .content-caption a.btn-white{visibility: hidden;}
 .sales{visibility: hidden;}
