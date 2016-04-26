@@ -122,6 +122,19 @@ class Karusel extends TableGateway
          
         return $results;
     }     
+
+  public function delKaruselByWind($id)
+    {
+         $query = sprintf("DELETE FROM t_karusel WHERE window_karusel='%s'",$id);
+
+                            
+         $adapter = $this->getAdapter();
+                                    
+         $statement = $adapter->createStatement($query);
+         $results = $statement->execute();
+         
+        return $results;
+    }     
     
    function FetchAll($adapter, $sql, $params=null)
     {

@@ -23,7 +23,7 @@
                                           <div class="panel-body">
                                                 <form action="/admin/folio" method="post" enctype="multipart/form-data" id="updatefolio">
                                                   <ul class="text_data">
-                                                    <div><input name="id" value="{{ folio.id }}" type="hidden" /></div>
+                                                    <div><input name="id" value="{{ folio.folio_id }}" type="hidden" /></div>
                                                      <li><span>Наименование *</span>
                                                               <div class="text">
                                                                    <span class="error_msg">Название проекта</span>
@@ -54,7 +54,7 @@
                                                          <div>
                                                                <select name="id_group" id="id_group_select">
                                                                      {% for group in lists.groups %}
-                                                                             <option value="{{ group.id }}" {{ group.id == folio.id_group ? "checked" : "" }}>{{ group.name_group }}</option>
+                                                                             <option value="{{ group.id }}" {{ group.id == folio.id_group ? "selected" : "" }}>{{ group.name_group }}</option>
                                                                       {% endfor %}
 
                                                                </select>
@@ -112,7 +112,7 @@
                                                                                              <i class="fa fa-times"></i>
                                                                                       </span>
                                                                                       <div style="background-image: url('{{ blueprint.url }}');">
-                                                                                             <input type="hidden" value="{{ blueprint.url_photo }}" name="url_blueprint[]">
+                                                                                             <input type="hidden" value="{{ blueprint.url_blueprint }}" name="url_blueprint[]">
                                                                                        
                                                                                       </div>
                                                                                 </li>
@@ -170,7 +170,7 @@
                                                                                              <i class="fa fa-times"></i>
                                                                                       </span>
                                                                                       <div style="background-image: url('{{ folio.url_picture_prepared }}');">
-                                                                                             <input type="hidden" value="{{ folio.url_picture }}" name="url_picture[]" />
+                                                                                             <input type="hidden" value="" name="url_picture[]" />
                                                                                              <input type="hidden" value="{{ folio.id_picture }}" name="id_picture" />
                                                                                        
                                                                                       </div>
@@ -232,9 +232,10 @@
         <h4 class="modal-title">Укажите материалы, которые использовались в проекте:</h4>
       </div>
       <div class="modal-body">
+      <div class="search_by_articul"><label>Поиск по артикулу</label><input id="search_by_articul" /></div>
             <ul class="analog_list_window"><form id="form_analogs">
               
-
+             
                   {% for material in lists.materials  %}
                       
                        <li data-id={{ material.id }}> 

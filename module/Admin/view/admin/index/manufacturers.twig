@@ -40,7 +40,13 @@
                                                             <i class="fa fa-pencil fa-fw"></i>
                                                           </div>
                                                           
-                                                        
+                                                        <span class="del_category_ajax"><i class="fa fa-trash-o"></i>
+                                                                  <form action="/admin/delcategory">
+                                                                       <input type="hidden" name="name_cat" value="manufacturer" />
+                                                                       <input type="hidden" name="id_cat" value="{{ manuf.id }}" />
+                                                                  </form>
+
+                                                        </span>                                                           
                                                       </li>
 
                                       {%  endfor %}                
@@ -50,10 +56,43 @@
  
 
 
+ <div class="modal fade can_deleting_category" id="candel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn_cancel_deleting" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Подтверждение удаления производителя</h4>
+      </div>
+      <div class="modal-body">
+        <p>Производитель будет удален вместе со всеми коллекциями.</p>
+         <p>Вы уверены?</p>
+        <form method=post action="/admin/ajax_deleting_group" id="form_deleting_group">  
+            <input type="hidden" id="deleting_list" name="deleting_list" />
+        </form>
+      </div>
+        <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn btn_cancel_deleting">Отменить</a>
+                <a href="#" class="btn btn-primary btn_confirm_deleting">Удалить</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
-
-
-       <script type="text/javascript">
-
-     </script>
+ <div class="modal fade cannot_deleting_category" id="cannotdel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn_ok" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Производитель не будет удален.</h4>
+      </div>
+      <div class="modal-body">
+        <p>Производитель не может быть удален, так как к нему относится ряд материалов.</p>
+       
+      </div>
+        <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn btn_ok">Понятно</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 {% endblock content %}

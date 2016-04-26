@@ -240,7 +240,7 @@ public function deletingcategoryAction(){
              break;
            case 'color':
                   $colorSrv      = $this -> getServiceLocator()->get('color'); 
-                  $delColor -> delColor($data['id_cat']);         
+                  $colorSrv -> delColor($data['id_cat']);         
              break;
             case 'texture':
                   $textureSrv    = $this -> getServiceLocator()->get('texture');     
@@ -388,8 +388,11 @@ public function deletingcategoryAction(){
 public function ajaxtextureupdateAction(){
 
       $data = $_POST;
+      $d['id'] = $data['id'];
+      $d['name_texture'] = $data['name_texture'];
+      var_dump($data);
       $textureSrv    = $this -> getServiceLocator()->get('texture');
-      $res = $textureSrv->updateTexture($data);
+      $res = $textureSrv->updateTexture($d);
       return new JsonModel(array());
 
 }
@@ -445,6 +448,22 @@ public function ajaxaddtextureAction(){
              return new JsonModel(array(
              'li' => $li
         )); 
+}
+
+public function ajaxaddcolorAction(){
+
+       $data = $_POST;
+       $colorSrv    = $this -> getServiceLocator()->get('color');
+
+       $data['color_color']='#dddeee';
+       $id = $colorSrv -> insertColor($data);
+       $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
+       $color_data = array("id" => $id,"name_color"=>$data['name_color']);
+       $li = $partial('newcolorelement', array('key' => $color_data)); 
+       return new JsonModel(array(
+             'li' => $li
+        )); 
+
 }
 
 

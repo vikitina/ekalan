@@ -90,15 +90,19 @@ class Blueprints extends TableGateway
   public function delBlueprint($id)
     {
          $query = sprintf("DELETE FROM t_blueprint WHERE id='%s'",$id);
-
-                            
          $adapter = $this->getAdapter();
-                                    
          $statement = $adapter->createStatement($query);
          $results = $statement->execute();
-         
-        return $results;
+         return $results;
     }     
+  public function delByFolio($id_folio){
+         $query = sprintf("DELETE FROM t_blueprint WHERE id_folio='%s'",$id_folio);
+         $adapter = $this->getAdapter();
+         $statement = $adapter->createStatement($query);
+         $results = $statement->execute();
+         return $results;
+
+  }
     
    function FetchAll($adapter, $sql, $params=null)
     {

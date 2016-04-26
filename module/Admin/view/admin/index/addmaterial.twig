@@ -93,6 +93,20 @@
                                                                 <div id="material_list_open_window" class="local_link">Выбрать из списка</div>
                                                                 <input type="hidden" name="analogs" id="form_analogs_list" />
                                                      </li>
+
+                                                    <li class="separator"> </li>
+                                                   <li class="textarea"><span>Описание</span>
+
+                                                          <div>
+                                                                  <div>
+                                                                       <textarea name="describe_material"></textarea>
+                                                                  </div>
+                                                                  
+
+
+                                                            
+                                                          </div> 
+                                                     </li>                                                    
                                                   </ul>
                                                   <input type="hidden" name="id_sample" id="id_sample" value="{{ material.id_sample }}" />
                                                   <input type="hidden" name="new_sample" id="new_sample" value="0" />
@@ -119,10 +133,9 @@
         <h4 class="modal-title">Укажите материалы, подобные данному:</h4>
       </div>
       <div class="modal-body">
+      <div class="search_by_articul"><label>Поиск по артикулу</label><input id="search_by_articul" /></div>
             <ul class="analog_list_window"><form id="form_analogs">
-              
-
-                  {% for material in lists.materials  %}
+                   {% for material in lists.materials  %}
                       
                       <li data-id={{ material.id }}> 
                          <div style="background:url('{{ material.url }}') no-repeat top left;">

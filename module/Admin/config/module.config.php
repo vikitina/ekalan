@@ -148,7 +148,20 @@ return array(
                                                       ),
                                             ),
                                     ),  
-                             
+                            'admin_addkarusel' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(
+                                              
+                                                    'route' => '/addkarusel',
+                                                    
+
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Karusel',
+                                                          'action'     => 'addkarusel',
+                                                      ),
+                                            ),
+                                    ),  
+                              
                              'admin_manufacturers' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',
                                           'options' => array(
@@ -506,7 +519,17 @@ return array(
                                                           'action'     => 'ajaxaddtexture',
                                                       ),
                                             ),
-                            ),         
+                            ),     
+                           'admin_ajax_addcolor'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/ajaxaddcolor',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Ajax',
+                                                          'action'     => 'ajaxaddcolor',
+                                                      ),
+                                            ),
+                            ),                                
                           'admin_ajax_groupupdate'  => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',
                                           'options' => array(                                              
@@ -555,9 +578,10 @@ return array(
 
             'newgroupelement'               => __DIR__ . '/../view/admin/index/newgroupelement.twig',
             'newtextureelement'             => __DIR__ . '/../view/admin/index/newtextureelement.twig',
+            'newcolorelement'               => __DIR__ . '/../view/admin/index/newcolorelement.twig',
 
 
-           'karusel/newwindow'    => __DIR__ . '/../view/admin/index/karuselnewwindow.twig',            
+           'karusel/newwindow'              => __DIR__ . '/../view/admin/index/karuselnewwindow.twig',            
 
             
 

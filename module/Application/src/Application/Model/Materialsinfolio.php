@@ -87,7 +87,15 @@ class Materialsinfolio extends TableGateway
  return $id;
  
     }   
-      
+  public function delByFolio($folio_id){
+
+         $query = sprintf("DELETE FROM t_materials_in_folio WHERE id_folio='%s'",$folio_id);
+         $adapter = $this->getAdapter();                                  
+         $statement = $adapter->createStatement($query);
+         $results = $statement->execute();
+
+  } 
+
   public function delRec($id)
     {
          $query = sprintf("DELETE FROM t_materials_in_folio WHERE id='%s'",$id);

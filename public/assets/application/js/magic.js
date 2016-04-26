@@ -57,6 +57,7 @@ $('.sales_update').submit(function(event) {
    event.preventDefault();
 
 });
+});        
      $(window).scroll(function(){
                  if ($(window).scrollTop() >= $(document).height() - $(window).height() - 800){
                            var start_count = (parseInt($("#start").val()) - 1)*parseInt($("#limit").val());

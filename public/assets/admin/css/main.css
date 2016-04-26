@@ -248,8 +248,14 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .material_open .text_data li .selectopen span{border-bottom: transparent;}
 
 #material_list_open_window{}
+
+.search_by_articul{width:100%;margin-bottom:20px;padding-left:40px;}
+.search_by_articul label{margin-right:20px;}
+.search_by_articul  input{border:1px solid #ddd;width:200px;height:35px;}
+
 .analog_list_window {height:400px;overflow:auto;}
 .analog_list_window li{list-style:none;width:130px;height:125px;position:relative;float:left;margin-bottom:20px; margin-right:20px;border:1px solid #ddd;padding:10px;}
+.analog_list_window li.hidden{display:none;}
 .analog_list_window li div{ width:100px;height:100px; }
 .analog_list_window li div small,
 .analog_list_window li div span{background:green;color:#fff;}
@@ -425,7 +431,12 @@ input.focus_alert{visibility: hidden;}
 #add_new_window_karusel{cursor:pointer;color:#337ab7;float:right;display:block;margin-bottom:20px;}
 #template_new_window{display:none;}
 
+.myaccordion-title::before {content: "";display: block;font-family: "FontAwesome",sans-serif;font-weight: 400;position: absolute;right: 18px;}
+.myaccordion-title {float: left;margin-bottom: 20px;padding-bottom: 20px;width: 100%;cursor: pointer;display: block;margin: 0;padding: 20px;position: relative;}
+#karusel .myaccordion-title span.title {font-size: 1.3em;font-weight: bold;margin-left: 0;padding-left: 0;display: block;font-size: 1.2em;line-height: 1.2em;margin-left: 20px;padding-left: 20px;padding-top: 5px;width: 80%;}
 
+.new_section .editing_button_block{display:none;}
+.new_section .del_window_ajax{display:none !important;}
 
 
 

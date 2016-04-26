@@ -1,11 +1,11 @@
 $(document).ready(function(){
 	
-    $('.add_photo_btn').click(function(){
+    $('body').on('click', '.add_photo_btn',function(){
 	//add_photo_btn" data-form-id="photos_for_folio"
 	var id_form = $(this).attr('data-form-id');
 
-	console.log('id_form '+id_form);
-    $('#'+id_form).find('.input_file_hidden').click();
+	console.log('qqqid_form '+id_form);
+    //$('#'+id_form).find('.input_file_hidden').click();
     });
 /*---------------------------------------------------------*/
      $('#materials_folio_open_window').click(function(){
@@ -15,7 +15,7 @@ $(document).ready(function(){
 
 /*----------------------------------------------------------*/   
 
-$('.photos_list').on('mouseover','li',function(){
+$('body').on('mouseover','.photos_list li',function(){
 
 	$(this).addClass('hover');
 });
@@ -24,7 +24,7 @@ $('.photos_list').on('mouseout','li',function(){
 	$(this).removeClass('hover');
 });
 /*----------------------------------------------------------*/   
-$('.photos_list').on('click','li>span',function(){
+$('body').on('click','.photos_list > li > span',function(){
     var list = $(this).parent().parent().find('li');
     if(list.length < 2){
          $(this).parent().parent().addClass('empty');
@@ -38,7 +38,7 @@ $('.photos_list').on('click','li>span',function(){
 });
 /*-------check form required------------------------------------------------------*/
 
-$('.checker').click(function(){
+$('body').on('click','.checker', function(){
 
        var form_id = '#' + $(this).attr('data-form');
 
@@ -72,7 +72,11 @@ $('.checker').click(function(){
            if ($(this).hasClass('byAjax')){
                      var action = $(form_id).attr('action');
                      var data   = $(form_id).serialize();
-                     //console.log(data);
+//console.log(data);
+//console.log(action);
+          var data_param = ($(this).hasClass('withAddingAction')) ? $(this).attr('data-params') : 0;
+          var elem_checker = $(this);
+
            $.ajax({
                        type        : 'POST', 
                        url         :  action, 
@@ -84,14 +88,16 @@ $('.checker').click(function(){
            .done(function(res) {
                     
                     console.log(res.data);
- 
-                  
-                 }); 
-                   if ($(this).hasClass('withAddingAction')){
+                    $('#window_id').val((res.window_id)?res.window_id:0);
 
-                    	addingAction($(this).attr('data-params'), new Object({'elem' : $(this)}));
+                  if (data_param){
+
+                    	addingAction(data_param, new Object({'elem' : elem_checker,'window_id' : (res.window_id)?res.window_id:0}));
                     	
-  }
+                  }
+                 }); 
+
+
            }else{
            $(form_id).submit();
        }
@@ -109,11 +115,27 @@ function addingAction(params, data){
 		               //заголовок окна
 		               
 		       var text = $(data.elem).parents('.accordion-content').find('.title_windowkarusel').val();
-               $(data.elem).parents('.accordion-section').find('.accordion-title span.title').text(text);
+               $(data.elem).parents('.accordion-section').find('.myaccordion-title span.title').text(text);
 		               //сообщение об успехе
 		       $(data.elem).parents('.accordion-content').find('.alert').css('display','block');
                $(data.elem).parents('.accordion-content').find('.alert').find('input.focus_alert').focus();
 
+		break;
+		case 'addkarusel':
+
+		
+    	       $(data.elem).parents('form').attr('action','/admin/updatekarusel');
+    	       $(data.elem).parents('form').find('h3').text('Редактирование экрана карусели');
+		       $(data.elem).parents('.accordion-section').find('.del_window_ajax').attr('data-id',$('#window_id').val());
+		       $(data.elem).parents('.accordion-section').find('input[name="id_window"]').val($('#window_id').val())
+		       $(data.elem).parents('.accordion-section').removeClass('new_section');
+		       var text = $(data.elem).parents('.accordion-content').find('.title_windowkarusel').val();
+               $(data.elem).parents('.accordion-section').find('.myaccordion-title span.title').text(text);
+		               //сообщение об успехе
+		       $(data.elem).parents('.accordion-content').find('.alert').css('display','block');
+               $(data.elem).parents('.accordion-content').find('.alert').find('input.focus_alert').focus();
+               $(data.elem).parents('.adding_button_block').remove();
+               $('#add_new_window_karusel').removeClass('adding_window');
 		break;
 		default:
 		break;
@@ -238,13 +260,18 @@ $('#btn_pick_karusel_photo').click(function(){
               var url_photo      = $("#tmp_new_sample").val();
               var id_sample      = $("#tmp_id_sample").val();
               var prepared_photo = $('#sample_modal').find('.img_container > div').css('background-image');
-console.log(prepared_photo);
+//console.log(prepared_photo);
               var html =  '<li><span><i class="fa fa-times"></i></span>';
                   html += '<div style=\'background-image: ' + prepared_photo + ';\'>';
                   html += '<input type="hidden" name="data['+ i +'][url_photo]" value="'+ url_photo +'">';
                   html += '<input type="hidden" name="data['+ i +'][id_photo]" value="'+ id_sample +'"></div></li>';
 
               $('.adding_photo').find('.photos_list').removeClass('empty').html(html);
+              $('#sample_modal .img_container div').css('background-image','');
+              $('#tmp_new_sample').val(0);
+              $('#tmp_id_sample').val(0);
+              $('#list_sample li span input').attr('checked',false);
+
               $('#sample_modal').modal('hide');
               
               $('.adding_photo').find('.only_one').addClass('add_photo_btn_hidden');
@@ -327,7 +354,12 @@ $('#delete_confirm_window').on('hidden.bs.modal',function(){
 
 $('#add_new_window_karusel').click(function(){
      if(!$(this).hasClass('adding_window')){
-	          $('#karusel').find('.accordion-section').first().before($('#template_new_window').html());
+	          $('#karusel').find('.accordion-section').first().before($('#template_new_window .accordion-section').clone(true));
+
+	          var new_id = 'addkarusel_'+Date.now();
+	          $('#karusel .new_section').find('form').attr('id',new_id);
+	          $('#karusel .new_section').find('.adding_button_block input.checker').attr('data-form',new_id);
+	          $('#karusel .new_section').find('.editing_button_block input.checker').attr('data-form',new_id);
 	          $(this).addClass('adding_window');
 	     }     
 });
@@ -339,4 +371,17 @@ $('#karusel').on('click','.cancel_adding_window',function(){
     return false;
 
 });
+
+$('.accordion').on('click', '.accordion-section .myaccordion-title', function(){
+
+    if(!$(this).hasClass('active')){
+	             $(this).addClass('active');
+	             $(this).parents('.accordion-section').find('.accordion-content').css('display','block');
+	 }else{
+
+	 	         $(this).removeClass('active');
+	 	         $(this).parents('.accordion-section').find('.accordion-content').css('display','none');
+	 }            
 });
+});
+

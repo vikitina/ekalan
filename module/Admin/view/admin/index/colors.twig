@@ -15,9 +15,9 @@
                                      <li class="add">
                                           <span>Добавить Цвет</span>
                                           <div class="form_to_add">
-                                                  <form action="ajax_add_texture" method="post">
+                                                  <form action="/admin/ajaxaddcolor" method="post">
                                                        <div><input type="text" name="name_color" /></div>
-                                                       <div><input type="submit" value="Добавить" /> </div>
+                                                      <div><input type="button" id="adding" value="Добавить" /> </div>
                                                   </form>
 
                                           </div>
@@ -40,12 +40,48 @@
                                                             </div><!-- editblock  -->
                                                             <i class="fa fa-pencil fa-fw"></i>
                                                           </div>
+
                                                           
-                                                        
+                                                        <span class="del_category_ajax"><i class="fa fa-trash-o"></i>
+                                                                  <form action="/admin/delcategory">
+                                                                       <input type="hidden" name="name_cat" value="color" />
+                                                                       <input type="hidden" name="id_cat" value="{{ color.id }}" />
+                                                                  </form>
+
+                                                        </span>                                                         
                                                       </li>
 
                                       {%  endfor %}                
                                     </ul>    
+        <div class="btn-group btn-group-sm">
+          <button type="button" class="btn btn-default" id="demo2"><span class="color-fill-icon dropdown-color-fill-icon" style="background-color:#000;"></span>&nbsp;<b class="caret"></b></button>
+                  <ul class="dropdown-menu">
+          <li class="disabled"><div class="colorpickerplus-container"></div>
+          </li>
+        <li><a href="#">Other</a></li>
+        <li><a href="#">More...</a></li>
+        </ul>
+        </div>
+         
+
+
+
+
+
+         
+          <div class="btn-group btn-group-sm colorpickerplus-dropdown" id="demo4">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="color-fill-icon dropdown-color-fill-icon"></span>&nbsp;<b class="caret"></b></button>
+        <ul class="dropdown-menu">
+          <li class="disabled"><div class="colorpickerplus-container"></div>
+          </li>
+        <li><a href="#">Other</a></li>
+        <li><a href="#">More...</a></li>
+        </ul>
+      </div>
+  
+  </div>
+<div class="colorpickerplus"></div>           
+
               </section>
 
 
@@ -54,9 +90,52 @@
 
 
 
+ <div class="modal fade can_deleting_category" id="candel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn_cancel_deleting" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Подтверждение удаления цвета</h4>
+      </div>
+      <div class="modal-body">
+        <p>Цвет будет удален.</p>
+         <p>Вы уверены?</p>
+        <form method=post action="/admin/ajax_deleting_group" id="form_deleting_group">  
+            <input type="hidden" id="deleting_list" name="deleting_list" />
+        </form>
+      </div>
+        <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn btn_cancel_deleting">Отменить</a>
+                <a href="#" class="btn btn-primary btn_confirm_deleting">Удалить</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+ <div class="modal fade cannot_deleting_category" id="cannotdel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn_ok" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Цвет не будет удален.</h4>
+      </div>
+      <div class="modal-body">
+        <p>Цвет не может быть удален, так как к нему относится ряд материалов.</p>
+       
+      </div>
+        <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn btn_ok">Понятно</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 
-       <script type="text/javascript">
 
-     </script>
+
+
+
+
+<style>.color-fill-icon{display:inline-block;width:16px;height:16px;border:1px solid #000;background-color:#fff;margin: 2px;}
+.dropdown-color-fill-icon{position:relative;float:left;margin-left:0;margin-right: 0}</style>
 {% endblock content %}

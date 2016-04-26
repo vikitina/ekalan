@@ -2,15 +2,15 @@
          
 <?php $item = $this->key; ?>
                                                      <li class="ajax_edit_obj">
-                                                       <form action="/admin/ajaxtextureupdate" method="post">
+                                                       <form action="/admin/ajaxcolorupdate" method="post">
                                                             <input type="hidden" name="id" value="<?php echo $item['id']; ?>"  />
-                                                            <input type="hidden" name="name_texture" id="name_texture_<?php echo $item['id']; ?>" value="<?php echo $item['name_texture']; ?>"  />
+                                                            <input type="hidden" name="name_color" id="name_color_<?php echo $item['id']; ?>" value="<?php echo $item['name_color']; ?>"  />
                                                           </form>    
                                                          <div class="editable">
-                                                             <span><?php echo $item['name_texture']; ?></span>
+                                                             <span><?php echo $item['name_color']; ?></span>
                                                              <div class="editblock">
                                                                   <div class="editarea">
-                                                                       <input type="text" data-name="name_texture_<?php echo $item['id']; ?>" value="<?php echo $item['name_texture']; ?>" />
+                                                                       <input type="text" data-name="name_color_<?php echo $item['id']; ?>" value="<?php echo $item['name_color']; ?>" />
                                                                   </div>
                                                                   
 
@@ -19,10 +19,17 @@
                                                           </div>
                                                           <span class="del_category_ajax"><i class="fa fa-trash-o"></i>
                                                                   <form action="/admin/delcategory">
-                                                                       <input type="hidden" name="name_cat" value="texture" />
+                                                                       <input type="hidden" name="name_cat" value="color" />
                                                                        <input type="hidden" name="id_cat" value="<?php echo $item['id']; ?>" />
                                                                   </form>
 
                                                           </span>                                                            
                                                         
                                                       </li>
+
+
+
+
+
+
+                                                      

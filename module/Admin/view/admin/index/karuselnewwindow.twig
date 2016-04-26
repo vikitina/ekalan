@@ -46,8 +46,8 @@
                                                     <?php } ?>
                                                  </select>
                                              </div> 
-                                             <div><span>Заголовок</span><input type="text" name="data[<?php echo $i;?>][title_karusel]" /></div>
-                                             <div><span>Подзаголовок</span><input type="text" name="data[<?php echo $i;?>][subtitle_karusel]" /></div>
+                                             <div><span>Заголовок</span><input type="text" name="data[<?php echo $i;?>][title_karusel]" value="<?php echo $frame["title_karusel"]; ?>" /></div>
+                                             <div><span>Подзаголовок</span><input type="text" name="data[<?php echo $i;?>][subtitle_karusel]" value="<?php echo $frame["subtitle_karusel"]; ?>" /></div>
                              </div><!-- photo_type  -->
 
                              <div class="tab text_type<?php echo ($frame["type_karusel"] == "2")? ' active': ''; ?>">

@@ -177,9 +177,10 @@
         <h4 class="modal-title">Укажите материалы, которые использовались в проекте:</h4>
       </div>
       <div class="modal-body">
+       <div class="search_by_articul"><label>Поиск по артикулу</label><input id="search_by_articul" /></div>
             <ul class="analog_list_window"><form id="form_analogs">
               
-
+                 
                   {% for material in lists.materials  %}
                       
                        <li data-id={{ material.id }}> 

@@ -67,6 +67,10 @@ class Color extends TableGateway
 
 
       parent::insert($data);
+      $adapter = $this->getAdapter();
+      $id = $adapter->getDriver()->getLastGeneratedValue();
+
+      return $id;  
  
     }   
       

@@ -58,7 +58,7 @@ class Folio extends TableGateway
 
 public function getSpecFolioById($id){
 
-        $query = "SELECT t_folio.*, t_testimonials.*, t_pictures.url_picture, t_pictures.id as id_picture "
+        $query = "SELECT t_folio.*,t_folio.id as folio_id, t_testimonials.*, t_pictures.url_picture, t_pictures.id as id_picture "
                 ."FROM t_folio "
                 ."LEFT JOIN t_testimonials ON t_folio.id_testimonials=t_testimonials.id "
                 ."LEFT JOIN t_pictures ON t_testimonials.id_picture=t_pictures.id "

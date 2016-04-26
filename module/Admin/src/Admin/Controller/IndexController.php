@@ -64,7 +64,8 @@ class IndexController extends AbstractActionController
 
         return new ViewModel(array(
                 'karusel'  => $karusel,
-                'photos'   => $photos
+                'photos'   => $photos,
+                'folios'   => $folios
 
         ));
 
@@ -310,19 +311,13 @@ public function delmaterialAction()
 
           if($_POST)  {
               $data = $_POST;
-              //$sample = $this->uploadfile($_FILES);
-              //add sample
-              //$sample_data['url'] = $sample;
-              //$id_sample = $sampleSrv->insertSample($sample_data);
-              //var_dump($id_sample);
-//var_dump($data);
-            if($data['new_sample'] != '0'){
+              if($data['new_sample'] != '0'){
 
-                $id_sample = $sampleSrv->insertSample(array('url' => $data['new_sample']));
-            }else{
-                $id_sample = $data['id_sample'];
+                       $id_sample = $sampleSrv->insertSample(array('url' => $data['new_sample']));
+              }else{
+                       $id_sample = $data['id_sample'];
 
-            }
+              }
               $new_material = array(
                      'articul'             => $data['articul'],
                      'name_material'       => $data['name_material'],
@@ -332,6 +327,7 @@ public function delmaterialAction()
                      'id_color'            => $data['id_color'],
                      'id_texture'          => $data['id_texture'],
                      'id_collection'       => $data['id_collection'],
+                     'describe_material'   => $data['describe_material']
               );
               $id_material = $materialSrv->insertMaterial($new_material);
 
@@ -746,7 +742,7 @@ public function addtestimonialAction(){
 public function updatefolioAction(){
         $id = $this->getEvent()->getRouteMatch()->getParam('id');
 
-
+        $picturesSrv  = $this -> getServiceLocator()->get('pictures');
         $folioSrv = $this -> getServiceLocator()->get('folio');
         $project = $folioSrv->getSpecFolioById($id);
 
@@ -790,14 +786,20 @@ public function updatefolioAction(){
          $i = 0;
          $blueprints = $blueprintsSrv->getByFolio($id); 
               foreach($blueprints as $blueprint){
-                   $blueprints[$i]['url'] = ((isset($blueprint['url_blueprint']) && $blueprint['url_blueprint'] != '' && $blueprint['url_blueprint'] !=null)?"/assets/application/samples/".trim($blueprint['url_blueprint']):"/assets/application/img/no_photo.png");
+                   $blueprints[$i]['url'] = ((isset($blueprint['url_blueprint']) && $blueprint['url_blueprint'] != '' && $blueprint['url_blueprint'] !=null)?"/assets/application/samples/".trim($blueprint['url_blueprint']):"");
                    $i += 1;
 
               }              
 
 
-
-           
+                 $set_material_a               = $materialSrv->getSpecOrder(array('exclude' => $material_id));
+                 $list_materials_for_analogs = $set_material_a['result'];
+                 $i = 0; 
+                 foreach($list_materials_for_analogs as $item){
+                    $list_materials_for_analogs[$i]['url'] = ((isset($item['url']) && $item['url'] != '' && $item['url'] !=null)?"/assets/application/samples/".trim($item['url']):"/assets/application/img/no_photo.png");
+                    $i += 1;
+                }
+               $lists['materials'] = $list_materials_for_analogs;
 
       if ($_POST){
                   $data = $_POST;
@@ -843,7 +845,7 @@ public function updatefolioAction(){
                   $testimonialsSrv -> updateTestimonial($testimonials_data);
 
                   $folio_data = array(
-                        "id"                          => $data["id"],
+                        "id"                          => (int)$data["id"],
                         "name_folio"                  => (isset($data["name_folio"]) && $data["name_folio"])? $data["name_folio"] : 0,
                         "number_folio"                => (isset($data["number_folio"]) && $data["number_folio"])? $data["number_folio"] : 0, 
                         "id_group"                    => (isset($data["id_group"]) && $data["id_group"])? $data["id_group"] : 0,
@@ -852,38 +854,37 @@ public function updatefolioAction(){
                         "conditions_folio"            => (isset($data["conditions_folio"]) && $data["conditions_folio"])? $data["conditions_folio"] : 0,
                         "id_testimonials"             => $testimonials_data['id'],
                     );
-
                   $folioSrv -> updateFolio($folio_data);
 
 
 
                   if(isset($data["material_id"]) && $data["material_id"]){
-
+                           $materialsinfolioSrv ->  delByFolio((int)$data["id"]);
                            foreach ($data["material_id"] as $value) {
                                       $materialsinfolioSrv ->  insertRec(array(
                                              "id_material"  => $value,
-                                             "id_folio"     => $id_folio,
+                                             "id_folio"     => (int)$data["id"],
                                       ));
                            }
                   }
 
                   if(isset($data["url_photo"]) && $data["url_photo"]){
-
+                           $photosSrv ->  delByFolio((int)$data["id"]);
                            foreach ($data["url_photo"] as $value) {
                                           $photosSrv ->  insertPhoto(array(
                                              "url_photo"    => $value,
-                                             "id_folio"     => $id_folio,
+                                             "id_folio"     => (int)$data["id"],
                                              "main_photo"   => ($data["main_photo"] == $value)? 1 : 0 ,
                                       ));
                            }
                   }    
 
                   if(isset($data["url_blueprint"]) && $data["url_blueprint"]){
-
+                           $blueprintsSrv ->  delByFolio((int)$data["id"]); 
                            foreach ($data["url_blueprint"] as $value) {
                                           $blueprintsSrv ->  insertBlueprint(array(
                                              "url_blueprint"    => $value,
-                                             "id_folio"         => $id_folio,
+                                             "id_folio"         => (int)$data["id"],
                                       ));
                            }
                   }                                
