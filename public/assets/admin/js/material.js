@@ -504,7 +504,7 @@ $('body').on('click','.edit_sample', function(){
 // ------------------------------------------------
 
 $('#sample_modal #list_sample li span input').click(function(){
-               $('.new_upload_img_container img').cropper('destroy');
+              
               $("#sample_modal .loaded_img .img_container div").css('background-image',$(this).parents('li').find('div').css('background-image'));
               $('#tmp_new_sample').val(0);
               $('#tmp_id_sample').val($(this).val());
