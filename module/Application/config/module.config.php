@@ -162,8 +162,31 @@ return array(
                         'action'     => 'tester',
                     ),
                 ),
-            ),   
+            ), 
 
+
+           'articles' => array(
+                'type' => 'Zend\Mvc\Router\Http\Segment',
+                'options' => array(
+                    'route'    => '/infos',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Article',
+                        'action'     => 'allarticles',
+                    ),
+                ),
+            ),  
+
+           'openarticle' => array(
+                'type' => 'Zend\Mvc\Router\Http\Segment',
+                'options' => array(
+                    'route'    => '/info[/:id]',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Article',
+                        'action'     => 'openarticle',
+                    ),
+                ),
+            ),  
+                  
 
 
         ),
@@ -303,6 +326,11 @@ return array(
                     $sm->get('Zend\Db\Adapter\Adapter')
                 );
             },
+           'article' => function ($sm) {
+                return new \Application\Model\Article(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },
 
                      
     ),
@@ -323,6 +351,8 @@ return array(
             'Application\Controller\Ajax' => 'Application\Controller\AjaxController',
             'Application\Controller\Tester' => 'Application\Controller\TesterController',
             'Application\Controller\Material' => 'Application\Controller\MaterialController',
+            'Application\Controller\Article' => 'Application\Controller\ArticleController',
+
         ),
     ),
     'view_manager' => array(
@@ -335,6 +365,8 @@ return array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.twig',
             'layout/portfolio'        => __DIR__ . '/../view/layout/portfolio.twig',
             'layout/material'        => __DIR__ . '/../view/layout/material.twig',
+            'layout/article'        => __DIR__ . '/../view/layout/article.twig',
+
             'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.twig',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',

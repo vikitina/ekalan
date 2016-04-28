@@ -82,6 +82,9 @@ return array(
                                    array('route' => 'materialset_ajax', 'roles' => array('guest', 'user')), 
                                    //delmaterial
 
+                                   array('route' => 'articles', 'roles' => array('guest', 'user')),
+                                   array('route' => 'openarticle', 'roles' => array('guest', 'user')),
+
                                    array('route' => 'zfcadmin/admin_main_page', 'roles' => array('admin')),  
                            
                          
@@ -94,7 +97,15 @@ return array(
                                    array('route' => 'zfcadmin/admin_updatefolio', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_testimonials', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_testimonial', 'roles' => array('admin')),  
-                                   array('route' => 'zfcadmin/admin_addtestimonial', 'roles' => array('admin')),                                 
+                                   array('route' => 'zfcadmin/admin_addtestimonial', 'roles' => array('admin')),     
+                                   array('route' => 'zfcadmin/admin_articles', 'roles' => array('admin')), 
+                                   array('route' => 'zfcadmin/admin_ajaxdelarticle', 'roles' => array('admin')), 
+                                   array('route' => 'zfcadmin/admin_openarticle', 'roles' => array('admin')), 
+                                   array('route' => 'zfcadmin/admin_updatearticle', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_addarticle', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_delarticle', 'roles' => array('admin')),
+                                                                           
+
                                    array('route' => 'zfcadmin/admin_material_open', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_addmaterial', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_updatematerial', 'roles' => array('admin')),

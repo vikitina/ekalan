@@ -438,6 +438,26 @@ input.focus_alert{visibility: hidden;}
 .new_section .editing_button_block{display:none;}
 .new_section .del_window_ajax{display:none !important;}
 
+.width_for_edit{float: left;width: 218px;}
+
+.del_link {
+    border: 1px dashed #dadada;
+    cursor: pointer;
+    display: block;
+    float: right;
+    height: 31px;
+    padding: 4px;
+    width: 29px;
+}
+.panel-heading .del_link{margin-top: -34px;}
+
+.del_link i {
+    float: left;
+    font-size: 1.7em;
+}
+
+
+
 
 
                                                                

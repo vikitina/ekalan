@@ -75,3 +75,6 @@ footer {
 
 #system_name{width:90%;}
 #system_new_value{width:90%; height:100px;}
+
+.ajax_art_public{float:left;width:100px;margin-right: 10px;}
+.ajax_art_on_home{float:left;width:100px;}

@@ -17,7 +17,10 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-       		
+       	
+        $articleSrv    =  $this -> getServiceLocator()->get('article');
+        $articles      =  $articleSrv    -> getAllPublished();
+
         $manufacturerSrv = $this -> getServiceLocator()->get('manufacturer');
         $manufacturers = $manufacturerSrv->getAllManufacturers();
         $testimonialsSrv  = $this -> getServiceLocator()->get('testimonials'); 
@@ -59,7 +62,8 @@ class IndexController extends AbstractActionController
             'manufacturers'         => $manufacturers,
             'testimonials'          => $testimonials,
             'karusel_windows'       => $karusel,
-            'systems'               => $system
+            'systems'               => $system,
+            'articles'              => $articles 
 
         
         ));

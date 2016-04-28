@@ -1840,3 +1840,24 @@
 [25-Apr-2016 20:15:35 Europe/Helsinki] PHP Notice:  Undefined variable: result in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 267
 [25-Apr-2016 20:15:40 Europe/Helsinki] PHP Notice:  Undefined variable: result in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 259
 [25-Apr-2016 20:15:40 Europe/Helsinki] PHP Notice:  Undefined variable: result in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 267
+[27-Apr-2016 08:54:30 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[27-Apr-2016 09:10:23 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[27-Apr-2016 10:00:42 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[27-Apr-2016 10:04:40 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[27-Apr-2016 11:40:31 Europe/Helsinki] PHP Warning:  Missing argument 1 for Application\Model\Article::insertArticle(), called in /var/www/ekalan/module/Admin/src/Admin/Controller/ArticleController.php on line 54 and defined in /var/www/ekalan/module/Application/src/Application/Model/Article.php on line 66
+[27-Apr-2016 11:40:31 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Application/src/Application/Model/Article.php on line 70
+[27-Apr-2016 12:10:32 Europe/Helsinki] PHP Parse error:  syntax error, unexpected '$articleSrv' (T_VARIABLE) in /var/www/ekalan/module/Admin/src/Admin/Controller/ArticleController.php on line 20
+[27-Apr-2016 21:11:15 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 946
+[27-Apr-2016 21:11:15 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[27-Apr-2016 21:11:26 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 946
+[27-Apr-2016 21:11:26 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[27-Apr-2016 21:11:26 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 108
+[28-Apr-2016 10:57:03 Europe/Helsinki] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in /var/www/ekalan/module/Application/src/Application/Controller/ArticleController.php on line 37
+[28-Apr-2016 10:57:49 Europe/Helsinki] PHP Notice:  Undefined variable: id in /var/www/ekalan/module/Application/src/Application/Controller/ArticleController.php on line 36
+[28-Apr-2016 10:57:50 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Article.php on line 49
+[28-Apr-2016 10:58:52 Europe/Helsinki] PHP Notice:  Undefined variable: id in /var/www/ekalan/module/Application/src/Application/Controller/ArticleController.php on line 36
+[28-Apr-2016 10:58:52 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Article.php on line 49
+[28-Apr-2016 11:00:38 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Manufacturer.php on line 45
+[28-Apr-2016 11:00:38 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[28-Apr-2016 11:01:15 Europe/Helsinki] PHP Notice:  Undefined variable: id in /var/www/ekalan/module/Application/src/Application/Controller/ArticleController.php on line 36
+[28-Apr-2016 11:01:15 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Article.php on line 49

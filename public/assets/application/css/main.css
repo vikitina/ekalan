@@ -295,3 +295,27 @@ footer{background:none;}
 .content-caption h2{visibility: hidden;}
 #welcome .content-caption a.btn-white{visibility: hidden;}
 .sales{visibility: hidden;}
+
+.header .no_hide_logo{visibility: visible !important;}
+.no_hide_navigation{visibility: visible !important;}
+
+.articles .separator{border-color:#ddd;margin-top:20px;margin-bottom:20px;color:#333;width:100%;}
+.articles a p{color:#333;line-height:1.5em}
+.articles a:hover p{color:#e6ae49;}
+
+#info{}
+#info .articles_at_home{list-style: none;padding:0;margin:0;padding-bottom:80px;padding-top:40px;}
+#info .articles_at_home li{list-style: none;padding:0;margin:0;margin-top:30px;padding-left:10px;padding-right:10px;height:300px;overflow: hidden;}
+#info .articles_at_home li h6{width:100%;margin-bottom:30px;line-height:1.7em;}
+#info .articles_at_home li a{background: #fff none repeat scroll 0 0;border-radius:5px;
+    display: block;
+    float: left;
+    height: 100%;
+    padding-bottom: 20px;
+    width: 100%;}
+#info .articles_at_home li a > div{width:100%;background:#fff;border-radius:5px;height:100%;padding-top:60px;padding-bottom:40px;padding-left:20px;padding-right:20px;overflow: hidden;}
+#info .articles_at_home li a > div > p{float: left;line-height:1.7em;}
+#info .articles_at_home li a:hover{color:#e6ae49 !important;}
+#info .articles_at_home li a:hover > div > p{color:#e6ae49 !important;}
+#info .articles_at_home li a:hover h6{color:#e6ae49 !important;}
+

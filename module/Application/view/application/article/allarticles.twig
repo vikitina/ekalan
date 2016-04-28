@@ -1,0 +1,40 @@
+ 
+{% extends 'layout/article.twig' %}
+
+
+{% block content %}
+
+
+       <section class="ptb ptb-sm-80 articles">
+            <div class="container">
+                <!-- work Filter -->
+     
+                <!-- End work Filter -->
+                <div class="row">
+                   {% for art in articles %}
+                 
+                       
+                            <a href="/info/{{ art.id }}">
+                                
+                               
+                                   
+                                        <h5>{{ art.title_article }}</h5>
+                                        <p>{{ art.short_article }}</p>
+                                    
+                                
+                            </a>
+                       <div class="separator"></div>
+                    
+                   {% endfor %}
+                 
+                 
+                   <div class="clear">   </div>
+                </div>
+
+            </div>
+<div class="clear">   </div>
+        </section>
+
+        <!-- End CONTENT ---------------------------------------------------------------------------- -->
+    
+{% endblock content %}

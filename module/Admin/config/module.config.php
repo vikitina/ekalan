@@ -3,10 +3,11 @@ ini_set("memory_limit", "35M");
 return array(
     'controllers' => array(
         'invokables' => array(
-            'Admin\Controller\Index'   => 'Admin\Controller\IndexController',
-            'Admin\Controller\Ajax'    => 'Admin\Controller\AjaxController',
-            'Admin\Controller\Karusel' => 'Admin\Controller\KaruselController',
-            'Admin\Controller\Folio'   => 'Admin\Controller\FolioController'
+            'Admin\Controller\Index'     => 'Admin\Controller\IndexController',
+            'Admin\Controller\Ajax'      => 'Admin\Controller\AjaxController',
+            'Admin\Controller\Karusel'   => 'Admin\Controller\KaruselController',
+            'Admin\Controller\Folio'     => 'Admin\Controller\FolioController',
+            'Admin\Controller\Article'   => 'Admin\Controller\ArticleController'
             
         ),
     ),
@@ -562,6 +563,68 @@ return array(
                                                       ),
                                             ),
                             ),
+                         'admin_articles'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/articles',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Article',
+                                                          'action'     => 'index',
+                                                      ),
+                                            ),
+                            ),  
+                         'admin_openarticle'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Segment',
+                                          'options' => array(                                              
+                                                    'route' => '/article[/:id]',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Article',
+                                                          'action'     => 'openarticle',
+                                                      ),
+                                            ),
+                            ),       
+                         'admin_updatearticle'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/updatearticle',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Article',
+                                                          'action'     => 'updatearticle',
+                                                      ),
+                                            ),
+                            ),  
+                         'admin_addarticle'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/addarticle',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Article',
+                                                          'action'     => 'addarticle',
+                                                      ),
+                                            ),
+                            ),  
+                         
+                         'admin_delarticle'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Segment',
+                                          'options' => array(                                              
+                                                    'route' => '/delarticle[/:id]',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Article',
+                                                          'action'     => 'delarticle',
+                                                      ),
+                                            ),
+                            ),  
+                         'admin_ajaxdelarticle'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/ajaxdelarticle',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Article',
+                                                          'action'     => 'ajaxdelarticle',
+                                                      ),
+                                            ),
+                            ),                           
+
                         ),
                  ),
             ),

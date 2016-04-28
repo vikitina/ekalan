@@ -1,0 +1,65 @@
+{% extends 'layout/admin.twig' %}
+
+
+{% block content %}
+<a href="/admin/allarticles">Статьи</a> / Добавить новую статью
+<hr>
+<div class="row">
+     <div class="col-md-8">
+                     <section class="material_open">
+                            <div class="panel panel-default">
+                                      <div class="panel-heading">
+        
+                                      <h4>Добавить новую статью</h4>
+                                       </div>
+
+{#  #}                                       
+                                          <div class="panel-body">
+                                                <form action="/admin/addarticle" method="post" enctype="multipart/form-data" id="addarticle">
+                                                  <ul class="text_data">
+                                                     <li><span>Заголовок статьи *</span>
+                                                              <div class="text">
+                                                                   <span class="error_msg">Укажите Заголовок статьи</span>
+                                                                   <input type="text" name="title_article" class="required" />
+
+                                                             </div>
+                                                      </li>
+
+                                                  <li class="separator"></li>
+
+                                                      <li><span>Короткий текст *<br /> (для главной)</span>
+                                                          <div class="textarea">
+                                                              <span class="error_msg">Короткий текст нужен для Главной страницы</span>
+                                                              <textarea name="short_article" class="required"></textarea>
+                                                         </div>
+                                                     </li>
+
+                                                     <li class="separator"></li>
+
+                                                      <li><span>Полный текст статьи *</span>
+                                                          <div class="textarea">
+                                                              <span class="error_msg">Ну а как же - текст здесь главный!</span>
+                                                              <textarea name="full_article" class="required"></textarea>
+                                                         </div>
+                                                     </li>
+
+                                                     <li class="separator"></li>                                                     
+ 
+
+                                                  </ul>
+                                                  <div><input type="button" value="Добавить статью" data-form="addarticle" class="checker" /> <a href="/admin/allarticles">Отмена</a></div>
+
+
+                                                 </form> 
+                                                                 
+
+                                         </div>
+                                 </div>   	
+
+
+
+			        </section>
+     </div> 
+
+
+{% endblock content %}

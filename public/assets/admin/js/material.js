@@ -850,29 +850,8 @@ $('#search_by_articul').keyup(function(){
     
 
 });
- var demo2 = $('#demo2');
-  demo2.colorpickerplus();
-  demo2.on('changeColor', function(e){
-  if(e.color==null) {
-    //when select transparent color
-    $('.color-fill-icon', $(this)).addClass('colorpicker-color');
-  } else {
-    $('.color-fill-icon', $(this)).removeClass('colorpicker-color');
-    $('.color-fill-icon', $(this)).css('background-color', e.color);
-  }
-  });
 
-    var demo4 = $('.colorpickerplus-dropdown .colorpickerplus-container');
-        demo4.colorpickerembed();
-        demo4.on('changeColor', function(e){
-      var el = $('.color-fill-icon');
-      if(e.color==null) {
-        //when select transparent color
-        el.addClass('colorpicker-color');
-      } else {
-        el.removeClass('colorpicker-color');
-            el.css('background-color', e.color);
-      }
-        });
+
+
 
 });
