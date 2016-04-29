@@ -41,6 +41,18 @@ class Folio extends TableGateway
         return $results;
     } 
 
+        public function getAllFoliosByDate()
+    { 
+         $query = "SELECT * from t_folio order by id desc";
+
+    
+                            
+         $adapter = $this->getAdapter();
+             $results = $this->FetchAll($adapter, $query); 
+         //var_dump($results)                           ;
+        return $results;
+    } 
+
    public function getFolio($id)
     { 
 

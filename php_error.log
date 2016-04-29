@@ -1861,3 +1861,6 @@
 [28-Apr-2016 11:00:38 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
 [28-Apr-2016 11:01:15 Europe/Helsinki] PHP Notice:  Undefined variable: id in /var/www/ekalan/module/Application/src/Application/Controller/ArticleController.php on line 36
 [28-Apr-2016 11:01:15 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Article.php on line 49
+[29-Apr-2016 09:54:21 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 108
+[29-Apr-2016 09:54:21 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 108
+[29-Apr-2016 09:54:21 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 108

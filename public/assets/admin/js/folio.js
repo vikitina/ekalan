@@ -441,6 +441,19 @@ $(".ajax_art_public input").click(function(){
              var id = $(this).attr('data-id');
              var data = new Object({'on_home':'0','public':'0','id': id, 'type' : 'public_and_on_home'});
         }
+               $.ajax({
+                       type        : 'POST', 
+                       url         : 'http://' + location.hostname + '/admin/ajaxdelkarusel', 
+                       data        :  data, 
+                       dataType    : 'json', 
+                       encode          : true
+                                 
+                    })
+               .done(function(data) {
+                     $('#deleting_id').val('');
+                     $('#delete_confirm_window').modal('hide');
+//console.log(data.id);
+                 }); 
 
 
 });

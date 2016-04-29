@@ -314,7 +314,7 @@ footer{background:none;}
     padding-bottom: 20px;
     width: 100%;}
 #info .articles_at_home li a > div{width:100%;background:#fff;border-radius:5px;height:100%;padding-top:60px;padding-bottom:40px;padding-left:20px;padding-right:20px;overflow: hidden;}
-#info .articles_at_home li a > div > p{float: left;line-height:1.7em;}
+#info .articles_at_home li a > div > p{float: left;line-height:1.7em;color:#333;}
 #info .articles_at_home li a:hover{color:#e6ae49 !important;}
 #info .articles_at_home li a:hover > div > p{color:#e6ae49 !important;}
 #info .articles_at_home li a:hover h6{color:#e6ae49 !important;}

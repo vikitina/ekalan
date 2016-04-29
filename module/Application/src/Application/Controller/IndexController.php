@@ -87,7 +87,7 @@ class IndexController extends AbstractActionController
                   $lists['groups'] = $list_active_group;
 
                  $folioSrv          = $this -> getServiceLocator()->get('folio');
-                 $folios            = $folioSrv -> getAllFolios();
+                 $folios            = $folioSrv -> getAllFoliosByDate();
 
                  $photosSrv         = $this -> getServiceLocator()->get('photos');
 
