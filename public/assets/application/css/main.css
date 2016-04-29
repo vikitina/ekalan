@@ -319,3 +319,10 @@ footer{background:none;}
 #info .articles_at_home li a:hover > div > p{color:#e6ae49 !important;}
 #info .articles_at_home li a:hover h6{color:#e6ae49 !important;}
 
+.openarticle{}
+.openarticle h2{}
+.openarticle h2 a{}
+.openarticle h2 span{text-transform: capitalize;font-weight:normal;}
+.openarticle .text{line-height: 1.9em;color:#333;}
+.openarticle .text p{margin-bottom: 30px;}
+
