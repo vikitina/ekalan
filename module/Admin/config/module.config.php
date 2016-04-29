@@ -623,8 +623,19 @@ return array(
                                                           'action'     => 'ajaxdelarticle',
                                                       ),
                                             ),
-                            ),                           
+                            ),  
 
+                                                   
+                         'admin_ajaxpublicart'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/ajaxpublicart',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Article',
+                                                          'action'     => 'ajaxpublicart',
+                                                      ),
+                                            ),
+                            ), 
                         ),
                  ),
             ),

@@ -443,16 +443,14 @@ $(".ajax_art_public input").click(function(){
         }
                $.ajax({
                        type        : 'POST', 
-                       url         : 'http://' + location.hostname + '/admin/ajaxdelkarusel', 
+                       url         : 'http://' + location.hostname + '/admin/ajaxpublicart', 
                        data        :  data, 
                        dataType    : 'json', 
                        encode          : true
                                  
                     })
                .done(function(data) {
-                     $('#deleting_id').val('');
-                     $('#delete_confirm_window').modal('hide');
-//console.log(data.id);
+                     console.log(data.res);
                  }); 
 
 
@@ -470,7 +468,17 @@ $(".ajax_art_on_home input").click(function(){
                   var data = new Object({'on_home':'0','id': id, 'type' : 'on_home'});
 
          }
-
+               $.ajax({
+                       type        : 'POST', 
+                       url         : 'http://' + location.hostname + '/admin/ajaxpublicart', 
+                       data        :  data, 
+                       dataType    : 'json', 
+                       encode          : true
+                                 
+                    })
+               .done(function(data) {
+                     console.log(data.res);
+                 }); 
          });
 
 });

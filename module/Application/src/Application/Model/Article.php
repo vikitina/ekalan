@@ -70,7 +70,32 @@ class Article extends TableGateway
         
     }
 
+  public function updatePublicArticle($data){
 
+         $query = "UPDATE `t_article` SET public = '".$data['public']."' WHERE id = '".$data['id']."'";
+         $adapter = $this->getAdapter();
+                                    
+         $statement = $adapter->createStatement($query);
+         $results = $statement->execute();         
+  }
+
+    public function updatePublicAndOnHomeArticle($data){
+
+         $query = "UPDATE `t_article` SET public = '".$data['public']."', on_home='".$data['on_home']."' WHERE id = '".$data['id']."'";
+         $adapter = $this->getAdapter();
+                                    
+         $statement = $adapter->createStatement($query);
+         $results = $statement->execute();         
+  }
+
+      public function updateOnHomeArticle($data){
+
+         $query = "UPDATE `t_article` SET on_home='".$data['on_home']."' WHERE id = '".$data['id']."'";
+         $adapter = $this->getAdapter();
+                                    
+         $statement = $adapter->createStatement($query);
+         $results = $statement->execute();         
+  }
 
   public function insertArticle($data)
     {

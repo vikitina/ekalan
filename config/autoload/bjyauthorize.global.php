@@ -100,6 +100,7 @@ return array(
                                    array('route' => 'zfcadmin/admin_addtestimonial', 'roles' => array('admin')),     
                                    array('route' => 'zfcadmin/admin_articles', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_ajaxdelarticle', 'roles' => array('admin')), 
+                                   array('route' => 'zfcadmin/admin_ajaxpublicart', 'roles' => array('admin')),                                    
                                    array('route' => 'zfcadmin/admin_openarticle', 'roles' => array('admin')), 
                                    array('route' => 'zfcadmin/admin_updatearticle', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_addarticle', 'roles' => array('admin')),

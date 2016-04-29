@@ -78,25 +78,48 @@ public function ajaxdelarticleAction(){
 
 }
  
-public function ajaxpublicart(){
+public function ajaxpublicartAction(){
+/* Object { on_home="1",  public="1",  type="public_and_on_home"}
+
+Object { on_home="0",  type="on_home"}
+
+Object { on_home="0",  public="0",  type="public_and_on_home"}
+ 
+Object { on_home="1",  public="1",  type="public_and_on_home"}
+
+ Object { public="1",  type="public"}*/
 
         $data = $_POST;
-
+        $articleSrv    =  $this -> getServiceLocator()->get('article');
+        
         switch ($data['type']) {
-          case 'public':
-            # code...
-            break;
-          case 'public_and_on_home':
-            # code...
-            break;
-          case 'on_home':
-            # code...
-            break;
-                                
-          default:
-            # code...
-            break;
+             case 'public':
+                 $update_data = array(
+                         'id'        => $data['id'],
+                         'public'    => $data['public']
+                  );
+                 $articleSrv -> updatePublicArticle($update_data);  
+             break;
+             case 'public_and_on_home':
+                 $update_data = array(
+                         'id'        => $data['id'],
+                         'public'    => $data['public'],
+                         'on_home'   => $data['on_home']
+                  );             
+                 $articleSrv -> updatePublicAndOnHomeArticle($update_data);
+             break;
+             case 'on_home':
+                 $update_data = array(
+                         'id'        => $data['id'],
+                         'on_home'   => $data['on_home']
+                  );                
+                 $articleSrv -> updateOnHomeArticle($update_data);
+             break;
         }
+
+   return new JsonModel(array(
+        'res'    => $data
+   ));     
 }         
  
 }

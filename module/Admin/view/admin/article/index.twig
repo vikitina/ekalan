@@ -20,10 +20,10 @@
                          {% for art in articles %}
                                 <li class="list-group-item">
                                      <div class="ajax_art_public">
-                                                 <input type="checkbox" {{ art.public ? "checked" : "" }} />
+                                                 <input type="checkbox" data-id="{{ art.id }}" {{ art.public ? "checked" : "" }} />
                                     </div>
                                     <div class="ajax_art_on_home">
-                                                 <input type="checkbox"  {{ art.on_home ? "checked" : "" }} />
+                                                 <input type="checkbox" data-id="{{ art.id }}"  {{ art.on_home ? "checked" : "" }} />
                                     </div>                                  
                                      <a href="/admin/article/{{ art.id  }}">
                                            {{ art.title_article }}
