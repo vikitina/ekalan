@@ -4,8 +4,8 @@ $(document).ready(function(){
 	//add_photo_btn" data-form-id="photos_for_folio"
 	var id_form = $(this).attr('data-form-id');
 
-	console.log('qqqid_form '+id_form);
-    //$('#'+id_form).find('.input_file_hidden').click();
+	//console.log('qqqid_form '+id_form);
+    $('#'+id_form).find('.input_file_hidden').click();
     });
 /*---------------------------------------------------------*/
      $('#materials_folio_open_window').click(function(){
