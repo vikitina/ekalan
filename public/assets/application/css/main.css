@@ -324,5 +324,5 @@ footer{background:none;}
 .openarticle h2 a{}
 .openarticle h2 span{text-transform: capitalize;font-weight:normal;}
 .openarticle .text{line-height: 1.9em;color:#333;}
-.openarticle .text p{margin-bottom: 30px;}
+.openarticle .text p{margin-bottom: 30px;color:#333;}
 
