@@ -165,6 +165,7 @@
                                                     <li class="separator"></li>
                                                      <li class="url_picture"><span>Фотография/логотип</span>
                                                                 <ul  class="{{ folio.url_picture ? '' : 'empty '}} photos_list">
+                                                                     {% if folio.url_picture %}
                                                                                <li>
                                                                                        <span>
                                                                                              <i class="fa fa-times"></i>
@@ -175,6 +176,7 @@
                                                                                        
                                                                                       </div>
                                                                                 </li>
+                                                                      {% endif %}          
                                                                 </ul>
                                                                 <div class="add_photo_btn only_one{{ folio.url_picture ? ' add_photo_btn_hidden' : ''}}" data-form-id="url_picture"><i class="fa fa-plus"></i><span class="span_add_photo_btn"></span></div>
 

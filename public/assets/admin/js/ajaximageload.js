@@ -51,27 +51,6 @@
                    $('#tmp_id_sample').val(0);
                    $('#tmp_new_sample').val(result.name);
                    $('#sample_modal .loaded_img .img_container div').css('background-image','url("'+result.url+'")');
-                  // $('#sample_modal').find('.new_upload_img_container').html('<img src="'+result.url+'" />');
-                  /*$('.new_upload_img_container img').cropper({
-                                aspectRatio: 1,
-                                preview: $('.loaded_img .img_container'),
-                                       crop: function(e) {
-    // Output the result data for cropping image.
-
-                                                var json = [
-                                                     '{"x":' + e.x,
-                                                     '"y":' + e.y,
-                                                     '"height":' + e.height,
-                                                     '"width":' + e.width,
-                                                     '"rotate":' + e.rotate + '}'
-                                              ].join();
-
-                                               $('#crop_img_data').val(json);
-
-                                             
-                                        }
-                    });*/
-
                    $('#sample_modal .loaded_img').removeClass('loading');
                    //console.log(result);
                 });
@@ -108,7 +87,7 @@
                 event.preventDefault();
                 var list_class = $(this).prop('id');
 
-                console.log('list_class '+list_class);
+               // console.log('list_class!! '+list_class);
                 var id = "id"+(new Date).getTime();
                 var new_el_li = '<li id="'+id+'"><span><i class="fa fa-times"></i></span><div></div></li>';
 
@@ -125,7 +104,7 @@
 
                 request.done(function (result, request, headers) {
                     var radio = '';
-               
+             //  console.log('result '+result);
                     if($('#'+id).parent().parent().hasClass('with_main_photo_radio')){
                             var check = ($('#'+id).parent().find('li').length > 1) ? "" :"checked" ;
                             radio = '<label class="main_radio"><input type="radio" name="main_photo" value="'+result.name+'" '+check+'>Главная</label>';

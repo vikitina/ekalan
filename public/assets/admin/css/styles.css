@@ -78,3 +78,5 @@ footer {
 
 .ajax_art_public{float:left;width:100px;margin-right: 10px;}
 .ajax_art_on_home{float:left;width:100px;}
+
+.material_list li a.auto{width:auto;}

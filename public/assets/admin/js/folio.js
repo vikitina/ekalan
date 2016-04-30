@@ -10,18 +10,18 @@ $(document).ready(function(){
 /*---------------------------------------------------------*/
      $('#materials_folio_open_window').click(function(){
 
-     	$('#material_list_modal').modal('show');
+            	$('#material_list_modal').modal('show');
      });
 
 /*----------------------------------------------------------*/   
 
 $('body').on('mouseover','.photos_list li',function(){
 
-	$(this).addClass('hover');
+	        $(this).addClass('hover');
 });
 $('.photos_list').on('mouseout','li',function(){
 
-	$(this).removeClass('hover');
+	        $(this).removeClass('hover');
 });
 /*----------------------------------------------------------*/   
 $('body').on('click','.photos_list > li > span',function(){

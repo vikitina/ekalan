@@ -25,19 +25,20 @@ class Manufacturer extends TableGateway
 
     public function getAllManufacturers()
     { 
-         $query = "SELECT * from t_manufacturer";
-
-    
-                            
+         $query = "SELECT t_manufacturer.*, t_pictures.url_picture as url_picture "
+                 ."FROM t_manufacturer "
+                 ."LEFT JOIN t_pictures ON t_manufacturer.id_picture = t_pictures.id";
          $adapter = $this->getAdapter();
-		     $results = $this->FetchAll($adapter, $query); 
-         //var_dump($results)                           ;
-        return $results;
+		 $results = $this->FetchAll($adapter, $query); 
+         return $results;
     } 
 
     public function getManufacturerByName($name_manufacturer){
           
-           $query = sprintf("SELECT * from t_manufacturer WHERE name_manufacturer='%s'",$name_manufacturer);
+           $query = sprintf("SELECT t_manufacturer.*, t_pictures.url_picture as url_picture "
+                            ."FROM t_manufacturer "
+                            ."LEFT JOIN t_pictures ON t_manufacturer.id_picture = t_pictures.id "
+                            ."WHERE name_manufacturer='%s'",$name_manufacturer);
 
            $adapter = $this->getAdapter();
            $results = $this->FetchAll($adapter, $query); 
@@ -49,10 +50,10 @@ class Manufacturer extends TableGateway
    public function getManufacturer($id)
     { 
 
-        $query = "SELECT * from `t_manufacturer` where id ='".$id."'";
-        
-    
-                            
+        $query = "SELECT t_manufacturer.*, t_pictures.url_picture as url_picture "
+                ."FROM t_manufacturer "
+                ."LEFT JOIN t_pictures ON t_manufacturer.id_picture = t_pictures.id "
+                ."WHERE t_manufacturer.id ='".$id."'";                            
          $adapter = $this->getAdapter();
          $results = $this->FetchAll($adapter, $query);                            
         return $results[0];

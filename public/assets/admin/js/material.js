@@ -772,39 +772,6 @@ $('#btn_cancel_deleting').click(function(){
 
 });
 
-//---------------------------------------------------
-
-$('#cropimg').click(function(){
-        var data = new Object;
-        data.data = new Object;
-        data.data = $('#crop_img_data').val();
-        data.src = $('#tmp_new_sample').val();
-        console.log(data.data);
-        console.log(data.src);
-                $.ajax({
-                       type        : 'POST', 
-                       url         : 'http://' + location.hostname + '/admin/ajaxcroping', 
-                       data        :  data, 
-                       dataType    : 'json', 
-                       encode          : true,
-                       error       : function(xhr, textStatus, errorThrown) {
-                                       if(xhr.status == 403) {
-                                              //alert(' error [403]');
-                                              window.location.replace('http://' + location.hostname+'/admin');
-                                          }}                       
-                                 
-                    })
-               .done(function(data) {
-                     
-                     $(this).addClass('hidden');
-                     console.log(data.r);
-                     console.log(data.p);
-                     console.log(data.r1);
-                     //console.log(data.id);
-
-                 });        
-         return false;
-});
 
 
 //---------------------------------------------------

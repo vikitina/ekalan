@@ -97,8 +97,9 @@ html,body{font-family: 'Roboto', sans-serif;font-weight: 500;background:#dad1c8;
 
 .addr .order_call{background:#febc53;border-radius:5px; border:none;width:100%;margin-top:4px;font-size: 1.2em;font-weight:700;padding:10px;margin-top:30px;text-align: center;}
 .list_manufacturer{width:100%;list-style: none;padding:0;margin:0;}
-.list_manufacturer li{width:100%;list-style: none;padding:0;margin:0;height:30px;line-height: 30px;margin-top:10px;border:1px solid #fff;padding-left:10px;}
-
+.list_manufacturer li{list-style: none;padding:0;margin:0;height:59px;line-height: 30px;margin-top:10px;padding-left:10px;margin-bottom:7px;}
+.list_manufacturer li a{height:59px;background-position: center center; background-size:contain;background-repeat: no-repeat;display:block;background-color:#fff;border-radius:6px;}
+#material h4{text-align:center;}
 /*material---------------------------------------------------*/
 
 #manufacturers_line{width:100%;height:70px;list-style: none;margin-bottom: 40px;}

@@ -23,11 +23,19 @@ class IndexController extends AbstractActionController
 
         $manufacturerSrv = $this -> getServiceLocator()->get('manufacturer');
         $manufacturers = $manufacturerSrv->getAllManufacturers();
+
+
         $testimonialsSrv  = $this -> getServiceLocator()->get('testimonials'); 
         $testimonials = $testimonialsSrv -> getHomeTestimonials();
 
         $karuselSrv  = $this -> getServiceLocator()->get('karusel'); 
         $karusel_windows = $karuselSrv -> getAllKaruselWindows();
+
+        foreach ($manufacturers as $i => $manufacturer) {
+
+           $manufacturers[$i]['url_picture_prepared'] = ((isset($manufacturer['url_picture']) &&  $manufacturer['url_picture'] != '' &&  $manufacturer['url_picture'] !=null)?"/assets/application/samples/".trim($manufacturer['url_picture']):"/assets/application/img/no_photo.png");    
+        }
+
         foreach ($karusel_windows as $key => $wind) {
 
                    $karusel[$key] = $karuselSrv -> getKaruselByWind($wind["window_karusel"]);

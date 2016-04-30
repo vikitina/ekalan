@@ -3,11 +3,13 @@ ini_set("memory_limit", "35M");
 return array(
     'controllers' => array(
         'invokables' => array(
-            'Admin\Controller\Index'     => 'Admin\Controller\IndexController',
-            'Admin\Controller\Ajax'      => 'Admin\Controller\AjaxController',
-            'Admin\Controller\Karusel'   => 'Admin\Controller\KaruselController',
-            'Admin\Controller\Folio'     => 'Admin\Controller\FolioController',
-            'Admin\Controller\Article'   => 'Admin\Controller\ArticleController'
+            'Admin\Controller\Index'          => 'Admin\Controller\IndexController',
+            'Admin\Controller\Ajax'           => 'Admin\Controller\AjaxController',
+            'Admin\Controller\Karusel'        => 'Admin\Controller\KaruselController',
+            'Admin\Controller\Folio'          => 'Admin\Controller\FolioController',
+            'Admin\Controller\Article'        => 'Admin\Controller\ArticleController',
+            'Admin\Controller\Manufacturer'   => 'Admin\Controller\ManufacturerController',
+
             
         ),
     ),
@@ -163,19 +165,6 @@ return array(
                                             ),
                                     ),  
                               
-                             'admin_manufacturers' => array(
-                                  'type' => 'Zend\Mvc\Router\Http\Literal',
-                                          'options' => array(
-                                              
-                                                    'route' => '/manufacturers',
-                                                    
-
-                                                    'defaults' => array(
-                                                          'controller' => 'Admin\Controller\Index',
-                                                          'action'     => 'manufacturers',
-                                                      ),
-                                            ),
-                                    ),   
                              'admin_ajax_delcategory' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',
                                           'options' => array(
@@ -625,7 +614,7 @@ return array(
                                             ),
                             ),  
 
-                                                   
+
                          'admin_ajaxpublicart'  => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',
                                           'options' => array(                                              
@@ -636,6 +625,30 @@ return array(
                                                       ),
                                             ),
                             ), 
+                             'admin_manufacturers' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(
+                                              
+                                                    'route' => '/manufacturers',
+                                                    
+
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Manufacturer',
+                                                          'action'     => 'manufacturers',
+                                                      ),
+                                            ),
+                                    ),                            
+///manufacturer/{{ manuf.id }}    
+                        'admin_delarticle'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Segment',
+                                          'options' => array(                                              
+                                                    'route' => '/manufacturer[/:id]',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Manufacturer',
+                                                          'action'     => 'manufactureropen',
+                                                      ),
+                                            ),
+                            ),                       
                         ),
                  ),
             ),

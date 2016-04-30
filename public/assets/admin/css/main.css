@@ -458,6 +458,14 @@ input.focus_alert{visibility: hidden;}
 
 
 
-
+.photos_list li div {
+    background-color: #fff;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 1px solid #eee;
+    height: 100%;
+    width: 100%;
+}
 
                                                                

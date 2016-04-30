@@ -4,41 +4,18 @@
 {% block content %}
 
 
-<h2 class="title_page"><a href="/admin/materials">Производители</a></h2> 
+<h2 class="title_page"><a href="/admin/manufacturers">Производители</a></h2><a href="/admin/addmanufacturer" class="right_link">Добавить производителя</a>
 <hr class="clear" />
 <div class="row">
      <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                             <section class="textures">
  
                                      <ul class="text_data">
-                                     <li class="add">
-                                          <span>Добавить производителя</span>
-                                          <div class="form_to_add">
-                                                  <form action="ajax_add_manufacturer" method="post">
-                                                       <div><input type="text" name="name_manufacturer" /></div>
-                                                       <div><input type="submit" value="Добавить" /> </div>
-                                                  </form>
-
-                                          </div>
-
-                                     </li>
+       
                                      {% for manuf in manufacturers %}
-                                                     <li class="ajax_edit_obj">
-                                                       <form action="/admin/ajaxmanufupdate" method="post">
-                                                            <input type="hidden" name="id" value="{{ manuf.id }}"  />
-                                                            <input type="hidden" name="name_manufacturer" id="name_manuf_{{ manuf.id }}" value="{{ manuf.name_manufacturer }}"  />
-                                                       </form>    
-                                                         <div class="editable">
-                                                             <span>{{ manuf.name_manufacturer }}</span>
-                                                             <div class="editblock">
-                                                                  <div class="editarea">
-                                                                       <input type="text" data-name="name_manuf_{{ manuf.id }}" value="{{ manuf.name_manufacturer }}" />
-                                                                  </div>
-                                                                  
-
-                                                            </div><!-- editblock  -->
-                                                            <i class="fa fa-pencil fa-fw"></i>
-                                                          </div>
+                                                     <li>
+                                                         
+                                                         <div><a href="/admin/manufacturer/{{ manuf.id }}">{{ manuf.name_manufacturer }}</a></div>
                                                           
                                                         <span class="del_category_ajax"><i class="fa fa-trash-o"></i>
                                                                   <form action="/admin/delcategory">
