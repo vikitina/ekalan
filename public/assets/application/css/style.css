@@ -1166,8 +1166,8 @@ form label.error {
 .header ul, .header li {
     margin: 0;
     padding: 0;
+    margin-top:24px;
 }
-.header li {margin: 48px 0 0;}
 
 /* logo Style */
 .header .logo a img.l-white, .header .logo a img.l-color, .header.sticky .logo a img.l-white, .header.sticky .logo a img.l-black,
