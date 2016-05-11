@@ -62,7 +62,7 @@ class Folio extends TableGateway
                             
          $adapter = $this->getAdapter();
          $results = $this->FetchAll($adapter, $query);                            
-        return $results[0];
+        return $results ? $results[0] : null;
     }  
 
 
@@ -79,7 +79,7 @@ public function getSpecFolioById($id){
          $adapter = $this->getAdapter();
          $results = $this->FetchAll($adapter, $query);
                                      
-        return $results[0];                
+        return $results ? $results[0] : null;                
 
 
 }

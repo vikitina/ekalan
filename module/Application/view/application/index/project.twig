@@ -28,7 +28,7 @@
                       <dd>
                           <ul class="photos">
                            {% for photo in photos %}
-                                   <li><img alt="" src="{{ photo.url_photo }}" /></li>
+                                   <li><a class="cbox-gallary1 cboxElement" href="{{ photo.url_photo }}"><img alt="" src="{{ photo.url_photo }}" /></a></li>
                                
                            {% endfor %}
                            </ul>
@@ -56,7 +56,7 @@
                       <dd>
                           <ul class="blueprints">
                            {% for blueprint in blueprints %}
-                                   <li><img alt="" src="{{ blueprint.url_blueprint }}" /></li>
+                                   <li><a class="cbox-gallary1 cboxElement" href="{{ blueprint.url_blueprint }}"><img alt="" src="{{ blueprint.url_blueprint }}" /></a></li>
                                
                            {% endfor %}
                            </ul>
@@ -73,12 +73,13 @@
                 {% endif %}
                 {% if project.price_folio %}                                            
                <dl>
-                      <dt>Общая цена</dt>
+                      <dt>Общая цена проекта</dt>
                       <dd>
                           $ {{ project.price_folio }}
                       </dd>
                 </dl>      
                {% endif %}
+               {% if project.name_testimonials or project.organization or project.text_testimonials or project.short_text_testimonials %}
                <dl>
                       <dt>Отзыв заказчика</dt>
                       <dd>
@@ -93,7 +94,8 @@
                                 </dd>
                          </dl>
                     </dd>
-                </dl>                 
+                </dl>    
+                {% endif %}             
 
             </div>
 

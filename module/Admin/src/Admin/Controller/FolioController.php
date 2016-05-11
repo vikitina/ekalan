@@ -44,8 +44,21 @@ class FolioController extends AbstractActionController
              $folioSrv    =  $this -> getServiceLocator()->get('folio');
              $blueprintSrv = $this -> getServiceLocator()->get('blueprints');
              $materialsinfolioSrv = $this -> getServiceLocator()->get('materialsinfolio');
+             $testimonialsSrv = $this -> getServiceLocator()->get('testimonials');
+
 
              $blueprintSrv -> delByFolio((int)$data['id']);
+             //id_testimonials
+             $folio = $folioSrv -> getFolio((int)$data['id']);
+             $testimonialsSrv -> delTestimonial((int)$folio['id_testimonials']);
+             $karuselSrv = $this -> getServiceLocator()->get('karusel');
+             $karusels = $karuselSrv -> getKaruselByFolio((int)$data['id']);
+             if ($karusels){
+                    foreach($karusels as $karusel){
+                    	 $karusel['id_folio'] = 0;
+                         $karuselSrv -> updateKarusel($karusel);
+                      }   
+              }
              $folioSrv -> delFolio((int)$data['id']);
              $materialsinfolioSrv -> delByFolio((int)$data['id']);
 

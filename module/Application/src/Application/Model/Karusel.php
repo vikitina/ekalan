@@ -80,7 +80,20 @@ class Karusel extends TableGateway
          $adapter = $this->getAdapter();
          $results = $this->FetchAll($adapter, $query);                            
         return $results[0];
-    }     
+    } 
+
+   public function getKaruselByFolio($id)
+    { 
+
+        $query = "SELECT * from `t_karusel` where id_folio ='".$id."'";
+        
+    
+                            
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query);                            
+        return $results;
+    }  
+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     //==========================================================================================================
