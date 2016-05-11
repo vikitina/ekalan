@@ -449,22 +449,25 @@ $('.material_list').on('click','li span.del_material_ajax', function(){
               $(this).parent('li').addClass('confirm_deleting_state');
               $('#deleting_id').val(id);
 });
-// ------------------------------------------------
+// ------------------------------------------------   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 $('#delete_confirm_window #btn_confirm_deleting').click(function(){
          $('.material_list li.confirm_deleting_state').remove();
          var data = new Object();
+         console.log('materials строка 456');
          data['id'] = $('#deleting_id').val();
+         var action = $('#deleting_id').parent('form').attr('action');
                $.ajax({
                        type        : 'POST', 
-                       url         : 'http://' + location.hostname + '/admin/ajax/deletematerial', 
+                       url         :  action,
                        data        :  data, 
                        dataType    : 'json', 
-                       encode          : true
+                       encode      : true
                                  
                     })
                .done(function(data) {
                      $('#deleting_id').val('');
                      $('#delete_confirm_window').modal('hide');
+                     console.log(data.res);
                  }); 
 
                     $('#selected_list_length').text('('+$('.material_list li .check input:checked').length+')');  

@@ -291,11 +291,25 @@ $('#folios .material_list').on('click','li span.del_folio_ajax', function(){
               $(this).parent('li').addClass('confirm_deleting_state');
               $('#deleting_id').val(id);
 });
-// ------------------------------------------------
-$('#delete_confirm_window #btn_confirm_deleting').click(function(){
+$('#articles .material_list').on('click','li span.del_article_ajax', function(){
+
+              var id = $(this).attr('data-id');
+              $('#delete_confirm_window').modal('show');
+              $(this).parent('li').addClass('confirm_deleting_state');
+              $('#deleting_id').val(id);
+});
+$('.del_article').on('click', function(){
+
+              
+              $('#delete_confirm_window').modal('show');
+             
+});
+// ------------------------------------------------   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/*$('#delete_confirm_window #btn_confirm_deleting').click(function(){
          $('.material_list li.confirm_deleting_state').remove();
          var data = new Object();
          data['id'] = $('#deleting_id').val();
+         console.log('folio строка 299');
                $.ajax({
                        type        : 'POST', 
                        url         : 'http://' + location.hostname + '/admin/ajaxdelfolio', 
@@ -311,7 +325,7 @@ $('#delete_confirm_window #btn_confirm_deleting').click(function(){
 
                     $('#selected_list_length').text('('+$('.material_list li .check input:checked').length+')');  
 
-});
+});*/
 
 /*--------------------------------------------------------*/
 
@@ -325,11 +339,12 @@ $('#karusel').on('click','span.del_window_ajax', function(){
               $('#deleting_id').val(id);
               return false;
 });
-// ------------------------------------------------
-$('#delete_confirm_window #btn_confirm_deleting').click(function(){
+// ------------------------------------------------   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/*$('#delete_confirm_window #btn_confirm_deleting').click(function(){
          $('.confirm_deleting_state').remove();
          var data = new Object();
          data['id'] = $('#deleting_id').val();
+         console.log('folio строка 334');
                $.ajax({
                        type        : 'POST', 
                        url         : 'http://' + location.hostname + '/admin/ajaxdelkarusel', 
@@ -347,6 +362,7 @@ $('#delete_confirm_window #btn_confirm_deleting').click(function(){
                    
 
 });
+*/
 $('#delete_confirm_window').on('hidden.bs.modal',function(){
 
 	$('.confirm_deleting_state').removeClass('.confirm_deleting_state');

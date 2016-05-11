@@ -46,7 +46,7 @@ class Article extends TableGateway
          $query = "SELECT * from `t_article` where id ='".$id."'";
          $adapter = $this->getAdapter();
          $results = $this->FetchAll($adapter, $query);                            
-        return $results[0];
+        return $results?$results[0]:null;
     }  
 
     public function getAllPublished(){
@@ -111,7 +111,7 @@ class Article extends TableGateway
       
   public function delArticle($id)
     {
-         $query = sprintf("DELETE FROM t_folio WHERE id='%s'",$id);
+         $query = sprintf("DELETE FROM t_article WHERE id='%s'",$id);
 
                             
          $adapter = $this->getAdapter();

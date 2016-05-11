@@ -542,6 +542,17 @@ return array(
                                                       ),
                                             ),
                             ),
+    
+                        'admin_delfolio'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Segment',
+                                          'options' => array(                                              
+                                                    'route' => '/delfolio[/:id]',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Folio',
+                                                          'action'     => 'delfolio',
+                                                      ),
+                                            ),
+                            ),                   
                          'admin_ajax_delkarusel'  => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',
                                           'options' => array(                                              
@@ -642,13 +653,24 @@ return array(
                         'admin_delarticle'  => array(
                                   'type' => 'Zend\Mvc\Router\Http\Segment',
                                           'options' => array(                                              
-                                                    'route' => '/manufacturer[/:id]',
+                                                    'route' => '/delarticle[/:id]',
                                                     'defaults' => array(
-                                                          'controller' => 'Admin\Controller\Manufacturer',
-                                                          'action'     => 'manufactureropen',
+                                                          'controller' => 'Admin\Controller\Article',
+                                                          'action'     => 'delarticle',
                                                       ),
                                             ),
-                            ),                       
+                            ),    
+                        'admin_ajaxdelarticle'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/ajaxdelarticle',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Article',
+                                                          'action'     => 'ajaxdelarticle',
+                                                      ),
+                                            ),
+                            ),                        
+
                         ),
                  ),
             ),

@@ -1987,3 +1987,34 @@
 [06-May-2016 10:04:21 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
 [06-May-2016 10:18:06 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Manufacturer.php on line 46
 [06-May-2016 10:18:06 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[10-May-2016 10:34:03 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 108
+[10-May-2016 10:34:07 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 108
+[10-May-2016 10:34:10 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 108
+[10-May-2016 11:03:07 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 108
+[11-May-2016 08:54:11 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 940
+[11-May-2016 08:54:12 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[11-May-2016 09:01:15 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[11-May-2016 09:36:25 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 940
+[11-May-2016 09:36:25 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[11-May-2016 09:39:00 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[11-May-2016 11:29:29 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Article.php on line 49
+[11-May-2016 11:34:54 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Article.php on line 49
+[11-May-2016 12:10:34 Europe/Helsinki] PHP Parse error:  syntax error, unexpected '(int)' (int) (T_INT_CAST) in /var/www/ekalan/module/Admin/src/Admin/Controller/FolioController.php on line 25
+[11-May-2016 12:10:47 Europe/Helsinki] PHP Parse error:  syntax error, unexpected '(int)' (int) (T_INT_CAST) in /var/www/ekalan/module/Admin/src/Admin/Controller/FolioController.php on line 25
+[11-May-2016 12:17:01 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 108
+[11-May-2016 12:17:01 Europe/Helsinki] PHP Notice:  Undefined variable: material_id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 789
+[11-May-2016 12:17:01 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[11-May-2016 12:31:06 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 108
+[11-May-2016 12:31:06 Europe/Helsinki] PHP Notice:  Undefined variable: material_id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 789
+[11-May-2016 12:31:06 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[11-May-2016 12:33:25 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 108
+[11-May-2016 12:33:25 Europe/Helsinki] PHP Notice:  Undefined variable: material_id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 789
+[11-May-2016 12:33:25 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[11-May-2016 12:35:32 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 108
+[11-May-2016 12:35:32 Europe/Helsinki] PHP Notice:  Undefined variable: material_id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 789
+[11-May-2016 12:35:32 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[11-May-2016 12:35:50 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 108
+[11-May-2016 12:35:50 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 108
+[11-May-2016 12:35:50 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 108
+[11-May-2016 12:35:50 Europe/Helsinki] PHP Notice:  Undefined variable: material_id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 789
+[11-May-2016 12:35:50 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52

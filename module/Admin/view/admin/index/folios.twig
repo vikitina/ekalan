@@ -11,6 +11,7 @@
 
 
                  <div class="material_list_container autoheight">
+                 {% if folios %}
                        <ul class="list-group material_list">
                          
 
@@ -29,6 +30,7 @@
                        </ul>		
                       
                  </div>   
+                 {% else %} <h4>Не найдено ни одного проекта</h4> {% endif %}
              
 			</section>
      </div>       
@@ -41,8 +43,9 @@
       </div>
       <div class="modal-body">
         Проект будет удален. Вы уверены?
-
-        <input type="hidden" id="deleting_id" />
+              <form action="/admin/ajaxdelfolio">
+                 <input type="hidden" id="deleting_id" />
+              </form>   
       </div>
         <div class="modal-footer">
                 <a href="#" data-dismiss="modal" class="btn" id="btn_cancel_deleting">Отменить</a>

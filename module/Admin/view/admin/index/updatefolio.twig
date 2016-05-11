@@ -11,6 +11,7 @@
                                       <div class="panel-heading">
         
                                       <h4>Редактировать проект <i>{{ folio.name_folio }}</i></h4>
+                                      <a class="del_article del_link" data-id="{{ folio.id }}" ><i class="fa fa-trash-o"></i></a>
                                        </div>
 
 {#  `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -264,6 +265,25 @@
 </div><!-- /.modal -->
 <!-- /.modal -->
 
+
+<div class="modal fade" id="delete_confirm_window">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Подтверждение удаления описания проекта</h4>
+      </div>
+      <div class="modal-body">
+        Проект будет удален. Вы уверены?
+              
+      </div>
+        <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn" id="btn_cancel_deleting">Отменить</a>
+                <a href="/admin/delfolio/{{ folio.id }}" class="btn btn-primary" id="btn_confirm_deleting1">Удалить</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->  
 
 
 {% endblock content %}

@@ -66,13 +66,28 @@ public function addarticleAction(){
 }
 
 public function delarticleAction(){
-       $art_id = $this->getEvent()->getRouteMatch()->getParam('id');
-       
+   
+       if ($art_id = $this->getEvent()->getRouteMatch()->getParam('id')){
+                 $articleSrv    =  $this -> getServiceLocator()->get('article');
+                 $articleSrv -> delArticle((int)$art_id);
+
+                 $this->redirect()->toRoute('zfcadmin/admin_articles');
+
+       }
 
 }   
 
 public function ajaxdelarticleAction(){
+            if ($_POST){
 
+                 $data = $_POST;
+                 $articleSrv    =  $this -> getServiceLocator()->get('article');
+                 $articleSrv -> delArticle((int)$data['id']);
+                    return new JsonModel(array(
+                            'res'    => $data['id']
+                    )); 
+
+            }
 
 
 

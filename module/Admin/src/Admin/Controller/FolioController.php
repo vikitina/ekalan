@@ -19,17 +19,43 @@ class FolioController extends AbstractActionController
     {
              $data = $_POST;
              
+             $folioSrv    =  $this -> getServiceLocator()->get('folio');
+             $blueprintSrv = $this -> getServiceLocator()->get('blueprints');
+             $materialsinfolioSrv = $this -> getServiceLocator()->get('materialsinfolio');
 
+             $blueprintSrv -> delByFolio((int)$data['id']);
+             $folioSrv -> delFolio((int)$data['id']);
+             $materialsinfolioSrv -> delByFolio((int)$data['id']);
 
-        return new JsonModel ( array (
+             return new JsonModel ( array (
+              
+                 'res' => $data['id']
+                
+               ) );
               
                 
-                
-        ) );
+    }
+
+
+     public function delfolioAction()
+    {
+             $data['id'] = $this->getEvent()->getRouteMatch()->getParam('id');
              
+             $folioSrv    =  $this -> getServiceLocator()->get('folio');
+             $blueprintSrv = $this -> getServiceLocator()->get('blueprints');
+             $materialsinfolioSrv = $this -> getServiceLocator()->get('materialsinfolio');
+
+             $blueprintSrv -> delByFolio((int)$data['id']);
+             $folioSrv -> delFolio((int)$data['id']);
+             $materialsinfolioSrv -> delByFolio((int)$data['id']);
+
+             $this->redirect()->toRoute('zfcadmin/admin_folios');
+
+
+
+              
                 
     }
- 
          
  
 }
