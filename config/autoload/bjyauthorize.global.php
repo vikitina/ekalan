@@ -107,6 +107,8 @@ return array(
                                    array('route' => 'zfcadmin/admin_addarticle', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_delarticle', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajaxdelarticle', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_ajax_deltestimonial', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_deltestimonial', 'roles' => array('admin')),
                                                                            
 
                                    array('route' => 'zfcadmin/admin_material_open', 'roles' => array('admin')),

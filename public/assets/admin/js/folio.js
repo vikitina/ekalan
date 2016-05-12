@@ -304,6 +304,13 @@ $('.del_article').on('click', function(){
               $('#delete_confirm_window').modal('show');
              
 });
+$('#testimonials .material_list').on('click','li span.del_testimonial_ajax', function(){
+
+              var id = $(this).attr('data-id');
+              $('#delete_confirm_window').modal('show');
+              $(this).parent('li').addClass('confirm_deleting_state');
+              $('#deleting_id').val(id);
+});
 // ------------------------------------------------   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 /*$('#delete_confirm_window #btn_confirm_deleting').click(function(){
          $('.material_list li.confirm_deleting_state').remove();

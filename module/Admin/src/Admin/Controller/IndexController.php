@@ -630,7 +630,7 @@ public function foliosAction(){
 }
 public function testimonialsAction(){
                $testimonialsSrv  = $this -> getServiceLocator()->get('testimonials'); 
-               $testimonials = $testimonialsSrv -> getAllTestimonials();
+               $testimonials = $testimonialsSrv -> getAllTestimonialFull();
                return new ViewModel(array(
                      "testimonials" => $testimonials,
                 ));
@@ -641,7 +641,6 @@ public function testimonialAction(){
                $testimonialsSrv  = $this -> getServiceLocator()->get('testimonials'); 
                $picturesSrv  = $this -> getServiceLocator()->get('pictures'); 
                $testimonial = $testimonialsSrv -> getTestimonialFull((int)$id);
-              var_dump($testimonial);
                $testimonial['url_picture_prepared'] = ((isset($testimonial['url_picture']) && $testimonial['url_picture'] != '' && $testimonial['url_picture'] !=null)?"/assets/application/samples/".trim($testimonial['url_picture']):"");
 
                if ($_POST){

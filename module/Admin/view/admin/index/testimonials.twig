@@ -7,21 +7,30 @@
 <hr class="clear" />
 <div class="row">
      <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-              <section class="">
+              <section id="testimonials">
 
 
                  <div class="material_list_container autoheight">
                        <ul class="list-group material_list">
                          
-
+                         <li class="list-group-item">   
+                              <div class="testimonials_first_col">Отзыв о проекте</div>
+                              <div class="testimonials_second_col">Автор отзыва</div>
+                         </li>
                          {% for item in testimonials %}
                                 <li class="list-group-item">
-                                  
-                                     <a href="/admin/testimonial/{{ item.id  }}">
-                                                     <small>{{ folio.number_folio }}</small>
-                                                     <span> {{ item.name_testimonials }} </span>
-                                     </a>
-                                     <span class="del_testimonial_ajax del_link" data-id="{{ item.id  }}"><i class="fa fa-trash-o"></i></span>
+                                    <div class="testimonials_first_col">{% if item.folio_id %}<a href="/admin/folio/{{ item.folio_id  }}" title="Описание проекта">{{ item.name_folio }}</a>{% endif %}</div>
+                                    <div class="testimonials_second_col">  
+                                                     
+                                                 {% if item.name_testimonials  %}
+                                                                       <a href="/admin/testimonial/{{ item.id_testimonials  }}" title="Редактирование отзыва">{{ item.name_testimonials }}</a>
+                                                 {% else %} 
+                                                                       <a href="/admin/testimonial/{{ item.id_testimonials  }}" title="Редактирование отзыва">(пустой)</a>
+                                                 {% endif %}                     
+
+                                     </div>
+
+                                     {% if item.name_testimonials  %}<span class="del_testimonial_ajax del_link" data-id="{{ item.id_testimonials  }}"><i class="fa fa-trash-o"></i></span>{% endif %}
 
                                 </li>
                          {% endfor %}
@@ -40,8 +49,10 @@
       </div>
       <div class="modal-body">
         Отзыв будет удален. Вы уверены?
-
-        <input type="hidden" id="deleting_id" />
+             <form action="/admin/ajaxdeltestimonial">
+                         <input type="hidden" id="deleting_id" />
+                         <input type="hidden" id="type" value="testimonial" />
+             </form>  
       </div>
         <div class="modal-footer">
                 <a href="#" data-dismiss="modal" class="btn" id="btn_cancel_deleting">Отменить</a>

@@ -22,8 +22,21 @@ class FolioController extends AbstractActionController
              $folioSrv    =  $this -> getServiceLocator()->get('folio');
              $blueprintSrv = $this -> getServiceLocator()->get('blueprints');
              $materialsinfolioSrv = $this -> getServiceLocator()->get('materialsinfolio');
+             $testimonialsSrv = $this -> getServiceLocator()->get('testimonials');
+
 
              $blueprintSrv -> delByFolio((int)$data['id']);
+             //id_testimonials
+             $folio = $folioSrv -> getFolio((int)$data['id']);
+             $testimonialsSrv -> delTestimonial((int)$folio['id_testimonials']);
+             $karuselSrv = $this -> getServiceLocator()->get('karusel');
+             $karusels = $karuselSrv -> getKaruselByFolio((int)$data['id']);
+             if ($karusels){
+                    foreach($karusels as $karusel){
+                    	 $karusel['id_folio'] = 0;
+                         $karuselSrv -> updateKarusel($karusel);
+                      }   
+              }
              $folioSrv -> delFolio((int)$data['id']);
              $materialsinfolioSrv -> delByFolio((int)$data['id']);
 
@@ -69,6 +82,70 @@ class FolioController extends AbstractActionController
               
                 
     }
+
+     public function ajaxdeltestimonialAction()
+    {
+             $data = $_POST;
+             
+             $testimonialSrv    =  $this -> getServiceLocator()->get('testimonials');
+             $folioSrv    =  $this -> getServiceLocator()->get('folio');             
+
+             $folio = $folioSrv -> getFolioIdByTestimonialId((int)$data['id']);
+             if ($folio){
+                   $testimonialSrv -> updateTestimonial(array(
+                           "id"                            => (int)$data['id'],
+                           "name_testimonials"             => "",
+                           "organization"                  => "",
+                           "id_picture"                    => "",
+                           "text_testimonials"             => "",
+                           "short_text_testimonials"       => "",
+                           "public_on_home_testimonials"   => 0                         
+                   	));
+
+             } else {
+                   $testimonialSrv -> delTestimonial((int)$data['id']);
+
+             }
+             return new JsonModel ( array (
+              
+                 'res' => $data['id']
+                
+               ) );
+              
+                
+    }
+   public function deltestimonialAction()
+    {
+             $data['id'] = $this->getEvent()->getRouteMatch()->getParam('id');
+             
+             $testimonialSrv    =  $this -> getServiceLocator()->get('testimonials');
+             $folioSrv    =  $this -> getServiceLocator()->get('folio');             
+
+             $folio = $folioSrv -> getFolioIdByTestimonialId((int)$data['id']);
+             if ($folio){
+                   $testimonialSrv -> updateTestimonial(array(
+                           "id"                            => (int)$data['id'],
+                           "name_testimonials"             => "",
+                           "organization"                  => "",
+                           "id_picture"                    => "",
+                           "text_testimonials"             => "",
+                           "short_text_testimonials"       => "",
+                           "public_on_home_testimonials"   => 0                         
+                   	));
+
+             } else {
+                   $testimonialSrv -> delTestimonial((int)$data['id']);
+
+             }
+             return new JsonModel ( array (
+              
+                 'res' => $data['id']
+                
+               ) );
+              
+                
+    }
+
          
  
 }

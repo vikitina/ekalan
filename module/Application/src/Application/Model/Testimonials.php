@@ -54,12 +54,27 @@ class Testimonials extends TableGateway
          $results = $this->FetchAll($adapter, $query);                            
         return $results[0];
     }  
+    public function getAllTestimonialFull()
+    { 
+
+        $query = "SELECT t_testimonials.*,t_testimonials.id as id_testimonials, t_pictures.*, t_folio.name_folio, t_folio.id as folio_id "
+                 ."from `t_testimonials` "
+                 ."LEFT JOIN t_pictures ON t_testimonials.id_picture = t_pictures.id "
+                 ."LEFT JOIN t_folio ON t_testimonials.id = t_folio.id_testimonials";
+        
+    
+                            
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query);                            
+        return $results;
+    }
    public function getTestimonialFull($id)
     { 
 
-        $query = "SELECT t_testimonials.*,t_testimonials.id as id_testimonials, t_pictures.* "
+        $query = "SELECT t_testimonials.*,t_testimonials.id as id_testimonials, t_pictures.*, t_folio.name_folio, t_folio.id as folio_id "
                  ."from `t_testimonials` "
                  ."LEFT JOIN t_pictures ON t_testimonials.id_picture = t_pictures.id "
+                 ."LEFT JOIN t_folio ON t_testimonials.id = t_folio.id_testimonials "
                  ."where t_testimonials.id ='".$id."'";
         
     

@@ -451,11 +451,12 @@ $('.material_list').on('click','li span.del_material_ajax', function(){
 });
 // ------------------------------------------------   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 $('#delete_confirm_window #btn_confirm_deleting').click(function(){
-         $('.material_list li.confirm_deleting_state').remove();
+         
          var data = new Object();
          console.log('materials строка 456');
          data['id'] = $('#deleting_id').val();
          var action = $('#deleting_id').parent('form').attr('action');
+         var data_type =$('#type').val();
                $.ajax({
                        type        : 'POST', 
                        url         :  action,
@@ -467,6 +468,16 @@ $('#delete_confirm_window #btn_confirm_deleting').click(function(){
                .done(function(data) {
                      $('#deleting_id').val('');
                      $('#delete_confirm_window').modal('hide');
+                     if( data_type == 'testimonial'){
+                               
+                                $('.material_list li.confirm_deleting_state .testimonials_second_col a').text("(пустой)");
+                                $('.material_list li.confirm_deleting_state .del_testimonial_ajax').remove();
+                                $('.material_list li.confirm_deleting_state').removeClass('confirm_deleting_state');
+
+                     }else{
+
+                                $('.material_list li.confirm_deleting_state').remove();
+                     }
                      console.log(data.res);
                  }); 
 

@@ -284,8 +284,32 @@ return array(
                                                       ),
                                             ),
                                     ),  
+                             'admin_ajax_deltestimonial' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(
+                                              
+                                                    'route' => '/ajaxdeltestimonial',
+                                                    
 
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Folio',
+                                                          'action'     => 'ajaxdeltestimonial',
+                                                      ),
+                                            ),
+                                    ), 
+                             'admin_deltestimonial' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(
+                                              
+                                                    'route' => '/deltestimonial',
+                                                    
 
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Folio',
+                                                          'action'     => 'deltestimonial',
+                                                      ),
+                                            ),
+                                    ), 
                               'admin_ajax_salesupdate' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',
                                   'options' => array(

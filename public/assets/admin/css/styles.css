@@ -80,3 +80,9 @@ footer {
 .ajax_art_on_home{float:left;width:100px;}
 
 .material_list li a.auto{width:auto;}
+
+.navbar-header .go_home{float: left;margin-left: 34px;margin-top: 15px;}
+
+
+.testimonials_first_col{float:left;width:30%;height:53px;line-height:53px;}
+.testimonials_second_col{float:left;width:30%;height:53px;line-height:53px;}
