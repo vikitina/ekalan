@@ -298,10 +298,10 @@ return array(
                                             ),
                                     ), 
                              'admin_deltestimonial' => array(
-                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                  'type' => 'Zend\Mvc\Router\Http\Segment',
                                           'options' => array(
                                               
-                                                    'route' => '/deltestimonial',
+                                                    'route' => '/deltestimonial[/:id]',
                                                     
 
                                                     'defaults' => array(

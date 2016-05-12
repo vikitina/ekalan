@@ -2090,3 +2090,7 @@
 [12-May-2016 16:00:57 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
 [12-May-2016 16:00:57 Europe/Helsinki] PHP Notice:  Undefined variable: set_material in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 893
 [12-May-2016 16:27:41 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Testimonials.php on line 84
+[12-May-2016 17:02:02 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Testimonials.php on line 84
+[12-May-2016 17:27:34 Europe/Helsinki] PHP Notice:  Undefined variable: check in /var/www/ekalan/module/Admin/src/Admin/Controller/AjaxController.php on line 530
+[12-May-2016 17:27:46 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Testimonials.php on line 84
+[12-May-2016 17:27:46 Europe/Helsinki] PHP Notice:  Undefined index: public_on_home_testimonials in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 671

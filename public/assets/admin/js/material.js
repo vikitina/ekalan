@@ -469,10 +469,14 @@ $('#delete_confirm_window #btn_confirm_deleting').click(function(){
                      $('#deleting_id').val('');
                      $('#delete_confirm_window').modal('hide');
                      if( data_type == 'testimonial'){
-                               
+                            if(data.status)   {
                                 $('.material_list li.confirm_deleting_state .testimonials_second_col a').text("(пустой)");
                                 $('.material_list li.confirm_deleting_state .del_testimonial_ajax').remove();
                                 $('.material_list li.confirm_deleting_state').removeClass('confirm_deleting_state');
+                             }else{
+                                $('.material_list li.confirm_deleting_state').remove();
+
+                             }   
 
                      }else{
 

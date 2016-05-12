@@ -304,6 +304,12 @@ $('.del_article').on('click', function(){
               $('#delete_confirm_window').modal('show');
              
 });
+$('.del_testimonial').on('click', function(){
+
+              
+              $('#delete_confirm_window').modal('show');
+             
+});
 $('#testimonials .material_list').on('click','li span.del_testimonial_ajax', function(){
 
               var id = $(this).attr('data-id');

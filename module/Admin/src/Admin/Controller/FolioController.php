@@ -108,7 +108,7 @@ class FolioController extends AbstractActionController
              }
              return new JsonModel ( array (
               
-                 'res' => $data['id']
+                 'status' => $folio ? 1 : 0,
                 
                ) );
               
@@ -137,11 +137,7 @@ class FolioController extends AbstractActionController
                    $testimonialSrv -> delTestimonial((int)$data['id']);
 
              }
-             return new JsonModel ( array (
-              
-                 'res' => $data['id']
-                
-               ) );
+             $this->redirect()->toRoute('zfcadmin/admin_testimonials');
               
                 
     }
