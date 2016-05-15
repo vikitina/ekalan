@@ -145,7 +145,9 @@ return array(
                                    array('route' => 'zfcadmin/admin_ajax_delfolio', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_delkarusel', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_mp', 'roles' => array('admin')),
-                                   
+                                   array('route' => 'zfcadmin/admin_help', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_help_folio', 'roles' => array('admin')),
+                                                                      
 
 
                                    //admin_ajax_groupupdate

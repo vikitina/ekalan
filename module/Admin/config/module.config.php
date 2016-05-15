@@ -9,6 +9,7 @@ return array(
             'Admin\Controller\Folio'          => 'Admin\Controller\FolioController',
             'Admin\Controller\Article'        => 'Admin\Controller\ArticleController',
             'Admin\Controller\Manufacturer'   => 'Admin\Controller\ManufacturerController',
+            'Admin\Controller\Help'           => 'Admin\Controller\HelpController',            
 
             
         ),
@@ -693,7 +694,29 @@ return array(
                                                           'action'     => 'ajaxdelarticle',
                                                       ),
                                             ),
-                            ),                        
+                            ),    
+
+
+                       'admin_help'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/help',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Help',
+                                                          'action'     => 'index',
+                                                      ),
+                                            ),
+                            ),       
+                       'admin_help_folio'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/help/folio',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Help',
+                                                          'action'     => 'folio',
+                                                      ),
+                                            ),
+                            ), 
 
                         ),
                  ),
@@ -714,7 +737,7 @@ return array(
             'newcolorelement'               => __DIR__ . '/../view/admin/index/newcolorelement.twig',
 
 
-           'karusel/newwindow'              => __DIR__ . '/../view/admin/index/karuselnewwindow.twig',            
+            'karusel/newwindow'              => __DIR__ . '/../view/admin/index/karuselnewwindow.twig',            
 
             
 
