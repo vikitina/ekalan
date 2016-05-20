@@ -184,13 +184,14 @@
                                <div><form action="/admin/ajaxuploadimg" method="post" id="sample_form"><label>Установить новое фото</label><input type="file" name="sample" id="sample" /></div>
                         </div>
                         <div aria-hidden="true" style="display: none;" role="tabpanel" aria-labelledby="ui-id-2" id="tabs-2" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
-                        <div><input type="checkbox" /><label>Показать имена файлов</label></div>
+                        <div class="search_by_file_container"><input type="text" placeholder="Искать по имени файла" id="search_by_file_name" /></div>
                             <ul id="list_sample">
                                 {% for sample in lists.samples  %}
                                     <li>
                                         <div style="background-image:url('{{ sample.url }}')"></div>
                                         <span><input name="r_sample" value="{{ sample.id }}" type="radio" /></span>
                                         <span class="url">{{ sample.url }}</span>
+                                        <span class="file_name">{{ sample.file_name }}</span>
                                     </li>    
                                 {% endfor %}
                              </ul> 

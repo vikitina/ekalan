@@ -243,6 +243,8 @@ public function materialopenAction()
 
             foreach ($lists['samples'] as $key => $item) {
                 $lists['samples'][$key]['url'] = ((isset($item['url']) && $item['url'] != '' && $item['url'] !=null)?"/assets/application/samples/".trim($item['url']):"/assets/application/img/no_photo.png");
+                $file_name_ar = ((isset($item['url']) && $item['url'] != '' && $item['url'] !=null) ? explode('/', trim($item['url'])): null);
+                $lists['samples'][$key]['file_name'] = ($file_name_ar)? $file_name_ar[count($file_name_ar) - 1]: '';                
             }
 
             $set_analogs_id = $analogSrv->getAnalogForId($material_id);
@@ -363,6 +365,8 @@ public function delmaterialAction()
 
             foreach ($lists['samples'] as $key => $item) {
                 $lists['samples'][$key]['url'] = ((isset($item['url']) && $item['url'] != '' && $item['url'] !=null)?"/assets/application/samples/".trim($item['url']):"/assets/application/img/no_photo.png");
+                $file_name_ar = ((isset($item['url']) && $item['url'] != '' && $item['url'] !=null) ? explode('/', trim($item['url'])): null);
+                $lists['samples'][$key]['file_name'] = ($file_name_ar)? $file_name_ar[count($file_name_ar) - 1]: '';
             }
 
 

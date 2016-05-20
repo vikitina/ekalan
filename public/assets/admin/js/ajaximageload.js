@@ -45,19 +45,28 @@
                     processData: false,
                     contentType: false,
                     cache: false,
+                    error       : function(xhr, textStatus, errorThrown) {
+                                       if(xhr.status == 403) {
+                                              //alert(' error [403]');
+                                              window.location.replace('http://' + location.hostname+'/admin');
+                                          }}                    
                 });
 
                 request.done(function (result, request, headers) {
                    $('#tmp_id_sample').val(0);
                    $('#tmp_new_sample').val(result.name);
-                   $('#sample_modal .loaded_img .img_container div').css('background-image','url("'+result.url+'")');
+                   $('#sample_modal .loaded_img .img_container div').css('background-color','#fff').css('background-image','url("'+result.url+'")');
                    $('#sample_modal .loaded_img').removeClass('loading');
                    //console.log(result);
                 });
 
 
                 request.fail(function (error, textStatus, errorThrown) {
-                    console.error(error, textStatus, errorThrown); //TODO must create a dialog popup
+                    //console.error(error, textStatus, errorThrown); //TODO must create a dialog popup
+                    if(error.status == 403) {
+                                              //alert(' error [403]');
+                                              window.location.replace('http://' + location.hostname+'/admin');
+                                          }                    
                 });
             });
 
@@ -100,6 +109,7 @@
                     processData: false,
                     contentType: false,
                     cache: false,
+                                      
                 });
 
                 request.done(function (result, request, headers) {
@@ -111,7 +121,7 @@
 
                     }
                         
-                        $('#'+id).find('div').css('background-image', "url('"+result.url+"')");
+                        $('#'+id).find('div').css('background-color','#fff').css('background-image', "url('"+result.url+"')");
                         $('#'+id).find('div').append('<input type="hidden" name="'+list_class+'[]" value="'+result.name+'">' + radio);
 
                         if($('.'+list_class).find('.add_photo_btn').hasClass('only_one')){
@@ -125,7 +135,11 @@
 
 
                 request.fail(function (error, textStatus, errorThrown) {
-                    console.error(error, textStatus, errorThrown); //TODO must create a dialog popup
+                    //console.error(error, textStatus, errorThrown); //TODO must create a dialog popup
+                    if(error.status == 403) {
+                                              //alert(' error [403]');
+                                              window.location.replace('http://' + location.hostname+'/admin');
+                                          }
                 });
             });
 

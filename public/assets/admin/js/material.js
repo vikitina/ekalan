@@ -822,7 +822,7 @@ function append_to_stack(new_element, list){
 }
 
 $('#search_by_articul').keyup(function(){
-    console.log($(this).val());
+    
     var word = $(this).val();
     var reg = new RegExp("(^"+word+")", "i");
  
@@ -836,7 +836,20 @@ $('#search_by_articul').keyup(function(){
 
 });
 
+$('#search_by_file_name').keyup(function(){
+    
+    var word = $(this).val();
+    var reg = new RegExp("(^"+word+")", "i");
+ 
+    $.each($('#list_sample li span.file_name'),function(){
+      if(!$(this).parents('li').find('input').is(':checked')){
+             var str = $(this).text();
+             if (!reg.test(str)) {$(this).parents('li').addClass('hidden'); }else{$(this).parents('li').removeClass('hidden');}
+       }      
+    });
+    
 
+});
 
 
 });

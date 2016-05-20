@@ -459,7 +459,7 @@ input.focus_alert{visibility: hidden;}
 
 
 .photos_list li div {
-    background-color: #fff;
+    /*background-color: #fff;*/
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -467,5 +467,22 @@ input.focus_alert{visibility: hidden;}
     height: 100%;
     width: 100%;
 }
+
+#sample_modal .modal-dialog{width:900px;}
+#sample_modal .modal-body {height: 475px;}
+#sample_modal #list_sample {height: 320px;}
+
+#sample_modal #list_sample li {width:234px;height:194px;}
+#sample_modal .modal-body .ui-tab-content {height: 410px;}
+#sample_modal #list_sample li div {height: 154px;left: 5px;top: 3px;width: 222px;}
+
+#sample_modal #list_sample li span.file_name{display:block;width:100%;height:30px;padding-left: 6px;}
+
+.search_by_file_container{padding-left:42px;margin-bottom:25px;}
+.search_by_file_container input{height: 38px;padding-left: 10px;width: 92%;}
+
+#sample_modal .loaded_img .img_container {height: 250px;width: 220px;}
+
+#sample_modal .loaded_img .img_container div {height: 228px;left: 10px;position: absolute;width: 200px;}
 
                                                                
