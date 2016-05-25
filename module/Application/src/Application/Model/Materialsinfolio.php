@@ -59,6 +59,17 @@ class Materialsinfolio extends TableGateway
         return $results;
 
    }
+   public function getByMaterial($id){
+
+         $query = "SELECT t_materials_in_folio.id_folio, t_folio.name_folio from `t_materials_in_folio` "
+                  ."LEFT JOIN t_folio on t_folio.id = t_materials_in_folio.id_folio " 
+                  ."where id_material ='".$id."'";
+                  
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query);                            
+        return $results;
+
+   }   
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     //==========================================================================================================

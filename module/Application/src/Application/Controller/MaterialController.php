@@ -78,22 +78,39 @@ class MaterialController extends AbstractActionController
        		
            $data = $_POST;
 
-           $materialSrv    = $this -> getServiceLocator()->get('material');
-           $set_material = $materialSrv->getMaterial($data['id']);
+           $materialSrv         = $this -> getServiceLocator()->get('material');
+           $set_material        = $materialSrv->getMaterial($data['id']);
            
-                          $data['id_color'] = $set_material['set']['id_color'];
-                          $data['id_texture'] = $set_material['set']['id_texture'];
-                          $data['limit'] = 0;
-                          $set_analogs = $materialSrv->getSpecOrder($data);
+           $data['id_color']    = $set_material['set']['id_color'];
+           $data['id_texture']  = $set_material['set']['id_texture'];
+           $data['limit'] = 0;
+           $set_analogs         = $materialSrv->getSpecOrder($data);
+
+           $materialsinfolioSrv = $this -> getServiceLocator()->get('materialsinfolio');
+           $analogsSrv          = $this -> getServiceLocator()->get('analogs');
+
+           $folios              = $materialsinfolioSrv -> getByMaterial($data['id']);
+           $manualAnalogsIds    = $analogsSrv -> getAnalogsForId($data['id']);
+
+
+           if($manualAnalogsIds){
+                foreach ($manualAnalogsIds as $i => $item){
+                           $manualAnalog      = $materialSrv->getMaterial($item['id_2']);
+                           $manualAnalogs[$i] = $manualAnalog['set'];
+                }
+
+           }           
             
            $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
            $html = $partial('material/materialmodal', array(
-                                "material" => $set_material['set'],
-                                "analogs" => (isset($set_analogs))?$set_analogs['result']:null
+                                "material"       => $set_material['set'],
+                                "analogs"        => (isset($set_analogs)) ? $set_analogs['result'] : null,
+                                "folios"         => (isset($folios)) ? $folios : null,
+                                "manualanalogs"  => (isset($manualAnalogs)) ? $manualAnalogs : null
                                 ));           
            return   new JsonModel ( array (
       
-                  'html'  =>$html,
+                  'html'  =>   $html,
                   'query' =>   $set_material['query'],
                   
                   

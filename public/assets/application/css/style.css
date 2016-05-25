@@ -3870,3 +3870,5 @@ ul.project-detail-block, .project-detail-block ul {
         visibility: hidden;
     }
 }
+
+.full_separator{border-top: 1px solid #ddd;float: left;margin-bottom: 10px;width: 100%;margin-top:10px;}

@@ -7,7 +7,7 @@
            <dt class="col-lg-6 col-md-6 col-sm-10 col-xs-11" style="background-image:url('<?php echo $url;?>');"></dt>
            <dd class="col-lg-6 col-md-6 col-sm-10 col-xs-11">
                <ul> 
-                   <li class="card_price"><strong>Цена</strong><span>$ <?php echo $material['price_material'] ?> за погонный метр</span></li>               
+                   <?php if ($material['price_material']){?><li class="card_price"><strong>Цена</strong><span>$ <?php echo $material['price_material'] ?> за погонный метр</span></li><?php } ?>               
                    <li class="separator"></li>
                    <li><strong>Наименование</strong><span><?php echo $material['name_material'] ?></span></li>
                    <li><strong>Артикул</strong><span><?php echo $material['articul'] ?></span></li>
@@ -17,6 +17,7 @@
                    <li class="separator"></li>
                    <li><strong>Цвет</strong><span><?php echo $material['color'] ?></span></li>
                    <li><strong>Текстура</strong><span><?php echo $material['texture'] ?></span></li>
+                   <li><strong>Описание</strong><span><?php echo $material['describe_material'] ?></span></li>
 
                    <!-- <li><strong>sample(for trace)</strong><span><?php echo $material['sample'] ?></span></li> -->
                 </ul>            
@@ -24,8 +25,18 @@
 
            </dd>
   </dl>
+  <?php if ($this->folios !=null){?> 
+           <h5>Проекты с использованием данного материала:</h5>
+           <ul> <?php foreach ($this->folios as $item){ ?>
+                   <li><a href="/project/<?php echo $item['id_folio']?>"><?php echo ($item['name_folio']) ? $item['name_folio'] : 'Проект' ;?></a></li>
+                <?php } ?>               
+
+          </ul>
+          <div class="full_separator"></div>
+
+<?php } ?>   
        <?php if ($this->analogs !=null){?>
-             <h5>Похожие материалы</h5>
+             <h5>Материалы со схожими характеристиками</h5>
             <div class="analogs">
                       <?php foreach ($this->analogs as $item){ 
                              $url = (($item['url'] != '') && $item['url'] != null) ? "/assets/application/samples/".trim($item['url']) : "/assets/application/img/no_photo.png";
@@ -34,13 +45,35 @@
                              <dl data-sample="<?php echo $item['id'] ?>">
                                   <dt class="col-lg-6 col-md-6 col-sm-10 col-xs-11" ><?php echo $item['name_material'] ?></dt>
                                   <dd class="col-lg-6 col-md-6 col-sm-10 col-xs-11" style="background:url('<?php echo $url;?>') no-repeat center center;">
-                                  <span>$<?php echo $item['price_material'] ?></span>
+                                  <?php if ($item['price_material']){?><span>$<?php echo $item['price_material'] ?></span><?php } ?>
                                 </dd>
                            </dl>
 
                     <?php } ?> 
          </div>
+         <div class="full_separator"></div>
        <?php } ?> 
+
+<?php if ($this->manualanalogs !=null){?>  
+             <h5>Похожие материалы</h5>
+             <div class="analogs">
+                   <?php foreach ($this->manualanalogs as $item){ 
+                             $url = (($item['url'] != '') && $item['url'] != null) ? "/assets/application/samples/".trim($item['url']) : "/assets/application/img/no_photo.png";
+                    ?>
+                             <dl data-sample="<?php echo $item['id'] ?>">
+                                  <dt class="col-lg-6 col-md-6 col-sm-10 col-xs-11" ><?php echo $item['name_material'] ?></dt>
+                                  <dd class="col-lg-6 col-md-6 col-sm-10 col-xs-11" style="background:url('<?php echo $url;?>') no-repeat center center;">
+                                  <?php if ($item['price_material']){?><span>$<?php echo $item['price_material'] ?></span><?php } ?>
+                                </dd>
+                           </dl>                    
+
+                   <?php } ?> 
+
+             </div>
+
+<?php } ?>  
+
+  
 
 <?php }?>
 
