@@ -343,7 +343,7 @@ footer{background:none;}
 #causes .container h4{text-align: center;}
 #causes .container h5{text-align: center;}
 #causes .container ul{list-style: none;padding:0;margin:0;}
-#causes .container li{list-style: none;height:170px;text-align:center;font-weight:700;}
+#causes .container li{list-style: none;height:170px;text-align:center;font-weight:700;margin-top:20px;}
 #causes .container .cause1 a em{background-image:url(../img/cause/1.png);}
 #causes .container .cause2 a em{background-image:url(../img/cause/2.png);}
 #causes .container .cause3 a em{background-image:url(../img/cause/3.png);}
@@ -351,11 +351,11 @@ footer{background:none;}
 #causes li a{display:block;width:100%;height:100%;position:relative;width:100%;height:100%;display:block;}
 #causes li a em{position:absolute;display:block;background-repeat:no-repeat;background-position:center top;width:100%;height:137px;}
 #causes li a:hover em{background-position:center bottom;}
-#causes li a span{position:absolute;bottom:0;width:100%;height:20px;display:block;}
+#causes li a span{position:absolute;bottom:0;width:100%;height:auto;display:block;line-height:1em;}
 
-#work_planning .container{background:url('../img/markup1.jpg') no-repeat center center;height:454px;}/*    !!!!!!!!!!!!!!!!!             для разработки!!!!!!!!!!!!!    */
+#work_planning .container{/*background:url('../img/markup1.jpg') no-repeat center center;*/height:auto;}/*    !!!!!!!!!!!!!!!!!             для разработки!!!!!!!!!!!!!    */
 #work_planning .container ul{list-style: none;width:100%;float:left;}
-#work_planning .container li{width:125px;height:221px;background:#ecf0f1 url(../img/how/how_bg.png) no-repeat top right;border-radius: 6px;list-style: none;padding :0;margin :0;float:left;margin-right:15px;}
+#work_planning .container li{width:125px;height:221px;background:#ecf0f1 url(../img/how/how_bg.png) no-repeat top right;border-radius: 6px;list-style: none;padding :0;margin :0;float:left;margin-right:15px;margin-top:30px;}
 #work_planning .container li a{text-align:center;padding-left:3px;padding-right:3px;display:block;position:relative;width:100%;height:100%;color:#3b485b;line-height:1.2em;padding-top:156px;font-size:0.9em;}
 #work_planning .container li a em.num{background:#e8513c;width:46px;height:46px;color:#fff;font-size:3em;border-radius: 22px;position:absolute;top:-23px;left:50%;margin-left:-23px;display:block;text-align:center;padding-top:19px;}
 #work_planning .container li a em.pic{background-repeat:no-repeat;background-position:top left;position:absolute;display:block;width:103px;top:42px;left:11px;height:108px;}
