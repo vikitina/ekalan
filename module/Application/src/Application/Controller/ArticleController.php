@@ -34,14 +34,27 @@ class ArticleController extends AbstractActionController
         $art_id = $this->getEvent()->getRouteMatch()->getParam('id');
         $articleSrv    =  $this -> getServiceLocator()->get('article');
         $article      =  $articleSrv    -> getArticle((int)$art_id);
+        /*
+         * about
+         * causes
+         * work_planning
+
+        */
+        if ($article['artfirst'] == 1 ) { $anchor = 'about';}
+        if ($article['artfour'] == 1 ) { $anchor = 'causes';}
+        if ($article['arthow'] == 1 ) { $anchor = 'work_planning';}
            return   new ViewModel ( array (
       
-               'article' => $article
+               'article' => $article,
+               'anchor'  => $anchor
+       
              
         ) );
 
+ }
 
-    }    
+
+       
 
         
 

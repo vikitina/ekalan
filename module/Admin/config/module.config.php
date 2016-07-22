@@ -660,7 +660,68 @@ return array(
                                                           'action'     => 'ajaxpublicart',
                                                       ),
                                             ),
+                            ),
+                         'admin_artfirst'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/artfirst',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Article',
+                                                          'action'     => 'artfirst',
+                                                      ),
+                                            ),
                             ), 
+                        'admin_addartfirst'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/addartfirst',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Article',
+                                                          'action'     => 'addartfirst',
+                                                      ),
+                                            ),
+                            ), 
+                         'admin_artfour'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/artfour',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Article',
+                                                          'action'     => 'artfour',
+                                                      ),
+                                            ),
+                            ), 
+                        'admin_addartfour'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/addartfour',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Article',
+                                                          'action'     => 'addartfour',
+                                                      ),
+                                            ),
+                            ),                             
+                         'admin_arthow'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/arthow',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Article',
+                                                          'action'     => 'arthow',
+                                                      ),
+                                            ),
+                            ), 
+                        'admin_addarthow'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                          'options' => array(                                              
+                                                    'route' => '/addarthow',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Article',
+                                                          'action'     => 'addarthow',
+                                                      ),
+                                            ),
+                            ),                             
+
                              'admin_manufacturers' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',
                                           'options' => array(

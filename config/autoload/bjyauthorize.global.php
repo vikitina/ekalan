@@ -84,6 +84,8 @@ return array(
 
                                    array('route' => 'articles', 'roles' => array('guest', 'user')),
                                    array('route' => 'openarticle', 'roles' => array('guest', 'user')),
+                                   array('route' => 'calculator', 'roles' => array('guest', 'user')),
+                                   
 
                                    array('route' => 'zfcadmin/admin_main_page', 'roles' => array('admin')),  
                            
@@ -106,6 +108,14 @@ return array(
                                    array('route' => 'zfcadmin/admin_updatearticle', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_addarticle', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_delarticle', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_artfirst', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_addartfirst', 'roles' => array('admin')),    
+                                   array('route' => 'zfcadmin/admin_artfour', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_addartfour', 'roles' => array('admin')),     
+                                   array('route' => 'zfcadmin/admin_arthow', 'roles' => array('admin')), 
+                                   array('route' => 'zfcadmin/admin_addarthow', 'roles' => array('admin')), 
+
+                              
                                    array('route' => 'zfcadmin/admin_ajaxdelarticle', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_deltestimonial', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_deltestimonial', 'roles' => array('admin')),

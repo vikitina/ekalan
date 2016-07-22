@@ -2322,3 +2322,29 @@
 [25-May-2016 10:15:44 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 108
 [25-May-2016 11:43:40 Europe/Helsinki] PHP Notice:  Undefined variable: material_id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 792
 [25-May-2016 11:43:40 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[12-Jul-2016 13:29:26 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[14-Jul-2016 12:54:21 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[14-Jul-2016 15:29:56 Europe/Helsinki] PHP Notice:  Undefined variable: set_material_html in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 27
+[14-Jul-2016 15:29:56 Europe/Helsinki] PHP Notice:  Undefined variable: data_array in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 28
+[14-Jul-2016 15:29:56 Europe/Helsinki] PHP Notice:  Undefined variable: blocks in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 29
+[14-Jul-2016 15:29:56 Europe/Helsinki] PHP Notice:  Undefined variable: rowcount in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 30
+[14-Jul-2016 15:29:56 Europe/Helsinki] PHP Notice:  Undefined variable: limit in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 32
+[14-Jul-2016 15:30:46 Europe/Helsinki] PHP Notice:  Undefined variable: set_material_html in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 27
+[14-Jul-2016 15:30:46 Europe/Helsinki] PHP Notice:  Undefined variable: data_array in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 28
+[14-Jul-2016 15:30:46 Europe/Helsinki] PHP Notice:  Undefined variable: blocks in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 29
+[14-Jul-2016 15:30:46 Europe/Helsinki] PHP Notice:  Undefined variable: rowcount in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 30
+[14-Jul-2016 15:30:46 Europe/Helsinki] PHP Notice:  Undefined variable: limit in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 32
+[20-Jul-2016 14:32:17 Europe/Helsinki] PHP Parse error:  syntax error, unexpected '(', expecting ';' or '{' in /var/www/ekalan/module/Application/src/Application/Model/Article.php on line 76
+[20-Jul-2016 14:38:05 Europe/Helsinki] PHP Notice:  Undefined variable: artfirst in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 79
+[20-Jul-2016 14:38:35 Europe/Helsinki] PHP Notice:  Undefined variable: artfirst in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 79
+[20-Jul-2016 14:42:32 Europe/Helsinki] PHP Notice:  Undefined variable: artfirst in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 79
+[20-Jul-2016 14:43:01 Europe/Helsinki] PHP Notice:  Undefined variable: artfirst in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 79
+[20-Jul-2016 14:43:37 Europe/Helsinki] PHP Notice:  Undefined variable: artfirst in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[20-Jul-2016 14:43:39 Europe/Helsinki] PHP Notice:  Undefined variable: artfirst in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[20-Jul-2016 14:43:40 Europe/Helsinki] PHP Notice:  Undefined variable: artfirst in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[20-Jul-2016 14:45:09 Europe/Helsinki] PHP Notice:  Undefined variable: artfirst in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[20-Jul-2016 14:45:55 Europe/Helsinki] PHP Notice:  Undefined variable: artfirst in /var/www/ekalan/module/Application/src/Application/Controller/IndexController.php on line 80
+[21-Jul-2016 20:05:53 Europe/Helsinki] PHP Parse error:  syntax error, unexpected '}' in /var/www/ekalan/module/Application/src/Application/Controller/ArticleController.php on line 43
+[21-Jul-2016 20:08:23 Europe/Helsinki] PHP Parse error:  syntax error, unexpected '}' in /var/www/ekalan/module/Application/src/Application/Controller/ArticleController.php on line 43
+[21-Jul-2016 20:09:10 Europe/Helsinki] PHP Parse error:  syntax error, unexpected '}' in /var/www/ekalan/module/Application/src/Application/Controller/ArticleController.php on line 62
+[21-Jul-2016 22:30:27 Europe/Helsinki] PHP Notice:  Undefined variable: anchor in /var/www/ekalan/module/Application/src/Application/Controller/ArticleController.php on line 52

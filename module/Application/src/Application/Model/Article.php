@@ -38,7 +38,74 @@ class Article extends TableGateway
 		 $results = $this->FetchAll($adapter, $query); 
          //var_dump($results)                           ;
         return $results;
-    } 
+    }
+public function getArtfirstArticles(){
+         $query = "SELECT * from t_article where artfirst = '1'";
+
+    
+                            
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query); 
+         //var_dump($results)                           ;
+        return $results;
+
+}   
+public function getArtfirstPublishedArticles(){
+         $query = "SELECT * from t_article where artfirst = '1' and public ='1'";
+
+    
+                            
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query); 
+         //var_dump($results)                           ;
+        return $results;
+
+} 
+
+public function getArtfourArticles(){
+         $query = "SELECT * from t_article where artfour = '1'";
+
+    
+                            
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query); 
+         //var_dump($results)                           ;
+        return $results;
+
+} 
+public function getArtfourPublishedArticles() {
+         $query = "SELECT * from t_article where artfour = '1' and public ='1'";
+
+    
+                            
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query); 
+         //var_dump($results)                           ;
+        return $results;
+
+} 
+public function getArthowArticles(){
+         $query = "SELECT * from t_article where arthow = '1'";
+
+    
+                            
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query); 
+         //var_dump($results)                           ;
+        return $results;
+
+}   
+public function getArthowPublishedArticles(){
+         $query = "SELECT * from t_article where arthow = '1' and public ='1'";
+
+    
+                            
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query); 
+         //var_dump($results)                           ;
+        return $results;
+
+}  
 
    public function getArticle($id)
     { 

@@ -16,5 +16,19 @@ var $grid = $('.grid').masonry({
 $grid.imagesLoaded().progress( function() {
   $grid.masonry();
 });  
-	
+
+
+$('.navigation .open').on('mousedown', function(){
+
+	$(this).removeClass('open');
+	console.log('sdfsdfsdfsdf');
+});
+console.log('---------------' + $(window).scrollTop());
+ if ($(window).scrollTop() > 50) {
+            $('header').addClass('sticky');
+            $('.navigation').removeClass('wow').removeClass('fadeInDown').addClass('vis');
+            $('.logo').removeClass('wow').removeClass('fadeInDown').addClass('vis');
+
+           //  $('.promo_info').addClass('opened');
+         }
 });

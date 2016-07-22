@@ -3,4 +3,5 @@ vendor
 local.php
 bjyauthorize.local.php
 error.log
+php_error.log
 access.log

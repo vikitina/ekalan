@@ -187,7 +187,16 @@ return array(
                 ),
             ),  
                   
-
+           'calculator' => array(
+                'type' => 'Zend\Mvc\Router\Http\Segment',
+                'options' => array(
+                    'route'    => '/calculator[/:id_material]',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Calculator',
+                        'action'     => 'index',
+                    ),
+                ),
+            ), 
 
         ),
     ),
@@ -352,6 +361,7 @@ return array(
             'Application\Controller\Tester' => 'Application\Controller\TesterController',
             'Application\Controller\Material' => 'Application\Controller\MaterialController',
             'Application\Controller\Article' => 'Application\Controller\ArticleController',
+            'Application\Controller\Calculator' => 'Application\Controller\CalculatorController',
 
         ),
     ),
@@ -366,6 +376,7 @@ return array(
             'layout/portfolio'        => __DIR__ . '/../view/layout/portfolio.twig',
             'layout/material'        => __DIR__ . '/../view/layout/material.twig',
             'layout/article'        => __DIR__ . '/../view/layout/article.twig',
+            'layout/calculator'        => __DIR__ . '/../view/layout/calculator.twig',
 
             'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.twig',

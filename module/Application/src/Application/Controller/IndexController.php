@@ -64,14 +64,23 @@ class IndexController extends AbstractActionController
           $system[$value['name']] = $value['data'];
         }
 
+        $artfirst = $articleSrv -> getArtfirstPublishedArticles();
         
+        $artfour = $articleSrv -> getArtfourPublishedArticles();
+        $arthow  = $articleSrv -> getArthowPublishedArticles();
+
+
         return new ViewModel(array(
 
             'manufacturers'         => $manufacturers,
             'testimonials'          => $testimonials,
             'karusel_windows'       => $karusel,
             'systems'               => $system,
-            'articles'              => $articles 
+            'articles'              => $articles,
+            'artfirst'              => $artfirst,
+            'artfour'               => $artfour,
+            'arthow'                => $arthow
+
 
         
         ));

@@ -73,16 +73,6 @@ html,body{font-family: 'Roboto', sans-serif;font-weight: 500;background:#dad1c8;
 #problems .container>div .right .problem9{margin-left:27%;background:url(../img/ico/2.png) no-repeat center left;}
 #problems .container>div .right .problem0{margin-left:30%;background:url(../img/ico/3.png) no-repeat center left;}
 
-#causes{padding-top:40px;padding-bottom:40px;}
-#causes .container{}
-#causes .container h4{text-align: center;}
-#causes .container h5{text-align: center;}
-#causes .container ul{list-style: none;padding:0;margin:0;}
-#causes .container li{list-style: none;background-repeat:no-repeat;padding-top:157px;background-position:center top;text-align:center;font-weight:700;}
-#causes .container .cause1{background-image:url(../img/cause/1.png);}
-#causes .container .cause2{background-image:url(../img/cause/2.png);}
-#causes .container .cause3{background-image:url(../img/cause/3.png);}
-#causes .container .cause4{background-image:url(../img/cause/4.png);}
 
 #work_planning{background: url(../img/bg_markup1.jpg) repeat top left;}
 
@@ -339,4 +329,47 @@ footer{background:none;}
 .openarticle h2 span{text-transform: capitalize;font-weight:normal;}
 .openarticle .text{line-height: 1.9em;color:#333;}
 .openarticle .text p{margin-bottom: 30px;color:#333;}
+
+#about{font-family: "Roboto",sans-serif !important; font-size:1em !important; color: #000 !important;line-height:1.2em !important;}
+#about p{font-family: "Roboto",sans-serif !important; font-size:1.1em !important; line-height:1.2em !important;color: #000 !important;}
+
+#about .item{padding:20px;height:300px;overflow:hidden; text-overflow: ellipsis;}
+#about .item > a{background:none; border: 2px solid #fff; padding:30px;border-radius: 10px;height:100%;overflow:hidden; text-overflow: ellipsis;width:100%;display:block;}
+#about .item > a:hover{border-color: yellow;}
+
+
+#causes{padding-top:40px;padding-bottom:40px;}
+#causes .container{}
+#causes .container h4{text-align: center;}
+#causes .container h5{text-align: center;}
+#causes .container ul{list-style: none;padding:0;margin:0;}
+#causes .container li{list-style: none;height:170px;text-align:center;font-weight:700;}
+#causes .container .cause1 a em{background-image:url(../img/cause/1.png);}
+#causes .container .cause2 a em{background-image:url(../img/cause/2.png);}
+#causes .container .cause3 a em{background-image:url(../img/cause/3.png);}
+#causes .container .cause4 a em{background-image:url(../img/cause/4.png);}
+#causes li a{display:block;width:100%;height:100%;position:relative;width:100%;height:100%;display:block;}
+#causes li a em{position:absolute;display:block;background-repeat:no-repeat;background-position:center top;width:100%;height:137px;}
+#causes li a:hover em{background-position:center bottom;}
+#causes li a span{position:absolute;bottom:0;width:100%;height:20px;display:block;}
+
+#work_planning .container{background:url('../img/markup1.jpg') no-repeat center center;height:454px;}/*    !!!!!!!!!!!!!!!!!             для разработки!!!!!!!!!!!!!    */
+#work_planning .container ul{list-style: none;width:100%;float:left;}
+#work_planning .container li{width:125px;height:221px;background:#ecf0f1 url(../img/how/how_bg.png) no-repeat top right;border-radius: 6px;list-style: none;padding :0;margin :0;float:left;margin-right:15px;}
+#work_planning .container li a{text-align:center;padding-left:3px;padding-right:3px;display:block;position:relative;width:100%;height:100%;color:#3b485b;line-height:1.2em;padding-top:156px;font-size:0.9em;}
+#work_planning .container li a em.num{background:#e8513c;width:46px;height:46px;color:#fff;font-size:3em;border-radius: 22px;position:absolute;top:-23px;left:50%;margin-left:-23px;display:block;text-align:center;padding-top:19px;}
+#work_planning .container li a em.pic{background-repeat:no-repeat;background-position:top left;position:absolute;display:block;width:103px;top:42px;left:11px;height:108px;}
+#work_planning .container li a:hover em.pic{background-position: top right;}
+#work_planning .container li a:hover{color:#e6ae49;transition:none;}
+#work_planning h4{color:#fff;margin-top:42px;margin-bottom:49px;text-align:center;}
+
+#work_planning .container li.how_1 a em.pic{background-image: url(../img/how/how_1.png);}
+.animated {animation-fill-mode: backwards;}
+.vis{visibility: visible !important;}
+
+
+
+
+
+
 

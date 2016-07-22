@@ -135,6 +135,63 @@ Object { on_home="1",  public="1",  type="public_and_on_home"}
    return new JsonModel(array(
         'res'    => $data
    ));     
+}
+
+public function artfirstAction(){
+        $articleSrv    =  $this -> getServiceLocator()->get('article');
+        $articles      =  $articleSrv    -> getArtfirstArticles();
+        return new ViewModel ( array (
+              
+                'articles'  =>  $articles,
+                  
+                
+        ) );
+
 }         
+
+public function addartfirstAction(){
+         return new ViewModel(array(
+
+          ));
+
+}  
+
+
+public function artfourAction(){
+        $articleSrv    =  $this -> getServiceLocator()->get('article');
+        $articles      =  $articleSrv    -> getArtfourArticles();
+        return new ViewModel ( array (
+              
+                'articles'  =>  $articles,
+                  
+                
+        ) );
+
+}         
+
+public function addartfourAction(){
+         return new ViewModel(array(
+
+          ));
+}     
+
+public function arthowAction(){
+        $articleSrv    =  $this -> getServiceLocator()->get('article');
+        $articles      =  $articleSrv    -> getArthowArticles();
+        return new ViewModel ( array (
+              
+                'articles'  =>  $articles,
+                  
+                
+        ) );
+
+}     
+
+public function addarthowAction(){
+         return new ViewModel(array(
+
+          ));
+
+}       
  
 }

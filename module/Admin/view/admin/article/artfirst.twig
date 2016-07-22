@@ -1,0 +1,66 @@
+{% extends 'layout/admin.twig' %}
+
+
+{% block content %}
+<h2 class="title_page"><a href="/admin/articles">Все статьи</a></h2> <a href="/admin/addartfirst" class="right_link">Добавить новую статью в первый блок</a>
+<hr class="clear" />
+<div class="row">
+     <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+              <section id="articles">
+
+
+                 <div class="material_list_container autoheight">
+                 {% if articles %}
+                       <ul class="list-group material_list">
+                         <li class="list-group-item">
+                           <div style="float:left;width:100px;margin-right: 10px;">Опубликовано</div>
+                           <div style="float:left;width:100px;">На главной</div>
+
+                         </li>
+
+                         {% for art in articles %}
+                                <li class="list-group-item">
+                                     <div class="ajax_art_public">
+                                                 <input type="checkbox" data-id="{{ art.id }}" {{ art.public ? "checked" : "" }} />
+                                    </div>
+                                    <div class="ajax_art_on_home">
+                                                 <input type="checkbox" data-id="{{ art.id }}"  {{ art.on_home ? "checked" : "" }} />
+                                    </div>                                  
+                                     <a href="/admin/article/{{ art.id  }}" class="auto">
+                                           {{ art.title_article }}
+                                         
+                                     </a>
+                                     <span class="del_article_ajax del_link" data-id="{{ art.id  }}"><i class="fa fa-trash-o"></i></span>
+
+                                </li>
+                         {% endfor %}
+                       </ul>	
+
+                   {% else %}    	<h4>Не найдено ни одной статьи</h4> {% endif %}
+                      
+                 </div>   
+                   
+             
+			</section>
+     </div>       
+ <div class="modal fade" id="delete_confirm_window">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Подтверждение удаления статьи</h4>
+      </div>
+      <div class="modal-body">
+        Статья будет удалена. Вы уверены?
+             <form action="/admin/ajaxdelarticle">
+                <input type="hidden" id="deleting_id" />
+             </form>  
+      </div>
+        <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn" id="btn_cancel_deleting">Отменить</a>
+                <a href="#" class="btn btn-primary" id="btn_confirm_deleting">Удалить</a>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+{% endblock content %}

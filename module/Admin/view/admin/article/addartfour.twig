@@ -16,9 +16,9 @@
 {#  #}                                       
                                           <div class="panel-body">
                                                 <form action="/admin/addarticle" method="post" enctype="multipart/form-data" id="addarticle">
-                                                  <input type="hidden" name="artfirst" value="0" />
+                                                  <input type="hidden" name="artfour" value="1" />
                                                   <input type="hidden" name="arthow" value="0" />
-                                                  <input type="hidden" name="artfour" value="0" />                                                  
+                                                  <input type="hidden" name="artfirst" value="0" />
                                                   <ul class="text_data">
                                                      <li><span>Заголовок статьи *</span>
                                                               <div class="text">
@@ -33,7 +33,7 @@
                                                       <li><span>Короткий текст *<br /> (для главной)</span>
                                                           <div class="textarea">
                                                               <span class="error_msg">Короткий текст нужен для Главной страницы</span>
-                                                              <textarea name="short_article" class="required"></textarea>
+                                                              <textarea name="short_article" class="required tiny"></textarea>
                                                          </div>
                                                      </li>
 
@@ -42,7 +42,7 @@
                                                       <li><span>Полный текст статьи *</span>
                                                           <div class="textarea">
                                                               <span class="error_msg">Ну а как же - текст здесь главный!</span>
-                                                              <textarea name="full_article" class="required tiny" ></textarea>
+                                                              <textarea name="full_article" class="required tiny"></textarea>
                                                          </div>
                                                      </li>
 
