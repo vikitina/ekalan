@@ -496,7 +496,7 @@
                 <h4>Как мы работаем</h4>
                        <ul>      
                           {% for arth in arthow %}
-                                 <li class="how_{{ loop.index }}"><a href="/info/{{ arth.id }}"><em class="pic" style="background-image: url(assets/application/img/how/how_{{ loop.index }}.png);"></em><em class="num">{{ loop.index }}</em>{{ arth.title_article }}</a></li>
+                                 <li class="how_{{ loop.index }}{% if loop.index is even  %} even{% endif %}"><a href="/info/{{ arth.id }}"><em class="pic" style="background-image: url(assets/application/img/how/how_{{ loop.index }}.png);"></em><em class="num">{{ loop.index }}</em>{% if loop.index < arthow|length %}<em class="arrow"></em>{% endif %}{{ arth.title_article }}</a></li>
                           {% endfor %}
                         </ul>  
                 </div>
