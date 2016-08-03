@@ -2428,3 +2428,11 @@
 [03-Aug-2016 16:18:54 Europe/Helsinki] PHP Notice:  Undefined variable: anchor in /var/www/ekalan/module/Application/src/Application/Controller/ArticleController.php on line 61
 [03-Aug-2016 16:20:37 Europe/Helsinki] PHP Notice:  Undefined variable: anchor in /var/www/ekalan/module/Application/src/Application/Controller/ArticleController.php on line 61
 [03-Aug-2016 16:25:13 Europe/Helsinki] PHP Notice:  Undefined variable: anchor in /var/www/ekalan/module/Application/src/Application/Controller/ArticleController.php on line 61
+[03-Aug-2016 19:47:54 Europe/Helsinki] PHP Notice:  Undefined variable: anchor in /var/www/ekalan/module/Application/src/Application/Controller/ArticleController.php on line 61
+[03-Aug-2016 19:52:20 Europe/Helsinki] PHP Notice:  Undefined variable: set_material_html in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 27
+[03-Aug-2016 19:52:20 Europe/Helsinki] PHP Notice:  Undefined variable: data_array in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 28
+[03-Aug-2016 19:52:20 Europe/Helsinki] PHP Notice:  Undefined variable: blocks in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 29
+[03-Aug-2016 19:52:20 Europe/Helsinki] PHP Notice:  Undefined variable: rowcount in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 30
+[03-Aug-2016 19:52:20 Europe/Helsinki] PHP Notice:  Undefined variable: limit in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 32
+[03-Aug-2016 19:56:09 Europe/Helsinki] PHP Notice:  Undefined variable: material_id in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 792
+[03-Aug-2016 19:56:09 Europe/Helsinki] PHP Notice:  Undefined index: limit in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
