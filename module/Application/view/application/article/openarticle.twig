@@ -15,11 +15,13 @@
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text">
                      {{ article.full_article|raw }}
                 </div>
+                {% if illustrates %}
                 <ul class="col-lg-3 col-md-3 col-sm-12 col-xs-12 art_gallery"> 
                       {% for ill in illustrates %}    
                            <li><a href="{{ ill.url_illustrates_prepared }}" class="cbox-gallary1"><img src="{{ ill.url_illustrates_prepared }}" alt="" /></a></li>
                       {% endfor %}
                 </ul>
+                {% endif %}
 
             </div>
 
