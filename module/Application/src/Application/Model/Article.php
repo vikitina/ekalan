@@ -30,20 +30,16 @@ class Article extends TableGateway
 
     public function getAllArticles()
     { 
-         $query = "SELECT * from t_article";
-
-    
-                            
+         $query = "SELECT * from t_article";                           
          $adapter = $this->getAdapter();
 		 $results = $this->FetchAll($adapter, $query); 
          //var_dump($results)                           ;
         return $results;
     }
-public function getArtfirstArticles(){
-         $query = "SELECT * from t_article where artfirst = '1'";
 
-    
-                            
+
+     public function getArtfirstArticles(){
+         $query = "SELECT * from t_article where artfirst = '1'";
          $adapter = $this->getAdapter();
          $results = $this->FetchAll($adapter, $query); 
          //var_dump($results)                           ;
@@ -129,6 +125,15 @@ public function getArthowPublishedArticles(){
          $results = $this->FetchAll($adapter, $query);                            
          return $results;
     }  
+
+
+    public function getAllInfoArticles(){
+         $query = "SELECT * from `t_article` where arthow = '0' and artfour = '0' and artfirst = '0'";                          
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query);                            
+         return $results;
+
+    }
 
   public function updateArticle($data)
     { 

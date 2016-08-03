@@ -34,6 +34,18 @@ class ArticleController extends AbstractActionController
         $art_id = $this->getEvent()->getRouteMatch()->getParam('id');
         $articleSrv    =  $this -> getServiceLocator()->get('article');
         $article      =  $articleSrv    -> getArticle((int)$art_id);
+
+        $illustratesSrv = $this -> getServiceLocator()->get('illustrate');
+        $illustrates = $illustratesSrv -> getAllIllustratesForArt($art_id);  
+
+            if ($illustrates){
+              foreach ($illustrates as $key => $value) {
+                  $illustrates[$key]['url_illustrates_prepared'] = ((isset($value['url_illustrates']) && $value['url_illustrates'] != '' && $value['url_illustrates'] !=null)?"/assets/application/samples/".trim($value['url_illustrates']):"");
+              }
+
+
+           }       
+
         /*
          * about
          * causes
@@ -45,8 +57,9 @@ class ArticleController extends AbstractActionController
         if ($article['arthow'] == 1 ) { $anchor = 'work_planning';}
            return   new ViewModel ( array (
       
-               'article' => $article,
-               'anchor'  => $anchor
+               'article'     => $article,
+               'anchor'      => $anchor,
+               'illustrates' => $illustrates
        
              
         ) );

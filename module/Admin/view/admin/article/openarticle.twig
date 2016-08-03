@@ -17,7 +17,10 @@
 {#  #}                                       
                                           <div class="panel-body">
                                                 <form action="/admin/updatearticle" method="post" enctype="multipart/form-data" id="updatearticle">
-                                                <input type="hidden" name="id" value="{{ article.id }}">
+                                                 <input type="hidden" name="id" value="{{ article.id }}">
+                                                 <input type="hidden" name="artfirst" value="{{ article.artfirst }}" />
+                                                  <input type="hidden" name="arthow" value="{{ article.arthow }}" />
+                                                  <input type="hidden" name="artfour" value="{{ article.artfour }}" />
                                                   <ul class="text_data">
                                                      <li><span>Заголовок статьи *</span>
                                                               <div class="text">
@@ -32,7 +35,7 @@
                                                       <li><span>Короткий текст *<br /> (для главной)</span>
                                                           <div class="textarea">
                                                               <span class="error_msg">Короткий текст нужен для Главной страницы</span>
-                                                              <textarea name="short_article" class="required">{{ article.short_article }}</textarea>
+                                                              <textarea name="short_article" class="tiny required">{{ article.short_article }}</textarea>
                                                          </div>
                                                      </li>
 
@@ -41,20 +44,40 @@
                                                       <li><span>Полный текст статьи *</span>
                                                           <div class="textarea">
                                                               <span class="error_msg">Ну а как же - текст здесь главный!</span>
-                                                              <textarea name="full_article" class="required">{{  article.full_article }}</textarea>
+                                                              <textarea name="full_article" class="required tiny">{{  article.full_article }}</textarea>
                                                          </div>
                                                      </li>
 
                                                      <li class="separator"></li>                                                     
  
+                                                     <li class="url_picture"><span>Иллюстрации к статье</span>
+                                                                <ul  class="{{ illustrates ? '' : 'empty '}} photos_list">
+                                                                    {% for ill in illustrates %}
+                                                                               <li>
+                                                                                       <span>
+                                                                                             <i class="fa fa-times"></i>
+                                                                                      </span>
+                                                                                      <div style="background-image: url('{{ ill.url_ill_prepared }}');">
+                                                                                             <input type="hidden" value="{{ ill.url_illustrates }}" name="url_picture[]" />
+                                                                                             <input type="hidden" value="{{ ill.id }}" name="id_picture" />
+                                                                                       
+                                                                                      </div>
+                                                                                </li>
+                                                                      {% endfor %}          
+                                                                </ul>
+                                                                <div class="add_photo_btn" data-form-id="url_picture"><i class="fa fa-plus"></i><span class="span_add_photo_btn"></span></div>
 
+                                                     </li>
                                                   </ul>
                                                   <div><input type="button" value="Обновить статью" data-form="updatearticle" class="checker" /> <a href="/admin/articles">Отмена</a></div>
 
 
                                                  </form> 
                                                                  
-
+                                                <form action="/admin/ajaxaddphoto" method="post" id="url_picture" class="form_photos">
+                                                           <input type="file" class="input_file_hidden" name="sample" />
+                                                          
+                                               </form> 
                                          </div>
                                  </div>   	
 

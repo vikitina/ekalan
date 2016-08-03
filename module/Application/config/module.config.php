@@ -340,6 +340,11 @@ return array(
                     $sm->get('Zend\Db\Adapter\Adapter')
                 );
             },
+           'illustrate' => function ($sm) {
+                return new \Application\Model\Illustrates(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },            
 
                      
     ),

@@ -47,13 +47,21 @@
                                                      </li>
 
                                                      <li class="separator"></li>                                                     
- 
+                                                      <li class="url_picture"><span>Иллюстрации к статье</span>
+                                                                <ul  class="empty photos_list"></ul>
+                                                                <div class="add_photo_btn" data-form-id="url_picture"><i class="fa fa-plus"></i><span class="span_add_photo_btn"></span></div>
+
+                                                     </li>  
 
                                                   </ul>
                                                   <div><input type="button" value="Добавить статью" data-form="addarticle" class="checker" /> <a href="/admin/allarticles">Отмена</a></div>
 
 
                                                  </form> 
+                                                <form action="/admin/ajaxaddphoto" method="post" id="url_picture" class="form_photos">
+                                                           <input type="file" class="input_file_hidden" name="sample" />
+                                                          
+                                               </form>                                                  
                                                                  
 
                                          </div>

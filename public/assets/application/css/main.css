@@ -372,6 +372,11 @@ footer{background:none;}
 .animated {animation-fill-mode: backwards;}
 .vis{visibility: visible !important;}
 
+.art_gallery{list-style: none;padding:0;margin:0;border:1px solid #333;}
+.art_gallery li{padding:0;margin:0;margin-bottom:20px;padding:10px;}
+.art_gallery li a{display:block;width:100%;height:200px;overflow: hidden;text-align: center;}
+.art_gallery li a img{height:100%;}
+
 
 
 
