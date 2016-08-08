@@ -9,16 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
      <!-- CSS -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css' />
-    <link href={{ basePath('assets/application/css/style.css') }} rel="stylesheet" type="text/css" />
-    <link href={{ basePath('assets/application/css/bootstrap.css') }} rel="stylesheet" type="text/css" />
-    <link href={{ basePath('assets/application/css/font-awesome.css') }} rel="stylesheet" type="text/css" />
+     <link href={{ basePath('assets/application/fonts/roboto/roboto.css') }} rel="stylesheet" type="text/css" />
+     <link href={{ basePath('assets/application/css/style.css') }} rel="stylesheet" type="text/css" />
+     <link href={{ basePath('assets/application/css/bootstrap.css') }} rel="stylesheet" type="text/css" />
+     <link href={{ basePath('assets/application/css/font-awesome.css') }} rel="stylesheet" type="text/css" /> 
+   
     <link href={{ basePath('assets/application/css/ionicons.css') }} rel="stylesheet" type="text/css" />
     <link href={{ basePath('assets/application/css/plugin/jPushMenu.css') }} rel="stylesheet" type="text/css" />
     <link href={{ basePath('assets/application/css/plugin/animate.css') }} rel="stylesheet" type="text/css" />
     <link href={{ basePath('assets/application/css/jquery-ui.css') }} rel="stylesheet" type="text/css" />
     <link href={{ basePath('assets/application/css/jquery.countdown.css') }} rel="stylesheet" type="text/css" /> 
     <link href={{ basePath('assets/application/css/main.css') }} rel="stylesheet" type="text/css" />
+    <link href={{ basePath('assets/application/css/responsive.css') }} rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -147,116 +149,30 @@
         <!-- End Intro Section -->
 
 {% block content %}{{ content|raw }}{% endblock content %}
-
- 
-
-       <!-- Social Section -->
-        <section id="social" class="gray-bg ptb ptb-sm-80">
-            <div class="container text-center">
-
-                <div class="spacer-60"></div>
-                <div class="row">
-
-                  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2542.9236866638394!2d30.62923701599817!3d50.40525979850073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c5a9263ac0f9%3A0x34dc59578fb237ac!2z0L_RgNC-0YHQvy4g0J_QtdGC0YDQsCDQk9GA0LjQs9C-0YDQtdC90LrQsCwgMjMsIDcxLCDQmtC40ZfQsiwg0KPQutGA0LDQuNC90LA!5e0!3m2!1sru!2s!4v1453455068322" width="100%" height="350px" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-                  
-                  </div>
-
-
-                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 addr">
-                   
-                    <p>
-                          <span><i class="ion ion-ios-location"></i></span>
-                          Киев,<br />
-                          ЖК "АБРИКОС",<br />
-                          проспект Петра Григоренко, 23/71
-                    </p>
-                    <p>  <span><i class="ion ion-ios-telephone"></i></span>
-                           (044) 501-92-18<br />
-                           (067) 230-26-20
-                      </p>
-                       <a href="mailto:alanbud@optima.com.ua"><span><i class="ion ion-ios-email"></i></span>alanbud@optima.com.ua</a><br />
-    
-                       <a href="#" class="order_call">Заказать звонок</a>
-                  </div>  
-
-
-                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <!-- Contact FORM -->
-                        <form class="contact-form" id="contact" role="form">
-
-                            <!-- IF MAIL SENT SUCCESSFULLY -->
-                            <h6 class="successContent">
-                                <i class="fa fa-check left" style="color: #5cb45d;"></i>Ваше сообщение успешно отправлено.
-                            </h6>
-                            <!-- END IF MAIL SENT SUCCESSFULLY -->
-
-                            <!-- MAIL SENDING UNSUCCESSFULL -->
-                            <h6 class="errorContent">
-                                <i class="fa fa-exclamation-circle left" style="color: #e1534f;"></i>Возникли проблемы при отправке формы!
-                            </h6>
-                            <!-- END MAIL SENDING UNSUCCESSFULL -->
-
-                            <div class="form-field-wrapper">
-                                <input class="input-sm form-full" id="form-name" type="text" name="form-name" placeholder="Ваше имя" required>
-                            </div>
-
-                            <div class="form-field-wrapper">
-                                <input class="input-sm form-full" id="form-email" type="email" name="form-email" placeholder="Электронная почта" required>
-                            </div>
-
-                            <div class="form-field-wrapper">
-                                <input class="input-sm form-full" id="form-subject" type="text" name="form-subject" placeholder="Тема">
-                            </div>
-
-                            <div class="form-field-wrapper">
-                                <textarea class="form-full" id="form-message" rows="7" name="form-message" placeholder="Сообщение" required></textarea>
-                            </div>
-
-                            <button class="btn btn-md btn-black form-full" type="submit" id="form-submit" name="submit">Отправить сообщение</button>
-                        </form>
-                        <!-- END Contact FORM -->
-                    </div>
-                </div><!--  **************************************  -->
-            </div>
-        </section>
-        <!-- End Social Section -->
-
-
-
-        <hr />
-
-
-
-
-        <!-- END CONTENT ---------------------------------------------------------------------------->
-
         <!-- FOOTER -->
         <footer class="footer pt-80">
 
             <!-- Copyright Bar -->
             <section class="copyright pb-60">
                 <div class="container">
-                    <p class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <p class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                         &copy; 2016 <a><b>ekalan®</b></a>.
                     </p>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 socials">
+                    <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 socials">
                         <ul>
-                            <li>
+                            <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
  
                                 <a class="link" target="_blank" href="https://www.twitter.com/"><i class="ion ion-social-twitter"></i></a>
                             </li>
-                            <li>
+                            <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
  
                                 <h6><a class="link" target="_blank" href="https://www.facebook.com/"><i class="ion ion-social-facebook"></i></a></h6>
                             </li>
-                            <li>
+                            <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 
                                 <h6><a class="link" target="_blank" href="https://plus.google.com/"><i class="ion ion-social-googleplus"></i></a></h6>
                             </li>
-                            <li>
+                            <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 
                                 <h6><a class="link" target="_blank" href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></h6>
                             </li>
@@ -269,34 +185,15 @@
 
         </footer>
         <!-- END FOOTER -->
-
+ 
         <!-- Scroll Top -->
         <a class="scroll-top">
             <i class="fa fa-angle-double-up"></i>
         </a>
         <!-- End Scroll Top -->
-
     </div>
     <!-- Site Wraper End -->
 
-<!-- modal  -->
-<div class="modal fade" id="materialModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-     <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Материалы</h4>
-      </div>
-      <div class="modal-body">
-       <dl>
-           <dt class="col-lg-6 col-md-6 col-sm-10 col-xs-11"></dt>
-           <dd class="col-lg-6 col-md-6 col-sm-10 col-xs-11"></dd>
-       </dl>
-      </div>
-
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 
 
     <!-- JS -->

@@ -3,6 +3,227 @@
 
 
 {% block content %}
+{{ msg }}
 
+
+       <section class="ptb ptb-sm-80">
+            <div class="container">
+
+<form id="calc_form">
+<input type="hidden" name="cf_sess_id" id="cf_sess_id" value="{{ cf_form.cf_sess_id }}" />
+<input type="hidden" name="cf_material_id" id="cf_material_id" value="{{ cf_form.cf_material_id }}" />
+<input type="hidden" name="" id="" />
+<input type="hidden" name="" id="" />
+<input type="hidden" name="" id="" />
+</form>
+
+{#
+array(16) { ["id"]=> string(1) "5" 
+          ["articul"]=> string(6) "cor062" 
+          ["name_material"]=> string(23) "Corian Beige Fieldstone" 
+          ["price_material"]=> string(6) "111222" 
+          ["id_manufacturer"]=> string(1) "1" ["id_sample"]=> string(3) "196" ["sample"]=> string(23) "Corian_Beige_Fieldstone" 
+          ["id_color"]=> string(1) "3" 
+          ["id_texture"]=> string(1) "3" 
+          ["id_collection"]=> string(1) "6" 
+          ["describe_material"]=> string(1020) "Lorem ipsum dolor sit amet, pro ne paulo adipisci. Ex mel quod quaeque phaedrum" 
+          ["url"]=> string(66) "Corian/Mountain_Rocks/Corian_Beige_Fieldstone_690x325_690x345.jpg " 
+          ["manufacturer"]=> string(6) "Corian" 
+          ["texture"]=> string(14) "Средняя" 
+          ["color"]=> string(14) "Бежевый" 
+          ["collection"]=> string(14) "Mountain Rocks" } 
+
+#}
+             {% if  material %}
+                     <div class="material_for_calc"> 
+                            
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 img" style="background:url({{ material.url_prepared }})">
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            	     <a href="/material/0&0&0">ВЫбрать другой материал</a>
+                                  	<h4>{{ material.name_material     }}</h4>
+                            	      <p>{{  material.describe_material }}</p>
+                            	      <p>Производитель - {{  material.manufacturer }}</p>
+                            	      <p>Цена - {{  material.price_material }}</p>
+                            </div>
+
+
+                     </div><!-- material_for_calc  -->   
+
+
+              {% else %}
+                     <a href="/material/0&0&0">Укажите материал</a>
+             {% endif %}
+
+                            <div class="calc_params">
+                            <div class="tabs b-lrb-none ui-tabs ui-widget ui-widget-content ui-corner-all">
+                                        <ul role="tablist" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                                                   <li aria-expanded="true" aria-selected="true" aria-labelledby="ui-id-1" aria-controls="tabs-1" tabindex="0" role="tab" class="ui-state-default ui-corner-top ui-tabs-active ui-state-active">
+                                                           <a id="ui-id-1" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-1">П - тип</a>
+                                                   </li>
+                                                   <li aria-expanded="false" aria-selected="false" aria-labelledby="ui-id-2" aria-controls="tabs-2" tabindex="-1" role="tab" class="ui-state-default ui-corner-top"> 
+                                                          <a id="ui-id-2" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-2">| - тип</a>
+                                                  </li>
+                                                   <li aria-expanded="false" aria-selected="false" aria-labelledby="ui-id-3" aria-controls="tabs-3" tabindex="-1" role="tab" class="ui-state-default ui-corner-top"> 
+                                                          <a id="ui-id-2" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-3">L - тип</a>
+                                                  </li>                                                  
+                      
+                                        </ul>
+                                        <div class="ui-tab-content">
+                                                 <div aria-hidden="false" role="tabpanel" aria-labelledby="ui-id-1" id="tabs-1" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
+                                                            <div id="schema_U">
+                                                              
+                                                               
+                                                                      <div class="u_wall_1_obj"></div>
+                                                                      <div class="u_wall_2_obj"></div>
+                                                                      <div class="u_wall_3_obj"></div>
+                                                                      <div class="u_wall_4_obj"></div>
+                                                                      <div class="u_wall_5_obj"></div>
+                                                                      <div class="u_wall_6_obj"></div>
+                                                                      <div class="u_wall_7_obj"></div>
+                                                                      <div class="u_wall_8_obj"></div> 
+
+                                                                       
+                                                                      <div class="u_wall_1 handle" data-calc-form="u_wall_1"><input type="checkbox" /></div>
+                                                                      <div class="u_wall_2 handle" data-calc-form="u_wall_2"><input type="checkbox" /></div>
+                                                                      <div class="u_wall_3 handle" data-calc-form="u_wall_3"><input type="checkbox" /></div>
+                                                                      <div class="u_wall_4 handle" data-calc-form="u_wall_4"><input type="checkbox" /></div>
+                                                                      <div class="u_wall_5 handle" data-calc-form="u_wall_5"><input type="checkbox" /></div>
+                                                                      <div class="u_wall_6 handle" data-calc-form="u_wall_6"><input type="checkbox" /></div>
+                                                                      <div class="u_wall_7 handle" data-calc-form="u_wall_7"><input type="checkbox" /></div>
+                                                                      <div class="u_wall_8 handle" data-calc-form="u_wall_8"><input type="checkbox" /></div> 
+
+                                                                      <div class="u_sink u_sink_obj handle" data-calc-form="u_sink"><span>Мойка</span><input type="checkbox" /></div>
+                                                                      <div class="u_stove u_stove_obj handle" data-calc-form="u_stove"><span>Плита</span><input type="checkbox" /></div>                                                                                                                                          
+
+                                                            </div>{#  schema_U #}
+                                                 </div>
+                                                 <div aria-hidden="true" role="tabpanel" aria-labelledby="ui-id-2" id="tabs-2" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
+                                                            <div id="schema_I">
+                                                                    <div class="i_wall_left_obj"></div>
+                                                                    <div class="i_wall_top_obj"></div>
+                                                                    <div class="i_wall_right_obj"></div>
+                                                                    <div class="i_wall_bottom_obj i_wall_bottom_obj_on"></div>
+
+                                                                    <div class="i_corner_1_obj"></div>
+                                                                    <div class="i_corner_2_obj"></div>
+                                                                    <div class="i_corner_3_obj"></div>
+                                                                    <div class="i_corner_4_obj"></div>
+                                                               
+                                                                    <div class="i_wall_left handle" data-calc-form="i_wall_left"><input type="checkbox" /></div>
+                                                                    <div class="i_wall_top handle" data-calc-form="i_wall_top"><input type="checkbox" /></div>
+                                                                    <div class="i_wall_right handle" data-calc-form="i_wall_right"><input type="checkbox" /></div>
+                                                                    <div class="i_wall_bottom handle" data-calc-form="i_wall_bottom"><input type="checkbox" /></div>
+
+                                                                    <div class="i_sink i_sink_obj handle" data-calc-form="i_sink"><span>Мойка</span><input type="checkbox" /></div>
+                                                                    <div class="i_stove i_stove_obj handle" data-calc-form="i_stove"><span>Плита</span><input type="checkbox" /></div>
+
+
+                                                            </div>{#  schema_I #}
+
+                                               </div>  
+                                                 <div aria-hidden="true" role="tabpanel" aria-labelledby="ui-id-3" id="tabs-3" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
+                                                             <div id="schema_L">
+                                                               
+                                                                      <div class="l_wall_1_obj"></div>
+                                                                      <div class="l_wall_2_obj"></div>
+                                                                      <div class="l_wall_3_obj"></div>
+                                                                      <div class="l_wall_4_obj"></div>
+                                                                      <div class="l_wall_5_obj"></div>
+                                                                      <div class="l_wall_6_obj"></div>
+
+                                                                      <div class="l_wall_1 handle" data-calc-form="l_wall_1"><input type="checkbox" /></div>
+                                                                      <div class="l_wall_2 handle" data-calc-form="l_wall_2"><input type="checkbox" /></div>
+                                                                      <div class="l_wall_3 handle" data-calc-form="l_wall_3"><input type="checkbox" /></div>
+                                                                      <div class="l_wall_4 handle" data-calc-form="l_wall_4"><input type="checkbox" /></div>
+                                                                      <div class="l_wall_5 handle" data-calc-form="l_wall_5"><input type="checkbox" /></div>
+                                                                      <div class="l_wall_6 handle" data-calc-form="l_wall_6"><input type="checkbox" /></div>
+
+                                                                    <div class="l_sink l_sink_obj handle" data-calc-form="l_sink"><span>Мойка</span><input type="checkbox" /></div>
+                                                                    <div class="l_stove l_stove_obj handle" data-calc-form="l_stove"><span>Плита</span><input type="checkbox" /></div>                                                                      
+
+                                                             </div>{#  schema_L #}
+                                               </div>                                                                                            
+
+                                      </div>
+                              </div>{# tabs #}
+
+                            </div><!--  calc_params  -->
+             </div>
+             <div class="clear"></div>
+        </section>
+
+                   <!-- Social Section -->
+        <section id="contacts" class="gray-bg ptb ptb-sm-80">
+            <div class="container text-center">
+
+                <div class="spacer-60"></div>
+                <div class="row">
+
+                  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    {{ systems.map|raw }}
+                 
+                  </div>
+
+
+                  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 addr">
+                   
+                    <p>
+                          <span><i class="ion ion-ios-location"></i></span>
+                          {{ systems.address|raw }}
+                    </p>
+                    <p>  <span><i class="ion ion-ios-telephone"></i></span>
+                           {{ systems.tel|raw }}
+                      </p>
+                       <a href="mailto:alanbud@optima.com.ua"><span><i class="ion ion-ios-email"></i></span>{{ systems.email }}</a><br />
     
+                       <a href="#" class="order_call">Заказать звонок</a>
+                  </div>  
+
+
+                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <!-- Contact FORM -->
+                        <form class="contact-form" id="footer_contact" role="form">
+
+                            <!-- IF MAIL SENT SUCCESSFULLY -->
+                            <h6 class="successContent">
+                                <i class="fa fa-check left" style="color: #5cb45d;"></i>Ваше сообщение успешно отправлено.
+                            </h6>
+                            <!-- END IF MAIL SENT SUCCESSFULLY -->
+
+                            <!-- MAIL SENDING UNSUCCESSFULL -->
+                            <h6 class="errorContent">
+                                <i class="fa fa-exclamation-circle left" style="color: #e1534f;"></i>Возникли проблемы при отправке формы!
+                            </h6>
+                            <!-- END MAIL SENDING UNSUCCESSFULL -->
+
+                            <div class="form-field-wrapper">
+                                <input class="input-sm form-full" id="form-name" type="text" name="sc_name" placeholder="Ваше имя" required>
+                            </div>
+
+                            <div class="form-field-wrapper">
+                                <input class="input-sm form-full" id="form-email" type="email" name="sc_mail" placeholder="Электронная почта" required>
+                            </div>
+
+                            <div class="form-field-wrapper">
+                                <input class="input-sm form-full" id="form-subject" type="text" name="sc_phone" placeholder="Телефон">
+                            </div>
+
+                            <div class="form-field-wrapper">
+                                <textarea class="form-full" id="form-message" rows="7" name="sc_text" placeholder="Сообщение" required></textarea>
+                            </div>
+
+                            <button class="btn btn-md btn-black form-full" type="submit" id="form-submit" name="submit">Отправить сообщение</button>
+                        </form>
+                        <!-- END Contact FORM -->
+                    </div>
+                </div><!--  **************************************  -->
+            </div>
+        </section>
+        <!-- End Social Section -->
+
+        <!-- END CONTENT ---------------------------------------------------------------------------->
+
+
+
 {% endblock content %}

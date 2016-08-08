@@ -130,7 +130,9 @@ html,body{font-family: 'Roboto', sans-serif;font-weight: 500;background:#dad1c8;
 #materialModal .modal-body dl dd li strong{float:left;width:50%;}
 #materialModal .modal-body dl dd li span{float:left;}
 #materialModal .modal-body dl dd li.separator{border-top:1px solid #ddd;}
-#materialModal .modal-body dl dd li.card_price{padding:3px;background:red;color:#fff;font-size: 1.1vw;}
+#materialModal .modal-body dl dd li.card_price{padding-left:2%;padding-right:2%;background:red;color:#fff;font-size: 1.1vw;padding-top:20px;padding-bottom:20px;}
+#materialModal .modal-body dl dd li.card_price strong{width:auto;}
+#materialModal .modal-body dl dd li.card_price span{float:right;}
 
 #filter_sidebar{float:left;width:28%;}
 #filter_sidebar h5{padding-left:40px;}
@@ -377,7 +379,96 @@ footer{background:none;}
 .art_gallery li a{display:block;width:100%;height:200px;overflow: hidden;text-align: center;}
 .art_gallery li a img{height:100%;}
 
+.material_for_calc{}
+.material_for_calc .img{background-position: center center;background-size: cover;background-repeat: no-repeat;height:300px;border-radius: 20px;}
 
+
+.calculator_link{border: 2px solid #0078bf;
+    border-radius: 5px;
+    color: #0078bf;
+    display: block;
+    float: left;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-top: -64px;
+    padding-right: 10px;padding-top:14px;
+    padding-bottom:7px;
+    text-transform: uppercase;position: relative;padding-left:35px;}
+    .calculator_link i{    font-size: 2.4em;
+    left: 9px;
+    position: absolute;
+    top: 5px;}
+
+.calculator_link:hover{background:#e6ae49;color:#fff;border-color: #e6ae49;}   
+
+#schema_I{width:70%;height: 200px;margin: 49px auto 0;position:relative;}
+
+.i_wall_left_obj{position:absolute;width:10px;border-right: 2px solid #0078bf;height:100%;left:-10px;top:0;}
+.i_wall_right_obj{position:absolute;width:10px;border-left: 2px solid #0078bf;height:100%;right:-10px;top:0;}
+.i_wall_top_obj{position:absolute;width:100%;border-bottom: 2px solid #0078bf;height:10px;top:-10px;left:0;}
+.i_wall_bottom_obj{position:absolute;width:100%;border-top: 2px solid #0078bf;height:10px;bottom:-10px;left:0;}
+
+.i_corner_1_obj{position:absolute;top:0;left:0;width:20px;height:20px;border-left:2px solid #fff;border-top:2px solid #fff;border-radius:0px;}
+.i_corner_2_obj{position:absolute;top:0;right:0;}
+.i_corner_3_obj{position:absolute;bottom:0;right:0;}
+.i_corner_4_obj{position:absolute;left:0;bottom:0;}
+
+.i_wall_left{position:absolute;left:-10px;top:50%;margin-top:-10px;}
+.i_wall_top{position:absolute;left:50%;top:-10px;margin-left:-10px;}
+.i_wall_right{position:absolute;right:-10px;top:50%;margin-top:-10px;}
+.i_wall_bottom{position:absolute;left:50%;bottom:-16px;margin-left:-10px;}
+.i_sink{position:absolute;left:6%;top:34%;width:30%;height:50%;border:2px dashed #0078bf;border-radius: 20px;font-size:2em;   padding-left: 7%;    padding-top: 4%;}
+.i_stove{position:absolute;right:2%;top:34%;width:30%;height:50%;border:2px dashed #0078bf;font-size:2em;   padding-left: 7%;    padding-top: 4%;}
+
+
+.i_wall_left_obj_on{border-right: 2px solid red;}
+.i_wall_top_obj_on{border-bottom: 2px solid red;}
+.i_wall_right_obj_on{border-left: 2px solid red;}
+.i_wall_bottom_obj_on{border-top: 2px solid red;}
+.i_sink_on{}
+.i_stove_on{}
+
+#schema_L{width:70%;height: 400px;margin: 49px auto 0;position:relative;}
+.l_wall_1_obj{position:absolute;width:10px;border-right: 2px solid #0078bf;height:100%;left:-10px;top:0;}
+.l_wall_2_obj{position:absolute;width:100%;border-bottom: 2px solid #0078bf;height:10px;left:0;top:-10px;}
+.l_wall_3_obj{position:absolute;width:10px;border-left: 2px solid #0078bf;height:50%;right:-10px;top:0;}
+.l_wall_4_obj{position:absolute;width:70%;border-top: 2px solid #0078bf;height:10px;right:-0;top:50%;}
+.l_wall_5_obj{position:absolute;width:10px;border-left: 2px solid #0078bf;height:50%;left:30%;top:50%;}
+.l_wall_6_obj{position:absolute;width:30%;border-top: 2px solid #0078bf;height:10px;left:0;bottom:-10px;}
+
+.l_wall_1{position:absolute;left:-10px;top:50%;margin-top:-10px;}
+.l_wall_2{position:absolute;left:50%;top:-10px;margin-left:-10px;}
+.l_wall_3{position:absolute;right:-10px;top:25%;margin-top:-13px;}
+.l_wall_4{position:absolute;left:65%;top:50%;margin-top:-11px;margin-left:-10px;}
+.l_wall_5{position:absolute;left:30%;bottom:25%;margin-bottom: -10px;margin-left: -7px;}
+.l_wall_6{bottom: -16px;left: 15%;margin-left: -10px;position: absolute;}
+
+.l_sink{position:absolute;left:6%;top:17%;width:30%;height:25%;border:2px dashed #0078bf;border-radius: 20px;font-size:2em;   padding-left: 7%;    padding-top: 4%;}
+.l_stove{position:absolute;right:2%;top:17%;width:30%;height:25%;border:2px dashed #0078bf;font-size:2em;   padding-left: 7%;    padding-top: 4%;}
+
+
+
+#schema_U{width:70%;height: 400px;margin: 49px auto 0;position:relative;}
+.u_wall_1_obj{position:absolute;width:10px;border-right: 2px solid #0078bf;height:100%;left:-10px;top:0;}
+.u_wall_2_obj{position:absolute;width:100%;border-bottom: 2px solid #0078bf;height:10px;left:0;top:-10px;}
+.u_wall_3_obj{position:absolute;width:10px;border-left: 2px solid #0078bf;height:100%;right:-10px;top:0;}
+.u_wall_4_obj{position:absolute;width:30%;border-top: 2px solid #0078bf;height:10px;right:-0;bottom:-10px;}
+.u_wall_5_obj{position:absolute;width:10px;border-right: 2px solid #0078bf;height:50%;right:30%;top:50%;}
+.u_wall_6_obj{position:absolute;width:40%;border-bottom: 2px solid #0078bf;height:10px;left:30%;bottom:50%;}
+.u_wall_7_obj{position:absolute;width:10px;border-left: 2px solid #0078bf;height:50%;left:30%;top:50%;}
+.u_wall_8_obj{position:absolute;width:30%;border-top: 2px solid #0078bf;height:10px;left:0;bottom:-10px;}
+
+.u_wall_1{position:absolute;left:-10px;top:50%;margin-top:-10px;}
+.u_wall_2{position:absolute;left:50%;top:-10px;margin-left:-10px;}
+.u_wall_3{position:absolute;right:-10px;top:50%;margin-top:-13px;}
+.u_wall_4{position:absolute;right:15%;bottom:-16px;margin-right:-10px;}
+.u_wall_5{position:absolute;right:30%;bottom:25%;margin-right:-7px;}
+.u_wall_6{position:absolute;left:50%;top:50%;margin-top:-13px;margin-left:-10px;}
+.u_wall_7{position:absolute;left:30%;bottom:25%;margin-left:-7px;}
+.u_wall_8{position:absolute;left:15%;bottom:-16px;margin-right:-10px;}
+
+.u_sink{position:absolute;left:6%;top:17%;width:30%;height:25%;border:2px dashed #0078bf;border-radius: 20px;font-size:2em;   padding-left: 7%;    padding-top: 4%;}
+.u_stove{position:absolute;right:2%;top:17%;width:30%;height:25%;border:2px dashed #0078bf;font-size:2em;   padding-left: 7%;    padding-top: 4%;}
 
 
 

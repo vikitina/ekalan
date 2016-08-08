@@ -6,9 +6,9 @@ namespace Application\Model;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\TableGateway\Feature\RowGatewayFeature;
 
-class Illustrates extends TableGateway
+class Calcsess extends TableGateway
 {
-    protected $tableName  = 't_illustrates';
+    protected $tableName  = 't_calc_sess';
     protected $idCol = 'id';
  
 
@@ -19,29 +19,30 @@ class Illustrates extends TableGateway
             $adapter,
             new RowGatewayFeature($this->idCol)
         );
-/*t_illustrates` (
+/*`t_calc_sess` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `url_illustrates` varchar(255) NOT NULL,
-  `id_article` int(11) NOT NULL,
+  `calc_sess` varchar(255) NOT NULL,
+  `calc_date` date NOT NULL,
+  `calc_data` text,
   PRIMARY KEY (`id`),
-  KEY `id_article` (`id_article`)
+  UNIQUE KEY `calc_sess` (`calc_sess`)
 )*/
  
     }
 
-    public function getAllIllustratesForArt($id)
+    public function getCalcSess($id)
     { 
         
-         $query = "SELECT * from t_illustrates where id_article = '". $id ."'";
+         $query = "SELECT * from t_calc_sess where calc_sess = '". $id ."'";
          $adapter = $this->getAdapter();
 		 $results = $this->FetchAll($adapter, $query); 
          //var_dump($results)                           ;
-         return $results;
+         return ($results ? $results[0] : false);
     } 
 
  //==========================================================================================================
 
-  public function insertIllustrate($data)
+  public function insertCalcSess($data)
     {
         parent::insert($data);
         $adapter = $this->getAdapter();
@@ -50,30 +51,25 @@ class Illustrates extends TableGateway
  
     }   
       
-  public function delIllustrate($id)
+  public function delCalcSess($id)
     {
-         $query = sprintf("DELETE FROM t_illustrates WHERE id='%s'",$id);
+         $query = sprintf("DELETE FROM t_calc_sess WHERE calc_sess='%s'",$id);
          $adapter = $this->getAdapter();                                
          $statement = $adapter->createStatement($query);
          $results = $statement->execute();
          return $results;
-    }     
-  public function delByArticle($id_art){
-         $query = sprintf("DELETE FROM t_illustrates WHERE id_article = '%s'",$id_art);
-         $adapter = $this->getAdapter();                                
-         $statement = $adapter->createStatement($query);
-         $results = $statement->execute();
-         return $results;
+    }  
 
-  }
+  public function updateCalcSess($data)
+    { 
+        $id = $data['id'];
+        parent::update($data, array('id' => $id));
+    }
 
    function FetchAll($adapter, $sql, $params=null)
     {
         $statement = $adapter->createStatement($sql, $params);
         $results = $statement->execute();
-        /*echo('<pre>');
-        var_dump($statement);
-        echo('</pre>');*/
         $return_arr = array();
         foreach ($results as $result) {
             $return_arr[] = $result;

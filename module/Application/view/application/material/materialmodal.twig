@@ -7,6 +7,8 @@
            <dt class="col-lg-6 col-md-6 col-sm-10 col-xs-11" style="background-image:url('<?php echo $url;?>');"></dt>
            <dd class="col-lg-6 col-md-6 col-sm-10 col-xs-11">
                <ul> 
+                   <a href="/calculator/<?php echo $material['id'] ?>" class="calculator_link"><i class="ion ion-calculator"></i> Рассчитать цену столешницы</a>
+
                    <?php if ($material['price_material']){?><li class="card_price"><strong>Цена</strong><span>$ <?php echo $material['price_material'] ?> за погонный метр</span></li><?php } ?>               
                    <li class="separator"></li>
                    <li><strong>Наименование</strong><span><?php echo $material['name_material'] ?></span></li>

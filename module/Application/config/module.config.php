@@ -344,7 +344,13 @@ return array(
                 return new \Application\Model\Illustrates(
                     $sm->get('Zend\Db\Adapter\Adapter')
                 );
-            },            
+            }, 
+           'calcsess' => function ($sm) {
+                return new \Application\Model\Calcsess(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },             
+                       
 
                      
     ),

@@ -1,4 +1,15 @@
 @media (max-width: 767px) {
     #work_planning .container li,
 	#work_planning .container li.even{margin:0 auto;margin-top: 30px;float:none;}
+
+    .addr .order_call {margin-bottom:20px;}
+
+	#schema_I{width:90%;height: 100px;}
+	#schema_L{width:90%;height: 200px;}
+	#schema_U{width:90%;height: 200px;}
+
+	.l_sink, .l_stove, .u_sink, .u_stove, .i_sink, .i_stove{font-size:1em;}
+	.u_sink{font-size:1em;}
+
+
 }
