@@ -555,5 +555,5 @@ footer{background:none;}
 .u_corner_7{background:url(../img/calculator/i_corner_3.png) no-repeat bottom left;position:absolute;bottom:-13px;left:30%;margin-left: -47px;}
 .u_corner_8{background:url(../img/calculator/i_corner_4.png) no-repeat bottom left;position:absolute;bottom:-13px;left:-12px;}
 
-
+input[type="checkbox"]{width:20px;height:20px;margin:0;}
 

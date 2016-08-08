@@ -534,28 +534,10 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 button, input, textarea, select {
-    font-family: 'Raleway', sans-serif;
+   
     font-size: 12px;
 }
 
-    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="password"], input[type="radio"], input[type="checkbox"], textarea, select {
-        appearance: none;
-        -webkit-appearance: none;
-        border: 1px solid #ddd;
-        -webkit-border-radius: 0px;
-        border-radius: 0px;
-        color: #888;
-        outline: none;
-        font-weight: 400;
-        letter-spacing: 1px;
-        font-size: 13px;
-        padding: 10px 15px;
-        transition: all 0.2s ease 0s;
-        -moz-transition: all 0.2s ease 0s;
-        -webkit-transition: all 0.2s ease 0s;
-        -o-transition: all 0.2s ease 0s;
-        display: inline-block;
-    }
 
         input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="number"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus, input[type="password"]:focus, textarea:focus {
             border-color: #e6ae49;
@@ -564,7 +546,7 @@ button, input, textarea, select {
 
 input, textarea, select {
     margin-bottom: 20px;
-    font-family: 'Raleway', sans-serif;
+
     font-size: 12px;
 }
 
