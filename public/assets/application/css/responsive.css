@@ -11,5 +11,12 @@
 	.l_sink, .l_stove, .u_sink, .u_stove, .i_sink, .i_stove{font-size:1em;}
 	.u_sink{font-size:1em;}
 
+	.grid-sizer, .grid-item {width: 100%;}
+	.item-box {height:auto;}
+
+	#work_planning .container li a em.arrow,
+	#work_planning .container li.even a em.arrow {background:url(../img/how/arrow_mobile.png) no-repeat top left;width:43px;height:102px;left: 122px;top: 192px;}
+
+
 
 }
