@@ -83,7 +83,16 @@ array(16) { ["id"]=> string(1) "5"
                                                                       <div class="u_wall_7_obj"></div>
                                                                       <div class="u_wall_8_obj"></div> 
 
-                                                                       
+                                                                      <div class="u_corner_1_obj u_corner_1_obj_on"></div>
+                                                                      <div class="u_corner_2_obj u_corner_2_obj_on"></div>
+                                                                      <div class="u_corner_3_obj u_corner_3_obj_on"></div>
+                                                                      <div class="u_corner_4_obj u_corner_4_obj_on"></div>
+                                                                      <div class="u_corner_5_obj u_corner_5_obj_on"></div>
+                                                                      <div class="u_corner_6_obj u_corner_6_obj_on"></div>
+                                                                      <div class="u_corner_7_obj u_corner_7_obj_on"></div>
+                                                                      <div class="u_corner_8_obj u_corner_8_obj_on"></div>                                                                      
+
+
                                                                       <div class="u_wall_1 handle" data-calc-form="u_wall_1"><input type="checkbox" /></div>
                                                                       <div class="u_wall_2 handle" data-calc-form="u_wall_2"><input type="checkbox" /></div>
                                                                       <div class="u_wall_3 handle" data-calc-form="u_wall_3"><input type="checkbox" /></div>
@@ -102,18 +111,23 @@ array(16) { ["id"]=> string(1) "5"
                                                             <div id="schema_I">
                                                                     <div class="i_wall_left_obj"></div>
                                                                     <div class="i_wall_top_obj"></div>
-                                                                    <div class="i_wall_right_obj"></div>
+                                                                    <div class="i_wall_right_obj i_wall_right_obj_on"></div>
                                                                     <div class="i_wall_bottom_obj i_wall_bottom_obj_on"></div>
 
-                                                                    <div class="i_corner_1_obj"></div>
-                                                                    <div class="i_corner_2_obj"></div>
-                                                                    <div class="i_corner_3_obj"></div>
-                                                                    <div class="i_corner_4_obj"></div>
+                                                                    <div class="i_corner_1_obj i_corner_1_obj_on"></div>
+                                                                    <div class="i_corner_2_obj i_corner_2_obj_on"></div>
+                                                                    <div class="i_corner_3_obj i_corner_3_obj_on"></div>
+                                                                    <div class="i_corner_4_obj i_corner_4_obj_on"></div>
                                                                
                                                                     <div class="i_wall_left handle" data-calc-form="i_wall_left"><input type="checkbox" /></div>
                                                                     <div class="i_wall_top handle" data-calc-form="i_wall_top"><input type="checkbox" /></div>
                                                                     <div class="i_wall_right handle" data-calc-form="i_wall_right"><input type="checkbox" /></div>
                                                                     <div class="i_wall_bottom handle" data-calc-form="i_wall_bottom"><input type="checkbox" /></div>
+
+                                                                    <div class="i_corner_1 corner handle" data-calc-form="i_corner_1"></div>      
+                                                                    <div class="i_corner_2 corner handle" data-calc-form="i_corner_2"></div>
+                                                                    <div class="i_corner_3 corner handle" data-calc-form="i_corner_3"></div>  
+                                                                    <div class="i_corner_4 corner handle" data-calc-form="i_corner_4"></div>                                                                                                                                                                                                                                                                              
 
                                                                     <div class="i_sink i_sink_obj handle" data-calc-form="i_sink"><span>Мойка</span><input type="checkbox" /></div>
                                                                     <div class="i_stove i_stove_obj handle" data-calc-form="i_stove"><span>Плита</span><input type="checkbox" /></div>
@@ -139,6 +153,13 @@ array(16) { ["id"]=> string(1) "5"
                                                                       <div class="l_wall_5 handle" data-calc-form="l_wall_5"><input type="checkbox" /></div>
                                                                       <div class="l_wall_6 handle" data-calc-form="l_wall_6"><input type="checkbox" /></div>
 
+                                                                      <div class="l_corner_1_obj l_corner_1_obj_on"></div>
+                                                                      <div class="l_corner_2_obj l_corner_2_obj_on"></div>
+                                                                      <div class="l_corner_3_obj l_corner_3_obj_on"></div>
+                                                                      <div class="l_corner_4_obj l_corner_4_obj_on"></div>
+                                                                      <div class="l_corner_5_obj l_corner_5_obj_on"></div>
+                                                                      <div class="l_corner_6_obj l_corner_6_obj_on"></div>                                                                       
+
                                                                     <div class="l_sink l_sink_obj handle" data-calc-form="l_sink"><span>Мойка</span><input type="checkbox" /></div>
                                                                     <div class="l_stove l_stove_obj handle" data-calc-form="l_stove"><span>Плита</span><input type="checkbox" /></div>                                                                      
 
@@ -161,7 +182,7 @@ array(16) { ["id"]=> string(1) "5"
                 <div class="row">
 
                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    {{ systems.map|raw }}
+                  {#  {{ systems.map|raw }}  #}
                  
                   </div>
 

@@ -408,17 +408,31 @@ footer{background:none;}
 .i_wall_top_obj{position:absolute;width:100%;border-bottom: 2px solid #0078bf;height:10px;top:-10px;left:0;}
 .i_wall_bottom_obj{position:absolute;width:100%;border-top: 2px solid #0078bf;height:10px;bottom:-10px;left:0;}
 
-.i_corner_1_obj{position:absolute;top:0;left:0;width:20px;height:20px;border-left:2px solid #fff;border-top:2px solid #fff;border-radius:0px;}
-.i_corner_2_obj{position:absolute;top:0;right:0;}
-.i_corner_3_obj{position:absolute;bottom:0;right:0;}
-.i_corner_4_obj{position:absolute;left:0;bottom:0;}
+.i_corner_1_obj{position:absolute;top:-5px;left:-8px;width:40px;height:34px;background:url(../img/calculator/i_corner_1_obj.png) no-repeat top left;}
+.i_corner_2_obj{position:absolute;top:-6px;right:-6px;width:37px;height:42px;background:url(../img/calculator/i_corner_2_obj.png) no-repeat top left;}
+.i_corner_3_obj{position:absolute;bottom:-8px;right:-6px;width:37px;height:41px;background:url(../img/calculator/i_corner_3_obj.png) no-repeat top left;}
+.i_corner_4_obj{position:absolute;left:-6px;bottom:-8px;width:49px;height:53px;background:url(../img/calculator/i_corner_4_obj.png) no-repeat top left;}
+
+
+.i_corner_1_obj_on{background-position: 0 -109px;}
+.i_corner_2_obj_on{background-position: -55px -110px;}
+.i_corner_3_obj_on{background-position: right bottom;}
+.i_corner_4_obj_on{background-position: left bottom;}
+
+.corner{width:60px;height:58px;cursor:pointer;}
+.i_corner_1{background:url(../img/calculator/i_corner_1.png) no-repeat bottom left;position:absolute;top:-13px;left:-12px;}
+.i_corner_2{background:url(../img/calculator/i_corner_2.png) no-repeat bottom left;position:absolute;top:-13px;right:-12px;}
+.i_corner_3{background:url(../img/calculator/i_corner_3.png) no-repeat bottom left;position:absolute;bottom:-13px;right:-12px;}
+.i_corner_4{background:url(../img/calculator/i_corner_4.png) no-repeat bottom left;position:absolute;bottom:-13px;left:-12px;}
+
+.corner_hover{background-position:0 100px;}
 
 .i_wall_left{position:absolute;left:-10px;top:50%;margin-top:-10px;}
 .i_wall_top{position:absolute;left:50%;top:-10px;margin-left:-10px;}
 .i_wall_right{position:absolute;right:-10px;top:50%;margin-top:-10px;}
 .i_wall_bottom{position:absolute;left:50%;bottom:-16px;margin-left:-10px;}
-.i_sink{position:absolute;left:6%;top:34%;width:30%;height:50%;border:2px dashed #0078bf;border-radius: 20px;font-size:2em;   padding-left: 7%;    padding-top: 4%;}
-.i_stove{position:absolute;right:2%;top:34%;width:30%;height:50%;border:2px dashed #0078bf;font-size:2em;   padding-left: 7%;    padding-top: 4%;}
+.i_sink{position:absolute;left:6%;top:20%;width:30%;height:50%;border:2px dashed #0078bf;border-radius: 20px;font-size:2em;   padding-left: 7%;    padding-top: 4%;}
+.i_stove{position:absolute;right:2%;top:20%;width:30%;height:50%;border:2px dashed #0078bf;font-size:2em;   padding-left: 7%;    padding-top: 4%;}
 
 
 .i_wall_left_obj_on{border-right: 2px solid red;}
@@ -443,8 +457,25 @@ footer{background:none;}
 .l_wall_5{position:absolute;left:30%;bottom:25%;margin-bottom: -10px;margin-left: -7px;}
 .l_wall_6{bottom: -16px;left: 15%;margin-left: -10px;position: absolute;}
 
-.l_sink{position:absolute;left:6%;top:17%;width:30%;height:25%;border:2px dashed #0078bf;border-radius: 20px;font-size:2em;   padding-left: 7%;    padding-top: 4%;}
-.l_stove{position:absolute;right:2%;top:17%;width:30%;height:25%;border:2px dashed #0078bf;font-size:2em;   padding-left: 7%;    padding-top: 4%;}
+.l_corner_1_obj{position:absolute;top:-5px;left:-8px;width:40px;height:34px;background:url(../img/calculator/i_corner_1_obj.png) no-repeat top left;}
+.l_corner_2_obj{position:absolute;top:-6px;right:-6px;width:37px;height:42px;background:url(../img/calculator/i_corner_2_obj.png) no-repeat top left;}
+.l_corner_3_obj{position:absolute;bottom:50%;right:-6px;width:37px;height:41px;background:url(../img/calculator/i_corner_3_obj.png) no-repeat top left;margin-bottom: -8px;}
+.l_corner_4_obj{position:absolute;top:50%;left:30%;width:40px;height:34px;background:url(../img/calculator/i_corner_1_obj.png) no-repeat top left;margin-left: -6px;margin-top: -3px;}
+.l_corner_5_obj{position:absolute;bottom:-8px;left:30%;width:37px;height:41px;background:url(../img/calculator/i_corner_3_obj.png) no-repeat top left;margin-left: -31px;}
+.l_corner_6_obj{position:absolute;left:-6px;bottom:-8px;width:49px;height:53px;background:url(../img/calculator/i_corner_4_obj.png) no-repeat top left;}
+
+
+
+.l_corner_1_obj_on{background-position: 0 -109px;}
+.l_corner_2_obj_on{background-position: -55px -110px;}
+.l_corner_3_obj_on{background-position: right bottom;}
+.l_corner_4_obj_on{background-position: 0 -109px;}
+.l_corner_5_obj_on{background-position: right bottom;}
+.l_corner_6_obj_on{background-position: left bottom;}
+
+
+.l_sink{position:absolute;left:6%;top:10%;width:30%;height:25%;border:2px dashed #0078bf;border-radius: 20px;font-size:2em;   padding-left: 7%;    padding-top: 4%;}
+.l_stove{position:absolute;right:2%;top:10%;width:30%;height:25%;border:2px dashed #0078bf;font-size:2em;   padding-left: 7%;    padding-top: 4%;}
 
 
 
@@ -467,8 +498,27 @@ footer{background:none;}
 .u_wall_7{position:absolute;left:30%;bottom:25%;margin-left:-7px;}
 .u_wall_8{position:absolute;left:15%;bottom:-16px;margin-right:-10px;}
 
-.u_sink{position:absolute;left:6%;top:17%;width:30%;height:25%;border:2px dashed #0078bf;border-radius: 20px;font-size:2em;   padding-left: 7%;    padding-top: 4%;}
-.u_stove{position:absolute;right:2%;top:17%;width:30%;height:25%;border:2px dashed #0078bf;font-size:2em;   padding-left: 7%;    padding-top: 4%;}
+.u_corner_1_obj{position:absolute;top:-5px;left:-8px;width:40px;height:34px;background:url(../img/calculator/i_corner_1_obj.png) no-repeat top left;}
+.u_corner_2_obj{position:absolute;top:-6px;right:-6px;width:37px;height:42px;background:url(../img/calculator/i_corner_2_obj.png) no-repeat top left;}
+.u_corner_3_obj{position:absolute;bottom:-8px;right:-6px;width:37px;height:41px;background:url(../img/calculator/i_corner_3_obj.png) no-repeat top left;}
+.u_corner_4_obj{position:absolute;right:30%;bottom:-8px;width:49px;height:53px;background:url(../img/calculator/i_corner_4_obj.png) no-repeat top left;margin-right: -43px;}
+.u_corner_5_obj{position:absolute;top:50%;right:30%;width:37px;height:42px;background:url(../img/calculator/i_corner_2_obj.png) no-repeat top left;margin-top: -6px;margin-right: -4px;}
+.u_corner_6_obj{position:absolute;top:50%;left:30%;width:40px;height:34px;background:url(../img/calculator/i_corner_1_obj.png) no-repeat top left;margin-left: -6px;margin-top: -5px;}
+.u_corner_7_obj{position:absolute;bottom:-8px;left:30%;width:37px;height:41px;background:url(../img/calculator/i_corner_3_obj.png) no-repeat top left;margin-left: -31px;}
+.u_corner_8_obj{position:absolute;left:-6px;bottom:-8px;width:49px;height:53px;background:url(../img/calculator/i_corner_4_obj.png) no-repeat top left;}
+
+
+.u_corner_1_obj_on{background-position: 0 -109px;}
+.u_corner_2_obj_on{background-position: -55px -110px;}
+.u_corner_3_obj_on{background-position: right bottom;}
+.u_corner_4_obj_on{background-position: left bottom;}
+.u_corner_5_obj_on{background-position: -55px -110px;}
+.u_corner_6_obj_on{background-position: 0 -109px;}
+.u_corner_7_obj_on{background-position: right bottom;}
+.u_corner_8_obj_on{background-position: left bottom;}
+
+.u_sink{position:absolute;left:6%;top:10%;width:30%;height:25%;border:2px dashed #0078bf;border-radius: 20px;font-size:2em;   padding-left: 7%;    padding-top: 4%;}
+.u_stove{position:absolute;right:2%;top:10%;width:30%;height:25%;border:2px dashed #0078bf;font-size:2em;   padding-left: 7%;    padding-top: 4%;}
 
 
 
