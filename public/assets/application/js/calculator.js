@@ -18,6 +18,48 @@ $(document).ready(function(){
 
   });
 
+   $('.wall').mouseover(function(){
+        $('.wall').removeClass('wall_hover');
+        $(this).addClass('wall_hover');
+            
+
+  });
+
+    $('.wall').mouseout(function(){
+       
+        $(this).removeClass('wall_hover');
+       
+
+  });
+
+   $('.sink').mouseover(function(){
+        $('.sink').removeClass('sink_hover');
+        $(this).addClass('sink_hover');
+            
+
+  });
+
+    $('.sink').mouseout(function(){
+       
+        $(this).removeClass('sink_hover');
+       
+
+  });
+       $('.stove').mouseover(function(){
+        $('.stove').removeClass('stove_hover');
+        $(this).addClass('stove_hover');
+            
+
+  });
+
+    $('.stove').mouseout(function(){
+       
+        $(this).removeClass('stove_hover');
+       
+
+  });
+   
+
 $('.handle').click(function(){
      var obj = $(this).attr('data-calc-form');
 
@@ -33,6 +75,18 @@ $('.handle').click(function(){
                          $(this).removeClass('corner_on');
 
                 }
+                if($(this).hasClass('wall')){
+                         $(this).removeClass('wall_on');
+
+                }    
+                if($(this).hasClass('sink')){
+                         $(this).removeClass('sink_on');
+
+                }  
+                if($(this).hasClass('stove')){
+                         $(this).removeClass('stove_on');
+
+                }                 
 
      }else{
                 $('.' + target_object).addClass(target_object_on);
@@ -40,6 +94,19 @@ $('.handle').click(function(){
                          $(this).addClass('corner_on');
 
                 }
+                if($(this).hasClass('wall')){
+                         $(this).addClass('wall_on');
+
+                }  
+                if($(this).hasClass('sink')){
+                         $(this).addClass('sink_on');
+
+                }  
+                if($(this).hasClass('stove')){
+                         $(this).addClass('stove_on');
+
+                }  
+
 
 
      }
