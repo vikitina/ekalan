@@ -3014,3 +3014,9 @@
 [09-Aug-2016 14:16:44 Europe/Helsinki] PHP Notice:  Undefined variable: msg in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 77
 [09-Aug-2016 14:17:22 Europe/Helsinki] PHP Notice:  Undefined variable: msg in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 77
 [09-Aug-2016 14:19:26 Europe/Helsinki] PHP Notice:  Undefined variable: msg in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 77
+[09-Aug-2016 14:50:38 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 116
+[09-Aug-2016 14:50:38 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 122
+[09-Aug-2016 14:55:55 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 116
+[09-Aug-2016 14:55:55 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 122
+[09-Aug-2016 14:57:25 Europe/Helsinki] PHP Notice:  Undefined variable: msg in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 77
+[09-Aug-2016 14:57:52 Europe/Helsinki] PHP Notice:  Undefined variable: msg in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 77
