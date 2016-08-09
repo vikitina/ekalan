@@ -35,7 +35,7 @@ array(16) { ["id"]=> string(1) "5"
 
 #}
              {% if  material %}
-                     <div class="material_for_calc"> 
+                     <div class="material_for_calc col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                             
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 img" style="background:url({{ material.url_prepared }})">
                             </div>
@@ -54,8 +54,12 @@ array(16) { ["id"]=> string(1) "5"
               {% else %}
                      <a href="/material/0&0&0">Укажите материал</a>
              {% endif %}
-
-                            <div class="calc_params">
+                           <div class="instruction col-lg-12 col-md-12 col-sm-12 col-xs-12"><i class="icon ion-ios-information"></i>
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12"><img src="/assets/application/img/calculator/wall.png" alt="" /><p>отметить стены</p></div>  
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12"><img src="/assets/application/img/calculator/corner.png" alt="" /><p>скруглить углы</p></div>     
+                                     
+                           </div>
+                            <div class="calc_params col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="tabs b-lrb-none ui-tabs ui-widget ui-widget-content ui-corner-all">
                                         <ul role="tablist" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
                                                    <li aria-expanded="true" aria-selected="true" aria-labelledby="ui-id-1" aria-controls="tabs-1" tabindex="0" role="tab" class="ui-state-default ui-corner-top ui-tabs-active ui-state-active">
@@ -112,7 +116,17 @@ array(16) { ["id"]=> string(1) "5"
                                                                       <div class="u_corner_8 corner handle" data-calc-form="u_corner_8"></div>                                                                      
 
                                                                       <div class="u_sink u_sink_obj handle sink" data-calc-form="u_sink"><span>Мойка</span></div>
-                                                                      <div class="u_stove u_stove_obj handle stove" data-calc-form="u_stove"><span>Плита</span></div>                                                                                                                                          
+                                                                      <div class="u_stove u_stove_obj handle stove" data-calc-form="u_stove"><span>Плита</span></div>                                    
+
+                                                                      <div class="u_length_1 length" data-calc-form="u_length_1"><input type="text" /></div>      
+                                                                      <div class="u_length_2 length" data-calc-form="u_length_2"><input type="text" /></div>
+                                                                      <div class="u_length_3 length" data-calc-form="u_length_3"><input type="text" /></div>  
+                                                                      <div class="u_length_4 length" data-calc-form="u_length_4"><input type="text" /></div>                                             
+                                                                      <div class="u_length_5 length" data-calc-form="u_length_5"><input type="text" /></div>      
+                                                                      <div class="u_length_6 length" data-calc-form="u_length_6"><input type="text" /></div>
+                                                                      <div class="u_length_7 length" data-calc-form="u_length_7"><input type="text" /></div>  
+                                                                      <div class="u_length_8 length" data-calc-form="u_length_8"><input type="text" /></div>    
+
 
                                                             </div>{#  schema_U #}
                                                  </div>
@@ -138,10 +152,10 @@ array(16) { ["id"]=> string(1) "5"
                                                                     <div class="i_corner_3 corner handle" data-calc-form="i_corner_3"></div>  
                                                                     <div class="i_corner_4 corner handle" data-calc-form="i_corner_4"></div>                                                             
 
-                                                                    <div class="i_length_1 l" data-calc-form="i_corner_1"></div>      
-                                                                    <div class="i_corner_2 corner handle" data-calc-form="i_corner_2"></div>
-                                                                    <div class="i_corner_3 corner handle" data-calc-form="i_corner_3"></div>  
-                                                                    <div class="i_corner_4 corner handle" data-calc-form="i_corner_4"></div>                                                             
+                                                                    <div class="i_length_1 length" data-calc-form="i_length_1"><input type="text" /></div>      
+                                                                    <div class="i_length_2 length" data-calc-form="i_length_2"><input type="text" /></div>
+                                                                    <div class="i_length_3 length" data-calc-form="i_length_3"><input type="text" /></div>  
+                                                                    <div class="i_length_4 length" data-calc-form="i_length_4"><input type="text" /></div>                                                             
 
 
                                                                     <div class="i_sink i_sink_obj handle sink" data-calc-form="i_sink"><span>Мойка</span></div>
