@@ -574,3 +574,16 @@ footer{background:none;}
 
 input[type="checkbox"]{width:20px;height:20px;margin:0;}
 
+.calc_table_container{margin-top:20px;margin-bottom: 20px;}
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th{border-bottom:none;}
+.calc_table th{text-align: center;vertical-align: top;}
+.calc_table th{padding-top:10px;padding-bottom:10px;text-transform: uppercase;font-weight: normal;}
+.calc_table thead tr{background:#ddd;border-bottom:none;}
+.calc_table tbody tr{}
+.calc_table  > tbody > tr > td{border-bottom:1px solid #e5e5e5;padding-top:10px;padding-bottom:10px;}
+.calc_table thead td{border-bottom: none}
+.table > thead > tr > th {border:none;}
+.calc_table th.shead{text-transform: none}
+.calc_table > thead > tr > th {vertical-align: top;}
+
+.calc_params{margin-bottom: 60px;}
