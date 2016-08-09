@@ -612,7 +612,7 @@ input[type="checkbox"]{width:20px;height:20px;margin:0;}
 .calc_table > thead > tr > th {vertical-align: top;}
 
 .calc_params{margin-bottom: 60px;}
-.instruction{/*border:1px solid #626d71;*/border-left:5px solid #e6ae49;margin-bottom:60px;padding-top:20px;padding-bottom:20px;}
+.instruction{/*border:1px solid #626d71;*/border-left:5px solid #e6ae49;margin-bottom:60px;padding-top:20px;padding-bottom:20px;background: #eae0d7;}
 .instruction i{font-size:4em;color:#e6ae49;float:left;}
 .instruction div{overflow:hidden;}
 .instruction div img{max-width: unset;}
