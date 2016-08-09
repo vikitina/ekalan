@@ -620,5 +620,5 @@ input[type="checkbox"]{width:20px;height:20px;margin:0;}
 .service_liks{}
 .service_liks  .send_link label{float: left;}
 .service_liks  .send_link input[type='text']{width:77%;float: left;}
-.service_liks  .send_link input[type='button']{width:50px;float: left;}
+.service_liks  .send_link input[type='button']{width: 11%;float: right;}
 .service_liks  .btn-success {height: 129px; border-radius: 10px; width:100%;}
