@@ -197,7 +197,16 @@ return array(
                     ),
                 ),
             ), 
-
+           'ajax_calculator' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/ajax/calculator',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Calculator',
+                        'action'     => 'ajaxupdater',
+                    ),
+                ),
+            ),
         ),
     ),
     'service_manager' => array(

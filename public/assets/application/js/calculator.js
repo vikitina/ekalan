@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+  calculate();  
+
+
   $('.corner').mouseover(function(){
         $('.corner').removeClass('corner_hover');
         $('.corner').removeClass('corner_on_hover');
@@ -77,6 +80,8 @@ $('.handle').click(function(){
                 }
                 if($(this).hasClass('wall')){
                          $(this).removeClass('wall_on');
+                         $('.' + target_object).removeClass('wall_obj_on');
+                         $('#'+obj).val('0');
 
                 }    
                 if($(this).hasClass('sink')){
@@ -96,6 +101,8 @@ $('.handle').click(function(){
                 }
                 if($(this).hasClass('wall')){
                          $(this).addClass('wall_on');
+                         $('.' + target_object).addClass('wall_obj_on');
+                         $('#'+obj).val('1');
 
                 }  
                 if($(this).hasClass('sink')){
@@ -110,23 +117,81 @@ $('.handle').click(function(){
 
 
      }
+  data_update()
+  calculate();  
 
 });
-	
-/*
 
-       if(arr.length == 0){       	     
-           if ($(this).hasClass('byAjax')){
-                     var action = $(form_id).attr('action');
-                     var data   = $(form_id).serialize();
-//console.log(data);
-//console.log(action);
-          var data_param = ($(this).hasClass('withAddingAction')) ? $(this).attr('data-params') : 0;
-          var elem_checker = $(this);
 
-           $.ajax({
+
+});
+    //================================================================
+//--------------functions-----------------------------------------
+//================================================================
+
+function calculate(){
+
+      var typus = $('#cf_type').val();
+      var length_arr;
+      
+      switch(typus){
+
+                  case 'u':
+                         length_arr = [
+                               0,
+                               $('.u_length_2 input').val() * 1,
+                               $('.u_length_3 input').val() * 1,
+                               $('.u_length_4 input').val() * 1,
+                               $('.u_length_5 input').val() * 1,
+                               0,
+                               $('.u_length_7 input').val() * 1,
+                               $('.u_length_8 input').val() * 1
+                         ];
+
+                         length_arr[0] = (length_arr[2] - length_arr[4]) + length_arr[6];
+                         length_arr[5] = length_arr[1] - (length_arr[7] + length_arr[3]);
+
+                         sq = (length_arr[2] - length_arr[4])*length_arr[1] + length_arr[6]*length_arr[7] + length_arr[4]*length_arr[3]
+
+                  break;
+
+                  case 'i':
+                  break;
+
+                  case 'l':
+                  break;
+      }
+      var plinth_len = 0;
+      var edge_len = 0;
+      var typus_class = '.' + $('#cf_type').val();
+      var num;
+      $.map( $(typus_class+' .wall_obj'), function( elem, i ) {
+                num = $(elem).attr('data-num');
+                if($(elem).hasClass('wall_obj_on')){
+                       
+                       plinth_len += length_arr[num-1];
+                       
+
+                }else{
+
+                       edge_len +=  length_arr[num-1];
+
+                }
+
+
+      });
+      $('#result_edge_len').text(edge_len + ' мм');
+      $('#result_plinth_len').text(plinth_len + ' мм');
+      $('#result_sq').text(sq + ' кв.мм');
+
+} 
+
+function data_update(){
+       var data   = $('#calc_form').serialize();
+
+                 $.ajax({
                        type        : 'POST', 
-                       url         :  action, 
+                       url         : 'http://' + location.hostname + '/ajax/calculator',  
                        data        :  data, 
                        dataType    : 'json', 
                        encode      : true
@@ -135,24 +200,11 @@ $('.handle').click(function(){
            .done(function(res) {
                     
                     console.log(res.data);
-                    $('#window_id').val((res.window_id)?res.window_id:0);
 
-                  if (data_param){
-
-                    	addingAction(data_param, new Object({'elem' : elem_checker,'window_id' : (res.window_id)?res.window_id:0}));
-                    	
-                  }
                  }); 
 
 
-           }else{
-           $(form_id).submit();
-       }
+}
 
-       }
 
-});
-    });*/
-
-});
 

@@ -3,18 +3,48 @@
 
 
 {% block content %}
-{{ msg }}
+
 
 
        <section class="ptb ptb-sm-80">
             <div class="container">
 
 <form id="calc_form">
+<input type="hidden" name="id" id="db_id" value="{{ cf_form.id }}" />
 <input type="hidden" name="cf_sess_id" id="cf_sess_id" value="{{ cf_form.cf_sess_id }}" />
 <input type="hidden" name="cf_material_id" id="cf_material_id" value="{{ cf_form.cf_material_id }}" />
-<input type="hidden" name="" id="" />
-<input type="hidden" name="" id="" />
-<input type="hidden" name="" id="" />
+<input type="hidden" name="cf_type" id="cf_type"  value="{{ cf_form.cf_type }}" />
+
+
+
+<input type="hidden" name="u_wall_1" id="u_wall_1" value="{{ cf_form.u_wall_1 }}" />
+<input type="hidden" name="u_wall_2" id="u_wall_2" value="{{ cf_form.u_wall_2 }}" />
+<input type="hidden" name="u_wall_3" id="u_wall_3" value="{{ cf_form.u_wall_3 }}" />
+<input type="hidden" name="u_wall_4" id="u_wall_4" value="{{ cf_form.u_wall_4 }}" />
+<input type="hidden" name="u_wall_5" id="u_wall_5" value="{{ cf_form.u_wall_5 }}" />
+<input type="hidden" name="u_wall_6" id="u_wall_6" value="{{ cf_form.u_wall_6 }}" />
+<input type="hidden" name="u_wall_7" id="u_wall_7" value="{{ cf_form.u_wall_7 }}" />
+<input type="hidden" name="u_wall_8" id="u_wall_8" value="{{ cf_form.u_wall_8 }}" />
+
+<input type="hidden" name="u_corner_1" id="u_corner_1" value="{{ cf_form.u_corner_1 }}" />
+<input type="hidden" name="u_corner_2" id="u_corner_2" value="{{ cf_form.u_corner_2 }}" />
+<input type="hidden" name="u_corner_3" id="u_corner_3" value="{{ cf_form.u_corner_3 }}" />
+<input type="hidden" name="u_corner_4" id="u_corner_4" value="{{ cf_form.u_corner_4 }}" />
+<input type="hidden" name="u_corner_5" id="u_corner_5" value="{{ cf_form.u_corner_5 }}" />
+<input type="hidden" name="u_corner_6" id="u_corner_6" value="{{ cf_form.u_corner_6 }}" />
+<input type="hidden" name="u_corner_7" id="u_corner_7" value="{{ cf_form.u_corner_7 }}" /> 
+<input type="hidden" name="u_corner_8" id="u_corner_8" value="{{ cf_form.u_corner_8 }}" />                                                                     
+
+<input type="hidden" name="u_sink" id="u_sink" value="{{ cf_form.u_sink }}" />
+<input type="hidden" name="u_stove" id="u_stove" value="{{ cf_form.u_stove }}" />                                   
+
+                                                                          
+<input type="hidden" name="u_length_2" id="u_length_2" value="{{ cf_form.u_length_2 }}" />
+<input type="hidden" name="u_length_3" id="u_length_3" value="{{ cf_form.u_length_3 }}" />
+<input type="hidden" name="u_length_4" id="u_length_4" value="{{ cf_form.u_length_4 }}" />                                           
+<input type="hidden" name="u_length_5" id="u_length_5" value="{{ cf_form.u_length_5 }}" />  
+<input type="hidden" name="u_length_7" id="u_length_7" value="{{ cf_form.u_length_7 }}" />
+<input type="hidden" name="u_length_8" id="u_length_8" value="{{ cf_form.u_length_8 }}" /> 
 </form>
 
 {#
@@ -64,49 +94,52 @@ array(16) { ["id"]=> string(1) "5"
                             <div class="calc_params col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="tabs b-lrb-none ui-tabs ui-widget ui-widget-content ui-corner-all">
                                         <ul role="tablist" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
-                                                   <li aria-expanded="true" aria-selected="true" aria-labelledby="ui-id-1" aria-controls="tabs-1" tabindex="0" role="tab" class="ui-state-default ui-corner-top ui-tabs-active ui-state-active">
-                                                           <a id="ui-id-1" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-1">П - тип</a>
+                                                   <li aria-expanded="{{ cf_form.cf_type == 'u' ? 'true' : 'false' }}" aria-selected="{{ cf_form.cf_type == 'u' ? 'true' : 'false' }}" aria-labelledby="ui-id-1" aria-controls="tabs-1" tabindex="{{ cf_form.cf_type == 'u' ? '0' : '-1' }}" role="tab" class="ui-state-default ui-corner-top{{ cf_form.cf_type == 'u' ? ' ui-tabs-active ui-state-active' : '' }}">
+                                                           <a id="ui-id-1" tabindex="-1" role="presentation" class="ui-tabs-anchor" data-calc-form="cf_type" data-calc-form-value="u" href="#tabs-1">П - тип</a>
                                                    </li>
-                                                   <li aria-expanded="false" aria-selected="false" aria-labelledby="ui-id-2" aria-controls="tabs-2" tabindex="-1" role="tab" class="ui-state-default ui-corner-top"> 
-                                                          <a id="ui-id-2" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-2">| - тип</a>
+
+
+                                                   <li aria-expanded="{{ cf_form.cf_type == 'i' ? 'true' : 'false' }}" aria-selected="{{ cf_form.cf_type == 'i' ? 'true' : 'false' }}" aria-labelledby="ui-id-2" aria-controls="tabs-2" tabindex="{{ cf_form.cf_type == 'i' ? '0' : '-1' }}" role="tab" class="ui-state-default ui-corner-top{{ cf_form.cf_type == 'i' ? ' ui-tabs-active ui-state-active' : '' }}"> 
+                                                          <a id="ui-id-2" tabindex="-1" role="presentation" class="ui-tabs-anchor" data-calc-form="cf_type" data-calc-form-value="i" href="#tabs-2">| - тип</a>
                                                   </li>
-                                                   <li aria-expanded="false" aria-selected="false" aria-labelledby="ui-id-3" aria-controls="tabs-3" tabindex="-1" role="tab" class="ui-state-default ui-corner-top"> 
-                                                          <a id="ui-id-2" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#tabs-3">L - тип</a>
+
+                                                   <li aria-expanded="{{ cf_form.cf_type == 'l' ? 'true' : 'false' }}" aria-selected="{{ cf_form.cf_type == 'i' ? 'true' : 'false' }}" aria-labelledby="ui-id-3" aria-controls="tabs-3" tabindex="{{ cf_form.cf_type == 'i' ? '0' : '-1' }}" role="tab" class="ui-state-default ui-corner-top{{ cf_form.cf_type == 'l' ? ' ui-tabs-active ui-state-active' : '' }}"> 
+                                                          <a id="ui-id-2" tabindex="-1" role="presentation" class="ui-tabs-anchor" data-calc-form="cf_type" data-calc-form-value="l" href="#tabs-3">L - тип</a>
                                                   </li>                                                  
                       
                                         </ul>
                                         <div class="ui-tab-content">
-                                                 <div aria-hidden="false" role="tabpanel" aria-labelledby="ui-id-1" id="tabs-1" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
-                                                            <div id="schema_U">
+                                                 <div aria-hidden="{{ cf_form.cf_type == 'u' ? false : true }}" role="tabpanel" aria-labelledby="ui-id-1" id="tabs-1" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
+                                                            <div id="schema_U" class="u">
                                                               
                                                                
-                                                                      <div class="u_wall_1_obj"></div>
-                                                                      <div class="u_wall_2_obj"></div>
-                                                                      <div class="u_wall_3_obj"></div>
-                                                                      <div class="u_wall_4_obj"></div>
-                                                                      <div class="u_wall_5_obj"></div>
-                                                                      <div class="u_wall_6_obj"></div>
-                                                                      <div class="u_wall_7_obj"></div>
-                                                                      <div class="u_wall_8_obj"></div> 
+                                                                      <div class="u_wall_1_obj wall_obj{{ cf_form.u_wall_1 ? ' u_wall_1_obj_on wall_obj_on' : ''}}" data-num="1"></div>
+                                                                      <div class="u_wall_2_obj wall_obj{{ cf_form.u_wall_2 ? ' u_wall_2_obj_on wall_obj_on' : ''}}" data-num="2"></div>
+                                                                      <div class="u_wall_3_obj wall_obj{{ cf_form.u_wall_3 ? ' u_wall_3_obj_on wall_obj_on' : ''}}" data-num="3"></div>
+                                                                      <div class="u_wall_4_obj wall_obj{{ cf_form.u_wall_4 ? ' u_wall_4_obj_on wall_obj_on' : ''}}" data-num="4"></div>
+                                                                      <div class="u_wall_5_obj wall_obj{{ cf_form.u_wall_5 ? ' u_wall_5_obj_on wall_obj_on' : ''}}" data-num="5"></div>
+                                                                      <div class="u_wall_6_obj wall_obj{{ cf_form.u_wall_6 ? ' u_wall_6_obj_on wall_obj_on' : ''}}" data-num="6"></div>
+                                                                      <div class="u_wall_7_obj wall_obj{{ cf_form.u_wall_7 ? ' u_wall_7_obj_on wall_obj_on' : ''}}" data-num="7"></div>
+                                                                      <div class="u_wall_8_obj wall_obj{{ cf_form.u_wall_8 ? ' u_wall_8_obj_on wall_obj_on' : ''}}" data-num="8"></div> 
 
-                                                                      <div class="u_corner_1_obj"></div>
-                                                                      <div class="u_corner_2_obj"></div>
-                                                                      <div class="u_corner_3_obj"></div>
-                                                                      <div class="u_corner_4_obj"></div>
-                                                                      <div class="u_corner_5_obj"></div>
-                                                                      <div class="u_corner_6_obj"></div>
-                                                                      <div class="u_corner_7_obj"></div>
-                                                                      <div class="u_corner_8_obj"></div>                                                                      
+                                                                      <div class="u_corner_1_obj{{ cf_form.u_corner_1 ? ' u_corner_1_obj_on' : ''}}"></div>
+                                                                      <div class="u_corner_2_obj{{ cf_form.u_corner_2 ? ' u_corner_2_obj_on' : ''}}"></div>
+                                                                      <div class="u_corner_3_obj{{ cf_form.u_corner_3 ? ' u_corner_3_obj_on' : ''}}"></div>
+                                                                      <div class="u_corner_4_obj{{ cf_form.u_corner_4 ? ' u_corner_4_obj_on' : ''}}"></div>
+                                                                      <div class="u_corner_5_obj{{ cf_form.u_corner_5 ? ' u_corner_5_obj_on' : ''}}"></div>
+                                                                      <div class="u_corner_6_obj{{ cf_form.u_corner_6 ? ' u_corner_6_obj_on' : ''}}"></div>
+                                                                      <div class="u_corner_7_obj{{ cf_form.u_corner_7 ? ' u_corner_7_obj_on' : ''}}"></div>
+                                                                      <div class="u_corner_8_obj{{ cf_form.u_corner_8 ? ' u_corner_8_obj_on' : ''}}"></div>                                                                      
 
 
-                                                                      <div class="u_wall_1 wall handle" data-calc-form="u_wall_1"></div>
-                                                                      <div class="u_wall_2 wall handle" data-calc-form="u_wall_2"></div>
-                                                                      <div class="u_wall_3 wall handle" data-calc-form="u_wall_3"></div>
-                                                                      <div class="u_wall_4 wall handle" data-calc-form="u_wall_4"></div>
-                                                                      <div class="u_wall_5 wall handle" data-calc-form="u_wall_5"></div>
-                                                                      <div class="u_wall_6 wall handle" data-calc-form="u_wall_6"></div>
-                                                                      <div class="u_wall_7 wall handle" data-calc-form="u_wall_7"></div>
-                                                                      <div class="u_wall_8 wall handle" data-calc-form="u_wall_8"></div> 
+                                                                      <div class="u_wall_1 wall handle{{ cf_form.u_wall_1 ? ' wall_on' : ''}}" data-calc-form="u_wall_1"></div>
+                                                                      <div class="u_wall_2 wall handle{{ cf_form.u_wall_2 ? ' wall_on' : ''}}" data-calc-form="u_wall_2"></div>
+                                                                      <div class="u_wall_3 wall handle{{ cf_form.u_wall_3 ? ' wall_on' : ''}}" data-calc-form="u_wall_3"></div>
+                                                                      <div class="u_wall_4 wall handle{{ cf_form.u_wall_4 ? ' wall_on' : ''}}" data-calc-form="u_wall_4"></div>
+                                                                      <div class="u_wall_5 wall handle{{ cf_form.u_wall_5 ? ' wall_on' : ''}}" data-calc-form="u_wall_5"></div>
+                                                                      <div class="u_wall_6 wall handle{{ cf_form.u_wall_6 ? ' wall_on' : ''}}" data-calc-form="u_wall_6"></div>
+                                                                      <div class="u_wall_7 wall handle{{ cf_form.u_wall_7 ? ' wall_on' : ''}}" data-calc-form="u_wall_7"></div>
+                                                                      <div class="u_wall_8 wall handle{{ cf_form.u_wall_8 ? ' wall_on' : ''}}" data-calc-form="u_wall_8"></div> 
 
                                                                       <div class="u_corner_1 corner handle" data-calc-form="u_corner_1"></div>      
                                                                       <div class="u_corner_2 corner handle" data-calc-form="u_corner_2"></div>
@@ -117,22 +150,22 @@ array(16) { ["id"]=> string(1) "5"
                                                                       <div class="u_corner_7 corner handle" data-calc-form="u_corner_7"></div>  
                                                                       <div class="u_corner_8 corner handle" data-calc-form="u_corner_8"></div>                                                                      
 
-                                                                      <div class="u_sink u_sink_obj handle sink" data-calc-form="u_sink"><span>Мойка</span></div>
-                                                                      <div class="u_stove u_stove_obj handle stove" data-calc-form="u_stove"><span>Плита</span></div>                                    
+                                                                      <div class="u_sink u_sink_obj handle sink{{ cf_form.u_sink ? ' u_sink_obj_on' : ''}}" data-calc-form="u_sink"><span>Мойка</span></div>
+                                                                      <div class="u_stove u_stove_obj handle stove{{ cf_form.u_stove ? ' u_stove_obj_on' : ''}}" data-calc-form="u_stove"><span>Плита</span></div>                                    
 
                                                                           
-                                                                      <div class="u_length_2 length" data-calc-form="u_length_2"><input type="text" /></div>
-                                                                      <div class="u_length_3 length" data-calc-form="u_length_3"><input type="text" /></div>  
-                                                                      <div class="u_length_4 length" data-calc-form="u_length_4"><input type="text" /></div>                                             
-                                                                      <div class="u_length_5 length" data-calc-form="u_length_5"><input type="text" /></div>      
+                                                                      <div class="u_length_2 length" data-calc-form="u_length_2"><input type="text" value="{{ cf_form.u_length_2 }}" /></div>
+                                                                      <div class="u_length_3 length" data-calc-form="u_length_3"><input type="text" value="{{ cf_form.u_length_3 }}" /></div>  
+                                                                      <div class="u_length_4 length" data-calc-form="u_length_4"><input type="text" value="{{ cf_form.u_length_4 }}" /></div>                                             
+                                                                      <div class="u_length_5 length" data-calc-form="u_length_5"><input type="text" value="{{ cf_form.u_length_5 }}" /></div>      
                                                                      
-                                                                      <div class="u_length_7 length" data-calc-form="u_length_7"><input type="text" /></div>  
-                                                                      <div class="u_length_8 length" data-calc-form="u_length_8"><input type="text" /></div>    
+                                                                      <div class="u_length_7 length" data-calc-form="u_length_7"><input type="text" value="{{ cf_form.u_length_7 }}" /></div>  
+                                                                      <div class="u_length_8 length" data-calc-form="u_length_8"><input type="text" value="{{ cf_form.u_length_8 }}" /></div>    
 
 
                                                             </div>{#  schema_U #}
                                                  </div>
-                                                 <div aria-hidden="true" role="tabpanel" aria-labelledby="ui-id-2" id="tabs-2" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
+                                                 <div aria-hidden="{{ cf_form.cf_type == 'i' ? false : true }}" role="tabpanel" aria-labelledby="ui-id-2" id="tabs-2" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
                                                             <div id="schema_I">
                                                                     <div class="i_wall_left_obj"></div>
                                                                     <div class="i_wall_top_obj"></div>
@@ -165,7 +198,7 @@ array(16) { ["id"]=> string(1) "5"
                                                             </div>{#  schema_I #}
 
                                                </div>  
-                                                 <div aria-hidden="true" role="tabpanel" aria-labelledby="ui-id-3" id="tabs-3" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
+                                                 <div aria-hidden="{{ cf_form.cf_type == 'l' ? false : true }}" role="tabpanel" aria-labelledby="ui-id-3" id="tabs-3" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
                                                              <div id="schema_L">
                                                                
                                                                       <div class="l_wall_1_obj"></div>
@@ -219,13 +252,14 @@ array(16) { ["id"]=> string(1) "5"
                               <h4>Расчет стоимости</h4>
                             <table cellpadding="0" cellspacing="0" width="100%" class="table table-hover calc_table" >
                               <thead>
-                                    <tr><th>Наименование</th><th>Размер</th><th>Цена</th><th>Стоимость</th></tr>
+                                    <tr><th>Наименование</th><th>Размер/количество</th><th>Цена</th><th>Стоимость</th></tr>
 
                               </thead>
                               <tbody>
                                 
-                                    <tr><td>Материал</td><td></td><td></td><td></td></tr>
-                                    <tr><td>Длина обратки края</td><td></td><td></td><td></td></tr>
+                                    <tr><td>Материал</td><td><div id="result_sq"></div></td><td></td><td></td></tr>
+                                    <tr><td>Длина обработки края</td><td><div id="result_edge_len"></div></td><td></td><td></td></tr>
+                                    <tr><td>Длина плинтуса</td><td><div id="result_plinth_len"></div></td><td></td><td></td></tr>
                                     <tr><td>Скругления углов</td><td></td><td></td><td></td></tr>
                                     <tr><td>Мойка</td><td></td><td></td><td></td></tr>
                                     <tr><td>Плита</td><td></td><td></td><td></td></tr>

@@ -21,17 +21,23 @@ class CalculatorController extends AbstractActionController
     {
               
               $cookie_name = 'ekalan_calculator';
+              $db_model = $this -> getServiceLocator()->get('calcsess');
 
 
-               $db_model = $this -> getServiceLocator()->get('calcsess');
                if (! $this->checksess($cookie_name)){                      
                            $date = date_create();
                            $sess_id = date_timestamp_get($date);
-                           $this->startsess($db_model, $cookie_name, $sess_id);
-                           $msg = 'no session and will start';
+                           $calc_data_array = $this->startsess($db_model, $cookie_name, $sess_id);
+                           
+
+                           
+               }else{
+
+                           $sess = $this->getsess($db_model,$cookie_name);
+                           $calc_data_array = unserialize($sess['calc_data']);
+
                }
-               $sess = $this->getsess($db_model,$cookie_name);
-               $calc_data_array = unserialize($sess['calc_data']);
+          
        	       $get_data = $this->getEvent()->getRouteMatch()->getParam('id_material');	
                
                if($get_data){
@@ -74,7 +80,7 @@ class CalculatorController extends AbstractActionController
           $system[$value['name']] = $value['data'];
         }          
         return new ViewModel(array(
-                     'msg'         => $msg,
+                    
                      'material'    => $material,
                      'cf_form'     => $calc_data_array,
                      'systems'     => $system
@@ -84,6 +90,20 @@ class CalculatorController extends AbstractActionController
     }
 
 
+
+public function ajaxupdaterAction(){
+
+     $data = $_POST;
+     $db_model = $this -> getServiceLocator()->get('calcsess');
+     $db_model->updateCalcSess(array(
+            'cf_sess_id' => $data['cf_sess_id'],
+            'calc_data' => serialize($data)
+      ));
+
+     $result = new JsonModel ( array ('data' => $data) );
+
+}
+
 //*************************functions****************************
 
 
@@ -91,22 +111,56 @@ class CalculatorController extends AbstractActionController
 function startsess($db_model, $name_sess, $val){
 
        //calk_sess!!!! - create
-       setcookie($name_sess,$val,time()+60*4);
+       setcookie($name_sess,$val,time()+60*20);
        $date = date_create();
 
        $data_array = array(
             'cf_sess_id'        => $val,
-            'cf_material_id'    => ''
+            'cf_material_id'    => '0',
+            'cf_type'           => 'u',
+            'u_wall_1'          => '0',
+            'u_wall_2'          => '0',
+            'u_wall_3'          => '0',
+            'u_wall_4'          => '0',
+            'u_wall_5'          => '0',
+            'u_wall_6'          => '0',
+            'u_wall_7'          => '0',
+            'u_wall_8'          => '0',
+
+            'u_corner_1'        => '0',
+            'u_corner_2'        => '0',
+            'u_corner_3'        => '0',
+            'u_corner_4'        => '0',
+            'u_corner_5'        => '0',
+            'u_corner_6'        => '0',
+            'u_corner_7'        => '0',
+            'u_corner_8'        => '0',                                                                    
+
+            'u_sink'            => '0',
+            'u_stove'           => '0',                                  
+
+                                                                          
+            'u_length_2'        => '1000',
+            'u_length_3'        => '300',
+            'u_length_4'        => '200',                                      
+            'u_length_5'        => '100', 
+            'u_length_7'        => '500',
+            'u_length_8'        => '300',        
         );
        $data = serialize($data_array);
 
-       return $sess_id = $db_model -> insertCalcSess(array(
+       $id = $db_model -> insertCalcSess(array(
                         'calc_sess' => $val,
                         'calc_date' => date_timestamp_get($date),
                         'calc_data' => $data
 
 
         ));
+       $data_array['id'] = $id;
+
+       return $data_array;
+
+
 
 }             
 
@@ -118,10 +172,9 @@ function checksess($cookie_name){
 }
 
 function getsess($db_model,$cookie_name){
-
+      
        $sess_name = $_COOKIE[$cookie_name];
        $sess = $db_model -> getCalcSess($sess_name);
-
        return $sess;
 
 }

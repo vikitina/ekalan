@@ -35,8 +35,8 @@ class Calcsess extends TableGateway
         
          $query = "SELECT * from t_calc_sess where calc_sess = '". $id ."'";
          $adapter = $this->getAdapter();
-		 $results = $this->FetchAll($adapter, $query); 
-         //var_dump($results)                           ;
+		     $results = $this->FetchAll($adapter, $query); 
+
          return ($results ? $results[0] : false);
     } 
 
@@ -62,8 +62,15 @@ class Calcsess extends TableGateway
 
   public function updateCalcSess($data)
     { 
-        $id = $data['id'];
-        parent::update($data, array('id' => $id));
+        
+
+
+        $query = "UPDATE t_calc_sess SET calc_data = '".$data['calc_data']."' where calc_sess='".$data['cf_sess_id']."'";
+
+         $adapter = $this->getAdapter();
+                                    
+         $statement = $adapter->createStatement($query);
+         $results = $statement->execute();        
     }
 
    function FetchAll($adapter, $sql, $params=null)
