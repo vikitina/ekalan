@@ -76,6 +76,8 @@ $('.handle').click(function(){
 
                 if($(this).hasClass('corner')){
                          $(this).removeClass('corner_on');
+                         $('.' + target_object).removeClass('corner_obj_on');
+                         $('#'+obj).val('0');
 
                 }
                 if($(this).hasClass('wall')){
@@ -86,10 +88,12 @@ $('.handle').click(function(){
                 }    
                 if($(this).hasClass('sink')){
                          $(this).removeClass('sink_on');
+                         $('#'+obj).val('0');
 
                 }  
                 if($(this).hasClass('stove')){
                          $(this).removeClass('stove_on');
+                         $('#'+obj).val('0');
 
                 }                 
 
@@ -97,6 +101,8 @@ $('.handle').click(function(){
                 $('.' + target_object).addClass(target_object_on);
                 if($(this).hasClass('corner')){
                          $(this).addClass('corner_on');
+                         $('.' + target_object).addClass('corner_obj_on');
+                         $('#'+obj).val('1');
 
                 }
                 if($(this).hasClass('wall')){
@@ -107,10 +113,12 @@ $('.handle').click(function(){
                 }  
                 if($(this).hasClass('sink')){
                          $(this).addClass('sink_on');
+                         $('#'+obj).val('1');
 
                 }  
                 if($(this).hasClass('stove')){
                          $(this).addClass('stove_on');
+                         $('#'+obj).val('1');
 
                 }  
 
@@ -122,10 +130,19 @@ $('.handle').click(function(){
 
 });
 
+$('.length input').keyup(function(){
+
+
+       var elem = $(this).parent().attr('data-calc-form');
+       $('#' + elem).val($(this).val());
+       data_update()
+       calculate();  
+});
+
 
 
 });
-    //================================================================
+//================================================================
 //--------------functions-----------------------------------------
 //================================================================
 
@@ -147,12 +164,16 @@ function calculate(){
                                $('.u_length_7 input').val() * 1,
                                $('.u_length_8 input').val() * 1
                          ];
+                          if( (length_arr[2] > length_arr[4]) && (length_arr[1] > (length_arr[7] + length_arr[3])) ){
+                                   length_arr[0] = (length_arr[2] - length_arr[4]) + length_arr[6];
+                                   length_arr[5] = length_arr[1] - (length_arr[7] + length_arr[3]);
 
-                         length_arr[0] = (length_arr[2] - length_arr[4]) + length_arr[6];
-                         length_arr[5] = length_arr[1] - (length_arr[7] + length_arr[3]);
+                                   sq = (length_arr[2] - length_arr[4])*length_arr[1] + length_arr[6]*length_arr[7] + length_arr[4]*length_arr[3];
+                         }else{
 
-                         sq = (length_arr[2] - length_arr[4])*length_arr[1] + length_arr[6]*length_arr[7] + length_arr[4]*length_arr[3]
+                                   sq = 0;
 
+                         }
                   break;
 
                   case 'i':
@@ -161,6 +182,8 @@ function calculate(){
                   case 'l':
                   break;
       }
+
+      if(sq){
       var plinth_len = 0;
       var edge_len = 0;
       var typus_class = '.' + $('#cf_type').val();
@@ -180,10 +203,24 @@ function calculate(){
 
 
       });
-      $('#result_edge_len').text(edge_len + ' мм');
-      $('#result_plinth_len').text(plinth_len + ' мм');
-      $('#result_sq').text(sq + ' кв.мм');
+      var sink = ($(typus_class+' .sink').hasClass('sink_on') ? 'есть': 'нет');
+      var stove = ($(typus_class+' .stove').hasClass('stove_on') ? 'есть': 'нет');
+     
 
+             $('#result_edge_len').text(edge_len + ' мм');
+             $('#result_plinth_len').text(plinth_len + ' мм');
+             $('#result_sq').text(sq + ' кв.мм');
+             $('#result_corner').text($(typus_class+' .corner_obj_on').length + ' шт.');
+             $('#result_sink').text(sink);
+             $('#result_stove').text(stove);
+     }else{
+             $('#result_sq').html('<span style="color:#e6ae49"><i class="icon ion-ios-information" style="font-size:1.6em"></i> Длины сторон столешни не корректны.<br /> Калькулятор ожидает уточнения данных.</span>');
+             $('#result_edge_len').text('');
+             $('#result_plinth_len').text('');
+             $('#result_corner').text('');
+             $('#result_sink').text('');
+             $('#result_stove').text('');
+     }
 } 
 
 function data_update(){

@@ -3101,3 +3101,23 @@
 [10-Aug-2016 17:31:48 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 84
 [10-Aug-2016 17:33:07 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 84
 [10-Aug-2016 17:33:45 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 84
+[11-Aug-2016 08:55:14 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 170
+[11-Aug-2016 08:55:14 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 84
+[11-Aug-2016 08:56:18 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 84
+[11-Aug-2016 09:02:34 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 84
+[11-Aug-2016 09:03:23 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 84
+[11-Aug-2016 09:09:09 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 84
+[11-Aug-2016 09:10:02 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 84
+[11-Aug-2016 09:30:33 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 170
+[11-Aug-2016 09:30:33 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 84
+[11-Aug-2016 10:20:01 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 170
+[11-Aug-2016 10:20:01 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 84
+[11-Aug-2016 10:21:23 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 84
+[11-Aug-2016 10:38:50 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 84
+[11-Aug-2016 10:40:27 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 170
+[11-Aug-2016 10:40:27 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 84
+[11-Aug-2016 10:43:09 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 84
+[11-Aug-2016 11:15:27 Europe/Helsinki] PHP Notice:  Undefined variable: calcprice in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 27
+[11-Aug-2016 11:15:27 Europe/Helsinki] PHP Warning:  Invalid argument supplied for foreach() in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 27
+[11-Aug-2016 11:15:27 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 173
+[11-Aug-2016 11:15:27 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 87

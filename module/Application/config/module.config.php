@@ -358,9 +358,12 @@ return array(
                 return new \Application\Model\Calcsess(
                     $sm->get('Zend\Db\Adapter\Adapter')
                 );
-            },             
-                       
-
+            },   
+           'calcprice' => function ($sm) {
+                return new \Application\Model\Calcprice(
+                    $sm->get('Zend\Db\Adapter\Adapter')
+                );
+            },                 
                      
     ),
     ),

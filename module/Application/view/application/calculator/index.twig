@@ -122,14 +122,14 @@ array(16) { ["id"]=> string(1) "5"
                                                                       <div class="u_wall_7_obj wall_obj{{ cf_form.u_wall_7 ? ' u_wall_7_obj_on wall_obj_on' : ''}}" data-num="7"></div>
                                                                       <div class="u_wall_8_obj wall_obj{{ cf_form.u_wall_8 ? ' u_wall_8_obj_on wall_obj_on' : ''}}" data-num="8"></div> 
 
-                                                                      <div class="u_corner_1_obj{{ cf_form.u_corner_1 ? ' u_corner_1_obj_on' : ''}}"></div>
-                                                                      <div class="u_corner_2_obj{{ cf_form.u_corner_2 ? ' u_corner_2_obj_on' : ''}}"></div>
-                                                                      <div class="u_corner_3_obj{{ cf_form.u_corner_3 ? ' u_corner_3_obj_on' : ''}}"></div>
-                                                                      <div class="u_corner_4_obj{{ cf_form.u_corner_4 ? ' u_corner_4_obj_on' : ''}}"></div>
-                                                                      <div class="u_corner_5_obj{{ cf_form.u_corner_5 ? ' u_corner_5_obj_on' : ''}}"></div>
-                                                                      <div class="u_corner_6_obj{{ cf_form.u_corner_6 ? ' u_corner_6_obj_on' : ''}}"></div>
-                                                                      <div class="u_corner_7_obj{{ cf_form.u_corner_7 ? ' u_corner_7_obj_on' : ''}}"></div>
-                                                                      <div class="u_corner_8_obj{{ cf_form.u_corner_8 ? ' u_corner_8_obj_on' : ''}}"></div>                                                                      
+                                                                      <div class="u_corner_1_obj{{ cf_form.u_corner_1 ? ' u_corner_1_obj_on corner_obj_on' : ''}}"></div>
+                                                                      <div class="u_corner_2_obj{{ cf_form.u_corner_2 ? ' u_corner_2_obj_on corner_obj_on' : ''}}"></div>
+                                                                      <div class="u_corner_3_obj{{ cf_form.u_corner_3 ? ' u_corner_3_obj_on corner_obj_on' : ''}}"></div>
+                                                                      <div class="u_corner_4_obj{{ cf_form.u_corner_4 ? ' u_corner_4_obj_on corner_obj_on' : ''}}"></div>
+                                                                      <div class="u_corner_5_obj{{ cf_form.u_corner_5 ? ' u_corner_5_obj_on corner_obj_on' : ''}}"></div>
+                                                                      <div class="u_corner_6_obj{{ cf_form.u_corner_6 ? ' u_corner_6_obj_on corner_obj_on' : ''}}"></div>
+                                                                      <div class="u_corner_7_obj{{ cf_form.u_corner_7 ? ' u_corner_7_obj_on corner_obj_on' : ''}}"></div>
+                                                                      <div class="u_corner_8_obj{{ cf_form.u_corner_8 ? ' u_corner_8_obj_on corner_obj_on' : ''}}"></div>                                                                      
 
 
                                                                       <div class="u_wall_1 wall handle{{ cf_form.u_wall_1 ? ' wall_on' : ''}}" data-calc-form="u_wall_1"></div>
@@ -150,8 +150,8 @@ array(16) { ["id"]=> string(1) "5"
                                                                       <div class="u_corner_7 corner handle" data-calc-form="u_corner_7"></div>  
                                                                       <div class="u_corner_8 corner handle" data-calc-form="u_corner_8"></div>                                                                      
 
-                                                                      <div class="u_sink u_sink_obj handle sink{{ cf_form.u_sink ? ' u_sink_obj_on' : ''}}" data-calc-form="u_sink"><span>Мойка</span></div>
-                                                                      <div class="u_stove u_stove_obj handle stove{{ cf_form.u_stove ? ' u_stove_obj_on' : ''}}" data-calc-form="u_stove"><span>Плита</span></div>                                    
+                                                                      <div class="u_sink u_sink_obj handle sink{{ cf_form.u_sink ? ' u_sink_obj_on sink_on' : ''}}" data-calc-form="u_sink"><span>Мойка</span></div>
+                                                                      <div class="u_stove u_stove_obj handle stove{{ cf_form.u_stove ? ' u_stove_obj_on stove' : ''}}" data-calc-form="u_stove"><span>Плита</span></div>                                    
 
                                                                           
                                                                       <div class="u_length_2 length" data-calc-form="u_length_2"><input type="text" value="{{ cf_form.u_length_2 }}" /></div>
@@ -260,9 +260,9 @@ array(16) { ["id"]=> string(1) "5"
                                     <tr><td>Материал</td><td><div id="result_sq"></div></td><td></td><td></td></tr>
                                     <tr><td>Длина обработки края</td><td><div id="result_edge_len"></div></td><td></td><td></td></tr>
                                     <tr><td>Длина плинтуса</td><td><div id="result_plinth_len"></div></td><td></td><td></td></tr>
-                                    <tr><td>Скругления углов</td><td></td><td></td><td></td></tr>
-                                    <tr><td>Мойка</td><td></td><td></td><td></td></tr>
-                                    <tr><td>Плита</td><td></td><td></td><td></td></tr>
+                                    <tr><td>Скругления углов</td><td><div id="result_corner"></div></td><td></td><td></td></tr>
+                                    <tr><td>Мойка</td><td><div id="result_sink"></div></td><td></td><td></td></tr>
+                                    <tr><td>Плита</td><td><div id="result_stove"></div></td><td></td><td></td></tr>
                               </tbody>
                               <tfoot><tr><td colspan="3">Итого:</td><td></td></tr></tfoot>
                             </table>

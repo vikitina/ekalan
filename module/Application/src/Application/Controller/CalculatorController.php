@@ -22,8 +22,11 @@ class CalculatorController extends AbstractActionController
               
               $cookie_name = 'ekalan_calculator';
               $db_model = $this -> getServiceLocator()->get('calcsess');
-
-
+              $srvCalcprice =  $this -> getServiceLocator()->get('calcprice');
+              $calcprice_set= $srvCalcprice -> getAllCalcprice();
+              foreach ($calcprice as $key => $value) {
+                     $calcprice['calc_name'] = array('calc-cprice' => $value['calc-cprice'], 'calc_unit' => $value['calc_unit']);
+              }
                if (! $this->checksess($cookie_name)){                      
                            $date = date_create();
                            $sess_id = date_timestamp_get($date);
