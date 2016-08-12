@@ -204,6 +204,27 @@ function calculate(){
                   break;
 
                   case 'l':
+                         length_arr = [
+                               
+                               $('.l_length_1 input').val() * 1,
+                               $('.l_length_2 input').val() * 1,
+                               $('.l_length_3 input').val() * 1,
+                               $('.l_length_4 input').val() * 1,
+                               0,
+                               0
+                              
+                         ];
+                          if( (length_arr[0] > length_arr[2]) && (length_arr[1] > length_arr[3]) ){
+                                   length_arr[4] = length_arr[0] - length_arr[2];
+                                   length_arr[5] = length_arr[1] - length_arr[3];
+
+                                   sq = (length_arr[2] *length_arr[1] + length_arr[4]*length_arr[5] )/1000000;
+                         }else{
+
+                                   sq = 0;
+
+                         }
+
                   break;
       }
 

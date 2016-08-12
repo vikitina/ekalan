@@ -166,7 +166,30 @@ function startsess($db_model, $name_sess, $val){
 
                                                                           
             'i_length_1'        => '1000',
-            'i_length_2'        => '3000'                     
+            'i_length_2'        => '3000',
+
+            'l_wall_1'          => '0',
+            'l_wall_2'          => '0',
+            'l_wall_3'          => '0',
+            'l_wall_4'          => '0',
+            'l_wall_5'          => '0',
+            'l_wall_6'          => '0', 
+
+            'l_corner_1'        => '0',
+            'l_corner_2'        => '0',
+            'l_corner_3'        => '0',
+            'l_corner_4'        => '0', 
+            'l_corner_5'        => '0',
+            'l_corner_6'        => '0',                                                 
+
+            'l_sink'            => '0',
+            'l_stove'           => '0', 
+
+            'l_length_1'        => '3000', 
+            'l_length_2'        => '3000',  
+            'l_length_3'        => '1000', 
+            'l_length_4'        => '2000'            
+
         );
        $data = serialize($data_array);
 
