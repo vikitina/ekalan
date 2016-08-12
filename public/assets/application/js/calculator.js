@@ -139,7 +139,14 @@ $('.length input').keyup(function(){
        calculate();  
 });
 
+$('.calc_params li a').mouseup(function(){
 
+  
+      $('#' + $(this).attr('data-calc-form')).val($(this).attr('data-calc-form-value'));
+       data_update()
+       calculate();       
+      
+});
 
 });
 //================================================================
@@ -168,7 +175,7 @@ function calculate(){
                                    length_arr[0] = (length_arr[2] - length_arr[4]) + length_arr[6];
                                    length_arr[5] = length_arr[1] - (length_arr[7] + length_arr[3]);
 
-                                   sq = (length_arr[2] - length_arr[4])*length_arr[1] + length_arr[6]*length_arr[7] + length_arr[4]*length_arr[3];
+                                   sq = ((length_arr[2] - length_arr[4])*length_arr[1] + length_arr[6]*length_arr[7] + length_arr[4]*length_arr[3])/1000000;
                          }else{
 
                                    sq = 0;
@@ -177,6 +184,23 @@ function calculate(){
                   break;
 
                   case 'i':
+                         length_arr = [
+
+                               $('.i_length_1 input').val() * 1,
+                               $('.i_length_2 input').val() * 1
+  
+                         ];
+                          if( (length_arr[0] > 0) && (length_arr[1] > 0) ){
+                                   length_arr[2] = length_arr[0];
+                                   length_arr[3] = length_arr[1];
+
+                                   sq = length_arr[0]*length_arr[1]/1000000;
+                         }else{
+
+                                   sq = 0;
+
+                         }
+
                   break;
 
                   case 'l':
@@ -203,13 +227,28 @@ function calculate(){
 
 
       });
-      var sink = ($(typus_class+' .sink').hasClass('sink_on') ? 'есть': 'нет');
-      var stove = ($(typus_class+' .stove').hasClass('stove_on') ? 'есть': 'нет');
+      var sink;
+      if ($(typus_class+' .sink').hasClass('sink_on')) {
+
+                      sink = 'есть';
+                      var sink_val = $('#db_sink').val()*1;
+                      sq = sq - sink_val;
+      }else{
+                      sink = 'нет';
+                    }
+      var stove;
+      if ($(typus_class+' .stove').hasClass('stove_on')){
+
+                      stove =  'есть';
+                      sq = sq -  $('#db_stove').val()*1;
+      }else{
+                      stove =  'нет';
+        }              
      
 
              $('#result_edge_len').text(edge_len + ' мм');
              $('#result_plinth_len').text(plinth_len + ' мм');
-             $('#result_sq').text(sq + ' кв.мм');
+             $('#result_sq').text(sq.toFixed(3) + ' кв.м');
              $('#result_corner').text($(typus_class+' .corner_obj_on').length + ' шт.');
              $('#result_sink').text(sink);
              $('#result_stove').text(stove);

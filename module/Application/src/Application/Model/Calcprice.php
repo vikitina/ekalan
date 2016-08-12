@@ -39,7 +39,7 @@ class Calcprice extends TableGateway
     public function getAllCalcprice()
     { 
           $query = "SELECT * FROM t_calc_price";
-        //$query = "SELECT * from t_material";
+        
 
     
                             

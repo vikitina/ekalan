@@ -24,8 +24,8 @@ class CalculatorController extends AbstractActionController
               $db_model = $this -> getServiceLocator()->get('calcsess');
               $srvCalcprice =  $this -> getServiceLocator()->get('calcprice');
               $calcprice_set= $srvCalcprice -> getAllCalcprice();
-              foreach ($calcprice as $key => $value) {
-                     $calcprice['calc_name'] = array('calc-cprice' => $value['calc-cprice'], 'calc_unit' => $value['calc_unit']);
+              foreach ($calcprice_set as $key => $value) {
+                     $calcprice[$value['calc_name']] = array('calc-cprice' => $value['calc-cprice'], 'calc_unit' => $value['calc_unit']);
               }
                if (! $this->checksess($cookie_name)){                      
                            $date = date_create();
@@ -86,7 +86,8 @@ class CalculatorController extends AbstractActionController
                     
                      'material'    => $material,
                      'cf_form'     => $calc_data_array,
-                     'systems'     => $system
+                     'systems'     => $system,
+                     'calcprice'   => $calcprice
                         
         ));
         
@@ -148,7 +149,24 @@ function startsess($db_model, $name_sess, $val){
             'u_length_4'        => '200',                                      
             'u_length_5'        => '100', 
             'u_length_7'        => '500',
-            'u_length_8'        => '300',        
+            'u_length_8'        => '300',  
+
+            'i_wall_left'       => '0',
+            'i_wall_top'        => '0',
+            'i_wall_right'      => '0',
+            'i_wall_bottom'     => '0',
+
+            'i_corner_1'        => '0',
+            'i_corner_2'        => '0',
+            'i_corner_3'        => '0',
+            'i_corner_4'        => '0',  
+
+            'i_sink'            => '0',
+            'i_stove'           => '0',                                  
+
+                                                                          
+            'i_length_1'        => '1000',
+            'i_length_2'        => '3000'                     
         );
        $data = serialize($data_array);
 

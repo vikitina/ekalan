@@ -3121,3 +3121,57 @@
 [11-Aug-2016 11:15:27 Europe/Helsinki] PHP Warning:  Invalid argument supplied for foreach() in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 27
 [11-Aug-2016 11:15:27 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 173
 [11-Aug-2016 11:15:27 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 87
+[11-Aug-2016 12:39:06 Europe/Helsinki] PHP Notice:  Undefined variable: calcprice in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 27
+[11-Aug-2016 12:39:07 Europe/Helsinki] PHP Warning:  Invalid argument supplied for foreach() in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 27
+[11-Aug-2016 12:39:07 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 174
+[11-Aug-2016 12:39:07 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 87
+[11-Aug-2016 12:39:07 Europe/Helsinki] PHP Notice:  Undefined variable: calcprice in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 92
+[11-Aug-2016 21:16:13 Europe/Helsinki] PHP Notice:  Undefined variable: calcprice in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 27
+[11-Aug-2016 21:16:13 Europe/Helsinki] PHP Warning:  Invalid argument supplied for foreach() in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 27
+[11-Aug-2016 21:16:13 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 174
+[11-Aug-2016 21:16:14 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 87
+[11-Aug-2016 21:16:14 Europe/Helsinki] PHP Notice:  Undefined variable: calcprice in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 92
+[11-Aug-2016 22:02:09 Europe/Helsinki] PHP Notice:  Undefined variable: calcprice in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 27
+[11-Aug-2016 22:02:09 Europe/Helsinki] PHP Warning:  Invalid argument supplied for foreach() in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 27
+[11-Aug-2016 22:02:09 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 174
+[11-Aug-2016 22:02:09 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 87
+[11-Aug-2016 22:02:09 Europe/Helsinki] PHP Notice:  Undefined variable: calcprice in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 92
+[11-Aug-2016 22:02:56 Europe/Helsinki] PHP Notice:  Undefined variable: calcprice in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 27
+[11-Aug-2016 22:02:56 Europe/Helsinki] PHP Warning:  Invalid argument supplied for foreach() in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 27
+[11-Aug-2016 22:02:56 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 87
+[11-Aug-2016 22:02:56 Europe/Helsinki] PHP Notice:  Undefined variable: calcprice in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 92
+[11-Aug-2016 22:04:15 Europe/Helsinki] PHP Notice:  Undefined variable: calcprice in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 27
+[11-Aug-2016 22:04:15 Europe/Helsinki] PHP Warning:  Invalid argument supplied for foreach() in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 27
+[11-Aug-2016 22:04:15 Europe/Helsinki] PHP Notice:  Undefined variable: calcprice in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 85
+[11-Aug-2016 22:04:15 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 88
+[11-Aug-2016 22:04:15 Europe/Helsinki] PHP Notice:  Undefined variable: calcprice in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 93
+[11-Aug-2016 22:05:31 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 88
+[11-Aug-2016 22:06:27 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 88
+[11-Aug-2016 22:07:42 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 88
+[11-Aug-2016 22:07:43 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 88
+[11-Aug-2016 22:10:02 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 88
+[11-Aug-2016 22:10:03 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 88
+[11-Aug-2016 22:11:40 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 88
+[11-Aug-2016 22:11:41 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 88
+[11-Aug-2016 22:14:41 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 88
+[11-Aug-2016 22:15:45 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 88
+[11-Aug-2016 22:18:51 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 88
+[11-Aug-2016 22:20:44 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 88
+[11-Aug-2016 22:21:21 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 87
+[11-Aug-2016 22:25:39 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Manufacturer.php on line 46
+[11-Aug-2016 22:25:39 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[11-Aug-2016 22:25:49 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 174
+[11-Aug-2016 22:25:50 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 87
+[11-Aug-2016 22:33:18 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Manufacturer.php on line 46
+[11-Aug-2016 22:33:18 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 52
+[11-Aug-2016 22:33:42 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[11-Aug-2016 23:00:57 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 174
+[11-Aug-2016 23:00:57 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[11-Aug-2016 23:01:18 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[11-Aug-2016 23:31:23 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 191
+[11-Aug-2016 23:31:23 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[11-Aug-2016 23:32:22 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[11-Aug-2016 23:36:23 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[11-Aug-2016 23:37:58 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[11-Aug-2016 23:39:27 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[11-Aug-2016 23:50:13 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68

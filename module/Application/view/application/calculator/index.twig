@@ -45,6 +45,23 @@
 <input type="hidden" name="u_length_5" id="u_length_5" value="{{ cf_form.u_length_5 }}" />  
 <input type="hidden" name="u_length_7" id="u_length_7" value="{{ cf_form.u_length_7 }}" />
 <input type="hidden" name="u_length_8" id="u_length_8" value="{{ cf_form.u_length_8 }}" /> 
+
+<input type="hidden" name="i_wall_left" id="i_wall_left" value="{{ cf_form.i_wall_left }}" />
+<input type="hidden" name="i_wall_top" id="i_wall_top" value="{{ cf_form.i_wall_top }}" />
+<input type="hidden" name="i_wall_right" id="i_wall_right" value="{{ cf_form.i_wall_right }}" />
+<input type="hidden" name="i_wall_bottom" id="i_wall_bottom" value="{{ cf_form.i_wall_bottom }}" />
+
+<input type="hidden" name="i_corner_1" id="i_corner_1" value="{{ cf_form.i_corner_1 }}" />
+<input type="hidden" name="i_corner_2" id="i_corner_2" value="{{ cf_form.i_corner_2 }}" />
+<input type="hidden" name="i_corner_3" id="i_corner_3" value="{{ cf_form.i_corner_3 }}" />
+<input type="hidden" name="i_corner_4" id="i_corner_4" value="{{ cf_form.i_corner_4 }}" />
+
+<input type="hidden" name="i_sink" id="i_sink" value="{{ cf_form.i_sink }}" />
+<input type="hidden" name="i_stove" id="i_stove" value="{{ cf_form.i_stove }}" />                                   
+
+                                                                          
+<input type="hidden" name="i_length_1" id="i_length_1" value="{{ cf_form.i_length_1 }}" />
+<input type="hidden" name="i_length_2" id="i_length_2" value="{{ cf_form.i_length_1 }}" />
 </form>
 
 {#
@@ -166,33 +183,33 @@ array(16) { ["id"]=> string(1) "5"
                                                             </div>{#  schema_U #}
                                                  </div>
                                                  <div aria-hidden="{{ cf_form.cf_type == 'i' ? false : true }}" role="tabpanel" aria-labelledby="ui-id-2" id="tabs-2" class="plr-0 ui-tabs-panel ui-widget-content ui-corner-bottom">
-                                                            <div id="schema_I">
-                                                                    <div class="i_wall_left_obj"></div>
-                                                                    <div class="i_wall_top_obj"></div>
-                                                                    <div class="i_wall_right_obj"></div>
-                                                                    <div class="i_wall_bottom_obj"></div>
+                                                            <div id="schema_I" class="i">
+                                                                    <div class="i_wall_left_obj wall_obj{{ cf_form.i_wall_left ? ' i_wall_left_obj_on wall_obj_on' : ''}}" data-num="1"></div>
+                                                                    <div class="i_wall_top_obj wall_obj{{ cf_form.i_wall_top ? ' i_wall_top_obj_on wall_obj_on' : ''}}" data-num="2"></div>
+                                                                    <div class="i_wall_right_obj wall_obj{{ cf_form.i_wall_right ? ' i_wall_right_obj_on wall_obj_on' : ''}}" data-num="3"></div>
+                                                                    <div class="i_wall_bottom_obj wall_obj{{ cf_form.i_wall_bottom ? ' i_wall_bottom_obj_on wall_obj_on' : ''}}" data-num="4"></div>
 
-                                                                    <div class="i_corner_1_obj"></div>
-                                                                    <div class="i_corner_2_obj"></div>
-                                                                    <div class="i_corner_3_obj"></div>
-                                                                    <div class="i_corner_4_obj"></div>
+                                                                    <div class="i_corner_1_obj{{ cf_form.i_corner_1 ? ' i_corner_1_obj_on corner_obj_on' : ''}}"></div>
+                                                                    <div class="i_corner_2_obj{{ cf_form.i_corner_2 ? ' i_corner_2_obj_on corner_obj_on' : ''}}"></div>
+                                                                    <div class="i_corner_3_obj{{ cf_form.i_corner_3 ? ' i_corner_3_obj_on corner_obj_on' : ''}}"></div>
+                                                                    <div class="i_corner_4_obj{{ cf_form.i_corner_4 ? ' i_corner_4_obj_on corner_obj_on' : ''}}"></div>
                                                                
-                                                                    <div class="i_wall_left handle wall" data-calc-form="i_wall_left"></div>
-                                                                    <div class="i_wall_top handle wall" data-calc-form="i_wall_top"></div>
-                                                                    <div class="i_wall_right handle wall" data-calc-form="i_wall_right"></div>
-                                                                    <div class="i_wall_bottom handle wall" data-calc-form="i_wall_bottom"></div>
+                                                                    <div class="i_wall_left handle wall{{ cf_form.i_wall_left ? ' wall_on' : ''}}" data-calc-form="i_wall_left"></div>
+                                                                    <div class="i_wall_top handle wall{{ cf_form.i_wall_top ? ' wall_on' : ''}}" data-calc-form="i_wall_top"></div>
+                                                                    <div class="i_wall_right handle wall{{ cf_form.i_wall_right ? ' wall_on' : ''}}" data-calc-form="i_wall_right"></div>
+                                                                    <div class="i_wall_bottom handle wall{{ cf_form.i_wall_bottom ? ' wall_on' : ''}}" data-calc-form="i_wall_bottom"></div>
 
                                                                     <div class="i_corner_1 corner handle" data-calc-form="i_corner_1"></div>      
                                                                     <div class="i_corner_2 corner handle" data-calc-form="i_corner_2"></div>
                                                                     <div class="i_corner_3 corner handle" data-calc-form="i_corner_3"></div>  
                                                                     <div class="i_corner_4 corner handle" data-calc-form="i_corner_4"></div>                                                             
 
-                                                                    <div class="i_length_1 length" data-calc-form="i_length_1"><input type="text" /></div>      
-                                                                    <div class="i_length_2 length" data-calc-form="i_length_2"><input type="text" /></div>                                                             
+                                                                    <div class="i_length_1 length" data-calc-form="i_length_1"><input type="text" value="{{ cf_form.i_length_1 }}" /></div>      
+                                                                    <div class="i_length_2 length" data-calc-form="i_length_2"><input type="text" value="{{ cf_form.i_length_2 }}" /></div>                                                             
 
 
-                                                                    <div class="i_sink i_sink_obj handle sink" data-calc-form="i_sink"><span>Мойка</span></div>
-                                                                    <div class="i_stove i_stove_obj handle stove" data-calc-form="i_stove"><span>Плита</span></div>
+                                                                    <div class="i_sink i_sink_obj handle sink {{ cf_form.i_sink ? ' i_sink_obj_on sink_on' : ''}}" data-calc-form="i_sink"><span>Мойка</span></div>
+                                                                    <div class="i_stove i_stove_obj handle stove {{ cf_form.i_stove ? ' i_stove_obj_on stove_on' : ''}}" data-calc-form="i_stove"><span>Плита</span></div>
 
 
                                                             </div>{#  schema_I #}
@@ -258,7 +275,7 @@ array(16) { ["id"]=> string(1) "5"
                               <tbody>
                                 
                                     <tr><td>Материал</td><td><div id="result_sq"></div></td><td></td><td></td></tr>
-                                    <tr><td>Длина обработки края</td><td><div id="result_edge_len"></div></td><td></td><td></td></tr>
+                                    <tr><td>Длина обработки края</td><td><div id="result_edge_len"></div></td><td><span id="price_edge"></span></td><td></td></tr>
                                     <tr><td>Длина плинтуса</td><td><div id="result_plinth_len"></div></td><td></td><td></td></tr>
                                     <tr><td>Скругления углов</td><td><div id="result_corner"></div></td><td></td><td></td></tr>
                                     <tr><td>Мойка</td><td><div id="result_sink"></div></td><td></td><td></td></tr>
@@ -266,7 +283,8 @@ array(16) { ["id"]=> string(1) "5"
                               </tbody>
                               <tfoot><tr><td colspan="3">Итого:</td><td></td></tr></tfoot>
                             </table>
-
+                             <input id='db_stove' value="{{ calcprice.stove['calc-cprice'] }}" type="hidden" />
+                             <input id='db_sink' value="{{ calcprice.sink['calc-cprice'] }}"  type="hidden" />
                             </div>{# table_container  #}
 
 
