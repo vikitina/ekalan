@@ -10,8 +10,8 @@ $(document).ready(function(){
                     tinymce.init({
                                 selector: 'textarea.tiny'
                                , height: 500
-                               , plugins: []
-                               , toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link'
+                               , plugins: ['link']
+                               , toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist link'
                                , content_css: [
                                     
                                            "{{ basePath('assets/admin/js/tinymce.min.js') }}"
