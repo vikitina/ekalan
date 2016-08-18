@@ -11,7 +11,7 @@ $(document).ready(function(){
                                 selector: 'textarea.tiny'
                                , height: 500
                                , plugins: []
-                               , toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent'
+                               , toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link'
                                , content_css: [
                                     
                                            "{{ basePath('assets/admin/js/tinymce.min.js') }}"
