@@ -92,9 +92,9 @@
         <!-- Intro Section -->
         <section class="full-screen-intro" id="welcome">
             <!-- Bg Image -->
-            <div class="media-wapper {#bg-img8#} cont-h-100per">
+            <div class="media-wapper{{ mainAnimation ? '' : ' bg-img8' }} cont-h-100per">
               
-
+{% if mainAnimation %}
                  <div style='width:100%;height:100%'>
     
     <svg id="animation" width="100%"  height="100%" xmlns="http://www.w3.org/2000/svg" version="1.20"  xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1235 822" preserveAspectRatio="xMidYMid meet" > <!-- slice style='border: 1px solid #000; background: linear-gradient(to top, #eee, white, #eee);'-->
@@ -239,7 +239,7 @@
  </g><!--  end of dim -->
 
     </svg>
-   </div>
+   </div>{% endif %}
             </div>
             <!-- End Bg Image -->
 

@@ -1,4 +1,7 @@
-     var animSvg = Snap("#animation");
+
+
+      if($('#animation').width()){
+      var animSvg = Snap("#animation");
       var bck = animSvg.paper.image("assets/application/img/tabletop_ImgID1.jpg", 0, 0, 1235, 822).attr({opacity:0.01});
  
 
@@ -103,6 +106,7 @@ myDrawing1.callOnFinished = function(){
                                                                     contour.animate({opacity:0},5000);
                                                                 }
                     )}
-                )
+                );
 
+}
 }

@@ -17,7 +17,20 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-       	
+       	$cookie_name = 'ekalan_mainPageAnimation';
+         if (! $this->checksess($cookie_name)){                      
+                           $date = date_create();
+                           $sess_id = date_timestamp_get($date);
+                           $this->startsess($cookie_name, $sess_id);
+                           
+                           $mainAnimation = true;
+                           
+               }else{
+
+                           $mainAnimation = false;
+
+               }        
+
         $articleSrv    =  $this -> getServiceLocator()->get('article');
         $articles      =  $articleSrv    -> getAllPublished();
 
@@ -79,7 +92,8 @@ class IndexController extends AbstractActionController
             'articles'              => $articles,
             'artfirst'              => $artfirst,
             'artfour'               => $artfour,
-            'arthow'                => $arthow
+            'arthow'                => $arthow,
+            'mainAnimation'         => $mainAnimation
 
 
         
@@ -185,4 +199,16 @@ class IndexController extends AbstractActionController
     }   
 
 
+function startsess($name_sess, $val){
+
+       setcookie($name_sess,$val,time()+60*60*24);
+
+     }
+
+function checksess($cookie_name){
+
+       
+       return ($_COOKIE[$cookie_name] ? true : false);
+
+}     
 }
