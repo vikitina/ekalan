@@ -32,7 +32,7 @@ class IndexController extends AbstractActionController
                }        
 
         $articleSrv    =  $this -> getServiceLocator()->get('article');
-        $articles      =  $articleSrv    -> getAllPublished();
+        $articles      =  $articleSrv    -> getForHomePublished();
 
         $manufacturerSrv = $this -> getServiceLocator()->get('manufacturer');
         $manufacturers = $manufacturerSrv->getAllManufacturers();

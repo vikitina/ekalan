@@ -125,7 +125,12 @@ public function getArthowPublishedArticles(){
          $results = $this->FetchAll($adapter, $query);                            
          return $results;
     }  
-
+    public function getForHomePublished(){
+         $query = "SELECT * from `t_article` where on_home ='1' and public ='1'";                          
+         $adapter = $this->getAdapter();
+         $results = $this->FetchAll($adapter, $query);                            
+         return $results;
+    }  
 
     public function getAllInfoArticles(){
          $query = "SELECT * from `t_article` where arthow = '0' and artfour = '0' and artfirst = '0'";                          
