@@ -21,7 +21,7 @@ class MaterialController extends AbstractActionController
     {
        	$get_data = $this->getEvent()->getRouteMatch()->getParam('name_material');	
         $param = explode(('&'), $get_data);
-        $keys = array('manufacturer','id_color','id_texture','id_material');
+        $keys = array('manufacturer','id_color','id_texture','id_collection');
         $i = 0;
         foreach ($param as $value) {
             $in_data[$keys[$i]] = $value;
@@ -36,6 +36,7 @@ class MaterialController extends AbstractActionController
         $colorSrv = $this -> getServiceLocator()->get('color');
         $textureSrv = $this -> getServiceLocator()->get('texture');
         $materialSrv    = $this -> getServiceLocator()->get('material');
+        $collectionSrv    = $this -> getServiceLocator()->get('collection');
 
         $id_manufacturer = $manufacturerSrv->getManufacturerByName($in_data['manufacturer']);
         //echo 'id_manuf  ==  '.$id_manufacturer;
@@ -56,6 +57,7 @@ class MaterialController extends AbstractActionController
         $set_material = $materialSrv->getSpecOrder($data);
 
         $blocks['manufacturers'] = $manufacturerSrv->getAllManufacturers();
+        $blocks['collections'] = $collectionSrv->getCollectionByManuf($id_manufacturer);
         $blocks['colors'] = $colorSrv->getAllColors();
         $blocks['textures'] = $textureSrv->getAllTextures();
 
@@ -138,14 +140,20 @@ class MaterialController extends AbstractActionController
 
            $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
 
-           $html = $partial('material/materialset', array("key" => $set_material['result']));           
+           $html = $partial('material/materialset', array("key" => $set_material['result']));  
+
+           //взять коллекции, по производителю
+           $collectionSrv    = $this -> getServiceLocator()->get('collection');
+           $set_collections  = $collectionSrv -> getCollectionByManuf($data['id_manufacturer']);   
+
+
            return   new JsonModel ( array (
 
-                  'res'       => $html,
-                  'query'     => $set_material['query'],
-                  'id_color'  => $data['id_color'],
-                  'rowcount'  => $set_material['rowcount']
-
+                  'res'              => $html,
+                  'query'            => $set_material['query'],
+                  'id_color'         => $data['id_color'],
+                  'rowcount'         => $set_material['rowcount'],
+                  'set_collections'  => $set_collections
 
 
 

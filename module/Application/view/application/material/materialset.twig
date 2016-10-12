@@ -2,8 +2,11 @@
 <?php foreach ($this->key as $item){ ?>
 <?php $url_sample = ((isset($item['url']) && $item['url'] != '' && $item['url'] !=null)?"/assets/application/samples/".trim($item['url']):"/assets/application/img/no_photo.png");?>
 <li style="background:url('<?php echo $url_sample; ?>') no-repeat center center;" data-sample="<?php echo $item['id'] ?>"> 
- 
-   <span>$<?php echo $item['price_material'] ?></span>
+   <span><b><?php echo $item['name_material'] ?></b>
+   <br /><?php echo $item['manufacturer'] ?>
+   <br /><i>коллекция</i> <?php echo $item['collection'] ?>
+   <br /><em class="color" style="background:<?php echo $item['num_color'] ?>"></em><?php echo $item['color'] ?>
+   <br /><b>$<?php echo $item['price_material'] ?></b></span>
  </li>
 
 <?php }}else {?> 

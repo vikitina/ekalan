@@ -27,6 +27,7 @@ class Materials extends TableGateway
               ." t_sample.url as url,"
               ." t_collection.name_collection as collection,"
               ." t_color.name_color as color,"
+              ." t_color.color_color as num_color,"
               ." t_texture.name_texture as texture,"
               ." t_manufacturer.name_manufacturer as manufacturer"
               ." FROM `t_material` "
@@ -42,7 +43,9 @@ class Materials extends TableGateway
                .((isset($data['id_color']) && $data['id_color'] != '' && $data['id_color'] != null && $data['id_color'] != '0')?" AND t_material.id_color = '".$data['id_color']."'":"")
                .((isset($data['id_texture']) && $data['id_texture'] != '' && $data['id_texture'] != null && $data['id_texture'] != '0')?" AND t_material.id_texture = '".$data['id_texture']."'":"")
                .((isset($data['articul']) && $data['articul'] != '0')?" AND t_material.articul like '".$data['articul']."%'":"")
-               .((isset($data['exclude']) && $data['exclude'] !='0')?" AND t_material.id <>'".$data['exclude']."'":"");
+               .((isset($data['exclude']) && $data['exclude'] !='0')?" AND t_material.id <>'".$data['exclude']."'":"")
+               .((isset($data['id_collection']) && $data['id_collection'] != '' && $data['id_collection'] != null && $data['id_collection'] != '0')?" AND t_material.id_collection = '".$data['id_collection']."'":"")
+               .' ORDER BY t_material.price_material asc';
 
       $adapter = $this->getAdapter();
       $result = $this->FetchAll($adapter, $query); 

@@ -47,10 +47,10 @@ class Collection extends TableGateway
         return $results[0];
     }   
 
- public function getCollectionByManuf($id)
+ public function getCollectionByManuf($id = null)
     { 
 
-        $query = "SELECT * from `t_collection` where `id_manufacturer` ='".$id."'";
+        $query = "SELECT * from `t_collection`". (( $id > 0 )?" where `id_manufacturer` ='".$id."'" :"" );
         
     
                             

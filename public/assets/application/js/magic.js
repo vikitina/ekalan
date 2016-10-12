@@ -69,21 +69,27 @@ $('.sales_update').submit(function(event) {
                            }
                         });
 
-$('.filter').click(function(){
+$('ul').on('click','.filter',function(){
        var data = new Object();
-
+      
        $(this).parent().find('.selected').removeClass('selected');
        $(this).addClass('selected');
+       if ($(this).parents('ul').hasClass('manufact')){
+
+                $('#id_collection').val('0');
+                $('#id_collection').attr('data-title','0');
+       }
        var name = '#'+$(this).attr('data-name');
        var value = $(this).attr('data-value');
        $(name).val(value);
-       $(name).attr('data-title',$(this).attr('data-title'))
+       $(name).attr('data-title',$(this).attr('data-title'));
        
 
        data['manufacturer'] = $('#id_manufacturer').attr('data-title');
        data['id_color'] = $('#id_color').val();
        
        data['id_texture'] = $('#id_texture').val();
+       data['id_collection'] = $('#id_collection').val();
        Hash.set(data);
        $("#start").val(1);
        $('.set_material').html('');
@@ -106,8 +112,19 @@ function getmaterial(){
                 $('.ajax_loader').removeClass('.ajax_loader_show');
                 $('.set_material').append(data.res);
                 $('#rowcount').val(data.rowcount);
-                console.log('query     '+data.query); 
-                 console.log('id_color =      '+data.id_color); 
+                var li = '<li class="filter all" data-name="id_collection" data-value="0" data-title="0"><span>Все</span></li>';
+                //console.log(data.set_collections);
+                var set_collections = data.set_collections;
+                set_collections.map(function(el, i){
+                  //console.log(el); 
+                  li += '<li class="filter" data-name="id_collection" data-value="'+ el.id + '" data-title="' + el.name_collection + '"><span>' + el.name_collection + '</span></li>';
+                       
+
+                });
+                $('#collections_line').html(li);
+
+                //console.log(li); 
+                
                 
             });       
 

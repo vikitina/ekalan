@@ -101,8 +101,13 @@ html,body{font-family: 'Roboto', sans-serif;font-weight: 500;background:#dad1c8;
 .affix{top:100px;height:80%;overflow:auto;}
 
 .set_material{list-style: none;margin-bottom: 40px;}
-.set_material li{box-shadow: 0 0 10px rgba(0,0,0,0.5);border-radius: 26px;cursor:pointer;float:left;width:27%;height:150px;border:1px solid #ccc;border-radius: 5px;margin-right:50px;margin-bottom:50px;list-style: none;position:relative;}
-.set_material li span{position:absolute;left:-20px;top:10px;display:block;color:#fff;background:red;padding:5px;box-shadow: 0 0 4px rgba(0,0,0,0.5);border-radius: 3px;}
+.set_material li{box-shadow: 0 0 10px rgba(0,0,0,0.5);border-radius: 26px;cursor:pointer;float:left;width:43%;height:200px;border:1px solid #ccc;border-radius: 5px;margin-right:50px;margin-bottom:50px;list-style: none;position:relative;}
+.set_material li span{position:absolute;left:-9px;top:10px;display:block;color:#000;background:#ece6e1;padding:5px;box-shadow: 0 0 4px rgba(0,0,0,0.5);border-radius: 3px;min-width:50%;opacity:0.9;line-height: 1.4em;padding-left: 12px;}
+.set_material li span b{line-height: 1.8em;}
+.set_material li span i{font-size: 0.8em;}
+
+.color{width:15px;height:15px;display:block;border:1px solid #ccc;float:left;margin-right: 10px;}
+
 
 #colors_line{width:100%;float:left;list-style: none;margin-bottom:40px;}
 #colors_line li{padding-top: 13px;font-size:5em;text-align: center;color: #fafafa;cursor:pointer;list-style: none;width:50px; height:50px;float:left; margin-right: 20px;border-radius: 5px;/*box-shadow: 0 0 10px rgba(0,0,0,0.5);*/margin-bottom: 5px;}
@@ -622,3 +627,11 @@ input[type="checkbox"]{width:20px;height:20px;margin:0;}
 .service_liks  .send_link input[type='text']{width:77%;float: left;}
 .service_liks  .send_link input[type='button']{width: 11%;float: right;}
 .service_liks  .btn-success {height: 129px; border-radius: 10px; width:100%;}
+
+
+
+#collections_line li{width:100%;height:70px;list-style: none;margin-bottom: 40px;}
+#collections_line li{width:49%;height:30px;list-style: none;padding:0;margin:0;float:left;cursor:pointer;font-size:0.9em;text-align: left;border-radius: 10px;}
+#collections_line li.all{width:100%;text-align: center;}
+#collections_line li span{padding: 2px;height:30px;display:block;width:auto;float:left;}
+#collections_line li.selected span{background:#ccc;color:#fff;}

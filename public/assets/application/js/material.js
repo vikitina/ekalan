@@ -1,7 +1,7 @@
 Hash = {
   // Получаем данные из адреса
   get:      function() {
-       var indexes = ['manufacturer','id_color','id_texture','id_material'];
+       var indexes = ['manufacturer','id_color','id_texture','id_collection'];
     // [0] - производитель
     // [1] - цвет
     // [2] - текстура
