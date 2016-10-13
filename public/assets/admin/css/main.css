@@ -339,6 +339,7 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
 .textures li.adding .form_to_add{display:block;}
 .textures li.add .form_to_add form{float:left;width:100%;}
 .textures li.add .form_to_add form div{float:left;margin-right:40px;}
+.textures li .editopen span{visibility: hidden;}
 
 
 .photos_list{display:block;float:left;border:1px dashed #ddd;padding:0;margin:0;margin-right:30px;max-width:540px;}

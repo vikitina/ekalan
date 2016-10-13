@@ -407,7 +407,9 @@ public function ajaxmanufupdateAction(){
 }
 public function ajaxcolorupdateAction(){
 
-      $data = $_POST;
+      $data['id'] = (int)$_POST['id'];
+      $data['name_color'] = $_POST['name_color'];
+      $data['color_color'] = $_POST['color_color'];
       $colorSrv    = $this -> getServiceLocator()->get('color');
       $res = $colorSrv->updateColor($data);
       return new JsonModel(array());

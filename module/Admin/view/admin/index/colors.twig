@@ -27,8 +27,9 @@
                                      {% for color in colors %}
                                                      <li class="ajax_edit_obj">
                                                        <form action="/admin/ajaxcolorupdate" method="post">
-                                                            <input type="hidden" name="id" value="{{ color.id }}"  />
-                                                            <input type="hidden" name="name_color" id="name_color_{{ color.id }}" value="{{ color.name_color }}"  />
+                                                            <input type="hidden" name="id" value="{{ color.id }}" class="id" />
+                                                            <input type="hidden" name="name_color" class="name_color" id="name_color_{{ color.id }}" value="{{ color.name_color }}"  />
+                                                            <input type="hidden" class="color_hex" value="{{ color.color_color }}" name="color_color" />
                                                           </form> 
                                                          <div class="width_for_edit">   
                                                          <div class="editable">
