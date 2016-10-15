@@ -173,7 +173,8 @@ function calculate(){
                          ];
                           if( (length_arr[2] > length_arr[4]) && (length_arr[0] > length_arr[4]) && (length_arr[1] > (length_arr[7] + length_arr[3])) ){
                                    
-
+                                   length_arr[5] = length_arr[2] - length_arr[4];
+                                   length_arr[6] = length_arr[0] - length_arr[4];
                                    
                                    sq = ( length_arr[1] * length_arr[4] + (length_arr[0] - length_arr[4]) * length_arr[7] + (length_arr[2] - length_arr[4]) * length_arr[3] )/1000000;
                          }else{
@@ -216,6 +217,9 @@ function calculate(){
                          ];
                           if( (length_arr[0] > length_arr[2]) && (length_arr[1] > length_arr[5]) ){
                                    
+                                   length_arr[3] = length_arr[1] - length_arr[5];
+                                   length_arr[4] = length_arr[0] - length_arr[2];
+
                                    sq = (length_arr[1] * length_arr[2] + (length_arr[0] - length_arr[2]) * length_arr[5])/1000000;
                          }else{
 
