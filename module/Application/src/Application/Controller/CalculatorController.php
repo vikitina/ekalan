@@ -186,8 +186,8 @@ function startsess($db_model, $name_sess, $val){
 
             'l_length_1'        => '3000', 
             'l_length_2'        => '3000',  
-            'l_length_3'        => '1000', 
-            'l_length_4'        => '2000'            
+            'l_length_3'        => '600', 
+            'l_length_6'        => '600'            
 
         );
        $data = serialize($data_array);
