@@ -143,13 +143,12 @@ function startsess($db_model, $name_sess, $val){
             'u_sink'            => '0',
             'u_stove'           => '0',                                  
 
-                                                                          
-            'u_length_2'        => '1000',
-            'u_length_3'        => '300',
-            'u_length_4'        => '200',                                      
-            'u_length_5'        => '100', 
-            'u_length_7'        => '500',
-            'u_length_8'        => '300',  
+            'u_length_1'        => '1000',                                                             
+            'u_length_2'        => '1400',
+            'u_length_3'        => '1000',
+            'u_length_4'        => '600',                                      
+            'u_length_5'        => '600', 
+            'u_length_8'        => '600',  
 
             'i_wall_left'       => '0',
             'i_wall_top'        => '0',

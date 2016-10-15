@@ -454,9 +454,6 @@ $(".colors").each(function(){
                              var form = $(this).parents('li').find('form');
                              var action = $(form).prop('action');
                              var data = {'id': $(form).find('input.id').val(),'name_color':$(form).find('input.name_color').val(),'color_color':$(form).find('input.color_hex').val()};
-                            
-                             console.log(action);
-                             console.log(data);
                              play_ajax(action,data,null);
                 },
                 palette: [

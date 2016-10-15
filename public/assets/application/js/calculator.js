@@ -162,20 +162,20 @@ function calculate(){
 
                   case 'u':
                          length_arr = [
-                               0,
+                               $('.u_length_1 input').val() * 1,
                                $('.u_length_2 input').val() * 1,
                                $('.u_length_3 input').val() * 1,
                                $('.u_length_4 input').val() * 1,
                                $('.u_length_5 input').val() * 1,
                                0,
-                               $('.u_length_7 input').val() * 1,
+                               0,
                                $('.u_length_8 input').val() * 1
                          ];
-                          if( (length_arr[2] > length_arr[4]) && (length_arr[1] > (length_arr[7] + length_arr[3])) ){
-                                   length_arr[0] = (length_arr[2] - length_arr[4]) + length_arr[6];
-                                   length_arr[5] = length_arr[1] - (length_arr[7] + length_arr[3]);
+                          if( (length_arr[2] > length_arr[4]) && (length_arr[0] > length_arr[4]) && (length_arr[1] > (length_arr[7] + length_arr[3])) ){
+                                   
 
-                                   sq = ((length_arr[2] - length_arr[4])*length_arr[1] + length_arr[6]*length_arr[7] + length_arr[4]*length_arr[3])/1000000;
+                                   
+                                   sq = ( length_arr[1] * length_arr[4] + (length_arr[0] - length_arr[4]) * length_arr[7] + (length_arr[2] - length_arr[4]) * length_arr[3] )/1000000;
                          }else{
 
                                    sq = 0;
