@@ -26,6 +26,7 @@
                                                <input type="hidden" name="name_material" id="name_material" value="{{ material.name_material }}" />
                                                <input type="hidden" name="articul" id="articul" value="{{ material.articul }}" />
                                                <input type="hidden" name="price_material" id="price_material" value="{{ material.price_material }}" />
+                                               <input type="hidden" name="processing_price_material" id="processing_price_material" value="{{ material.processing_price_material }}" />
                                                <input type="hidden" name="id_manufacturer" id="id_manufacturer" value="{{ material.id_manufacturer }}" />
                                                <input type="hidden" name="id_collection" id="id_collection" value="{{ material.id_collection }}" />
                                                <input type="hidden" name="id_color" id="id_color" value="{{ material.id_color }}" />
@@ -115,7 +116,7 @@
                                                           </div>                                                     
                                                      </li>
                                                      <li class="separator"></li>
-                                                     <li><span>Цена</span>
+                                                     <li><span>Цена материала</span>
 
                                                           <div class="editable">
                                                               <span>{{ material.price_material }}</span> 
@@ -129,6 +130,20 @@
                                                             <i class="fa fa-pencil fa-fw"></i>
                                                           </div> 
                                                      </li>
+                                                     <li><span>Стоимость работ</span>
+
+                                                          <div class="editable">
+                                                              <span>{{ material.processing_price_material }}</span> 
+                                                              <div class="editblock">
+                                                                  <div class="editarea">
+                                                                       <input type="text" data-name="processing_price_material" value="{{ material.processing_price_material }}" />
+                                                                  </div>
+                                                                  
+
+                                                            </div><!-- editblock  -->
+                                                            <i class="fa fa-pencil fa-fw"></i>
+                                                          </div> 
+                                                     </li>                                                     
                                                      <li class="separator"></li>
                                                      <li><span>Подобные</span>
 

@@ -6,7 +6,7 @@
    <br /><?php echo $item['manufacturer'] ?>
    <br /><i>коллекция</i> <?php echo $item['collection'] ?>
    <br /><em class="color" style="background:<?php echo $item['num_color'] ?>"></em><?php echo $item['color'] ?>
-   <br /><b>$<?php echo $item['price_material'] ?></b></span>
+   <br /><b>$<?php echo $item['price_material'] + $item['processing_price_material']?></b></span>
  </li>
 
 <?php }}else {?> 

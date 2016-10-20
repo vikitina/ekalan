@@ -184,7 +184,7 @@ return $query;
 public function updatePriceMaterial($data){
 
 
-        $query = "UPDATE t_material SET price_material = '".$data['price']."' where id='".$data['id']."'";
+        $query = "UPDATE t_material SET price_material = '".$data['price']."',processing_price_material = '".$data['processing_price']."' where id='".$data['id']."'";
 
          $adapter = $this->getAdapter();
                                     

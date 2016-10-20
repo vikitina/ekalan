@@ -124,7 +124,7 @@ box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);}
     text-transform: uppercase;
     width: 100%;}
 .filter_line div input,
-.filter_line div select{float: left;width:100%;}
+.filter_line div select{float: left;width:100%;border:1px solid #ccc !important;}
 
 
 .material_list_container{height: 377px;overflow:auto;border:1px solid #ddd;position:relative;}
@@ -485,6 +485,8 @@ input.focus_alert{visibility: hidden;}
 #sample_modal .loaded_img .img_container {height: 250px;width: 220px;}
 
 #sample_modal .loaded_img .img_container div {height: 228px;left: 10px;position: absolute;width: 200px;}
+
+#form_pricing_group_update input[type="text"]{border:1px solid #ccc;margin-left:15px;}
 
 
 

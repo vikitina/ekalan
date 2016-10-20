@@ -1,7 +1,7 @@
 Hash = {
   // Получаем данные из адреса
   get:      function() {
-       var indexes = ['manufacturer','id_color','id_texture','id_material'];
+       var indexes = ['manufacturer','id_collection','id_color','id_texture','id_material'];
     // [0] - производитель
     // [1] - цвет
     // [2] - текстура
@@ -151,39 +151,112 @@ $(document).ready(function(){
 
       $('.mfilter select').change(function(){
 
-             var id = '#' + $(this).parent().attr('data-name');
-             $(id).val($(this).val());
+             if($(this).parent().hasClass('filter_collection') && $('#id_collection').val() == '0'){
+              console.log('go!');
+                       getManufacturerByCollection($(this).val());
+                       
 
+                       
+             } else if ($(this).parent().hasClass('filter_manufacturer')){
+
+                       reloadCollections($(this).val());
+                       $('#id_collection').val(0);
+                       allChanges($(this));
+             }else{
+
+                       allChanges($(this));
+             }
+
+             
+      });
+// ------------------------------------------------
+      function allChanges(elem){
+
+
+             var id = '#' + elem.parent().attr('data-name');
+             $(id).val(elem.val());
              $("#start").val(1);
              data['manufacturer'] = $('#id_manufacturer').val();
              data['id_color'] = $('#id_color').val();
-       
+             data['id_collection'] = $('#id_collection').val();
              data['id_texture'] = $('#id_texture').val();
              Hash.set(data);             
              $('.material_list').html('');
              getmaterial();
 
-             $('#crumbs').html('<div>'+hash_crumbs['manufacturer'][$('#id_manufacturer').val()]+'</div><em>/</em><div>'+hash_crumbs['texture'][$('#id_texture').val()]+'</div><em>/</em><div>'+hash_crumbs['color'][$('#id_color').val()])+'</div>'
+             $('#crumbs').html('<div>'+hash_crumbs['manufacturer'][$('#id_manufacturer').val()]+'</div><em>/</em><div>'+hash_crumbs['collection'][$('#id_collection').val()]+'</div><em>/</em><div>'+hash_crumbs['texture'][$('#id_texture').val()]+'</div><em>/</em><div>'+hash_crumbs['color'][$('#id_color').val()])+'</div>'
 
-           $('.material_list li .check input').map(function (i, el){
+             $('.material_list li .check input').map(function (i, el){
                       $(el).prop('checked',false);
             
               }); 
-            $('#check_all').prop('checked',false);
-            $('#selected_list_length').text('('+$('.material_list li .check input:checked').length+')');             
+             $('#check_all').prop('checked',false);
+             $('#selected_list_length').text('('+$('.material_list li .check input:checked').length+')');         
+      }
+      function getManufacturerByCollection(id_collection){
+
+            var data = {'id' : id_collection*1};
+            var id_manufacturer;
+            $.ajax({
+                       type        : 'POST', 
+                       url         : 'http://' + location.hostname + '/admin/ajax/getmanufacturerbycollection', 
+                       data        :  data, 
+                       dataType    : 'json', 
+                       encode      :  true
+                                 
+                    })
+               .done(function(data) {
+                     id_manufacturer = data.id_manufacturer;
+                     $('#id_manufacturer').val(id_manufacturer);
+                     
+                     $('.filter_manufacturer select option').prop('selected',false);
+
+                     $('.filter_manufacturer select option[value=' + id_manufacturer + ']').prop('selected',true);
+                     console.log($('.filter_collection select option[value=' + id_collection + ']'));
+                     allChanges($('.filter_collection select'));
+                     reloadCollections(id_manufacturer,id_collection);                     
+                 }); 
+
+                            
+      }
+      function reloadCollections(id_manufacturer,selected=null){
              
-      });
-// ------------------------------------------------
+            var data = {'id' : id_manufacturer*1};
+
+            $.ajax({
+                       type        : 'POST', 
+                       url         : 'http://' + location.hostname + '/admin/ajax/reloadcollections', 
+                       data        :  data, 
+                       dataType    : 'json', 
+                       encode      :  true
+                                 
+                    })
+               .done(function(data) {
+                     var options_array = data.collections.map(function(collect){
+
+                             return '<option value="'+ collect.id +'">'+  collect.name_collection +'</option>';
+                     });
+                      var options = '<option value="0" selected>Все коллекции</option>' + options_array.join('');
+                      $('.filter_collection select').html(options);
+                      if(selected){
+                        $('.filter_collection select option[value=' + selected + ']').prop('selected',true);
+                      }
+
+                 
+                
+                 });              
+      }
+
       function getmaterial(){
 
 
             var data = $('#filter').serialize();
-             $.ajax({
+            $.ajax({
                        type        : 'POST', 
                        url         : 'http://' + location.hostname + '/admin/ajax/materialfilter', 
                        data        :  data, 
                        dataType    : 'json', 
-                       encode          : true
+                       encode      :  true
                                  
                     })
                .done(function(data) {
@@ -568,18 +641,21 @@ $('#id_manufacturer_select').change(function(){
 $('#clear_filter').click(function(){
 
            $('#id_manufacturer').val(0);
+           $('#id_collection').val(0);
            $('#id_color').val(0);
            $('#id_texture').val(0);
            $('#articul').val('');
 
            var data = new Object();
            data['manufacturer'] = $('#id_manufacturer').val();
+           data['collection'] = $('#id_collection').val();
            data['id_color'] = $('#id_color').val();
            data['id_texture'] = $('#id_texture').val();
            $('.material_list').html('');
+           reloadCollections(0);
            getmaterial();
 
-           $('#crumbs').html('<div>'+hash_crumbs['manufacturer'][$('#id_manufacturer').val()]+'</div><em>/</em><div>'+hash_crumbs['texture'][$('#id_texture').val()]+'</div><em>/</em><div>'+hash_crumbs['color'][$('#id_color').val()])+'</div>'
+           $('#crumbs').html('<div>'+hash_crumbs['manufacturer'][$('#id_manufacturer').val()]+'</div><em>/</em><div>'+hash_crumbs['collection'][$('#id_collection').val()]+'</div><em>/</em><div>'+hash_crumbs['texture'][$('#id_texture').val()]+'</div><em>/</em><div>'+hash_crumbs['color'][$('#id_color').val()])+'</div>'
 
            Hash.set(data); 
            //$('#filter_line')[0].reset();

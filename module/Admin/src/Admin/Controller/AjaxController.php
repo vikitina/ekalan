@@ -305,7 +305,31 @@ public function deletingcategoryAction(){
 
 
         }   
+   public function reloadcollectionsAction(){
+          $data = $_POST;
+          $collectionSrv    = $this -> getServiceLocator()->get('collection');
+          $collections = $collectionSrv->getCollectionByManuf((int)$data['id']);
+          return  $result = new JsonModel ( array (
+              
+                       'collections'      => $collections
+                       
+                
+               ) );   
 
+   }
+
+   public function getmanufacturerbycollectionAction(){
+
+          $data = $_POST;
+          $collectionSrv    = $this -> getServiceLocator()->get('collection');
+          $collection = $collectionSrv -> getCollection($data['id']);
+          return  $result = new JsonModel ( array (
+              
+                       'id_manufacturer'   => $collection['id_manufacturer']
+                       
+                
+               ) );           
+   }
 
    public function windowanalogsAction(){
 
@@ -333,9 +357,10 @@ public function deletingcategoryAction(){
          $ids_arr = explode(',',$data['pricing_list']);
 
          foreach ($ids_arr as $id) {
-               $materialSrv->updatePriceMaterial(array(
-                       'id'    => (int)$id,
-                       'price' => $data['price']
+               $materialSrv -> updatePriceMaterial(array(
+                       'id'               => (int)$id,
+                       'price'            => $data['price'],
+                       'processing_price' => $data['processing_price']
                    ));
         
          } }

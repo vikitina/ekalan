@@ -4,6 +4,7 @@
 {% block content %}
 <form id="filter">
      <input type="hidden" id="id_manufacturer" name="id_manufacturer" value="{{  crumbs.manufacturer.id }}" />
+     <input type="hidden" id="id_collection" name="id_collection" value="{{  crumbs.collection.id }}" />
      <input type="hidden" id="id_color" name="id_color" value="{{ crumbs.color.id }}" />
      <input type="hidden" id="id_texture" name="id_texture" value="{{ crumbs.texture.id }}" />
      <input type="hidden" id="limit" name="limit" value="{{ limit }}" />
@@ -19,6 +20,7 @@
      <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
               <section class="">
               <div id="crumbs"><div>{{ crumbs.manufacturer.name_manufacturer|raw  }}</div><em>/</em>
+                               <div>{{ crumbs.collection.name_collection|raw  }}</div><em>/</em>
                                <div>{{ crumbs.color.name_color|raw  }}</div><em>/</em>
                                <div>{{ crumbs.texture.name_texture|raw  }}</div>
               </div>
@@ -38,6 +40,15 @@
                              <option value="{{ manufacturer.id }}" {% if (crumbs.manufacturer.id==manufacturer.id) %} selected {% endif %}data-title="{{ manufacturer.name_manufacturer }}">{{ manufacturer.name_manufacturer }}</option>
                         {% endfor %}
               	     </select></div>
+
+                     <div class="filter_collection mfilter" data-name="id_collection">
+                     <label>Коллекция</label>
+                     <select>
+                             <option value="0" {% if crumbs.collection.id==0 %}selected{% endif %}>Все</option>
+                      {% for collection in filters.collections %}
+                             <option value="{{ collection.id }}" {% if (crumbs.collection.id == collection.id) %} selected {% endif %}data-title="{{ collection.name_collection }}">{{ collection.name_collection }}</option>
+                        {% endfor %}
+                     </select></div>                     
 
               	     <div class="filter_color mfilter" data-name="id_color">
               	     <label>Цвет</label>
@@ -137,7 +148,9 @@
         <ul id="list_for_pricing"></ul>
          
         <form method=post action="/admin/ajax_pricing_group" id="form_pricing_group_update"> 
-           <label>Новая цена<input type="text" name="price" /></label>
+           <label>Новая цена материала<input type="text" name="price" /></label>
+           <label>Новая цена работы<input type="text" name="processing_price" /></label>
+
            <input type="hidden" id="pricing_list" name="pricing_list" />
         </form>
       </div>
@@ -156,6 +169,7 @@
 
            var data = new Object();
            data['manufacturer'] = $('#id_manufacturer').val();
+           data['id_collection'] = $('#id_collection').val();
            data['id_color'] = $('#id_color').val();
            data['id_texture'] = $('#id_texture').val();
    

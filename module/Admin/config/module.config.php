@@ -330,7 +330,27 @@ return array(
                                         'action'     => 'materialfilter',
                                         ),
                                    ),
-                               ),   
+                               ),  
+                             'admin_ajax_reloadcollections' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                  'options' => array(
+                                  'route'    => '/ajax/reloadcollections',
+                                  'defaults' => array(
+                                        'controller' => 'Admin\Controller\Ajax',
+                                        'action'     => 'reloadcollections',
+                                        ),
+                                   ),
+                               ),  
+                            'admin_ajax_getmanufacturerbycollection' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                  'options' => array(
+                                  'route'    => '/ajax/getmanufacturerbycollection',
+                                  'defaults' => array(
+                                        'controller' => 'Admin\Controller\Ajax',
+                                        'action'     => 'getmanufacturerbycollection',
+                                        ),
+                                   ),
+                               ),                                                          
                              'admin_ajax_pricinggroup' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',
                                   'options' => array(

@@ -131,6 +131,8 @@ return array(
                                    array('route' => 'zfcadmin/admin_updatekarusel', 'roles' => array('admin')),   
                                    array('route' => 'zfcadmin/admin_addkarusel', 'roles' => array('admin')),            
                                    array('route' => 'zfcadmin/admin_ajax_materialfilter', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_ajax_reloadcollections', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_ajax_getmanufacturerbycollection', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_msgread', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_updatesystem', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_salesupdate', 'roles' => array('admin')),
