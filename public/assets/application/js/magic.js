@@ -112,12 +112,12 @@ function getmaterial(){
                 $('.ajax_loader').removeClass('.ajax_loader_show');
                 $('.set_material').append(data.res);
                 $('#rowcount').val(data.rowcount);
-                var li = '<li class="filter all" data-name="id_collection" data-value="0" data-title="0"><span>Все</span></li>';
+                var li = '<li class="filter all col-lg-12 col-md-12 col-sm-12 col-xs-12" data-name="id_collection" data-value="0" data-title="0"><span>Все</span></li>';
                 //console.log(data.set_collections);
                 var set_collections = data.set_collections;
                 set_collections.map(function(el, i){
                   //console.log(el); 
-                  li += '<li class="filter" data-name="id_collection" data-value="'+ el.id + '" data-title="' + el.name_collection + '"><span>' + el.name_collection + '</span></li>';
+                  li += '<li class="filter col-lg-4 col-md-6 col-sm-12 col-xs-12" data-name="id_collection" data-value="'+ el.id + '" data-title="' + el.name_collection + '"><span>' + el.name_collection + '</span></li>';
                        
 
                 });
