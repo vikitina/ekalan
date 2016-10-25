@@ -43,7 +43,7 @@ class MaterialController extends AbstractActionController
         $data['id_manufacturer'] = $id_manufacturer;
         $data['id_color'] = isset($in_data['id_color'])?$in_data['id_color']:0;
         $data['id_texture'] = isset($in_data['id_texture'])?$in_data['id_texture']:0;
-
+        $data['id_collection'] = isset($in_data['id_collection'])?$in_data['id_collection']:0;
 
 //for filter form
         $data_array['id_manufacturer'] = $id_manufacturer;
