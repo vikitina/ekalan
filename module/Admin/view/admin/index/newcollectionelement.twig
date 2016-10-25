@@ -1,0 +1,31 @@
+
+         
+<?php $item = $this->key; ?>
+
+                                                                                       <li class="ajax_edit_obj">
+                                                                                                <form action="/admin/ajaxcollectionupdate" method="post">
+                                                                                                            <input type="hidden" name="id" value="<?php echo $item['id']; ?>"  />
+                                                                                                            <input type="hidden" name="name_collection" id="name_collection_<?php echo $item['id']; ?>" value="<?php echo $item['name_collection']; ?>"  />
+                                                                                                            <input type="hidden" name="id_manufacturer" value="<?php echo $item['id_manufacturer']; ?>" class="dontremove" />
+                                                                                                </form>    
+                                                                                                <div class="editable">
+                                                                                                        <span><?php echo $item['collection']; ?></span>
+                                                                                                        <div class="editblock">
+                                                                                                                 <div class="editarea">
+                                                                                                                         <input type="text" data-name="name_collection_<?php echo $item['id']; ?>" value="<?php echo $item['name_collection']; ?>" />
+                                                                                                                 </div>
+                                                                  
+
+                                                                                                        </div><!-- editblock  -->
+                                                                                                       <i class="fa fa-pencil fa-fw"></i>
+                                                                                                </div>
+                                                                                                <span class="del_category_ajax"><i class="fa fa-trash-o"></i>
+                                                                                                       <form action="/admin/delcategory">
+                                                                                                           <input type="hidden" name="name_cat" value="collection" />
+                                                                                                           <input type="hidden" name="id_cat" value="<?php echo $item['id']; ?>" />
+                                                                                                           
+                                                                                                       </form>
+
+                                                                                                 </span>                                                          
+                                                        
+                                                                                          </li>                                                      

@@ -49,15 +49,63 @@
 
                                                      </li>
 
-
-                                                     <li class="separator"></li>                                                     
- 
-
-                                                  </ul>
                                                   <div><input type="button" value="Обновить производителя" data-form="updatemanufacturer" class="checker" /> <a href="/admin/manufacturers">Отмена</a></div>
 
 
                                                  </form> 
+                                                     <li class="separator"></li>                                                     
+                                                     <li><span>Коллекции</span>
+                                                             <ul class="textures">
+                                                                  <li class="add">
+                                                                         <span>Добавить коллекцию</span>
+                                                                         <div class="form_to_add">
+                                                                                <form action="/admin/ajax/addcollection" method="post">
+                                                                                          <div><input type="text" name="name_collection" /></div>
+                                                                                          <div><input type="hidden" name="id_manufacturer" value="{{ manufacturer.id }}" class="dontremove" /></div>
+                                                                                          <div><input type="button" id="adding" value="Добавить" /> </div>
+                                                                                 </form>
+
+                                                                          </div>
+
+                                                                  </li>                                                             
+                                                                  {% if collections %}
+                                                                              {% for collect in collections %}
+                                                                                       <li class="ajax_edit_obj">
+                                                                                                <form action="/admin/ajaxcollectionupdate" method="post">
+                                                                                                            <input type="hidden" name="id" value="{{ collect.id }}"  />
+                                                                                                            <input type="hidden" name="name_collection" id="name_collection_{{ collect.id }}" value="{{ collect.name_collection }}"  />
+                                                                                                             <input type="hidden" name="id_manufacturer"  value="{{ collect.id_manufacturer }}"  />
+                                                                                                </form>    
+                                                                                                <div class="editable">
+                                                                                                        <span>{{ collect.name_collection }}</span>
+                                                                                                        <div class="editblock">
+                                                                                                                 <div class="editarea">
+                                                                                                                         <input type="text" data-name="name_collection_{{ collect.id }}" value="{{ collect.name_collection }}" />
+                                                                                                                 </div>
+                                                                  
+
+                                                                                                        </div><!-- editblock  -->
+                                                                                                       <i class="fa fa-pencil fa-fw"></i>
+                                                                                                </div>
+                                                                                                <span class="del_category_ajax"><i class="fa fa-trash-o"></i>
+                                                                                                       <form action="/admin/delcategory">
+                                                                                                           <input type="hidden" name="name_cat" value="collection" />
+                                                                                                           <input type="hidden" name="id_cat" value="{{ collection.id }}" />
+                                                                                                           <input type="hidden" name="id_manufacturer" value="{{ manufacturer.id }}" class="dontremove" />
+                                                                                                       </form>
+
+                                                                                                 </span>                                                          
+                                                        
+                                                                                          </li>
+
+                                                                              {% endfor %}
+
+                                                                      {% endif %}
+
+                                                             </ul></li>
+
+                                                  </ul>
+
                                                                  
                                                 <form action="/admin/ajaxaddphoto" method="post" id="url_picture" class="form_photos">
                                                            <input type="file" class="input_file_hidden" name="sample" />

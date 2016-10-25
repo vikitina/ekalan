@@ -304,7 +304,22 @@ public function deletingcategoryAction(){
                ) );
 
 
-        }   
+        }  
+
+   public function addcollectionAction(){
+          $data = $_POST;
+          $collectionSrv    = $this -> getServiceLocator()->get('collection');
+          $id_collection = $collectionSrv->insertCollection($data);
+          $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
+          $collection_data = array("id" => $id_collection,'name_collection'=>$data['name_collection'],'id_manufacturer' => $data['id_manufacturer']);
+          $li = $partial('newcollectionelement', array('key' => $collection_data)); 
+                return new JsonModel(array(
+                     'li' => $li
+          )); 
+
+   
+
+   }         
    public function reloadcollectionsAction(){
           $data = $_POST;
           $collectionSrv    = $this -> getServiceLocator()->get('collection');
@@ -482,10 +497,10 @@ public function ajaxaddcolorAction(){
        $data = $_POST;
        $colorSrv    = $this -> getServiceLocator()->get('color');
 
-       $data['color_color']='#dddeee';
+       
        $id = $colorSrv -> insertColor($data);
        $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
-       $color_data = array("id" => $id,"name_color"=>$data['name_color']);
+       $color_data = array("id" => $id,"name_color"=>$data['name_color'],"color_color"=>$data['color_color']);
        $li = $partial('newcolorelement', array('key' => $color_data)); 
        return new JsonModel(array(
              'li' => $li

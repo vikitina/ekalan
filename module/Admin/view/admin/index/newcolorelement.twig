@@ -2,10 +2,12 @@
          
 <?php $item = $this->key; ?>
                                                      <li class="ajax_edit_obj">
-                                                       <form action="/admin/ajaxcolorupdate" method="post">
-                                                            <input type="hidden" name="id" value="<?php echo $item['id']; ?>"  />
-                                                            <input type="hidden" name="name_color" id="name_color_<?php echo $item['id']; ?>" value="<?php echo $item['name_color']; ?>"  />
-                                                          </form>    
+                                                       <form action="/admin/ajaxcolorupdate" method="post" class="update_color">
+                                                            <input type="hidden" class="id" name="id" value="<?php echo $item['id']; ?>"  />
+                                                            <input type="hidden" class="name_color" name="name_color" id="name_color_<?php echo $item['id']; ?>" value="<?php echo $item['name_color']; ?>"  />
+                                                            <input type="hidden" class="color_hex" value="<?php echo $item['color_color']; ?>" name="color_color" />
+                                                          </form> 
+                                                          <div class="width_for_edit">     
                                                          <div class="editable">
                                                              <span><?php echo $item['name_color']; ?></span>
                                                              <div class="editblock">
@@ -17,6 +19,8 @@
                                                             </div><!-- editblock  -->
                                                             <i class="fa fa-pencil fa-fw"></i>
                                                           </div>
+                                                            </div>
+                                                          <div class="color_container"><input type='text' class="colors" data-color="<?php echo $item['color_color']; ?>" /></div>
                                                           <span class="del_category_ajax"><i class="fa fa-trash-o"></i>
                                                                   <form action="/admin/delcategory">
                                                                        <input type="hidden" name="name_cat" value="color" />

@@ -350,7 +350,19 @@ return array(
                                         'action'     => 'getmanufacturerbycollection',
                                         ),
                                    ),
-                               ),                                                          
+                               ), 
+
+                            'admin_ajax_addcollection' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                  'options' => array(
+                                  'route'    => '/ajax/addcollection',
+                                  'defaults' => array(
+                                        'controller' => 'Admin\Controller\Ajax',
+                                        'action'     => 'addcollection',
+                                        ),
+                                   ),
+                               ),                                 
+                               //ajaxaddcollection                                                        
                              'admin_ajax_pricinggroup' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',
                                   'options' => array(
@@ -756,6 +768,16 @@ return array(
                                             ),
                                     ),                            
 ///manufacturer/{{ manuf.id }}    
+                        'admin_manufactureropen'  => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Segment',
+                                          'options' => array(                                              
+                                                    'route' => '/manufacturer[/:id]',
+                                                    'defaults' => array(
+                                                          'controller' => 'Admin\Controller\Manufacturer',
+                                                          'action'     => 'manufactureropen',
+                                                      ),
+                                            ),
+                            ),                             
                         'admin_delarticle'  => array(
                                   'type' => 'Zend\Mvc\Router\Http\Segment',
                                           'options' => array(                                              
@@ -816,6 +838,7 @@ return array(
             'newgroupelement'               => __DIR__ . '/../view/admin/index/newgroupelement.twig',
             'newtextureelement'             => __DIR__ . '/../view/admin/index/newtextureelement.twig',
             'newcolorelement'               => __DIR__ . '/../view/admin/index/newcolorelement.twig',
+            'newcollectionelement'          => __DIR__ . '/../view/admin/index/newcollectionelement.twig',
 
 
             'karusel/newwindow'              => __DIR__ . '/../view/admin/index/karuselnewwindow.twig',            

@@ -27,9 +27,11 @@ class ManufacturerController extends AbstractActionController
   public function manufactureropenAction(){
 
 
-         $id = $this->getEvent()->getRouteMatch()->getParam('id');
-         $manufacturerSrv    =  $this -> getServiceLocator()->get('manufacturer');  
-         $manufacturer       =  $manufacturerSrv->getManufacturer((int)$id);
+         $id               = $this->getEvent()->getRouteMatch()->getParam('id');
+         $manufacturerSrv  =  $this -> getServiceLocator()->get('manufacturer');  
+         $collectionSrv    = $this -> getServiceLocator()->get('collection');
+         $manufacturer     =  $manufacturerSrv->getManufacturer((int)$id);
+         $collections      = $collectionSrv->getCollectionByManuf((int)$id);
 
          $manufacturer['url_picture_prepared'] = ((isset($manufacturer['url_picture']) &&  $manufacturer['url_picture'] != '' &&  $manufacturer['url_picture'] !=null)?"/assets/application/samples/".trim($manufacturer['url_picture']):"/assets/application/img/no_photo.png");
 
@@ -74,6 +76,8 @@ $this->redirect()->toRoute('zfcadmin/admin_manufacturers');
 
            return new ViewModel(array(
                 'manufacturer'   => $manufacturer,
+                'collections'    => $collections 
+
             )); 
          }
  

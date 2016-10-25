@@ -451,10 +451,13 @@ $(".colors").each(function(){
                 color: $(this).prop('data-color'),
                 move: function(color) {
                              $(this).parents('li').find('input.color_hex').val(color.toHexString()); // #ff0000
+
                              var form = $(this).parents('li').find('form');
-                             var action = $(form).prop('action');
-                             var data = {'id': $(form).find('input.id').val(),'name_color':$(form).find('input.name_color').val(),'color_color':$(form).find('input.color_hex').val()};
-                             play_ajax(action,data,null);
+                             if(form.hasClass('update_color')){
+                                   var action = $(form).prop('action');
+                                   var data = {'id': $(form).find('input.id').val(),'name_color':$(form).find('input.name_color').val(),'color_color':$(form).find('input.color_hex').val()};
+                                   play_ajax(action,data,null);
+                             }
                 },
                 palette: [
                               ["#000","#444","#666","#999","#ccc","#eee","#f3f3f3","#fff"],

@@ -336,8 +336,6 @@ $('body').on('blur','.editarea>input',function(){
 // ------------------------------------------------
 
 
-
-
 function play_ajax(action,data,father){
        
            $.ajax({
@@ -351,8 +349,44 @@ function play_ajax(action,data,father){
                .done(function(res) {
                      if(father){
                           var new_element = res.li;
-                          append_to_stack(new_element, father);
-                       }   
+                          var new_el = append_to_stack(new_element, father);
+                          if (new_el.find('.colors')){
+                          var ar_new_els = new_el.find('.colors');
+                        
+                          $(ar_new_els[ar_new_els.length-1]).spectrum({
+                                      showPaletteOnly: true,
+                                      togglePaletteOnly: true,
+                                      togglePaletteMoreText: 'more',
+                                      togglePaletteLessText: 'less',
+                                      showInitial: true,
+                                      showInput: true,
+                                      hideAfterPaletteSelect:true,
+                                      color: $(this).prop('data-color'),
+                                      move: function(color) {
+                                              $(this).parents('li').find('input.color_hex').val(color.toHexString()); // #ff0000
+
+                                              var form = $(this).parents('li').find('form');
+                                              if(form.hasClass('update_color')){
+                                                      var action = $(form).prop('action');
+                                                      var data = {'id': $(form).find('input.id').val(),'name_color':$(form).find('input.name_color').val(),'color_color':$(form).find('input.color_hex').val()};
+                                                      play_ajax(action,data,null);
+                                                      console.log('attantion? just a minute');
+                                                      console.log('action ' + action);
+                                                      console.log('data ' + data);
+                                               }
+                                      },
+                         palette: [
+                              ["#000","#444","#666","#999","#ccc","#eee","#f3f3f3","#fff"],
+                              ["#f00","#f90","#ff0","#0f0","#0ff","#00f","#90f","#f0f"],
+                              ["#f4cccc","#fce5cd","#fff2cc","#d9ead3","#d0e0e3","#cfe2f3","#d9d2e9","#ead1dc"],
+                              ["#ea9999","#f9cb9c","#ffe599","#b6d7a8","#a2c4c9","#9fc5e8","#b4a7d6","#d5a6bd"],
+                              ["#e06666","#f6b26b","#ffd966","#93c47d","#76a5af","#6fa8dc","#8e7cc3","#c27ba0"],
+                              ["#c00","#e69138","#f1c232","#6aa84f","#45818e","#3d85c6","#674ea7","#a64d79"],
+                              ["#900","#b45f06","#bf9000","#38761d","#134f5c","#0b5394","#351c75","#741b47"],
+                              ["#600","#783f04","#7f6000","#274e13","#0c343d","#073763","#20124d","#4c1130"]
+                         ]
+                      });
+                  }}   
                 
                  });           
                
@@ -872,6 +906,8 @@ $('#btn_cancel_deleting').click(function(){
 $('.textures li.add span').click(function(){
            if(!$(this).parent().hasClass('adding')){
                       $(this).parent().addClass('adding');
+                      if($(this).parent().find('.color_hex')) {
+                            }
            }
 
 });
@@ -883,16 +919,18 @@ $('.textures li.add .form_to_add form div #adding').click(function(){
               play_ajax(action,data,list);
               
               
-              $($(this).parents('form').find('div input')).map(function(i,el){ if($(el).prop('type')!='button'){$(el).val('');}});
+              $($(this).parents('form').find('div input')).map(function(i,el){ if($(el).prop('type')!='button' && !$(el).hasClass('.dontremove')){$(el).val('');}});
               $(this).parents('li').removeClass('adding');
   return false;
 });
 
 function append_to_stack(new_element, list){
-       var elems = $(list).find('.ajax_edit_obj');
-       $(list).find('.ajax_edit_obj').remove();
-       $(list).append(new_element);
-       $(list).append(elems);
+       //var elems = $(list).find('.ajax_edit_obj');
+      // $(list).find('.ajax_edit_obj').remove();
+      var new_el = $(new_element).insertAfter( $(list).find('.add') );
+       //var new_el = $(list).prepend(new_element);
+       //$(list).append(elems);
+       return new_el;
 
 
 }

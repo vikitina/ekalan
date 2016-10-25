@@ -17,21 +17,21 @@
         <!-- Work Detail Section -->
         <section class="ptb ptb-sm-80" >
         <div class="stickem-container">
-               <div id="filter_sidebar" class="stickem">
+               <div id="filter_sidebar" class="stickem col-lg-4 col-md-4 col-sm-12 col-xs-12">
                  <h5>Производители</h5>
                  <ul id="manufacturers_line" class="manufact">
-                               <li class="filter manuf{{ (data.id_manufacturer == 0)? ' selected': '' }} all" data-name="id_manufacturer" data-value="0" data-title="0"><span>Все</span></li>
+                               <li class="filter manuf{{ (data.id_manufacturer == 0)? ' selected': '' }} all col-lg-12 col-md-12 col-sm-12 col-xs-12" data-name="id_manufacturer" data-value="0" data-title="0"><span>Все</span></li>
                          {% for manufacturer in blocks.manufacturers %}
-                 	             <li class="filter{{ (manufacturer.id == data.id_manufacturer)? ' selected': '' }}" data-name="id_manufacturer" data-value="{{ manufacturer.id }}" data-title="{{ manufacturer.name_manufacturer }}"><span>{{ manufacturer.name_manufacturer }}</span></li>
+                 	             <li class="filter{{ (manufacturer.id == data.id_manufacturer)? ' selected': '' }} col-lg-4 col-md-6 col-sm-12 col-xs-12" data-name="id_manufacturer" data-value="{{ manufacturer.id }}" data-title="{{ manufacturer.name_manufacturer }}"><span>{{ manufacturer.name_manufacturer }}</span></li>
                  	      {% endfor %}
 
                  </ul><!-- manufacturers_line -->
                  <div class="clear"></div>
                  <h5>Коллекции</h5>
                      <ul id="collections_line">
-                               <li class="filter{{ (data.id_collection == 0)? ' selected': '' }} all" data-name="id_collection" data-value="0" data-title="0"><span>Все</span></li>
+                               <li class="filter{{ (data.id_collection == 0)? ' selected': '' }} all col-lg-12 col-md-12 col-sm-12 col-xs-12" data-name="id_collection" data-value="0" data-title="0"><span>Все</span></li>
                          {% for collection in blocks.collections %}
-                                 <li class="filter{{ (collection.id == data.id_collection)? ' selected': '' }}" data-name="id_collection" data-value="{{ collection.id }}" data-title="{{ collection.name_collection }}"><span>{{ collection.name_collection }}</span></li>
+                                 <li class="filter{{ (collection.id == data.id_collection)? ' selected': '' }} col-lg-4 col-md-6 col-sm-12 col-xs-12" data-name="id_collection" data-value="{{ collection.id }}" data-title="{{ collection.name_collection }}"><span>{{ collection.name_collection }}</span></li>
                           {% endfor %}
 
                  </ul><!-- collection_line -->
@@ -47,9 +47,9 @@
                  <div class="clear"></div>
                 <h5>Текстура</h5>
                 <ul id="textures_line">
-                                 <li class="filter{{ (data.id_texture==0)? ' selected': '' }}" data-name="id_texture" data-value="0">Все</li>
+                                 <li class="filter{{ (data.id_texture==0)? ' selected': '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12" data-name="id_texture" data-value="0">Все</li>
                          {% for texture in blocks.textures %}
-                 	             <li class="filter{{ (texture.id == data.id_texture)? ' selected': '' }}" data-name="id_texture" data-value="{{ texture.id }}">{{ texture.name_texture }}</li>
+                 	             <li class="filter{{ (texture.id == data.id_texture)? ' selected': '' }} col-lg-4 col-md-6 col-sm-12 col-xs-12" data-name="id_texture" data-value="{{ texture.id }}">{{ texture.name_texture }}</li>
                  	      {% endfor %}
 
                  </ul><!-- textures_line -->    
