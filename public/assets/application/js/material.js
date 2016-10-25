@@ -88,6 +88,7 @@ $(document).ready(function(){
        data['manufacturer'] = $('#id_manufacturer').attr('data-name');
        data['id_color'] = $('#id_color').val();
        data['id_texture'] = $('#id_texture').val();
+       data['id_collection'] = $('#id_collection').val();
        //Hash.set();
        Hash.set(data);
        //console.log(data['manufacturer']+' '+data['id_color']+' '+data['id_texture']);

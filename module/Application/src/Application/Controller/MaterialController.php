@@ -50,7 +50,7 @@ class MaterialController extends AbstractActionController
         $data_array['manufacturer'] = $in_data['manufacturer'];
         $data_array['id_color'] = isset($in_data['id_color'])?$in_data['id_color']:0;
         $data_array['id_texture'] = isset($in_data['id_texture'])?$in_data['id_texture']:0;
-
+        $data_array['id_collection'] = isset($in_data['id_collection'])?$in_data['id_collection']:0;
         $limit = 12;
         $data['limit'] = $limit;
         

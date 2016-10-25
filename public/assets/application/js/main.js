@@ -21,7 +21,7 @@ $grid.imagesLoaded().progress( function() {
 $('.navigation .open').on('mousedown', function(){
 
 	$(this).removeClass('open');
-	console.log('sdfsdfsdfsdf');
+	
 });
 console.log('---------------' + $(window).scrollTop());
  if ($(window).scrollTop() > 50) {
