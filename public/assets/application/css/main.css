@@ -631,7 +631,7 @@ input[type="checkbox"]{width:20px;height:20px;margin:0;}
 
 
 #collections_line ul{width:100%;height:70px;list-style: none;margin-bottom: 40px;}
-#collections_line li{height:30px;list-style: none;padding:0;margin:0;float:left;cursor:pointer;font-size:0.9em;text-align: left;border-radius: 10px;}
+#collections_line li{height:30px;list-style: none;padding:0;margin:0;float:left;cursor:pointer;font-size:0.9em;text-align: left;border-radius: 10px;margin-bottom:10px;}
 #collections_line li.all{width:100%;text-align: center;}
-#collections_line li span{padding: 2px;height:30px;display:block;width:auto;float:left;}
+#collections_line li span{padding: 2px;height:30px;display:block;width:auto;float:left;line-height: 1.3em;}
 #collections_line li.selected span{background:#ccc;color:#fff;}
