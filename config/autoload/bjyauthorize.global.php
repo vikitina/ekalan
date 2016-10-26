@@ -85,6 +85,7 @@ return array(
                                    array('route' => 'articles', 'roles' => array('guest', 'user')),
                                    array('route' => 'openarticle', 'roles' => array('guest', 'user')),
                                    array('route' => 'calculator', 'roles' => array('guest', 'user')),
+                                   array('route' => 'createpdf', 'roles' => array('guest', 'user')),
                                    array('route' => 'ajax_calculator', 'roles' => array('guest', 'user')),
 
                                    array('route' => 'zfcadmin/admin_main_page', 'roles' => array('admin')),  

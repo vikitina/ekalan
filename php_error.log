@@ -3191,3 +3191,270 @@
 [17-Aug-2016 09:05:50 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 87
 [20-Aug-2016 12:14:23 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 214
 [20-Aug-2016 12:14:23 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 87
+[26-Oct-2016 15:17:10 Europe/Helsinki] PHP Warning:  include(../Services/Mpdf/mpdf.php): failed to open stream: No such file or directory in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 283
+[26-Oct-2016 15:17:10 Europe/Helsinki] PHP Warning:  include(): Failed opening '../Services/Mpdf/mpdf.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 283
+[26-Oct-2016 15:17:10 Europe/Helsinki] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 285
+[26-Oct-2016 15:24:25 Europe/Helsinki] PHP Parse error:  syntax error, unexpected 'mPDF' (T_STRING), expecting variable (T_VARIABLE) or '$' in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 286
+[26-Oct-2016 15:47:22 Europe/Helsinki] PHP Notice:  Use of undefined constant __DIR_ - assumed '__DIR_' in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 283
+[26-Oct-2016 15:47:22 Europe/Helsinki] PHP Warning:  include(__DIR_../Services/Mpdf/mpdf.php): failed to open stream: No such file or directory in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 283
+[26-Oct-2016 15:47:22 Europe/Helsinki] PHP Warning:  include(): Failed opening '__DIR_../Services/Mpdf/mpdf.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 283
+[26-Oct-2016 15:47:22 Europe/Helsinki] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 285
+[26-Oct-2016 15:50:32 Europe/Helsinki] PHP Notice:  Use of undefined constant __DIR_ - assumed '__DIR_' in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 283
+[26-Oct-2016 15:50:32 Europe/Helsinki] PHP Warning:  include(__DIR_/../Services/Mpdf/mpdf.php): failed to open stream: No such file or directory in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 283
+[26-Oct-2016 15:50:32 Europe/Helsinki] PHP Warning:  include(): Failed opening '__DIR_/../Services/Mpdf/mpdf.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 283
+[26-Oct-2016 15:50:32 Europe/Helsinki] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 285
+[26-Oct-2016 13:51:27 Europe/London] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 285
+[26-Oct-2016 15:52:21 Europe/Helsinki] PHP Notice:  Use of undefined constant _DIR_ - assumed '_DIR_' in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 282
+[26-Oct-2016 13:56:00 Europe/London] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 285
+[26-Oct-2016 13:59:08 Europe/London] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 285
+[26-Oct-2016 14:08:11 Europe/London] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 285
+[26-Oct-2016 14:08:44 Europe/London] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 285
+[26-Oct-2016 14:08:57 Europe/London] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 285
+[26-Oct-2016 16:19:48 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 401
+[26-Oct-2016 16:19:48 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[26-Oct-2016 16:19:54 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 55
+[26-Oct-2016 14:21:40 Europe/London] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 286
+[26-Oct-2016 14:25:14 Europe/London] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 286
+[26-Oct-2016 14:29:14 Europe/London] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 286
+[26-Oct-2016 16:34:15 Europe/Helsinki] PHP Fatal error:  Class 'Application\Controller\Zend_Pdf' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 114
+[26-Oct-2016 16:38:28 Europe/Helsinki] PHP Fatal error:  Class 'Application\Controller\Zend_Pdf' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 115
+[26-Oct-2016 14:39:49 Europe/London] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 286
+[26-Oct-2016 14:40:42 Europe/London] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 286
+[26-Oct-2016 14:43:35 Europe/London] PHP Fatal error:  Call to undefined function Application\Controller\mPDF() in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 286
+[26-Oct-2016 16:45:55 Europe/Helsinki] PHP Parse error:  syntax error, unexpected 'Application' (T_STRING), expecting \\ (T_NS_SEPARATOR) in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 285
+[26-Oct-2016 16:46:10 Europe/Helsinki] PHP Parse error:  syntax error, unexpected ''Application\Services'' (T_CONSTANT_ENCAPSED_STRING), expecting \\ (T_NS_SEPARATOR) in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 285
+[26-Oct-2016 15:13:29 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/Mpdf.php on line 12783
+[26-Oct-2016 15:13:58 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/Mpdf.php on line 12783
+[26-Oct-2016 15:16:54 Europe/London] PHP Fatal error:  Call to a member function MergeCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/Mpdf.php on line 12810
+[26-Oct-2016 15:18:54 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/Mpdf.php on line 12783
+[26-Oct-2016 15:24:16 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/Mpdf.php on line 12783
+[26-Oct-2016 15:34:34 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/Mpdf.php on line 12783
+[26-Oct-2016 15:34:45 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/Mpdf.php on line 12783
+[26-Oct-2016 15:35:49 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/Mpdf.php on line 12783
+[26-Oct-2016 15:39:46 Europe/London] PHP Fatal error:  Class 'Application\Services\Mpdf' not found in /var/www/ekalan/module/Application/config/module.config.php on line 228
+[26-Oct-2016 15:39:49 Europe/London] PHP Fatal error:  Class 'Application\Services\Mpdf' not found in /var/www/ekalan/module/Application/config/module.config.php on line 228
+[26-Oct-2016 17:40:46 Europe/Helsinki] PHP Parse error:  syntax error, unexpected 'define' (T_STRING), expecting function (T_FUNCTION) in /var/www/ekalan/module/Application/src/Application/Services/Mpdf.php on line 17
+[26-Oct-2016 15:42:21 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/Mpdf.php on line 12844
+[26-Oct-2016 15:43:57 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/Mpdf.php on line 12844
+[26-Oct-2016 15:55:18 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/Mpdf.php on line 12783
+[26-Oct-2016 15:55:23 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/Mpdf.php on line 12783
+[26-Oct-2016 15:58:07 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12783
+[26-Oct-2016 16:00:09 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12844
+[26-Oct-2016 18:10:46 Europe/Helsinki] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE), expecting function (T_FUNCTION) in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 72
+[26-Oct-2016 18:10:50 Europe/Helsinki] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE), expecting function (T_FUNCTION) in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 72
+[26-Oct-2016 18:34:06 Europe/Helsinki] PHP Fatal error:  Class 'Application\Services\mPDF' not found in /var/www/ekalan/module/Application/config/module.config.php on line 228
+[26-Oct-2016 18:35:01 Europe/Helsinki] PHP Fatal error:  Class 'Application\Services\mPDF' not found in /var/www/ekalan/module/Application/config/module.config.php on line 228
+[26-Oct-2016 18:35:42 Europe/Helsinki] PHP Fatal error:  Class 'Application\Services\mPDF' not found in /var/www/ekalan/module/Application/config/module.config.php on line 228
+[26-Oct-2016 18:37:03 Europe/Helsinki] PHP Warning:  require_once(/var/www/ekalan/module/Application/src/Application/Controller/includes/functions.php): failed to open stream: No such file or directory in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 300
+[26-Oct-2016 18:37:03 Europe/Helsinki] PHP Fatal error:  require_once(): Failed opening required '/var/www/ekalan/module/Application/src/Application/Controller/includes/functions.php' (include_path='.:/usr/share/php:/usr/share/pear') in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 300
+[26-Oct-2016 16:45:59 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12795
+[26-Oct-2016 16:48:25 Europe/London] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 339
+[26-Oct-2016 16:48:58 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12795
+[26-Oct-2016 16:50:33 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12795
+[26-Oct-2016 16:53:27 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 16:57:08 Europe/London] PHP Fatal error:  Cannot redeclare class Application\Services\mPDF in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 65
+[26-Oct-2016 16:58:41 Europe/London] PHP Fatal error:  Cannot redeclare class Application\Services\mPDF in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 65
+[26-Oct-2016 16:59:09 Europe/London] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 290
+[26-Oct-2016 17:01:01 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 17:01:20 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 17:02:12 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 17:02:14 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 17:02:40 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 19:13:24 Europe/Helsinki] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 51
+[26-Oct-2016 19:15:14 Europe/Helsinki] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 1628
+[26-Oct-2016 19:16:12 Europe/Helsinki] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 7334
+[26-Oct-2016 19:16:50 Europe/Helsinki] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 9705
+[26-Oct-2016 19:17:43 Europe/Helsinki] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 9750
+[26-Oct-2016 19:18:05 Europe/Helsinki] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 9851
+[26-Oct-2016 19:18:49 Europe/Helsinki] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 10037
+[26-Oct-2016 19:19:12 Europe/Helsinki] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 10168
+[26-Oct-2016 19:19:33 Europe/Helsinki] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 11173
+[26-Oct-2016 19:19:59 Europe/Helsinki] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 28680
+[26-Oct-2016 19:21:14 Europe/Helsinki] PHP Warning:  require_once(/var/www/ekalan/module/Application/src/Application/Services/includes/public static functions.php): failed to open stream: No such file or directory in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 36
+[26-Oct-2016 19:21:14 Europe/Helsinki] PHP Fatal error:  require_once(): Failed opening required '/var/www/ekalan/module/Application/src/Application/Services/includes/public static functions.php' (include_path='.:/usr/share/php:/usr/share/pear') in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 36
+[26-Oct-2016 17:22:10 Europe/London] PHP Fatal error:  Using $this when not in object context in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12805
+[26-Oct-2016 17:23:48 Europe/London] PHP Fatal error:  Using $this when not in object context in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12805
+[26-Oct-2016 19:26:10 Europe/Helsinki] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 290
+[26-Oct-2016 17:29:57 Europe/London] PHP Fatal error:  Using $this when not in object context in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12805
+[26-Oct-2016 17:31:56 Europe/London] PHP Fatal error:  Using $this when not in object context in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12805
+[26-Oct-2016 17:33:39 Europe/London] PHP Fatal error:  Using $this when not in object context in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12805
+[26-Oct-2016 17:35:38 Europe/London] PHP Fatal error:  Using $this when not in object context in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12805
+[26-Oct-2016 17:36:05 Europe/London] PHP Fatal error:  Undefined class constant 'progressBar' in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12805
+[26-Oct-2016 19:38:57 Europe/Helsinki] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12805
+[26-Oct-2016 17:39:15 Europe/London] PHP Fatal error:  Class 'Application\Services\this' not found in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12805
+[26-Oct-2016 17:39:41 Europe/London] PHP Fatal error:  Using $this when not in object context in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12805
+[26-Oct-2016 17:42:52 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 17:51:10 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 17:53:10 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 17:53:14 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 17:54:29 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 17:55:31 Europe/London] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 290
+[26-Oct-2016 17:55:35 Europe/London] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 290
+[26-Oct-2016 17:59:05 Europe/London] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 290
+[26-Oct-2016 17:59:33 Europe/London] PHP Fatal error:  Class 'Application\Controller\mPDF' not found in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 290
+[26-Oct-2016 20:27:52 Europe/Helsinki] PHP Parse error:  syntax error, unexpected 'start' (T_STRING), expecting variable (T_VARIABLE) in /var/www/ekalan/module/Application/src/Application/Services/Mpdfstart.php on line 5
+[26-Oct-2016 18:28:23 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 18:29:10 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 18:29:26 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 18:34:15 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 18:35:33 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 18:36:35 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 18:36:55 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 20:47:29 Europe/Helsinki] PHP Parse error:  syntax error, unexpected 'define' (T_STRING), expecting ',' or ';' in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 17
+[26-Oct-2016 18:47:51 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 18:52:56 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 18:54:02 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 18:55:35 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 19:16:11 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 19:16:14 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 19:18:53 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mPDF.php on line 12843
+[26-Oct-2016 19:24:10 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mpdf.php on line 12843
+[26-Oct-2016 19:25:13 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mpdf.php on line 12842
+[26-Oct-2016 19:25:15 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mpdf.php on line 12842
+[26-Oct-2016 19:27:43 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mpdf.php on line 12842
+[26-Oct-2016 19:28:36 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mpdf.php on line 12842
+[26-Oct-2016 19:28:40 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mpdf.php on line 12842
+[26-Oct-2016 19:30:02 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mpdf.php on line 12842
+[26-Oct-2016 19:30:04 Europe/London] PHP Fatal error:  Call to a member function ReadCSS() on a non-object in /var/www/ekalan/module/Application/src/Application/Services/mpdf.php on line 12842
+[26-Oct-2016 22:11:48 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 55
+[26-Oct-2016 22:26:54 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:30:18 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:31:14 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:31:16 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:31:59 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:32:55 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:48:12 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:48:14 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:48:15 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:48:22 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:48:24 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:48:25 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:48:27 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:48:29 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:48:30 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:48:31 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:48:33 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:48:34 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:49:18 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:49:21 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:50:24 Europe/Helsinki] PHP Fatal error:  Class 'ComposerAutoloaderInit63e2ccb092b02b6b280f9782bdb137bf' not found in /var/www/ekalan/vendor/autoload.php on line 7
+[26-Oct-2016 22:50:26 Europe/Helsinki] PHP Fatal error:  Class 'ComposerAutoloaderInit63e2ccb092b02b6b280f9782bdb137bf' not found in /var/www/ekalan/vendor/autoload.php on line 7
+[26-Oct-2016 22:50:39 Europe/Helsinki] PHP Fatal error:  Class 'ComposerAutoloaderInit63e2ccb092b02b6b280f9782bdb137bf' not found in /var/www/ekalan/vendor/autoload.php on line 7
+[26-Oct-2016 22:52:59 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 22:53:04 Europe/Helsinki] PHP Fatal error:  Call to undefined method Zend\Mvc\View\Http\ViewManager::getResolver() in /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/Mvc/Service/ViewPdfRendererFactory.php on line 39
+[26-Oct-2016 23:00:59 Europe/Helsinki] PHP Fatal error:  Class 'Zend\Log\LoggerAbstractServiceFactory' not found in /var/www/ekalan/vendor/zendframework/zend-servicemanager/src/ServiceManager.php on line 314
+[26-Oct-2016 23:01:02 Europe/Helsinki] PHP Fatal error:  Class 'Zend\Log\LoggerAbstractServiceFactory' not found in /var/www/ekalan/vendor/zendframework/zend-servicemanager/src/ServiceManager.php on line 314
+[26-Oct-2016 23:06:05 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 55
+[26-Oct-2016 23:06:21 Europe/Helsinki] PHP Notice:  Undefined variable: item in /var/www/ekalan/module/Application/view/application/material/materialmodal.twig on line 12
+[26-Oct-2016 23:07:19 Europe/Helsinki] PHP Fatal error:  Uncaught exception 'Zend\Permissions\Acl\Exception\InvalidArgumentException' with message 'Role '3' not found' in /var/www/ekalan/vendor/zendframework/zendframework/library/Zend/Permissions/Acl/Role/Registry.php:106
+Stack trace:
+#0 /var/www/ekalan/vendor/zendframework/zendframework/library/Zend/Permissions/Acl/Role/Registry.php(67): Zend\Permissions\Acl\Role\Registry->get('3')
+#1 /var/www/ekalan/vendor/zendframework/zendframework/library/Zend/Permissions/Acl/Acl.php(112): Zend\Permissions\Acl\Role\Registry->add(Object(Zend\Permissions\Acl\Role\GenericRole), Array)
+#2 /var/www/ekalan/vendor/bjyoungblood/bjy-authorize/src/BjyAuthorize/Service/Authorize.php(277): Zend\Permissions\Acl\Acl->addRole('bjyauthorize-id...', Array)
+#3 /var/www/ekalan/vendor/bjyoungblood/bjy-authorize/src/BjyAuthorize/Service/Authorize.php(90): BjyAuthorize\Service\Authorize->load()
+#4 /var/www/ekalan/vendor/bjyoungblood/bjy-authorize/src/BjyAuthorize/Service/Authorize.php(239): BjyAuthorize\Service\Authorize->BjyAuthorize\Service\{clos in /var/www/ekalan/vendor/zendframework/zendframework/library/Zend/Permissions/Acl/Role/Registry.php on line 69
+[26-Oct-2016 23:08:48 Europe/Helsinki] PHP Fatal error:  Uncaught exception 'Zend\Permissions\Acl\Exception\InvalidArgumentException' with message 'Role '3' not found' in /var/www/ekalan/vendor/zendframework/zendframework/library/Zend/Permissions/Acl/Role/Registry.php:106
+Stack trace:
+#0 /var/www/ekalan/vendor/zendframework/zendframework/library/Zend/Permissions/Acl/Role/Registry.php(67): Zend\Permissions\Acl\Role\Registry->get('3')
+#1 /var/www/ekalan/vendor/zendframework/zendframework/library/Zend/Permissions/Acl/Acl.php(112): Zend\Permissions\Acl\Role\Registry->add(Object(Zend\Permissions\Acl\Role\GenericRole), Array)
+#2 /var/www/ekalan/vendor/bjyoungblood/bjy-authorize/src/BjyAuthorize/Service/Authorize.php(277): Zend\Permissions\Acl\Acl->addRole('bjyauthorize-id...', Array)
+#3 /var/www/ekalan/vendor/bjyoungblood/bjy-authorize/src/BjyAuthorize/Service/Authorize.php(90): BjyAuthorize\Service\Authorize->load()
+#4 /var/www/ekalan/vendor/bjyoungblood/bjy-authorize/src/BjyAuthorize/Service/Authorize.php(239): BjyAuthorize\Service\Authorize->BjyAuthorize\Service\{clos in /var/www/ekalan/vendor/zendframework/zendframework/library/Zend/Permissions/Acl/Role/Registry.php on line 69
+[26-Oct-2016 23:11:11 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 55
+[26-Oct-2016 23:49:02 Europe/Helsinki] PHP Fatal error:  Uncaught exception 'DOMPDF_Exception' with message 'No block-level parent found.  Not good.' in /var/www/ekalan/vendor/dompdf/dompdf/include/inline_positioner.cls.php:37
+Stack trace:
+#0 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(700): Inline_Positioner->position()
+#1 /var/www/ekalan/vendor/dompdf/dompdf/include/inline_frame_reflower.cls.php(36): Frame_Decorator->position()
+#2 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(711): Inline_Frame_Reflower->reflow(NULL)
+#3 /var/www/ekalan/vendor/dompdf/dompdf/include/page_frame_reflower.cls.php(123): Frame_Decorator->reflow()
+#4 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(711): Page_Frame_Reflower->reflow(NULL)
+#5 /var/www/ekalan/vendor/dompdf/dompdf/include/dompdf.cls.php(973): Frame_Decorator->reflow()
+#6 /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/View/Renderer/PdfRenderer.php(74): DOMPDF->render()
+#7 /var/www/ekalan/vendor/zendframework/zendframework/library/Zend/View/View.ph in /var/www/ekalan/vendor/dompdf/dompdf/include/inline_positioner.cls.php on line 37
+[26-Oct-2016 23:49:29 Europe/Helsinki] PHP Fatal error:  Uncaught exception 'DOMPDF_Exception' with message 'No block-level parent found.  Not good.' in /var/www/ekalan/vendor/dompdf/dompdf/include/inline_positioner.cls.php:37
+Stack trace:
+#0 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(700): Inline_Positioner->position()
+#1 /var/www/ekalan/vendor/dompdf/dompdf/include/inline_frame_reflower.cls.php(36): Frame_Decorator->position()
+#2 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(711): Inline_Frame_Reflower->reflow(NULL)
+#3 /var/www/ekalan/vendor/dompdf/dompdf/include/page_frame_reflower.cls.php(123): Frame_Decorator->reflow()
+#4 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(711): Page_Frame_Reflower->reflow(NULL)
+#5 /var/www/ekalan/vendor/dompdf/dompdf/include/dompdf.cls.php(973): Frame_Decorator->reflow()
+#6 /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/View/Renderer/PdfRenderer.php(74): DOMPDF->render()
+#7 /var/www/ekalan/vendor/zendframework/zendframework/library/Zend/View/View.ph in /var/www/ekalan/vendor/dompdf/dompdf/include/inline_positioner.cls.php on line 37
+[26-Oct-2016 23:49:44 Europe/Helsinki] PHP Fatal error:  Uncaught exception 'DOMPDF_Exception' with message 'No block-level parent found.  Not good.' in /var/www/ekalan/vendor/dompdf/dompdf/include/inline_positioner.cls.php:37
+Stack trace:
+#0 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(700): Inline_Positioner->position()
+#1 /var/www/ekalan/vendor/dompdf/dompdf/include/inline_frame_reflower.cls.php(36): Frame_Decorator->position()
+#2 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(711): Inline_Frame_Reflower->reflow(NULL)
+#3 /var/www/ekalan/vendor/dompdf/dompdf/include/page_frame_reflower.cls.php(123): Frame_Decorator->reflow()
+#4 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(711): Page_Frame_Reflower->reflow(NULL)
+#5 /var/www/ekalan/vendor/dompdf/dompdf/include/dompdf.cls.php(973): Frame_Decorator->reflow()
+#6 /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/View/Renderer/PdfRenderer.php(74): DOMPDF->render()
+#7 /var/www/ekalan/vendor/zendframework/zendframework/library/Zend/View/View.ph in /var/www/ekalan/vendor/dompdf/dompdf/include/inline_positioner.cls.php on line 37
+[26-Oct-2016 23:50:36 Europe/Helsinki] PHP Fatal error:  Uncaught exception 'DOMPDF_Exception' with message 'No block-level parent found.  Not good.' in /var/www/ekalan/vendor/dompdf/dompdf/include/inline_positioner.cls.php:37
+Stack trace:
+#0 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(700): Inline_Positioner->position()
+#1 /var/www/ekalan/vendor/dompdf/dompdf/include/inline_frame_reflower.cls.php(36): Frame_Decorator->position()
+#2 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(711): Inline_Frame_Reflower->reflow(NULL)
+#3 /var/www/ekalan/vendor/dompdf/dompdf/include/page_frame_reflower.cls.php(123): Frame_Decorator->reflow()
+#4 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(711): Page_Frame_Reflower->reflow(NULL)
+#5 /var/www/ekalan/vendor/dompdf/dompdf/include/dompdf.cls.php(973): Frame_Decorator->reflow()
+#6 /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/View/Renderer/PdfRenderer.php(74): DOMPDF->render()
+#7 /var/www/ekalan/vendor/zendframework/zendframework/library/Zend/View/View.ph in /var/www/ekalan/vendor/dompdf/dompdf/include/inline_positioner.cls.php on line 37
+[26-Oct-2016 23:50:57 Europe/Helsinki] PHP Fatal error:  Uncaught exception 'DOMPDF_Exception' with message 'No block-level parent found.  Not good.' in /var/www/ekalan/vendor/dompdf/dompdf/include/inline_positioner.cls.php:37
+Stack trace:
+#0 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(700): Inline_Positioner->position()
+#1 /var/www/ekalan/vendor/dompdf/dompdf/include/inline_frame_reflower.cls.php(36): Frame_Decorator->position()
+#2 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(711): Inline_Frame_Reflower->reflow(NULL)
+#3 /var/www/ekalan/vendor/dompdf/dompdf/include/page_frame_reflower.cls.php(123): Frame_Decorator->reflow()
+#4 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(711): Page_Frame_Reflower->reflow(NULL)
+#5 /var/www/ekalan/vendor/dompdf/dompdf/include/dompdf.cls.php(973): Frame_Decorator->reflow()
+#6 /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/View/Renderer/PdfRenderer.php(74): DOMPDF->render()
+#7 /var/www/ekalan/vendor/zendframework/zendframework/library/Zend/View/View.ph in /var/www/ekalan/vendor/dompdf/dompdf/include/inline_positioner.cls.php on line 37
+[26-Oct-2016 23:51:59 Europe/Helsinki] PHP Fatal error:  Uncaught exception 'DOMPDF_Exception' with message 'No block-level parent found.  Not good.' in /var/www/ekalan/vendor/dompdf/dompdf/include/inline_positioner.cls.php:37
+Stack trace:
+#0 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(700): Inline_Positioner->position()
+#1 /var/www/ekalan/vendor/dompdf/dompdf/include/inline_frame_reflower.cls.php(36): Frame_Decorator->position()
+#2 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(711): Inline_Frame_Reflower->reflow(NULL)
+#3 /var/www/ekalan/vendor/dompdf/dompdf/include/page_frame_reflower.cls.php(123): Frame_Decorator->reflow()
+#4 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(711): Page_Frame_Reflower->reflow(NULL)
+#5 /var/www/ekalan/vendor/dompdf/dompdf/include/dompdf.cls.php(973): Frame_Decorator->reflow()
+#6 /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/View/Renderer/PdfRenderer.php(74): DOMPDF->render()
+#7 /var/www/ekalan/vendor/zendframework/zendframework/library/Zend/View/View.ph in /var/www/ekalan/vendor/dompdf/dompdf/include/inline_positioner.cls.php on line 37
+[26-Oct-2016 23:52:55 Europe/Helsinki] PHP Fatal error:  Uncaught exception 'DOMPDF_Exception' with message 'No block-level parent found.  Not good.' in /var/www/ekalan/vendor/dompdf/dompdf/include/inline_positioner.cls.php:37
+Stack trace:
+#0 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(700): Inline_Positioner->position()
+#1 /var/www/ekalan/vendor/dompdf/dompdf/include/inline_frame_reflower.cls.php(36): Frame_Decorator->position()
+#2 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(711): Inline_Frame_Reflower->reflow(NULL)
+#3 /var/www/ekalan/vendor/dompdf/dompdf/include/page_frame_reflower.cls.php(123): Frame_Decorator->reflow()
+#4 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(711): Page_Frame_Reflower->reflow(NULL)
+#5 /var/www/ekalan/vendor/dompdf/dompdf/include/dompdf.cls.php(973): Frame_Decorator->reflow()
+#6 /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/View/Renderer/PdfRenderer.php(74): DOMPDF->render()
+#7 /var/www/ekalan/vendor/zendframework/zendframework/library/Zend/View/View.ph in /var/www/ekalan/vendor/dompdf/dompdf/include/inline_positioner.cls.php on line 37
+[26-Oct-2016 23:54:49 Europe/Helsinki] PHP Fatal error:  Uncaught exception 'DOMPDF_Exception' with message 'No block-level parent found.  Not good.' in /var/www/ekalan/vendor/dompdf/dompdf/include/inline_positioner.cls.php:37
+Stack trace:
+#0 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(700): Inline_Positioner->position()
+#1 /var/www/ekalan/vendor/dompdf/dompdf/include/inline_frame_reflower.cls.php(36): Frame_Decorator->position()
+#2 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(711): Inline_Frame_Reflower->reflow(NULL)
+#3 /var/www/ekalan/vendor/dompdf/dompdf/include/page_frame_reflower.cls.php(123): Frame_Decorator->reflow()
+#4 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(711): Page_Frame_Reflower->reflow(NULL)
+#5 /var/www/ekalan/vendor/dompdf/dompdf/include/dompdf.cls.php(973): Frame_Decorator->reflow()
+#6 /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/View/Renderer/PdfRenderer.php(74): DOMPDF->render()
+#7 /var/www/ekalan/vendor/zendframework/zendframework/library/Zend/View/View.ph in /var/www/ekalan/vendor/dompdf/dompdf/include/inline_positioner.cls.php on line 37
+[26-Oct-2016 23:55:26 Europe/Helsinki] PHP Fatal error:  Uncaught exception 'DOMPDF_Exception' with message 'No block-level parent found.  Not good.' in /var/www/ekalan/vendor/dompdf/dompdf/include/inline_positioner.cls.php:37
+Stack trace:
+#0 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(700): Inline_Positioner->position()
+#1 /var/www/ekalan/vendor/dompdf/dompdf/include/inline_frame_reflower.cls.php(36): Frame_Decorator->position()
+#2 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(711): Inline_Frame_Reflower->reflow(NULL)
+#3 /var/www/ekalan/vendor/dompdf/dompdf/include/page_frame_reflower.cls.php(123): Frame_Decorator->reflow()
+#4 /var/www/ekalan/vendor/dompdf/dompdf/include/frame_decorator.cls.php(711): Page_Frame_Reflower->reflow(NULL)
+#5 /var/www/ekalan/vendor/dompdf/dompdf/include/dompdf.cls.php(973): Frame_Decorator->reflow()
+#6 /var/www/ekalan/vendor/dino/dompdf-module/src/DOMPDFModule/View/Renderer/PdfRenderer.php(74): DOMPDF->render()
+#7 /var/www/ekalan/vendor/zendframework/zendframework/library/Zend/View/View.ph in /var/www/ekalan/vendor/dompdf/dompdf/include/inline_positioner.cls.php on line 37
+[26-Oct-2016 23:57:36 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 55
+[26-Oct-2016 23:57:58 Europe/Helsinki] PHP Notice:  Undefined variable: item in /var/www/ekalan/module/Application/view/application/material/materialmodal.twig on line 12
+[26-Oct-2016 23:58:04 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 221
+[26-Oct-2016 23:58:05 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[27-Oct-2016 00:41:46 Europe/Helsinki] PHP Notice:  Undefined variable: data in /var/www/ekalan/module/Admin/src/Admin/Controller/IndexController.php on line 967
+[27-Oct-2016 00:41:46 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 55
+[27-Oct-2016 00:42:34 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 55

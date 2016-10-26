@@ -12,6 +12,7 @@ namespace Application\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\View\Model\JsonModel;
+use DOMPDFModule\View\Model\PdfModel;
 
 
 
@@ -105,6 +106,13 @@ public function ajaxupdaterAction(){
       ));
 
      $result = new JsonModel ( array ('data' => $data) );
+
+}
+
+public function createpdfAction(){
+header('Content-type: text/html; charset=UTF-8') ;
+            $pdf = new PdfModel();
+             return $pdf;
 
 }
 

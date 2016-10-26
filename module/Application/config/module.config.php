@@ -197,6 +197,16 @@ return array(
                     ),
                 ),
             ), 
+           'createpdf' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/createpdf',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Calculator',
+                        'action'     => 'createpdf',
+                    ),
+                ),
+            ), 
            'ajax_calculator' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
@@ -214,6 +224,7 @@ return array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
         ),
+            
          'factories' => array(
             'translator' => 'Zend\Mvc\Service\TranslatorServiceFactory',
        
