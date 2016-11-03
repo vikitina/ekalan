@@ -207,6 +207,16 @@ return array(
                     ),
                 ),
             ), 
+           'sendorder' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/sendorder',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Calculator',
+                        'action'     => 'sendorder',
+                    ),
+                ),
+            ),        
            'ajax_calculator' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
@@ -420,6 +430,7 @@ return array(
             'tester/some'             => __DIR__ . '/../view/application/tester/some.twig',
             'material/materialset'    => __DIR__ . '/../view/application/material/materialset.twig',
             'material/materialmodal'    => __DIR__ . '/../view/application/material/materialmodal.twig',
+            'Application/calculator/sendorder.phtml'    => __DIR__ . '/../view/application/calculator/sendorder.phtml',
 
         ), 
         'template_path_stack' => array(

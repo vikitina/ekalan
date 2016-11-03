@@ -13,6 +13,12 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\View\Model\JsonModel;
 use DOMPDFModule\View\Model\PdfModel;
+use Zend\Mail\Message;
+use Zend\Mail\Transport\Smtp as SmtpTransport;
+use Zend\Mail\Transport\SmtpOptions;
+use Zend\Mime\Mime;
+use Zend\Mime\Part as MimePart;
+use Zend\Mime\Message as MimeMessage;
 
 
 
@@ -110,10 +116,90 @@ public function ajaxupdaterAction(){
 }
 
 public function createpdfAction(){
-header('Content-type: text/html; charset=UTF-8') ;
+            $data = $_POST;
+            header('Content-type: text/html; charset=UTF-8') ;
+//            /*
             $pdf = new PdfModel();
-             return $pdf;
+            $pdf->setVariables(array(
+                     'blueprint' => $data['blueprint'],
+                     'order_table'=>$data['order_table']
+             ));
 
+            return $pdf;
+
+ //           */
+
+           /*
+            return new ViewModel(array(
+                      'blueprint' => $data['blueprint'],
+
+             ));
+           */
+
+}
+
+public function sendorderAction(){
+           $pdfView = new ViewModel();
+           $pdfView->setTerminal(true)
+                   ->setTemplate('Application/calculator/sendorder.phtml')
+                   ->setVariables(array(
+                         'fetchResult'   => '789',
+                      ));
+           $html = $this->getServiceLocator()->get('viewpdfrenderer')->getHtmlRenderer()->render($pdfView);
+           $eng = $this->getServiceLocator()->get('viewpdfrenderer')->getEngine();
+
+           $eng->load_html($html);
+           $eng->render();
+           $pdfCode = $eng->output();
+
+           //file_put_contents($_SERVER['DOCUMENT_ROOT'].'/data/pdf/ac.pdf',$pdfCode);
+
+
+        $content  = new MimeMessage();
+        $htmlPart = new MimePart("<html><body><p>Sorry,</p><p>I'm going to be late today!Короче, опоздаю..</p></body></html>");
+        $htmlPart->type = 'text/html';
+        $textPart = new MimePart("Sorry, I'm going to be late today!");
+        $textPart->type = 'text/plain';
+        $content->setParts(array($textPart, $htmlPart));
+
+        $contentPart = new MimePart($content->generateMessage());        
+        $contentPart->type = 'multipart/alternative;' . PHP_EOL . ' boundary="' . $content->getMime()->boundary() . '"';
+
+        //$attachment = new MimePart(fopen($_SERVER['DOCUMENT_ROOT'].'/data/pdf/ac.pdf', 'r'));
+        $attachment =  new MimePart($pdfCode);
+        $attachment->type = 'application/pdf';
+        $attachment->encoding    = Mime::ENCODING_BASE64;
+        $attachment->disposition = Mime::DISPOSITION_ATTACHMENT;
+
+        $body = new MimeMessage();
+        $body->setParts(array($contentPart, $attachment));
+
+        $message = new Message();
+        $message->setEncoding('utf-8')
+                ->addTo('vikitina@gmail.com')
+                ->addFrom('vikitina@gmail.com')
+                ->setSubject('will be late')
+                ->setBody($body);
+        $transportConfig   = new SmtpOptions(array(
+                  'host'              => 'smtp.gmail.com',
+                  'connection_class'  => 'login',
+                  'connection_config' => array(
+                                           'ssl'      => 'tls',
+                                           'username' => 'vikitina@gmail.com',
+                                           'password' => 'vikabibika0987654321'
+
+
+                                          ),
+
+                  'port'              => 587,
+//'port' => 465,
+          ));
+        $transport = new SmtpTransport();
+        $options   = new SmtpOptions($transportConfig);
+
+        $transport->setOptions($options);
+        $transport->send($message);
+        //$this->redirect()->toRoute('zfcadmin/admin_manufacturers');
 }
 
 //*************************functions****************************

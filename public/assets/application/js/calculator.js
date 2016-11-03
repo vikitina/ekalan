@@ -148,6 +148,27 @@ $('.calc_params li a').mouseup(function(){
       
 });
 
+$('#send_order').click(function(){
+      $('#sendOrderModal').modal();
+
+
+});
+$('#sendOrderBtn').click(function(){
+
+      $('#sendOrderModal').modal('hide');
+
+});
+
+$('#print_order').mousedown(function(){
+      var str_type = $('#cf_type').val();
+      $('#blueprint').val('<div id="schema_'+ str_type.toUpperCase() +'" class="'+ str_type +'">' + $('.' + str_type).html() + '</div>');
+      $('#order_table').val('<div class="calc_table_container">' + $('.calc_table_container').html() + '</div>');
+      console.log($('#blueprint').val());
+});
+//$('#print_order').click(function(){return false;});
+
+
+
 });
 //================================================================
 //--------------functions-----------------------------------------
