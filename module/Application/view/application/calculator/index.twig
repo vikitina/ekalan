@@ -83,7 +83,7 @@
 <input type="hidden" name="l_length_1" id="l_length_1" value="{{ cf_form.l_length_1 }}" />
 <input type="hidden" name="l_length_2" id="l_length_2" value="{{ cf_form.l_length_2 }}" />
 <input type="hidden" name="l_length_3" id="l_length_3" value="{{ cf_form.l_length_3 }}" />
-<input type="hidden" name="l_length_4" id="l_length_4" value="{{ cf_form.l_length_4 }}" />
+<input type="hidden" name="l_length_6" id="l_length_6" value="{{ cf_form.l_length_6 }}" />
 </form>
 
 {#
@@ -193,17 +193,36 @@ array(16) { ["id"]=> string(1) "5"
                                                                       <div class="u_stove u_stove_obj handle stove{{ cf_form.u_stove ? ' u_stove_obj_on stove' : ''}}" data-calc-form="u_stove"><span>Плита</span></div>                                    
 
                                                                        
-                                                                      <div class="u_length_1 length" data-calc-form="u_length_1"><input type="text" value="{{ cf_form.u_length_1 }}" /></div>    
-                                                                      <div class="u_length_2 length" data-calc-form="u_length_2"><input type="text" value="{{ cf_form.u_length_2 }}" /></div>
-                                                                      <div class="u_length_3 length" data-calc-form="u_length_3"><input type="text" value="{{ cf_form.u_length_3 }}" /></div>  
-                                                                      <div class="u_length_4 length" data-calc-form="u_length_4"><input type="text" value="{{ cf_form.u_length_4 }}" /></div>                                             
+                                                                      <div class="u_length_1 length" data-calc-form="u_length_1">
+
+                                                                                 <div class="first_arrow"></div>
+                                                                                 <div class="second_arrow"></div>
+                                                                                 <input type="text" value="{{ cf_form.u_length_1 }}" /></div>    
+                                                                      <div class="u_length_2 length" data-calc-form="u_length_2">
+                                                                                 <div class="first_arrow"></div>
+                                                                                 <div class="second_arrow"></div>                            
+                                                                                 <input type="text" value="{{ cf_form.u_length_2 }}" /></div>
+
+                                                                      <div class="u_length_3 length" data-calc-form="u_length_3">
+
+                                                                                 <div class="first_arrow"></div>
+                                                                                 <div class="second_arrow"></div>   
+                                                                                 <input type="text" value="{{ cf_form.u_length_3 }}" /></div>  
+                                                                      <div class="u_length_4 length" data-calc-form="u_length_4">
+                                                                                 <div class="first_arrow"></div>
+                                                                                 <div class="second_arrow"></div>   
+                                                                                 <input type="text" value="{{ cf_form.u_length_4 }}" /></div>                                             
                                                                       <div class="u_length_5 length" data-calc-form="u_length_5">
-                                                                                     
-                                                                                     <input type="text" value="{{ cf_form.u_length_5 }}" />
+                                                                                  <div class="first_arrow"></div>
+                                                                                  <div class="second_arrow"></div>                                                                                    
+                                                                                  <input type="text" value="{{ cf_form.u_length_5 }}" />
                                                                       </div>      
                                                                      
                                                                        
-                                                                      <div class="u_length_8 length" data-calc-form="u_length_8"><input type="text" value="{{ cf_form.u_length_8 }}" /></div>    
+                                                                      <div class="u_length_8 length" data-calc-form="u_length_8">
+                                                                                 <div class="first_arrow"></div>
+                                                                                 <div class="second_arrow"></div> 
+                                                                                 <input type="text" value="{{ cf_form.u_length_8 }}" /></div>    
 
 
                                                             </div>{#  schema_U #}
@@ -231,10 +250,13 @@ array(16) { ["id"]=> string(1) "5"
                                                                     <div class="i_corner_4 corner handle" data-calc-form="i_corner_4"></div>                                                             
 
                                                                     <div class="i_length_1 length" data-calc-form="i_length_1">
-                                                                                 <div class="line"></div>
+                                                                                 <div class="first_arrow"></div>
                                                                                  <div class="second_arrow"></div>
                                                                                  <input type="text" value="{{ cf_form.i_length_1 }}" /></div>      
-                                                                    <div class="i_length_2 length" data-calc-form="i_length_2"><input type="text" value="{{ cf_form.i_length_2 }}" /></div>                                                             
+                                                                    <div class="i_length_2 length" data-calc-form="i_length_2">
+                                                                                 <div class="first_arrow"></div>
+                                                                                 <div class="second_arrow"></div>
+                                                                                 <input type="text" value="{{ cf_form.i_length_2 }}" /></div>                                                             
 
 
                                                                     <div class="i_sink i_sink_obj handle sink {{ cf_form.i_sink ? ' i_sink_obj_on sink_on' : ''}}" data-calc-form="i_sink"><span>Мойка</span></div>
@@ -280,10 +302,22 @@ array(16) { ["id"]=> string(1) "5"
 
 
 
-                                                                      <div class="l_length_1 length" data-calc-form="l_length_1"><input type="text" value="{{ cf_form.l_length_1 }}" /></div>      
-                                                                      <div class="l_length_2 length" data-calc-form="l_length_2"><input type="text" value="{{ cf_form.l_length_2 }}" /></div>
-                                                                      <div class="l_length_3 length" data-calc-form="l_length_3"><input type="text" value="{{ cf_form.l_length_3 }}" /></div>  
-                                                                      <div class="l_length_6 length" data-calc-form="l_length_6"><input type="text" value="{{ cf_form.l_length_6 }}" /></div>                                                                                                                                          
+                                                                      <div class="l_length_1 length" data-calc-form="l_length_1">
+                                                                                   <div class="first_arrow"></div>
+                                                                                   <div class="second_arrow"></div>
+                                                                                   <input type="text" value="{{ cf_form.l_length_1 }}" /></div>      
+                                                                      <div class="l_length_2 length" data-calc-form="l_length_2">
+                                                                                   <div class="first_arrow"></div>
+                                                                                   <div class="second_arrow"></div>
+                                                                                   <input type="text" value="{{ cf_form.l_length_2 }}" /></div>
+                                                                      <div class="l_length_3 length" data-calc-form="l_length_3">
+                                                                                   <div class="first_arrow"></div>
+                                                                                   <div class="second_arrow"></div>
+                                                                                   <input type="text" value="{{ cf_form.l_length_3 }}" /></div>  
+                                                                      <div class="l_length_6 length" data-calc-form="l_length_6">
+                                                                                   <div class="first_arrow"></div>
+                                                                                   <div class="second_arrow"></div>
+                                                                                   <input type="text" value="{{ cf_form.l_length_6 }}" /></div>                                                                                                                                          
 
                                                              </div>{#  schema_L #}
                                                </div>                                                                                            
