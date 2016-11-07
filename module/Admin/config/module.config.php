@@ -361,7 +361,19 @@ return array(
                                         'action'     => 'addcollection',
                                         ),
                                    ),
-                               ),                                 
+                               ),     
+
+                            'admin_ajax_collectionupdate' => array(
+                                  'type' => 'Zend\Mvc\Router\Http\Literal',
+                                  'options' => array(
+                                  'route'    => '/ajax/collectionupdate',
+                                  'defaults' => array(
+                                        'controller' => 'Admin\Controller\Ajax',
+                                        'action'     => 'collectionupdate',
+                                        ),
+                                   ),
+                               ),                            
+                               //ajaxcollectionupdate                            
                                //ajaxaddcollection                                                        
                              'admin_ajax_pricinggroup' => array(
                                   'type' => 'Zend\Mvc\Router\Http\Literal',

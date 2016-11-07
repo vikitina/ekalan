@@ -158,6 +158,7 @@ return array(
                                    array('route' => 'zfcadmin/admin_ajax_addtexture', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_addcolor', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_addcollection', 'roles' => array('admin')),
+                                   array('route' => 'zfcadmin/admin_ajax_collectionupdate', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_delfolio', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_ajax_delkarusel', 'roles' => array('admin')),
                                    array('route' => 'zfcadmin/admin_mp', 'roles' => array('admin')),

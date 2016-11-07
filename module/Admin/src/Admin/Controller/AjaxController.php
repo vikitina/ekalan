@@ -307,7 +307,21 @@ public function deletingcategoryAction(){
         }  
 
    public function addcollectionAction(){
-          $data = $_POST;
+    /*id  
+6
+id_manufacturer 
+6
+id_picture  
+21
+name_collection 
+aaa
+name_manufacturer 
+Montelli*/
+          $data = array(
+                'id_manufacturer' => $_POST['id_manufacturer'],
+                'name_collection' => $_POST['name_collection']
+
+                );
           $collectionSrv    = $this -> getServiceLocator()->get('collection');
           $id_collection = $collectionSrv->insertCollection($data);
           $partial = $this->getServiceLocator()->get('viewhelpermanager')->get('partial');
@@ -319,7 +333,16 @@ public function deletingcategoryAction(){
 
    
 
-   }         
+   }     
+   public function collectionupdateAction(){
+
+         $data = $_POST;
+         $collectionSrv    = $this -> getServiceLocator()->get('collection');
+         $collectionSrv->updateCollection($data);
+          return new JsonModel(array()); 
+
+
+   }    
    public function reloadcollectionsAction(){
           $data = $_POST;
           $collectionSrv    = $this -> getServiceLocator()->get('collection');

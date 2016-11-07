@@ -71,7 +71,7 @@
                                                                   {% if collections %}
                                                                               {% for collect in collections %}
                                                                                        <li class="ajax_edit_obj">
-                                                                                                <form action="/admin/ajaxcollectionupdate" method="post">
+                                                                                                <form action="/admin/ajax/collectionupdate" method="post">
                                                                                                             <input type="hidden" name="id" value="{{ collect.id }}"  />
                                                                                                             <input type="hidden" name="name_collection" id="name_collection_{{ collect.id }}" value="{{ collect.name_collection }}"  />
                                                                                                              <input type="hidden" name="id_manufacturer"  value="{{ collect.id_manufacturer }}"  />

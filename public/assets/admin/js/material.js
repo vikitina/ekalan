@@ -323,7 +323,8 @@ $('body').on('blur','.editarea>input',function(){
      $(id).val(set_value);
      $(this).parents('.editable').find('span').text(set_value);
      if( $(this).parents('li').hasClass('ajax_edit_obj')){
-        var form = $(this).parents('li').find('form');
+        //var form = $(this).parents('li').find('form');
+        var form = $(id).parent();
         var action = $(form).prop('action');
         var data = $(form).serialize();
         console.log(action);
