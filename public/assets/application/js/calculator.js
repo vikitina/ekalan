@@ -210,7 +210,7 @@ $('#sendme').click(function(){
 
                  'schema'  :    '<div id="schema_'+ str_type.toUpperCase() +'" class="'+ str_type +'">' + $('.' + str_type).html() + '</div>',
                  'table'   :    '<div class="calc_table_container">' + $('.calc_table_container').html() + '</div>',
-                 'message' :    'Это сообщение сформировано и отправлено с сайта Ekalan.com.ua'+ '<br />-------------------------------------------------------------------------------------',
+                 'message' :    'Это сообщение сформировано и отправлено с сайта Ekalan.com.ua'+ '<br /><br />-------------------------------------------------------------------------------------',
                  'email'   :    $('#emailme').val()
 
       };  
@@ -218,7 +218,7 @@ $('#sendme').click(function(){
       var reg = new RegExp(/\S/);
       if (reg.test(emailme)){
             $('#sendOrderModal').modal('hide');
-             $('#thank_for_order').modal();
+            $('#mailmeModal').modal();
                $.ajax({
                        type        : 'POST', 
                        url         : 'http://' + location.hostname + '/sendorder',  
