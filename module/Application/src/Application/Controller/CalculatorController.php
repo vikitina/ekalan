@@ -153,7 +153,7 @@ public function sendorderAction(){
            $eng->render();
            $pdfCode = $eng->output();
 
-           file_put_contents($_SERVER['DOCUMENT_ROOT'].'/data/pdf/ac.pdf',$pdfCode);
+          // file_put_contents($_SERVER['DOCUMENT_ROOT'].'/data/pdf/ac.pdf',$pdfCode);
 
 //$pdf->save('document.pdf');
         $content  = new MimeMessage();
@@ -166,8 +166,8 @@ public function sendorderAction(){
         $contentPart = new MimePart($content->generateMessage());        
         $contentPart->type = 'multipart/alternative;' . PHP_EOL . ' boundary="' . $content->getMime()->boundary() . '"';
 
-        $attachment = new MimePart(fopen($_SERVER['DOCUMENT_ROOT'].'/data/pdf/ac.pdf', 'r'));
-        //$attachment =  new MimePart($pdfCode);
+        //$attachment = new MimePart(fopen($_SERVER['DOCUMENT_ROOT'].'/data/pdf/ac.pdf', 'r'));
+        $attachment =  new MimePart($pdfCode);
         $attachment->type = 'application/pdf';
         $attachment->encoding    = Mime::ENCODING_BASE64;
         $attachment->disposition = Mime::DISPOSITION_ATTACHMENT;
