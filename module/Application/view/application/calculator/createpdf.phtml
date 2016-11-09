@@ -184,18 +184,20 @@
 .u_length_7{left:30%;top:210px;margin-bottom: -28px;margin-left: 12px;}
 .u_length_8{top:200px;left:10%;}
 
-.blueprint{width:80%;margin: 0 auto;position:relative;margin-top:50px;height:260px !important;overflow: hidden;}
+.blueprint{width:80%;margin: 0 auto;position:relative;margin-top:20px;height:260px !important;overflow: hidden;}
 .wall{display:none;}
 .calc_table_container{font-size: 0.8em;}
 .calc_table_container table{border:1px solid #333;}
 .calc_table_container table th{border-bottom:1px solid #333;padding-top:10px;padding-bottom:10px;font-size:12px;}
 .calc_table_container table td{border-bottom:1px solid #333;padding-top:10px;padding-bottom:10px;padding-left:10px;font-size:10px;}
+p{margin:0 !important;padding: 0 !important;}
  </style>
 
   <body>
-      <p><b>Расчет стоимости столешницы</b><hr style="width:100%;margin-top:20px;margin-bottom:20px;color:#ccc;" /><br /> <span style="font-size:0.8em !important;">в базовом исполнении: стандартная лицевая кромка 40мм (R3-R6); прямой накладной плинтус 40мм; полировка- полуглянцевая; вырезы</span></p>
+      <p><b>Расчет стоимости столешницы *</b><hr style="width:100%;margin-top:0px;margin-bottom:0;color:#ccc;" /> <span style="font-size:8px !important;">* в базовом исполнении: стандартная лицевая кромка 40мм (R3-R6); прямой накладной плинтус 40мм; полировка- полуглянцевая; вырезы</span></p>
      
-
+      <p style="font-size:10px !important;"><b>Материал</b></p>
+      <p style="font-size:10px !important;"><?php echo $this->material_characters; ?></p>
       <div class="blueprint">
                      
                      <?php echo $this->blueprint; ?>

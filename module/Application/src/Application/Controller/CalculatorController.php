@@ -121,8 +121,9 @@ public function createpdfAction(){
 //            /*
             $pdf = new PdfModel();
             $pdf->setVariables(array(
-                     'blueprint' => $data['blueprint'],
-                     'order_table'=>$data['order_table']
+                     'blueprint'            => $data['blueprint'],
+                     'order_table'          => $data['order_table'],
+                     'material_characters'  => $data['material_characters']
              ));
 
             return $pdf;

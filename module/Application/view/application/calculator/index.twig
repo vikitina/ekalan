@@ -114,6 +114,7 @@ array(16) { ["id"]=> string(1) "5"
                             	      <p>{{  material.describe_material }}</p>
                             	      <p>Производитель - {{  material.manufacturer }}</p>
                             	      <p>Цена - {{  material.price_material }}</p>
+
                             </div>
 
 
@@ -361,7 +362,9 @@ array(16) { ["id"]=> string(1) "5"
                                                      <form action="/createpdf" method="post">
                                                              <input type="hidden" id="blueprint" name="blueprint" />
                                                              <input type="hidden" id="order_table" name="order_table" />
+                                                             <input type="hidden" id="material_characters" value="Артикул      : {{  material.articul }} <br />Наименование :  {{  material.name_material }} <br />Коллекция    :  {{  material.collection }}<br />Цвет         :  {{  material.color }}<br />Текстура     :  {{  material.texture }}<br />Описание     :  {{  material.describe_material }}"  name="material_characters" />
                                                              <input  type="submit" class="btn btn-success" id="print_order" value="Распечатать" />
+                                                            
                                                      </form>        
                                        </div> 
                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 send_link">
