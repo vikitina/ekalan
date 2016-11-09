@@ -229,14 +229,11 @@ $('#sendme').click(function(){
                     })
            .done(function(res) {
                     
-                    $( '#sendOrderModal input' ).each(function(){
-                                  $(this).val('');
-
-                        });
+                    $('#emailme').val('');
                     $('#thank_for_order').modal('hide');
 
                  }); 
-
+                 $('#emailme').val('');
 
        }else{
 
