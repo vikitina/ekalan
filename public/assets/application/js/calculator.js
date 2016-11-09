@@ -192,7 +192,10 @@ $('#sendOrderBtn').click(function(){
                     })
            .done(function(res) {
                     
-                    $( '#sendOrderModal input' ).val('');
+                    $( '#sendOrderModal input' ).each(function(){
+                                  $(this).val('');
+
+                        });
                     $('#thank_for_order').modal('hide');
 
                  }); 
