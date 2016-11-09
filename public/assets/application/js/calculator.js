@@ -181,6 +181,7 @@ $('#sendOrderBtn').click(function(){
 
 
              $('#sendOrderModal').modal('hide');
+             $('#thank_for_order').modal();
                $.ajax({
                        type        : 'POST', 
                        url         : 'http://' + location.hostname + '/sendorder',  
@@ -192,6 +193,7 @@ $('#sendOrderBtn').click(function(){
            .done(function(res) {
                     
                     $( '#sendOrderModal input' ).val('');
+                    $('#thank_for_order').modal('hide');
 
                  }); 
 
