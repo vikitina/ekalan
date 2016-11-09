@@ -140,6 +140,11 @@ public function createpdfAction(){
 
 public function sendorderAction(){
            $data = $_POST;
+           $systemSrv = $this -> getServiceLocator()->get('system');
+           $systems = $systemSrv->getSystem(); 
+           foreach ($systems as $key => $value) {
+                     $system[$value['name']] = $value['data'];
+           } 
            $pdfView = new ViewModel();
            $pdfView->setTemplate('Application/calculator/sendorder.phtml')
                    ->setVariables(array(
@@ -177,9 +182,9 @@ public function sendorderAction(){
 
         $message = new Message();
         $message->setEncoding('utf-8')
-                ->addTo('vikitina@gmail.com')
-                ->addFrom('vikitina@gmail.com')
-                ->setSubject('will be late')
+                ->addTo($system['email_for_order'])
+                ->addFrom($system['email_for_order'])
+                ->setSubject('Заказ проекта. Отправлено с Ekalan.com.ua')
                 ->setBody($body);
         $transportConfig   = new SmtpOptions(array(
                   'host'              => 'smtp.gmail.com',

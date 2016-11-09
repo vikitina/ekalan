@@ -161,7 +161,26 @@ $('#sendOrderBtn').click(function(){
                  'table'   :    '<div class="calc_table_container">' + $('.calc_table_container').html() + '</div>',
                  'message' :    $('#name').val() + '<br />' + $('#phone').val()+ '<br />' + $('#email').val()+ '<br />' + $('#comments').val()
       };
-      $('#sendOrderModal').modal('hide');
+      var reg = new RegExp(/\S/);
+      $( '#sendOrderModal .error' ).removeClass('error');
+      var i = 0;
+      $( '#sendOrderModal .required' ).each(function(){
+                    
+                     var str = $(this).val();                
+                     if( !reg.test(str) ){
+
+                                  $(this).addClass('error');
+                                  i = 1;
+                     }
+
+      });
+      if( i > 0 ){
+
+         }else{
+
+
+
+             $('#sendOrderModal').modal('hide');
                $.ajax({
                        type        : 'POST', 
                        url         : 'http://' + location.hostname + '/sendorder',  
@@ -172,14 +191,18 @@ $('#sendOrderBtn').click(function(){
                     })
            .done(function(res) {
                     
-                    console.log(res.data);
+                    $( '#sendOrderModal input' ).val('');
 
                  }); 
 
+         }
 
 
 });
+$('#sendOrderModal .error').change(function(){
+                    $(this).removeClass('error');
 
+});
 $('#print_order').mousedown(function(){
       var str_type = $('#cf_type').val();
       $('#blueprint').val('<div id="schema_'+ str_type.toUpperCase() +'" class="'+ str_type +'">' + $('.' + str_type).html() + '</div>');

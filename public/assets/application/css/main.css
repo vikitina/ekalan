@@ -701,3 +701,8 @@ input[type="checkbox"]{width:20px;height:20px;margin:0;}
 #collections_line li.all{width:100%;text-align: center;}
 #collections_line li span{padding: 2px;height:30px;display:block;width:auto;float:left;line-height: 1.3em;}
 #collections_line li.selected span{background:#ccc;color:#fff;}
+
+#sendOrderModal form div input{width:80% !important;padding-left:10px;margin-left:10%;border:1px solid #666;border-radius: 4px;background: #fff;padding-top:4px;padding-bottom:4px;margin-bottom:10px;}
+#sendOrderModal form div textarea{width:80% !important;padding-left:10px;margin-left:10%;border:1px solid #666;border-radius: 4px;background: #fff;padding-top:4px;padding-bottom:4px;margin-bottom:10px;}
+#sendOrderModal form div input[type="button"]{background: #666;color:#fff;}
+#sendOrderModal form div .error{border-color:red;}
