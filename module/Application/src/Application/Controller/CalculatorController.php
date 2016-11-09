@@ -140,7 +140,7 @@ public function createpdfAction(){
 
 public function sendorderAction(){
            $data = $_POST;
-          /* $pdfView = new ViewModel();
+           $pdfView = new ViewModel();
            $pdfView->setTemplate('Application/calculator/sendorder.phtml')
                    ->setVariables(array(
                           'blueprint' => $data['schema'],
@@ -154,7 +154,7 @@ public function sendorderAction(){
            $pdfCode = $eng->output();
 
            file_put_contents($_SERVER['DOCUMENT_ROOT'].'/data/pdf/ac.pdf',$pdfCode);
-*/
+
 //$pdf->save('document.pdf');
         $content  = new MimeMessage();
         $htmlPart = new MimePart("<html><body><p>". $data['message'] ."</p></body></html>");
