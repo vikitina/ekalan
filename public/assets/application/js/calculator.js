@@ -159,7 +159,7 @@ $('#sendOrderBtn').click(function(){
 
                  'schema'  :    '<div id="schema_'+ str_type.toUpperCase() +'" class="'+ str_type +'">' + $('.' + str_type).html() + '</div>',
                  'table'   :    '<div class="calc_table_container">' + $('.calc_table_container').html() + '</div>',
-                 'message' :    $('#name').val() + '<br />' + $('#phone').val()+ '<br />' + $('#email').val()+ '<br />' + $('#comments').val()
+                 'message' :    '<b>Имя:</b> :  ' + $('#name').val() + '<br />' + '<b>Номер телефона :  </b> :  ' + $('#phone').val()+ '<br />' + '<b>Адрес элестронной почты : </b> :  ' + $('#email').val() + '<br />' + '<b>Комментарии заказчика :  </b> :  ' + $('#comments').val() + '<br />-------------------------------------------------------------------------------------'
       };
       var reg = new RegExp(/\S/);
       $( '#sendOrderModal .error' ).removeClass('error');
