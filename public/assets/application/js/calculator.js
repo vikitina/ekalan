@@ -154,8 +154,29 @@ $('#send_order').click(function(){
 
 });
 $('#sendOrderBtn').click(function(){
+      var str_type = $('#cf_type').val();
+      var data = {
 
+                 'schema'  :    '<div id="schema_'+ str_type.toUpperCase() +'" class="'+ str_type +'">' + $('.' + str_type).html() + '</div>',
+                 'table'   :    '<div class="calc_table_container">' + $('.calc_table_container').html() + '</div>',
+                 'message' :    $('#name').val() + '<br />' + $('#phone').val()+ '<br />' + $('#email').val()+ '<br />' + $('#comments').val()
+      };
       $('#sendOrderModal').modal('hide');
+               $.ajax({
+                       type        : 'POST', 
+                       url         : 'http://' + location.hostname + '/sendorder',  
+                       data        :  data, 
+                       dataType    : 'json', 
+                       encode      : true
+                                 
+                    })
+           .done(function(res) {
+                    
+                    console.log(res.data);
+
+                 }); 
+
+
 
 });
 

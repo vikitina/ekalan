@@ -139,11 +139,12 @@ public function createpdfAction(){
 }
 
 public function sendorderAction(){
-           $pdfView = new ViewModel();
-           $pdfView->setTerminal(true)
-                   ->setTemplate('Application/calculator/sendorder.phtml')
+           $data = $_POST;
+          /* $pdfView = new ViewModel();
+           $pdfView->setTemplate('Application/calculator/sendorder.phtml')
                    ->setVariables(array(
-                         'fetchResult'   => '789',
+                          'blueprint' => $data['schema'],
+                          'order_table'=>$data['table']
                       ));
            $html = $this->getServiceLocator()->get('viewpdfrenderer')->getHtmlRenderer()->render($pdfView);
            $eng = $this->getServiceLocator()->get('viewpdfrenderer')->getEngine();
@@ -152,11 +153,11 @@ public function sendorderAction(){
            $eng->render();
            $pdfCode = $eng->output();
 
-           //file_put_contents($_SERVER['DOCUMENT_ROOT'].'/data/pdf/ac.pdf',$pdfCode);
-
-
+           file_put_contents($_SERVER['DOCUMENT_ROOT'].'/data/pdf/ac.pdf',$pdfCode);
+*/
+//$pdf->save('document.pdf');
         $content  = new MimeMessage();
-        $htmlPart = new MimePart("<html><body><p>Sorry,</p><p>I'm going to be late today!Короче, опоздаю..</p></body></html>");
+        $htmlPart = new MimePart("<html><body><p>". $data['message'] ."</p></body></html>");
         $htmlPart->type = 'text/html';
         $textPart = new MimePart("Sorry, I'm going to be late today!");
         $textPart->type = 'text/plain';
@@ -165,8 +166,8 @@ public function sendorderAction(){
         $contentPart = new MimePart($content->generateMessage());        
         $contentPart->type = 'multipart/alternative;' . PHP_EOL . ' boundary="' . $content->getMime()->boundary() . '"';
 
-        //$attachment = new MimePart(fopen($_SERVER['DOCUMENT_ROOT'].'/data/pdf/ac.pdf', 'r'));
-        $attachment =  new MimePart($pdfCode);
+        $attachment = new MimePart(fopen($_SERVER['DOCUMENT_ROOT'].'/data/pdf/ac.pdf', 'r'));
+        //$attachment =  new MimePart($pdfCode);
         $attachment->type = 'application/pdf';
         $attachment->encoding    = Mime::ENCODING_BASE64;
         $attachment->disposition = Mime::DISPOSITION_ATTACHMENT;

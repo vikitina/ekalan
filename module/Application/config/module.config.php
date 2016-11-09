@@ -430,7 +430,7 @@ return array(
             'tester/some'             => __DIR__ . '/../view/application/tester/some.twig',
             'material/materialset'    => __DIR__ . '/../view/application/material/materialset.twig',
             'material/materialmodal'    => __DIR__ . '/../view/application/material/materialmodal.twig',
-            'Application/calculator/sendorder.phtml'    => __DIR__ . '/../view/application/calculator/sendorder.phtml',
+            'Application/calculator/sendorder.phtml'    => __DIR__ . '/../view/application/calculator/createpdf.phtml',
 
         ), 
         'template_path_stack' => array(
