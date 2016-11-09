@@ -204,6 +204,47 @@ $('#sendOrderBtn').click(function(){
 
 
 });
+$('#sendme').click(function(){
+      var str_type = $('#cf_type').val();
+      var data = {
+
+                 'schema'  :    '<div id="schema_'+ str_type.toUpperCase() +'" class="'+ str_type +'">' + $('.' + str_type).html() + '</div>',
+                 'table'   :    '<div class="calc_table_container">' + $('.calc_table_container').html() + '</div>',
+                 'message' :    'Это сообщение сформировано и отправлено с сайта Ekalan.com.ua'+ '<br />-------------------------------------------------------------------------------------',
+                 'email'   :    $('#emailme').val()
+
+      };  
+      var emailme = $('#emailme').val();
+      var reg = new RegExp(/\S/);
+      if (reg.test(emailme)){
+            $('#sendOrderModal').modal('hide');
+             $('#thank_for_order').modal();
+               $.ajax({
+                       type        : 'POST', 
+                       url         : 'http://' + location.hostname + '/sendorder',  
+                       data        :  data, 
+                       dataType    : 'json', 
+                       encode      : true
+                                 
+                    })
+           .done(function(res) {
+                    
+                    $( '#sendOrderModal input' ).each(function(){
+                                  $(this).val('');
+
+                        });
+                    $('#thank_for_order').modal('hide');
+
+                 }); 
+
+
+       }else{
+
+                $('#emailme').addClass('error');
+
+       }
+
+});
 $('#sendOrderModal .error').change(function(){
                     $(this).removeClass('error');
 

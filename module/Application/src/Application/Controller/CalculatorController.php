@@ -179,11 +179,13 @@ public function sendorderAction(){
 
         $body = new MimeMessage();
         $body->setParts(array($contentPart, $attachment));
-
+        
+        $email_to = ( isset($data['email']) ) ? $data['email'] : $system['email_for_order'];
+        
         $message = new Message();
         $message->setEncoding('utf-8')
-                ->addTo($system['email_for_order'])
-                ->addFrom($system['email_for_order'])
+                ->addTo($email_to)
+                ->addFrom($email_to)
                 ->setSubject('Заказ проекта. Отправлено с Ekalan.com.ua')
                 ->setBody($body);
         $transportConfig   = new SmtpOptions(array(
