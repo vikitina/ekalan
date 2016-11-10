@@ -372,7 +372,7 @@ function calculate(){
 
                       sink = 'есть';
                       var sink_val = $('#db_sink').val()*1;
-                      //sq = sq - sink_val;
+                      sq = sq - sink_val;
       }else{
                       sink = 'нет';
                     }
@@ -380,7 +380,7 @@ function calculate(){
       if ($(typus_class+' .stove').hasClass('stove_on')){
 
                       stove =  'есть';
-                      //sq = sq -  $('#db_stove').val()*1;
+                      sq = sq -  $('#db_stove').val()*1;
       }else{
                       stove =  'нет';
         }              
