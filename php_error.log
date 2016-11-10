@@ -4083,3 +4083,16 @@ Stack trace:
 [10-Nov-2016 10:53:39 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 316
 [10-Nov-2016 10:53:39 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
 [10-Nov-2016 10:55:10 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[10-Nov-2016 12:00:42 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 316
+[10-Nov-2016 12:00:42 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[10-Nov-2016 12:01:25 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[10-Nov-2016 12:01:57 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 94
+[10-Nov-2016 12:05:50 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 94
+[10-Nov-2016 12:06:27 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 94
+[10-Nov-2016 14:45:03 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 316
+[10-Nov-2016 14:45:03 Europe/Helsinki] PHP Notice:  Undefined variable: material in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 94
+[10-Nov-2016 14:45:40 Europe/Helsinki] PHP Notice:  Undefined offset: 0 in /var/www/ekalan/module/Application/src/Application/Model/Manufacturer.php on line 46
+[10-Nov-2016 14:45:40 Europe/Helsinki] PHP Notice:  Undefined index: start in /var/www/ekalan/module/Application/src/Application/Model/Materials.php on line 55
+[10-Nov-2016 14:45:59 Europe/Helsinki] PHP Notice:  Undefined variable: item in /var/www/ekalan/module/Application/view/application/material/materialmodal.twig on line 12
+[10-Nov-2016 14:46:02 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[10-Nov-2016 14:47:39 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68

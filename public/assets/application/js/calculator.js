@@ -358,7 +358,7 @@ function calculate(){
                 }
 
       });
-      var price_material = $('#price_material').text() * 1;
+      var price_material = $('#price_material_val').val() * 1;
       console.log(price_material);
           plinth_len = plinth_len/1000 * 0.04;
       var cost_plinth = plinth_len.toFixed(2) * price_material;

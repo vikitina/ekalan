@@ -706,3 +706,13 @@ input[type="checkbox"]{width:20px;height:20px;margin:0;}
 #sendOrderModal form div textarea{width:80% !important;padding-left:10px;margin-left:10%;border:1px solid #666;border-radius: 4px;background: #fff;padding-top:4px;padding-bottom:4px;margin-bottom:10px;}
 #sendOrderModal form div input[type="button"]{background: #666;color:#fff;}
 #sendOrderModal form div .error{border-color:red;}
+
+#price_material a{background: green none repeat scroll 0 0;
+    color: #fff;
+    display: block;
+    font-weight: bold;
+    height: 25px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    text-align: center;
+    width: 90%;}

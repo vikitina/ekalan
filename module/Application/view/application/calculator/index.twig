@@ -338,7 +338,7 @@ array(16) { ["id"]=> string(1) "5"
                               </thead>
                               <tbody>
                                 
-                                    <tr><td>Материал (кв.м)</td><td><div id="result_sq"></div></td><td><div id="price_material">{{   material.price_material  }}</div></td><td><div id="cost_material" class="sum"></div></td></tr>
+                                    <tr><td>Материал (кв.м)</td><td><div id="result_sq"></div></td><td><input type="hidden" id="price_material_val" value="{{  material.price_material }}"><div id="price_material">{% if (material.price_material) %} {{ material.price_material }} {% else %}<a href='/material/0&0&0&0'>Выбрать материал</a>{% endif %}</div></td><td><div id="cost_material" class="sum"></div></td></tr>
                                     <tr><td>Площадь лицевой кромки (кв.м)</td><td><div id="result_edge_len" class="sum"></div></td><td>{{   material.price_material  }}</td><td><div id="cost_edge" class="sum"></div></td></tr>
                                     <tr><td>Площадь плинтуса (кв.м)</td><td><div id="result_plinth_len" class="sum"></div></td><td>{{   material.price_material  }}</td><td><div id="cost_plinth"></div></td></tr>
                                     <tr><td>Скругления углов (шт.)</td><td><div id="result_corner"></div></td><td>30</td><td><div id="cost_corner" class="sum"></div></td></tr>
