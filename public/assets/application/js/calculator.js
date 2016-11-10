@@ -357,14 +357,22 @@ function calculate(){
 
                 }
 
-
       });
+      var price_material = $('#price_material').text() * 1;
+      console.log(price_material);
+          plinth_len = plinth_len/1000 * 0.04;
+      var cost_plinth = plinth_len.toFixed(2) * price_material;
+          edge_len   = edge_len/1000 * 0.04;
+      var cost_edge  = edge_len.toFixed(2) * price_material;    
+      var cost_material = sq.toFixed(2) * price_material;  
+      var cost_corner =  $(typus_class+' .corner_obj_on').length * 30;  
+
       var sink;
       if ($(typus_class+' .sink').hasClass('sink_on')) {
 
                       sink = 'есть';
                       var sink_val = $('#db_sink').val()*1;
-                      sq = sq - sink_val;
+                      //sq = sq - sink_val;
       }else{
                       sink = 'нет';
                     }
@@ -372,20 +380,32 @@ function calculate(){
       if ($(typus_class+' .stove').hasClass('stove_on')){
 
                       stove =  'есть';
-                      sq = sq -  $('#db_stove').val()*1;
+                      //sq = sq -  $('#db_stove').val()*1;
       }else{
                       stove =  'нет';
         }              
      
 
-             $('#result_edge_len').text(edge_len + ' мм');
-             $('#result_plinth_len').text(plinth_len + ' мм');
-             $('#result_sq').text(sq.toFixed(3) + ' кв.м');
-             $('#result_corner').text($(typus_class+' .corner_obj_on').length + ' шт.');
+             $('#result_edge_len').text(edge_len.toFixed(2));
+             $('#cost_edge').text(cost_edge.toFixed(2));
+             $('#result_plinth_len').text(plinth_len.toFixed(2));
+             $('#cost_plinth').text(cost_plinth.toFixed(2));
+             $('#result_sq').text(sq.toFixed(2));
+             $('#result_corner').text($(typus_class+' .corner_obj_on').length);
+             $('#cost_corner').text(cost_corner);
+             $('#cost_material').text(cost_material);
              $('#result_sink').text(sink);
              $('#result_stove').text(stove);
+              
+             sum = 0; 
+             $.map( $('.sum'), function(elem,i){
+                     
+                     sum  +=  $(elem).text() * 1;
+
+             });
+             $('#sum').text(sum);
      }else{
-             $('#result_sq').html('<span style="color:#e6ae49"><i class="icon ion-ios-information" style="font-size:1.6em"></i> Длины сторон столешни не корректны.<br /> Калькулятор ожидает уточнения данных.</span>');
+             $('#result_sq').html('<span style="color:#e6ae49"><i class="icon ion-ios-information" style="font-size:1.6em"></i> Параметры столешни не корректны.<br /> Калькулятор ожидает уточнения данных.</span>');
              $('#result_edge_len').text('');
              $('#result_plinth_len').text('');
              $('#result_corner').text('');

@@ -333,19 +333,19 @@ array(16) { ["id"]=> string(1) "5"
                               <h4>Расчет стоимости</h4>
                             <table cellpadding="0" cellspacing="0" width="100%" class="table table-hover calc_table" >
                               <thead>
-                                    <tr><th>Наименование</th><th>Размер/количество</th><th>Цена</th><th>Стоимость</th></tr>
+                                    <tr><th>Наименование</th><th>Размер/количество</th><th>Цена (у.е.)</th><th>Стоимость (у.е.)</th></tr>
 
                               </thead>
                               <tbody>
                                 
-                                    <tr><td>Материал</td><td><div id="result_sq"></div></td><td></td><td></td></tr>
-                                    <tr><td>Длина обработки края</td><td><div id="result_edge_len"></div></td><td><span id="price_edge"></span></td><td></td></tr>
-                                    <tr><td>Длина плинтуса</td><td><div id="result_plinth_len"></div></td><td></td><td></td></tr>
-                                    <tr><td>Скругления углов</td><td><div id="result_corner"></div></td><td></td><td></td></tr>
+                                    <tr><td>Материал (кв.м)</td><td><div id="result_sq"></div></td><td><div id="price_material">{{   material.price_material  }}</div></td><td><div id="cost_material" class="sum"></div></td></tr>
+                                    <tr><td>Площадь лицевой кромки (кв.м)</td><td><div id="result_edge_len" class="sum"></div></td><td>{{   material.price_material  }}</td><td><div id="cost_edge" class="sum"></div></td></tr>
+                                    <tr><td>Площадь плинтуса (кв.м)</td><td><div id="result_plinth_len" class="sum"></div></td><td>{{   material.price_material  }}</td><td><div id="cost_plinth"></div></td></tr>
+                                    <tr><td>Скругления углов (шт.)</td><td><div id="result_corner"></div></td><td>30</td><td><div id="cost_corner" class="sum"></div></td></tr>
                                     <tr><td>Мойка</td><td><div id="result_sink"></div></td><td></td><td></td></tr>
                                     <tr><td>Плита</td><td><div id="result_stove"></div></td><td></td><td></td></tr>
                               </tbody>
-                              <tfoot><tr><td colspan="3">Итого:</td><td></td></tr></tfoot>
+                              <tfoot><tr><td colspan="3">Итого:</td><td><div id="sum"></div></td></tr></tfoot>
                             </table>
                              <input id='db_stove' value="{{ calcprice.stove['calc-cprice'] }}" type="hidden" />
                              <input id='db_sink' value="{{ calcprice.sink['calc-cprice'] }}"  type="hidden" />
