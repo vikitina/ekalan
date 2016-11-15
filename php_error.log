@@ -4139,3 +4139,15 @@ Stack trace:
 [15-Nov-2016 12:21:05 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
 [15-Nov-2016 12:22:05 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
 [15-Nov-2016 12:22:36 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[15-Nov-2016 17:18:18 Europe/Helsinki] PHP Notice:  Undefined index: ekalan_calculator in /var/www/ekalan/module/Application/src/Application/Controller/CalculatorController.php on line 318
+[15-Nov-2016 17:18:18 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[15-Nov-2016 17:21:43 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[15-Nov-2016 17:23:18 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[15-Nov-2016 17:24:21 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[15-Nov-2016 17:25:04 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[15-Nov-2016 17:25:49 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[15-Nov-2016 17:26:05 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[15-Nov-2016 17:27:04 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[15-Nov-2016 17:29:00 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[15-Nov-2016 17:29:57 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
+[15-Nov-2016 17:31:26 Europe/Helsinki] PHP Notice:  Undefined index: cf_sess_id in /var/www/ekalan/module/Application/src/Application/Model/Calcsess.php on line 68
