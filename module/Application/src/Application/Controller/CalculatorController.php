@@ -59,7 +59,7 @@ class CalculatorController extends AbstractActionController
                                
           
                           $material['url_prepared']= ((isset($material['url']) && $material['url'] != '' && $material['url'] !=null)?"/assets/application/samples/".trim($material['url']):"");
-           
+                          $material['price_material']=  $material['price_material'] + $material['processing_price_material'];
                           if ($calc_data_array){
                                         $calc_data_array['cf_material_id'] = $material['id'];
                                         $sess['calc_data'] = serialize($calc_data_array);
@@ -79,7 +79,9 @@ class CalculatorController extends AbstractActionController
                           $material            = $materialset['set'];
                                
           
-                          $material['url_prepared']= ((isset($material['url']) && $material['url'] != '' && $material['url'] !=null)?"/assets/application/samples/".trim($material['url']):"");                          
+                          $material['url_prepared']= ((isset($material['url']) && $material['url'] != '' && $material['url'] !=null)?"/assets/application/samples/".trim($material['url']):"");  
+
+                          $material['price_material']=  $material['price_material'] + $material['processing_price_material'];                      
 
                          }
                     }
