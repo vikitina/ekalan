@@ -372,7 +372,7 @@ function calculate(){
 
                       sink = 'есть';
                       var sink_val = $('#db_sink').val()*1;
-                      sq = sq - sink_val;
+                      //sq = sq - sink_val;
       }else{
                       sink = 'нет';
                     }
@@ -380,11 +380,29 @@ function calculate(){
       if ($(typus_class+' .stove').hasClass('stove_on')){
 
                       stove =  'есть';
-                      sq = sq -  $('#db_stove').val()*1;
+                      //sq = sq -  $('#db_stove').val()*1;
       }else{
                       stove =  'нет';
         }              
      
+      var sum_for_rest = sq + plinth_len + edge_len;
+      var fl          = 0,
+          min_sq_leaf = 1.39,
+          num_leafs   = 1,
+          rest_sq ;
+
+      while (fl == 0){
+
+            fl = (min_sq_leaf * num_leafs > sum_for_rest) ? 1 : 0;
+            rest_sq = min_sq_leaf * num_leafs - sum_for_rest;
+            num_leafs = num_leafs + 1;
+
+
+
+      }
+
+      var rest_sum = rest_sq * $('#clear_price_material').val();
+
 
              $('#result_edge_len').text(edge_len.toFixed(2));
              $('#cost_edge').text(cost_edge.toFixed(2));
@@ -396,14 +414,19 @@ function calculate(){
              $('#cost_material').text(cost_material);
              $('#result_sink').text(sink);
              $('#result_stove').text(stove);
-              
+             $('#rest_sq').text(rest_sq.toFixed(2));
+             $('#rest_sum').text(rest_sum.toFixed(2));
              sum = 0; 
-             $.map( $('.sum'), function(elem,i){
+             /*$.map( $('.sum'), function(elem,i){
                      
                      sum  +=  $(elem).text() * 1;
+                     console.log('!---' + $(elem).text());
 
-             });
-             $('#sum').text(sum);
+             });*/
+             sum = cost_material.toFixed(2)*1 + cost_plinth.toFixed(2)*1 + cost_corner*1 + cost_edge.toFixed(2)*1;
+             var alloversum = rest_sum.toFixed(2) * 1 + sum;
+             $('#sum').text(sum.toFixed(2));
+             $('#alloversum').text(alloversum.toFixed(2));
      }else{
              $('#result_sq').html('<span style="color:#e6ae49"><i class="icon ion-ios-information" style="font-size:1.6em"></i> Параметры столешни не корректны.<br /> Калькулятор ожидает уточнения данных.</span>');
              $('#result_edge_len').text('');
