@@ -9,7 +9,7 @@
                <ul> 
                    <a href="/calculator/<?php echo $material['id'] ?>" class="calculator_link"><i class="ion ion-calculator"></i> Рассчитать цену столешницы</a>
 
-                   <?php if ($material['price_material']){?><li class="card_price"><strong>Цена</strong><span>$ <?php echo $material['price_material'] + $item['processing_price_material'] ?> за погонный метр</span></li><?php } ?>               
+                   <?php if ($material['price_material']){?><li class="card_price"><strong>Цена</strong><span>$ <?php echo $material['price_material'] + $item['processing_price_material'] ?> за квадратный метр</span></li><?php } ?>               
                    <li class="separator"></li>
                    <li><strong>Наименование</strong><span><?php echo $material['name_material'] ?></span></li>
                    <li><strong>Артикул</strong><span><?php echo $material['articul'] ?></span></li>
@@ -47,9 +47,12 @@
                         ?>
 
                              <dl data-sample="<?php echo $item['id'] ?>">
-                                  <dt class="col-lg-6 col-md-6 col-sm-10 col-xs-11" ><?php echo $item['name_material'] ?></dt>
+                                  <dt class="col-lg-6 col-md-6 col-sm-10 col-xs-11" ><?php echo $item['name_material'] ?>
+                                    <br />
+                                    <b><?php echo $item['articul'] ?></b>
+                                  </dt>
                                   <dd class="col-lg-6 col-md-6 col-sm-10 col-xs-11" style="background:url('<?php echo $url;?>') no-repeat center center;">
-                                  <?php if ($item['price_material']){?><span>$<?php echo $item['price_material'] ?></span><?php } ?>
+                                  <?php if ($item['price_material']){?><span>$<?php echo $item['price_material'] + $item['processing_price_material'] ?></span><?php } ?>
                                 </dd>
                            </dl>
 
@@ -65,9 +68,14 @@
                              $url = (($item['url'] != '') && $item['url'] != null) ? "/assets/application/samples/".trim($item['url']) : "/assets/application/img/no_photo.png";
                     ?>
                              <dl data-sample="<?php echo $item['id'] ?>">
-                                  <dt class="col-lg-6 col-md-6 col-sm-10 col-xs-11" ><?php echo $item['name_material'] ?></dt>
+                                  <dt class="col-lg-6 col-md-6 col-sm-10 col-xs-11" ><?php echo $item['name_material'] ?>
+                                    <br />
+                                    <b><?php echo $item['articul'] ?></b>
+
+                                  </dt>
                                   <dd class="col-lg-6 col-md-6 col-sm-10 col-xs-11" style="background:url('<?php echo $url;?>') no-repeat center center;">
-                                  <?php if ($item['price_material']){?><span>$<?php echo $item['price_material'] ?></span><?php } ?>
+
+                                  <?php if ($item['price_material']){?><span>$<?php echo $item['price_material'] + $item['processing_price_material'] ?></span><?php } ?>
                                 </dd>
                            </dl>                    
 
