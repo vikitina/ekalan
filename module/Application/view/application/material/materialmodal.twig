@@ -9,7 +9,7 @@
                <ul> 
                    <a href="/calculator/<?php echo $material['id'] ?>" class="calculator_link"><i class="ion ion-calculator"></i> Рассчитать цену столешницы</a>
 
-                   <?php if ($material['price_material']){?><li class="card_price"><strong>Цена</strong><span>$ <?php echo $material['price_material'] + $item['processing_price_material'] ?> за квадратный метр</span></li><?php } ?>               
+                   <?php if ($material['price_material']){?><li class="card_price"><strong>Цена</strong><span>$ <?php echo $material['price_material'] + $material['processing_price_material'] ?> за квадратный метр</span></li><?php } ?>               
                    <li class="separator"></li>
                    <li><strong>Наименование</strong><span><?php echo $material['name_material'] ?></span></li>
                    <li><strong>Артикул</strong><span><?php echo $material['articul'] ?></span></li>
