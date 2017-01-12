@@ -765,3 +765,35 @@ input[type="checkbox"]{width:20px;height:20px;margin:0;}
 }
 .calculator_steps li .step_header .step_number{float:left;width:10%;}
 .calculator_steps li .step_header .step_caption{float:right;width:89%;}
+
+.instruction i {
+    color: #e6ae49;
+    float: none;
+    font-size: 4em;
+    position:absolute;
+    top:0;
+    left:0;
+}
+.instruction {
+
+    position: relative;}
+
+.instruction > div{position:relative; overflow: visible;}
+.instruction > div > .arr{    background: rgba(0, 0, 0, 0) url("../img/calculator/arrow_yel.png") no-repeat scroll left top;
+    display: block;
+    height: 50px;
+    left: -50px;
+    position: absolute;
+    top: -48px;
+    width: 102px;
+    color:#e4ae54;
+    font-size:1.6em;}
+
+    
+    .instruction {
+    background: #ddd8d3 none repeat scroll 0 0;
+    border-left: 5px solid #e6ae49;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    padding-top: 69px;
+}
