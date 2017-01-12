@@ -390,6 +390,24 @@ array(16) { ["id"]=> string(1) "5"
                              <input id='db_stove' value="{{ calcprice.stove['calc-cprice'] }}" type="hidden" />
                              <input id='db_sink' value="{{ calcprice.sink['calc-cprice'] }}"  type="hidden" />
                             </div>{# table_container  #}
+
+             {% if  material %}
+
+                                   <a href="/material/0&0&0" class="select_material_btn" style="float:right;">Выбрать другой материал</a>
+  
+
+
+              {% else %}
+                                   <a href="/material/0&0&0" class="select_material_btn" style="float:right;">Укажите материал</a>
+             {% endif %}
+
+
+
+
+
+
+
+
                             <div class="adding_info col-lg-12 col-md-12 col-sm-12 col-xs-12"><p>В связи с тем, что акриловый камень закупается кратно 1/2 листа (1,39 кв.м), могут оставаться остатки материалов. Остатка материалов может быть достаточно для иготовления  дополнительных  изделий - моек, полок, подоконников и пр. В случае дозаказа доп. изделий достаточно доплатить только за работы</p></div>
 
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 service_liks">

@@ -800,3 +800,5 @@ input[type="checkbox"]{width:20px;height:20px;margin:0;}
 .bases{font-weight: bold;}
 .bases ul{   list-style: none;padding: 0;margin: 0;font-weight: normal}
 .bases ul li{   list-style: none;padding: 0;margin: 0;}
+
+.instruction p{font-size:12px;line-height:13px;color:#333;}
