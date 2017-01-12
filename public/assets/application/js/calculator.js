@@ -401,7 +401,7 @@ function calculate(){
 
       }
 
-      var rest_sum = rest_sq * $('#clear_price_material').val();
+      var rest_sum = (rest_sq * $('#clear_price_material').val())?rest_sq * $('#clear_price_material').val():0;
 
 
              $('#result_edge_len').text(edge_len.toFixed(2));
@@ -414,8 +414,8 @@ function calculate(){
              $('#cost_material').text(cost_material);
              $('#result_sink').text(sink);
              $('#result_stove').text(stove);
-             $('#rest_sq').text(rest_sq.toFixed(2));
-             $('#rest_sum').text(rest_sum.toFixed(2));
+             $('#rest_sq').text((rest_sq)?rest_sq.toFixed(2):'0.00');
+             $('#rest_sum').text((rest_sum)?rest_sum.toFixed(2):'0.00');
              sum = 0; 
              /*$.map( $('.sum'), function(elem,i){
                      
