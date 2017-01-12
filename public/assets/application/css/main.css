@@ -727,3 +727,41 @@ input[type="checkbox"]{width:20px;height:20px;margin:0;}
 .adding_info{padding-left:30px;margin-bottom:30px;}
 .adding_info p{  margin-top: -27px;padding-left: 38px;width: 80%;}
 .adding_info::before{content: '*';font-size: 4em;color:#e6ae49;font-weight:bold;position:relative;top:20px;}
+
+ .select_material_btn{ 
+    background: green none repeat scroll 0 0;
+    color: #fff;
+    display: block;
+    font-weight: bold;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    text-align: center;
+    float:left;
+    padding-left:10px;
+    padding-right: 10px;
+}
+.calculator_steps{
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.calculator_steps li{
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-bottom:30px;
+}
+.calculator_steps li .step_header{
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-weight:bold;
+    color:#000;
+    font-size:1.5em;
+    margin-bottom:20px;
+}
+.calculator_steps li .step_header .step_number{float:left;width:10%;}
+.calculator_steps li .step_header .step_caption{float:right;width:89%;}
