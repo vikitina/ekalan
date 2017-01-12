@@ -411,7 +411,7 @@ function calculate(){
              $('#result_sq').text(sq.toFixed(2));
              $('#result_corner').text($(typus_class+' .corner_obj_on').length);
              $('#cost_corner').text(cost_corner);
-             $('#cost_material').text(cost_material);
+             $('#cost_material').text(cost_material.toFixed(2));
              $('#result_sink').text(sink);
              $('#result_stove').text(stove);
              $('#rest_sq').text((rest_sq)?rest_sq.toFixed(2):'0.00');
