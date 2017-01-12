@@ -789,7 +789,7 @@ input[type="checkbox"]{width:20px;height:20px;margin:0;}
     color:#e4ae54;
     font-size:1.6em;}
 
-    
+
     .instruction {
     background: #ddd8d3 none repeat scroll 0 0;
     border-left: 5px solid #e6ae49;
@@ -797,3 +797,6 @@ input[type="checkbox"]{width:20px;height:20px;margin:0;}
     padding-bottom: 20px;
     padding-top: 69px;
 }
+.bases{font-weight: bold;}
+.bases ul{   list-style: none;padding: 0;margin: 0;font-weight: normal}
+.bases ul li{   list-style: none;padding: 0;margin: 0;}
