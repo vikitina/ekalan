@@ -275,17 +275,18 @@ function calculate(){
                                $('.u_length_2 input').val() * 1,
                                $('.u_length_3 input').val() * 1,
                                $('.u_length_4 input').val() * 1,
-                               $('.u_length_5 input').val() * 1,
+                               0,
                                0,
                                0,
                                $('.u_length_8 input').val() * 1
                          ];
-                          if( (length_arr[2] > length_arr[4]) && (length_arr[0] > length_arr[4]) && (length_arr[1] > (length_arr[7] + length_arr[3])) ){
+                          if( (length_arr[2] > $('.u_length_5 input').val() * 1) && (length_arr[0] > $('.u_length_5 input').val() * 1) && (length_arr[1] > (length_arr[7] + length_arr[3])) ){
+
+                                   length_arr[4] = length_arr[2] - $('.u_length_5 input').val() * 1;
+                                   length_arr[5] = length_arr[1] - (length_arr[7]+length_arr[3]);
+                                   length_arr[6] = length_arr[0] - $('.u_length_5 input').val() * 1;
                                    
-                                   length_arr[5] = length_arr[2] - length_arr[4];
-                                   length_arr[6] = length_arr[0] - length_arr[4];
-                                   
-                                   sq = ( length_arr[1] * length_arr[4] + (length_arr[0] - length_arr[4]) * length_arr[7] + (length_arr[2] - length_arr[4]) * length_arr[3] )/1000000;
+                                   sq = ( length_arr[1] * $('.u_length_5 input').val() * 1 + (length_arr[0] - $('.u_length_5 input').val() * 1) * length_arr[7] + (length_arr[2] - $('.u_length_5 input').val() * 1) * length_arr[3] )/1000000;
                          }else{
 
                                    sq = 0;
@@ -349,21 +350,22 @@ function calculate(){
                 if($(elem).hasClass('wall_obj_on')){
                        
                        plinth_len += length_arr[num-1];
-                       
+                       console.log('plinth_len' + length_arr[num-1]);
 
                 }else{
 
                        edge_len +=  length_arr[num-1];
+                       console.log('edge_len' + length_arr[num-1]);
 
                 }
 
       });
       var price_material = $('#price_material_val').val() * 1;
-      console.log(price_material);
+      //console.log(price_material);
           plinth_len = plinth_len/1000 * 0.04;
-      var cost_plinth = plinth_len.toFixed(2) * price_material;
+      var cost_plinth = plinth_len * price_material;
           edge_len   = edge_len/1000 * 0.04;
-      var cost_edge  = edge_len.toFixed(2) * price_material;    
+      var cost_edge  = edge_len * price_material;    
       var cost_material = sq.toFixed(2) * price_material;  
       var cost_corner =  $(typus_class+' .corner_obj_on').length * 30;  
 
